@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Production | Digital Advertise</title>
+    <meta name="description" content="From concept to final cut, we produce commercial-grade video content optimized for digital distribution. Scripting, storyboarding, professional filming, color grading, audio mastering, and format-specific editing for broadcast, social media, and web.">
+    <meta name="robots" content="index, follow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@0.395.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        slate: {
+                            950: '#020617',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .hero-gradient-bg {
+            background: linear-gradient(-45deg, #0f172a, #1e293b, #0f172a, #172554);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+        }
+        #desktop-nav {
+          display: flex !important;
+          align-items: center;
+          gap: 4px;
+        }
+        @media (max-width: 1024px) {
+          #desktop-nav { display: none !important; }
+          #hamburger-btn { display: block !important; }
+        }
+        #desktop-nav a {
+          padding: 8px 14px;
+          font-size: 14px;
+          font-weight: 500;
+          color: #475569;
+          border-radius: 9999px;
+          text-decoration: none;
+          transition: color 0.2s, background 0.2s;
+          white-space: nowrap;
+          transform: none !important;
+        }
+        #desktop-nav a:hover {
+          color: #2563eb;
+          background: rgba(37,99,235,0.07);
+          transform: none !important;
+        }
+        .nav-dropdown {
+          position: relative;
+          padding-bottom: 8px;
+          margin-bottom: -8px;
+        }
+        .nav-dropdown-menu {
+          opacity: 0;
+          visibility: hidden;
+          pointer-events: none;
+          position: absolute;
+          top: 100%;
+          left: 50%;
+          transform: translateX(-50%) translateY(6px);
+          width: 260px;
+          background: rgba(255,255,255,0.98);
+          backdrop-filter: blur(20px);
+          border: 1px solid rgba(226,232,240,0.8);
+          box-shadow: 0 10px 40px rgba(2,6,23,0.10);
+          border-radius: 20px;
+          padding: 10px;
+          z-index: 99999;
+          transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+        }
+        .nav-dropdown-menu::before {
+          content: '';
+          position: absolute;
+          top: -12px;
+          left: 0;
+          width: 100%;
+          height: 12px;
+          background: transparent;
+        }
+        .nav-dropdown:hover .nav-dropdown-menu {
+          opacity: 1;
+          visibility: visible;
+          pointer-events: auto;
+          transform: translateX(-50%) translateY(0px);
+        }
+        .nav-dropdown-menu a {
+          display: block;
+          padding: 9px 14px;
+          font-size: 13px;
+          color: #475569;
+          border-radius: 10px;
+          text-decoration: none;
+          transition: color 0.15s, background 0.15s;
+        }
+        .nav-dropdown-menu a:hover {
+          color: #2563eb;
+          background: #f1f5f9;
+        }
+        #navbar.nav-visible {
+          transform: translateY(0) !important;
+        }
+        #mobile-menu.open {
+          display: flex !important;
+        }
+    </style>
+</head>
+<body class="bg-white text-slate-900 overflow-x-hidden antialiased selection:bg-blue-100 selection:text-blue-800">
+
+    <!-- Header -->
+<header id="navbar" style="position:fixed;top:0;left:0;width:100%;z-index:9999;padding:16px 0;transform:translateY(-120%);transition:transform 0.45s cubic-bezier(0.16,1,0.3,1);">
+  <div style="max-width:1280px;margin:0 auto;padding:0 24px;">
+    <div id="nav-wrapper" style="display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,0.85);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,0.6);box-shadow:0 4px 32px rgba(2,6,23,0.08);border-radius:9999px;height:60px;padding:0 24px;">
+      <a href="index.html" style="display:flex;align-items:center;">
+        <img src="assets/logo.png" alt="Digital Advertise Logo" style="height:32px;width:auto;object-fit:contain;">
+      </a>
+      <nav style="display:none;" id="desktop-nav">
+        <a href="index.html">Home</a>
+        <div class="nav-dropdown">
+          <a href="services.html">Services ▾</a>
+          <div class="nav-dropdown-menu">
+            <a href="performance-marketing.html">Performance Marketing</a>
+            <a href="brand-identity.html">Brand Identity</a>
+            <a href="social-media.html">Social Media Marketing</a>
+            <a href="web-development.html">Website Development</a>
+            <a href="video-production.html">Video Production</a>
+            <a href="ai-video.html">AI Video Generation</a>
+            <a href="packaging.html">Product Packaging Design</a>
+            <a href="photography.html">Product Shoot</a>
+          </div>
+        </div>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="case-studies.html">Case Studies</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About Us</a>
+      </nav>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <a href="audit.html" style="display:inline-flex;align-items:center;gap:6px;background:#0f172a;color:#fff;font-weight:600;font-size:14px;padding:10px 20px;border-radius:9999px;text-decoration:none;transition:background 0.2s;">
+          Get Started ↗
+        </a>
+        <button onclick="toggleMobileMenu()" id="hamburger-btn" style="display:none;padding:8px;border-radius:9999px;border:none;background:transparent;cursor:pointer;">
+          ☰
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" style="display:none;margin-top:12px;background:rgba(255,255,255,0.95);backdrop-filter:blur(20px);border-radius:20px;padding:20px;flex-direction:column;gap:8px;">
+      <a href="index.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Home</a>
+      <a href="services.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Services</a>
+      <a href="portfolio.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Portfolio</a>
+      <a href="case-studies.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Case Studies</a>
+      <a href="blog.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Blog</a>
+      <a href="contact.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Contact</a>
+      <a href="about.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">About Us</a>
+      <a href="audit.html" style="margin-top:8px;padding:12px;background:#0f172a;color:#fff;font-weight:600;border-radius:9999px;text-decoration:none;display:block;text-align:center;">Get Started</a>
+    </div>
+  </div>
+</header>
+
+    <main class="relative bg-white text-slate-900 font-sans overflow-x-hidden">
+
+        <!-- ===== HERO ===== -->
+        <section class="relative overflow-hidden pt-36 md:pt-44 pb-20 mesh-bg">
+            <div class="bubble bubble-1" aria-hidden="true"></div>
+            <div class="bubble bubble-2" aria-hidden="true"></div>
+            <div class="bubble bubble-3" aria-hidden="true"></div>
+            <div class="absolute inset-0 overflow-hidden pointer-events-none z-0">
+                <div class="absolute w-[800px] h-[800px] rounded-full bg-[radial-gradient(circle,_rgba(37,99,235,0.12)_0%,_transparent_70%)] -top-1/4 -right-1/4"></div>
+            </div>
+            <div class="absolute inset-0 grid-pattern opacity-60 pointer-events-none"></div>
+            <div class="max-w-7xl mx-auto px-6 md:px-10 relative z-10 text-left">
+                <div class="overline-label reveal">Video Production</div>
+                <h1 class="mt-3 font-display text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tighter text-slate-900 text-reveal">
+                    Video content that<br><span class="italic font-light text-slate-700">commands attention</span>.
+                </h1>
+                <p class="mt-7 text-lg md:text-xl text-slate-600 max-w-2xl leading-relaxed">
+                    From concept to final cut, we produce commercial-grade video content optimized for digital distribution. Scripting, storyboarding, professional filming, color grading, and format-specific editing.
+                </p>
+                <div class="mt-8 flex flex-wrap items-center gap-4">
+                    <a href="audit.html" class="btn-primary btn-magnetic shine-sweep group">Get Free Audit <i data-lucide="arrow-up-right" class="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></i></a>
+                    <a href="portfolio.html" class="btn-secondary btn-magnetic group">View Our Work <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== WHAT WE DO ===== -->
+        <section class="relative overflow-hidden py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-6 md:px-10">
+                <div class="text-center mb-14 reveal">
+                    <div class="overline-label">What We Do</div>
+                    <h2 class="mt-3 font-display text-3xl md:text-4xl font-bold text-slate-900">End-to-End Video Production</h2>
+                </div>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 reveal">
+                    <div class="glass-strong border border-slate-200/80 rounded-3xl p-7 hover:shadow-lg transition-shadow spotlight-card">
+                        <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center mb-4"><i data-lucide="film" class="w-5 h-5 text-blue-600"></i></div>
+                        <h3 class="font-display font-bold text-slate-900">Commercial & Brand Film</h3>
+                        <p class="mt-2 text-[14px] text-slate-500 leading-relaxed">Full-scale commercial shoots and brand storytelling films produced with cinematic equipment and professional direction.</p>
+                    </div>
+                    <div class="glass-strong border border-slate-200/80 rounded-3xl p-7 hover:shadow-lg transition-shadow spotlight-card">
+                        <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center mb-4"><i data-lucide="scissors" class="w-5 h-5 text-blue-600"></i></div>
+                        <h3 class="font-display font-bold text-slate-900">Social Media Video Editing</h3>
+                        <p class="mt-2 text-[14px] text-slate-500 leading-relaxed">Platform-specific cuts, reformatting, and optimization for Instagram Reels, TikTok, YouTube Shorts, and LinkedIn.</p>
+                    </div>
+                    <div class="glass-strong border border-slate-200/80 rounded-3xl p-7 hover:shadow-lg transition-shadow spotlight-card">
+                        <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center mb-4"><i data-lucide="sparkles" class="w-5 h-5 text-blue-600"></i></div>
+                        <h3 class="font-display font-bold text-slate-900">Motion Graphics & Explainers</h3>
+                        <p class="mt-2 text-[14px] text-slate-500 leading-relaxed">Custom motion graphics, 2D/3D animations, explainer videos, and professional title sequences for brand content.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== OUR PROCESS ===== -->
+        <section class="relative overflow-hidden py-20 bg-slate-50">
+            <div class="max-w-7xl mx-auto px-6 md:px-10">
+                <div class="text-center mb-14 reveal">
+                    <div class="overline-label">Our Process</div>
+                    <h2 class="mt-3 font-display text-3xl md:text-4xl font-bold text-slate-900">From Concept to Screen</h2>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 reveal">
+                    <div class="text-left group">
+                        <div class="w-12 h-12 rounded-full bg-slate-900 text-white flex items-center justify-center font-display font-bold text-lg mb-5 group-hover:bg-blue-600 transition-colors">1</div>
+                        <h3 class="font-display font-bold text-slate-900 text-lg">Creative Development</h3>
+                        <p class="mt-2 text-[14px] text-slate-500 leading-relaxed">Concept ideation, scripting, storyboarding, and creative direction aligned with your brand goals.</p>
+                    </div>
+                    <div class="text-left group">
+                        <div class="w-12 h-12 rounded-full bg-slate-900 text-white flex items-center justify-center font-display font-bold text-lg mb-5 group-hover:bg-blue-600 transition-colors">2</div>
+                        <h3 class="font-display font-bold text-slate-900 text-lg">Pre-Production</h3>
+                        <p class="mt-2 text-[14px] text-slate-500 leading-relaxed">Location scouting, talent casting, shot lists, scheduling, and technical preparation for shoot day.</p>
+                    </div>
+                    <div class="text-left group">
+                        <div class="w-12 h-12 rounded-full bg-slate-900 text-white flex items-center justify-center font-display font-bold text-lg mb-5 group-hover:bg-blue-600 transition-colors">3</div>
+                        <h3 class="font-display font-bold text-slate-900 text-lg">Production & Filming</h3>
+                        <p class="mt-2 text-[14px] text-slate-500 leading-relaxed">Professional on-location or studio filming with cinema-grade cameras, lighting, and audio capture.</p>
+                    </div>
+                    <div class="text-left group">
+                        <div class="w-12 h-12 rounded-full bg-slate-900 text-white flex items-center justify-center font-display font-bold text-lg mb-5 group-hover:bg-blue-600 transition-colors">4</div>
+                        <h3 class="font-display font-bold text-slate-900 text-lg">Post-Production & Delivery</h3>
+                        <p class="mt-2 text-[14px] text-slate-500 leading-relaxed">Editing, color grading, sound design, motion graphics, and multi-format export for all platforms.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== WHY CHOOSE US ===== -->
+        <section class="relative overflow-hidden py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-6 md:px-10">
+                <div class="text-center mb-14 reveal">
+                    <div class="overline-label">Why Choose Us</div>
+                    <h2 class="mt-3 font-display text-3xl md:text-4xl font-bold text-slate-900">Built for impact</h2>
+                </div>
+                <div class="grid sm:grid-cols-2 gap-6 reveal">
+                    <div class="glass-strong border border-slate-200/80 rounded-3xl p-7 flex items-start gap-4 premium-card-glow">
+                        <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center shrink-0 mt-0.5"><i data-lucide="video-off" class="w-5 h-5 text-blue-600"></i></div>
+                        <div>
+                            <h3 class="font-display font-bold text-slate-900">No In-House Team Needed</h3>
+                            <p class="mt-1 text-[14px] text-slate-500 leading-relaxed">Professional-grade video content without the overhead of hiring an in-house production team.</p>
+                        </div>
+                    </div>
+                    <div class="glass-strong border border-slate-200/80 rounded-3xl p-7 flex items-start gap-4 premium-card-glow">
+                        <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center shrink-0 mt-0.5"><i data-lucide="layers" class="w-5 h-5 text-blue-600"></i></div>
+                        <div>
+                            <h3 class="font-display font-bold text-slate-900">Multi-Format Delivery</h3>
+                            <p class="mt-1 text-[14px] text-slate-500 leading-relaxed">Broadcast, social, and web formats ready from a single production shoot — no re-shoots required.</p>
+                        </div>
+                    </div>
+                    <div class="glass-strong border border-slate-200/80 rounded-3xl p-7 flex items-start gap-4 premium-card-glow">
+                        <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center shrink-0 mt-0.5"><i data-lucide="heart" class="w-5 h-5 text-blue-600"></i></div>
+                        <div>
+                            <h3 class="font-display font-bold text-slate-900">Higher Retention Through Storytelling</h3>
+                            <p class="mt-1 text-[14px] text-slate-500 leading-relaxed">Cinematic storytelling that drives higher audience retention and completion rates across platforms.</p>
+                        </div>
+                    </div>
+                    <div class="glass-strong border border-slate-200/80 rounded-3xl p-7 flex items-start gap-4 premium-card-glow">
+                        <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center shrink-0 mt-0.5"><i data-lucide="wand-2" class="w-5 h-5 text-blue-600"></i></div>
+                        <div>
+                            <h3 class="font-display font-bold text-slate-900">Motion Graphics That Clarify</h3>
+                            <p class="mt-1 text-[14px] text-slate-500 leading-relaxed">Animated explainers and motion graphics that simplify complex products and drive understanding instantly.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== PORTFOLIO PREVIEW ===== -->
+        <section class="relative overflow-hidden py-20 bg-slate-50">
+            <div class="max-w-7xl mx-auto px-6 md:px-10">
+                <div class="text-center mb-14 reveal">
+                    <div class="overline-label">Our Work</div>
+                    <h2 class="mt-3 font-display text-3xl md:text-4xl font-bold text-slate-900">Video Production Results</h2>
+                </div>
+                <div class="grid md:grid-cols-3 gap-6 reveal">
+                    <div class="group relative rounded-3xl overflow-hidden aspect-[4/3] bg-slate-900 border border-slate-100 hover:shadow-2xl transition-all duration-500">
+                        <img src="assets/portfolio-netflix.png" alt="Brand Film Production" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent p-6 flex flex-col justify-between text-left opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <span class="bg-blue-600 text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 rounded text-white self-start">Brand Film</span>
+                            <div>
+                                <h3 class="font-display font-bold text-white text-xl">Lifestyle Brand Campaign</h3>
+                                <p class="text-white/60 text-[13px] mt-1">60-second brand film shot on location across 3 cities with cinematic color grading.</p>
+                                <div class="mt-4 pt-4 border-t border-white/10 flex justify-between items-center text-white">
+                                    <div>
+                                        <div class="text-lg font-bold text-emerald-400">2.4M</div>
+                                        <div class="text-[10px] uppercase tracking-wider text-white/50">Views</div>
+                                    </div>
+                                    <div>
+                                        <div class="text-lg font-bold">+186%</div>
+                                        <div class="text-[10px] uppercase tracking-wider text-white/50">Engagement</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="group relative rounded-3xl overflow-hidden aspect-[4/3] bg-slate-900 border border-slate-100 hover:shadow-2xl transition-all duration-500">
+                        <img src="assets/portfolio-openai.png" alt="Social Media Video" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent p-6 flex flex-col justify-between text-left opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <span class="bg-blue-600 text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 rounded text-white self-start">Social Reels</span>
+                            <div>
+                                <h3 class="font-display font-bold text-white text-xl">Product Launch Series</h3>
+                                <p class="text-white/60 text-[13px] mt-1">15-second vertical video series for Instagram Reels and TikTok driving product awareness.</p>
+                                <div class="mt-4 pt-4 border-t border-white/10 flex justify-between items-center text-white">
+                                    <div>
+                                        <div class="text-lg font-bold text-emerald-400">5.1M</div>
+                                        <div class="text-[10px] uppercase tracking-wider text-white/50">Impressions</div>
+                                    </div>
+                                    <div>
+                                        <div class="text-lg font-bold">+340%</div>
+                                        <div class="text-[10px] uppercase tracking-wider text-white/50">Reach</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="group relative rounded-3xl overflow-hidden aspect-[4/3] bg-slate-900 border border-slate-100 hover:shadow-2xl transition-all duration-500">
+                        <img src="assets/portfolio-apple.png" alt="Motion Graphics Explainer" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent p-6 flex flex-col justify-between text-left opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <span class="bg-blue-600 text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 rounded text-white self-start">Explainer</span>
+                            <div>
+                                <h3 class="font-display font-bold text-white text-xl">SaaS Product Explainer</h3>
+                                <p class="text-white/60 text-[13px] mt-1">90-second animated explainer video breaking down complex platform features.</p>
+                                <div class="mt-4 pt-4 border-t border-white/10 flex justify-between items-center text-white">
+                                    <div>
+                                        <div class="text-lg font-bold text-emerald-400">72%</div>
+                                        <div class="text-[10px] uppercase tracking-wider text-white/50">Completion</div>
+                                    </div>
+                                    <div>
+                                        <div class="text-lg font-bold">+94%</div>
+                                        <div class="text-[10px] uppercase tracking-wider text-white/50">Clarity Score</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-10 reveal">
+                    <a href="portfolio.html" class="btn-secondary btn-magnetic group">View Full Portfolio <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== TESTIMONIALS ===== -->
+        <section class="relative overflow-hidden py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-6 md:px-10">
+                <div class="text-center mb-14 reveal">
+                    <div class="overline-label">Testimonials</div>
+                    <h2 class="mt-3 font-display text-3xl md:text-4xl font-bold text-slate-900">What our clients say</h2>
+                </div>
+                <div class="grid md:grid-cols-3 gap-6 reveal">
+                    <div class="glass-strong border border-slate-200/80 rounded-3xl p-7 flex flex-col">
+                        <div class="flex items-center gap-1 text-amber-400 mb-4">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        </div>
+                        <p class="text-slate-600 text-[14px] leading-relaxed flex-1">"The brand film they produced for us generated 2.4M views in the first week. The storytelling quality and production value exceeded anything we could have done in-house."</p>
+                        <div class="mt-6 pt-4 border-t border-slate-100 flex items-center gap-3">
+                            <div class="w-9 h-9 rounded-full bg-slate-200 flex items-center justify-center text-[11px] font-bold text-slate-600">MK</div>
+                            <div>
+                                <div class="text-[13px] font-semibold text-slate-900">Maya Krishnamurthy</div>
+                                <div class="text-[11px] text-slate-500">Head of Brand, UrbanThread</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="glass-strong border border-slate-200/80 rounded-3xl p-7 flex flex-col">
+                        <div class="flex items-center gap-1 text-amber-400 mb-4">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        </div>
+                        <p class="text-slate-600 text-[14px] leading-relaxed flex-1">"Their social video reels drove 5.1M impressions in the first month. We saw a 340% increase in reach compared to our static content campaigns."</p>
+                        <div class="mt-6 pt-4 border-t border-slate-100 flex items-center gap-3">
+                            <div class="w-9 h-9 rounded-full bg-slate-200 flex items-center justify-center text-[11px] font-bold text-slate-600">DV</div>
+                            <div>
+                                <div class="text-[13px] font-semibold text-slate-900">Daniel Vargas</div>
+                                <div class="text-[11px] text-slate-500">Marketing Director, GreenLeaf</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="glass-strong border border-slate-200/80 rounded-3xl p-7 flex flex-col">
+                        <div class="flex items-center gap-1 text-amber-400 mb-4">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        </div>
+                        <p class="text-slate-600 text-[14px] leading-relaxed flex-1">"The explainer video they created simplified our complex platform features. Customer understanding scores went up 94% and trial signups jumped 67%."</p>
+                        <div class="mt-6 pt-4 border-t border-slate-100 flex items-center gap-3">
+                            <div class="w-9 h-9 rounded-full bg-slate-200 flex items-center justify-center text-[11px] font-bold text-slate-600">PS</div>
+                            <div>
+                                <div class="text-[13px] font-semibold text-slate-900">Priya Sharma</div>
+                                <div class="text-[11px] text-slate-500">CEO, DataNexus</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== FAQ ===== -->
+        <section class="relative overflow-hidden py-20 bg-slate-50">
+            <div class="max-w-3xl mx-auto px-6 md:px-10">
+                <div class="text-center mb-14 reveal">
+                    <div class="overline-label">FAQ</div>
+                    <h2 class="mt-3 font-display text-3xl md:text-4xl font-bold text-slate-900">Frequently asked questions</h2>
+                </div>
+                <div class="space-y-4 reveal">
+                    <details class="group glass-strong border border-slate-200/80 rounded-2xl overflow-hidden">
+                        <summary class="px-6 py-5 cursor-pointer font-display font-semibold text-slate-900 text-[15px] flex items-center justify-between select-none hover:text-blue-600 transition-colors">
+                            What types of video content do you produce?
+                            <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 transition-transform group-open:rotate-180"></i>
+                        </summary>
+                        <div class="px-6 pb-5 text-[14px] text-slate-500 leading-relaxed">
+                            We produce commercial brand films, social media video content (Reels, TikToks, Shorts), animated explainer videos, product demo videos, corporate films, testimonial videos, and motion graphics — all optimized for their target platform and audience.
+                        </div>
+                    </details>
+                    <details class="group glass-strong border border-slate-200/80 rounded-2xl overflow-hidden">
+                        <summary class="px-6 py-5 cursor-pointer font-display font-semibold text-slate-900 text-[15px] flex items-center justify-between select-none hover:text-blue-600 transition-colors">
+                            How long does a typical video production take?
+                            <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 transition-transform group-open:rotate-180"></i>
+                        </summary>
+                        <div class="px-6 pb-5 text-[14px] text-slate-500 leading-relaxed">
+                            A standard social media video package (5-10 Reels) takes 7-10 business days from scripting to delivery. Full brand films and commercials typically require 3-4 weeks, including pre-production, filming, post-production, and revision rounds.
+                        </div>
+                    </details>
+                    <details class="group glass-strong border border-slate-200/80 rounded-2xl overflow-hidden">
+                        <summary class="px-6 py-5 cursor-pointer font-display font-semibold text-slate-900 text-[15px] flex items-center justify-between select-none hover:text-blue-600 transition-colors">
+                            Do you handle everything from scripting to final delivery?
+                            <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 transition-transform group-open:rotate-180"></i>
+                        </summary>
+                        <div class="px-6 pb-5 text-[14px] text-slate-500 leading-relaxed">
+                            Yes. Our end-to-end pipeline covers concept development, scripting, storyboarding, location scouting, filming, audio capture, editing, color grading, sound design, motion graphics, and multi-format export. You receive finished, platform-ready files with no extra steps.
+                        </div>
+                    </details>
+                    <details class="group glass-strong border border-slate-200/80 rounded-2xl overflow-hidden">
+                        <summary class="px-6 py-5 cursor-pointer font-display font-semibold text-slate-900 text-[15px] flex items-center justify-between select-none hover:text-blue-600 transition-colors">
+                            What formats will my videos be delivered in?
+                            <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 transition-transform group-open:rotate-180"></i>
+                        </summary>
+                        <div class="px-6 pb-5 text-[14px] text-slate-500 leading-relaxed">
+                            All videos are delivered in 4K and HD resolutions with platform-specific aspect ratios — 16:9 for YouTube and websites, 9:16 for TikTok, Reels and Shorts, and 1:1 for feed posts. You also receive raw footage archives and project files on request.
+                        </div>
+                    </details>
+                    <details class="group glass-strong border border-slate-200/80 rounded-2xl overflow-hidden">
+                        <summary class="px-6 py-5 cursor-pointer font-display font-semibold text-slate-900 text-[15px] flex items-center justify-between select-none hover:text-blue-600 transition-colors">
+                            How does video content improve marketing performance?
+                            <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 transition-transform group-open:rotate-180"></i>
+                        </summary>
+                        <div class="px-6 pb-5 text-[14px] text-slate-500 leading-relaxed">
+                            Video content drives 5x higher engagement than static posts, lowers CPM by 25-40% due to higher platform relevance scores, and generates 60%+ more traffic in the first 30 days. Professional video builds trust faster and increases conversion rates across every channel.
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== CTA SECTION ===== -->
+        <section id="contact" class="relative overflow-hidden py-16 md:py-24">
+<div class="max-w-7xl mx-auto px-6 md:px-10">
+<div class="relative rounded-[36px] bg-slate-950 overflow-hidden p-10 md:p-16 lg:p-24 reveal">
+<div class="absolute -top-32 -left-20 w-[420px] h-[420px] rounded-full bg-blue-500/30 blur-[120px] pointer-events-none"></div>
+<div class="absolute -bottom-32 -right-20 w-[420px] h-[420px] rounded-full bg-indigo-500/30 blur-[120px] pointer-events-none"></div>
+<div class="absolute inset-0 opacity-[0.06] pointer-events-none grid-pattern"></div>
+<div class="absolute right-10 top-10 w-24 h-24 rounded-full bg-gradient-to-br from-blue-400 to-indigo-500 blur-2xl opacity-50 floaty"></div>
+<div class="relative grid lg:grid-cols-12 gap-10 items-center">
+<div class="lg:col-span-8 text-left">
+<div class="inline-flex items-center gap-2 glass rounded-full pl-2 pr-4 py-1.5 mb-7 bg-white/10 border-white/15">
+<span class="bg-white text-slate-900 text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full">Free</span>
+<span class="text-[13px] font-medium text-white/85">No-cost performance audit</span>
+</div>
+<h2 class="font-display text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tighter text-white leading-none text-reveal">Ready to scale with Video Production?</h2>
+<p class="mt-5 text-white/70 text-base md:text-lg max-w-xl leading-relaxed">Get a free creative audit and a production timeline — built by producers who've created 500+ commercial videos.</p>
+<div class="mt-9 flex flex-col sm:flex-row gap-3">
+<a href="audit.html" class="btn-magnetic shine-sweep inline-flex items-center justify-center gap-2 bg-white text-slate-900 hover:bg-blue-500 hover:text-white font-semibold rounded-full pl-6 pr-5 py-4 transition-all hover:-translate-y-0.5 group">Get Free Audit <i data-lucide="arrow-up-right" class="w-4.5 h-4.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></i></a>
+<a href="contact.html" class="inline-flex items-center justify-center gap-2 bg-white/5 hover:bg-white/10 text-white font-semibold rounded-full pl-6 pr-5 py-4 border border-white/15 transition-all">Let's Talk <i data-lucide="sparkles" class="w-4 h-4"></i></a>
+</div>
+</div>
+<div class="lg:col-span-4 text-left">
+<div class="rounded-3xl border border-white/15 bg-white/[0.04] p-6 backdrop-blur-md select-none">
+<div class="text-[11px] uppercase tracking-wider font-semibold text-white/60">What you'll receive</div>
+<ul class="mt-4 space-y-3 text-white/85 text-[14px]">
+<li class="flex items-start gap-3"><span class="mt-2 w-1.5 h-1.5 rounded-full bg-blue-400 shrink-0"></span><span>Creative audit & storyboard</span></li>
+<li class="flex items-start gap-3"><span class="mt-2 w-1.5 h-1.5 rounded-full bg-blue-400 shrink-0"></span><span>Production timeline</span></li>
+<li class="flex items-start gap-3"><span class="mt-2 w-1.5 h-1.5 rounded-full bg-blue-400 shrink-0"></span><span>Multi-format delivery plan</span></li>
+</ul>
+<div class="mt-5 pt-5 border-t border-white/10 text-[12px] text-white/50">Avg. response time · under 12 hours</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+        <!-- ===== STATS (DARK BG) ===== -->
+        <section class="relative overflow-hidden py-20 bg-slate-950">
+            <div class="max-w-7xl mx-auto px-6 md:px-10">
+                <div class="grid sm:grid-cols-3 gap-6 mb-12 reveal">
+                    <div class="border border-white/10 rounded-2xl p-8 text-center backdrop-blur-sm bg-white/5 hover:bg-white/8 transition-colors">
+                        <div class="text-4xl md:text-5xl font-display font-extrabold text-blue-400">5x</div>
+                        <div class="mt-2 text-[12px] text-slate-300 font-semibold uppercase tracking-wider">Higher Engagement</div>
+                    </div>
+                    <div class="border border-white/10 rounded-2xl p-8 text-center backdrop-blur-sm bg-white/5 hover:bg-white/8 transition-colors">
+                        <div class="text-4xl md:text-5xl font-display font-extrabold text-white">25-40%</div>
+                        <div class="mt-2 text-[12px] text-slate-300 font-semibold uppercase tracking-wider">Lower CPM</div>
+                    </div>
+                    <div class="border border-white/10 rounded-2xl p-8 text-center backdrop-blur-sm bg-white/5 hover:bg-white/8 transition-colors">
+                        <div class="text-4xl md:text-5xl font-display font-extrabold text-emerald-400">60%</div>
+                        <div class="mt-2 text-[12px] text-slate-300 font-semibold uppercase tracking-wider">More Traffic</div>
+                    </div>
+                </div>
+                <div class="max-w-3xl mx-auto text-center reveal">
+                    <p class="text-slate-300 text-[15px] leading-relaxed">Video content produced through our commercial pipeline drives 3-5x higher engagement than static creative on social platforms. Clients deploying brand films in paid ad campaigns report 25-40% lower CPM due to higher relevance scores, and product launch videos consistently generate 60%+ more direct-to-site traffic in the first 30 days of release compared to non-video campaigns.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="relative bg-slate-950 text-white pt-20 md:pt-28 pb-10 overflow-hidden">
+        <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] h-[400px] rounded-full bg-blue-500/10 blur-[120px] pointer-events-none"></div>
+        <div class="relative max-w-7xl mx-auto px-6 md:px-10">
+            <div class="grid lg:grid-cols-12 gap-12 mb-14 text-left">
+                <div class="lg:col-span-4">
+                    <div class="flex items-center mb-6">
+                        <img src="assets/logo-white.png" alt="Digital Advertise Logo" class="h-10 w-auto object-contain">
+                    </div>
+                    <p class="text-white/65 text-[15px] leading-relaxed max-w-md">
+                        A performance marketing partner for ambitious teams — engineered for measurable, durable growth across every channel and market.
+                    </p>
+                    <form class="mt-6 flex max-w-sm" onsubmit="handleNewsletterSubmit(event)">
+                        <input type="email" required placeholder="Subscribe to our newsletter" class="flex-1 bg-white/5 border border-white/10 rounded-l-xl px-4 py-2 text-[14px] text-white placeholder:text-white/40 focus:outline-none focus:border-blue-500">
+                        <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-5 rounded-r-xl text-[14px] font-semibold transition-colors">Join</button>
+                    </form>
+                </div>
+
+                <div class="lg:col-span-8 grid grid-cols-2 sm:grid-cols-4 gap-8">
+                    <div>
+                        <div class="text-[11px] uppercase tracking-[0.2em] font-semibold text-white/40 mb-4">Navigation</div>
+                        <ul class="space-y-2.5">
+                            <li><a href="index.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Home</a></li>
+                            <li><a href="about.html" class="text-[14px] text-white/80 hover:text-white transition-colors">About Us</a></li>
+                            <li><a href="services.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Services</a></li>
+                            <li><a href="portfolio.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Portfolio</a></li>
+                            <li><a href="case-studies.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Case Studies</a></li>
+                            <li><a href="blog.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Blog</a></li>
+                            <li><a href="contact.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="text-[11px] uppercase tracking-[0.2em] font-semibold text-white/40 mb-4">Services</div>
+                        <ul class="space-y-2.5">
+                            <li><a href="social-media.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Social Media</a></li>
+                            <li><a href="performance-marketing.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Performance Marketing</a></li>
+                            <li><a href="web-development.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Web Development</a></li>
+                            <li><a href="brand-identity.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Brand Identity</a></li>
+                            <li><a href="ai-video.html" class="text-[14px] text-white/80 hover:text-white transition-colors">AI Creative</a></li>
+                            <li><a href="photography.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Product Photography</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="text-[11px] uppercase tracking-[0.2em] font-semibold text-white/40 mb-4">Resources</div>
+                        <ul class="space-y-2.5">
+                            <li><a href="audit.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Free Audit</a></li>
+                            <li><a href="blog.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Blog</a></li>
+                            <li><a href="case-studies.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Case Studies</a></li>
+                            <li><a href="privacy.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="text-[11px] uppercase tracking-[0.2em] font-semibold text-white/40 mb-4">Contact</div>
+                        <ul class="space-y-2.5">
+                            <li><a href="mailto:info@digitaladvertise.com" class="text-[14px] text-white/80 hover:text-white transition-colors flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4 shrink-0"></i>info@digitaladvertise.com</a></li>
+                            <li><a href="tel:+18005550199" class="text-[14px] text-white/80 hover:text-white transition-colors flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4 shrink-0"></i>+1-800-555-0199</a></li>
+                            <li><a href="https://wa.me/917276751167" target="_blank" class="text-[14px] text-white/80 hover:text-white transition-colors flex items-center gap-2"><i data-lucide="message-circle" class="w-4 h-4 shrink-0"></i>WhatsApp</a></li>
+                            <li><a href="#" class="text-[14px] text-white/80 hover:text-white transition-colors flex items-center gap-2"><i data-lucide="map-pin" class="w-4 h-4 shrink-0"></i>Pune, India</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-white/10 pt-12 text-center select-none">
+                <div class="font-display font-bold tracking-tighter leading-none text-[clamp(44px,14vw,220px)] bg-gradient-to-b from-white to-white/10 bg-clip-text text-transparent opacity-80">
+                    DIGITAL ADVERTISE
+                </div>
+            </div>
+
+            <div class="mt-10 pt-6 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-[13px] text-white/55">
+                <div>
+                    &copy; <span id="current-year">2026</span> Digital Advertise. All rights reserved.
+                </div>
+                <div class="flex items-center gap-4">
+                    <a href="https://www.instagram.com/digital_advertise_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="text-white/55 hover:text-white transition-colors" aria-label="Instagram"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+                    <a href="https://twitter.com/digitaladvertise" target="_blank" class="text-white/55 hover:text-white transition-colors" aria-label="X / Twitter"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+                    <a href="https://www.facebook.com/digitaladvertise" target="_blank" class="text-white/55 hover:text-white transition-colors" aria-label="Facebook"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+                    <a href="https://www.youtube.com/@digitaladvertise" target="_blank" class="text-white/55 hover:text-white transition-colors" aria-label="YouTube"><i data-lucide="youtube" class="w-5 h-5"></i></a>
+                    <a href="https://www.linkedin.com/company/digitaladvertise" target="_blank" class="text-white/55 hover:text-white transition-colors" aria-label="LinkedIn"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/navbar.js"></script>
+    <script src="js/main.js"></script>
+<script>
+(function() {
+  var navbar = document.getElementById('navbar');
+  var heroWrapper = document.getElementById('hero-scroll-wrapper');
+
+  if (!heroWrapper) {
+    navbar.classList.add('nav-visible');
+  } else {
+    function checkScroll() {
+      var heroBottom = heroWrapper.offsetTop + heroWrapper.offsetHeight;
+      if (window.scrollY >= heroBottom - 100) {
+        navbar.classList.add('nav-visible');
+      } else {
+        navbar.classList.remove('nav-visible');
+      }
+    }
+    window.addEventListener('scroll', checkScroll, {passive: true});
+    checkScroll();
+  }
+
+  setTimeout(function() {
+    var wa = document.querySelector('.whatsapp-float');
+    if (wa) {
+      wa.style.backgroundColor = '#25d366';
+      wa.style.color = '#ffffff';
+    }
+  }, 300);
+})();
+
+function toggleMobileMenu() {
+  var menu = document.getElementById('mobile-menu');
+  if (!menu) return;
+  menu.classList.toggle('open');
+}
+</script>
+</body>
+</html>

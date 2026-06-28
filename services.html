@@ -1,0 +1,1320 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | Digital Advertise</title>
+    <meta name="description" content="Explore the 8 growth capabilities of Digital Advertise, from performance paid ads and social communities to WebGL development and AI video production.">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Fonts & CDNs -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@0.395.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="css/style.css">
+<style>
+/* Nav links desktop */
+#desktop-nav {
+  display: flex !important;
+  align-items: center;
+  gap: 4px;
+}
+@media (max-width: 1024px) {
+  #desktop-nav { display: none !important; }
+  #hamburger-btn { display: block !important; }
+}
+#desktop-nav a {
+  padding: 8px 14px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #475569;
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: color 0.2s, background 0.2s;
+  white-space: nowrap;
+  transform: none !important;
+}
+#desktop-nav a:hover {
+  color: #2563eb;
+  background: rgba(37,99,235,0.07);
+  transform: none !important;
+}
+.nav-dropdown {
+  position: relative;
+  padding-bottom: 8px;
+  margin-bottom: -8px;
+}
+.nav-dropdown-menu {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(6px);
+  width: 260px;
+  background: rgba(255,255,255,0.98);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(226,232,240,0.8);
+  box-shadow: 0 10px 40px rgba(2,6,23,0.10);
+  border-radius: 20px;
+  padding: 10px;
+  z-index: 99999;
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+}
+.nav-dropdown-menu::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: 0;
+  width: 100%;
+  height: 12px;
+  background: transparent;
+}
+.nav-dropdown:hover .nav-dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0px);
+}
+.nav-dropdown-menu a {
+  display: block;
+  padding: 9px 14px;
+  font-size: 13px;
+  color: #475569;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: color 0.15s, background 0.15s;
+}
+.nav-dropdown-menu a:hover {
+  color: #2563eb;
+  background: #f1f5f9;
+}
+#navbar.nav-visible {
+  transform: translateY(0) !important;
+}
+#mobile-menu.open {
+  display: flex !important;
+}
+</style>
+</head>
+<body class="bg-white text-slate-900 overflow-x-hidden antialiased selection:bg-blue-100 selection:text-blue-800">
+
+    <!-- Header -->
+<header id="navbar" style="position:fixed;top:0;left:0;width:100%;z-index:9999;padding:16px 0;transform:translateY(-120%);transition:transform 0.45s cubic-bezier(0.16,1,0.3,1);">
+  <div style="max-width:1280px;margin:0 auto;padding:0 24px;">
+    <div id="nav-wrapper" style="display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,0.85);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,0.6);box-shadow:0 4px 32px rgba(2,6,23,0.08);border-radius:9999px;height:60px;padding:0 24px;">
+      <a href="index.html" style="display:flex;align-items:center;">
+        <img src="assets/logo.png" alt="Digital Advertise Logo" style="height:32px;width:auto;object-fit:contain;">
+      </a>
+      <nav style="display:none;" id="desktop-nav">
+        <a href="index.html">Home</a>
+        <div class="nav-dropdown">
+          <a href="services.html">Services ▾</a>
+          <div class="nav-dropdown-menu">
+            <a href="performance-marketing.html">Performance Marketing</a>
+            <a href="brand-identity.html">Brand Identity</a>
+            <a href="social-media.html">Social Media Marketing</a>
+            <a href="web-development.html">Website Development</a>
+            <a href="video-production.html">Video Production</a>
+            <a href="ai-video.html">AI Video Generation</a>
+            <a href="packaging.html">Product Packaging Design</a>
+            <a href="photography.html">Product Shoot</a>
+          </div>
+        </div>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="case-studies.html">Case Studies</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About Us</a>
+      </nav>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <a href="audit.html" style="display:inline-flex;align-items:center;gap:6px;background:#0f172a;color:#fff;font-weight:600;font-size:14px;padding:10px 20px;border-radius:9999px;text-decoration:none;transition:background 0.2s;">
+          Get Started ↗
+        </a>
+        <button onclick="toggleMobileMenu()" id="hamburger-btn" style="display:none;padding:8px;border-radius:9999px;border:none;background:transparent;cursor:pointer;">
+          ☰
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" style="display:none;margin-top:12px;background:rgba(255,255,255,0.95);backdrop-filter:blur(20px);border-radius:20px;padding:20px;flex-direction:column;gap:8px;">
+      <a href="index.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Home</a>
+      <a href="services.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Services</a>
+      <a href="portfolio.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Portfolio</a>
+      <a href="case-studies.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Case Studies</a>
+      <a href="blog.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Blog</a>
+      <a href="contact.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Contact</a>
+      <a href="about.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">About Us</a>
+      <a href="audit.html" style="margin-top:8px;padding:12px;background:#0f172a;color:#fff;font-weight:600;border-radius:9999px;text-decoration:none;display:block;text-align:center;">Get Started</a>
+    </div>
+  </div>
+</header>
+
+
+    <main class="relative bg-white text-slate-900 font-sans overflow-hidden">
+
+        <!-- ===== HERO ===== -->
+        <section class="relative overflow-hidden pt-36 md:pt-44 pb-20 mesh-bg">
+            <div class="bubble bubble-1" aria-hidden="true"></div>
+            <div class="bubble bubble-2" aria-hidden="true"></div>
+            <div class="bubble bubble-3" aria-hidden="true"></div>
+            <canvas id="hero-canvas" class="absolute inset-0 w-full h-full pointer-events-none z-0"></canvas>
+            <div class="absolute inset-0 grid-pattern opacity-60 pointer-events-none"></div>
+            <div class="max-w-7xl mx-auto px-6 md:px-10 relative z-10 text-left">
+                <div class="overline-label reveal">Capabilities</div>
+                <h1 class="mt-3 font-display text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tighter text-slate-900 text-reveal">
+                    Growth models for <br>
+                    <span class="italic font-light text-slate-700">ambitious brands</span>.
+                </h1>
+                <p class="mt-7 text-lg md:text-xl text-slate-600 max-w-2xl leading-relaxed">
+                    We combine algorithmic performance engines, creative brand guidelines, and high-fidelity video rendering systems to establish compounding revenue paths.
+                </p>
+            </div>
+        </section>
+
+        <!-- ===== SERVICES GRID ===== -->
+        <section class="relative overflow-hidden py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-6 md:px-10">
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 stagger-grid">
+
+                    <!-- Service 1 -->
+                    <div class="group relative bg-slate-50 border border-slate-200 p-8 rounded-[2rem] hover:border-slate-900 hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between h-80 text-left">
+                        <div>
+                            <div class="w-12 h-12 rounded-2xl bg-white border border-slate-200 group-hover:bg-slate-900 group-hover:border-slate-900 transition-colors flex items-center justify-center text-slate-700 group-hover:text-white">
+                                <i data-lucide="instagram" class="w-5 h-5"></i>
+                            </div>
+                            <h3 class="mt-8 font-display text-2xl font-bold tracking-tight text-slate-900">Social Media Marketing</h3>
+                            <p class="mt-2 text-[13px] text-slate-500 leading-relaxed">Organic follower community building, creator acquisition strategies, and viral loop design.</p>
+                        </div>
+                        <a href="social-media.html" class="mt-6 inline-flex items-center gap-1.5 text-[13px] font-semibold text-slate-900 hover:text-blue-600">
+                            Learn More <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+
+                    <!-- Service 2 -->
+                    <div class="group relative bg-slate-50 border border-slate-200 p-8 rounded-[2rem] hover:border-slate-900 hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between h-80 text-left">
+                        <div>
+                            <div class="w-12 h-12 rounded-2xl bg-white border border-slate-200 group-hover:bg-slate-900 group-hover:border-slate-900 transition-colors flex items-center justify-center text-slate-700 group-hover:text-white">
+                                <i data-lucide="trending-up" class="w-5 h-5"></i>
+                            </div>
+                            <h3 class="mt-8 font-display text-2xl font-bold tracking-tight text-slate-900">Performance Marketing</h3>
+                            <p class="mt-2 text-[13px] text-slate-500 leading-relaxed">Attribution configuration, ad accounts management, and paid programmatic targeting scripts.</p>
+                        </div>
+                        <a href="performance-marketing.html" class="mt-6 inline-flex items-center gap-1.5 text-[13px] font-semibold text-slate-900 hover:text-blue-600">
+                            Learn More <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+
+                    <!-- Service 3 -->
+                    <div class="group relative bg-slate-50 border border-slate-200 p-8 rounded-[2rem] hover:border-slate-900 hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between h-80 text-left">
+                        <div>
+                            <div class="w-12 h-12 rounded-2xl bg-white border border-slate-200 group-hover:bg-slate-900 group-hover:border-slate-900 transition-colors flex items-center justify-center text-slate-700 group-hover:text-white">
+                                <i data-lucide="code-2" class="w-5 h-5"></i>
+                            </div>
+                            <h3 class="mt-8 font-display text-2xl font-bold tracking-tight text-slate-900">Website Development</h3>
+                            <p class="mt-2 text-[13px] text-slate-500 leading-relaxed">High-performance applications, accessibility tokens, responsive interfaces, and sub-1s loaders.</p>
+                        </div>
+                        <a href="web-development.html" class="mt-6 inline-flex items-center gap-1.5 text-[13px] font-semibold text-slate-900 hover:text-blue-600">
+                            Learn More <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+
+                    <!-- Service 4 -->
+                    <div class="group relative bg-slate-50 border border-slate-200 p-8 rounded-[2rem] hover:border-slate-900 hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between h-80 text-left">
+                        <div>
+                            <div class="w-12 h-12 rounded-2xl bg-white border border-slate-200 group-hover:bg-slate-900 group-hover:border-slate-900 transition-colors flex items-center justify-center text-slate-700 group-hover:text-white">
+                                <i data-lucide="sparkles" class="w-5 h-5"></i>
+                            </div>
+                            <h3 class="mt-8 font-display text-2xl font-bold tracking-tight text-slate-900">Brand Identity</h3>
+                            <p class="mt-2 text-[13px] text-slate-500 leading-relaxed">Comprehensive typography standards, color tokens, asset kits, and design manuals.</p>
+                        </div>
+                        <a href="brand-identity.html" class="mt-6 inline-flex items-center gap-1.5 text-[13px] font-semibold text-slate-900 hover:text-blue-600">
+                            Learn More <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+
+                    <!-- Service 5 -->
+                    <div class="group relative bg-slate-50 border border-slate-200 p-8 rounded-[2rem] hover:border-slate-900 hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between h-80 text-left">
+                        <div>
+                            <div class="w-12 h-12 rounded-2xl bg-white border border-slate-200 group-hover:bg-slate-900 group-hover:border-slate-900 transition-colors flex items-center justify-center text-slate-700 group-hover:text-white">
+                                <i data-lucide="video" class="w-5 h-5"></i>
+                            </div>
+                            <h3 class="mt-8 font-display text-2xl font-bold tracking-tight text-slate-900">Video Production</h3>
+                            <p class="mt-2 text-[13px] text-slate-500 leading-relaxed">Commercial editing workflows, professional set filming, audio architecture, and color scopes.</p>
+                        </div>
+                        <a href="video-production.html" class="mt-6 inline-flex items-center gap-1.5 text-[13px] font-semibold text-slate-900 hover:text-blue-600">
+                            Learn More <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+
+                    <!-- Service 6 -->
+                    <div class="group relative bg-slate-50 border border-slate-200 p-8 rounded-[2rem] hover:border-slate-900 hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between h-80 text-left">
+                        <div>
+                            <div class="w-12 h-12 rounded-2xl bg-white border border-slate-200 group-hover:bg-slate-900 group-hover:border-slate-900 transition-colors flex items-center justify-center text-slate-700 group-hover:text-white">
+                                <i data-lucide="cpu" class="w-5 h-5"></i>
+                            </div>
+                            <h3 class="mt-8 font-display text-2xl font-bold tracking-tight text-slate-900">AI Video & Creative Automation</h3>
+                            <p class="mt-2 text-[13px] text-slate-500 leading-relaxed">Diffusion rendering models, digital avatar presenters, AI voiceovers, and automated asset localization.</p>
+                        </div>
+                        <a href="ai-video.html" class="mt-6 inline-flex items-center gap-1.5 text-[13px] font-semibold text-slate-900 hover:text-blue-600">
+                            Learn More <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+
+                    <!-- Service 7 -->
+                    <div class="group relative bg-slate-50 border border-slate-200 p-8 rounded-[2rem] hover:border-slate-900 hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between h-80 text-left">
+                        <div>
+                            <div class="w-12 h-12 rounded-2xl bg-white border border-slate-200 group-hover:bg-slate-900 group-hover:border-slate-900 transition-colors flex items-center justify-center text-slate-700 group-hover:text-white">
+                                <i data-lucide="box" class="w-5 h-5"></i>
+                            </div>
+                            <h3 class="mt-8 font-display text-2xl font-bold tracking-tight text-slate-900">Product Packaging Design</h3>
+                            <p class="mt-2 text-[13px] text-slate-500 leading-relaxed">Tactile product packaging design layouts, print specs, paper weights, and 3D print mocks.</p>
+                        </div>
+                        <a href="packaging.html" class="mt-6 inline-flex items-center gap-1.5 text-[13px] font-semibold text-slate-900 hover:text-blue-600">
+                            Learn More <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+
+                    <!-- Service 8 -->
+                    <div class="group relative bg-slate-50 border border-slate-200 p-8 rounded-[2rem] hover:border-slate-900 hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between h-80 text-left">
+                        <div>
+                            <div class="w-12 h-12 rounded-2xl bg-white border border-slate-200 group-hover:bg-slate-900 group-hover:border-slate-900 transition-colors flex items-center justify-center text-slate-700 group-hover:text-white">
+                                <i data-lucide="camera" class="w-5 h-5"></i>
+                            </div>
+                            <h3 class="mt-8 font-display text-2xl font-bold tracking-tight text-slate-900">Product Photography</h3>
+                            <p class="mt-2 text-[13px] text-slate-500 leading-relaxed">High-fidelity studio lighting structures, macro lensed frames, and digital post-processing.</p>
+                        </div>
+                        <a href="photography.html" class="mt-6 inline-flex items-center gap-1.5 text-[13px] font-semibold text-slate-900 hover:text-blue-600">
+                            Learn More <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SERVICE DETAIL: SOCIAL MEDIA MARKETING ===== -->
+        <section id="social-media" class="relative overflow-hidden py-24 bg-white border-t border-slate-100">
+            <div class="max-w-7xl mx-auto px-6 md:px-10 text-left">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+
+                    <!-- Text Content -->
+                    <div class="lg:col-span-7 space-y-12">
+                        <div class="reveal">
+                    <div class="overline-label">Service Detail</div>
+                    <h2 class="mt-3 font-display text-3xl md:text-4xl font-bold tracking-tight text-slate-900">Social Media Marketing</h2>
+                </div>
+                        <div class="space-y-12">
+                            <div class="reveal">
+                        <h3 class="font-display text-xl font-bold text-slate-900">Overview</h3>
+                        <p class="mt-3 text-slate-600 text-[14px] leading-relaxed">We architect organic social ecosystems that convert passive scrollers into engaged brand advocates. Our approach combines strategic content calendars, community management playbooks, and creator partnership frameworks to build compounding audience growth across Instagram, TikTok, LinkedIn, Twitter/X, and Facebook — without relying on paid amplification to sustain reach.</p>
+                    </div>
+                    <div class="reveal">
+                        <h3 class="font-display text-xl font-bold text-slate-900">What We Do</h3>
+                        <div class="mt-4 grid sm:grid-cols-2 gap-4">
+                            <div class="flex items-start gap-3 p-4 bg-slate-50 border border-slate-200 rounded-2xl"><i data-lucide="check-circle" class="w-5 h-5 text-blue-600 shrink-0 mt-0.5"></i><span class="text-[14px] text-slate-700">Platform-specific content strategy and editorial calendars</span></div>
+                            <div class="flex items-start gap-3 p-4 bg-slate-50 border border-slate-200 rounded-2xl"><i data-lucide="check-circle" class="w-5 h-5 text-blue-600 shrink-0 mt-0.5"></i><span class="text-[14px] text-slate-700">Community management and real-time engagement</span></div>
+                            <div class="flex items-start gap-3 p-4 bg-slate-50 border border-slate-200 rounded-2xl"><i data-lucide="check-circle" class="w-5 h-5 text-blue-600 shrink-0 mt-0.5"></i><span class="text-[14px] text-slate-700">Creator and influencer partnership management</span></div>
+                            <div class="flex items-start gap-3 p-4 bg-slate-50 border border-slate-200 rounded-2xl"><i data-lucide="check-circle" class="w-5 h-5 text-blue-600 shrink-0 mt-0.5"></i><span class="text-[14px] text-slate-700">Viral loop design and hashtag architecture</span></div>
+                            <div class="flex items-start gap-3 p-4 bg-slate-50 border border-slate-200 rounded-2xl"><i data-lucide="check-circle" class="w-5 h-5 text-blue-600 shrink-0 mt-0.5"></i><span class="text-[14px] text-slate-700">Social listening and sentiment analytics dashboards</span></div>
+                        </div>
+                    </div>
+                    <div class="reveal">
+                        <h3 class="font-display text-xl font-bold text-slate-900">Our Process</h3>
+                        <div class="relative border-l-2 border-slate-200 ml-4 pl-8 mt-6 space-y-8">
+                            <div class="relative"><span class="absolute -left-[41px] top-1 w-5 h-5 rounded-full border-4 border-white bg-blue-600"></span><h4 class="font-display font-bold text-slate-900">Audit & Discovery</h4><p class="text-[13px] text-slate-500 mt-1">Competitor benchmarking, audience persona mapping, and platform-fit analysis.</p></div>
+                            <div class="relative"><span class="absolute -left-[41px] top-1 w-5 h-5 rounded-full border-4 border-white bg-slate-400"></span><h4 class="font-display font-bold text-slate-900">Strategy & Calendar</h4><p class="text-[13px] text-slate-500 mt-1">Monthly content pillars, posting cadence, and engagement playbooks.</p></div>
+                            <div class="relative"><span class="absolute -left-[41px] top-1 w-5 h-5 rounded-full border-4 border-white bg-slate-400"></span><h4 class="font-display font-bold text-slate-900">Content Production</h4><p class="text-[13px] text-slate-500 mt-1">In-house design, copywriting, video editing, and asset localization.</p></div>
+                            <div class="relative"><span class="absolute -left-[41px] top-1 w-5 h-5 rounded-full border-4 border-white bg-slate-400"></span><h4 class="font-display font-bold text-slate-900">Launch & Optimize</h4><p class="text-[13px] text-slate-500 mt-1">Post scheduling, A/B caption testing, real-time community management, and monthly reporting.</p></div>
+                        </div>
+                    </div>
+                    <div class="reveal">
+                        <h3 class="font-display text-xl font-bold text-slate-900">Deliverables</h3>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="bg-slate-100 text-slate-700 text-[12px] font-semibold px-3 py-1.5 rounded-full">Content Calendar</span>
+                            <span class="bg-slate-100 text-slate-700 text-[12px] font-semibold px-3 py-1.5 rounded-full">Brand Voice Guide</span>
+                            <span class="bg-slate-100 text-slate-700 text-[12px] font-semibold px-3 py-1.5 rounded-full">Monthly Reports</span>
+                            <span class="bg-slate-100 text-slate-700 text-[12px] font-semibold px-3 py-1.5 rounded-full">Engagement Playbook</span>
+                            <span class="bg-slate-100 text-slate-700 text-[12px] font-semibold px-3 py-1.5 rounded-full">Creator Partnership Briefs</span>
+                            <span class="bg-slate-100 text-slate-700 text-[12px] font-semibold px-3 py-1.5 rounded-full">Social Listening Dashboard</span>
+                        </div>
+                    </div>
+                    <div class="reveal">
+                        <h3 class="font-display text-xl font-bold text-slate-900">Benefits</h3>
+                        <div class="mt-4 grid sm:grid-cols-2 gap-4">
+                            <div class="flex items-start gap-3 p-4 bg-blue-50 border border-blue-100 rounded-2xl"><i data-lucide="zap" class="w-5 h-5 text-blue-600 shrink-0 mt-0.5"></i><span class="text-[14px] text-slate-700">Consistent brand voice across all platforms without in-house headcount</span></div>
+                            <div class="flex items-start gap-3 p-4 bg-blue-50 border border-blue-100 rounded-2xl"><i data-lucide="zap" class="w-5 h-5 text-blue-600 shrink-0 mt-0.5"></i><span class="text-[14px] text-slate-700">Compounding follower growth that reduces paid acquisition dependency over time</span></div>
+                            <div class="flex items-start gap-3 p-4 bg-blue-50 border border-blue-100 rounded-2xl"><i data-lucide="zap" class="w-5 h-5 text-blue-600 shrink-0 mt-0.5"></i><span class="text-[14px] text-slate-700">Creator-sourced UGC that outperforms polished studio ads in CTR benchmarks</span></div>
+                            <div class="flex items-start gap-3 p-4 bg-blue-50 border border-blue-100 rounded-2xl"><i data-lucide="zap" class="w-5 h-5 text-blue-600 shrink-0 mt-0.5"></i><span class="text-[14px] text-slate-700">Real-time sentiment monitoring to protect brand reputation proactively</span></div>
+                        </div>
+                    </div>
+                    <div class="reveal">
+                        <h3 class="font-display text-xl font-bold text-slate-900">Industry Use Cases</h3>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="bg-slate-900 text-white text-[12px] font-semibold px-3 py-1.5 rounded-full">E-commerce</span>
+                            <span class="bg-slate-900 text-white text-[12px] font-semibold px-3 py-1.5 rounded-full">D2C Brands</span>
+                            <span class="bg-slate-900 text-white text-[12px] font-semibold px-3 py-1.5 rounded-full">Consumer Goods</span>
+                            <span class="bg-slate-900 text-white text-[12px] font-semibold px-3 py-1.5 rounded-full">Fashion & Beauty</span>
+                            <span class="bg-slate-900 text-white text-[12px] font-semibold px-3 py-1.5 rounded-full">Food & Beverage</span>
+                            <span class="bg-slate-900 text-white text-[12px] font-semibold px-3 py-1.5 rounded-full">Hospitality</span>
+                        </div>
+                    </div>
+                    <div class="reveal">
+                        <h3 class="font-display text-xl font-bold text-slate-900">Expected Results</h3>
+                        <p class="mt-3 text-slate-600 text-[14px] leading-relaxed">Within 90 days, clients typically see a 200–340% uplift in organic engagement rates, sustained follower growth between 3,000–15,000 per month depending on niche, and measurable increases in direct social referral traffic. Long-term campaigns compound into community assets that reduce reliance on paid channels.</p>
+                    </div>
+                    <div class="grid sm:grid-cols-3 gap-6 reveal">
+                        <div class="p-6 bg-slate-50 border border-slate-200 rounded-2xl text-center"><div class="font-display text-3xl font-extrabold text-blue-600"><span class="counter" data-target="340">0</span>%</div><div class="text-[11px] text-slate-500 font-semibold uppercase mt-1">Avg Engagement Increase</div></div>
+                        <div class="p-6 bg-slate-50 border border-slate-200 rounded-2xl text-center"><div class="font-display text-3xl font-extrabold text-slate-900"><span class="counter" data-target="500">0</span>K+</div><div class="text-[11px] text-slate-500 font-semibold uppercase mt-1">Followers Grown</div></div>
+                        <div class="p-6 bg-slate-50 border border-slate-200 rounded-2xl text-center"><div class="font-display text-3xl font-extrabold text-slate-900"><span class="counter" data-target="85">0</span>+</div><div class="text-[11px] text-slate-500 font-semibold uppercase mt-1">Brands Managed</div></div>
+                    </div>
+                    <div class="reveal">
+                        <h3 class="font-display text-xl font-bold text-slate-900">Tools We Use</h3>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="bg-blue-50 text-blue-700 text-[12px] font-semibold px-3 py-1.5 rounded-full flex items-center gap-1.5"><i data-lucide="bar-chart" class="w-3.5 h-3.5"></i>Sprout Social</span>
+                            <span class="bg-blue-50 text-blue-700 text-[12px] font-semibold px-3 py-1.5 rounded-full flex items-center gap-1.5"><i data-lucide="calendar" class="w-3.5 h-3.5"></i>Later</span>
+                            <span class="bg-blue-50 text-blue-700 text-[12px] font-semibold px-3 py-1.5 rounded-full flex items-center gap-1.5"><i data-lucide="pen-tool" class="w-3.5 h-3.5"></i>Canva Pro</span>
+                            <span class="bg-blue-50 text-blue-700 text-[12px] font-semibold px-3 py-1.5 rounded-full flex items-center gap-1.5"><i data-lucide="eye" class="w-3.5 h-3.5"></i>Brandwatch</span>
+                            <span class="bg-blue-50 text-blue-700 text-[12px] font-semibold px-3 py-1.5 rounded-full flex items-center gap-1.5"><i data-lucide="video" class="w-3.5 h-3.5"></i>CapCut</span>
+                        </div>
+                    </div>
+                        </div>
+                    </div>
+
+                    <!-- Sticky Image Column -->
+                    <div class="lg:col-span-5 lg:sticky lg:top-28 reveal">
+                        <div class="group relative overflow-hidden rounded-[2rem] border border-slate-200 bg-slate-50 p-4 hover:shadow-xl transition-all duration-300">
+                            <div class="aspect-square w-full overflow-hidden rounded-2xl bg-slate-200">
+                                <img src="assets/service-social-media.png" alt="Social Media Marketing" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SERVICE DETAIL: PERFORMANCE MARKETING ===== -->
+        <section id="service-detail-2" class="relative overflow-hidden py-24 bg-slate-50/50 border-t border-slate-100">
+            <div class="max-w-7xl mx-auto px-6 md:px-10 text-left">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+
+                    <!-- Text Content -->
+                    <div class="lg:col-span-7 space-y-12">
+                        <div class="reveal">
+                    <div class="overline-label">Service Detail</div>
+                    <h2 class="mt-3 font-display text-3xl md:text-4xl font-bold tracking-tight text-slate-900">Performance Marketing</h2>
+                </div>
+                        <div class="space-y-12">
+                            <div class="reveal">
+                        <h3 class="font-display text-xl font-bold text-slate-900">Overview</h3>
+                        <p class="mt-3 text-slate-600 text-[14px] leading-relaxed">We engineer paid acquisition systems that scale profitably across Google Ads, Meta Ads, TikTok Ads, LinkedIn Ads, and programmatic networks. Our team deploys server-side conversion tracking, multi-touch attribution models, and automated bidding scripts that optimize toward your true business metrics — not platform-reported vanity numbers. Every dollar is mapped to pipeline value through our proprietary attribution dashboard.</p>
+                    </div>
+                    <div class="reveal">
+                        <h3 class="font-display text-xl font-bold text-slate-900">What We Do</h3>
+                        <div class="mt-4 grid sm:grid-cols-2 gap-4">
+                            <div class="flex items-start gap-3 p-4 bg-white border border-slate-200 rounded-2xl"><i data-lucide="check-circle" class="w-5 h-5 text-blue-600 shrink-0 mt-0.5"></i><span class="text-[14px] text-slate-700">Multi-platform ad account setup and campaign architecture</span></div>
+                            <div class="flex items-start gap-3 p-4 bg-white border border-slate-200 rounded-2xl"><i data-lucide="check-circle" class="w-5 h-5 text-blue-600 shrink-0 mt-0.5"></i><span class="text-[14px] text-slate-700">Server-side tracking and conversion API integration</span></div>
+                            <div class="flex items-start gap-3 p-4 bg-white border border-slate-200 rounded-2xl"><i data-lucide="check-circle" class="w-5 h-5 text-blue-600 shrink-0 mt-0.5"></i><span class="text-[14px] text-slate-700">Audience segmentation and lookalike modeling</span></div>
+                            <div class="flex items-start gap-3 p-4 bg-white border border-slate-200 rounded-2xl"><i data-lucide="check-circle" class="w-5 h-5 text-blue-600 shrink-0 mt-0.5"></i><span class="text-[14px] text-slate-700">Creative A/B testing frameworks and ad fatigue management</span></div>
+                            <div class="flex items-start gap-3 p-4 bg-white border border-slate-200 rounded-2xl"><i data-lucide="check-circle" class="w-5 h-5 text-blue-600 shrink-0 mt-0.5"></i><span class="text-[14px] text-slate-700">Budget pacing, bid automation, and ROAS optimization</span></div>
+                        </div>
+                    </div>
+                    <div class="reveal">
+                        <h3 class="font-display text-xl font-bold text-slate-900">Our Process</h3>
+                        <div class="relative border-l-2 border-slate-200 ml-4 pl-8 mt-6 space-y-8">
+                            <div class="relative"><span class="absolute -left-[41px] top-1 w-5 h-5 rounded-full border-4 border-white bg-blue-600"></span><h4 class="font-display font-bold text-slate-900">Tracking & Attribution Setup</h4><p class="text-[13px] text-slate-500 mt-1">Server-side pixels, conversion APIs, UTM taxonomy, and data layer configuration.</p></div>
+                            <div class="relative"><span class="absolute -left-[41px] top-1 w-5 h-5 rounded-full border-4 border-white bg-slate-400"></span><h4 class="font-display font-bold text-slate-900">Campaign Architecture</h4><p class="text-[13px] text-slate-500 mt-1">Funnel-mapped campaign structures with audience segmentation and creative variants.</p></div>
+                            <div class="relative"><span class="absolute -left-[41px] top-1 w-5 h-5 rounded-full border-4 border-white bg-slate-400"></span><h4 class="font-display font-bold text-slate-900">Launch & Test</h4><p class="text-[13px] text-slate-500 mt-1">Controlled rollouts, creative testing matrices, and initial bid optimization.</p></div>
+                            <div class="relative"><span class="absolute -left-[41px] top-1 w-5 h-5 rounded-full border-4 border-white bg-slate-400"></span><h4 class="font-display font-bold text-slate-900">Scale & Report</h4><p class="text-[13px] text-slate-500 mt-1">Budget scaling triggers, weekly performance reviews, and executive reporting dashboards.</p></div>
+                        </div>
+                    </div>
+                    <div class="reveal">
+                        <h3 class="font-display text-xl font-bold text-slate-900">Deliverables</h3>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="bg-slate-100 text-slate-700 text-[12px] font-semibold px-3 py-1.5 rounded-full">Attribution Dashboard</span>
+                            <span class="bg-slate-100 text-slate-700 text-[12px] font-semibold px-3 py-1.5 rounded-full">Weekly Reports</span>
+                            <span class="bg-slate-100 text-slate-700 text-[12px] font-semibold px-3 py-1.5 rounded-full">Creative Testing Matrix</span>
+                            <span class="bg-slate-100 text-slate-700 text-[12px] font-semibold px-3 py-1.5 rounded-full">Budget Pacing Model</span>
+                            <span class="bg-slate-100 text-slate-700 text-[12px] font-semibold px-3 py-1.5 rounded-full">Audience Library</span>
+                        </div>
+                    </div>
+                    <div class="reveal">
+                        <h3 class="font-display text-xl font-bold text-slate-900">Benefits</h3>
+                        <div class="mt-4 grid sm:grid-cols-2 gap-4">
+                            <div class="flex items-start gap-3 p-4 bg-blue-50 border border-blue-100 rounded-2xl"><i data-lucide="zap" class="w-5 h-5 text-blue-600 shrink-0 mt-0.5"></i><span class="text-[14px] text-slate-700">Fully attributed revenue clarity — every dollar mapped to a source</span></div>
+                            <div class="flex items-start gap-3 p-4 bg-blue-50 border border-blue-100 rounded-2xl"><i data-lucide="zap" class="w-5 h-5 text-blue-600 shrink-0 mt-0.5"></i><span class="text-[14px] text-slate-700">Scalable budget architecture that grows ROAS as spend increases</span></div>
+                            <div class="flex items-start gap-3 p-4 bg-blue-50 border border-blue-100 rounded-2xl"><i data-lucide="zap" class="w-5 h-5 text-blue-600 shrink-0 mt-0.5"></i><span class="text-[14px] text-slate-700">Dramatically lower CPA via audience refinement and creative testing</span></div>
+                            <div class="flex items-start gap-3 p-4 bg-blue-50 border border-blue-100 rounded-2xl"><i data-lucide="zap" class="w-5 h-5 text-blue-600 shrink-0 mt-0.5"></i><span class="text-[14px] text-slate-700">iOS-proof tracking via CAPI — conversion data gaps eliminated</span></div>
+                        </div>
+                    </div>
+                    <div class="reveal">
+                        <h3 class="font-display text-xl font-bold text-slate-900">Industry Use Cases</h3>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="bg-slate-900 text-white text-[12px] font-semibold px-3 py-1.5 rounded-full">E-commerce & Retail</span>
+                            <span class="bg-slate-900 text-white text-[12px] font-semibold px-3 py-1.5 rounded-full">SaaS & Tech</span>
+                            <span class="bg-slate-900 text-white text-[12px] font-semibold px-3 py-1.5 rounded-full">Lead Generation</span>
+                            <span class="bg-slate-900 text-white text-[12px] font-semibold px-3 py-1.5 rounded-full">Real Estate</span>
+                            <span class="bg-slate-900 text-white text-[12px] font-semibold px-3 py-1.5 rounded-full">Financial Services</span>
+                            <span class="bg-slate-900 text-white text-[12px] font-semibold px-3 py-1.5 rounded-full">EdTech</span>
+                        </div>
+                    </div>
+                    <div class="reveal">
+                        <h3 class="font-display text-xl font-bold text-slate-900">Expected Results</h3>
+                        <p class="mt-3 text-slate-600 text-[14px] leading-relaxed">Within the first 60 days of optimized campaign architecture, clients typically see a 25–42% reduction in cost-per-acquisition alongside a 1.5–2x improvement in ROAS. Accounts managed on our server-side attribution stack routinely recover 15–25% of conversions previously lost to tracking degradation, delivering a measurable lift in reported revenue without increasing spend.</p>
+                    </div>
+                    <div class="grid sm:grid-cols-3 gap-6 reveal">
+                        <div class="p-6 bg-white border border-slate-200 rounded-2xl text-center"><div class="font-display text-3xl font-extrabold text-blue-600"><span class="counter" data-target="6.7" data-decimals="1">0.0</span>x</div><div class="text-[11px] text-slate-500 font-semibold uppercase mt-1">Average ROAS</div></div>
+                        <div class="p-6 bg-white border border-slate-200 rounded-2xl text-center"><div class="font-display text-3xl font-extrabold text-slate-900">$<span class="counter" data-target="54">0</span>M+</div><div class="text-[11px] text-slate-500 font-semibold uppercase mt-1">Ad Spend Managed</div></div>
+                        <div class="p-6 bg-white border border-slate-200 rounded-2xl text-center"><div class="font-display text-3xl font-extrabold text-slate-900"><span class="counter" data-target="42">0</span>%</div><div class="text-[11px] text-slate-500 font-semibold uppercase mt-1">Avg CPA Reduction</div></div>
+                    </div>
+                    <div class="reveal">
+                        <h3 class="font-display text-xl font-bold text-slate-900">Tools We Use</h3>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="bg-blue-50 text-blue-700 text-[12px] font-semibold px-3 py-1.5 rounded-full flex items-center gap-1.5"><i data-lucide="search" class="w-3.5 h-3.5"></i>Google Ads</span>
+                            <span class="bg-blue-50 text-blue-700 text-[12px] font-semibold px-3 py-1.5 rounded-full flex items-center gap-1.5"><i data-lucide="facebook" class="w-3.5 h-3.5"></i>Meta Ads Manager</span>
+                            <span class="bg-blue-50 text-blue-700 text-[12px] font-semibold px-3 py-1.5 rounded-full flex items-center gap-1.5"><i data-lucide="bar-chart-3" class="w-3.5 h-3.5"></i>Google Analytics 4</span>
+                            <span class="bg-blue-50 text-blue-700 text-[12px] font-semibold px-3 py-1.5 rounded-full flex items-center gap-1.5"><i data-lucide="database" class="w-3.5 h-3.5"></i>Segment</span>
+                            <span class="bg-blue-50 text-blue-700 text-[12px] font-semibold px-3 py-1.5 rounded-full flex items-center gap-1.5"><i data-lucide="target" class="w-3.5 h-3.5"></i>Triple Whale</span>
+                        </div>
+                    </div>
+                        </div>
+                    </div>
+
+                    <!-- Sticky Image Column -->
+                    <div class="lg:col-span-5 lg:sticky lg:top-28 reveal">
+                        <div class="group relative overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-4 hover:shadow-xl transition-all duration-300">
+                            <div class="aspect-square w-full overflow-hidden rounded-2xl bg-slate-200">
+                                <img src="assets/service-performance.png" alt="Performance Marketing" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SERVICE DETAIL: WEBSITE DEVELOPMENT ===== -->
+        <section id="web-development" class="relative overflow-hidden py-24 bg-white border-t border-slate-100">
+            <div class="max-w-7xl mx-auto px-6 md:px-10 text-left">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+
+                    <!-- Text Content -->
+                    <div class="lg:col-span-7 space-y-12">
+                        <div class="reveal">
+                    <div class="overline-label">Service Detail</div>
+                    <h2 class="mt-3 font-display text-3xl md:text-4xl font-bold tracking-tight text-slate-900">Website Development</h2>
+                </div>
+                        <div class="space-y-12">
+                            <div class="reveal">
+                        <h3 class="font-display text-xl font-bold text-slate-900">Overview</h3>
+                        <p class="mt-3 text-slate-600 text-[14px] leading-relaxed">We build high-performance web applications engineered for conversion, speed, and search visibility. From headless e-commerce storefronts to immersive WebGL brand experiences, every project ships with sub-one-second load times, WCAG accessibility compliance, and server-side rendered pages optimized for Core Web Vitals. Our stack adapts to your business — whether that means a Shopify Plus storefront, a Next.js application, or a fully custom platform.</p>
+                    </div>
+                    <div class="reveal">
+                        <h3 class="font-display text-xl font-bold text-slate-900">What We Do</h3>
+                        <div class="mt-4 grid sm:grid-cols-2 gap-4">
+                            <div class="flex items-start gap-3 p-4 bg-slate-50 border border-slate-200 rounded-2xl"><i data-lucide="check-circle" class="w-5 h-5 text-blue-600 shrink-0 mt-0.5"></i><span class="text-[14px] text-slate-700">Custom website design and responsive front-end development</span></div>
+                            <div class="flex items-start gap-3 p-4 bg-slate-50 border border-slate-200 rounded-2xl"><i data-lucide="check-circle" class="w-5 h-5 text-blue-600 shrink-0 mt-0.5"></i><span class="text-[14px] text-slate-700">E-commerce builds on Shopify Plus, WooCommerce, and headless CMS</span></div>
+                            <div class="flex items-start gap-3 p-4 bg-slate-50 border border-slate-200 rounded-2xl"><i data-lucide="check-circle" class="w-5 h-5 text-blue-600 shrink-0 mt-0.5"></i><span class="text-[14px] text-slate-700">Technical SEO, schema markup, and Core Web Vitals optimization</span></div>
+                            <div class="flex items-start gap-3 p-4 bg-slate-50 border border-slate-200 rounded-2xl"><i data-lucide="check-circle" class="w-5 h-5 text-blue-600 shrink-0 mt-0.5"></i><span class="text-[14px] text-slate-700">WebGL and Three.js immersive brand experiences</span></div>
+                            <div class="flex items-start gap-3 p-4 bg-slate-50 border border-slate-200 rounded-2xl"><i data-lucide="check-circle" class="w-5 h-5 text-blue-600 shrink-0 mt-0.5"></i><span class="text-[14px] text-slate-700">Conversion rate optimization and landing page testing</span></div>
+                        </div>
+                    </div>
+                    <div class="reveal">
+                        <h3 class="font-display text-xl font-bold text-slate-900">Our Process</h3>
+                        <div class="relative border-l-2 border-slate-200 ml-4 pl-8 mt-6 space-y-8">
+                            <div class="relative"><span class="absolute -left-[41px] top-1 w-5 h-5 rounded-full border-4 border-white bg-blue-600"></span><h4 class="font-display font-bold text-slate-900">Discovery & Wireframes</h4><p class="text-[13px] text-slate-500 mt-1">Stakeholder interviews, user flow mapping, and low-fidelity wireframe prototypes.</p></div>
+                            <div class="relative"><span class="absolute -left-[41px] top-1 w-5 h-5 rounded-full border-4 border-white bg-slate-400"></span><h4 class="font-display font-bold text-slate-900">UI Design & Prototyping</h4><p class="text-[13px] text-slate-500 mt-1">High-fidelity Figma designs, interaction prototypes, and design system documentation.</p></div>
+                            <div class="relative"><span class="absolute -left-[41px] top-1 w-5 h-5 rounded-full border-4 border-white bg-slate-400"></span><h4 class="font-display font-bold text-slate-900">Development & QA</h4><p class="text-[13px] text-slate-500 mt-1">Sprint-based development, cross-browser testing, accessibility audits, and performance benchmarks.</p></div>
+                            <div class="relative"><span class="absolute -left-[41px] top-1 w-5 h-5 rounded-full border-4 border-white bg-slate-400"></span><h4 class="font-display font-bold text-slate-900">Launch & Iterate</h4><p class="text-[13px] text-slate-500 mt-1">Staged deployment, analytics integration, heatmap analysis, and continuous CRO testing.</p></div>
+                        </div>
+                    </div>
+                    <div class="reveal">
+                        <h3 class="font-display text-xl font-bold text-slate-900">Benefits</h3>
+                        <div class="mt-4 grid sm:grid-cols-2 gap-4">
+                            <div class="flex items-start gap-3 p-4 bg-blue-50 border border-blue-100 rounded-2xl"><i data-lucide="zap" class="w-5 h-5 text-blue-600 shrink-0 mt-0.5"></i><span class="text-[14px] text-slate-700">Sub-1s load times that directly reduce bounce rate and improve quality score</span></div>
+                            <div class="flex items-start gap-3 p-4 bg-blue-50 border border-blue-100 rounded-2xl"><i data-lucide="zap" class="w-5 h-5 text-blue-600 shrink-0 mt-0.5"></i><span class="text-[14px] text-slate-700">WCAG-compliant builds that expand your addressable audience by default</span></div>
+                            <div class="flex items-start gap-3 p-4 bg-blue-50 border border-blue-100 rounded-2xl"><i data-lucide="zap" class="w-5 h-5 text-blue-600 shrink-0 mt-0.5"></i><span class="text-[14px] text-slate-700">Conversion-first architecture with heatmap-driven iteration built in from day one</span></div>
+                            <div class="flex items-start gap-3 p-4 bg-blue-50 border border-blue-100 rounded-2xl"><i data-lucide="zap" class="w-5 h-5 text-blue-600 shrink-0 mt-0.5"></i><span class="text-[14px] text-slate-700">Core Web Vitals scores that improve organic ranking and reduce paid CPC</span></div>
+                        </div>
+                    </div>
+                    <div class="reveal">
+                        <h3 class="font-display text-xl font-bold text-slate-900">Industry Use Cases</h3>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="bg-slate-900 text-white text-[12px] font-semibold px-3 py-1.5 rounded-full">Shopify & D2C</span>
+                            <span class="bg-slate-900 text-white text-[12px] font-semibold px-3 py-1.5 rounded-full">SaaS Platforms</span>
+                            <span class="bg-slate-900 text-white text-[12px] font-semibold px-3 py-1.5 rounded-full">Enterprise Portals</span>
+                            <span class="bg-slate-900 text-white text-[12px] font-semibold px-3 py-1.5 rounded-full">Professional Services</span>
+                            <span class="bg-slate-900 text-white text-[12px] font-semibold px-3 py-1.5 rounded-full">Healthcare & Legal</span>
+                            <span class="bg-slate-900 text-white text-[12px] font-semibold px-3 py-1.5 rounded-full">Startups</span>
+                        </div>
+                    </div>
+                    <div class="reveal">
+                        <h3 class="font-display text-xl font-bold text-slate-900">Expected Results</h3>
+                        <p class="mt-3 text-slate-600 text-[14px] leading-relaxed">Clients who migrate from legacy sites to our performance-built architecture see an average 67% improvement in conversion rate within the first 90 days, typically driven by faster load times, cleaner UX flows, and CRO-optimized landing pages. Lighthouse performance scores consistently reach 90+ across mobile and desktop, improving organic visibility and reducing paid traffic costs.</p>
+                    </div>
+                    <div class="grid sm:grid-cols-3 gap-6 reveal">
+                        <div class="p-6 bg-slate-50 border border-slate-200 rounded-2xl text-center"><div class="font-display text-3xl font-extrabold text-blue-600">&lt;<span class="counter" data-target="1" data-decimals="0">0</span>s</div><div class="text-[11px] text-slate-500 font-semibold uppercase mt-1">Target Load Time</div></div>
+                        <div class="p-6 bg-slate-50 border border-slate-200 rounded-2xl text-center"><div class="font-display text-3xl font-extrabold text-slate-900"><span class="counter" data-target="200">0</span>+</div><div class="text-[11px] text-slate-500 font-semibold uppercase mt-1">Sites Launched</div></div>
+                        <div class="p-6 bg-slate-50 border border-slate-200 rounded-2xl text-center"><div class="font-display text-3xl font-extrabold text-slate-900"><span class="counter" data-target="67">0</span>%</div><div class="text-[11px] text-slate-500 font-semibold uppercase mt-1">Avg Conversion Lift</div></div>
+                    </div>
+                    <div class="reveal">
+                        <h3 class="font-display text-xl font-bold text-slate-900">Tools We Use</h3>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="bg-blue-50 text-blue-700 text-[12px] font-semibold px-3 py-1.5 rounded-full flex items-center gap-1.5"><i data-lucide="code-2" class="w-3.5 h-3.5"></i>Next.js / React</span>
+                            <span class="bg-blue-50 text-blue-700 text-[12px] font-semibold px-3 py-1.5 rounded-full flex items-center gap-1.5"><i data-lucide="shopping-bag" class="w-3.5 h-3.5"></i>Shopify Plus</span>
+                            <span class="bg-blue-50 text-blue-700 text-[12px] font-semibold px-3 py-1.5 rounded-full flex items-center gap-1.5"><i data-lucide="pen-tool" class="w-3.5 h-3.5"></i>Figma</span>
+                            <span class="bg-blue-50 text-blue-700 text-[12px] font-semibold px-3 py-1.5 rounded-full flex items-center gap-1.5"><i data-lucide="globe" class="w-3.5 h-3.5"></i>Vercel</span>
+                            <span class="bg-blue-50 text-blue-700 text-[12px] font-semibold px-3 py-1.5 rounded-full flex items-center gap-1.5"><i data-lucide="box" class="w-3.5 h-3.5"></i>Three.js</span>
+                        </div>
+                    </div>
+                        </div>
+                    </div>
+
+                    <!-- Sticky Image Column -->
+                    <div class="lg:col-span-5 lg:sticky lg:top-28 reveal">
+                        <div class="group relative overflow-hidden rounded-[2rem] border border-slate-200 bg-slate-50 p-4 hover:shadow-xl transition-all duration-300">
+                            <div class="aspect-square w-full overflow-hidden rounded-2xl bg-slate-200">
+                                <img src="assets/service-web-dev.png" alt="Website Development" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SERVICE DETAIL: BRAND IDENTITY ===== -->
+        <section id="service-detail-4" class="relative overflow-hidden py-24 bg-slate-50/50 border-t border-slate-100">
+            <div class="max-w-7xl mx-auto px-6 md:px-10 text-left">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+
+                    <!-- Text Content -->
+                    <div class="lg:col-span-7 space-y-12">
+                        <div class="reveal">
+                    <div class="overline-label">Service Detail</div>
+                    <h2 class="mt-3 font-display text-3xl md:text-4xl font-bold tracking-tight text-slate-900">Brand Identity</h2>
+                </div>
+                        <div class="space-y-12">
+                            <div class="reveal">
+                        <h3 class="font-display text-xl font-bold text-slate-900">Overview</h3>
+                        <p class="mt-3 text-slate-600 text-[14px] leading-relaxed">We construct systematic brand identities that scale across every touchpoint — from app icons to billboards. Our process begins with strategic positioning and ends with a comprehensive design system complete with typography standards, color tokens, asset libraries, and usage guidelines that ensure visual consistency as your team and channels grow.</p>
+                    </div>
+                    <div class="reveal">
+                        <h3 class="font-display text-xl font-bold text-slate-900">What We Do</h3>
+                        <div class="mt-4 grid sm:grid-cols-2 gap-4">
+                            <div class="flex items-start gap-3 p-4 bg-white border border-slate-200 rounded-2xl"><i data-lucide="check-circle" class="w-5 h-5 text-blue-600 shrink-0 mt-0.5"></i><span class="text-[14px] text-slate-700">Logo design and visual identity system creation</span></div>
+                            <div class="flex items-start gap-3 p-4 bg-white border border-slate-200 rounded-2xl"><i data-lucide="check-circle" class="w-5 h-5 text-blue-600 shrink-0 mt-0.5"></i><span class="text-[14px] text-slate-700">Typography scale, color palette, and design token libraries</span></div>
+                            <div class="flex items-start gap-3 p-4 bg-white border border-slate-200 rounded-2xl"><i data-lucide="check-circle" class="w-5 h-5 text-blue-600 shrink-0 mt-0.5"></i><span class="text-[14px] text-slate-700">Brand strategy, positioning, and messaging frameworks</span></div>
+                            <div class="flex items-start gap-3 p-4 bg-white border border-slate-200 rounded-2xl"><i data-lucide="check-circle" class="w-5 h-5 text-blue-600 shrink-0 mt-0.5"></i><span class="text-[14px] text-slate-700">Social media templates and marketing collateral design</span></div>
+                        </div>
+                    </div>
+                    <div class="reveal">
+                        <h3 class="font-display text-xl font-bold text-slate-900">Deliverables</h3>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="bg-slate-100 text-slate-700 text-[12px] font-semibold px-3 py-1.5 rounded-full">Brand Guidelines PDF</span>
+                            <span class="bg-slate-100 text-slate-700 text-[12px] font-semibold px-3 py-1.5 rounded-full">Logo Suite (Vector/Raster)</span>
+                            <span class="bg-slate-100 text-slate-700 text-[12px] font-semibold px-3 py-1.5 rounded-full">Design Token Library</span>
+                            <span class="bg-slate-100 text-slate-700 text-[12px] font-semibold px-3 py-1.5 rounded-full">Social Media Templates</span>
+                            <span class="bg-slate-100 text-slate-700 text-[12px] font-semibold px-3 py-1.5 rounded-full">Stationery & Collateral</span>
+                            <span class="bg-slate-100 text-slate-700 text-[12px] font-semibold px-3 py-1.5 rounded-full">Presentation Templates</span>
+                        </div>
+                    </div>
+                    <div class="reveal">
+                        <h3 class="font-display text-xl font-bold text-slate-900">Benefits</h3>
+                        <div class="mt-4 grid sm:grid-cols-2 gap-4">
+                            <div class="flex items-start gap-3 p-4 bg-blue-50 border border-blue-100 rounded-2xl"><i data-lucide="zap" class="w-5 h-5 text-blue-600 shrink-0 mt-0.5"></i><span class="text-[14px] text-slate-700">Instant brand recognition that builds trust before a word is read</span></div>
+                            <div class="flex items-start gap-3 p-4 bg-blue-50 border border-blue-100 rounded-2xl"><i data-lucide="zap" class="w-5 h-5 text-blue-600 shrink-0 mt-0.5"></i><span class="text-[14px] text-slate-700">Scalable design system any team member can apply consistently without design expertise</span></div>
+                            <div class="flex items-start gap-3 p-4 bg-blue-50 border border-blue-100 rounded-2xl"><i data-lucide="zap" class="w-5 h-5 text-blue-600 shrink-0 mt-0.5"></i><span class="text-[14px] text-slate-700">Premium brand perception that commands higher price points in competitive markets</span></div>
+                            <div class="flex items-start gap-3 p-4 bg-blue-50 border border-blue-100 rounded-2xl"><i data-lucide="zap" class="w-5 h-5 text-blue-600 shrink-0 mt-0.5"></i><span class="text-[14px] text-slate-700">Unified asset library that reduces design production time by 60%+ across campaigns</span></div>
+                        </div>
+                    </div>
+                    <div class="reveal">
+                        <h3 class="font-display text-xl font-bold text-slate-900">Industry Use Cases</h3>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="bg-slate-900 text-white text-[12px] font-semibold px-3 py-1.5 rounded-full">Startup Launches</span>
+                            <span class="bg-slate-900 text-white text-[12px] font-semibold px-3 py-1.5 rounded-full">Brand Rebranding</span>
+                            <span class="bg-slate-900 text-white text-[12px] font-semibold px-3 py-1.5 rounded-full">Consumer Products</span>
+                            <span class="bg-slate-900 text-white text-[12px] font-semibold px-3 py-1.5 rounded-full">Luxury & Premium</span>
+                            <span class="bg-slate-900 text-white text-[12px] font-semibold px-3 py-1.5 rounded-full">Professional Services</span>
+                            <span class="bg-slate-900 text-white text-[12px] font-semibold px-3 py-1.5 rounded-full">SaaS & Tech</span>
+                        </div>
+                    </div>
+                    <div class="reveal">
+                        <h3 class="font-display text-xl font-bold text-slate-900">Expected Results</h3>
+                        <p class="mt-3 text-slate-600 text-[14px] leading-relaxed">A cohesive brand identity system reduces ad creative production costs by 40–60% through reusable templates and clear asset libraries. Clients report measurable improvements in audience trust signals — including higher organic CTR on social, stronger word-of-mouth referral rates, and reduced sales cycle friction when presenting to enterprise buyers with a polished brand presence.</p>
+                    </div>
+                    <div class="reveal">
+                        <h3 class="font-display text-xl font-bold text-slate-900">Tools We Use</h3>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="bg-blue-50 text-blue-700 text-[12px] font-semibold px-3 py-1.5 rounded-full flex items-center gap-1.5"><i data-lucide="pen-tool" class="w-3.5 h-3.5"></i>Figma</span>
+                            <span class="bg-blue-50 text-blue-700 text-[12px] font-semibold px-3 py-1.5 rounded-full flex items-center gap-1.5"><i data-lucide="image" class="w-3.5 h-3.5"></i>Adobe Illustrator</span>
+                            <span class="bg-blue-50 text-blue-700 text-[12px] font-semibold px-3 py-1.5 rounded-full flex items-center gap-1.5"><i data-lucide="type" class="w-3.5 h-3.5"></i>Adobe InDesign</span>
+                            <span class="bg-blue-50 text-blue-700 text-[12px] font-semibold px-3 py-1.5 rounded-full flex items-center gap-1.5"><i data-lucide="palette" class="w-3.5 h-3.5"></i>Coolors</span>
+                        </div>
+                    </div>
+                        </div>
+                    </div>
+
+                    <!-- Sticky Image Column -->
+                    <div class="lg:col-span-5 lg:sticky lg:top-28 reveal">
+                        <div class="group relative overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-4 hover:shadow-xl transition-all duration-300">
+                            <div class="aspect-square w-full overflow-hidden rounded-2xl bg-slate-200">
+                                <img src="assets/service-brand.png" alt="Brand Identity" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SERVICE DETAIL: VIDEO PRODUCTION ===== -->
+        <section id="video-production" class="relative overflow-hidden py-24 bg-white border-t border-slate-100">
+            <div class="max-w-7xl mx-auto px-6 md:px-10 text-left">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+
+                    <!-- Text Content -->
+                    <div class="lg:col-span-7 space-y-12">
+                        <div class="reveal">
+                    <div class="overline-label">Service Detail</div>
+                    <h2 class="mt-3 font-display text-3xl md:text-4xl font-bold tracking-tight text-slate-900">Video Production</h2>
+                </div>
+                        <div class="space-y-12">
+                            <div class="reveal">
+                        <h3 class="font-display text-xl font-bold text-slate-900">Overview</h3>
+                        <p class="mt-3 text-slate-600 text-[14px] leading-relaxed">From concept to final cut, we produce commercial-grade video content optimized for digital distribution. Our studio handles scripting, storyboarding, professional filming, color grading, audio mastering, and format-specific editing for broadcast, social media, and web. Whether it is a 15-second vertical ad or a long-form brand documentary, every frame is crafted to drive measurable engagement.</p>
+                    </div>
+                    <div class="reveal">
+                        <h3 class="font-display text-xl font-bold text-slate-900">What We Do</h3>
+                        <div class="mt-4 grid sm:grid-cols-2 gap-4">
+                            <div class="flex items-start gap-3 p-4 bg-slate-50 border border-slate-200 rounded-2xl"><i data-lucide="check-circle" class="w-5 h-5 text-blue-600 shrink-0 mt-0.5"></i><span class="text-[14px] text-slate-700">Commercial and brand film production</span></div>
+                            <div class="flex items-start gap-3 p-4 bg-slate-50 border border-slate-200 rounded-2xl"><i data-lucide="check-circle" class="w-5 h-5 text-blue-600 shrink-0 mt-0.5"></i><span class="text-[14px] text-slate-700">Social media video editing and format optimization</span></div>
+                            <div class="flex items-start gap-3 p-4 bg-slate-50 border border-slate-200 rounded-2xl"><i data-lucide="check-circle" class="w-5 h-5 text-blue-600 shrink-0 mt-0.5"></i><span class="text-[14px] text-slate-700">Motion graphics, animated explainers, and title design</span></div>
+                            <div class="flex items-start gap-3 p-4 bg-slate-50 border border-slate-200 rounded-2xl"><i data-lucide="check-circle" class="w-5 h-5 text-blue-600 shrink-0 mt-0.5"></i><span class="text-[14px] text-slate-700">Professional color grading and audio mastering</span></div>
+                        </div>
+                    </div>
+                    <div class="reveal">
+                        <h3 class="font-display text-xl font-bold text-slate-900">Deliverables</h3>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="bg-slate-100 text-slate-700 text-[12px] font-semibold px-3 py-1.5 rounded-full">Final Video Files (4K/HD)</span>
+                            <span class="bg-slate-100 text-slate-700 text-[12px] font-semibold px-3 py-1.5 rounded-full">Social Cuts (9:16, 1:1, 16:9)</span>
+                            <span class="bg-slate-100 text-slate-700 text-[12px] font-semibold px-3 py-1.5 rounded-full">Behind-the-Scenes Package</span>
+                            <span class="bg-slate-100 text-slate-700 text-[12px] font-semibold px-3 py-1.5 rounded-full">Storyboard & Script</span>
+                            <span class="bg-slate-100 text-slate-700 text-[12px] font-semibold px-3 py-1.5 rounded-full">Raw Footage Archive</span>
+                        </div>
+                    </div>
+                    <div class="reveal">
+                        <h3 class="font-display text-xl font-bold text-slate-900">Benefits</h3>
+                        <div class="mt-4 grid sm:grid-cols-2 gap-4">
+                            <div class="flex items-start gap-3 p-4 bg-blue-50 border border-blue-100 rounded-2xl"><i data-lucide="zap" class="w-5 h-5 text-blue-600 shrink-0 mt-0.5"></i><span class="text-[14px] text-slate-700">Professional-grade video content without retaining an in-house production team</span></div>
+                            <div class="flex items-start gap-3 p-4 bg-blue-50 border border-blue-100 rounded-2xl"><i data-lucide="zap" class="w-5 h-5 text-blue-600 shrink-0 mt-0.5"></i><span class="text-[14px] text-slate-700">Multi-format delivery ready for broadcast, social, and web from a single shoot</span></div>
+                            <div class="flex items-start gap-3 p-4 bg-blue-50 border border-blue-100 rounded-2xl"><i data-lucide="zap" class="w-5 h-5 text-blue-600 shrink-0 mt-0.5"></i><span class="text-[14px] text-slate-700">Higher audience retention and completion rates through cinematic storytelling</span></div>
+                            <div class="flex items-start gap-3 p-4 bg-blue-50 border border-blue-100 rounded-2xl"><i data-lucide="zap" class="w-5 h-5 text-blue-600 shrink-0 mt-0.5"></i><span class="text-[14px] text-slate-700">Motion graphics and animated explainers that clarify complex products instantly</span></div>
+                        </div>
+                    </div>
+                    <div class="reveal">
+                        <h3 class="font-display text-xl font-bold text-slate-900">Industry Use Cases</h3>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="bg-slate-900 text-white text-[12px] font-semibold px-3 py-1.5 rounded-full">Brand Campaigns</span>
+                            <span class="bg-slate-900 text-white text-[12px] font-semibold px-3 py-1.5 rounded-full">Product Launches</span>
+                            <span class="bg-slate-900 text-white text-[12px] font-semibold px-3 py-1.5 rounded-full">SaaS Explainers</span>
+                            <span class="bg-slate-900 text-white text-[12px] font-semibold px-3 py-1.5 rounded-full">Corporate Films</span>
+                            <span class="bg-slate-900 text-white text-[12px] font-semibold px-3 py-1.5 rounded-full">Social Reels</span>
+                            <span class="bg-slate-900 text-white text-[12px] font-semibold px-3 py-1.5 rounded-full">E-commerce Ads</span>
+                        </div>
+                    </div>
+                    <div class="reveal">
+                        <h3 class="font-display text-xl font-bold text-slate-900">Expected Results</h3>
+                        <p class="mt-3 text-slate-600 text-[14px] leading-relaxed">Video content produced through our commercial pipeline drives 3–5x higher engagement than static creative on social platforms. Clients deploying brand films in paid ad campaigns report 25–40% lower CPM due to higher relevance scores, and product launch videos consistently generate 60%+ more direct-to-site traffic in the first 30 days of release compared to non-video campaigns.</p>
+                    </div>
+                    <div class="reveal">
+                        <h3 class="font-display text-xl font-bold text-slate-900">Tools We Use</h3>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="bg-blue-50 text-blue-700 text-[12px] font-semibold px-3 py-1.5 rounded-full flex items-center gap-1.5"><i data-lucide="film" class="w-3.5 h-3.5"></i>Adobe Premiere Pro</span>
+                            <span class="bg-blue-50 text-blue-700 text-[12px] font-semibold px-3 py-1.5 rounded-full flex items-center gap-1.5"><i data-lucide="wand-2" class="w-3.5 h-3.5"></i>After Effects</span>
+                            <span class="bg-blue-50 text-blue-700 text-[12px] font-semibold px-3 py-1.5 rounded-full flex items-center gap-1.5"><i data-lucide="palette" class="w-3.5 h-3.5"></i>DaVinci Resolve</span>
+                            <span class="bg-blue-50 text-blue-700 text-[12px] font-semibold px-3 py-1.5 rounded-full flex items-center gap-1.5"><i data-lucide="camera" class="w-3.5 h-3.5"></i>RED / Sony Cinema</span>
+                        </div>
+                    </div>
+                        </div>
+                    </div>
+
+                    <!-- Sticky Image Column -->
+                    <div class="lg:col-span-5 lg:sticky lg:top-28 reveal">
+                        <div class="group relative overflow-hidden rounded-[2rem] border border-slate-200 bg-slate-50 p-4 hover:shadow-xl transition-all duration-300">
+                            <div class="aspect-square w-full overflow-hidden rounded-2xl bg-slate-200">
+                                <img src="assets/service-video.png" alt="Video Production" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SERVICE DETAIL: AI VIDEO & CREATIVE AUTOMATION ===== -->
+        <section id="ai-video-creative" class="relative overflow-hidden py-24 bg-slate-50/50 border-t border-slate-100">
+            <div class="max-w-7xl mx-auto px-6 md:px-10 text-left">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+
+                    <!-- Text Content -->
+                    <div class="lg:col-span-7 space-y-12">
+                        <div class="reveal">
+                    <div class="overline-label">Service Detail</div>
+                    <h2 class="mt-3 font-display text-3xl md:text-4xl font-bold tracking-tight text-slate-900">AI Video & Creative Automation</h2>
+                </div>
+                        <div class="space-y-12">
+                            <div class="reveal">
+                        <h3 class="font-display text-xl font-bold text-slate-900">Overview</h3>
+                        <p class="mt-3 text-slate-600 text-[14px] leading-relaxed">We deploy state-of-the-art video diffusion models and synthetic voice and avatar algorithms to synthesize ad variants at scale. This approach allows brands to split-test hundreds of script variables, hooks, backgrounds, and spoken languages dynamically — cutting typical rendering costs by 85% and delivery times to under two hours. From AI-generated product videos and UGC-style ads to multi-language avatar presenters, our pipeline eliminates traditional production bottlenecks while maintaining broadcast-quality output.</p>
+                    </div>
+                    <div class="reveal">
+                        <h3 class="font-display text-xl font-bold text-slate-900">What We Do</h3>
+                        <div class="mt-4 grid sm:grid-cols-2 gap-4">
+                            <div class="flex items-start gap-3 p-4 bg-white border border-slate-200 rounded-2xl"><i data-lucide="check-circle" class="w-5 h-5 text-blue-600 shrink-0 mt-0.5"></i><span class="text-[14px] text-slate-700">AI Reels and short-form video generation</span></div>
+                            <div class="flex items-start gap-3 p-4 bg-white border border-slate-200 rounded-2xl"><i data-lucide="check-circle" class="w-5 h-5 text-blue-600 shrink-0 mt-0.5"></i><span class="text-[14px] text-slate-700">AI ad creative variants with dynamic hooks and backgrounds</span></div>
+                            <div class="flex items-start gap-3 p-4 bg-white border border-slate-200 rounded-2xl"><i data-lucide="check-circle" class="w-5 h-5 text-blue-600 shrink-0 mt-0.5"></i><span class="text-[14px] text-slate-700">Digital avatar presenters with lip-synced multi-language delivery</span></div>
+                            <div class="flex items-start gap-3 p-4 bg-white border border-slate-200 rounded-2xl"><i data-lucide="check-circle" class="w-5 h-5 text-blue-600 shrink-0 mt-0.5"></i><span class="text-[14px] text-slate-700">AI product video synthesis with volumetric lighting</span></div>
+                            <div class="flex items-start gap-3 p-4 bg-white border border-slate-200 rounded-2xl"><i data-lucide="check-circle" class="w-5 h-5 text-blue-600 shrink-0 mt-0.5"></i><span class="text-[14px] text-slate-700">AI voiceover generation and voice cloning</span></div>
+                            <div class="flex items-start gap-3 p-4 bg-white border border-slate-200 rounded-2xl"><i data-lucide="check-circle" class="w-5 h-5 text-blue-600 shrink-0 mt-0.5"></i><span class="text-[14px] text-slate-700">AI UGC-style ads and social content automation</span></div>
+                        </div>
+                    </div>
+                    <div class="reveal">
+                        <h3 class="font-display text-xl font-bold text-slate-900">Our Process</h3>
+                        <div class="relative border-l-2 border-slate-200 ml-4 pl-8 mt-6 space-y-8">
+                            <div class="relative"><span class="absolute -left-[41px] top-1 w-5 h-5 rounded-full border-4 border-white bg-blue-600"></span><h4 class="font-display font-bold text-slate-900">Brief & Script Engineering</h4><p class="text-[13px] text-slate-500 mt-1">Creative brief intake, script writing, and prompt architecture for diffusion models.</p></div>
+                            <div class="relative"><span class="absolute -left-[41px] top-1 w-5 h-5 rounded-full border-4 border-white bg-slate-400"></span><h4 class="font-display font-bold text-slate-900">Model Selection & Rendering</h4><p class="text-[13px] text-slate-500 mt-1">Custom model tuning, avatar selection, voice cloning calibration, and batch rendering pipeline.</p></div>
+                            <div class="relative"><span class="absolute -left-[41px] top-1 w-5 h-5 rounded-full border-4 border-white bg-slate-400"></span><h4 class="font-display font-bold text-slate-900">Post-Production & QA</h4><p class="text-[13px] text-slate-500 mt-1">Color grading, audio mastering, lip-sync quality verification, and brand compliance review.</p></div>
+                            <div class="relative"><span class="absolute -left-[41px] top-1 w-5 h-5 rounded-full border-4 border-white bg-slate-400"></span><h4 class="font-display font-bold text-slate-900">Delivery & Localization</h4><p class="text-[13px] text-slate-500 mt-1">Multi-format export, language localization, and integration with ad platform creative libraries.</p></div>
+                        </div>
+                    </div>
+                    <div class="grid sm:grid-cols-3 gap-6 reveal">
+                        <div class="p-6 bg-white border border-slate-200 rounded-2xl text-center"><div class="font-display text-3xl font-extrabold text-blue-600">-<span class="counter" data-target="85">0</span>%</div><div class="text-[11px] text-slate-500 font-semibold uppercase mt-1">Cost Reduction</div></div>
+                        <div class="p-6 bg-white border border-slate-200 rounded-2xl text-center"><div class="font-display text-3xl font-extrabold text-slate-900">&lt;2 hrs</div><div class="text-[11px] text-slate-500 font-semibold uppercase mt-1">Turnaround Time</div></div>
+                        <div class="p-6 bg-white border border-slate-200 rounded-2xl text-center"><div class="font-display text-3xl font-extrabold text-slate-900"><span class="counter" data-target="1200">0</span>+</div><div class="text-[11px] text-slate-500 font-semibold uppercase mt-1">Variations Generated</div></div>
+                    </div>
+                    <div class="reveal">
+                        <h3 class="font-display text-xl font-bold text-slate-900">Benefits</h3>
+                        <div class="mt-4 grid sm:grid-cols-2 gap-4">
+                            <div class="flex items-start gap-3 p-4 bg-blue-50 border border-blue-100 rounded-2xl"><i data-lucide="zap" class="w-5 h-5 text-blue-600 shrink-0 mt-0.5"></i><span class="text-[14px] text-slate-700">85% cost reduction vs. traditional studio production — same broadcast quality output</span></div>
+                            <div class="flex items-start gap-3 p-4 bg-blue-50 border border-blue-100 rounded-2xl"><i data-lucide="zap" class="w-5 h-5 text-blue-600 shrink-0 mt-0.5"></i><span class="text-[14px] text-slate-700">Scale to 1,000+ ad variants from a single script in under 48 hours</span></div>
+                            <div class="flex items-start gap-3 p-4 bg-blue-50 border border-blue-100 rounded-2xl"><i data-lucide="zap" class="w-5 h-5 text-blue-600 shrink-0 mt-0.5"></i><span class="text-[14px] text-slate-700">Multi-language avatar presenters expand reach to 42+ markets without re-filming</span></div>
+                            <div class="flex items-start gap-3 p-4 bg-blue-50 border border-blue-100 rounded-2xl"><i data-lucide="zap" class="w-5 h-5 text-blue-600 shrink-0 mt-0.5"></i><span class="text-[14px] text-slate-700">AI UGC-style ads that bypass creative fatigue with continuous fresh iterations</span></div>
+                        </div>
+                    </div>
+                    <div class="reveal">
+                        <h3 class="font-display text-xl font-bold text-slate-900">Industry Use Cases</h3>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="bg-slate-900 text-white text-[12px] font-semibold px-3 py-1.5 rounded-full">D2C & E-commerce</span>
+                            <span class="bg-slate-900 text-white text-[12px] font-semibold px-3 py-1.5 rounded-full">Performance Advertisers</span>
+                            <span class="bg-slate-900 text-white text-[12px] font-semibold px-3 py-1.5 rounded-full">Global Brands</span>
+                            <span class="bg-slate-900 text-white text-[12px] font-semibold px-3 py-1.5 rounded-full">SaaS & Apps</span>
+                            <span class="bg-slate-900 text-white text-[12px] font-semibold px-3 py-1.5 rounded-full">Creator Platforms</span>
+                            <span class="bg-slate-900 text-white text-[12px] font-semibold px-3 py-1.5 rounded-full">Marketplace Sellers</span>
+                        </div>
+                    </div>
+                    <div class="reveal">
+                        <h3 class="font-display text-xl font-bold text-slate-900">Expected Results</h3>
+                        <p class="mt-3 text-slate-600 text-[14px] leading-relaxed">Clients running AI-generated creative through our diffusion rendering pipeline report an average 85% reduction in creative production costs and turnaround times under 2 hours per batch. AI ad variants routinely outperform traditional creative by 2–3x in CTR on Meta and TikTok, while multi-language avatar campaigns deliver 15x the asset yield of conventional studio shoots at equivalent budgets.</p>
+                    </div>
+                    <div class="reveal">
+                        <h3 class="font-display text-xl font-bold text-slate-900">Tools We Use</h3>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="bg-blue-50 text-blue-700 text-[12px] font-semibold px-3 py-1.5 rounded-full flex items-center gap-1.5"><i data-lucide="cpu" class="w-3.5 h-3.5"></i>Runway ML</span>
+                            <span class="bg-blue-50 text-blue-700 text-[12px] font-semibold px-3 py-1.5 rounded-full flex items-center gap-1.5"><i data-lucide="bot" class="w-3.5 h-3.5"></i>HeyGen</span>
+                            <span class="bg-blue-50 text-blue-700 text-[12px] font-semibold px-3 py-1.5 rounded-full flex items-center gap-1.5"><i data-lucide="mic" class="w-3.5 h-3.5"></i>ElevenLabs</span>
+                            <span class="bg-blue-50 text-blue-700 text-[12px] font-semibold px-3 py-1.5 rounded-full flex items-center gap-1.5"><i data-lucide="image" class="w-3.5 h-3.5"></i>Midjourney</span>
+                            <span class="bg-blue-50 text-blue-700 text-[12px] font-semibold px-3 py-1.5 rounded-full flex items-center gap-1.5"><i data-lucide="video" class="w-3.5 h-3.5"></i>Synthesia</span>
+                        </div>
+                    </div>
+                        </div>
+                    </div>
+
+                    <!-- Sticky Image Column -->
+                    <div class="lg:col-span-5 lg:sticky lg:top-28 reveal">
+                        <div class="group relative overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-4 hover:shadow-xl transition-all duration-300">
+                            <div class="aspect-square w-full overflow-hidden rounded-2xl bg-slate-200">
+                                <img src="assets/service-ai-video.png" alt="AI Video & Creative Automation" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SERVICE DETAIL: PRODUCT PACKAGING DESIGN ===== -->
+        <section id="product-packaging" class="relative overflow-hidden py-24 bg-white border-t border-slate-100">
+            <div class="max-w-7xl mx-auto px-6 md:px-10 text-left">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+
+                    <!-- Text Content -->
+                    <div class="lg:col-span-7 space-y-12">
+                        <div class="reveal">
+                    <div class="overline-label">Service Detail</div>
+                    <h2 class="mt-3 font-display text-3xl md:text-4xl font-bold tracking-tight text-slate-900">Product Packaging Design</h2>
+                </div>
+                        <div class="space-y-12">
+                            <div class="reveal">
+                        <h3 class="font-display text-xl font-bold text-slate-900">Overview</h3>
+                        <p class="mt-3 text-slate-600 text-[14px] leading-relaxed">We design packaging that sells on shelf and on screen. From structural engineering and material selection to print-ready artwork and photorealistic 3D mockups, our packaging team ensures every unboxing moment reinforces your brand story. We handle everything from single SKU launches to full product line redesigns across food, beauty, wellness, and consumer electronics verticals.</p>
+                    </div>
+                    <div class="reveal">
+                        <h3 class="font-display text-xl font-bold text-slate-900">What We Do</h3>
+                        <div class="mt-4 grid sm:grid-cols-2 gap-4">
+                            <div class="flex items-start gap-3 p-4 bg-slate-50 border border-slate-200 rounded-2xl"><i data-lucide="check-circle" class="w-5 h-5 text-blue-600 shrink-0 mt-0.5"></i><span class="text-[14px] text-slate-700">Structural packaging design and dieline engineering</span></div>
+                            <div class="flex items-start gap-3 p-4 bg-slate-50 border border-slate-200 rounded-2xl"><i data-lucide="check-circle" class="w-5 h-5 text-blue-600 shrink-0 mt-0.5"></i><span class="text-[14px] text-slate-700">Print-ready artwork with Pantone and CMYK specifications</span></div>
+                            <div class="flex items-start gap-3 p-4 bg-slate-50 border border-slate-200 rounded-2xl"><i data-lucide="check-circle" class="w-5 h-5 text-blue-600 shrink-0 mt-0.5"></i><span class="text-[14px] text-slate-700">3D photorealistic packaging mockups and renders</span></div>
+                            <div class="flex items-start gap-3 p-4 bg-slate-50 border border-slate-200 rounded-2xl"><i data-lucide="check-circle" class="w-5 h-5 text-blue-600 shrink-0 mt-0.5"></i><span class="text-[14px] text-slate-700">Material sourcing consultation and sustainability options</span></div>
+                        </div>
+                    </div>
+                    <div class="reveal">
+                        <h3 class="font-display text-xl font-bold text-slate-900">Deliverables</h3>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="bg-slate-100 text-slate-700 text-[12px] font-semibold px-3 py-1.5 rounded-full">Print-Ready Dielines</span>
+                            <span class="bg-slate-100 text-slate-700 text-[12px] font-semibold px-3 py-1.5 rounded-full">3D Mockup Renders</span>
+                            <span class="bg-slate-100 text-slate-700 text-[12px] font-semibold px-3 py-1.5 rounded-full">Material Specifications</span>
+                            <span class="bg-slate-100 text-slate-700 text-[12px] font-semibold px-3 py-1.5 rounded-full">Packaging Style Guide</span>
+                            <span class="bg-slate-100 text-slate-700 text-[12px] font-semibold px-3 py-1.5 rounded-full">Vendor-Ready Files</span>
+                        </div>
+                    </div>
+                    <div class="reveal">
+                        <h3 class="font-display text-xl font-bold text-slate-900">Benefits</h3>
+                        <div class="mt-4 grid sm:grid-cols-2 gap-4">
+                            <div class="flex items-start gap-3 p-4 bg-blue-50 border border-blue-100 rounded-2xl"><i data-lucide="zap" class="w-5 h-5 text-blue-600 shrink-0 mt-0.5"></i><span class="text-[14px] text-slate-700">Packaging that converts at shelf and in-feed ads — engineered for both contexts</span></div>
+                            <div class="flex items-start gap-3 p-4 bg-blue-50 border border-blue-100 rounded-2xl"><i data-lucide="zap" class="w-5 h-5 text-blue-600 shrink-0 mt-0.5"></i><span class="text-[14px] text-slate-700">Print-ready files eliminate costly printer revision cycles and production delays</span></div>
+                            <div class="flex items-start gap-3 p-4 bg-blue-50 border border-blue-100 rounded-2xl"><i data-lucide="zap" class="w-5 h-5 text-blue-600 shrink-0 mt-0.5"></i><span class="text-[14px] text-slate-700">Photorealistic 3D mockups for social, ads, and investor decks before production spend</span></div>
+                            <div class="flex items-start gap-3 p-4 bg-blue-50 border border-blue-100 rounded-2xl"><i data-lucide="zap" class="w-5 h-5 text-blue-600 shrink-0 mt-0.5"></i><span class="text-[14px] text-slate-700">Unboxing experience design that drives organic UGC and repeat purchase loyalty</span></div>
+                        </div>
+                    </div>
+                    <div class="reveal">
+                        <h3 class="font-display text-xl font-bold text-slate-900">Industry Use Cases</h3>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="bg-slate-900 text-white text-[12px] font-semibold px-3 py-1.5 rounded-full">Beauty & Skincare</span>
+                            <span class="bg-slate-900 text-white text-[12px] font-semibold px-3 py-1.5 rounded-full">Food & Beverage</span>
+                            <span class="bg-slate-900 text-white text-[12px] font-semibold px-3 py-1.5 rounded-full">Consumer Electronics</span>
+                            <span class="bg-slate-900 text-white text-[12px] font-semibold px-3 py-1.5 rounded-full">Wellness & Supplements</span>
+                            <span class="bg-slate-900 text-white text-[12px] font-semibold px-3 py-1.5 rounded-full">Luxury Goods</span>
+                            <span class="bg-slate-900 text-white text-[12px] font-semibold px-3 py-1.5 rounded-full">Subscription Boxes</span>
+                        </div>
+                    </div>
+                    <div class="reveal">
+                        <h3 class="font-display text-xl font-bold text-slate-900">Expected Results</h3>
+                        <p class="mt-3 text-slate-600 text-[14px] leading-relaxed">Brands that invest in premium packaging design consistently report higher conversion rates on Amazon and D2C storefronts, with listing CTR improvements of 20–35% attributable to better first-impression imagery. Unboxing-optimized packaging drives 40%+ higher organic social shares, reducing the cost of earned media while reinforcing brand recall at every delivery touchpoint.</p>
+                    </div>
+                    <div class="reveal">
+                        <h3 class="font-display text-xl font-bold text-slate-900">Tools We Use</h3>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="bg-blue-50 text-blue-700 text-[12px] font-semibold px-3 py-1.5 rounded-full flex items-center gap-1.5"><i data-lucide="image" class="w-3.5 h-3.5"></i>Adobe Illustrator</span>
+                            <span class="bg-blue-50 text-blue-700 text-[12px] font-semibold px-3 py-1.5 rounded-full flex items-center gap-1.5"><i data-lucide="box" class="w-3.5 h-3.5"></i>Blender</span>
+                            <span class="bg-blue-50 text-blue-700 text-[12px] font-semibold px-3 py-1.5 rounded-full flex items-center gap-1.5"><i data-lucide="type" class="w-3.5 h-3.5"></i>Adobe InDesign</span>
+                            <span class="bg-blue-50 text-blue-700 text-[12px] font-semibold px-3 py-1.5 rounded-full flex items-center gap-1.5"><i data-lucide="image" class="w-3.5 h-3.5"></i>Photoshop</span>
+                        </div>
+                    </div>
+                        </div>
+                    </div>
+
+                    <!-- Sticky Image Column -->
+                    <div class="lg:col-span-5 lg:sticky lg:top-28 reveal">
+                        <div class="group relative overflow-hidden rounded-[2rem] border border-slate-200 bg-slate-50 p-4 hover:shadow-xl transition-all duration-300">
+                            <div class="aspect-square w-full overflow-hidden rounded-2xl bg-slate-200">
+                                <img src="assets/service-packaging.png" alt="Product Packaging Design" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SERVICE DETAIL: PRODUCT PHOTOGRAPHY ===== -->
+        <section id="product-shoot" class="relative overflow-hidden py-24 bg-slate-50/50 border-t border-slate-100">
+            <div class="max-w-7xl mx-auto px-6 md:px-10 text-left">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+
+                    <!-- Text Content -->
+                    <div class="lg:col-span-7 space-y-12">
+                        <div class="reveal">
+                    <div class="overline-label">Service Detail</div>
+                    <h2 class="mt-3 font-display text-3xl md:text-4xl font-bold tracking-tight text-slate-900">Product Photography</h2>
+                </div>
+                        <div class="space-y-12">
+                            <div class="reveal">
+                        <h3 class="font-display text-xl font-bold text-slate-900">Overview</h3>
+                        <p class="mt-3 text-slate-600 text-[14px] leading-relaxed">We produce studio-grade product photography that converts browsers into buyers. Our sessions are optimized for e-commerce platforms, social media ads, and catalog layouts — with professional lighting rigs, macro lensing for detail shots, and digital retouching workflows that deliver consistent, on-brand imagery at scale. Each shoot includes lifestyle and flat-lay compositions alongside clean white-background catalog shots.</p>
+                    </div>
+                    <div class="reveal">
+                        <h3 class="font-display text-xl font-bold text-slate-900">What We Do</h3>
+                        <div class="mt-4 grid sm:grid-cols-2 gap-4">
+                            <div class="flex items-start gap-3 p-4 bg-white border border-slate-200 rounded-2xl"><i data-lucide="check-circle" class="w-5 h-5 text-blue-600 shrink-0 mt-0.5"></i><span class="text-[14px] text-slate-700">Studio product photography with professional lighting</span></div>
+                            <div class="flex items-start gap-3 p-4 bg-white border border-slate-200 rounded-2xl"><i data-lucide="check-circle" class="w-5 h-5 text-blue-600 shrink-0 mt-0.5"></i><span class="text-[14px] text-slate-700">Lifestyle and contextual scene compositions</span></div>
+                            <div class="flex items-start gap-3 p-4 bg-white border border-slate-200 rounded-2xl"><i data-lucide="check-circle" class="w-5 h-5 text-blue-600 shrink-0 mt-0.5"></i><span class="text-[14px] text-slate-700">Macro and detail photography for textures and finishes</span></div>
+                            <div class="flex items-start gap-3 p-4 bg-white border border-slate-200 rounded-2xl"><i data-lucide="check-circle" class="w-5 h-5 text-blue-600 shrink-0 mt-0.5"></i><span class="text-[14px] text-slate-700">Digital retouching, color correction, and batch processing</span></div>
+                        </div>
+                    </div>
+                    <div class="reveal">
+                        <h3 class="font-display text-xl font-bold text-slate-900">Deliverables</h3>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="bg-slate-100 text-slate-700 text-[12px] font-semibold px-3 py-1.5 rounded-full">High-Res Product Images</span>
+                            <span class="bg-slate-100 text-slate-700 text-[12px] font-semibold px-3 py-1.5 rounded-full">White-Background Catalog Shots</span>
+                            <span class="bg-slate-100 text-slate-700 text-[12px] font-semibold px-3 py-1.5 rounded-full">Lifestyle Compositions</span>
+                            <span class="bg-slate-100 text-slate-700 text-[12px] font-semibold px-3 py-1.5 rounded-full">Retouched Finals</span>
+                            <span class="bg-slate-100 text-slate-700 text-[12px] font-semibold px-3 py-1.5 rounded-full">E-commerce Optimized Crops</span>
+                        </div>
+                    </div>
+                    <div class="reveal">
+                        <h3 class="font-display text-xl font-bold text-slate-900">Benefits</h3>
+                        <div class="mt-4 grid sm:grid-cols-2 gap-4">
+                            <div class="flex items-start gap-3 p-4 bg-blue-50 border border-blue-100 rounded-2xl"><i data-lucide="zap" class="w-5 h-5 text-blue-600 shrink-0 mt-0.5"></i><span class="text-[14px] text-slate-700">Catalog-ready images formatted for Shopify, Amazon, and DTC storefronts</span></div>
+                            <div class="flex items-start gap-3 p-4 bg-blue-50 border border-blue-100 rounded-2xl"><i data-lucide="zap" class="w-5 h-5 text-blue-600 shrink-0 mt-0.5"></i><span class="text-[14px] text-slate-700">Lifestyle and context photography that justifies premium pricing at a glance</span></div>
+                            <div class="flex items-start gap-3 p-4 bg-blue-50 border border-blue-100 rounded-2xl"><i data-lucide="zap" class="w-5 h-5 text-blue-600 shrink-0 mt-0.5"></i><span class="text-[14px] text-slate-700">Consistent brand imagery across all touchpoints with zero visual inconsistency</span></div>
+                            <div class="flex items-start gap-3 p-4 bg-blue-50 border border-blue-100 rounded-2xl"><i data-lucide="zap" class="w-5 h-5 text-blue-600 shrink-0 mt-0.5"></i><span class="text-[14px] text-slate-700">Social-ready crops and ad-ready formats delivered in one efficient workflow</span></div>
+                        </div>
+                    </div>
+                    <div class="reveal">
+                        <h3 class="font-display text-xl font-bold text-slate-900">Industry Use Cases</h3>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="bg-slate-900 text-white text-[12px] font-semibold px-3 py-1.5 rounded-full">E-commerce & Amazon</span>
+                            <span class="bg-slate-900 text-white text-[12px] font-semibold px-3 py-1.5 rounded-full">Fashion & Apparel</span>
+                            <span class="bg-slate-900 text-white text-[12px] font-semibold px-3 py-1.5 rounded-full">Beauty & Cosmetics</span>
+                            <span class="bg-slate-900 text-white text-[12px] font-semibold px-3 py-1.5 rounded-full">Food & Beverage</span>
+                            <span class="bg-slate-900 text-white text-[12px] font-semibold px-3 py-1.5 rounded-full">Consumer Electronics</span>
+                            <span class="bg-slate-900 text-white text-[12px] font-semibold px-3 py-1.5 rounded-full">Luxury Retail</span>
+                        </div>
+                    </div>
+                    <div class="reveal">
+                        <h3 class="font-display text-xl font-bold text-slate-900">Expected Results</h3>
+                        <p class="mt-3 text-slate-600 text-[14px] leading-relaxed">Professional product photography drives an average 30–45% higher conversion rate on D2C product pages compared to smartphone photography. Clients selling on Amazon with our studio-shot images report a 20–28% improvement in listing CTR, while social ad campaigns using our lifestyle compositions achieve 35%+ lower CPC due to higher creative relevance scores on Meta and TikTok.</p>
+                    </div>
+                    <div class="reveal">
+                        <h3 class="font-display text-xl font-bold text-slate-900">Tools We Use</h3>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="bg-blue-50 text-blue-700 text-[12px] font-semibold px-3 py-1.5 rounded-full flex items-center gap-1.5"><i data-lucide="camera" class="w-3.5 h-3.5"></i>Canon EOS R5</span>
+                            <span class="bg-blue-50 text-blue-700 text-[12px] font-semibold px-3 py-1.5 rounded-full flex items-center gap-1.5"><i data-lucide="image" class="w-3.5 h-3.5"></i>Adobe Lightroom</span>
+                            <span class="bg-blue-50 text-blue-700 text-[12px] font-semibold px-3 py-1.5 rounded-full flex items-center gap-1.5"><i data-lucide="wand-2" class="w-3.5 h-3.5"></i>Photoshop</span>
+                            <span class="bg-blue-50 text-blue-700 text-[12px] font-semibold px-3 py-1.5 rounded-full flex items-center gap-1.5"><i data-lucide="zap" class="w-3.5 h-3.5"></i>Profoto Lighting</span>
+                        </div>
+                    </div>
+                        </div>
+                    </div>
+
+                    <!-- Sticky Image Column -->
+                    <div class="lg:col-span-5 lg:sticky lg:top-28 reveal">
+                        <div class="group relative overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-4 hover:shadow-xl transition-all duration-300">
+                            <div class="aspect-square w-full overflow-hidden rounded-2xl bg-slate-200">
+                                <img src="assets/service-photography.png" alt="Product Photography" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SERVICE COMPARISON ===== -->
+        <section class="relative overflow-hidden py-24 bg-white border-t border-slate-100">
+            <div class="max-w-5xl mx-auto px-6 md:px-10">
+                <div class="text-center mb-14 reveal">
+                    <div class="overline-label mx-auto">How We Compare</div>
+                    <h2 class="mt-3 font-display text-3xl md:text-4xl font-bold tracking-tight text-slate-900">Why partners choose Digital Advertise</h2>
+                    <p class="mt-4 text-slate-500 text-[15px] max-w-2xl mx-auto leading-relaxed">Most agencies stop at execution. We combine strategy, creative, technology, and measurement into one accountable growth team.</p>
+                </div>
+                <div class="reveal overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr>
+                                <th class="py-4 pr-6 text-[13px] font-semibold text-slate-400 uppercase tracking-wider w-2/5">Capability</th>
+                                <th class="py-4 px-4 text-center text-[13px] font-semibold text-slate-400 uppercase tracking-wider">DIY</th>
+                                <th class="py-4 px-4 text-center text-[13px] font-semibold text-slate-400 uppercase tracking-wider">Typical Agency</th>
+                                <th class="py-4 px-4 text-center text-[13px] font-bold text-blue-600 uppercase tracking-wider bg-blue-50 rounded-t-2xl">Digital Advertise</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-100">
+                            <tr class="group">
+                                <td class="py-4 pr-6 text-[14px] font-semibold text-slate-800">Full-funnel attribution & reporting</td>
+                                <td class="py-4 px-4 text-center"><i data-lucide="x-circle" class="w-5 h-5 text-slate-300 mx-auto"></i></td>
+                                <td class="py-4 px-4 text-center"><i data-lucide="minus-circle" class="w-5 h-5 text-amber-400 mx-auto"></i></td>
+                                <td class="py-4 px-4 text-center bg-blue-50/60"><i data-lucide="check-circle-2" class="w-5 h-5 text-blue-600 mx-auto"></i></td>
+                            </tr>
+                            <tr class="group">
+                                <td class="py-4 pr-6 text-[14px] font-semibold text-slate-800">Server-side tracking & iOS-proof CAPI</td>
+                                <td class="py-4 px-4 text-center"><i data-lucide="x-circle" class="w-5 h-5 text-slate-300 mx-auto"></i></td>
+                                <td class="py-4 px-4 text-center"><i data-lucide="x-circle" class="w-5 h-5 text-slate-300 mx-auto"></i></td>
+                                <td class="py-4 px-4 text-center bg-blue-50/60"><i data-lucide="check-circle-2" class="w-5 h-5 text-blue-600 mx-auto"></i></td>
+                            </tr>
+                            <tr class="group">
+                                <td class="py-4 pr-6 text-[14px] font-semibold text-slate-800">AI creative generation at scale</td>
+                                <td class="py-4 px-4 text-center"><i data-lucide="x-circle" class="w-5 h-5 text-slate-300 mx-auto"></i></td>
+                                <td class="py-4 px-4 text-center"><i data-lucide="x-circle" class="w-5 h-5 text-slate-300 mx-auto"></i></td>
+                                <td class="py-4 px-4 text-center bg-blue-50/60"><i data-lucide="check-circle-2" class="w-5 h-5 text-blue-600 mx-auto"></i></td>
+                            </tr>
+                            <tr class="group">
+                                <td class="py-4 pr-6 text-[14px] font-semibold text-slate-800">In-house video production</td>
+                                <td class="py-4 px-4 text-center"><i data-lucide="minus-circle" class="w-5 h-5 text-amber-400 mx-auto"></i></td>
+                                <td class="py-4 px-4 text-center"><i data-lucide="minus-circle" class="w-5 h-5 text-amber-400 mx-auto"></i></td>
+                                <td class="py-4 px-4 text-center bg-blue-50/60"><i data-lucide="check-circle-2" class="w-5 h-5 text-blue-600 mx-auto"></i></td>
+                            </tr>
+                            <tr class="group">
+                                <td class="py-4 pr-6 text-[14px] font-semibold text-slate-800">Brand identity + design systems</td>
+                                <td class="py-4 px-4 text-center"><i data-lucide="x-circle" class="w-5 h-5 text-slate-300 mx-auto"></i></td>
+                                <td class="py-4 px-4 text-center"><i data-lucide="minus-circle" class="w-5 h-5 text-amber-400 mx-auto"></i></td>
+                                <td class="py-4 px-4 text-center bg-blue-50/60"><i data-lucide="check-circle-2" class="w-5 h-5 text-blue-600 mx-auto"></i></td>
+                            </tr>
+                            <tr class="group">
+                                <td class="py-4 pr-6 text-[14px] font-semibold text-slate-800">Dedicated account manager & Slack access</td>
+                                <td class="py-4 px-4 text-center"><i data-lucide="x-circle" class="w-5 h-5 text-slate-300 mx-auto"></i></td>
+                                <td class="py-4 px-4 text-center"><i data-lucide="minus-circle" class="w-5 h-5 text-amber-400 mx-auto"></i></td>
+                                <td class="py-4 px-4 text-center bg-blue-50/60"><i data-lucide="check-circle-2" class="w-5 h-5 text-blue-600 mx-auto"></i></td>
+                            </tr>
+                            <tr class="group">
+                                <td class="py-4 pr-6 text-[14px] font-semibold text-slate-800">Performance-linked pricing options</td>
+                                <td class="py-4 px-4 text-center"><i data-lucide="x-circle" class="w-5 h-5 text-slate-300 mx-auto"></i></td>
+                                <td class="py-4 px-4 text-center"><i data-lucide="x-circle" class="w-5 h-5 text-slate-300 mx-auto"></i></td>
+                                <td class="py-4 px-4 text-center bg-blue-50/60"><i data-lucide="check-circle-2" class="w-5 h-5 text-blue-600 mx-auto"></i></td>
+                            </tr>
+                            <tr class="group">
+                                <td class="py-4 pr-6 text-[14px] font-semibold text-slate-800">Weekly results dashboards with ROAS targets</td>
+                                <td class="py-4 px-4 text-center"><i data-lucide="x-circle" class="w-5 h-5 text-slate-300 mx-auto"></i></td>
+                                <td class="py-4 px-4 text-center"><i data-lucide="minus-circle" class="w-5 h-5 text-amber-400 mx-auto"></i></td>
+                                <td class="py-4 px-4 text-center bg-blue-50/60 rounded-b-2xl"><i data-lucide="check-circle-2" class="w-5 h-5 text-blue-600 mx-auto"></i></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="mt-6 flex flex-wrap items-center gap-6 text-[12px] text-slate-500">
+                        <span class="flex items-center gap-1.5"><i data-lucide="check-circle-2" class="w-4 h-4 text-blue-600"></i> Full capability</span>
+                        <span class="flex items-center gap-1.5"><i data-lucide="minus-circle" class="w-4 h-4 text-amber-400"></i> Partial / varies</span>
+                        <span class="flex items-center gap-1.5"><i data-lucide="x-circle" class="w-4 h-4 text-slate-300"></i> Not included</span>
+                    </div>
+                </div>
+                <div class="mt-12 text-center reveal">
+                    <a href="audit.html" class="btn-primary py-4 px-10 text-[14px]">Book a Free Growth Audit</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== DYNAMIC WIDGET SELECTOR ===== -->
+
+        <section class="relative overflow-hidden py-24 bg-slate-50/50 border-t border-slate-100">
+            <div class="max-w-4xl mx-auto px-6 text-left">
+                <div class="text-center mb-12 reveal">
+                    <span class="text-[11px] uppercase tracking-wider font-semibold text-slate-500">Diagnostic Tool</span>
+                    <h2 class="font-display text-3xl font-bold text-slate-900 mt-2">Identify your primary bottleneck</h2>
+                    <p class="mt-3 text-slate-500 text-[14px]">Click your current challenge below to find the matched recommended marketing capability.</p>
+                </div>
+
+                <div class="glass-strong border border-slate-200 p-6 md:p-8 rounded-[2.5rem] relative">
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3" id="bottleneck-list">
+                        <button onclick="matchChallenge('leads')" class="p-4 text-left border border-slate-200 rounded-2xl hover:border-slate-900 hover:bg-white font-semibold text-[14px] transition-all flex items-center justify-between group">
+                            Need Qualified Leads
+                            <i data-lucide="arrow-right" class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                        </button>
+                        <button onclick="matchChallenge('speed')" class="p-4 text-left border border-slate-200 rounded-2xl hover:border-slate-900 hover:bg-white font-semibold text-[14px] transition-all flex items-center justify-between group">
+                            Website conversion is low
+                            <i data-lucide="arrow-right" class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                        </button>
+                        <button onclick="matchChallenge('video')" class="p-4 text-left border border-slate-200 rounded-2xl hover:border-slate-900 hover:bg-white font-semibold text-[14px] transition-all flex items-center justify-between group">
+                            Need high-yield video ads
+                            <i data-lucide="arrow-right" class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                        </button>
+                    </div>
+
+                    <!-- Recommended Result Div -->
+                    <div id="matched-result" class="hidden mt-8 pt-8 border-t border-slate-100 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 transition-all duration-300">
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 rounded-2xl bg-blue-600/10 flex items-center justify-center text-blue-600" id="result-icon-wrapper">
+                                <i data-lucide="trending-up" class="w-6 h-6" id="result-icon"></i>
+                            </div>
+                            <div>
+                                <span class="text-[10px] text-blue-600 font-bold uppercase tracking-wider">Recommended Service</span>
+                                <h4 class="font-display text-xl font-bold text-slate-900 mt-0.5" id="result-title">Performance Paid Ads</h4>
+                                <p class="text-[13px] text-slate-500 mt-0.5 max-w-md" id="result-desc">Scale budgets with server-side configurations and structured testing loops.</p>
+                            </div>
+                        </div>
+                        <a href="performance-marketing.html" id="result-link" class="btn-primary py-3 px-6 text-[13px] flex items-center gap-1.5 self-stretch justify-center md:self-auto shrink-0">
+                            Go to Service page <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="relative bg-slate-950 text-white pt-20 md:pt-28 pb-10 overflow-hidden">
+        <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] h-[400px] rounded-full bg-blue-500/10 blur-[120px] pointer-events-none"></div>
+        <div class="relative max-w-7xl mx-auto px-6 md:px-10">
+            <div class="grid lg:grid-cols-12 gap-12 mb-14 text-left">
+                <div class="lg:col-span-4">
+                    <div class="flex items-center mb-6">
+                        <img src="assets/logo-white.png" alt="Digital Advertise Logo" class="h-10 w-auto object-contain">
+                    </div>
+                    <p class="text-white/65 text-[15px] leading-relaxed max-w-md">
+                        A performance marketing partner for ambitious teams — engineered for measurable, durable growth across every channel and market.
+                    </p>
+                    <form class="mt-6 flex max-w-sm" onsubmit="handleNewsletterSubmit(event)">
+                        <input type="email" required placeholder="Subscribe to our newsletter" class="flex-1 bg-white/5 border border-white/10 rounded-l-xl px-4 py-2 text-[14px] text-white placeholder:text-white/40 focus:outline-none focus:border-blue-500">
+                        <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-5 rounded-r-xl text-[14px] font-semibold transition-colors">Join</button>
+                    </form>
+                </div>
+
+                <div class="lg:col-span-8 grid grid-cols-2 sm:grid-cols-4 gap-8">
+                    <div>
+                        <div class="text-[11px] uppercase tracking-[0.2em] font-semibold text-white/40 mb-4">Navigation</div>
+                        <ul class="space-y-2.5">
+                            <li><a href="index.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Home</a> </li>
+                            <li><a href="about.html" class="text-[14px] text-white/80 hover:text-white transition-colors">About Us</a></li>
+                            <li><a href="services.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Services</a></li>
+                            <li><a href="portfolio.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Portfolio</a></li>
+                            <li><a href="case-studies.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Case Studies</a></li>
+                            <li><a href="blog.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Blog</a></li>
+                            <li><a href="contact.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="text-[11px] uppercase tracking-[0.2em] font-semibold text-white/40 mb-4">Services</div>
+                        <ul class="space-y-2.5">
+                            <li><a href="social-media.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Social Media</a></li>
+                            <li><a href="performance-marketing.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Performance Marketing</a></li>
+                            <li><a href="web-development.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Web Development</a></li>
+                            <li><a href="brand-identity.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Brand Identity</a></li>
+                            <li><a href="ai-video.html" class="text-[14px] text-white/80 hover:text-white transition-colors">AI Creative</a></li>
+                            <li><a href="photography.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Product Photography</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="text-[11px] uppercase tracking-[0.2em] font-semibold text-white/40 mb-4">Resources</div>
+                        <ul class="space-y-2.5">
+                            <li><a href="audit.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Free Audit</a></li>
+                            <li><a href="blog.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Blog</a></li>
+                            <li><a href="case-studies.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Case Studies</a></li>
+                            <li><a href="privacy.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="text-[11px] uppercase tracking-[0.2em] font-semibold text-white/40 mb-4">Contact</div>
+                        <ul class="space-y-2.5">
+                            <li><a href="mailto:info@digitaladvertise.com" class="text-[14px] text-white/80 hover:text-white transition-colors flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4 shrink-0"></i>info@digitaladvertise.com</a></li>
+                            <li><a href="tel:+18005550199" class="text-[14px] text-white/80 hover:text-white transition-colors flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4 shrink-0"></i>+1-800-555-0199</a></li>
+                            <li><a href="https://wa.me/917276751167" target="_blank" class="text-[14px] text-white/80 hover:text-white transition-colors flex items-center gap-2"><i data-lucide="message-circle" class="w-4 h-4 shrink-0"></i>WhatsApp</a></li>
+                            <li><a href="#" class="text-[14px] text-white/80 hover:text-white transition-colors flex items-center gap-2"><i data-lucide="map-pin" class="w-4 h-4 shrink-0"></i>Pune, India</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-white/10 pt-12 text-center select-none">
+                <div class="font-display font-bold tracking-tighter leading-none text-[clamp(44px,14vw,220px)] bg-gradient-to-b from-white to-white/10 bg-clip-text text-transparent opacity-80">
+                    DIGITAL ADVERTISE
+                </div>
+            </div>
+
+            <div class="mt-10 pt-6 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-[13px] text-white/55">
+                <div>
+                    &copy; <span id="current-year">2026</span> Digital Advertise. All rights reserved.
+                </div>
+                <div class="flex items-center gap-4">
+                    <a href="https://www.instagram.com/digital_advertise_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="text-white/55 hover:text-white transition-colors" aria-label="Instagram"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+                    <a href="https://twitter.com/digitaladvertise" target="_blank" class="text-white/55 hover:text-white transition-colors" aria-label="X / Twitter"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+                    <a href="https://www.facebook.com/digitaladvertise" target="_blank" class="text-white/55 hover:text-white transition-colors" aria-label="Facebook"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+                    <a href="https://www.youtube.com/@digitaladvertise" target="_blank" class="text-white/55 hover:text-white transition-colors" aria-label="YouTube"><i data-lucide="youtube" class="w-5 h-5"></i></a>
+                    <a href="https://www.linkedin.com/company/digitaladvertise" target="_blank" class="text-white/55 hover:text-white transition-colors" aria-label="LinkedIn"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Global main controller -->
+    <script src="js/navbar.js"></script>
+    <script src="js/main.js"></script>
+
+    <!-- Local Diagnostic widget script -->
+    <script>
+        function matchChallenge(type) {
+            const resultBox = document.getElementById('matched-result');
+            const resultIcon = document.getElementById('result-icon');
+            const resultTitle = document.getElementById('result-title');
+            const resultDesc = document.getElementById('result-desc');
+            const resultLink = document.getElementById('result-link');
+
+            resultBox.classList.remove('hidden');
+
+            if (type === 'leads') {
+                resultIcon.setAttribute('data-lucide', 'trending-up');
+                resultTitle.textContent = "Performance Marketing";
+                resultDesc.textContent = "Scale campaign reach across Google, Meta, and TikTok with certified biddings and attribution models.";
+                resultLink.href = "performance-marketing.html";
+            } else if (type === 'speed') {
+                resultIcon.setAttribute('data-lucide', 'code-2');
+                resultTitle.textContent = "Website Development";
+                resultDesc.textContent = "Rebuild conversion endpoints for speed, sub-1s load times, SEO indexation, and clean UX flows.";
+                resultLink.href = "web-development.html";
+            } else if (type === 'video') {
+                resultIcon.setAttribute('data-lucide', 'cpu');
+                resultTitle.textContent = "AI Video & Creative Automation";
+                resultDesc.textContent = "Generate visual ad variants, digital avatar presenters, and multi-language creative assets using AI video diffusion models.";
+                resultLink.href = "#ai-video-creative";
+            }
+            if (typeof lucide !== 'undefined') lucide.createIcons();
+        }
+    </script>
+<script>
+(function() {
+  var navbar = document.getElementById('navbar');
+  var heroWrapper = document.getElementById('hero-scroll-wrapper');
+
+  if (!heroWrapper) {
+    navbar.classList.add('nav-visible');
+  } else {
+    function checkScroll() {
+      var heroBottom = heroWrapper.offsetTop + heroWrapper.offsetHeight;
+      if (window.scrollY >= heroBottom - 100) {
+        navbar.classList.add('nav-visible');
+      } else {
+        navbar.classList.remove('nav-visible');
+      }
+    }
+    window.addEventListener('scroll', checkScroll, {passive: true});
+    checkScroll();
+  }
+
+  setTimeout(function() {
+    var wa = document.querySelector('.whatsapp-float');
+    if (wa) {
+      wa.style.backgroundColor = '#25d366';
+      wa.style.color = '#ffffff';
+    }
+  }, 300);
+})();
+
+function toggleMobileMenu() {
+  var menu = document.getElementById('mobile-menu');
+  if (!menu) return;
+  menu.classList.toggle('open');
+}
+</script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Packaging Design | Digital Advertise</title>
+    <meta name="description" content="We design packaging that sells on shelf and on screen. From structural engineering and material selection to print-ready artwork and photorealistic 3D mockups, our packaging team ensures every unboxing moment reinforces your brand story.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://digitaladvertise.com/packaging.html">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Scripts & Animations CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@0.395.0"></script>
+    <!-- GSAP & Lenis Smooth Scroll -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        slate: {
+                            950: '#020617',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Shared Custom Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Nav links desktop */
+        #desktop-nav {
+            display: flex !important;
+            align-items: center;
+            gap: 4px;
+        }
+        @media (max-width: 1024px) {
+            #desktop-nav { display: none !important; }
+            #hamburger-btn { display: block !important; }
+        }
+        #desktop-nav a {
+            padding: 8px 14px;
+            font-size: 14px;
+            font-weight: 500;
+            color: #475569;
+            border-radius: 9999px;
+            text-decoration: none;
+            transition: color 0.2s, background 0.2s;
+            white-space: nowrap;
+            transform: none !important;
+        }
+        #desktop-nav a:hover {
+            color: #2563eb;
+            background: rgba(37,99,235,0.07);
+            transform: none !important;
+        }
+        .nav-dropdown {
+            position: relative;
+            padding-bottom: 8px;
+            margin-bottom: -8px;
+        }
+        .nav-dropdown-menu {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(6px);
+            width: 260px;
+            background: rgba(255,255,255,0.98);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(226,232,240,0.8);
+            box-shadow: 0 10px 40px rgba(2,6,23,0.10);
+            border-radius: 20px;
+            padding: 10px;
+            z-index: 99999;
+            transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+        }
+        .nav-dropdown-menu::before {
+            content: '';
+            position: absolute;
+            top: -12px;
+            left: 0;
+            width: 100%;
+            height: 12px;
+            background: transparent;
+        }
+        .nav-dropdown:hover .nav-dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+            transform: translateX(-50%) translateY(0px);
+        }
+        .nav-dropdown-menu a {
+            display: block;
+            padding: 9px 14px;
+            font-size: 13px;
+            color: #475569;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: color 0.15s, background 0.15s;
+        }
+        .nav-dropdown-menu a:hover {
+            color: #2563eb;
+            background: #f1f5f9;
+        }
+        #navbar.nav-visible {
+            transform: translateY(0) !important;
+        }
+        #mobile-menu.open {
+            display: flex !important;
+        }
+        /* Hero gradient animation */
+        .hero-gradient {
+            background: linear-gradient(-45deg, #0f172a, #1e293b, #0f172a, #1e3a5f);
+            background-size: 400% 400%;
+            animation: gradientShift 8s ease infinite;
+        }
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+    </style>
+</head>
+<body class="bg-white text-slate-900 overflow-x-hidden antialiased selection:bg-blue-100 selection:text-blue-800">
+
+<!-- Header -->
+<header id="navbar" class="fixed top-0 left-0 w-full z-[9999] py-4 transform -translate-y-full transition-transform duration-[450ms] ease-[cubic-bezier(0.16,1,0.3,1)] nav-visible">
+    <div class="max-w-[1280px] mx-auto px-6">
+        <div id="nav-wrapper" class="flex items-center justify-between bg-white/85 backdrop-blur-[24px] border border-white/60 shadow-[0_4px_32px_rgba(2,6,23,0.08)] rounded-full h-[60px] px-6">
+            <a href="index.html" class="flex items-center">
+                <img src="assets/logo.png" alt="Digital Advertise Logo" class="h-8 w-auto object-contain">
+            </a>
+            <nav style="display:none;" id="desktop-nav">
+                <a href="index.html">Home</a>
+                <div class="nav-dropdown">
+                    <a href="services.html">Services ▾</a>
+                    <div class="nav-dropdown-menu">
+                        <a href="performance-marketing.html">Performance Marketing</a>
+                        <a href="brand-identity.html">Brand Identity</a>
+                        <a href="social-media.html">Social Media Marketing</a>
+                        <a href="web-development.html">Website Development</a>
+                        <a href="video-production.html">Video Production</a>
+                        <a href="ai-video.html">AI Video Generation</a>
+                        <a href="packaging.html">Product Packaging Design</a>
+                        <a href="photography.html">Product Shoot</a>
+                    </div>
+                </div>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="case-studies.html">Case Studies</a>
+                <a href="blog.html">Blog</a>
+                <a href="contact.html">Contact</a>
+                <a href="about.html">About Us</a>
+            </nav>
+            <div class="flex items-center gap-2">
+                <a href="audit.html" class="inline-flex items-center gap-1.5 bg-slate-900 text-white font-semibold text-sm py-2.5 px-5 rounded-full transition-colors hover:bg-slate-800">
+                    Get Started ↗
+                </a>
+                <button onclick="toggleMobileMenu()" id="hamburger-btn" class="hidden p-2 rounded-full border-none bg-transparent cursor-pointer">
+                    ☰
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden mt-3 bg-white/95 backdrop-blur-[20px] rounded-[20px] p-5 flex-col gap-2">
+            <a href="index.html" class="py-2.5 px-3 text-slate-900 font-medium rounded-[10px] no-underline block">Home</a>
+            <a href="services.html" class="py-2.5 px-3 text-slate-900 font-medium rounded-[10px] no-underline block">Services</a>
+            <a href="portfolio.html" class="py-2.5 px-3 text-slate-900 font-medium rounded-[10px] no-underline block">Portfolio</a>
+            <a href="case-studies.html" class="py-2.5 px-3 text-slate-900 font-medium rounded-[10px] no-underline block">Case Studies</a>
+            <a href="blog.html" class="py-2.5 px-3 text-slate-900 font-medium rounded-[10px] no-underline block">Blog</a>
+            <a href="contact.html" class="py-2.5 px-3 text-slate-900 font-medium rounded-[10px] no-underline block">Contact</a>
+            <a href="about.html" class="py-2.5 px-3 text-slate-900 font-medium rounded-[10px] no-underline block">About Us</a>
+            <a href="audit.html" class="mt-2 py-3 bg-slate-900 text-white font-semibold rounded-full no-underline block text-center">Get Started</a>
+        </div>
+    </div>
+</header>
+
+<main class="relative bg-white text-slate-900 font-sans overflow-x-hidden">
+
+<!-- ===== HERO ===== -->
+<section class="relative overflow-hidden pt-36 md:pt-44 pb-20 mesh-bg">
+    <div class="bubble bubble-1" aria-hidden="true"></div>
+    <div class="bubble bubble-2" aria-hidden="true"></div>
+    <div class="bubble bubble-3" aria-hidden="true"></div>
+    <div class="absolute inset-0 overflow-hidden pointer-events-none z-0">
+        <div class="absolute w-[800px] h-[800px] rounded-full bg-[radial-gradient(circle,_rgba(37,99,235,0.12)_0%,_transparent_70%)] -top-1/4 -right-1/4"></div>
+    </div>
+    <div class="absolute inset-0 grid-pattern opacity-60 pointer-events-none"></div>
+    <div class="max-w-7xl mx-auto px-6 md:px-10 relative z-10 text-left">
+        <div class="overline-label reveal">Product Packaging Design</div>
+        <h1 class="mt-3 font-display text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tighter text-slate-900 text-reveal">
+            Packaging that<br><span class="italic font-light text-slate-700">sells on shelf and screen</span>.
+        </h1>
+        <p class="mt-7 text-lg md:text-xl text-slate-600 max-w-2xl leading-relaxed">We design packaging that sells on shelf and on screen. From structural engineering and material selection to print-ready artwork and photorealistic 3D mockups.</p>
+        <div class="mt-8 flex flex-wrap items-center gap-4">
+            <a href="audit.html" class="btn-primary btn-magnetic shine-sweep group">Get Free Audit <i data-lucide="arrow-up-right" class="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></i></a>
+            <a href="portfolio.html" class="btn-secondary btn-magnetic group">View Our Work <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i></a>
+        </div>
+    </div>
+</section>
+
+<!-- ===== WHAT WE DO ===== -->
+<section class="relative overflow-hidden py-16 md:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6 md:px-10">
+        <div class="text-center max-w-3xl mx-auto mb-14">
+            <div class="overline-label reveal">What We Do</div>
+            <h2 class="mt-3 font-display text-3xl md:text-5xl font-bold tracking-tight text-slate-900 text-reveal">
+                Packaging Engineered for Impact
+            </h2>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="group relative bg-white rounded-3xl p-8 border border-slate-100 hover:border-blue-200 hover:shadow-[0_8px_40px_-12px_rgba(37,99,235,0.15)] transition-all duration-300">
+                <div class="w-14 h-14 rounded-2xl bg-blue-50 flex items-center justify-center mb-5 group-hover:bg-blue-100 transition-colors">
+                    <i data-lucide="box" class="w-7 h-7 text-blue-600"></i>
+                </div>
+                <h3 class="font-display text-lg font-bold text-slate-900">Structural Design & Dielines</h3>
+                <p class="mt-3 text-slate-600 text-[15px] leading-relaxed">Precision-engineered dielines and structural designs optimized for production efficiency, material minimization, and maximum shelf presence.</p>
+            </div>
+            <div class="group relative bg-white rounded-3xl p-8 border border-slate-100 hover:border-blue-200 hover:shadow-[0_8px_40px_-12px_rgba(37,99,235,0.15)] transition-all duration-300">
+                <div class="w-14 h-14 rounded-2xl bg-blue-50 flex items-center justify-center mb-5 group-hover:bg-blue-100 transition-colors">
+                    <i data-lucide="palette" class="w-7 h-7 text-blue-600"></i>
+                </div>
+                <h3 class="font-display text-lg font-bold text-slate-900">Print-Ready Artwork</h3>
+                <p class="mt-3 text-slate-600 text-[15px] leading-relaxed">Production-grade artwork with Pantone and CMYK specifications, bleed marks, and color profiles that translate perfectly from screen to print.</p>
+            </div>
+            <div class="group relative bg-white rounded-3xl p-8 border border-slate-100 hover:border-blue-200 hover:shadow-[0_8px_40px_-12px_rgba(37,99,235,0.15)] transition-all duration-300">
+                <div class="w-14 h-14 rounded-2xl bg-blue-50 flex items-center justify-center mb-5 group-hover:bg-blue-100 transition-colors">
+                    <i data-lucide="sparkles" class="w-7 h-7 text-blue-600"></i>
+                </div>
+                <h3 class="font-display text-lg font-bold text-slate-900">3D Photorealistic Mockups</h3>
+                <p class="mt-3 text-slate-600 text-[15px] leading-relaxed">Photorealistic 3D renders for e-commerce listings, investor decks, and social media campaigns before a single unit goes to print.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== PROCESS ===== -->
+<section class="relative overflow-hidden py-16 md:py-24 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-6 md:px-10">
+        <div class="text-center max-w-3xl mx-auto mb-14">
+            <div class="overline-label reveal">Our Process</div>
+            <h2 class="mt-3 font-display text-3xl md:text-5xl font-bold tracking-tight text-slate-900 text-reveal">
+                From Concept to Shelf
+            </h2>
+        </div>
+        <div class="grid md:grid-cols-4 gap-6">
+            <div class="relative bg-white rounded-3xl p-7 border border-slate-100 text-center">
+                <div class="inline-flex w-10 h-10 rounded-full bg-blue-600 text-white font-display font-bold text-sm items-center justify-center mb-5">1</div>
+                <h4 class="font-display font-bold text-slate-900">Strategy & Research</h4>
+                <p class="mt-2 text-slate-600 text-sm leading-relaxed">We audit your category, competitors, and target customer to define the optimal packaging strategy.</p>
+            </div>
+            <div class="relative bg-white rounded-3xl p-7 border border-slate-100 text-center">
+                <div class="inline-flex w-10 h-10 rounded-full bg-blue-600 text-white font-display font-bold text-sm items-center justify-center mb-5">2</div>
+                <h4 class="font-display font-bold text-slate-900">Structural Design</h4>
+                <p class="mt-2 text-slate-600 text-sm leading-relaxed">We engineer the dieline, select materials, and prototype the physical structure for optimal shelf fit.</p>
+            </div>
+            <div class="relative bg-white rounded-3xl p-7 border border-slate-100 text-center">
+                <div class="inline-flex w-10 h-10 rounded-full bg-blue-600 text-white font-display font-bold text-sm items-center justify-center mb-5">3</div>
+                <h4 class="font-display font-bold text-slate-900">Visual Design & Mockups</h4>
+                <p class="mt-2 text-slate-600 text-sm leading-relaxed">Our team creates the visual layer, typography, and photorealistic 3D mockups for stakeholder buy-in.</p>
+            </div>
+            <div class="relative bg-white rounded-3xl p-7 border border-slate-100 text-center">
+                <div class="inline-flex w-10 h-10 rounded-full bg-blue-600 text-white font-display font-bold text-sm items-center justify-center mb-5">4</div>
+                <h4 class="font-display font-bold text-slate-900">Print-Ready Delivery</h4>
+                <p class="mt-2 text-slate-600 text-sm leading-relaxed">We deliver production-ready files with color specs, bleed marks, and vendor-ready formats.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== WHY CHOOSE US ===== -->
+<section class="relative overflow-hidden py-16 md:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6 md:px-10">
+        <div class="text-center max-w-3xl mx-auto mb-14">
+            <div class="overline-label reveal">Why Choose Us</div>
+            <h2 class="mt-3 font-display text-3xl md:text-5xl font-bold tracking-tight text-slate-900 text-reveal">
+                Built for shelf impact
+            </h2>
+        </div>
+        <div class="grid sm:grid-cols-2 gap-6 max-w-5xl mx-auto">
+            <div class="flex items-start gap-4 bg-slate-50 rounded-2xl p-6 border border-slate-100 hover:border-blue-200 hover:shadow-md transition-all">
+                <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center shrink-0 mt-0.5">
+                    <i data-lucide="zap" class="w-5 h-5 text-blue-600"></i>
+                </div>
+                <div>
+                    <h4 class="font-display font-bold text-slate-900 text-[15px]">Converts at Shelf and In-Feed</h4>
+                    <p class="mt-1 text-slate-600 text-sm leading-relaxed">Engineered for both retail aisles and digital storefronts, maximizing conversion at every touchpoint.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-4 bg-slate-50 rounded-2xl p-6 border border-slate-100 hover:border-blue-200 hover:shadow-md transition-all">
+                <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center shrink-0 mt-0.5">
+                    <i data-lucide="check-circle" class="w-5 h-5 text-blue-600"></i>
+                </div>
+                <div>
+                    <h4 class="font-display font-bold text-slate-900 text-[15px]">Print-Ready Files</h4>
+                    <p class="mt-1 text-slate-600 text-sm leading-relaxed">Production-grade deliverables eliminate costly printer revision cycles and production delays.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-4 bg-slate-50 rounded-2xl p-6 border border-slate-100 hover:border-blue-200 hover:shadow-md transition-all">
+                <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center shrink-0 mt-0.5">
+                    <i data-lucide="camera" class="w-5 h-5 text-blue-600"></i>
+                </div>
+                <div>
+                    <h4 class="font-display font-bold text-slate-900 text-[15px]">Photorealistic 3D Mockups</h4>
+                    <p class="mt-1 text-slate-600 text-sm leading-relaxed">High-fidelity 3D renders for social, ads, and investor decks — before a single unit is produced.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-4 bg-slate-50 rounded-2xl p-6 border border-slate-100 hover:border-blue-200 hover:shadow-md transition-all">
+                <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center shrink-0 mt-0.5">
+                    <i data-lucide="gift" class="w-5 h-5 text-blue-600"></i>
+                </div>
+                <div>
+                    <h4 class="font-display font-bold text-slate-900 text-[15px]">Unboxing Experience Design</h4>
+                    <p class="mt-1 text-slate-600 text-sm leading-relaxed">Unboxing moments designed to drive organic UGC, social shares, and repeat purchase loyalty.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== PORTFOLIO ===== -->
+<section class="relative overflow-hidden py-16 md:py-24 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-6 md:px-10">
+        <div class="text-center max-w-3xl mx-auto mb-14">
+            <div class="overline-label reveal">Our Work</div>
+            <h2 class="mt-3 font-display text-3xl md:text-5xl font-bold tracking-tight text-slate-900 text-reveal">
+                Packaging that stands out
+            </h2>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="group relative rounded-3xl overflow-hidden bg-white border border-slate-100 hover:shadow-[0_8px_40px_-12px_rgba(37,99,235,0.15)] transition-all duration-300">
+                <div class="aspect-[4/3] bg-gradient-to-br from-blue-50 to-indigo-50 flex items-center justify-center overflow-hidden">
+                    <img src="assets/portfolio-figma-box.png" alt="Packaging Design Project" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-6">
+                    <span class="text-[11px] uppercase tracking-[0.2em] font-semibold text-blue-600">Beauty</span>
+                    <h4 class="mt-2 font-display font-bold text-slate-900">Premium Skincare Line</h4>
+                    <p class="mt-2 text-slate-600 text-sm leading-relaxed">Structural design and print-ready artwork for a 12-SKU skincare launch.</p>
+                </div>
+            </div>
+            <div class="group relative rounded-3xl overflow-hidden bg-white border border-slate-100 hover:shadow-[0_8px_40px_-12px_rgba(37,99,235,0.15)] transition-all duration-300">
+                <div class="aspect-[4/3] bg-gradient-to-br from-blue-50 to-indigo-50 flex items-center justify-center overflow-hidden">
+                    <img src="assets/portfolio-notion.png" alt="Packaging Design Project" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-6">
+                    <span class="text-[11px] uppercase tracking-[0.2em] font-semibold text-blue-600">Food</span>
+                    <h4 class="mt-2 font-display font-bold text-slate-900">Artisan Snack Brand</h4>
+                    <p class="mt-2 text-slate-600 text-sm leading-relaxed">Eco-friendly packaging redesign with dieline engineering and 3D mockups.</p>
+                </div>
+            </div>
+            <div class="group relative rounded-3xl overflow-hidden bg-white border border-slate-100 hover:shadow-[0_8px_40px_-12px_rgba(37,99,235,0.15)] transition-all duration-300">
+                <div class="aspect-[4/3] bg-gradient-to-br from-blue-50 to-indigo-50 flex items-center justify-center overflow-hidden">
+                    <img src="assets/portfolio-slack.png" alt="Packaging Design Project" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-6">
+                    <span class="text-[11px] uppercase tracking-[0.2em] font-semibold text-blue-600">Electronics</span>
+                    <h4 class="mt-2 font-display font-bold text-slate-900">Consumer Tech Unboxing</h4>
+                    <p class="mt-2 text-slate-600 text-sm leading-relaxed">Premium unboxing experience design with custom inserts and branded tissue.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section class="relative overflow-hidden py-16 md:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6 md:px-10">
+        <div class="text-center max-w-3xl mx-auto mb-14">
+            <div class="overline-label reveal">Client Results</div>
+            <h2 class="mt-3 font-display text-3xl md:text-5xl font-bold tracking-tight text-slate-900 text-reveal">
+                What our clients say
+            </h2>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-slate-50 rounded-3xl p-8 border border-slate-100">
+                <div class="flex items-center gap-1 mb-4">
+                    <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                    <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                    <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                    <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                    <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                </div>
+                <p class="text-slate-700 text-[15px] leading-relaxed">"Our Amazon listing CTR jumped 32% after the packaging redesign. The 3D mockups helped us validate concepts before committing to print — saved us weeks."</p>
+                <div class="mt-6 flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-display font-bold text-sm">A</div>
+                    <div>
+                        <div class="font-semibold text-slate-900 text-sm">Amit Desai</div>
+                        <div class="text-slate-500 text-xs">Founder, Glow Skincare</div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-slate-50 rounded-3xl p-8 border border-slate-100">
+                <div class="flex items-center gap-1 mb-4">
+                    <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                    <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                    <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                    <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                    <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                </div>
+                <p class="text-slate-700 text-[15px] leading-relaxed">"The print-ready files were flawless. Our manufacturer approved everything on the first pass — no revision cycles, no delays. The unboxing experience drove massive UGC."</p>
+                <div class="mt-6 flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-display font-bold text-sm">S</div>
+                    <div>
+                        <div class="font-semibold text-slate-900 text-sm">Sara Mitchell</div>
+                        <div class="text-slate-500 text-xs">CMO, PureBite Foods</div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-slate-50 rounded-3xl p-8 border border-slate-100">
+                <div class="flex items-center gap-1 mb-4">
+                    <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                    <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                    <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                    <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                    <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                </div>
+                <p class="text-slate-700 text-[15px] leading-relaxed">"We went from concept to shelf in 3 weeks — our previous agency took 10. The 3D renders we used for investor decks helped us close our Series A."</p>
+                <div class="mt-6 flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-display font-bold text-sm">R</div>
+                    <div>
+                        <div class="font-semibold text-slate-900 text-sm">Rohan Kapoor</div>
+                        <div class="text-slate-500 text-xs">CEO, NovaTech Audio</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="relative overflow-hidden py-16 md:py-24 bg-slate-50">
+    <div class="max-w-3xl mx-auto px-6 md:px-10">
+        <div class="text-center mb-14">
+            <div class="overline-label reveal">FAQ</div>
+            <h2 class="mt-3 font-display text-3xl md:text-5xl font-bold tracking-tight text-slate-900 text-reveal">
+                Common questions
+            </h2>
+        </div>
+        <div class="space-y-4">
+            <div class="bg-white rounded-2xl border border-slate-100 p-6">
+                <h4 class="font-display font-bold text-slate-900">What file formats do you deliver for print?</h4>
+                <p class="mt-2 text-slate-600 text-sm leading-relaxed">We deliver press-ready PDFs with CMYK/Pantone profiles, bleed marks, and dieline overlays. You'll also receive editable source files in Adobe Illustrator and InDesign formats.</p>
+            </div>
+            <div class="bg-white rounded-2xl border border-slate-100 p-6">
+                <h4 class="font-display font-bold text-slate-900">Do you handle structural prototyping?</h4>
+                <p class="mt-2 text-slate-600 text-sm leading-relaxed">Yes. We engineer dielines and provide structural specifications for die-cut manufacturers. For physical prototypes, we coordinate with partner facilities for die-cut samples.</p>
+            </div>
+            <div class="bg-white rounded-2xl border border-slate-100 p-6">
+                <h4 class="font-display font-bold text-slate-900">Can you design for Amazon and D2C at the same time?</h4>
+                <p class="mt-2 text-slate-600 text-sm leading-relaxed">Absolutely. We design packaging systems that work across Amazon listing imagery, D2C unboxing, and retail shelf presence — ensuring brand consistency at every touchpoint.</p>
+            </div>
+            <div class="bg-white rounded-2xl border border-slate-100 p-6">
+                <h4 class="font-display font-bold text-slate-900">How long does a packaging project take?</h4>
+                <p class="mt-2 text-slate-600 text-sm leading-relaxed">A typical single-SKU project takes 2–3 weeks from strategy to print-ready delivery. Full product line redesigns (5–15 SKUs) typically take 4–6 weeks depending on scope.</p>
+            </div>
+            <div class="bg-white rounded-2xl border border-slate-100 p-6">
+                <h4 class="font-display font-bold text-slate-900">Do you offer sustainable packaging options?</h4>
+                <p class="mt-2 text-slate-600 text-sm leading-relaxed">Yes. We specialize in eco-friendly material sourcing including FSC-certified papers, soy-based inks, and recyclable structural designs that meet sustainability goals without compromising shelf impact.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== CTA SECTION ===== -->
+<section id="contact" class="relative overflow-hidden py-16 md:py-24">
+<div class="max-w-7xl mx-auto px-6 md:px-10">
+<div class="relative rounded-[36px] bg-slate-950 overflow-hidden p-10 md:p-16 lg:p-24 reveal">
+<div class="absolute -top-32 -left-20 w-[420px] h-[420px] rounded-full bg-blue-500/30 blur-[120px] pointer-events-none"></div>
+<div class="absolute -bottom-32 -right-20 w-[420px] h-[420px] rounded-full bg-indigo-500/30 blur-[120px] pointer-events-none"></div>
+<div class="absolute inset-0 opacity-[0.06] pointer-events-none grid-pattern"></div>
+<div class="absolute right-10 top-10 w-24 h-24 rounded-full bg-gradient-to-br from-blue-400 to-indigo-500 blur-2xl opacity-50 floaty"></div>
+<div class="relative grid lg:grid-cols-12 gap-10 items-center">
+<div class="lg:col-span-8 text-left">
+<div class="inline-flex items-center gap-2 glass rounded-full pl-2 pr-4 py-1.5 mb-7 bg-white/10 border-white/15">
+<span class="bg-white text-slate-900 text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full">Free</span>
+<span class="text-[13px] font-medium text-white/85">No-cost performance audit</span>
+</div>
+<h2 class="font-display text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tighter text-white leading-none text-reveal">Ready to scale with Product Packaging Design?</h2>
+<p class="mt-5 text-white/70 text-base md:text-lg max-w-xl leading-relaxed">Get a free packaging audit and a design roadmap — built by designers who've created 200+ packaging systems.</p>
+<div class="mt-9 flex flex-col sm:flex-row gap-3">
+<a href="audit.html" class="btn-magnetic shine-sweep inline-flex items-center justify-center gap-2 bg-white text-slate-900 hover:bg-blue-500 hover:text-white font-semibold rounded-full pl-6 pr-5 py-4 transition-all hover:-translate-y-0.5 group">Get Free Audit <i data-lucide="arrow-up-right" class="w-4.5 h-4.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></i></a>
+<a href="contact.html" class="inline-flex items-center justify-center gap-2 bg-white/5 hover:bg-white/10 text-white font-semibold rounded-full pl-6 pr-5 py-4 border border-white/15 transition-all">Let's Talk <i data-lucide="sparkles" class="w-4 h-4"></i></a>
+</div>
+</div>
+<div class="lg:col-span-4 text-left">
+<div class="rounded-3xl border border-white/15 bg-white/[0.04] p-6 backdrop-blur-md select-none">
+<div class="text-[11px] uppercase tracking-wider font-semibold text-white/60">What you'll receive</div>
+<ul class="mt-4 space-y-3 text-white/85 text-[14px]">
+<li class="flex items-start gap-3"><span class="mt-2 w-1.5 h-1.5 rounded-full bg-blue-400 shrink-0"></span><span>Packaging audit & material guide</span></li>
+<li class="flex items-start gap-3"><span class="mt-2 w-1.5 h-1.5 rounded-full bg-blue-400 shrink-0"></span><span>Dieline & structural plan</span></li>
+<li class="flex items-start gap-3"><span class="mt-2 w-1.5 h-1.5 rounded-full bg-blue-400 shrink-0"></span><span>Design direction board</span></li>
+</ul>
+<div class="mt-5 pt-5 border-t border-white/10 text-[12px] text-white/50">Avg. response time · under 12 hours</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ===== STATS (DARK BG) ===== -->
+<section class="relative py-16 md:py-24 bg-[#0f172a] overflow-hidden">
+    <div class="absolute inset-0 grid-pattern opacity-[0.03] pointer-events-none"></div>
+    <div class="max-w-7xl mx-auto px-6 md:px-10 relative z-10">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+            <div class="overline-label reveal" style="color: #60a5fa;">Results</div>
+            <h2 class="mt-3 font-display text-3xl md:text-5xl font-bold tracking-tight text-white text-reveal">
+                Measurable impact across the board
+            </h2>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
+            <div class="bg-white/5 border border-white/10 rounded-2xl p-6 text-center hover:border-blue-500/30 transition-all backdrop-blur-sm">
+                <div class="font-display text-3xl md:text-4xl font-extrabold text-blue-400">35%</div>
+                <div class="text-[11px] text-white/60 font-semibold uppercase tracking-wider mt-2">Higher Listing CTR</div>
+            </div>
+            <div class="bg-white/5 border border-white/10 rounded-2xl p-6 text-center hover:border-blue-500/30 transition-all backdrop-blur-sm">
+                <div class="font-display text-3xl md:text-4xl font-extrabold text-blue-400">40%</div>
+                <div class="text-[11px] text-white/60 font-semibold uppercase tracking-wider mt-2">More UGC Shares</div>
+            </div>
+            <div class="bg-white/5 border border-white/10 rounded-2xl p-6 text-center hover:border-blue-500/30 transition-all backdrop-blur-sm col-span-2 md:col-span-1">
+                <div class="font-display text-3xl md:text-4xl font-extrabold text-blue-400">60%</div>
+                <div class="text-[11px] text-white/60 font-semibold uppercase tracking-wider mt-2">Faster Production</div>
+            </div>
+        </div>
+    </div>
+    <div class="absolute -top-32 -left-32 w-[400px] h-[400px] rounded-full bg-blue-500/10 blur-[120px] pointer-events-none"></div>
+    <div class="absolute -bottom-32 -right-32 w-[400px] h-[400px] rounded-full bg-indigo-500/10 blur-[100px] pointer-events-none"></div>
+</section>
+
+</main>
+
+<!-- Footer -->
+<footer class="relative bg-slate-950 text-white pt-20 md:pt-28 pb-10 overflow-hidden">
+    <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] h-[400px] rounded-full bg-blue-500/10 blur-[120px] pointer-events-none"></div>
+    <div class="relative max-w-7xl mx-auto px-6 md:px-10">
+        <div class="grid lg:grid-cols-12 gap-12 mb-14 text-left">
+            <div class="lg:col-span-4">
+                <div class="flex items-center mb-6">
+                    <img src="assets/logo-white.png" alt="Digital Advertise Logo" class="h-10 w-auto object-contain">
+                </div>
+                <p class="text-white/65 text-[15px] leading-relaxed max-w-md">
+                    A performance marketing partner for ambitious teams — engineered for measurable, durable growth across every channel and market.
+                </p>
+                <form class="mt-6 flex max-w-sm" onsubmit="handleNewsletterSubmit(event)">
+                    <input type="email" required placeholder="Subscribe to our newsletter" class="flex-1 bg-white/5 border border-white/10 rounded-l-xl px-4 py-2 text-[14px] text-white placeholder:text-white/40 focus:outline-none focus:border-blue-500">
+                    <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-5 rounded-r-xl text-[14px] font-semibold transition-colors">Join</button>
+                </form>
+            </div>
+            <div class="lg:col-span-8 grid grid-cols-2 sm:grid-cols-4 gap-8">
+                <div>
+                    <div class="text-[11px] uppercase tracking-[0.2em] font-semibold text-white/40 mb-4">Navigation</div>
+                    <ul class="space-y-2.5">
+                        <li><a href="index.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="about.html" class="text-[14px] text-white/80 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="services.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Services</a></li>
+                        <li><a href="portfolio.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Portfolio</a></li>
+                        <li><a href="case-studies.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Case Studies</a></li>
+                        <li><a href="blog.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="contact.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="text-[11px] uppercase tracking-[0.2em] font-semibold text-white/40 mb-4">Services</div>
+                    <ul class="space-y-2.5">
+                        <li><a href="social-media.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Social Media</a></li>
+                        <li><a href="performance-marketing.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Performance Marketing</a></li>
+                        <li><a href="web-development.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Web Development</a></li>
+                        <li><a href="brand-identity.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Brand Identity</a></li>
+                        <li><a href="ai-video.html" class="text-[14px] text-white/80 hover:text-white transition-colors">AI Creative</a></li>
+                        <li><a href="photography.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Product Photography</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="text-[11px] uppercase tracking-[0.2em] font-semibold text-white/40 mb-4">Resources</div>
+                    <ul class="space-y-2.5">
+                        <li><a href="audit.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Free Audit</a></li>
+                        <li><a href="blog.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="case-studies.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Case Studies</a></li>
+                        <li><a href="privacy.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="text-[11px] uppercase tracking-[0.2em] font-semibold text-white/40 mb-4">Contact</div>
+                    <ul class="space-y-2.5">
+                        <li><a href="mailto:info@digitaladvertise.com" class="text-[14px] text-white/80 hover:text-white transition-colors flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4 shrink-0"></i>info@digitaladvertise.com</a></li>
+                        <li><a href="tel:+18005550199" class="text-[14px] text-white/80 hover:text-white transition-colors flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4 shrink-0"></i>+1-800-555-0199</a></li>
+                        <li><a href="https://wa.me/917276751167" target="_blank" class="text-[14px] text-white/80 hover:text-white transition-colors flex items-center gap-2"><i data-lucide="message-circle" class="w-4 h-4 shrink-0"></i>WhatsApp</a></li>
+                        <li><a href="#" class="text-[14px] text-white/80 hover:text-white transition-colors flex items-center gap-2"><i data-lucide="map-pin" class="w-4 h-4 shrink-0"></i>Pune, India</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-white/10 pt-12 text-center select-none">
+            <div class="font-display font-bold tracking-tighter leading-none text-[clamp(44px,14vw,220px)] bg-gradient-to-b from-white to-white/10 bg-clip-text text-transparent opacity-80">
+                DIGITAL ADVERTISE
+            </div>
+        </div>
+        <div class="mt-10 pt-6 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-[13px] text-white/55">
+            <div>
+                &copy; <span id="current-year">2026</span> Digital Advertise. All rights reserved.
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="https://www.instagram.com/digital_advertise_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="text-white/55 hover:text-white transition-colors" aria-label="Instagram"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+                <a href="https://twitter.com/digitaladvertise" target="_blank" class="text-white/55 hover:text-white transition-colors" aria-label="X / Twitter"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+                <a href="https://www.facebook.com/digitaladvertise" target="_blank" class="text-white/55 hover:text-white transition-colors" aria-label="Facebook"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+                <a href="https://www.youtube.com/@digitaladvertise" target="_blank" class="text-white/55 hover:text-white transition-colors" aria-label="YouTube"><i data-lucide="youtube" class="w-5 h-5"></i></a>
+                <a href="https://www.linkedin.com/company/digitaladvertise" target="_blank" class="text-white/55 hover:text-white transition-colors" aria-label="LinkedIn"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Global scripts -->
+<script src="js/navbar.js"></script>
+<script src="js/main.js"></script>
+<script>
+    function toggleMobileMenu() {
+        var menu = document.getElementById('mobile-menu');
+        if (!menu) return;
+        menu.classList.toggle('open');
+    }
+    lucide.createIcons();
+</script>
+</body>
+</html>

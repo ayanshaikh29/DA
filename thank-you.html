@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You | Digital Advertise</title>
+    <meta name="description" content="Thank you for reaching out to Digital Advertise. Our growth directors are reviewing your specs and will respond shortly.">
+    <meta name="robots" content="noindex, nofollow">
+    
+    <!-- Fonts & CDNs -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@0.395.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+/* Nav links desktop */
+#desktop-nav {
+  display: flex !important;
+  align-items: center;
+  gap: 4px;
+}
+@media (max-width: 1024px) {
+  #desktop-nav { display: none !important; }
+  #hamburger-btn { display: block !important; }
+}
+#desktop-nav a {
+  padding: 8px 14px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #475569;
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: color 0.2s, background 0.2s;
+  white-space: nowrap;
+  transform: none !important;
+}
+#desktop-nav a:hover {
+  color: #2563eb;
+  background: rgba(37,99,235,0.07);
+  transform: none !important;
+}
+.nav-dropdown {
+  position: relative;
+  padding-bottom: 8px;
+  margin-bottom: -8px;
+}
+.nav-dropdown-menu {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(6px);
+  width: 260px;
+  background: rgba(255,255,255,0.98);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(226,232,240,0.8);
+  box-shadow: 0 10px 40px rgba(2,6,23,0.10);
+  border-radius: 20px;
+  padding: 10px;
+  z-index: 99999;
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+}
+.nav-dropdown-menu::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: 0;
+  width: 100%;
+  height: 12px;
+  background: transparent;
+}
+.nav-dropdown:hover .nav-dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0px);
+}
+.nav-dropdown-menu a {
+  display: block;
+  padding: 9px 14px;
+  font-size: 13px;
+  color: #475569;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: color 0.15s, background 0.15s;
+}
+.nav-dropdown-menu a:hover {
+  color: #2563eb;
+  background: #f1f5f9;
+}
+#navbar.nav-visible {
+  transform: translateY(0) !important;
+}
+#mobile-menu.open {
+  display: flex !important;
+}
+</style>
+</head>
+<body class="bg-white text-slate-900 overflow-x-hidden antialiased selection:bg-blue-100 selection:text-blue-800">
+
+<header id="navbar" style="position:fixed;top:0;left:0;width:100%;z-index:9999;padding:16px 0;transform:translateY(-120%);transition:transform 0.45s cubic-bezier(0.16,1,0.3,1);">
+  <div style="max-width:1280px;margin:0 auto;padding:0 24px;">
+    <div id="nav-wrapper" style="display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,0.85);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,0.6);box-shadow:0 4px 32px rgba(2,6,23,0.08);border-radius:9999px;height:60px;padding:0 24px;">
+      <a href="index.html" style="display:flex;align-items:center;">
+        <img src="assets/logo.png" alt="Digital Advertise Logo" style="height:32px;width:auto;object-fit:contain;">
+      </a>
+      <nav style="display:none;" id="desktop-nav">
+        <a href="index.html">Home</a>
+        <div class="nav-dropdown">
+          <a href="services.html">Services ▾</a>
+          <div class="nav-dropdown-menu">
+            <a href="performance-marketing.html">Performance Marketing</a>
+            <a href="brand-identity.html">Brand Identity</a>
+            <a href="social-media.html">Social Media Marketing</a>
+            <a href="web-development.html">Website Development</a>
+            <a href="video-production.html">Video Production</a>
+            <a href="ai-video.html">AI Video Generation</a>
+            <a href="packaging.html">Product Packaging Design</a>
+            <a href="photography.html">Product Shoot</a>
+          </div>
+        </div>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="case-studies.html">Case Studies</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About Us</a>
+      </nav>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <a href="audit.html" style="display:inline-flex;align-items:center;gap:6px;background:#0f172a;color:#fff;font-weight:600;font-size:14px;padding:10px 20px;border-radius:9999px;text-decoration:none;transition:background 0.2s;">
+          Get Started ↗
+        </a>
+        <button onclick="toggleMobileMenu()" id="hamburger-btn" style="display:none;padding:8px;border-radius:9999px;border:none;background:transparent;cursor:pointer;">
+          ☰
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" style="display:none;margin-top:12px;background:rgba(255,255,255,0.95);backdrop-filter:blur(20px);border-radius:20px;padding:20px;flex-direction:column;gap:8px;">
+      <a href="index.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Home</a>
+      <a href="services.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Services</a>
+      <a href="portfolio.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Portfolio</a>
+      <a href="case-studies.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Case Studies</a>
+      <a href="blog.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Blog</a>
+      <a href="contact.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Contact</a>
+      <a href="about.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">About Us</a>
+      <a href="audit.html" style="margin-top:8px;padding:12px;background:#0f172a;color:#fff;font-weight:600;border-radius:9999px;text-decoration:none;display:block;text-align:center;">Get Started</a>
+    </div>
+  </div>
+</header>
+
+    <main class="relative min-h-screen bg-white text-slate-900 font-sans overflow-hidden flex items-center justify-center p-6 mesh-bg">
+        <div class="absolute inset-0 grid-pattern opacity-60 pointer-events-none"></div>
+        
+        <div class="glass-strong border border-slate-200 p-8 md:p-12 rounded-[2.5rem] shadow-2xl max-w-lg w-full text-center relative z-10 reveal">
+            <div class="w-16 h-16 rounded-full bg-emerald-100 flex items-center justify-center mx-auto mb-6 select-none animate-bounce">
+                <i data-lucide="check-circle-2" class="text-emerald-600 w-8 h-8"></i>
+            </div>
+            
+            <h1 class="font-display text-3xl md:text-4xl font-extrabold tracking-tight text-slate-900">You're on the list.</h1>
+            <p class="mt-4 text-slate-500 text-[14px] leading-relaxed max-w-sm mx-auto">
+                Thank you for contacting Digital Advertise. Our growth directors are reviewing your website metrics and channel bottlenecks. We will reach out within 12 hours.
+            </p>
+            
+            <div class="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
+                <a href="index.html" class="btn-primary py-3.5 px-8 text-[14px] justify-center">Return to Home</a>
+                <a href="portfolio.html" class="btn-secondary py-3.5 px-8 text-[14px] justify-center">Explore Work</a>
+            </div>
+            
+            <div class="mt-8 pt-6 border-t border-slate-100 text-[11px] text-slate-400">
+                A copy of the confirmation has been dispatched.
+            </div>
+        </div>
+    </main>
+
+    <!-- Global main controller -->
+    <script src="js/main.js"></script>
+<script>
+(function() {
+  var navbar = document.getElementById('navbar');
+  var heroWrapper = document.getElementById('hero-scroll-wrapper');
+
+  if (!heroWrapper) {
+    navbar.classList.add('nav-visible');
+  } else {
+    function checkScroll() {
+      var heroBottom = heroWrapper.offsetTop + heroWrapper.offsetHeight;
+      if (window.scrollY >= heroBottom - 100) {
+        navbar.classList.add('nav-visible');
+      } else {
+        navbar.classList.remove('nav-visible');
+      }
+    }
+    window.addEventListener('scroll', checkScroll, {passive: true});
+    checkScroll();
+  }
+
+  setTimeout(function() {
+    var wa = document.querySelector('.whatsapp-float');
+    if (wa) {
+      wa.style.backgroundColor = '#25d366';
+      wa.style.color = '#ffffff';
+    }
+  }, 300);
+})();
+
+function toggleMobileMenu() {
+  var menu = document.getElementById('mobile-menu');
+  if (!menu) return;
+  menu.classList.toggle('open');
+}
+</script>
+</body>
+</html>
+
+
+

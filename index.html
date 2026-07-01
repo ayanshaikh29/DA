@@ -177,8 +177,8 @@
     border: 1px solid rgba(56,189,248,0.35);
     box-shadow: 0 0 30px rgba(37,99,235,0.2),
                 inset 0 1px 0 rgba(255,255,255,0.1);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
+    
+    -webkit-
     transition: all 0.35s cubic-bezier(0.16,1,0.3,1);
     color: #fff;
     text-decoration: none;
@@ -207,8 +207,8 @@
     border: 1px solid rgba(56,189,248,0.14);
     box-shadow: 0 20px 50px rgba(0,0,0,0.5),
                 inset 0 1px 0 rgba(255,255,255,0.04);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    
+    -webkit-
     border-radius: 22px;
     padding: 28px 20px;
     text-align: center;
@@ -335,7 +335,7 @@
   transform: translateX(-50%) translateY(6px);
   width: 260px;
   background: rgba(255,255,255,0.98);
-  backdrop-filter: blur(20px);
+  
   border: 1px solid rgba(226,232,240,0.8);
   box-shadow: 0 10px 40px rgba(2,6,23,0.10);
   border-radius: 20px;
@@ -418,7 +418,7 @@
         <p class="text-[#38BDF8] font-display font-light text-xs sm:text-sm uppercase tracking-[0.45em] mt-5 mb-8">
             Data-Driven Performance & Advertising
         </p>
-        <a href="audit.html" class="spatial-glow-btn px-8 py-4 text-white text-xs font-semibold tracking-[0.25em] uppercase rounded-full">
+        <a href="audit.html" class="spatial-glow-btn px-8 py-4 text-xs font-semibold tracking-[0.25em] uppercase rounded-full" style="color:#ffffff !important;-webkit-text-fill-color:#ffffff !important;opacity:1 !important;visibility:visible !important;display:inline-block !important;font-size:12px !important;">
             Get Free Audit
         </a>
     </div>
@@ -446,12 +446,12 @@
             From Mumbai to New York &mdash; your brand amplified across 42+ markets.
         </p>
         <div class="flex gap-4 flex-wrap mt-6">
-            <a href="audit.html"
-               class="spatial-glow-btn px-9 py-4 text-white text-xs font-semibold tracking-[0.25em] uppercase rounded-full">
-                Get Free Audit
-            </a>
+        <a href="audit.html"
+           class="spatial-glow-btn px-9 py-4 text-xs font-semibold tracking-[0.25em] uppercase rounded-full" style="color:#ffffff !important;-webkit-text-fill-color:#ffffff !important;opacity:1 !important;visibility:visible !important;display:inline-block !important;font-size:12px !important;">
+            Get Free Audit
+        </a>
             <a href="portfolio.html"
-               class="px-9 py-4 border border-white/15 hover:border-white/35 text-white text-xs font-semibold tracking-[0.25em] uppercase rounded-full transition-all duration-300 backdrop-blur-sm">
+               class="px-9 py-4 border border-white/15 hover:border-white/35 text-white text-xs font-semibold tracking-[0.25em] uppercase rounded-full transition-all duration-300">
                 View Our Work
             </a>
         </div>
@@ -470,7 +470,7 @@
 <!-- Header -->
 <header id="navbar" style="position:fixed;top:0;left:0;width:100%;z-index:9999;padding:16px 0;transform:translateY(-120%);transition:transform 0.45s cubic-bezier(0.16,1,0.3,1);">
   <div style="max-width:1280px;margin:0 auto;padding:0 24px;">
-    <div id="nav-wrapper" style="display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,0.85);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,0.6);box-shadow:0 4px 32px rgba(2,6,23,0.08);border-radius:9999px;height:60px;padding:0 24px;">
+    <div id="nav-wrapper" style="display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,0.85);border:1px solid rgba(255,255,255,0.6);box-shadow:0 4px 32px rgba(2,6,23,0.08);border-radius:9999px;height:60px;padding:0 24px;">
       <a href="index.html" style="display:flex;align-items:center;">
         <img src="assets/logo.png" alt="Digital Advertise Logo" style="height:32px;width:auto;object-fit:contain;">
       </a>
@@ -479,9 +479,9 @@
         <div class="nav-dropdown">
           <a href="services.html">Services ▾</a>
           <div class="nav-dropdown-menu">
+            <a href="social-media.html">Social Media Marketing</a>
             <a href="performance-marketing.html">Performance Marketing</a>
             <a href="brand-identity.html">Brand Identity</a>
-            <a href="social-media.html">Social Media Marketing</a>
             <a href="web-development.html">Website Development</a>
             <a href="video-production.html">Video Production</a>
             <a href="ai-video.html">AI Video Generation</a>
@@ -504,7 +504,7 @@
         </button>
       </div>
     </div>
-    <div id="mobile-menu" style="display:none;margin-top:12px;background:rgba(255,255,255,0.95);backdrop-filter:blur(20px);border-radius:20px;padding:20px;flex-direction:column;gap:8px;">
+    <div id="mobile-menu" style="display:none;margin-top:12px;background:rgba(255,255,255,0.95);border-radius:20px;padding:20px;flex-direction:column;gap:8px;">
       <a href="index.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Home</a>
       <a href="services.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Services</a>
       <a href="portfolio.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Portfolio</a>
@@ -519,82 +519,127 @@
 
 
 
-<!-- ===== INFINITE TRUST MARQUEE ===== -->
-<div class="trust-marquee animate-marquee py-6">
-  <div class="trust-marquee__track">
-    <div class="trust-marquee__item">
-      <svg viewBox="0 0 24 24" fill="none"><path d="M12 2L3 7v10l9 5 9-5V7l-9-5z" fill="#4285F4" opacity="0.15"/><path d="M12 2L3 7l9 5 9-5-9-5z" fill="#EA4335"/><path d="M3 7v10l9-5-9-5z" fill="#4285F4"/><path d="M21 7v10l-9-5 9-5z" fill="#FBBC05"/><path d="M12 12v10l9-5-9-5z" fill="#34A853"/></svg>
-      Google
+<!-- ===== PARTNER/PLATFORM LOGOS MARQUEE ===== -->
+<style>
+.partner-marquee-wrap {
+  overflow: hidden;
+  padding: 24px 0;
+  background: #000000;
+}
+.partner-marquee-track {
+  display: flex;
+  gap: 16px;
+  flex-shrink: 0;
+  width: max-content;
+}
+.partner-marquee-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 140px;
+  height: 70px;
+  background: #111111;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px;
+  padding: 16px 20px;
+  flex-shrink: 0;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+.partner-marquee-item:hover {
+  border-color: rgba(255,255,255,0.15);
+  background: #1a1a1a;
+}
+.partner-marquee-item svg {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+}
+.partner-marquee-item span {
+  font-family: 'Outfit', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.7);
+  white-space: nowrap;
+}
+@keyframes partnerScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.partner-marquee-anim {
+  animation: partnerScroll 25s linear infinite;
+}
+.partner-marquee-anim:hover {
+  animation-play-state: paused;
+}
+</style>
+<div class="partner-marquee-wrap">
+  <div class="partner-marquee-anim" style="display:flex;gap:16px;width:max-content;">
+    <!-- Track 1 -->
+    <div class="partner-marquee-item">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+      <span>Google</span>
     </div>
-    <div class="trust-marquee__item">
-      <svg viewBox="0 0 24 24" fill="none"><path d="M16.2 6c-1.8 0-3.3.9-4.2 2.3-.9-1.4-2.4-2.3-4.2-2.3-3.1 0-5.8 2.5-5.8 6s2.7 6 5.8 6c1.8 0 3.3-.9 4.2-2.3.9 1.4 2.4 2.3 4.2 2.3 3.1 0 5.8-2.5 5.8-6s-2.7-6-5.8-6z" fill="url(#m1)"/><defs><linearGradient id="m1" x1="2" y1="6" x2="22" y2="18" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#0064E0"/><stop offset="50%" stop-color="#0081FB"/><stop offset="100%" stop-color="#00C6FF"/></linearGradient></defs></svg>
-      Meta
+    <div class="partner-marquee-item">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M24 12c0-6.627-5.373-12-12-12S0 5.373 0 12c0 5.99 4.388 10.954 10.125 11.854V15.47H7.078V12h3.047V9.356c0-3.007 1.792-4.668 4.533-4.668 1.312 0 2.686.234 2.686.234v2.953H15.83c-1.491 0-1.956.925-1.956 1.875V12h3.328l-.532 3.469h-2.796v8.385C19.612 22.954 24 17.99 24 12z" fill="#1877F2"/></svg>
+      <span>Meta</span>
     </div>
-    <div class="trust-marquee__item">
-      <svg viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" fill="#EA4335"/></svg>
-      Google
+    <div class="partner-marquee-item">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M15.337 23.979l7.216-7.216v-3.664l-7.216 7.216v3.664zM14.337 22.979l5.216-5.216v-1.664l-5.216 5.216v1.664zM6.5 23.5l8-8V3l-8 8v12.5z" fill="#95BF47"/><path d="M20.5 0H3.5C1.567 0 0 1.567 0 3.5v17c0 1.933 1.567 3.5 3.5 3.5h17c1.933 0 3.5-1.567 3.5-3.5v-17C24 1.567 22.433 0 20.5 0z" fill="#5E8E3E" opacity="0.2"/></svg>
+      <span>Shopify</span>
     </div>
-    <div class="trust-marquee__item">
-      <svg viewBox="0 0 24 24" fill="#95BF47"><path d="M15.337 23.979l7.216-1.561s-2.604-17.613-2.625-17.73c-.018-.116-.114-.192-.211-.192s-1.929-.136-1.929-.136-1.275-1.274-1.439-1.411c-.045-.037-.075-.057-.121-.074l-.914 21.104h.023zM11.71 11.305s-.81-.424-1.774-.424c-1.447 0-1.504.906-1.504 1.141 0 1.232 3.24 1.715 3.24 4.629 0 2.295-1.44 3.76-3.406 3.76-2.354 0-3.54-1.465-3.54-1.465l.646-2.086s1.245 1.066 2.28 1.066c.675 0 .975-.545.975-.932 0-1.619-2.654-1.694-2.654-4.359-.034-2.237 1.571-4.416 4.827-4.416 1.257 0 1.875.361 1.875.361l-.945 2.715z"/></svg>
-      Shopify
+    <div class="partner-marquee-item">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .55.04.81.11v-3.5a6.37 6.37 0 00-.81-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 0010.86 4.48V13.2a8.16 8.16 0 004.77 1.52v-3.44a4.85 4.85 0 01-.81-.07 4.8 4.8 0 01-.81-.52z" fill="#000000"/></svg>
+      <span>TikTok</span>
     </div>
-    <div class="trust-marquee__item">
-      <svg viewBox="0 0 24 24" fill="#000000"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
-      TikTok
+    <div class="partner-marquee-item">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M24 12c0-6.627-5.373-12-12-12S0 5.373 0 12c0 5.99 4.388 10.954 10.125 11.854V15.47H7.078V12h3.047V9.356c0-3.007 1.792-4.668 4.533-4.668 1.312 0 2.686.234 2.686.234v2.953H15.83c-1.491 0-1.956.925-1.956 1.875V12h3.328l-.532 3.469h-2.796v8.385C19.612 22.954 24 17.99 24 12z" fill="#FF7A59"/></svg>
+      <span>HubSpot</span>
     </div>
-    <div class="trust-marquee__item">
-      <svg viewBox="0 0 24 24" fill="#FF7A59"><path d="M18.164 7.93V5.084a2.198 2.198 0 001.267-1.978v-.067A2.2 2.2 0 0017.238.845h-.067a2.2 2.2 0 00-2.193 2.193v.067a2.196 2.196 0 001.252 1.973l.013.006v2.852a6.22 6.22 0 00-2.969 1.31l.012-.01-7.828-6.095A2.497 2.497 0 104.3 4.656l-.012.006 7.697 5.991a6.176 6.176 0 00-1.038 3.446c0 1.343.425 2.588 1.147 3.607l-.013-.02-2.342 2.343a1.968 1.968 0 00-.58-.095h-.002a2.033 2.033 0 102.033 2.033 1.978 1.978 0 00-.1-.595l.005.014 2.317-2.317a6.247 6.247 0 104.782-11.134l-.036-.005zm-.964 9.378a3.206 3.206 0 113.215-3.207v.002a3.206 3.206 0 01-3.207 3.207z"/></svg>
-      HubSpot
+    <div class="partner-marquee-item">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M11.4 24H0V12.6L11.4 24ZM24 24H12.6V12.6L24 24ZM11.4 11.4H0V0L11.4 11.4ZM24 11.4H12.6V0L24 11.4Z" fill="#F25022"/></svg>
+      <span>Microsoft</span>
     </div>
-    <div class="trust-marquee__item">
-      <svg viewBox="0 0 23 23"><rect x="0" y="0" width="10.5" height="10.5" fill="#F25022"/><rect x="11.5" y="0" width="10.5" height="10.5" fill="#7FBA00"/><rect x="0" y="11.5" width="10.5" height="10.5" fill="#00A4EF"/><rect x="11.5" y="11.5" width="10.5" height="10.5" fill="#FFB900"/></svg>
-      Microsoft
+    <div class="partner-marquee-item">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.546 12 3.546 12 3.546s-7.505 0-9.377.504A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.504 9.376.504 9.376.504s7.505 0 9.377-.504a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814z" fill="#FF0000"/><path d="M9.545 15.568V8.432L15.818 12l-6.273 3.568z" fill="#FFFFFF"/></svg>
+      <span>YouTube</span>
     </div>
-    <div class="trust-marquee__item">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 20" fill="none" style="width:70px;height:auto;"><path d="M27.9 3.5C27.6 2.4 26.7 1.5 25.6 1.2 23.5.6 14.5.6 14.5.6S5.5.6 3.4 1.2C2.3 1.5 1.4 2.4 1.1 3.5.5 5.6.5 10 .5 10s0 4.4.6 6.5c.3 1.1 1.2 2 2.3 2.3 2.1.6 11.1.6 11.1.6s9 0 11.1-.6c1.1-.3 2-1.2 2.3-2.3.6-2.1.6-6.5.6-6.5s0-4.4-.6-6.5z" fill="#FF0000"/><path d="M11.8 13.6V6.4l7.4 3.6-7.4 3.6z" fill="#fff"/></svg>
-      YouTube
+    <div class="partner-marquee-item">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M21.5 12c0-5.243-4.257-9.5-9.5-9.5S2.5 6.757 2.5 12s4.257 9.5 9.5 9.5 9.5-4.257 9.5-9.5zm-9.5-7.5c4.142 0 7.5 3.358 7.5 7.5s-3.358 7.5-7.5 7.5S4.5 16.142 4.5 12 7.858 4.5 12 4.5z" fill="#21759B"/><circle cx="12" cy="12" r="3" fill="#21759B"/></svg>
+      <span>WordPress</span>
     </div>
-    <div class="trust-marquee__item">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 110 20" fill="none" style="width:56px;height:auto;"><circle cx="10" cy="10" r="9.5" fill="#21759B"/><path d="M10 1.5C5.3 1.5 1.5 5.3 1.5 10S5.3 18.5 10 18.5 18.5 14.7 18.5 10 14.7 1.5 10 1.5zm-7.8 8.5c0-1.5.3-2.9.9-4.2l5 13.7c-3.4-1.6-5.9-5.1-5.9-9.5zm7.8 7.8c-.9 0-1.8-.1-2.6-.4l2.8-8.1 2.8 7.8c0 .1.1.2.1.2-.9.3-1.4.5-3.1.5zm1.2-12.9c.6 0 1.1-.1 1.1-.1.5-.1.4-.8-.1-.7 0 0-1.5.1-2.5.1-.9 0-2.5-.1-2.5-.1-.5 0-.6.7-.1.7 0 0 .5.1 1 .1l1.5 4.1-2.1 6.3-3.5-10.4c.6 0 1.1-.1 1.1-.1.5-.1.4-.8-.1-.7 0 0-1.5.1-2.5.1h-.6c1.7-2.5 4.5-4.1 7.7-4.1 2.4 0 4.6.9 6.2 2.4h-.2c-.9 0-1.6.8-1.6 1.7 0 .8.4 1.4.9 2.1.4.6.8 1.4.8 2.5 0 .8-.3 1.7-.7 3l-.9 3-3.4-10zm3.2 12.1 2.8-8.1c.5-1.3.7-2.4.7-3.3 0-.3 0-.6-.1-.9 1.2 1.7 1.8 3.8 1.8 6 0 3.4-1.9 6.4-5.2 8.3z" fill="#fff"/></svg>
-      WordPress
+    <!-- Duplicate Track for seamless loop -->
+    <div class="partner-marquee-item">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+      <span>Google</span>
     </div>
-  </div>
-  <div class="trust-marquee__track">
-    <div class="trust-marquee__item">
-      <svg viewBox="0 0 24 24" fill="none"><path d="M12 2L3 7v10l9 5 9-5V7l-9-5z" fill="#4285F4" opacity="0.15"/><path d="M12 2L3 7l9 5 9-5-9-5z" fill="#EA4335"/><path d="M3 7v10l9-5-9-5z" fill="#4285F4"/><path d="M21 7v10l-9-5 9-5z" fill="#FBBC05"/><path d="M12 12v10l9-5-9-5z" fill="#34A853"/></svg>
-      Google
+    <div class="partner-marquee-item">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M24 12c0-6.627-5.373-12-12-12S0 5.373 0 12c0 5.99 4.388 10.954 10.125 11.854V15.47H7.078V12h3.047V9.356c0-3.007 1.792-4.668 4.533-4.668 1.312 0 2.686.234 2.686.234v2.953H15.83c-1.491 0-1.956.925-1.956 1.875V12h3.328l-.532 3.469h-2.796v8.385C19.612 22.954 24 17.99 24 12z" fill="#1877F2"/></svg>
+      <span>Meta</span>
     </div>
-    <div class="trust-marquee__item">
-      <svg viewBox="0 0 24 24" fill="none"><path d="M16.2 6c-1.8 0-3.3.9-4.2 2.3-.9-1.4-2.4-2.3-4.2-2.3-3.1 0-5.8 2.5-5.8 6s2.7 6 5.8 6c1.8 0 3.3-.9 4.2-2.3.9 1.4 2.4 2.3 4.2 2.3 3.1 0 5.8-2.5 5.8-6s-2.7-6-5.8-6z" fill="url(#m2)"/><defs><linearGradient id="m2" x1="2" y1="6" x2="22" y2="18" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#0064E0"/><stop offset="50%" stop-color="#0081FB"/><stop offset="100%" stop-color="#00C6FF"/></linearGradient></defs></svg>
-      Meta
+    <div class="partner-marquee-item">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M15.337 23.979l7.216-7.216v-3.664l-7.216 7.216v3.664zM14.337 22.979l5.216-5.216v-1.664l-5.216 5.216v1.664zM6.5 23.5l8-8V3l-8 8v12.5z" fill="#95BF47"/></svg>
+      <span>Shopify</span>
     </div>
-    <div class="trust-marquee__item">
-      <svg viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" fill="#EA4335"/></svg>
-      Google
+    <div class="partner-marquee-item">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .55.04.81.11v-3.5a6.37 6.37 0 00-.81-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 0010.86 4.48V13.2a8.16 8.16 0 004.77 1.52v-3.44a4.85 4.85 0 01-.81-.07 4.8 4.8 0 01-.81-.52z" fill="#000000"/></svg>
+      <span>TikTok</span>
     </div>
-    <div class="trust-marquee__item">
-      <svg viewBox="0 0 24 24" fill="#95BF47"><path d="M15.337 23.979l7.216-1.561s-2.604-17.613-2.625-17.73c-.018-.116-.114-.192-.211-.192s-1.929-.136-1.929-.136-1.275-1.274-1.439-1.411c-.045-.037-.075-.057-.121-.074l-.914 21.104h.023zM11.71 11.305s-.81-.424-1.774-.424c-1.447 0-1.504.906-1.504 1.141 0 1.232 3.24 1.715 3.24 4.629 0 2.295-1.44 3.76-3.406 3.76-2.354 0-3.54-1.465-3.54-1.465l.646-2.086s1.245 1.066 2.28 1.066c.675 0 .975-.545.975-.932 0-1.619-2.654-1.694-2.654-4.359-.034-2.237 1.571-4.416 4.827-4.416 1.257 0 1.875.361 1.875.361l-.945 2.715z"/></svg>
-      Shopify
+    <div class="partner-marquee-item">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M24 12c0-6.627-5.373-12-12-12S0 5.373 0 12c0 5.99 4.388 10.954 10.125 11.854V15.47H7.078V12h3.047V9.356c0-3.007 1.792-4.668 4.533-4.668 1.312 0 2.686.234 2.686.234v2.953H15.83c-1.491 0-1.956.925-1.956 1.875V12h3.328l-.532 3.469h-2.796v8.385C19.612 22.954 24 17.99 24 12z" fill="#FF7A59"/></svg>
+      <span>HubSpot</span>
     </div>
-    <div class="trust-marquee__item">
-      <svg viewBox="0 0 24 24" fill="#000000"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
-      TikTok
+    <div class="partner-marquee-item">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M11.4 24H0V12.6L11.4 24ZM24 24H12.6V12.6L24 24ZM11.4 11.4H0V0L11.4 11.4ZM24 11.4H12.6V0L24 11.4Z" fill="#F25022"/></svg>
+      <span>Microsoft</span>
     </div>
-    <div class="trust-marquee__item">
-      <svg viewBox="0 0 24 24" fill="#FF7A59"><path d="M18.164 7.93V5.084a2.198 2.198 0 001.267-1.978v-.067A2.2 2.2 0 0017.238.845h-.067a2.2 2.2 0 00-2.193 2.193v.067a2.196 2.196 0 001.252 1.973l.013.006v2.852a6.22 6.22 0 00-2.969 1.31l.012-.01-7.828-6.095A2.497 2.497 0 104.3 4.656l-.012.006 7.697 5.991a6.176 6.176 0 00-1.038 3.446c0 1.343.425 2.588 1.147 3.607l-.013-.02-2.342 2.343a1.968 1.968 0 00-.58-.095h-.002a2.033 2.033 0 102.033 2.033 1.978 1.978 0 00-.1-.595l.005.014 2.317-2.317a6.247 6.247 0 104.782-11.134l-.036-.005zm-.964 9.378a3.206 3.206 0 113.215-3.207v.002a3.206 3.206 0 01-3.207 3.207z"/></svg>
-      HubSpot
+    <div class="partner-marquee-item">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.546 12 3.546 12 3.546s-7.505 0-9.377.504A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.504 9.376.504 9.376.504s7.505 0 9.377-.504a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814z" fill="#FF0000"/><path d="M9.545 15.568V8.432L15.818 12l-6.273 3.568z" fill="#FFFFFF"/></svg>
+      <span>YouTube</span>
     </div>
-    <div class="trust-marquee__item">
-      <svg viewBox="0 0 23 23"><rect x="0" y="0" width="10.5" height="10.5" fill="#F25022"/><rect x="11.5" y="0" width="10.5" height="10.5" fill="#7FBA00"/><rect x="0" y="11.5" width="10.5" height="10.5" fill="#00A4EF"/><rect x="11.5" y="11.5" width="10.5" height="10.5" fill="#FFB900"/></svg>
-      Microsoft
-    </div>
-    <div class="trust-marquee__item">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 20" fill="none"><path d="M27.9 3.5C27.6 2.4 26.7 1.5 25.6 1.2 23.5.6 14.5.6 14.5.6S5.5.6 3.4 1.2C2.3 1.5 1.4 2.4 1.1 3.5.5 5.6.5 10 .5 10s0 4.4.6 6.5c.3 1.1 1.2 2 2.3 2.3 2.1.6 11.1.6 11.1.6s9 0 11.1-.6c1.1-.3 2-1.2 2.3-2.3.6-2.1.6-6.5.6-6.5s0-4.4-.6-6.5z" fill="#FF0000"/><path d="M11.8 13.6V6.4l7.4 3.6-7.4 3.6z" fill="#fff"/></svg>
-      YouTube
-    </div>
-    <div class="trust-marquee__item">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 110 20" fill="none"><circle cx="10" cy="10" r="9.5" fill="#21759B"/><path d="M10 1.5C5.3 1.5 1.5 5.3 1.5 10S5.3 18.5 10 18.5 18.5 14.7 18.5 10 14.7 1.5 10 1.5zm-7.8 8.5c0-1.5.3-2.9.9-4.2l5 13.7c-3.4-1.6-5.9-5.1-5.9-9.5zm7.8 7.8c-.9 0-1.8-.1-2.6-.4l2.8-8.1 2.8 7.8c0 .1.1.2.1.2-.9.3-1.4.5-3.1.5zm1.2-12.9c.6 0 1.1-.1 1.1-.1.5-.1.4-.8-.1-.7 0 0-1.5.1-2.5.1-.9 0-2.5-.1-2.5-.1-.5 0-.6.7-.1.7 0 0 .5.1 1 .1l1.5 4.1-2.1 6.3-3.5-10.4c.6 0 1.1-.1 1.1-.1.5-.1.4-.8-.1-.7 0 0-1.5.1-2.5.1h-.6c1.7-2.5 4.5-4.1 7.7-4.1 2.4 0 4.6.9 6.2 2.4h-.2c-.9 0-1.6.8-1.6 1.7 0 .8.4 1.4.9 2.1.4.6.8 1.4.8 2.5 0 .8-.3 1.7-.7 3l-.9 3-3.4-10zm3.2 12.1 2.8-8.1c.5-1.3.7-2.4.7-3.3 0-.3 0-.6-.1-.9 1.2 1.7 1.8 3.8 1.8 6 0 3.4-1.9 6.4-5.2 8.3z" fill="#fff"/></svg>
-      WordPress
+    <div class="partner-marquee-item">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M21.5 12c0-5.243-4.257-9.5-9.5-9.5S2.5 6.757 2.5 12s4.257 9.5 9.5 9.5 9.5-4.257 9.5-9.5zm-9.5-7.5c4.142 0 7.5 3.358 7.5 7.5s-3.358 7.5-7.5 7.5S4.5 16.142 4.5 12 7.858 4.5 12 4.5z" fill="#21759B"/><circle cx="12" cy="12" r="3" fill="#21759B"/></svg>
+      <span>WordPress</span>
     </div>
   </div>
 </div>
@@ -602,144 +647,133 @@
      
      
 <!-- ===== SECTION 2: PARTNER & CERTIFICATION SECTION ===== -->
-<section class="relative py-16 md:py-24 bg-slate-50/40 overflow-hidden">
+<section class="relative py-16 md:py-24 bg-black overflow-hidden">
 <div class="bubble bubble-4" aria-hidden="true"></div>
 <div class="bubble bubble-5" aria-hidden="true"></div>
 <div class="bubble bubble-6" aria-hidden="true"></div>
-<div                class="absolute -top-20 -right-20 w-[420px] h-[420px] rounded-full bg-indigo-100/40 blur-[100px] pointer-events-none">
-</div>
+<div class="absolute -top-20 -right-20 w-[420px] h-[420px] rounded-full bg-indigo-900/10 pointer-events-none"></div>
 <div class="max-w-7xl mx-auto px-6 md:px-10">
 <div class="grid lg:grid-cols-12 gap-12 items-center">
 <!-- Left Column: Partners List -->
 <div class="lg:col-span-7 text-left reveal-left">
 <div class="overline-label">Our Credentials</div>
-<h2 class="mt-3 font-display text-4xl md:text-5xl font-bold tracking-tight text-slate-900">A                            Partner, Not A Vendor</h2>
-<p class="mt-5 text-slate-600 text-base md:text-lg max-w-xl leading-relaxed">                            We integrate deeply with leading advertising and cloud infrastructure platforms to deliver                            certified, industry-leading performance.                        </p>
-<!-- Partners Grid -->
-<div class="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-10">
-<div                                class="glass-strong border border-slate-200/80 rounded-2xl p-5 hover:border-blue-400 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 flex flex-col justify-between h-32 select-none group">
-<div class="w-10 h-10 flex items-center justify-center">
-<svg class="w-9 h-9 group-hover:scale-110 transition-transform duration-300"                                        viewBox="0 0 24 24" fill="none">
+<h2 class="mt-3 font-display text-4xl md:text-5xl font-bold tracking-tight text-white">A Partner, Not A Vendor</h2>
+<p class="mt-5 text-white/70 text-base md:text-lg max-w-xl leading-relaxed">We integrate deeply with leading advertising and cloud infrastructure platforms to deliver certified, industry-leading performance.</p>
+<style>
+#partner-grid-wrap,
+#partner-grid-wrap * {
+  -webkit-text-fill-color: initial !important;
+  background-clip: initial !important;
+  background-image: none !important;
+}
+#partner-grid-wrap .pc {
+  transition: border-color 0.2s ease, background-color 0.2s ease !important;
+}
+#partner-grid-wrap .pc:hover {
+  border-color: rgba(255, 255, 255, 0.15) !important;
+  background-color: #1a1a1a !important;
+}
+@media (max-width: 992px) { #partner-grid-wrap { grid-template-columns: repeat(2, 1fr) !important; } }
+@media (max-width: 576px) { #partner-grid-wrap { grid-template-columns: 1fr !important; } }
+</style>
+<div style="display:grid !important;grid-template-columns:repeat(3,1fr) !important;gap:16px !important;width:100% !important;margin-top:2.5rem !important;-webkit-text-fill-color:initial !important;color:inherit !important;background:transparent !important;background-clip:initial !important;" id="partner-grid-wrap">
+
+<div class="pc" style="display:flex !important;flex-direction:column !important;align-items:flex-start !important;gap:10px !important;padding:20px !important;background:#111111 !important;border:1px solid rgba(255,255,255,0.08) !important;border-radius:10px !important;box-sizing:border-box !important;">
+<svg style="width:32px;height:32px;flex-shrink:0;" viewBox="0 0 24 24" fill="none">
 <path d="M12 2L3 7v10l9 5 9-5V7l-9-5z" fill="#4285F4" opacity="0.15" />
 <path d="M12 2L3 7l9 5 9-5-9-5z" fill="#EA4335" />
 <path d="M3 7v10l9-5-9-5z" fill="#4285F4" />
 <path d="M21 7v10l-9-5 9-5z" fill="#FBBC05" />
 <path d="M12 12v10l9-5-9-5z" fill="#34A853" />
 </svg>
+<div style="font-size:10px !important;text-transform:uppercase !important;letter-spacing:0.5px !important;color:#8a8a8a !important;font-weight:600 !important;line-height:1 !important;">Certified</div>
+<div style="font-family:'Outfit',sans-serif !important;font-size:15px !important;font-weight:700 !important;color:#ffffff !important;line-height:1.2 !important;">Google Cloud Partner</div>
 </div>
-<div class="text-left">
-<div class="text-[10px] uppercase tracking-wider font-semibold text-slate-400">                                        Certified</div>
-<div                                        class="font-display font-bold text-slate-800 text-[14px] sm:text-[15px] mt-0.5 group-hover:text-blue-600 transition-colors">                                        Google Cloud Partner</div>
-</div>
-</div>
-<div                                class="glass-strong border border-slate-200/80 rounded-2xl p-5 hover:border-blue-400 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 flex flex-col justify-between h-32 select-none group">
-<div class="w-10 h-10 flex items-center justify-center">
-<svg class="w-9 h-9 group-hover:scale-110 transition-transform duration-300"                                        viewBox="0 0 24 24" fill="none">
-<path                                            d="M16.2 6c-1.8 0-3.3.9-4.2 2.3-.9-1.4-2.4-2.3-4.2-2.3-3.1 0-5.8 2.5-5.8 6s2.7 6 5.8 6c1.8 0 3.3-.9 4.2-2.3.9 1.4 2.4 2.3 4.2 2.3 3.1 0 5.8-2.5 5.8-6s-2.7-6-5.8-6zm0 9.8c-2.1 0-3.9-1.7-3.9-3.8s1.8-3.8 3.9-3.8 3.9 1.7 3.9 3.8-1.8 3.8-3.9 3.8zm-8.4 0c-2.1 0-3.9-1.7-3.9-3.8s1.8-3.8 3.9-3.8 3.9 1.7 3.9 3.8-1.8 3.8-3.9 3.8z"                                            fill="url(#meta-grad-badges)" />
+
+<div class="pc" style="display:flex !important;flex-direction:column !important;align-items:flex-start !important;gap:10px !important;padding:20px !important;background:#111111 !important;border:1px solid rgba(255,255,255,0.08) !important;border-radius:10px !important;box-sizing:border-box !important;">
+<svg style="width:32px;height:32px;flex-shrink:0;" viewBox="0 0 24 24" fill="none">
+<path d="M16.2 6c-1.8 0-3.3.9-4.2 2.3-.9-1.4-2.4-2.3-4.2-2.3-3.1 0-5.8 2.5-5.8 6s2.7 6 5.8 6c1.8 0 3.3-.9 4.2-2.3.9 1.4 2.4 2.3 4.2 2.3 3.1 0 5.8-2.5 5.8-6s-2.7-6-5.8-6zm0 9.8c-2.1 0-3.9-1.7-3.9-3.8s1.8-3.8 3.9-3.8 3.9 1.7 3.9 3.8-1.8 3.8-3.9 3.8zm-8.4 0c-2.1 0-3.9-1.7-3.9-3.8s1.8-3.8 3.9-3.8 3.9 1.7 3.9 3.8-1.8 3.8-3.9 3.8z" fill="url(#meta-grad-new)" />
 <defs>
-<linearGradient id="meta-grad-badges" x1="2" y1="6" x2="22" y2="18"                                                gradientUnits="userSpaceOnUse">
+<linearGradient id="meta-grad-new" x1="2" y1="6" x2="22" y2="18" gradientUnits="userSpaceOnUse">
 <stop offset="0%" stop-color="#0064E0" />
 <stop offset="50%" stop-color="#0081FB" />
 <stop offset="100%" stop-color="#00C6FF" />
 </linearGradient>
 </defs>
 </svg>
+<div style="font-size:10px !important;text-transform:uppercase !important;letter-spacing:0.5px !important;color:#8a8a8a !important;font-weight:600 !important;line-height:1 !important;">Official</div>
+<div style="font-family:'Outfit',sans-serif !important;font-size:15px !important;font-weight:700 !important;color:#ffffff !important;line-height:1.2 !important;">Meta Business Partner</div>
 </div>
-<div class="text-left">
-<div class="text-[10px] uppercase tracking-wider font-semibold text-slate-400">                                        Official</div>
-<div                                        class="font-display font-bold text-slate-800 text-[14px] sm:text-[15px] mt-0.5 group-hover:text-blue-600 transition-colors">                                        Meta Business Partner</div>
-</div>
-</div>
-<div                                class="glass-strong border border-slate-200/80 rounded-2xl p-5 hover:border-blue-400 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 flex flex-col justify-between h-32 select-none group">
-<div class="w-10 h-10 flex items-center justify-center">
-<svg class="w-9 h-9 group-hover:scale-110 transition-transform duration-300"                                        viewBox="0 0 24 24" fill="none">
-<path                                            d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"                                            fill="#4285F4" />
-<path                                            d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"                                            fill="#34A853" />
-<path                                            d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"                                            fill="#FBBC05" />
-<path                                            d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"                                            fill="#EA4335" />
+
+<div class="pc" style="display:flex !important;flex-direction:column !important;align-items:flex-start !important;gap:10px !important;padding:20px !important;background:#111111 !important;border:1px solid rgba(255,255,255,0.08) !important;border-radius:10px !important;box-sizing:border-box !important;">
+<svg style="width:32px;height:32px;flex-shrink:0;" viewBox="0 0 24 24" fill="none">
+<path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4" />
+<path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853" />
+<path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" fill="#FBBC05" />
+<path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" fill="#EA4335" />
 </svg>
+<div style="font-size:10px !important;text-transform:uppercase !important;letter-spacing:0.5px !important;color:#8a8a8a !important;font-weight:600 !important;line-height:1 !important;">Certified</div>
+<div style="font-family:'Outfit',sans-serif !important;font-size:15px !important;font-weight:700 !important;color:#ffffff !important;line-height:1.2 !important;">Google Partner</div>
 </div>
-<div class="text-left">
-<div class="text-[10px] uppercase tracking-wider font-semibold text-slate-400">                                        Certified</div>
-<div                                        class="font-display font-bold text-slate-800 text-[14px] sm:text-[15px] mt-0.5 group-hover:text-blue-600 transition-colors">                                        Google Partner</div>
-</div>
-</div>
-<div                                class="glass-strong border border-slate-200/80 rounded-2xl p-5 hover:border-emerald-400 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 flex flex-col justify-between h-32 select-none group">
-<div class="w-10 h-10 flex items-center justify-center">
-<svg viewBox="0 0 24 24" fill="#95BF47" class="w-9 h-9 group-hover:scale-110 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg">
+
+<div class="pc" style="display:flex !important;flex-direction:column !important;align-items:flex-start !important;gap:10px !important;padding:20px !important;background:#111111 !important;border:1px solid rgba(255,255,255,0.08) !important;border-radius:10px !important;box-sizing:border-box !important;">
+<svg style="width:32px;height:32px;flex-shrink:0;" viewBox="0 0 24 24" fill="#95BF47" xmlns="http://www.w3.org/2000/svg">
 <path d="M15.337 23.979l7.216-1.561s-2.604-17.613-2.625-17.73c-.018-.116-.114-.192-.211-.192s-1.929-.136-1.929-.136-1.275-1.274-1.439-1.411c-.045-.037-.075-.057-.121-.074l-.914 21.104h.023zM11.71 11.305s-.81-.424-1.774-.424c-1.447 0-1.504.906-1.504 1.141 0 1.232 3.24 1.715 3.24 4.629 0 2.295-1.44 3.76-3.406 3.76-2.354 0-3.54-1.465-3.54-1.465l.646-2.086s1.245 1.066 2.28 1.066c.675 0 .975-.545.975-.932 0-1.619-2.654-1.694-2.654-4.359-.034-2.237 1.571-4.416 4.827-4.416 1.257 0 1.875.361 1.875.361l-.945 2.715-.02.01zM11.17.83c.136 0 .271.038.405.135-.984.465-2.064 1.639-2.508 3.992-.656.213-1.293.405-1.889.578C7.697 3.75 8.951.84 11.17.84V.83zm1.235 2.949v.135c-.754.232-1.583.484-2.394.736.466-1.777 1.333-2.645 2.085-2.971.193.501.309 1.176.309 2.1zm.539-2.234c.694.074 1.141.867 1.429 1.755-.349.114-.735.231-1.158.366v-.252c0-.752-.096-1.371-.271-1.871v.002zm2.992 1.289c-.02 0-.06.021-.078.021s-.289.075-.714.21c-.423-1.233-1.176-2.37-2.508-2.37h-.115C12.135.209 11.669 0 11.265 0 8.159 0 6.675 3.877 6.21 5.846c-1.194.365-2.063.636-2.16.674-.675.213-.694.232-.772.87-.075.462-1.83 14.063-1.83 14.063L15.009 24l.927-21.166z"/>
 </svg>
+<div style="font-size:10px !important;text-transform:uppercase !important;letter-spacing:0.5px !important;color:#8a8a8a !important;font-weight:600 !important;line-height:1 !important;">Developer</div>
+<div style="font-family:'Outfit',sans-serif !important;font-size:15px !important;font-weight:700 !important;color:#ffffff !important;line-height:1.2 !important;">Shopify Partner</div>
 </div>
-<div class="text-left">
-<div class="text-[10px] uppercase tracking-wider font-semibold text-slate-400">                                        Developer</div>
-<div                                        class="font-display font-bold text-slate-800 text-[14px] sm:text-[15px] mt-0.5 group-hover:text-emerald-600 transition-colors">                                        Shopify Partner</div>
-</div>
-</div>
-<div                                class="glass-strong border border-slate-200/80 rounded-2xl p-5 hover:border-rose-400 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 flex flex-col justify-between h-32 select-none group">
-<div class="w-10 h-10 flex items-center justify-center">
-<svg viewBox="0 0 24 24" fill="#000000" class="w-9 h-9 group-hover:scale-110 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg">
-<path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
+
+<div class="pc" style="display:flex !important;flex-direction:column !important;align-items:flex-start !important;gap:10px !important;padding:20px !important;background:#111111 !important;border:1px solid rgba(255,255,255,0.08) !important;border-radius:10px !important;box-sizing:border-box !important;">
+<svg style="width:32px;height:32px;flex-shrink:0;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path fill="#ffffff" d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
 </svg>
+<div style="font-size:10px !important;text-transform:uppercase !important;letter-spacing:0.5px !important;color:#8a8a8a !important;font-weight:600 !important;line-height:1 !important;">Official Partner</div>
+<div style="font-family:'Outfit',sans-serif !important;font-size:15px !important;font-weight:700 !important;color:#ffffff !important;line-height:1.2 !important;">TikTok Marketing Partner</div>
 </div>
-<div class="text-left">
-<div class="text-[10px] uppercase tracking-wider font-semibold text-slate-400">                                        Official Partner</div>
-<div                                        class="font-display font-bold text-slate-800 text-[14px] sm:text-[15px] mt-0.5 group-hover:text-rose-600 transition-colors">                                        TikTok Marketing Partner</div>
-</div>
-</div>
-<div                                class="glass-strong border border-slate-200/80 rounded-2xl p-5 hover:border-orange-400 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 flex flex-col justify-between h-32 select-none group">
-<div class="w-10 h-10 flex items-center justify-center">
-<svg viewBox="0 0 24 24" fill="#FF7A59" class="w-9 h-9 group-hover:scale-110 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg">
+
+<div class="pc" style="display:flex !important;flex-direction:column !important;align-items:flex-start !important;gap:10px !important;padding:20px !important;background:#111111 !important;border:1px solid rgba(255,255,255,0.08) !important;border-radius:10px !important;box-sizing:border-box !important;">
+<svg style="width:32px;height:32px;flex-shrink:0;" viewBox="0 0 24 24" fill="#FF7A59" xmlns="http://www.w3.org/2000/svg">
 <path d="M18.164 7.93V5.084a2.198 2.198 0 001.267-1.978v-.067A2.2 2.2 0 0017.238.845h-.067a2.2 2.2 0 00-2.193 2.193v.067a2.196 2.196 0 001.252 1.973l.013.006v2.852a6.22 6.22 0 00-2.969 1.31l.012-.01-7.828-6.095A2.497 2.497 0 104.3 4.656l-.012.006 7.697 5.991a6.176 6.176 0 00-1.038 3.446c0 1.343.425 2.588 1.147 3.607l-.013-.02-2.342 2.343a1.968 1.968 0 00-.58-.095h-.002a2.033 2.033 0 102.033 2.033 1.978 1.978 0 00-.1-.595l.005.014 2.317-2.317a6.247 6.247 0 104.782-11.134l-.036-.005zm-.964 9.378a3.206 3.206 0 113.215-3.207v.002a3.206 3.206 0 01-3.207 3.207z"/>
 </svg>
+<div style="font-size:10px !important;text-transform:uppercase !important;letter-spacing:0.5px !important;color:#8a8a8a !important;font-weight:600 !important;line-height:1 !important;">Certified</div>
+<div style="font-family:'Outfit',sans-serif !important;font-size:15px !important;font-weight:700 !important;color:#ffffff !important;line-height:1.2 !important;">HubSpot Partner</div>
 </div>
-<div class="text-left">
-<div class="text-[10px] uppercase tracking-wider font-semibold text-slate-400">Certified</div>
-<div class="font-display font-bold text-slate-800 text-[14px] sm:text-[15px] mt-0.5 group-hover:text-orange-600 transition-colors">HubSpot Partner</div>
-</div>
-</div>
-<div                                class="glass-strong border border-slate-200/80 rounded-2xl p-5 hover:border-blue-400 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 flex flex-col justify-between h-32 select-none group">
-<div class="w-10 h-10 flex items-center justify-center">
-<svg viewBox="0 0 23 23" class="w-9 h-9 group-hover:scale-110 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg">
+
+<div class="pc" style="display:flex !important;flex-direction:column !important;align-items:flex-start !important;gap:10px !important;padding:20px !important;background:#111111 !important;border:1px solid rgba(255,255,255,0.08) !important;border-radius:10px !important;box-sizing:border-box !important;">
+<svg style="width:32px;height:32px;flex-shrink:0;" viewBox="0 0 23 23" xmlns="http://www.w3.org/2000/svg">
 <rect x="0" y="0" width="10.5" height="10.5" fill="#F25022"/>
 <rect x="11.5" y="0" width="10.5" height="10.5" fill="#7FBA00"/>
 <rect x="0" y="11.5" width="10.5" height="10.5" fill="#00A4EF"/>
 <rect x="11.5" y="11.5" width="10.5" height="10.5" fill="#FFB900"/>
 </svg>
+<div style="font-size:10px !important;text-transform:uppercase !important;letter-spacing:0.5px !important;color:#8a8a8a !important;font-weight:600 !important;line-height:1 !important;">Certified</div>
+<div style="font-family:'Outfit',sans-serif !important;font-size:15px !important;font-weight:700 !important;color:#ffffff !important;line-height:1.2 !important;">Microsoft Advertising Partner</div>
 </div>
-<div class="text-left">
-<div class="text-[10px] uppercase tracking-wider font-semibold text-slate-400">Certified</div>
-<div class="font-display font-bold text-slate-800 text-[14px] sm:text-[15px] mt-0.5 group-hover:text-blue-600 transition-colors">Microsoft Advertising Partner</div>
-</div>
-</div>
-<div class="glass-strong border border-slate-200/80 rounded-2xl p-5 hover:border-red-400 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 flex flex-col justify-between h-32 select-none group">
-<div class="w-10 h-10 flex items-center justify-center">
-<svg viewBox="0 0 90 20" class="w-14 h-14 group-hover:scale-110 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg">
-<path d="M27.9 3.5C27.6 2.4 26.7 1.5 25.6 1.2 23.5.6 14.5.6 14.5.6S5.5.6 3.4 1.2C2.3 1.5 1.4 2.4 1.1 3.5.5 5.6.5 10 .5 10s0 4.4.6 6.5c.3 1.1 1.2 2 2.3 2.3 2.1.6 11.1.6 11.1.6s9 0 11.1-.6c1.1-.3 2-1.2 2.3-2.3.6-2.1.6-6.5.6-6.5s0-4.4-.6-6.5z" fill="#FF0000"/>
-<path d="M11.8 13.6V6.4l7.4 3.6-7.4 3.6z" fill="#fff"/>
+
+<div class="pc" style="display:flex !important;flex-direction:column !important;align-items:flex-start !important;gap:10px !important;padding:20px !important;background:#111111 !important;border:1px solid rgba(255,255,255,0.08) !important;border-radius:10px !important;box-sizing:border-box !important;">
+<svg style="width:32px;height:32px;flex-shrink:0;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M23.498 6.163a3.003 3.003 0 00-2.11-2.11C19.517 3.545 12 3.545 12 3.545s-7.517 0-9.388.508a3.003 3.003 0 00-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 002.11 2.11c1.871.508 9.388.508 9.388.508s7.517 0 9.388-.508a3.003 3.003 0 002.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837z" fill="#FF0000"/>
+<path d="M9.545 15.568V8.432L15.818 12l-6.273 3.568z" fill="#ffffff"/>
 </svg>
+<div style="font-size:10px !important;text-transform:uppercase !important;letter-spacing:0.5px !important;color:#8a8a8a !important;font-weight:600 !important;line-height:1 !important;">Official</div>
+<div style="font-family:'Outfit',sans-serif !important;font-size:15px !important;font-weight:700 !important;color:#ffffff !important;line-height:1.2 !important;">YouTube Partner</div>
 </div>
-<div class="text-left">
-<div class="text-[10px] uppercase tracking-wider font-semibold text-slate-400">Official</div>
-<div class="font-display font-bold text-slate-800 text-[14px] sm:text-[15px] mt-0.5 group-hover:text-red-600 transition-colors">YouTube Partner</div>
-</div>
-</div>
-<div class="glass-strong border border-slate-200/80 rounded-2xl p-5 hover:border-blue-400 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 flex flex-col justify-between h-32 select-none group">
-<div class="w-10 h-10 flex items-center justify-center">
-<svg viewBox="0 0 110 20" class="w-12 h-12 group-hover:scale-110 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg">
-<circle cx="10" cy="10" r="9.5" fill="#21759B"/>
-<path d="M10 1.5C5.3 1.5 1.5 5.3 1.5 10S5.3 18.5 10 18.5 18.5 14.7 18.5 10 14.7 1.5 10 1.5zm-7.8 8.5c0-1.5.3-2.9.9-4.2l5 13.7c-3.4-1.6-5.9-5.1-5.9-9.5zm7.8 7.8c-.9 0-1.8-.1-2.6-.4l2.8-8.1 2.8 7.8c0 .1.1.2.1.2-.9.3-1.4.5-3.1.5zm1.2-12.9c.6 0 1.1-.1 1.1-.1.5-.1.4-.8-.1-.7 0 0-1.5.1-2.5.1-.9 0-2.5-.1-2.5-.1-.5 0-.6.7-.1.7 0 0 .5.1 1 .1l1.5 4.1-2.1 6.3-3.5-10.4c.6 0 1.1-.1 1.1-.1.5-.1.4-.8-.1-.7 0 0-1.5.1-2.5.1h-.6c1.7-2.5 4.5-4.1 7.7-4.1 2.4 0 4.6.9 6.2 2.4h-.2c-.9 0-1.6.8-1.6 1.7 0 .8.4 1.4.9 2.1.4.6.8 1.4.8 2.5 0 .8-.3 1.7-.7 3l-.9 3-3.4-10zm3.2 12.1 2.8-8.1c.5-1.3.7-2.4.7-3.3 0-.3 0-.6-.1-.9 1.2 1.7 1.8 3.8 1.8 6 0 3.4-1.9 6.4-5.2 8.3z" fill="#fff"/>
+
+<div class="pc" style="display:flex !important;flex-direction:column !important;align-items:flex-start !important;gap:10px !important;padding:20px !important;background:#111111 !important;border:1px solid rgba(255,255,255,0.08) !important;border-radius:10px !important;box-sizing:border-box !important;">
+<svg style="width:32px;height:32px;flex-shrink:0;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="12" fill="#21759B"/>
+<path fill="#ffffff" d="M12.158 12.786l.132.426 3.782 11.342A10.9 10.9 0 0112 23C6.477 23 2 18.523 2 13c0-2.89 1.227-5.484 3.186-7.332l.137-.124 1.272 3.853A7.458 7.458 0 006.3 13c0 1.804.654 3.46 1.746 4.753l-.012.014 4.089 4.089.035-.07zM12.333 12.048l-4.523 13.133A10.936 10.936 0 0112 23c3.258 0 6.136-1.593 7.889-4.042l-7.556-6.91z"/>
+<path fill="#ffffff" d="M17.045 7.192A10.89 10.89 0 0012 1C6.477 1 2 5.477 2 11c0 2.47.89 4.74 2.368 6.505l4.218-12.256a7.44 7.44 0 018.459-5.057z" opacity="0.8"/>
 </svg>
+<div style="font-size:10px !important;text-transform:uppercase !important;letter-spacing:0.5px !important;color:#8a8a8a !important;font-weight:600 !important;line-height:1 !important;">Certified</div>
+<div style="font-family:'Outfit',sans-serif !important;font-size:15px !important;font-weight:700 !important;color:#ffffff !important;line-height:1.2 !important;">WordPress Partner</div>
 </div>
-<div class="text-left">
-<div class="text-[10px] uppercase tracking-wider font-semibold text-slate-400">Certified</div>
-<div class="font-display font-bold text-slate-800 text-[14px] sm:text-[15px] mt-0.5 group-hover:text-blue-600 transition-colors">WordPress Partner</div>
+
 </div>
-</div>
-</div>
-</div>
-<!-- Right Column: Stats Card & Showcase -->
+</div><!-- Right Column: Stats Card & Showcase -->
 <div class="lg:col-span-5 flex items-center justify-center relative reveal-right">
-<div class="absolute w-72 h-72 rounded-full bg-blue-400/25 blur-3xl pointer-events-none">
+<div class="absolute w-72 h-72 rounded-full bg-blue-400/25 pointer-events-none">
 </div>
 <div                            class="glass-strong border border-slate-200/80 rounded-[32px] p-8 w-full max-w-sm relative z-10 hover:shadow-2xl hover:border-blue-200 transition-all duration-500 floaty select-none text-left">
 <div class="flex items-center justify-between mb-8">
@@ -764,15 +798,103 @@
 </div>
 </div>
 </section>
+<!-- ===== TRUSTED BY INDUSTRY LEADERS ===== -->
+<section class="relative py-16 md:py-24 bg-[#0A0A0A] overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6 md:px-10 text-center mb-12 reveal">
+    <span class="text-[11px] uppercase tracking-[0.2em] font-semibold text-slate-500">Trusted by Industry Leaders</span>
+    <h2 class="mt-3 font-display text-3xl md:text-5xl font-bold tracking-tight text-white">Brands That Trust Digital Advertise</h2>
+    <p class="mt-4 text-white/50 text-base md:text-lg max-w-2xl mx-auto">We are proud to work with startups, growing businesses and established companies across multiple industries.</p>
+  </div>
+  <div id="client-logo-marquee-wrap" class="relative">
+    <!-- Row 1: scrolls left -->
+    <div class="client-logo-marquee animate-clientScrollLeft py-3">
+      <div class="client-logo-marquee__track">
+        <div class="client-logo-card"><img src="assets/client logos/1.jpeg" alt="Championsleo" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Championsleo</span></div>
+        <div class="client-logo-card"><img src="assets/client logos/2.jpg" alt="Parallel Matrix" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Parallel Matrix</span></div>
+        <div class="client-logo-card"><img src="assets/client logos/3.jpeg" alt="Glassa" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Glassa</span></div>
+        <div class="client-logo-card"><img src="assets/client logos/4.jpeg" alt="Colombia Infotech" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Colombia Infotech</span></div>
+        <div class="client-logo-card"><img src="assets/client logos/5.png" alt="Sequity" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Sequity</span></div>
+        <div class="client-logo-card"><img src="assets/client logos/6.jpeg" alt="SPI Infrastructure" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">SPI Infrastructure</span></div>
+        <div class="client-logo-card"><img src="assets/client logos/7.jpeg" alt="The Brick House" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">The Brick House</span></div>
+        <div class="client-logo-card"><img src="assets/client logos/8.jpeg" alt="Truffle Melon" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Truffle Melon</span></div>
+        <div class="client-logo-card"><img src="assets/client logos/9.png" alt="PPC" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">PPC</span></div>
+        <div class="client-logo-card"><img src="assets/client logos/10.png" alt="Shree Park" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Shree Park</span></div>
+        <div class="client-logo-card"><img src="assets/client logos/11.png" alt="Vandan Paints" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Vandan Paints</span></div>
+        <div class="client-logo-card"><img src="assets/client logos/12.png" alt="Tara Angan" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Tara Angan</span></div>
+        <div class="client-logo-card"><img src="assets/client logos/13.png" alt="Aaranya" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Aaranya</span></div>
+        <div class="client-logo-card"><img src="assets/client logos/14.png" alt="Aamrutam Dairy" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Aamrutam Dairy</span></div>
+        <div class="client-logo-card"><img src="assets/client logos/15.png" alt="GeoMatrix" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">GeoMatrix</span></div>
+        <div class="client-logo-card"><img src="assets/client logos/16.png" alt="ForPark" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">ForPark</span></div>
+      </div>
+      <div class="client-logo-marquee__track" aria-hidden="true">
+        <div class="client-logo-card"><img src="assets/client logos/1.jpeg" alt="Championsleo" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Championsleo</span></div>
+        <div class="client-logo-card"><img src="assets/client logos/2.jpg" alt="Parallel Matrix" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Parallel Matrix</span></div>
+        <div class="client-logo-card"><img src="assets/client logos/3.jpeg" alt="Glassa" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Glassa</span></div>
+        <div class="client-logo-card"><img src="assets/client logos/4.jpeg" alt="Colombia Infotech" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Colombia Infotech</span></div>
+        <div class="client-logo-card"><img src="assets/client logos/5.png" alt="Sequity" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Sequity</span></div>
+        <div class="client-logo-card"><img src="assets/client logos/6.jpeg" alt="SPI Infrastructure" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">SPI Infrastructure</span></div>
+        <div class="client-logo-card"><img src="assets/client logos/7.jpeg" alt="The Brick House" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">The Brick House</span></div>
+        <div class="client-logo-card"><img src="assets/client logos/8.jpeg" alt="Truffle Melon" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Truffle Melon</span></div>
+        <div class="client-logo-card"><img src="assets/client logos/9.png" alt="PPC" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">PPC</span></div>
+        <div class="client-logo-card"><img src="assets/client logos/10.png" alt="Shree Park" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Shree Park</span></div>
+        <div class="client-logo-card"><img src="assets/client logos/11.png" alt="Vandan Paints" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Vandan Paints</span></div>
+        <div class="client-logo-card"><img src="assets/client logos/12.png" alt="Tara Angan" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Tara Angan</span></div>
+        <div class="client-logo-card"><img src="assets/client logos/13.png" alt="Aaranya" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Aaranya</span></div>
+        <div class="client-logo-card"><img src="assets/client logos/14.png" alt="Aamrutam Dairy" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Aamrutam Dairy</span></div>
+        <div class="client-logo-card"><img src="assets/client logos/15.png" alt="GeoMatrix" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">GeoMatrix</span></div>
+        <div class="client-logo-card"><img src="assets/client logos/16.png" alt="ForPark" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">ForPark</span></div>
+      </div>
+    </div>
+    <!-- Row 2: scrolls right -->
+    <div class="client-logo-marquee animate-clientScrollRight py-3">
+      <div class="client-logo-marquee__track">
+        <div class="client-logo-card"><img src="assets/client logos/9.png" alt="PPC" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">PPC</span></div>
+        <div class="client-logo-card"><img src="assets/client logos/10.png" alt="Shree Park" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Shree Park</span></div>
+        <div class="client-logo-card"><img src="assets/client logos/11.png" alt="Vandan Paints" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Vandan Paints</span></div>
+        <div class="client-logo-card"><img src="assets/client logos/12.png" alt="Tara Angan" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Tara Angan</span></div>
+        <div class="client-logo-card"><img src="assets/client logos/13.png" alt="Aaranya" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Aaranya</span></div>
+        <div class="client-logo-card"><img src="assets/client logos/14.png" alt="Aamrutam Dairy" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Aamrutam Dairy</span></div>
+        <div class="client-logo-card"><img src="assets/client logos/15.png" alt="GeoMatrix" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">GeoMatrix</span></div>
+        <div class="client-logo-card"><img src="assets/client logos/16.png" alt="ForPark" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">ForPark</span></div>
+        <div class="client-logo-card"><img src="assets/client logos/1.jpeg" alt="Championsleo" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Championsleo</span></div>
+        <div class="client-logo-card"><img src="assets/client logos/2.jpg" alt="Parallel Matrix" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Parallel Matrix</span></div>
+        <div class="client-logo-card"><img src="assets/client logos/3.jpeg" alt="Glassa" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Glassa</span></div>
+        <div class="client-logo-card"><img src="assets/client logos/4.jpeg" alt="Colombia Infotech" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Colombia Infotech</span></div>
+        <div class="client-logo-card"><img src="assets/client logos/5.png" alt="Sequity" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Sequity</span></div>
+        <div class="client-logo-card"><img src="assets/client logos/6.jpeg" alt="SPI Infrastructure" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">SPI Infrastructure</span></div>
+        <div class="client-logo-card"><img src="assets/client logos/7.jpeg" alt="The Brick House" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">The Brick House</span></div>
+        <div class="client-logo-card"><img src="assets/client logos/8.jpeg" alt="Truffle Melon" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Truffle Melon</span></div>
+      </div>
+      <div class="client-logo-marquee__track" aria-hidden="true">
+        <div class="client-logo-card"><img src="assets/client logos/9.png" alt="PPC" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">PPC</span></div>
+        <div class="client-logo-card"><img src="assets/client logos/10.png" alt="Shree Park" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Shree Park</span></div>
+        <div class="client-logo-card"><img src="assets/client logos/11.png" alt="Vandan Paints" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Vandan Paints</span></div>
+        <div class="client-logo-card"><img src="assets/client logos/12.png" alt="Tara Angan" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Tara Angan</span></div>
+        <div class="client-logo-card"><img src="assets/client logos/13.png" alt="Aaranya" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Aaranya</span></div>
+        <div class="client-logo-card"><img src="assets/client logos/14.png" alt="Aamrutam Dairy" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Aamrutam Dairy</span></div>
+        <div class="client-logo-card"><img src="assets/client logos/15.png" alt="GeoMatrix" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">GeoMatrix</span></div>
+        <div class="client-logo-card"><img src="assets/client logos/16.png" alt="ForPark" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">ForPark</span></div>
+        <div class="client-logo-card"><img src="assets/client logos/1.jpeg" alt="Championsleo" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Championsleo</span></div>
+        <div class="client-logo-card"><img src="assets/client logos/2.jpg" alt="Parallel Matrix" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Parallel Matrix</span></div>
+        <div class="client-logo-card"><img src="assets/client logos/3.jpeg" alt="Glassa" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Glassa</span></div>
+        <div class="client-logo-card"><img src="assets/client logos/4.jpeg" alt="Colombia Infotech" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Colombia Infotech</span></div>
+        <div class="client-logo-card"><img src="assets/client logos/5.png" alt="Sequity" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Sequity</span></div>
+        <div class="client-logo-card"><img src="assets/client logos/6.jpeg" alt="SPI Infrastructure" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">SPI Infrastructure</span></div>
+        <div class="client-logo-card"><img src="assets/client logos/7.jpeg" alt="The Brick House" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">The Brick House</span></div>
+        <div class="client-logo-card"><img src="assets/client logos/8.jpeg" alt="Truffle Melon" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Truffle Melon</span></div>
+      </div>
+    </div>
+  </div>
+</section>
 <!-- ===== WHY BRANDS CHOOSE US (DARK SECTION) ===== -->
 <section class="relative py-16 md:py-24 bg-slate-950 text-white overflow-hidden" id="why-choose-us">
 <div class="bubble bubble-1" aria-hidden="true"></div>
 <div class="bubble bubble-3" aria-hidden="true"></div>
 <div class="bubble bubble-7" aria-hidden="true"></div>
 <div class="absolute inset-0 grid-pattern opacity-[0.03] pointer-events-none"></div>
-<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-blue-500/10 blur-[150px] pointer-events-none floating-blob-1"></div>
-<div class="absolute bottom-10 right-10 w-[300px] h-[300px] rounded-full bg-purple-500/10 blur-[100px] pointer-events-none floating-blob-2"></div>
-<div class="absolute top-10 left-10 w-[250px] h-[250px] rounded-full bg-emerald-500/8 blur-[80px] pointer-events-none floating-blob-3"></div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-blue-500/10 pointer-events-none floating-blob-1"></div>
+<div class="absolute bottom-10 right-10 w-[300px] h-[300px] rounded-full bg-purple-500/10 pointer-events-none floating-blob-2"></div>
+<div class="absolute top-10 left-10 w-[250px] h-[250px] rounded-full bg-emerald-500/8 pointer-events-none floating-blob-3"></div>
 <div class="max-w-7xl mx-auto px-6 md:px-10">
 <div class="text-center max-w-3xl mx-auto mb-12 reveal">
 <span class="text-[11px] uppercase tracking-[0.2em] font-semibold text-blue-400">Why Brands Choose Us</span>
@@ -963,13 +1085,13 @@
 </div>
 </section>
 <!-- ===== WHY CHOOSE US ===== -->
-<section class="relative py-16 md:py-24 bg-white overflow-hidden">
+<section class="relative py-16 md:py-24 bg-white overflow-hidden section-why-choose">
 <div class="bubble bubble-4" aria-hidden="true"></div>
 <div class="bubble bubble-5" aria-hidden="true"></div>
 <div class="bubble bubble-6" aria-hidden="true"></div>
-<div class="absolute top-20 right-0 w-[400px] h-[400px] rounded-full bg-blue-100/50 blur-[100px] pointer-events-none floating-blob-1">
+<div class="absolute top-20 right-0 w-[400px] h-[400px] rounded-full bg-blue-100/50 pointer-events-none floating-blob-1">
 </div>
-<div class="absolute bottom-40 left-0 w-[300px] h-[300px] rounded-full bg-purple-100/40 blur-[80px] pointer-events-none floating-blob-2">
+<div class="absolute bottom-40 left-0 w-[300px] h-[300px] rounded-full bg-purple-100/40 pointer-events-none floating-blob-2">
 </div>
 <div class="max-w-7xl mx-auto px-6 md:px-10">
 <div class="grid lg:grid-cols-12 gap-12 items-start">
@@ -981,14 +1103,14 @@
 </div>
 <div                            class="absolute -bottom-6 -right-4 md:-right-10 glass-strong rounded-2xl p-5 w-[230px] floaty select-none">
 <div class="text-[11px] uppercase tracking-wider font-semibold text-slate-500">Avg. ROAS                                lift</div>
-<div class="mt-1 font-display text-3xl font-bold text-slate-900">+4.2�</div>
+<div class="mt-1 font-display text-3xl font-bold text-slate-900">+6.2×</div>
 <div class="mt-3 flex items-center gap-2 text-[12px] text-slate-600">
 <div class="flex -space-x-1.5">
-<div class="w-6 h-6 rounded-full bg-blue-500 border-2 border-white">
+<div class="w-6 h-6 rounded-full bg-gray-300 border-2 border-white">
 </div>
-<div class="w-6 h-6 rounded-full bg-indigo-500 border-2 border-white">
+<div class="w-6 h-6 rounded-full bg-gray-400 border-2 border-white">
 </div>
-<div class="w-6 h-6 rounded-full bg-emerald-500 border-2 border-white">
+<div class="w-6 h-6 rounded-full bg-gray-200 border-2 border-white">
 </div>
 </div>
 <span>across 280+ accounts</span>
@@ -1014,6 +1136,29 @@
 </div>
 </div>
 <p class="mt-5 text-slate-600 text-base md:text-lg max-w-2xl">                            We aren't here for impressions. We're here for impact � and we engineer every engagement to                            prove it.                        </p>
+<style>
+.section-why-choose .mt-10.space-y-3 h3,
+.section-why-choose .mt-10.space-y-3 p {
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block !important;
+  background: none !important;
+  background-clip: initial !important;
+  -webkit-background-clip: initial !important;
+}
+.section-why-choose .mt-10.space-y-3 h3 {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  font-size: 18px !important;
+  font-weight: 700 !important;
+}
+.section-why-choose .mt-10.space-y-3 p {
+  color: #94a3b8 !important;
+  -webkit-text-fill-color: #94a3b8 !important;
+  font-size: 14px !important;
+  margin-top: 6px !important;
+}
+</style>
 <div class="mt-10 space-y-3">
 <div                                class="group flex items-start gap-4 p-5 rounded-2xl hover:bg-white border border-transparent hover:border-slate-200 hover:shadow-md transition-all">
 <div                                    class="shrink-0 w-11 h-11 rounded-xl bg-white border border-slate-200 group-hover:bg-slate-900 transition-colors flex items-center justify-center">
@@ -1022,11 +1167,11 @@
 </div>
 <div class="flex-1 text-left">
 <div class="flex items-center gap-2">
-<h3 class="font-display text-lg font-bold text-slate-900">Campaign transparency                                        </h3>
+<h3 class="font-display text-lg font-bold text-slate-900" style="color:#ffffff !important;-webkit-text-fill-color:#ffffff !important;">Campaign transparency                                        </h3>
 <i data-lucide="check-circle" class="text-emerald-500 w-3.5 h-3.5">
 </i>
 </div>
-<p class="mt-1 text-[14px] text-slate-600">Real-time dashboards, open access, and                                        crystal-clear reporting on every dollar spent.</p>
+<p class="mt-1 text-[14px] text-slate-600" style="color:#94a3b8 !important;-webkit-text-fill-color:#94a3b8 !important;">Real-time dashboards, open access, and                                        crystal-clear reporting on every dollar spent.</p>
 </div>
 </div>
 <div                                class="group flex items-start gap-4 p-5 rounded-2xl hover:bg-white border border-transparent hover:border-slate-200 hover:shadow-md transition-all">
@@ -1036,11 +1181,11 @@
 </div>
 <div class="flex-1 text-left">
 <div class="flex items-center gap-2">
-<h3 class="font-display text-lg font-bold text-slate-900">Team of experts</h3>
+<h3 class="font-display text-lg font-bold text-slate-900" style="color:#ffffff !important;-webkit-text-fill-color:#ffffff !important;">Team of experts</h3>
 <i data-lucide="check-circle" class="text-emerald-500 w-3.5 h-3.5">
 </i>
 </div>
-<p class="mt-1 text-[14px] text-slate-600">Senior strategists, engineers, and                                        creatives � 100% certified across leading platforms.</p>
+<p class="mt-1 text-[14px] text-slate-600" style="color:#94a3b8 !important;-webkit-text-fill-color:#94a3b8 !important;">Senior strategists, engineers, and                                        creatives � 100% certified across leading platforms.</p>
 </div>
 </div>
 <div                                class="group flex items-start gap-4 p-5 rounded-2xl hover:bg-white border border-transparent hover:border-slate-200 hover:shadow-md transition-all">
@@ -1050,11 +1195,11 @@
 </div>
 <div class="flex-1 text-left">
 <div class="flex items-center gap-2">
-<h3 class="font-display text-lg font-bold text-slate-900">Results-focused                                            strategy</h3>
+<h3 class="font-display text-lg font-bold text-slate-900" style="color:#ffffff !important;-webkit-text-fill-color:#ffffff !important;">Results-focused                                            strategy</h3>
 <i data-lucide="check-circle" class="text-emerald-500 w-3.5 h-3.5">
 </i>
 </div>
-<p class="mt-1 text-[14px] text-slate-600">Every initiative is tied to a measurable                                        business outcome � not vanity metrics.</p>
+<p class="mt-1 text-[14px] text-slate-600" style="color:#94a3b8 !important;-webkit-text-fill-color:#94a3b8 !important;">Every initiative is tied to a measurable                                        business outcome � not vanity metrics.</p>
 </div>
 </div>
 </div>
@@ -1116,10 +1261,10 @@ See our results in action <i data-lucide="arrow-right" class="w-4 h-4"></i>
 </div>
 <div class="rounded-2xl border border-slate-200 p-4">
 <div class="text-[11px] font-semibold uppercase tracking-wider text-slate-500">ROAS                                    </div>
-<div class="mt-1 font-display text-2xl md:text-3xl font-bold text-slate-900">8.2�                                    </div>
+<div class="mt-1 font-display text-2xl md:text-3xl font-bold text-slate-900">8.2×                                    </div>
 <div                                        class="mt-1 flex items-center gap-1 text-[12px] text-emerald-600 font-semibold">
 <i data-lucide="trending-up" class="w-3.5 h-3.5">
-</i>                                        +2.1�                                    </div>
+</i>                                        +2.1×                                    </div>
 </div>
 </div>
 <div class="rounded-2xl border border-slate-200 p-5 text-left">
@@ -1245,7 +1390,7 @@ Everything you need to <span class="italic font-light text-slate-700">scale smar
 </h2>
 </div>
 <p class="lg:col-span-4 text-slate-600 text-left text-base md:text-lg">
-From ad platforms to creative engines � one integrated team, one unified strategy.
+From ad platforms to creative engines one integrated team, one unified strategy.
 </p>
 </div>
 <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 stagger-grid">
@@ -1391,7 +1536,7 @@ From ad platforms to creative engines � one integrated team, one unified strat
 <article                        class="relative bg-white rounded-3xl border border-slate-200 p-7 hover:shadow-xl transition-shadow reveal">
 <i data-lucide="quote" class="text-blue-600/20 w-7 h-7">
 </i>
-<p class="mt-4 text-slate-800 text-[15px] leading-relaxed">                            "Digital Advertise rebuilt our entire acquisition engine. Within two quarters, blended CAC                            dropped 41% and revenue grew 3.2�. The clarity in their reporting is unmatched."                        </p>
+<p class="mt-4 text-slate-800 text-[15px] leading-relaxed">                            "Digital Advertise rebuilt our entire acquisition engine. Within two quarters, blended CAC                            dropped 41% and revenue grew 3.2×. The clarity in their reporting is unmatched."                        </p>
 <div class="mt-6 flex items-center gap-3 pt-5 border-t border-slate-100">
 <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNTl8MHwxfHNlYXJjaHwzfHxwcm9mZXNzaW9uYWwlMjBwb3J0cmFpdCUyMGhlYWRzaG90fGVufDB8fHx8MTc8MDkzOTI2NXww&ixlib=rb-4.1.0&q=85"                                alt="Aarav Mehta" loading="lazy" class="w-11 h-11 rounded-full object-cover">
 <div>
@@ -1470,13 +1615,13 @@ From ad platforms to creative engines � one integrated team, one unified strat
 <div class="bubble bubble-3" aria-hidden="true"></div>
 <div class="max-w-7xl mx-auto px-6 md:px-10">
 <div class="relative rounded-[36px] bg-slate-950 overflow-hidden p-10 md:p-16 lg:p-24 reveal">
-<div                        class="absolute -top-32 -left-20 w-[420px] h-[420px] rounded-full bg-blue-500/30 blur-[120px] pointer-events-none">
+<div                        class="absolute -top-32 -left-20 w-[420px] h-[420px] rounded-full bg-blue-500/30 pointer-events-none">
 </div>
-<div                        class="absolute -bottom-32 -right-20 w-[420px] h-[420px] rounded-full bg-indigo-500/30 blur-[120px] pointer-events-none">
+<div                        class="absolute -bottom-32 -right-20 w-[420px] h-[420px] rounded-full bg-indigo-500/30 pointer-events-none">
 </div>
 <div class="absolute inset-0 opacity-[0.06] pointer-events-none grid-pattern">
 </div>
-<div                        class="absolute right-10 top-10 w-24 h-24 rounded-full bg-gradient-to-br from-blue-400 to-indigo-500 blur-2xl opacity-50 floaty">
+<div                        class="absolute right-10 top-10 w-24 h-24 rounded-full bg-gradient-to-br from-blue-400 to-indigo-500 opacity-50 floaty">
 </div>
 <div class="relative grid lg:grid-cols-12 gap-10 items-center">
 <div class="lg:col-span-8 text-left">
@@ -1497,7 +1642,7 @@ From ad platforms to creative engines � one integrated team, one unified strat
 </div>
 </div>
 <div class="lg:col-span-4 text-left">
-<div                                class="rounded-3xl border border-white/15 bg-white/[0.04] p-6 backdrop-blur-md select-none">
+<div                                class="rounded-3xl border border-white/15 bg-white/[0.04] p-6 select-none">
 <div class="text-[11px] uppercase tracking-wider font-semibold text-white/60">What                                    you'll receive</div>
 <ul class="mt-4 space-y-3 text-white/85 text-[14px]">
 <li class="flex items-start gap-3">
@@ -1526,7 +1671,7 @@ From ad platforms to creative engines � one integrated team, one unified strat
 </main>
 <!-- Footer -->
 <footer class="relative bg-slate-950 text-white pt-20 md:pt-28 pb-10 overflow-hidden">
-<div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] h-[400px] rounded-full bg-blue-500/10 blur-[120px] pointer-events-none">
+<div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] h-[400px] rounded-full bg-blue-500/10 pointer-events-none">
 </div>
 <div class="relative max-w-7xl mx-auto px-6 md:px-10">
 <div class="grid lg:grid-cols-12 gap-12 mb-14 text-left">

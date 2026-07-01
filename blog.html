@@ -54,8 +54,8 @@
   transform: none !important;
 }
 #desktop-nav a:hover {
-  color: #2563eb;
-  background: rgba(37,99,235,0.07);
+  color: #000000;
+  background: rgba(255,255,255,0.07);
   transform: none !important;
 }
 .nav-dropdown {
@@ -73,7 +73,7 @@
   transform: translateX(-50%) translateY(6px);
   width: 260px;
   background: rgba(255,255,255,0.98);
-  backdrop-filter: blur(20px);
+  
   border: 1px solid rgba(226,232,240,0.8);
   box-shadow: 0 10px 40px rgba(2,6,23,0.10);
   border-radius: 20px;
@@ -106,7 +106,7 @@
   transition: color 0.15s, background 0.15s;
 }
 .nav-dropdown-menu a:hover {
-  color: #2563eb;
+  color: #000000;
   background: #f1f5f9;
 }
 #navbar.nav-visible {
@@ -117,12 +117,12 @@
 }
 </style>
 </head>
-<body class="bg-white text-slate-900 overflow-x-hidden antialiased selection:bg-blue-100 selection:text-blue-800">
+<body class="bg-black text-white overflow-x-hidden antialiased selection:bg-[#111111] selection:text-white">
 
 <!-- Header -->
 <header id="navbar" style="position:fixed;top:0;left:0;width:100%;z-index:9999;padding:16px 0;transform:translateY(-120%);transition:transform 0.45s cubic-bezier(0.16,1,0.3,1);">
   <div style="max-width:1280px;margin:0 auto;padding:0 24px;">
-    <div id="nav-wrapper" style="display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,0.85);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,0.6);box-shadow:0 4px 32px rgba(2,6,23,0.08);border-radius:9999px;height:60px;padding:0 24px;">
+    <div id="nav-wrapper" style="display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,0.85);border:1px solid rgba(255,255,255,0.6);box-shadow:0 4px 32px rgba(2,6,23,0.08);border-radius:9999px;height:60px;padding:0 24px;">
       <a href="index.html" style="display:flex;align-items:center;">
         <img src="assets/logo.png" alt="Digital Advertise Logo" style="height:32px;width:auto;object-fit:contain;">
       </a>
@@ -131,9 +131,9 @@
         <div class="nav-dropdown">
           <a href="services.html">Services ▾</a>
           <div class="nav-dropdown-menu">
+            <a href="social-media.html">Social Media Marketing</a>
             <a href="performance-marketing.html">Performance Marketing</a>
             <a href="brand-identity.html">Brand Identity</a>
-            <a href="social-media.html">Social Media Marketing</a>
             <a href="web-development.html">Website Development</a>
             <a href="video-production.html">Video Production</a>
             <a href="ai-video.html">AI Video Generation</a>
@@ -148,7 +148,7 @@
         <a href="about.html">About Us</a>
       </nav>
       <div style="display:flex;align-items:center;gap:8px;">
-        <a href="audit.html" style="display:inline-flex;align-items:center;gap:6px;background:#0f172a;color:#fff;font-weight:600;font-size:14px;padding:10px 20px;border-radius:9999px;text-decoration:none;transition:background 0.2s;">
+        <a href="audit.html" style="display:inline-flex;align-items:center;gap:6px;background:#000000;color:#fff;font-weight:600;font-size:14px;padding:10px 20px;border-radius:9999px;text-decoration:none;transition:background 0.2s;">
           Get Started ↗
         </a>
         <button onclick="toggleMobileMenu()" id="hamburger-btn" style="display:none;padding:8px;border-radius:9999px;border:none;background:transparent;cursor:pointer;">
@@ -156,7 +156,7 @@
         </button>
       </div>
     </div>
-    <div id="mobile-menu" style="display:none;margin-top:12px;background:rgba(255,255,255,0.95);backdrop-filter:blur(20px);border-radius:20px;padding:20px;flex-direction:column;gap:8px;">
+    <div id="mobile-menu" style="display:none;margin-top:12px;background:rgba(255,255,255,0.95);border-radius:20px;padding:20px;flex-direction:column;gap:8px;">
       <a href="index.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Home</a>
       <a href="services.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Services</a>
       <a href="portfolio.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Portfolio</a>
@@ -164,13 +164,13 @@
       <a href="blog.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Blog</a>
       <a href="contact.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Contact</a>
       <a href="about.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">About Us</a>
-      <a href="audit.html" style="margin-top:8px;padding:12px;background:#0f172a;color:#fff;font-weight:600;border-radius:9999px;text-decoration:none;display:block;text-align:center;">Get Started</a>
+      <a href="audit.html" style="margin-top:8px;padding:12px;background:#000000;color:#fff;font-weight:600;border-radius:9999px;text-decoration:none;display:block;text-align:center;">Get Started</a>
     </div>
   </div>
 </header>
 
 
-    <main class="relative bg-white text-slate-900 font-sans overflow-hidden">
+    <main class="relative bg-black text-white font-sans overflow-hidden">
         
         <!-- ===== HERO ===== -->
         <section class="relative pt-36 md:pt-44 pb-20 mesh-bg overflow-hidden">
@@ -178,54 +178,53 @@
             <div class="bubble bubble-2" aria-hidden="true"></div>
             <div class="bubble bubble-3" aria-hidden="true"></div>
             <div class="absolute inset-0 overflow-hidden pointer-events-none z-0">
-                <div id="gradient-sweep" class="absolute w-[800px] h-[800px] rounded-full bg-[radial-gradient(circle,_rgba(37,99,235,0.12)_0%,_transparent_70%)] -top-1/4 -right-1/4"></div>
+                <div id="gradient-sweep" class="absolute w-[800px] h-[800px] rounded-full bg-[radial-gradient(circle,_rgba(255,255,255,0.12)_0%,_transparent_70%)] -top-1/4 -right-1/4"></div>
             </div>
             <div class="absolute inset-0 grid-pattern opacity-60 pointer-events-none"></div>
             <div class="max-w-7xl mx-auto px-6 md:px-10 relative z-10 text-left">
                 <div class="overline-label reveal">Playbooks & Logs</div>
-                <h1 class="mt-3 font-display text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tighter text-slate-900 text-reveal">
+                <h1 class="mt-3 font-display text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tighter text-white text-reveal">
                     Growth insights from <br>
-                    <span class="italic font-light text-slate-700">the frontline</span>.
+                    <span class="italic font-light text-white/80">the frontline</span>.
                 </h1>
-                <p class="mt-7 text-lg md:text-xl text-slate-600 max-w-2xl leading-relaxed">
+                <p class="mt-7 text-lg md:text-xl text-white/70 max-w-2xl leading-relaxed">
                     Tutorials, guidelines, and frameworks for scaling campaigns, configuring tracking models, and generating AI creative sets.
                 </p>
             </div>
         </section>
 
         <!-- ===== SEARCH & FILTERS ===== -->
-        <section class="relative overflow-hidden py-12 bg-slate-50/55 border-b border-slate-100">
+        <section class="relative overflow-hidden py-12 bg-[#0A0A0A]/55 border-b border-white/5">
             <div class="max-w-7xl mx-auto px-6 md:px-10 flex flex-col md:flex-row gap-4 justify-between items-center select-none">
                 <!-- Search bar -->
                 <div class="relative w-full md:w-96">
                     <i data-lucide="search" class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 w-4 h-4"></i>
-                    <input type="text" id="blog-search" onkeyup="searchBlog()" placeholder="Search articles..." class="w-full pl-11 pr-4 py-3 border border-slate-200 rounded-xl focus:border-slate-900 focus:outline-none text-[14px] bg-white">
+                    <input type="text" id="blog-search" onkeyup="searchBlog()" placeholder="Search articles..." class="w-full pl-11 pr-4 py-3 border border-white/10 rounded-xl focus:border-white focus:outline-none text-[14px] bg-black">
                 </div>
                 
                 <!-- Category Selectors -->
                 <div class="flex flex-wrap items-center gap-2 w-full md:w-auto">
-                    <button onclick="filterBlog('all')" id="cat-all" class="cat-btn px-4 py-2 rounded-full text-[12px] font-semibold border border-slate-200 bg-slate-900 text-white transition-all shadow">All</button>
-                    <button onclick="filterBlog('marketing')" id="cat-marketing" class="cat-btn px-4 py-2 rounded-full text-[12px] font-semibold border border-slate-200 text-slate-600 hover:text-slate-900 transition-all">Marketing</button>
-                    <button onclick="filterBlog('dev')" id="cat-dev" class="cat-btn px-4 py-2 rounded-full text-[12px] font-semibold border border-slate-200 text-slate-600 hover:text-slate-900 transition-all">Development</button>
-                    <button onclick="filterBlog('ai')" id="cat-ai" class="cat-btn px-4 py-2 rounded-full text-[12px] font-semibold border border-slate-200 text-slate-600 hover:text-slate-900 transition-all">AI Tech</button>
+                    <button onclick="filterBlog('all')" id="cat-all" class="cat-btn px-4 py-2 rounded-full text-[12px] font-semibold border border-white/10 bg-slate-900 text-white transition-all shadow">All</button>
+                    <button onclick="filterBlog('marketing')" id="cat-marketing" class="cat-btn px-4 py-2 rounded-full text-[12px] font-semibold border border-white/10 text-white/70 hover:text-white transition-all">Marketing</button>
+                    <button onclick="filterBlog('dev')" id="cat-dev" class="cat-btn px-4 py-2 rounded-full text-[12px] font-semibold border border-white/10 text-white/70 hover:text-white transition-all">Development</button>
+                    <button onclick="filterBlog('ai')" id="cat-ai" class="cat-btn px-4 py-2 rounded-full text-[12px] font-semibold border border-white/10 text-white/70 hover:text-white transition-all">AI Tech</button>
                 </div>
             </div>
         </section>
 
         <!-- ===== BLOG GRID ===== -->
-        <section class="relative overflow-hidden py-20 bg-white">
+        <section class="relative overflow-hidden py-20 bg-black">
             <div class="max-w-7xl mx-auto px-6 md:px-10">
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="blog-grid">
                     
-                    <!-- Post 1 -->
-                    <article class="blog-card group bg-white border border-slate-200 rounded-3xl overflow-hidden hover:border-slate-900 hover:shadow-xl transition-all duration-300 flex flex-col justify-between" data-cat="marketing">
+                    <!-- Post 1: Social Media Marketing -->
+                    <article class="blog-card group bg-black border border-white/10 rounded-3xl overflow-hidden hover:border-white hover:shadow-xl transition-all duration-300 flex flex-col justify-between" data-cat="marketing">
                         <div class="h-48 overflow-hidden bg-slate-900 relative">
-                            <img src="assets/portfolio-openai.png" alt="SaaS acquisition models" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            <!-- Micro Sparkline overlay -->
-                            <div class="absolute top-4 right-4 bg-slate-950/80 backdrop-blur-md rounded-xl p-2 border border-white/10 flex items-center gap-2">
-                                <span class="text-[9px] font-bold text-emerald-400 font-mono">+310%</span>
+                            <img src="assets/Images web/Blog (1).jpeg" alt="Social Media Marketing Guide blog cover" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute top-4 right-4 bg-slate-950/80 rounded-xl p-2 border border-white/10 flex items-center gap-2">
+                                <span class="text-[9px] font-bold text-white/60 font-mono">+310%</span>
                                 <svg class="w-10 h-4" viewBox="0 0 50 20" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M5,15 Q20,13 30,5 T45,2" fill="none" stroke="#10B981" stroke-width="1.5"/>
+                                    <path d="M5,15 Q20,13 30,5 T45,2" fill="none" stroke="#555555" stroke-width="1.5"/>
                                 </svg>
                             </div>
                         </div>
@@ -233,185 +232,148 @@
                             <div>
                                 <div class="flex items-center gap-3 text-[11px] text-slate-400 font-semibold uppercase">
                                     <span>Marketing</span>
-                                    <span>•</span>
+                                    <span>·</span>
                                     <span>5 min read</span>
                                 </div>
-                                <h3 class="font-display text-xl font-bold text-slate-900 mt-3 group-hover:text-blue-600 transition-colors">How we scaled Apple campaign ROAS to 8.2x</h3>
-                                <p class="mt-2 text-slate-500 text-[13px] leading-relaxed">A detailed playbook covering Pixel configurations, custom segment targeting, and rapid ad variant generation.</p>
+                                <h3 class="font-display text-xl font-bold text-white mt-3 group-hover:text-white transition-colors">Mastering Social Media Growth in 2026</h3>
+                                <p class="mt-2 text-white/60 text-[13px] leading-relaxed">Proven content strategies for building engaged communities, boosting organic reach, and driving follower growth across platforms.</p>
                             </div>
-                            <div class="mt-6 pt-5 border-t border-slate-100 flex items-center justify-between">
+                            <div class="mt-6 pt-5 border-t border-white/5 flex items-center justify-between">
                                 <div class="flex items-center gap-2">
-                                    <span class="w-6 h-6 rounded-full bg-slate-200 font-bold text-[10px] flex items-center justify-center">ER</span>
-                                    <span class="text-[12px] text-slate-600 font-medium">Elena Rostova</span>
+                                    <span class="w-6 h-6 rounded-full bg-black/5 font-bold text-[10px] flex items-center justify-center">ER</span>
+                                    <span class="text-[12px] text-white/70 font-medium">Elena Rostova</span>
                                 </div>
-                                <a href="contact.html" class="inline-flex items-center gap-1.5 text-[12px] font-semibold text-slate-900 group-hover:text-blue-600">
+                                <a href="contact.html" class="inline-flex items-center gap-1.5 text-[12px] font-semibold text-white group-hover:text-white">
                                     Read Post <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
                                 </a>
                             </div>
                         </div>
                     </article>
 
-                    <!-- Post 2 -->
-                    <article class="blog-card group bg-white border border-slate-200 rounded-3xl overflow-hidden hover:border-slate-900 hover:shadow-xl transition-all duration-300 flex flex-col justify-between" data-cat="dev">
+                    <!-- Post 2: Google Ads vs Facebook Ads -->
+                    <article class="blog-card group bg-black border border-white/10 rounded-3xl overflow-hidden hover:border-white hover:shadow-xl transition-all duration-300 flex flex-col justify-between" data-cat="marketing">
                         <div class="h-48 overflow-hidden bg-slate-900 relative">
-                            <img src="assets/portfolio-stripe.png" alt="Core Web Vitals" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            <!-- Micro Gauge overlay -->
-                            <div class="absolute top-4 right-4 bg-slate-950/80 backdrop-blur-md rounded-xl p-2 border border-white/10 flex items-center gap-2">
-                                <span class="text-[9px] font-bold text-emerald-400 font-mono">LH: 99</span>
-                                <svg class="w-4 h-4" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
-                                    <circle cx="18" cy="18" r="16" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="3"/>
-                                    <circle cx="18" cy="18" r="16" fill="none" stroke="#10B981" stroke-width="3" stroke-dasharray="100 100" stroke-dashoffset="1"/>
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="p-6 flex-1 flex flex-col justify-between text-left">
-                            <div>
-                                <div class="flex items-center gap-3 text-[11px] text-slate-400 font-semibold uppercase">
-                                    <span>Development</span>
-                                    <span>•</span>
-                                    <span>8 min read</span>
-                                </div>
-                                <h3 class="font-display text-xl font-bold text-slate-900 mt-3 group-hover:text-blue-600 transition-colors">Optimizing Core Web Vitals for conversion lift</h3>
-                                <p class="mt-2 text-slate-500 text-[13px] leading-relaxed">Why speed is your primary growth bottleneck. Rebuilding interfaces for 100/100 scores and fast load times.</p>
-                            </div>
-                            <div class="mt-6 pt-5 border-t border-slate-100 flex items-center justify-between">
-                                <div class="flex items-center gap-2">
-                                    <span class="w-6 h-6 rounded-full bg-slate-200 font-bold text-[10px] flex items-center justify-center">AS</span>
-                                    <span class="text-[12px] text-slate-600 font-medium">Ayan Shaikh</span>
-                                </div>
-                                <a href="contact.html" class="inline-flex items-center gap-1.5 text-[12px] font-semibold text-slate-900 group-hover:text-blue-600">
-                                    Read Post <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Post 3 -->
-                    <article class="blog-card group bg-white border border-slate-200 rounded-3xl overflow-hidden hover:border-slate-900 hover:shadow-xl transition-all duration-300 flex flex-col justify-between" data-cat="ai">
-                        <div class="h-48 overflow-hidden bg-slate-900 relative">
-                            <img src="assets/portfolio-zoom.png" alt="Diffusion models video" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            <!-- Pipeline timeline overlay -->
-                            <div class="absolute top-4 right-4 bg-slate-950/80 backdrop-blur-md rounded-xl p-2 border border-white/10 flex items-center gap-1">
-                                <span class="text-[9px] font-bold text-blue-400 font-mono">1.5s render</span>
-                                <div class="w-8 bg-white/10 h-1 rounded-full overflow-hidden">
-                                    <div class="bg-blue-400 h-full" style="width: 75%"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="p-6 flex-1 flex flex-col justify-between text-left">
-                            <div>
-                                <div class="flex items-center gap-3 text-[11px] text-slate-400 font-semibold uppercase">
-                                    <span>AI Tech</span>
-                                    <span>•</span>
-                                    <span>6 min read</span>
-                                </div>
-                                <h3 class="font-display text-xl font-bold text-slate-900 mt-3 group-hover:text-blue-600 transition-colors">Generative Diffusion: The future of ad creative</h3>
-                                <p class="mt-2 text-slate-500 text-[13px] leading-relaxed">How we scale video rendering outputs utilizing local models training, bypassing expensive studio sessions.</p>
-                            </div>
-                            <div class="mt-6 pt-5 border-t border-slate-100 flex items-center justify-between">
-                                <div class="flex items-center gap-2">
-                                    <span class="w-6 h-6 rounded-full bg-slate-200 font-bold text-[10px] flex items-center justify-center">LC</span>
-                                    <span class="text-[12px] text-slate-600 font-medium">Dr. Liam Carter</span>
-                                </div>
-                                <a href="contact.html" class="inline-flex items-center gap-1.5 text-[12px] font-semibold text-slate-900 group-hover:text-blue-600">
-                                    Read Post <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Post 4 -->
-                    <article class="blog-card group bg-white border border-slate-200 rounded-3xl overflow-hidden hover:border-slate-900 hover:shadow-xl transition-all duration-300 flex flex-col justify-between" data-cat="marketing">
-                        <div class="h-48 overflow-hidden bg-slate-900 relative">
-                            <img src="assets/portfolio-netflix.png" alt="Programmatic Scaling" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            <!-- Sparkline overlay -->
-                            <div class="absolute top-4 right-4 bg-slate-950/80 backdrop-blur-md rounded-xl p-2 border border-white/10 flex items-center gap-2">
-                                <span class="text-[9px] font-bold text-red-500 font-mono">-45% CPA</span>
+                            <img src="assets/Images web/Blog (2).jpeg" alt="Google Ads vs Facebook Ads blog cover" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute top-4 right-4 bg-slate-950/80 rounded-xl p-2 border border-white/10 flex items-center gap-2">
+                                <span class="text-[9px] font-bold text-white/60 font-mono">CPC Analysis</span>
                                 <svg class="w-8 h-4" viewBox="0 0 50 20" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M5,2 L25,12 L45,18" fill="none" stroke="#EF4444" stroke-width="1.5"/>
+                                    <path d="M5,15 L25,5 L45,12" fill="none" stroke="#555555" stroke-width="1.5"/>
                                 </svg>
                             </div>
                         </div>
                         <div class="p-6 flex-1 flex flex-col justify-between text-left">
                             <div>
                                 <div class="flex items-center gap-3 text-[11px] text-slate-400 font-semibold uppercase">
-                                    <span>Marketing</span>
-                                    <span>•</span>
+                                    <span>PPC / Advertising</span>
+                                    <span>·</span>
                                     <span>7 min read</span>
                                 </div>
-                                <h3 class="font-display text-xl font-bold text-slate-900 mt-3 group-hover:text-blue-600 transition-colors">Programmatic ad operations at enterprise scale</h3>
-                                <p class="mt-2 text-slate-500 text-[13px] leading-relaxed">Automating local market paid acquisition campaigns with multi-language video templates and custom triggers.</p>
+                                <h3 class="font-display text-xl font-bold text-white mt-3 group-hover:text-white transition-colors">Google Ads vs Facebook Ads: Which Wins in 2026?</h3>
+                                <p class="mt-2 text-white/60 text-[13px] leading-relaxed">A data-driven comparison of CPC, conversion rates, and campaign performance across the two largest ad platforms.</p>
                             </div>
-                            <div class="mt-6 pt-5 border-t border-slate-100 flex items-center justify-between">
+                            <div class="mt-6 pt-5 border-t border-white/5 flex items-center justify-between">
                                 <div class="flex items-center gap-2">
-                                    <span class="w-6 h-6 rounded-full bg-slate-200 font-bold text-[10px] flex items-center justify-center">ER</span>
-                                    <span class="text-[12px] text-slate-600 font-medium">Elena Rostova</span>
+                                    <span class="w-6 h-6 rounded-full bg-black/5 font-bold text-[10px] flex items-center justify-center">AS</span>
+                                    <span class="text-[12px] text-white/70 font-medium">Ayan Shaikh</span>
                                 </div>
-                                <a href="contact.html" class="inline-flex items-center gap-1.5 text-[12px] font-semibold text-slate-900 group-hover:text-blue-600">
+                                <a href="contact.html" class="inline-flex items-center gap-1.5 text-[12px] font-semibold text-white group-hover:text-white">
                                     Read Post <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
                                 </a>
                             </div>
                         </div>
                     </article>
 
-                    <!-- Post 5 -->
-                    <article class="blog-card group bg-white border border-slate-200 rounded-3xl overflow-hidden hover:border-slate-900 hover:shadow-xl transition-all duration-300 flex flex-col justify-between" data-cat="ai">
+                    <!-- Post 3: SEO Tips for 2026 -->
+                    <article class="blog-card group bg-black border border-white/10 rounded-3xl overflow-hidden hover:border-white hover:shadow-xl transition-all duration-300 flex flex-col justify-between" data-cat="marketing">
                         <div class="h-48 overflow-hidden bg-slate-900 relative">
-                            <img src="assets/portfolio-apple.png" alt="Spatial UX design" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            <!-- 90 FPS tag -->
-                            <div class="absolute top-4 right-4 bg-slate-950/80 backdrop-blur-md rounded-xl p-2 border border-white/10 flex items-center gap-1">
-                                <span class="text-[9px] font-bold text-indigo-400 font-mono">90 FPS</span>
-                                <i data-lucide="sparkles" class="w-2.5 h-2.5 text-indigo-400"></i>
+                            <img src="assets/Images web/Blog (3).jpeg" alt="SEO Tips for 2026 blog cover" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute top-4 right-4 bg-slate-950/80 rounded-xl p-2 border border-white/10 flex items-center gap-2">
+                                <span class="text-[9px] font-bold text-green-500 font-mono">+180% Organic</span>
+                                <svg class="w-10 h-4" viewBox="0 0 50 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5,18 Q20,10 30,8 T45,2" fill="none" stroke="#22C55E" stroke-width="1.5"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col justify-between text-left">
+                            <div>
+                                <div class="flex items-center gap-3 text-[11px] text-slate-400 font-semibold uppercase">
+                                    <span>SEO</span>
+                                    <span>·</span>
+                                    <span>6 min read</span>
+                                </div>
+                                <h3 class="font-display text-xl font-bold text-white mt-3 group-hover:text-white transition-colors">SEO Tips for 2026</h3>
+                                <p class="mt-2 text-white/60 text-[13px] leading-relaxed">Master keyword strategy, technical SEO, and backlink building to dominate search rankings in the evolving landscape.</p>
+                            </div>
+                            <div class="mt-6 pt-5 border-t border-white/5 flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-6 h-6 rounded-full bg-black/5 font-bold text-[10px] flex items-center justify-center">LC</span>
+                                    <span class="text-[12px] text-white/70 font-medium">Dr. Liam Carter</span>
+                                </div>
+                                <a href="contact.html" class="inline-flex items-center gap-1.5 text-[12px] font-semibold text-white group-hover:text-white">
+                                    Read Post <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Post 4: Email Marketing That Converts -->
+                    <article class="blog-card group bg-black border border-white/10 rounded-3xl overflow-hidden hover:border-white hover:shadow-xl transition-all duration-300 flex flex-col justify-between" data-cat="marketing">
+                        <div class="h-48 overflow-hidden bg-slate-900 relative">
+                            <img src="assets/Images web/Blog (4).jpeg" alt="Email Marketing That Converts blog cover" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute top-4 right-4 bg-slate-950/80 rounded-xl p-2 border border-white/10 flex items-center gap-2">
+                                <span class="text-[9px] font-bold text-blue-400 font-mono">42% Open Rate</span>
+                                <svg class="w-8 h-4" viewBox="0 0 50 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5,12 L20,6 L35,10 L45,4" fill="none" stroke="#60A5FA" stroke-width="1.5"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col justify-between text-left">
+                            <div>
+                                <div class="flex items-center gap-3 text-[11px] text-slate-400 font-semibold uppercase">
+                                    <span>Email Marketing</span>
+                                    <span>·</span>
+                                    <span>5 min read</span>
+                                </div>
+                                <h3 class="font-display text-xl font-bold text-white mt-3 group-hover:text-white transition-colors">Email Marketing That Converts</h3>
+                                <p class="mt-2 text-white/60 text-[13px] leading-relaxed">Boost open rates, grow your subscriber list, and turn email campaigns into high-converting revenue machines.</p>
+                            </div>
+                            <div class="mt-6 pt-5 border-t border-white/5 flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-6 h-6 rounded-full bg-black/5 font-bold text-[10px] flex items-center justify-center">ER</span>
+                                    <span class="text-[12px] text-white/70 font-medium">Elena Rostova</span>
+                                </div>
+                                <a href="contact.html" class="inline-flex items-center gap-1.5 text-[12px] font-semibold text-white group-hover:text-white">
+                                    Read Post <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Post 5: How AI is Changing Digital Marketing -->
+                    <article class="blog-card group bg-black border border-white/10 rounded-3xl overflow-hidden hover:border-white hover:shadow-xl transition-all duration-300 flex flex-col justify-between" data-cat="ai">
+                        <div class="h-48 overflow-hidden bg-slate-900 relative">
+                            <img src="assets/Images web/Blog (5).jpeg" alt="How AI is Changing Digital Marketing blog cover" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute top-4 right-4 bg-slate-950/80 rounded-xl p-2 border border-white/10 flex items-center gap-1">
+                                <span class="text-[9px] font-bold text-purple-400 font-mono">AI-Powered</span>
+                                <i data-lucide="sparkles" class="w-2.5 h-2.5 text-purple-400"></i>
                             </div>
                         </div>
                         <div class="p-6 flex-1 flex flex-col justify-between text-left">
                             <div>
                                 <div class="flex items-center gap-3 text-[11px] text-slate-400 font-semibold uppercase">
                                     <span>AI Tech</span>
-                                    <span>•</span>
-                                    <span>9 min read</span>
+                                    <span>·</span>
+                                    <span>8 min read</span>
                                 </div>
-                                <h3 class="font-display text-xl font-bold text-slate-900 mt-3 group-hover:text-blue-600 transition-colors">Designing for spatial computing: Apple Vision Pro UI</h3>
-                                <p class="mt-2 text-slate-500 text-[13px] leading-relaxed">Understanding spatial UI/UX grids, WebGL 3D asset optimization, and interactive eye-tracking conversion hooks.</p>
+                                <h3 class="font-display text-xl font-bold text-white mt-3 group-hover:text-white transition-colors">How AI is Changing Digital Marketing</h3>
+                                <p class="mt-2 text-white/60 text-[13px] leading-relaxed">Explore AI automation, predictive analytics, and smart campaigns that are revolutionizing how brands reach audiences.</p>
                             </div>
-                            <div class="mt-6 pt-5 border-t border-slate-100 flex items-center justify-between">
+                            <div class="mt-6 pt-5 border-t border-white/5 flex items-center justify-between">
                                 <div class="flex items-center gap-2">
-                                    <span class="w-6 h-6 rounded-full bg-slate-200 font-bold text-[10px] flex items-center justify-center">AS</span>
-                                    <span class="text-[12px] text-slate-600 font-medium">Ayan Shaikh</span>
+                                    <span class="w-6 h-6 rounded-full bg-black/5 font-bold text-[10px] flex items-center justify-center">AS</span>
+                                    <span class="text-[12px] text-white/70 font-medium">Ayan Shaikh</span>
                                 </div>
-                                <a href="contact.html" class="inline-flex items-center gap-1.5 text-[12px] font-semibold text-slate-900 group-hover:text-blue-600">
-                                    Read Post <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Post 6 -->
-                    <article class="blog-card group bg-white border border-slate-200 rounded-3xl overflow-hidden hover:border-slate-900 hover:shadow-xl transition-all duration-300 flex flex-col justify-between" data-cat="dev">
-                        <div class="h-48 overflow-hidden bg-slate-900 relative">
-                            <img src="assets/portfolio-notion.png" alt="Dynamic Design Systems" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            <!-- Token counts overlay -->
-                            <div class="absolute top-4 right-4 bg-slate-950/80 backdrop-blur-md rounded-xl p-2 border border-white/10 flex items-center gap-1.5">
-                                <span class="text-[9px] font-bold text-purple-400 font-mono">400+ Tokens</span>
-                                <i data-lucide="layout" class="w-2.5 h-2.5 text-purple-400"></i>
-                            </div>
-                        </div>
-                        <div class="p-6 flex-1 flex flex-col justify-between text-left">
-                            <div>
-                                <div class="flex items-center gap-3 text-[11px] text-slate-400 font-semibold uppercase">
-                                    <span>Development</span>
-                                    <span>•</span>
-                                    <span>6 min read</span>
-                                </div>
-                                <h3 class="font-display text-xl font-bold text-slate-900 mt-3 group-hover:text-blue-600 transition-colors">Scaling brands with dynamic Figma design systems</h3>
-                                <p class="mt-2 text-slate-500 text-[13px] leading-relaxed">How we standardise style tokens using code components to maintain 100% design coherence globally.</p>
-                            </div>
-                            <div class="mt-6 pt-5 border-t border-slate-100 flex items-center justify-between">
-                                <div class="flex items-center gap-2">
-                                    <span class="w-6 h-6 rounded-full bg-slate-200 font-bold text-[10px] flex items-center justify-center">LC</span>
-                                    <span class="text-[12px] text-slate-600 font-medium">Dr. Liam Carter</span>
-                                </div>
-                                <a href="contact.html" class="inline-flex items-center gap-1.5 text-[12px] font-semibold text-slate-900 group-hover:text-blue-600">
+                                <a href="contact.html" class="inline-flex items-center gap-1.5 text-[12px] font-semibold text-white group-hover:text-white">
                                     Read Post <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
                                 </a>
                             </div>
@@ -426,7 +388,7 @@
 
     <!-- Footer -->
     <footer class="relative bg-slate-950 text-white pt-20 md:pt-28 pb-10 overflow-hidden">
-        <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] h-[400px] rounded-full bg-blue-500/10 blur-[120px] pointer-events-none"></div>
+        <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] h-[400px] rounded-full bg-gray-1000/10 pointer-events-none"></div>
         <div class="relative max-w-7xl mx-auto px-6 md:px-10">
             <div class="grid lg:grid-cols-12 gap-12 mb-14 text-left">
                 <div class="lg:col-span-4">
@@ -434,11 +396,11 @@
                         <img src="assets/logo-white.png" alt="Digital Advertise Logo" class="h-10 w-auto object-contain">
                     </div>
                     <p class="text-white/65 text-[15px] leading-relaxed max-w-md">
-                        A performance marketing partner for ambitious teams — engineered for measurable, durable growth across every channel and market.
+                        A performance marketing partner for ambitious teams � engineered for measurable, durable growth across every channel and market.
                     </p>
                     <form class="mt-6 flex max-w-sm" onsubmit="handleNewsletterSubmit(event)">
-                        <input type="email" required placeholder="Subscribe to our newsletter" class="flex-1 bg-white/5 border border-white/10 rounded-l-xl px-4 py-2 text-[14px] text-white placeholder:text-white/40 focus:outline-none focus:border-blue-500">
-                        <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-5 rounded-r-xl text-[14px] font-semibold transition-colors">Join</button>
+                        <input type="email" required placeholder="Subscribe to our newsletter" class="flex-1 bg-black/5 border border-white/10 rounded-l-xl px-4 py-2 text-[14px] text-white placeholder:text-white/40 focus:outline-none focus:border-white">
+                        <button type="submit" class="bg-black hover:bg-black700 text-white px-5 rounded-r-xl text-[14px] font-semibold transition-colors">Join</button>
                     </form>
                 </div>
 
@@ -517,13 +479,13 @@
         function filterBlog(cat) {
             document.querySelectorAll('.cat-btn').forEach(btn => {
                 btn.classList.remove('bg-slate-900', 'text-white', 'shadow');
-                btn.classList.add('text-slate-600', 'hover:text-slate-900');
+                btn.classList.add('text-white/70', 'hover:text-white');
             });
             
             const activeBtn = document.getElementById('cat-' + cat);
             if (activeBtn) {
                 activeBtn.classList.add('bg-slate-900', 'text-white', 'shadow');
-                activeBtn.classList.remove('text-slate-600', 'hover:text-slate-900');
+                activeBtn.classList.remove('text-white/70', 'hover:text-white');
             }
             
             const searchVal = document.getElementById('blog-search').value.toLowerCase();

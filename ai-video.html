@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <link rel="icon" type="image/png" href="assets/favicon.png">
@@ -65,8 +65,8 @@
           transform: none !important;
         }
         #desktop-nav a:hover {
-          color: #2563eb;
-          background: rgba(37,99,235,0.07);
+          color: #000000;
+          background: rgba(255,255,255,0.07);
           transform: none !important;
         }
         .nav-dropdown {
@@ -84,7 +84,7 @@
           transform: translateX(-50%) translateY(6px);
           width: 260px;
           background: rgba(255,255,255,0.98);
-          backdrop-filter: blur(20px);
+          
           border: 1px solid rgba(226,232,240,0.8);
           box-shadow: 0 10px 40px rgba(2,6,23,0.10);
           border-radius: 20px;
@@ -117,7 +117,7 @@
           transition: color 0.15s, background 0.15s;
         }
         .nav-dropdown-menu a:hover {
-          color: #2563eb;
+          color: #000000;
           background: #f1f5f9;
         }
         #navbar.nav-visible {
@@ -128,12 +128,12 @@
         }
     </style>
 </head>
-<body class="bg-white text-slate-900 overflow-x-hidden antialiased selection:bg-blue-100 selection:text-blue-800">
+<body class="bg-black text-white overflow-x-hidden antialiased selection:bg-[#111111] selection:text-white">
 
     <!-- Header -->
 <header id="navbar" style="position:fixed;top:0;left:0;width:100%;z-index:9999;padding:16px 0;transform:translateY(-120%);transition:transform 0.45s cubic-bezier(0.16,1,0.3,1);">
   <div style="max-width:1280px;margin:0 auto;padding:0 24px;">
-    <div id="nav-wrapper" style="display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,0.85);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,0.6);box-shadow:0 4px 32px rgba(2,6,23,0.08);border-radius:9999px;height:60px;padding:0 24px;">
+    <div id="nav-wrapper" style="display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,0.85);border:1px solid rgba(255,255,255,0.6);box-shadow:0 4px 32px rgba(2,6,23,0.08);border-radius:9999px;height:60px;padding:0 24px;">
       <a href="index.html" style="display:flex;align-items:center;">
         <img src="assets/logo.png" alt="Digital Advertise Logo" style="height:32px;width:auto;object-fit:contain;">
       </a>
@@ -142,9 +142,9 @@
         <div class="nav-dropdown">
           <a href="services.html">Services ▾</a>
           <div class="nav-dropdown-menu">
+            <a href="social-media.html">Social Media Marketing</a>
             <a href="performance-marketing.html">Performance Marketing</a>
             <a href="brand-identity.html">Brand Identity</a>
-            <a href="social-media.html">Social Media Marketing</a>
             <a href="web-development.html">Website Development</a>
             <a href="video-production.html">Video Production</a>
             <a href="ai-video.html">AI Video Generation</a>
@@ -159,7 +159,7 @@
         <a href="about.html">About Us</a>
       </nav>
       <div style="display:flex;align-items:center;gap:8px;">
-        <a href="audit.html" style="display:inline-flex;align-items:center;gap:6px;background:#0f172a;color:#fff;font-weight:600;font-size:14px;padding:10px 20px;border-radius:9999px;text-decoration:none;transition:background 0.2s;">
+        <a href="audit.html" style="display:inline-flex;align-items:center;gap:6px;background:#000000;color:#fff;font-weight:600;font-size:14px;padding:10px 20px;border-radius:9999px;text-decoration:none;transition:background 0.2s;">
           Get Started ↗
         </a>
         <button onclick="toggleMobileMenu()" id="hamburger-btn" style="display:none;padding:8px;border-radius:9999px;border:none;background:transparent;cursor:pointer;">
@@ -167,7 +167,7 @@
         </button>
       </div>
     </div>
-    <div id="mobile-menu" style="display:none;margin-top:12px;background:rgba(255,255,255,0.95);backdrop-filter:blur(20px);border-radius:20px;padding:20px;flex-direction:column;gap:8px;">
+    <div id="mobile-menu" style="display:none;margin-top:12px;background:rgba(255,255,255,0.95);border-radius:20px;padding:20px;flex-direction:column;gap:8px;">
       <a href="index.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Home</a>
       <a href="services.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Services</a>
       <a href="portfolio.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Portfolio</a>
@@ -175,12 +175,12 @@
       <a href="blog.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Blog</a>
       <a href="contact.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Contact</a>
       <a href="about.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">About Us</a>
-      <a href="audit.html" style="margin-top:8px;padding:12px;background:#0f172a;color:#fff;font-weight:600;border-radius:9999px;text-decoration:none;display:block;text-align:center;">Get Started</a>
+      <a href="audit.html" style="margin-top:8px;padding:12px;background:#000000;color:#fff;font-weight:600;border-radius:9999px;text-decoration:none;display:block;text-align:center;">Get Started</a>
     </div>
   </div>
 </header>
 
-    <main class="relative bg-white text-slate-900 font-sans overflow-x-hidden">
+    <main class="relative bg-black text-white font-sans overflow-x-hidden">
 
         <!-- ===== HERO ===== -->
         <section class="relative overflow-hidden pt-36 md:pt-44 pb-20 mesh-bg">
@@ -188,15 +188,15 @@
             <div class="bubble bubble-2" aria-hidden="true"></div>
             <div class="bubble bubble-3" aria-hidden="true"></div>
             <div class="absolute inset-0 overflow-hidden pointer-events-none z-0">
-                <div class="absolute w-[800px] h-[800px] rounded-full bg-[radial-gradient(circle,_rgba(37,99,235,0.12)_0%,_transparent_70%)] -top-1/4 -right-1/4"></div>
+                <div class="absolute w-[800px] h-[800px] rounded-full bg-[radial-gradient(circle,_rgba(255,255,255,0.12)_0%,_transparent_70%)] -top-1/4 -right-1/4"></div>
             </div>
             <div class="absolute inset-0 grid-pattern opacity-60 pointer-events-none"></div>
             <div class="max-w-7xl mx-auto px-6 md:px-10 relative z-10 text-left">
                 <div class="overline-label reveal">AI Video & Creative</div>
-                <h1 class="mt-3 font-display text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tighter text-slate-900 text-reveal">
-                    AI-powered creative<br><span class="italic font-light text-slate-700">at scale</span>.
+                <h1 class="mt-3 font-display text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tighter text-white text-reveal">
+                    AI-powered creative<br><span class="italic font-light text-white/80">at scale</span>.
                 </h1>
-                <p class="mt-7 text-lg md:text-xl text-slate-600 max-w-2xl leading-relaxed">
+                <p class="mt-7 text-lg md:text-xl text-white/70 max-w-2xl leading-relaxed">
                     We deploy state-of-the-art video diffusion models and synthetic voice algorithms to synthesize ad variants at scale — cutting costs by 85% and delivery times to under two hours.
                 </p>
                 <div class="mt-8 flex flex-wrap items-center gap-4">
@@ -206,124 +206,124 @@
         </section>
 
         <!-- ===== AI VIDEO SHOWCASE ===== -->
-        <section class="relative overflow-hidden py-20 bg-slate-50">
+        <section class="relative overflow-hidden py-20 bg-[#0A0A0A]">
             <div class="max-w-7xl mx-auto px-6 md:px-10">
                 <div class="text-center mb-14 reveal">
                     <div class="overline-label">Showcase</div>
-                    <h2 class="mt-3 font-display text-3xl md:text-4xl font-bold text-slate-900">AI-Generated Video Portfolio</h2>
-                    <p class="mt-3 text-slate-500 text-[15px] max-w-2xl mx-auto">Explore our latest AI video productions — from 3D product renders to viral UGC ads, each crafted with cutting-edge diffusion models.</p>
+                    <h2 class="mt-3 font-display text-3xl md:text-4xl font-bold text-white">AI-Generated Video Portfolio</h2>
+                    <p class="mt-3 text-white/60 text-[15px] max-w-2xl mx-auto">Explore our latest AI video productions — from 3D product renders to viral UGC ads, each crafted with cutting-edge diffusion models.</p>
                 </div>
                 <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 reveal">
                     <!-- Video Card 1: 3D Product Animation -->
-                    <div class="video-card group relative rounded-3xl overflow-hidden bg-slate-900 border border-slate-100 hover:shadow-2xl transition-all duration-500">
+                    <div class="video-card group relative rounded-3xl overflow-hidden bg-slate-900 border border-white/5 hover:shadow-2xl transition-all duration-500">
                         <div class="relative aspect-video">
                             <video src="assets/Realistic 3D Product Animation _ Professional Motion Design for Ads _ E-Commerce(MP4).mp4" muted loop playsinline preload="metadata" class="w-full h-full object-cover"></video>
                             <button class="play-btn absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-label="Play video">
-                                <div class="w-14 h-14 rounded-full bg-white/90 flex items-center justify-center shadow-lg">
-                                    <svg class="w-5 h-5 text-slate-900 ml-0.5" fill="currentColor" viewBox="0 0 20 20"><path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"/></svg>
+                                <div class="w-14 h-14 rounded-full bg-black/90 flex items-center justify-center shadow-lg">
+                                    <svg class="w-5 h-5 text-white ml-0.5" fill="currentColor" viewBox="0 0 20 20"><path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"/></svg>
                                 </div>
                             </button>
                         </div>
                         <div class="p-6">
-                            <span class="bg-blue-600 text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 rounded text-white">3D Rendering</span>
-                            <h3 class="mt-3 font-display font-bold text-slate-900 text-lg">3D Product Animation</h3>
-                            <p class="mt-2 text-[14px] text-slate-500 leading-relaxed">Photorealistic 3D product renders with cinematic motion design for e-commerce campaigns.</p>
-                            <button class="view-full-btn mt-4 inline-flex items-center gap-1.5 text-[13px] font-semibold text-blue-600 hover:text-blue-700 transition-colors" data-src="assets/Realistic 3D Product Animation _ Professional Motion Design for Ads _ E-Commerce(MP4).mp4" data-title="3D Product Animation">
+                            <span class="bg-black text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 rounded text-white">3D Rendering</span>
+                            <h3 class="mt-3 font-display font-bold text-white text-lg">3D Product Animation</h3>
+                            <p class="mt-2 text-[14px] text-white/60 leading-relaxed">Photorealistic 3D product renders with cinematic motion design for e-commerce campaigns.</p>
+                            <button class="view-full-btn mt-4 inline-flex items-center gap-1.5 text-[13px] font-semibold text-white hover:text-white700 transition-colors" data-src="assets/Realistic 3D Product Animation _ Professional Motion Design for Ads _ E-Commerce(MP4).mp4" data-title="3D Product Animation">
                                 <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i> View Full
                             </button>
                         </div>
                     </div>
                     <!-- Video Card 2: AI-Generated Brand Content -->
-                    <div class="video-card group relative rounded-3xl overflow-hidden bg-slate-900 border border-slate-100 hover:shadow-2xl transition-all duration-500">
+                    <div class="video-card group relative rounded-3xl overflow-hidden bg-slate-900 border border-white/5 hover:shadow-2xl transition-all duration-500">
                         <div class="relative aspect-video">
                             <video src="assets/mamaeartn ai.mp4" muted loop playsinline preload="metadata" class="w-full h-full object-cover"></video>
                             <button class="play-btn absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-label="Play video">
-                                <div class="w-14 h-14 rounded-full bg-white/90 flex items-center justify-center shadow-lg">
-                                    <svg class="w-5 h-5 text-slate-900 ml-0.5" fill="currentColor" viewBox="0 0 20 20"><path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"/></svg>
+                                <div class="w-14 h-14 rounded-full bg-black/90 flex items-center justify-center shadow-lg">
+                                    <svg class="w-5 h-5 text-white ml-0.5" fill="currentColor" viewBox="0 0 20 20"><path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"/></svg>
                                 </div>
                             </button>
                         </div>
                         <div class="p-6">
-                            <span class="bg-purple-600 text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 rounded text-white">AI Generation</span>
-                            <h3 class="mt-3 font-display font-bold text-slate-900 text-lg">AI-Generated Brand Content</h3>
-                            <p class="mt-2 text-[14px] text-slate-500 leading-relaxed">AI-crafted visual storytelling for brand awareness and social engagement.</p>
-                            <button class="view-full-btn mt-4 inline-flex items-center gap-1.5 text-[13px] font-semibold text-blue-600 hover:text-blue-700 transition-colors" data-src="assets/mamaeartn ai.mp4" data-title="AI-Generated Brand Content">
+                            <span class="bg-gray-700 text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 rounded text-white">AI Generation</span>
+                            <h3 class="mt-3 font-display font-bold text-white text-lg">AI-Generated Brand Content</h3>
+                            <p class="mt-2 text-[14px] text-white/60 leading-relaxed">AI-crafted visual storytelling for brand awareness and social engagement.</p>
+                            <button class="view-full-btn mt-4 inline-flex items-center gap-1.5 text-[13px] font-semibold text-white hover:text-white700 transition-colors" data-src="assets/mamaeartn ai.mp4" data-title="AI-Generated Brand Content">
                                 <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i> View Full
                             </button>
                         </div>
                     </div>
                     <!-- Video Card 3: FOOH -->
-                    <div class="video-card group relative rounded-3xl overflow-hidden bg-slate-900 border border-slate-100 hover:shadow-2xl transition-all duration-500">
+                    <div class="video-card group relative rounded-3xl overflow-hidden bg-slate-900 border border-white/5 hover:shadow-2xl transition-all duration-500">
                         <div class="relative aspect-video">
                             <video src="assets/JYLOR FOOH Content(MP4).mp4" muted loop playsinline preload="metadata" class="w-full h-full object-cover"></video>
                             <button class="play-btn absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-label="Play video">
-                                <div class="w-14 h-14 rounded-full bg-white/90 flex items-center justify-center shadow-lg">
-                                    <svg class="w-5 h-5 text-slate-900 ml-0.5" fill="currentColor" viewBox="0 0 20 20"><path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"/></svg>
+                                <div class="w-14 h-14 rounded-full bg-black/90 flex items-center justify-center shadow-lg">
+                                    <svg class="w-5 h-5 text-white ml-0.5" fill="currentColor" viewBox="0 0 20 20"><path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"/></svg>
                                 </div>
                             </button>
                         </div>
                         <div class="p-6">
-                            <span class="bg-amber-500 text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 rounded text-white">FOOH</span>
-                            <h3 class="mt-3 font-display font-bold text-slate-900 text-lg">Fake Out of Home</h3>
-                            <p class="mt-2 text-[14px] text-slate-500 leading-relaxed">Hyper-realistic CGI billboard and OOH simulations for viral campaign moments.</p>
-                            <button class="view-full-btn mt-4 inline-flex items-center gap-1.5 text-[13px] font-semibold text-blue-600 hover:text-blue-700 transition-colors" data-src="assets/JYLOR FOOH Content(MP4).mp4" data-title="Fake Out of Home">
+                            <span class="bg-gray-1000 text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 rounded text-white">FOOH</span>
+                            <h3 class="mt-3 font-display font-bold text-white text-lg">Fake Out of Home</h3>
+                            <p class="mt-2 text-[14px] text-white/60 leading-relaxed">Hyper-realistic CGI billboard and OOH simulations for viral campaign moments.</p>
+                            <button class="view-full-btn mt-4 inline-flex items-center gap-1.5 text-[13px] font-semibold text-white hover:text-white700 transition-colors" data-src="assets/JYLOR FOOH Content(MP4).mp4" data-title="Fake Out of Home">
                                 <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i> View Full
                             </button>
                         </div>
                     </div>
                     <!-- Video Card 4: Decorative Visual Effects -->
-                    <div class="video-card group relative rounded-3xl overflow-hidden bg-slate-900 border border-slate-100 hover:shadow-2xl transition-all duration-500">
+                    <div class="video-card group relative rounded-3xl overflow-hidden bg-slate-900 border border-white/5 hover:shadow-2xl transition-all duration-500">
                         <div class="relative aspect-video">
                             <video src="assets/Sfondo con effetti glitter _ Creazioni decorative_ Video divertenti_ Di desa(MP4).mp4" muted loop playsinline preload="metadata" class="w-full h-full object-cover"></video>
                             <button class="play-btn absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-label="Play video">
-                                <div class="w-14 h-14 rounded-full bg-white/90 flex items-center justify-center shadow-lg">
-                                    <svg class="w-5 h-5 text-slate-900 ml-0.5" fill="currentColor" viewBox="0 0 20 20"><path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"/></svg>
+                                <div class="w-14 h-14 rounded-full bg-black/90 flex items-center justify-center shadow-lg">
+                                    <svg class="w-5 h-5 text-white ml-0.5" fill="currentColor" viewBox="0 0 20 20"><path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"/></svg>
                                 </div>
                             </button>
                         </div>
                         <div class="p-6">
-                            <span class="bg-pink-500 text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 rounded text-white">VFX</span>
-                            <h3 class="mt-3 font-display font-bold text-slate-900 text-lg">Decorative Visual Effects</h3>
-                            <p class="mt-2 text-[14px] text-slate-500 leading-relaxed">Eye-catching glitter and particle effects for social media and promotional content.</p>
-                            <button class="view-full-btn mt-4 inline-flex items-center gap-1.5 text-[13px] font-semibold text-blue-600 hover:text-blue-700 transition-colors" data-src="assets/Sfondo con effetti glitter _ Creazioni decorative_ Video divertenti_ Di desa(MP4).mp4" data-title="Decorative Visual Effects">
+                            <span class="bg-white/10 text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 rounded text-white">VFX</span>
+                            <h3 class="mt-3 font-display font-bold text-white text-lg">Decorative Visual Effects</h3>
+                            <p class="mt-2 text-[14px] text-white/60 leading-relaxed">Eye-catching glitter and particle effects for social media and promotional content.</p>
+                            <button class="view-full-btn mt-4 inline-flex items-center gap-1.5 text-[13px] font-semibold text-white hover:text-white700 transition-colors" data-src="assets/Sfondo con effetti glitter _ Creazioni decorative_ Video divertenti_ Di desa(MP4).mp4" data-title="Decorative Visual Effects">
                                 <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i> View Full
                             </button>
                         </div>
                     </div>
                     <!-- Video Card 5: AI UGC Ad -->
-                    <div class="video-card group relative rounded-3xl overflow-hidden bg-slate-900 border border-slate-100 hover:shadow-2xl transition-all duration-500">
+                    <div class="video-card group relative rounded-3xl overflow-hidden bg-slate-900 border border-white/5 hover:shadow-2xl transition-all duration-500">
                         <div class="relative aspect-video">
                             <video src="assets/This Viral AI UGC Ad Will Blow Your Mind 🤯  Cold Ice Orange  Veo3(MP4).mp4" muted loop playsinline preload="metadata" class="w-full h-full object-cover"></video>
                             <button class="play-btn absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-label="Play video">
-                                <div class="w-14 h-14 rounded-full bg-white/90 flex items-center justify-center shadow-lg">
-                                    <svg class="w-5 h-5 text-slate-900 ml-0.5" fill="currentColor" viewBox="0 0 20 20"><path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"/></svg>
+                                <div class="w-14 h-14 rounded-full bg-black/90 flex items-center justify-center shadow-lg">
+                                    <svg class="w-5 h-5 text-white ml-0.5" fill="currentColor" viewBox="0 0 20 20"><path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"/></svg>
                                 </div>
                             </button>
                         </div>
                         <div class="p-6">
-                            <span class="bg-emerald-500 text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 rounded text-white">UGC Ads</span>
-                            <h3 class="mt-3 font-display font-bold text-slate-900 text-lg">AI UGC Ad Creative</h3>
-                            <p class="mt-2 text-[14px] text-slate-500 leading-relaxed">Viral-style UGC advertisements generated with Google Veo3 for maximum engagement.</p>
-                            <button class="view-full-btn mt-4 inline-flex items-center gap-1.5 text-[13px] font-semibold text-blue-600 hover:text-blue-700 transition-colors" data-src="assets/This Viral AI UGC Ad Will Blow Your Mind 🤯  Cold Ice Orange  Veo3(MP4).mp4" data-title="AI UGC Ad Creative">
+                            <span class="bg-gray-1000 text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 rounded text-white">UGC Ads</span>
+                            <h3 class="mt-3 font-display font-bold text-white text-lg">AI UGC Ad Creative</h3>
+                            <p class="mt-2 text-[14px] text-white/60 leading-relaxed">Viral-style UGC advertisements generated with Google Veo3 for maximum engagement.</p>
+                            <button class="view-full-btn mt-4 inline-flex items-center gap-1.5 text-[13px] font-semibold text-white hover:text-white700 transition-colors" data-src="assets/This Viral AI UGC Ad Will Blow Your Mind 🤯  Cold Ice Orange  Veo3(MP4).mp4" data-title="AI UGC Ad Creative">
                                 <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i> View Full
                             </button>
                         </div>
                     </div>
                     <!-- Video Card 6: 3D CGI Advertisement -->
-                    <div class="video-card group relative rounded-3xl overflow-hidden bg-slate-900 border border-slate-100 hover:shadow-2xl transition-all duration-500">
+                    <div class="video-card group relative rounded-3xl overflow-hidden bg-slate-900 border border-white/5 hover:shadow-2xl transition-all duration-500">
                         <div class="relative aspect-video">
                             <video src="assets/Ultra-Smooth 3D CGI Advertisement(MP4).mp4" muted loop playsinline preload="metadata" class="w-full h-full object-cover"></video>
                             <button class="play-btn absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-label="Play video">
-                                <div class="w-14 h-14 rounded-full bg-white/90 flex items-center justify-center shadow-lg">
-                                    <svg class="w-5 h-5 text-slate-900 ml-0.5" fill="currentColor" viewBox="0 0 20 20"><path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"/></svg>
+                                <div class="w-14 h-14 rounded-full bg-black/90 flex items-center justify-center shadow-lg">
+                                    <svg class="w-5 h-5 text-white ml-0.5" fill="currentColor" viewBox="0 0 20 20"><path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"/></svg>
                                 </div>
                             </button>
                         </div>
                         <div class="p-6">
-                            <span class="bg-indigo-600 text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 rounded text-white">3D CGI</span>
-                            <h3 class="mt-3 font-display font-bold text-slate-900 text-lg">3D CGI Advertisement</h3>
-                            <p class="mt-2 text-[14px] text-slate-500 leading-relaxed">Ultra-smooth 3D computer-generated imagery for premium brand advertising.</p>
-                            <button class="view-full-btn mt-4 inline-flex items-center gap-1.5 text-[13px] font-semibold text-blue-600 hover:text-blue-700 transition-colors" data-src="assets/Ultra-Smooth 3D CGI Advertisement(MP4).mp4" data-title="3D CGI Advertisement">
+                            <span class="bg-gray-800 text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 rounded text-white">3D CGI</span>
+                            <h3 class="mt-3 font-display font-bold text-white text-lg">3D CGI Advertisement</h3>
+                            <p class="mt-2 text-[14px] text-white/60 leading-relaxed">Ultra-smooth 3D computer-generated imagery for premium brand advertising.</p>
+                            <button class="view-full-btn mt-4 inline-flex items-center gap-1.5 text-[13px] font-semibold text-white hover:text-white700 transition-colors" data-src="assets/Ultra-Smooth 3D CGI Advertisement(MP4).mp4" data-title="3D CGI Advertisement">
                                 <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i> View Full
                             </button>
                         </div>
@@ -333,98 +333,98 @@
         </section>
 
         <!-- ===== WHAT WE DO ===== -->
-        <section class="relative overflow-hidden py-20 bg-white">
+        <section class="relative overflow-hidden py-20 bg-black">
             <div class="max-w-7xl mx-auto px-6 md:px-10">
                 <div class="text-center mb-14 reveal">
                     <div class="overline-label">What We Do</div>
-                    <h2 class="mt-3 font-display text-3xl md:text-4xl font-bold text-slate-900">AI-Powered Creative Production</h2>
+                    <h2 class="mt-3 font-display text-3xl md:text-4xl font-bold text-white">AI-Powered Creative Production</h2>
                 </div>
                 <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 reveal">
-                    <div class="glass-strong border border-slate-200/80 rounded-3xl p-7 hover:shadow-lg transition-shadow spotlight-card">
-                        <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center mb-4"><i data-lucide="video" class="w-5 h-5 text-blue-600"></i></div>
-                        <h3 class="font-display font-bold text-slate-900">AI Reels & Short-Form Video</h3>
-                        <p class="mt-2 text-[14px] text-slate-500 leading-relaxed">Generate scroll-stopping Reels and short-form ad content using diffusion models trained on platform-native trends.</p>
+                    <div class="glass-strong border border-white/10/80 rounded-3xl p-7 hover:shadow-lg transition-shadow spotlight-card">
+                        <div class="w-10 h-10 rounded-xl bg-[#111111] flex items-center justify-center mb-4"><i data-lucide="video" class="w-5 h-5 text-white"></i></div>
+                        <h3 class="font-display font-bold text-white">AI Reels & Short-Form Video</h3>
+                        <p class="mt-2 text-[14px] text-white/60 leading-relaxed">Generate scroll-stopping Reels and short-form ad content using diffusion models trained on platform-native trends.</p>
                     </div>
-                    <div class="glass-strong border border-slate-200/80 rounded-3xl p-7 hover:shadow-lg transition-shadow spotlight-card">
-                        <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center mb-4"><i data-lucide="layers" class="w-5 h-5 text-blue-600"></i></div>
-                        <h3 class="font-display font-bold text-slate-900">Dynamic Ad Creative Variants</h3>
-                        <p class="mt-2 text-[14px] text-slate-500 leading-relaxed">Automatically produce hundreds of ad variations with different hooks, backgrounds, CTAs, and visual styles from a single brief.</p>
+                    <div class="glass-strong border border-white/10/80 rounded-3xl p-7 hover:shadow-lg transition-shadow spotlight-card">
+                        <div class="w-10 h-10 rounded-xl bg-[#111111] flex items-center justify-center mb-4"><i data-lucide="layers" class="w-5 h-5 text-white"></i></div>
+                        <h3 class="font-display font-bold text-white">Dynamic Ad Creative Variants</h3>
+                        <p class="mt-2 text-[14px] text-white/60 leading-relaxed">Automatically produce hundreds of ad variations with different hooks, backgrounds, CTAs, and visual styles from a single brief.</p>
                     </div>
-                    <div class="glass-strong border border-slate-200/80 rounded-3xl p-7 hover:shadow-lg transition-shadow spotlight-card">
-                        <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center mb-4"><i data-lucide="user-check" class="w-5 h-5 text-blue-600"></i></div>
-                        <h3 class="font-display font-bold text-slate-900">Digital Avatar Presenters</h3>
-                        <p class="mt-2 text-[14px] text-slate-500 leading-relaxed">Deploy lip-synced AI avatars that deliver brand messages in 42+ languages — no re-shoots, no studio costs.</p>
+                    <div class="glass-strong border border-white/10/80 rounded-3xl p-7 hover:shadow-lg transition-shadow spotlight-card">
+                        <div class="w-10 h-10 rounded-xl bg-[#111111] flex items-center justify-center mb-4"><i data-lucide="user-check" class="w-5 h-5 text-white"></i></div>
+                        <h3 class="font-display font-bold text-white">Digital Avatar Presenters</h3>
+                        <p class="mt-2 text-[14px] text-white/60 leading-relaxed">Deploy lip-synced AI avatars that deliver brand messages in 42+ languages — no re-shoots, no studio costs.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- ===== OUR PROCESS ===== -->
-        <section class="relative overflow-hidden py-20 bg-slate-50">
+        <section class="relative overflow-hidden py-20 bg-[#0A0A0A]">
             <div class="max-w-7xl mx-auto px-6 md:px-10">
                 <div class="text-center mb-14 reveal">
                     <div class="overline-label">Our Process</div>
-                    <h2 class="mt-3 font-display text-3xl md:text-4xl font-bold text-slate-900">From Brief to Broadcast in Hours</h2>
+                    <h2 class="mt-3 font-display text-3xl md:text-4xl font-bold text-white">From Brief to Broadcast in Hours</h2>
                 </div>
                 <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 reveal">
                     <div class="text-left group">
-                        <div class="w-12 h-12 rounded-full bg-slate-900 text-white flex items-center justify-center font-display font-bold text-lg mb-5 group-hover:bg-blue-600 transition-colors">1</div>
-                        <h3 class="font-display font-bold text-slate-900 text-lg">Brief & Script Engineering</h3>
-                        <p class="mt-2 text-[14px] text-slate-500 leading-relaxed">Creative brief intake, script writing, and prompt architecture for diffusion models.</p>
+                        <div class="w-12 h-12 rounded-full bg-slate-900 text-white flex items-center justify-center font-display font-bold text-lg mb-5 group-hover:bg-black transition-colors">1</div>
+                        <h3 class="font-display font-bold text-white text-lg">Brief & Script Engineering</h3>
+                        <p class="mt-2 text-[14px] text-white/60 leading-relaxed">Creative brief intake, script writing, and prompt architecture for diffusion models.</p>
                     </div>
                     <div class="text-left group">
-                        <div class="w-12 h-12 rounded-full bg-slate-900 text-white flex items-center justify-center font-display font-bold text-lg mb-5 group-hover:bg-blue-600 transition-colors">2</div>
-                        <h3 class="font-display font-bold text-slate-900 text-lg">Model Selection & Rendering</h3>
-                        <p class="mt-2 text-[14px] text-slate-500 leading-relaxed">Custom model tuning, avatar selection, voice cloning calibration, and batch rendering pipeline.</p>
+                        <div class="w-12 h-12 rounded-full bg-slate-900 text-white flex items-center justify-center font-display font-bold text-lg mb-5 group-hover:bg-black transition-colors">2</div>
+                        <h3 class="font-display font-bold text-white text-lg">Model Selection & Rendering</h3>
+                        <p class="mt-2 text-[14px] text-white/60 leading-relaxed">Custom model tuning, avatar selection, voice cloning calibration, and batch rendering pipeline.</p>
                     </div>
                     <div class="text-left group">
-                        <div class="w-12 h-12 rounded-full bg-slate-900 text-white flex items-center justify-center font-display font-bold text-lg mb-5 group-hover:bg-blue-600 transition-colors">3</div>
-                        <h3 class="font-display font-bold text-slate-900 text-lg">Post-Production & QA</h3>
-                        <p class="mt-2 text-[14px] text-slate-500 leading-relaxed">Color grading, audio mastering, lip-sync quality verification, and brand compliance review.</p>
+                        <div class="w-12 h-12 rounded-full bg-slate-900 text-white flex items-center justify-center font-display font-bold text-lg mb-5 group-hover:bg-black transition-colors">3</div>
+                        <h3 class="font-display font-bold text-white text-lg">Post-Production & QA</h3>
+                        <p class="mt-2 text-[14px] text-white/60 leading-relaxed">Color grading, audio mastering, lip-sync quality verification, and brand compliance review.</p>
                     </div>
                     <div class="text-left group">
-                        <div class="w-12 h-12 rounded-full bg-slate-900 text-white flex items-center justify-center font-display font-bold text-lg mb-5 group-hover:bg-blue-600 transition-colors">4</div>
-                        <h3 class="font-display font-bold text-slate-900 text-lg">Delivery & Localization</h3>
-                        <p class="mt-2 text-[14px] text-slate-500 leading-relaxed">Multi-format export, language localization, and integration with ad platform creative libraries.</p>
+                        <div class="w-12 h-12 rounded-full bg-slate-900 text-white flex items-center justify-center font-display font-bold text-lg mb-5 group-hover:bg-black transition-colors">4</div>
+                        <h3 class="font-display font-bold text-white text-lg">Delivery & Localization</h3>
+                        <p class="mt-2 text-[14px] text-white/60 leading-relaxed">Multi-format export, language localization, and integration with ad platform creative libraries.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- ===== WHY CHOOSE US ===== -->
-        <section class="relative overflow-hidden py-20 bg-white">
+        <section class="relative overflow-hidden py-20 bg-black">
             <div class="max-w-7xl mx-auto px-6 md:px-10">
                 <div class="text-center mb-14 reveal">
                     <div class="overline-label">Why Choose Us</div>
-                    <h2 class="mt-3 font-display text-3xl md:text-4xl font-bold text-slate-900">The AI creative advantage</h2>
+                    <h2 class="mt-3 font-display text-3xl md:text-4xl font-bold text-white">The AI creative advantage</h2>
                 </div>
                 <div class="grid sm:grid-cols-2 gap-6 reveal">
-                    <div class="glass-strong border border-slate-200/80 rounded-3xl p-7 flex items-start gap-4 premium-card-glow">
-                        <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center shrink-0 mt-0.5"><i data-lucide="zap" class="w-5 h-5 text-blue-600"></i></div>
+                    <div class="glass-strong border border-white/10/80 rounded-3xl p-7 flex items-start gap-4 premium-card-glow">
+                        <div class="w-10 h-10 rounded-xl bg-[#111111] flex items-center justify-center shrink-0 mt-0.5"><i data-lucide="zap" class="w-5 h-5 text-white"></i></div>
                         <div>
-                            <h3 class="font-display font-bold text-slate-900">85% Cost Reduction</h3>
-                            <p class="mt-1 text-[14px] text-slate-500 leading-relaxed">Same broadcast quality output at a fraction of traditional studio production costs.</p>
+                            <h3 class="font-display font-bold text-white">85% Cost Reduction</h3>
+                            <p class="mt-1 text-[14px] text-white/60 leading-relaxed">Same broadcast quality output at a fraction of traditional studio production costs.</p>
                         </div>
                     </div>
-                    <div class="glass-strong border border-slate-200/80 rounded-3xl p-7 flex items-start gap-4 premium-card-glow">
-                        <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center shrink-0 mt-0.5"><i data-lucide="repeat" class="w-5 h-5 text-blue-600"></i></div>
+                    <div class="glass-strong border border-white/10/80 rounded-3xl p-7 flex items-start gap-4 premium-card-glow">
+                        <div class="w-10 h-10 rounded-xl bg-[#111111] flex items-center justify-center shrink-0 mt-0.5"><i data-lucide="repeat" class="w-5 h-5 text-white"></i></div>
                         <div>
-                            <h3 class="font-display font-bold text-slate-900">1000+ Variants in 48 Hours</h3>
-                            <p class="mt-1 text-[14px] text-slate-500 leading-relaxed">Scale to over a thousand ad variants from a single script in under two days.</p>
+                            <h3 class="font-display font-bold text-white">1000+ Variants in 48 Hours</h3>
+                            <p class="mt-1 text-[14px] text-white/60 leading-relaxed">Scale to over a thousand ad variants from a single script in under two days.</p>
                         </div>
                     </div>
-                    <div class="glass-strong border border-slate-200/80 rounded-3xl p-7 flex items-start gap-4 premium-card-glow">
-                        <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center shrink-0 mt-0.5"><i data-lucide="globe" class="w-5 h-5 text-blue-600"></i></div>
+                    <div class="glass-strong border border-white/10/80 rounded-3xl p-7 flex items-start gap-4 premium-card-glow">
+                        <div class="w-10 h-10 rounded-xl bg-[#111111] flex items-center justify-center shrink-0 mt-0.5"><i data-lucide="globe" class="w-5 h-5 text-white"></i></div>
                         <div>
-                            <h3 class="font-display font-bold text-slate-900">42+ Markets Zero Re-Filming</h3>
-                            <p class="mt-1 text-[14px] text-slate-500 leading-relaxed">Multi-language avatar presenters expand reach globally without additional production runs.</p>
+                            <h3 class="font-display font-bold text-white">42+ Markets Zero Re-Filming</h3>
+                            <p class="mt-1 text-[14px] text-white/60 leading-relaxed">Multi-language avatar presenters expand reach globally without additional production runs.</p>
                         </div>
                     </div>
-                    <div class="glass-strong border border-slate-200/80 rounded-3xl p-7 flex items-start gap-4 premium-card-glow">
-                        <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center shrink-0 mt-0.5"><i data-lucide="sparkles" class="w-5 h-5 text-blue-600"></i></div>
+                    <div class="glass-strong border border-white/10/80 rounded-3xl p-7 flex items-start gap-4 premium-card-glow">
+                        <div class="w-10 h-10 rounded-xl bg-[#111111] flex items-center justify-center shrink-0 mt-0.5"><i data-lucide="sparkles" class="w-5 h-5 text-white"></i></div>
                         <div>
-                            <h3 class="font-display font-bold text-slate-900">Always-Fresh Creative</h3>
-                            <p class="mt-1 text-[14px] text-slate-500 leading-relaxed">AI UGC-style ads that bypass creative fatigue with continuous fresh iterations.</p>
+                            <h3 class="font-display font-bold text-white">Always-Fresh Creative</h3>
+                            <p class="mt-1 text-[14px] text-white/60 leading-relaxed">AI UGC-style ads that bypass creative fatigue with continuous fresh iterations.</p>
                         </div>
                     </div>
                 </div>
@@ -434,61 +434,61 @@
 
 
         <!-- ===== TESTIMONIALS ===== -->
-        <section class="relative overflow-hidden py-20 bg-white">
+        <section class="relative overflow-hidden py-20 bg-black">
             <div class="max-w-7xl mx-auto px-6 md:px-10">
                 <div class="text-center mb-14 reveal">
                     <div class="overline-label">Testimonials</div>
-                    <h2 class="mt-3 font-display text-3xl md:text-4xl font-bold text-slate-900">What our clients say</h2>
+                    <h2 class="mt-3 font-display text-3xl md:text-4xl font-bold text-white">What our clients say</h2>
                 </div>
                 <div class="grid md:grid-cols-3 gap-6 reveal">
-                    <div class="glass-strong border border-slate-200/80 rounded-3xl p-7 flex flex-col">
-                        <div class="flex items-center gap-1 text-amber-400 mb-4">
+                    <div class="glass-strong border border-white/10/80 rounded-3xl p-7 flex flex-col">
+                        <div class="flex items-center gap-1 text-white/60 mb-4">
                             <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                             <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                             <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                             <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                             <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                         </div>
-                        <p class="text-slate-600 text-[14px] leading-relaxed flex-1">"We cut our creative production budget by 85% while producing 10x more ad variants. The AI reels outperformed our studio-shot content on every metric within the first week."</p>
-                        <div class="mt-6 pt-4 border-t border-slate-100 flex items-center gap-3">
-                            <div class="w-9 h-9 rounded-full bg-slate-200 flex items-center justify-center text-[11px] font-bold text-slate-600">NK</div>
+                        <p class="text-white/70 text-[14px] leading-relaxed flex-1">"We cut our creative production budget by 85% while producing 10x more ad variants. The AI reels outperformed our studio-shot content on every metric within the first week."</p>
+                        <div class="mt-6 pt-4 border-t border-white/5 flex items-center gap-3">
+                            <div class="w-9 h-9 rounded-full bg-black/5 flex items-center justify-center text-[11px] font-bold text-white/70">NK</div>
                             <div>
-                                <div class="text-[13px] font-semibold text-slate-900">Neha Kulkarni</div>
-                                <div class="text-[11px] text-slate-500">Head of Marketing, StyleHive</div>
+                                <div class="text-[13px] font-semibold text-white">Neha Kulkarni</div>
+                                <div class="text-[11px] text-white/60">Head of Marketing, StyleHive</div>
                             </div>
                         </div>
                     </div>
-                    <div class="glass-strong border border-slate-200/80 rounded-3xl p-7 flex flex-col">
-                        <div class="flex items-center gap-1 text-amber-400 mb-4">
+                    <div class="glass-strong border border-white/10/80 rounded-3xl p-7 flex flex-col">
+                        <div class="flex items-center gap-1 text-white/60 mb-4">
                             <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                             <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                             <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                             <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                             <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                         </div>
-                        <p class="text-slate-600 text-[14px] leading-relaxed flex-1">"The avatar presenter feature let us launch in 8 new markets in under a week — no translators, no local shoots. CTR in local markets beat our global campaigns by 2x."</p>
-                        <div class="mt-6 pt-4 border-t border-slate-100 flex items-center gap-3">
-                            <div class="w-9 h-9 rounded-full bg-slate-200 flex items-center justify-center text-[11px] font-bold text-slate-600">VM</div>
+                        <p class="text-white/70 text-[14px] leading-relaxed flex-1">"The avatar presenter feature let us launch in 8 new markets in under a week — no translators, no local shoots. CTR in local markets beat our global campaigns by 2x."</p>
+                        <div class="mt-6 pt-4 border-t border-white/5 flex items-center gap-3">
+                            <div class="w-9 h-9 rounded-full bg-black/5 flex items-center justify-center text-[11px] font-bold text-white/70">VM</div>
                             <div>
-                                <div class="text-[13px] font-semibold text-slate-900">Vikram Mehta</div>
-                                <div class="text-[11px] text-slate-500">VP of Growth, CloudNest</div>
+                                <div class="text-[13px] font-semibold text-white">Vikram Mehta</div>
+                                <div class="text-[11px] text-white/60">VP of Growth, CloudNest</div>
                             </div>
                         </div>
                     </div>
-                    <div class="glass-strong border border-slate-200/80 rounded-3xl p-7 flex flex-col">
-                        <div class="flex items-center gap-1 text-amber-400 mb-4">
+                    <div class="glass-strong border border-white/10/80 rounded-3xl p-7 flex flex-col">
+                        <div class="flex items-center gap-1 text-white/60 mb-4">
                             <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                             <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                             <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                             <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                             <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                         </div>
-                        <p class="text-slate-600 text-[14px] leading-relaxed flex-1">"Their AI UGC pipeline produces content that performs better than influencer partnerships — at 1/10th the cost. We went from 10 ad creatives a month to 500+ overnight."</p>
-                        <div class="mt-6 pt-4 border-t border-slate-100 flex items-center gap-3">
-                            <div class="w-9 h-9 rounded-full bg-slate-200 flex items-center justify-center text-[11px] font-bold text-slate-600">PR</div>
+                        <p class="text-white/70 text-[14px] leading-relaxed flex-1">"Their AI UGC pipeline produces content that performs better than influencer partnerships — at 1/10th the cost. We went from 10 ad creatives a month to 500+ overnight."</p>
+                        <div class="mt-6 pt-4 border-t border-white/5 flex items-center gap-3">
+                            <div class="w-9 h-9 rounded-full bg-black/5 flex items-center justify-center text-[11px] font-bold text-white/70">PR</div>
                             <div>
-                                <div class="text-[13px] font-semibold text-slate-900">Priya Rajput</div>
-                                <div class="text-[11px] text-slate-500">CMO, GlowNest</div>
+                                <div class="text-[13px] font-semibold text-white">Priya Rajput</div>
+                                <div class="text-[11px] text-white/60">CMO, GlowNest</div>
                             </div>
                         </div>
                     </div>
@@ -496,91 +496,36 @@
             </div>
         </section>
 
-        <!-- ===== FAQ ===== -->
-        <section class="relative overflow-hidden py-20 bg-slate-50">
-            <div class="max-w-3xl mx-auto px-6 md:px-10">
-                <div class="text-center mb-14 reveal">
-                    <div class="overline-label">FAQ</div>
-                    <h2 class="mt-3 font-display text-3xl md:text-4xl font-bold text-slate-900">Frequently asked questions</h2>
-                </div>
-                <div class="space-y-4 reveal">
-                    <details class="group glass-strong border border-slate-200/80 rounded-2xl overflow-hidden">
-                        <summary class="px-6 py-5 cursor-pointer font-display font-semibold text-slate-900 text-[15px] flex items-center justify-between select-none hover:text-blue-600 transition-colors">
-                            How quickly can you produce AI video content?
-                            <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 transition-transform group-open:rotate-180"></i>
-                        </summary>
-                        <div class="px-6 pb-5 text-[14px] text-slate-500 leading-relaxed">
-                            Most batches are delivered within 2 hours of final brief approval. Complex projects with custom avatars or advanced voice cloning may require 4–6 hours for initial rendering, but subsequent variants from the same brief render in minutes.
-                        </div>
-                    </details>
-                    <details class="group glass-strong border border-slate-200/80 rounded-2xl overflow-hidden">
-                        <summary class="px-6 py-5 cursor-pointer font-display font-semibold text-slate-900 text-[15px] flex items-center justify-between select-none hover:text-blue-600 transition-colors">
-                            What quality can AI-generated video achieve?
-                            <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 transition-transform group-open:rotate-180"></i>
-                        </summary>
-                        <div class="px-6 pb-5 text-[14px] text-slate-500 leading-relaxed">
-                            Broadcast-quality output at up to 4K resolution. Our diffusion models are fine-tuned on platform-native content, so AI reels are optimized for TikTok, Instagram, and YouTube compression algorithms — often outperforming manually shot content in clarity and engagement.
-                        </div>
-                    </details>
-                    <details class="group glass-strong border border-slate-200/80 rounded-2xl overflow-hidden">
-                        <summary class="px-6 py-5 cursor-pointer font-display font-semibold text-slate-900 text-[15px] flex items-center justify-between select-none hover:text-blue-600 transition-colors">
-                            How does avatar localization work?
-                            <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 transition-transform group-open:rotate-180"></i>
-                        </summary>
-                        <div class="px-6 pb-5 text-[14px] text-slate-500 leading-relaxed">
-                            We clone your brand ambassador or create a custom avatar, then use AI lip-sync and voice synthesis to localize the same video into 42+ languages. The avatar's lip movements, facial expressions, and gestures are re-rendered for each language — no re-shooting required.
-                        </div>
-                    </details>
-                    <details class="group glass-strong border border-slate-200/80 rounded-2xl overflow-hidden">
-                        <summary class="px-6 py-5 cursor-pointer font-display font-semibold text-slate-900 text-[15px] flex items-center justify-between select-none hover:text-blue-600 transition-colors">
-                            How many variants can you produce per month?
-                            <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 transition-transform group-open:rotate-180"></i>
-                        </summary>
-                        <div class="px-6 pb-5 text-[14px] text-slate-500 leading-relaxed">
-                            There is no practical cap. Our rendering pipeline supports unlimited parallelization. We routinely produce 1,000+ variants per month for enterprise clients, each with different hooks, backgrounds, CTAs, aspect ratios, and languages.
-                        </div>
-                    </details>
-                    <details class="group glass-strong border border-slate-200/80 rounded-2xl overflow-hidden">
-                        <summary class="px-6 py-5 cursor-pointer font-display font-semibold text-slate-900 text-[15px] flex items-center justify-between select-none hover:text-blue-600 transition-colors">
-                            Will the content look generic or robotic?
-                            <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 transition-transform group-open:rotate-180"></i>
-                        </summary>
-                        <div class="px-6 pb-5 text-[14px] text-slate-500 leading-relaxed">
-                            Not at all. Our models are trained on UGC-style content and real creator footage, so output feels authentic and native to each platform. We also fine-tune outputs on your brand assets, ensuring every variant matches your visual identity and tone.
-                        </div>
-                    </details>
-                </div>
-            </div>
-        </section>
+        
 
         <!-- ===== CTA SECTION ===== -->
         <section id="contact" class="relative overflow-hidden py-16 md:py-24">
 <div class="max-w-7xl mx-auto px-6 md:px-10">
 <div class="relative rounded-[36px] bg-slate-950 overflow-hidden p-10 md:p-16 lg:p-24 reveal">
-<div class="absolute -top-32 -left-20 w-[420px] h-[420px] rounded-full bg-blue-500/30 blur-[120px] pointer-events-none"></div>
-<div class="absolute -bottom-32 -right-20 w-[420px] h-[420px] rounded-full bg-indigo-500/30 blur-[120px] pointer-events-none"></div>
+<div class="absolute -top-32 -left-20 w-[420px] h-[420px] rounded-full bg-gray-1000/30 pointer-events-none"></div>
+<div class="absolute -bottom-32 -right-20 w-[420px] h-[420px] rounded-full bg-gray-1000/30 pointer-events-none"></div>
 <div class="absolute inset-0 opacity-[0.06] pointer-events-none grid-pattern"></div>
-<div class="absolute right-10 top-10 w-24 h-24 rounded-full bg-gradient-to-br from-blue-400 to-indigo-500 blur-2xl opacity-50 floaty"></div>
+<div class="absolute right-10 top-10 w-24 h-24 rounded-full bg-gradient-to-br from-black400 to-gray-600500 opacity-50 floaty"></div>
 <div class="relative grid lg:grid-cols-12 gap-10 items-center">
 <div class="lg:col-span-8 text-left">
-<div class="inline-flex items-center gap-2 glass rounded-full pl-2 pr-4 py-1.5 mb-7 bg-white/10 border-white/15">
-<span class="bg-white text-slate-900 text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full">Free</span>
+<div class="inline-flex items-center gap-2 glass rounded-full pl-2 pr-4 py-1.5 mb-7 bg-black/10 border-white/15">
+<span class="bg-black text-white text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full">Free</span>
 <span class="text-[13px] font-medium text-white/85">No-cost performance audit</span>
 </div>
 <h2 class="font-display text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tighter text-white leading-none text-reveal">Ready to scale with AI Video & Creative Automation?</h2>
 <p class="mt-5 text-white/70 text-base md:text-lg max-w-xl leading-relaxed">Get a free AI creative audit and a production roadmap — built by engineers who've generated 1200+ AI ad variants.</p>
 <div class="mt-9 flex flex-col sm:flex-row gap-3">
-<a href="audit.html" class="btn-magnetic shine-sweep inline-flex items-center justify-center gap-2 bg-white text-slate-900 hover:bg-blue-500 hover:text-white font-semibold rounded-full pl-6 pr-5 py-4 transition-all hover:-translate-y-0.5 group">Get Free Audit <i data-lucide="arrow-up-right" class="w-4.5 h-4.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></i></a>
-<a href="contact.html" class="inline-flex items-center justify-center gap-2 bg-white/5 hover:bg-white/10 text-white font-semibold rounded-full pl-6 pr-5 py-4 border border-white/15 transition-all">Let's Talk <i data-lucide="sparkles" class="w-4 h-4"></i></a>
+<a href="audit.html" class="btn-magnetic shine-sweep inline-flex items-center justify-center gap-2 bg-black text-white hover:bg-gray-1000 hover:text-white font-semibold rounded-full pl-6 pr-5 py-4 transition-all hover:-translate-y-0.5 group">Get Free Audit <i data-lucide="arrow-up-right" class="w-4.5 h-4.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></i></a>
+<a href="contact.html" class="inline-flex items-center justify-center gap-2 bg-black/5 hover:bg-black/10 text-white font-semibold rounded-full pl-6 pr-5 py-4 border border-white/15 transition-all">Let's Talk <i data-lucide="sparkles" class="w-4 h-4"></i></a>
 </div>
 </div>
 <div class="lg:col-span-4 text-left">
-<div class="rounded-3xl border border-white/15 bg-white/[0.04] p-6 backdrop-blur-md select-none">
+<div class="rounded-3xl border border-white/15 bg-black/[0.04] p-6 select-none">
 <div class="text-[11px] uppercase tracking-wider font-semibold text-white/60">What you'll receive</div>
 <ul class="mt-4 space-y-3 text-white/85 text-[14px]">
-<li class="flex items-start gap-3"><span class="mt-2 w-1.5 h-1.5 rounded-full bg-blue-400 shrink-0"></span><span>AI creative audit</span></li>
-<li class="flex items-start gap-3"><span class="mt-2 w-1.5 h-1.5 rounded-full bg-blue-400 shrink-0"></span><span>Model & avatar selection</span></li>
-<li class="flex items-start gap-3"><span class="mt-2 w-1.5 h-1.5 rounded-full bg-blue-400 shrink-0"></span><span>Production roadmap</span></li>
+<li class="flex items-start gap-3"><span class="mt-2 w-1.5 h-1.5 rounded-full bg-gray-700 shrink-0"></span><span>AI creative audit</span></li>
+<li class="flex items-start gap-3"><span class="mt-2 w-1.5 h-1.5 rounded-full bg-gray-700 shrink-0"></span><span>Model & avatar selection</span></li>
+<li class="flex items-start gap-3"><span class="mt-2 w-1.5 h-1.5 rounded-full bg-gray-700 shrink-0"></span><span>Production roadmap</span></li>
 </ul>
 <div class="mt-5 pt-5 border-t border-white/10 text-[12px] text-white/50">Avg. response time · under 12 hours</div>
 </div>
@@ -594,16 +539,16 @@
         <section class="relative overflow-hidden py-20 bg-slate-950">
             <div class="max-w-7xl mx-auto px-6 md:px-10">
                 <div class="grid sm:grid-cols-3 gap-6 mb-12 reveal">
-                    <div class="border border-white/10 rounded-2xl p-8 text-center backdrop-blur-sm bg-white/5 hover:bg-white/8 transition-colors">
-                        <div class="text-4xl md:text-5xl font-display font-extrabold text-blue-400">-85%</div>
+                    <div class="border border-white/10 rounded-2xl p-8 text-center bg-black/5 hover:bg-black/8 transition-colors">
+                        <div class="text-4xl md:text-5xl font-display font-extrabold text-white/70">-85%</div>
                         <div class="mt-2 text-[12px] text-slate-300 font-semibold uppercase tracking-wider">Cost Reduction</div>
                     </div>
-                    <div class="border border-white/10 rounded-2xl p-8 text-center backdrop-blur-sm bg-white/5 hover:bg-white/8 transition-colors">
+                    <div class="border border-white/10 rounded-2xl p-8 text-center bg-black/5 hover:bg-black/8 transition-colors">
                         <div class="text-4xl md:text-5xl font-display font-extrabold text-white">&lt;2hrs</div>
                         <div class="mt-2 text-[12px] text-slate-300 font-semibold uppercase tracking-wider">Turnaround</div>
                     </div>
-                    <div class="border border-white/10 rounded-2xl p-8 text-center backdrop-blur-sm bg-white/5 hover:bg-white/8 transition-colors">
-                        <div class="text-4xl md:text-5xl font-display font-extrabold text-emerald-400">1200+</div>
+                    <div class="border border-white/10 rounded-2xl p-8 text-center bg-black/5 hover:bg-black/8 transition-colors">
+                        <div class="text-4xl md:text-5xl font-display font-extrabold text-white/60">1200+</div>
                         <div class="mt-2 text-[12px] text-slate-300 font-semibold uppercase tracking-wider">Variations Generated</div>
                     </div>
                 </div>
@@ -616,11 +561,11 @@
     </main>
 
     <!-- Video Modal -->
-    <div id="video-modal" class="fixed inset-0 z-[9999] hidden items-center justify-center bg-black/90 backdrop-blur-sm p-4 md:p-8">
+    <div id="video-modal" class="fixed inset-0 z-[9999] hidden items-center justify-center bg-black/90 p-4 md:p-8">
         <div class="relative w-full max-w-5xl">
             <div class="flex items-center justify-between mb-4">
                 <h3 id="modal-title" class="font-display font-bold text-white text-lg"></h3>
-                <button id="modal-close" class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors" aria-label="Close modal">
+                <button id="modal-close" class="w-10 h-10 rounded-full bg-black/10 hover:bg-black/20 flex items-center justify-center text-white transition-colors" aria-label="Close modal">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
                 </button>
             </div>
@@ -631,8 +576,66 @@
     </div>
 
     <!-- Footer -->
-    <footer class="relative bg-slate-950 text-white pt-20 md:pt-28 pb-10 overflow-hidden">
-        <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] h-[400px] rounded-full bg-blue-500/10 blur-[120px] pointer-events-none"></div>
+    
+<!-- ===== FAQ ===== -->
+        <section class="relative overflow-hidden py-20 bg-[#0A0A0A]">
+            <div class="max-w-3xl mx-auto px-6 md:px-10">
+                <div class="text-center mb-14 reveal">
+                    <div class="overline-label">FAQ</div>
+                    <h2 class="mt-3 font-display text-3xl md:text-4xl font-bold text-white">Frequently asked questions</h2>
+                </div>
+                <div class="space-y-4 reveal">
+                    <details class="group glass-strong border border-white/10/80 rounded-2xl overflow-hidden">
+                        <summary class="px-6 py-5 cursor-pointer font-display font-semibold text-white text-[15px] flex items-center justify-between select-none hover:text-white transition-colors">
+                            How quickly can you produce AI video content?
+                            <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 transition-transform group-open:rotate-180"></i>
+                        </summary>
+                        <div class="px-6 pb-5 text-[14px] text-white/60 leading-relaxed">
+                            Most batches are delivered within 2 hours of final brief approval. Complex projects with custom avatars or advanced voice cloning may require 4–6 hours for initial rendering, but subsequent variants from the same brief render in minutes.
+                        </div>
+                    </details>
+                    <details class="group glass-strong border border-white/10/80 rounded-2xl overflow-hidden">
+                        <summary class="px-6 py-5 cursor-pointer font-display font-semibold text-white text-[15px] flex items-center justify-between select-none hover:text-white transition-colors">
+                            What quality can AI-generated video achieve?
+                            <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 transition-transform group-open:rotate-180"></i>
+                        </summary>
+                        <div class="px-6 pb-5 text-[14px] text-white/60 leading-relaxed">
+                            Broadcast-quality output at up to 4K resolution. Our diffusion models are fine-tuned on platform-native content, so AI reels are optimized for TikTok, Instagram, and YouTube compression algorithms — often outperforming manually shot content in clarity and engagement.
+                        </div>
+                    </details>
+                    <details class="group glass-strong border border-white/10/80 rounded-2xl overflow-hidden">
+                        <summary class="px-6 py-5 cursor-pointer font-display font-semibold text-white text-[15px] flex items-center justify-between select-none hover:text-white transition-colors">
+                            How does avatar localization work?
+                            <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 transition-transform group-open:rotate-180"></i>
+                        </summary>
+                        <div class="px-6 pb-5 text-[14px] text-white/60 leading-relaxed">
+                            We clone your brand ambassador or create a custom avatar, then use AI lip-sync and voice synthesis to localize the same video into 42+ languages. The avatar's lip movements, facial expressions, and gestures are re-rendered for each language — no re-shooting required.
+                        </div>
+                    </details>
+                    <details class="group glass-strong border border-white/10/80 rounded-2xl overflow-hidden">
+                        <summary class="px-6 py-5 cursor-pointer font-display font-semibold text-white text-[15px] flex items-center justify-between select-none hover:text-white transition-colors">
+                            How many variants can you produce per month?
+                            <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 transition-transform group-open:rotate-180"></i>
+                        </summary>
+                        <div class="px-6 pb-5 text-[14px] text-white/60 leading-relaxed">
+                            There is no practical cap. Our rendering pipeline supports unlimited parallelization. We routinely produce 1,000+ variants per month for enterprise clients, each with different hooks, backgrounds, CTAs, aspect ratios, and languages.
+                        </div>
+                    </details>
+                    <details class="group glass-strong border border-white/10/80 rounded-2xl overflow-hidden">
+                        <summary class="px-6 py-5 cursor-pointer font-display font-semibold text-white text-[15px] flex items-center justify-between select-none hover:text-white transition-colors">
+                            Will the content look generic or robotic?
+                            <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 transition-transform group-open:rotate-180"></i>
+                        </summary>
+                        <div class="px-6 pb-5 text-[14px] text-white/60 leading-relaxed">
+                            Not at all. Our models are trained on UGC-style content and real creator footage, so output feels authentic and native to each platform. We also fine-tune outputs on your brand assets, ensuring every variant matches your visual identity and tone.
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+<footer class="relative bg-slate-950 text-white pt-20 md:pt-28 pb-10 overflow-hidden">
+        <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] h-[400px] rounded-full bg-gray-1000/10 pointer-events-none"></div>
         <div class="relative max-w-7xl mx-auto px-6 md:px-10">
             <div class="grid lg:grid-cols-12 gap-12 mb-14 text-left">
                 <div class="lg:col-span-4">
@@ -643,8 +646,8 @@
                         A performance marketing partner for ambitious teams — engineered for measurable, durable growth across every channel and market.
                     </p>
                     <form class="mt-6 flex max-w-sm" onsubmit="handleNewsletterSubmit(event)">
-                        <input type="email" required placeholder="Subscribe to our newsletter" class="flex-1 bg-white/5 border border-white/10 rounded-l-xl px-4 py-2 text-[14px] text-white placeholder:text-white/40 focus:outline-none focus:border-blue-500">
-                        <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-5 rounded-r-xl text-[14px] font-semibold transition-colors">Join</button>
+                        <input type="email" required placeholder="Subscribe to our newsletter" class="flex-1 bg-black/5 border border-white/10 rounded-l-xl px-4 py-2 text-[14px] text-white placeholder:text-white/40 focus:outline-none focus:border-white">
+                        <button type="submit" class="bg-black hover:bg-black700 text-white px-5 rounded-r-xl text-[14px] font-semibold transition-colors">Join</button>
                     </form>
                 </div>
 
@@ -762,16 +765,16 @@ document.querySelectorAll('.video-card').forEach(function(card) {
         if (v !== video) { v.pause(); }
       });
       video.play();
-      playBtn.innerHTML = '<div class="w-14 h-14 rounded-full bg-white/90 flex items-center justify-center shadow-lg"><svg class="w-5 h-5 text-slate-900" fill="currentColor" viewBox="0 0 20 20"><path d="M5.75 3a.75.75 0 00-.75.75v12.5c0 .414.336.75.75.75h1.5a.75.75 0 00.75-.75V3.75A.75.75 0 007.25 3h-1.5zM12.75 3a.75.75 0 00-.75.75v12.5c0 .414.336.75.75.75h1.5a.75.75 0 00.75-.75V3.75a.75.75 0 00-.75-.75h-1.5z"/></svg></div>';
+      playBtn.innerHTML = '<div class="w-14 h-14 rounded-full bg-black/90 flex items-center justify-center shadow-lg"><svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M5.75 3a.75.75 0 00-.75.75v12.5c0 .414.336.75.75.75h1.5a.75.75 0 00.75-.75V3.75A.75.75 0 007.25 3h-1.5zM12.75 3a.75.75 0 00-.75.75v12.5c0 .414.336.75.75.75h1.5a.75.75 0 00.75-.75V3.75a.75.75 0 00-.75-.75h-1.5z"/></svg></div>';
     } else {
       video.pause();
-      playBtn.innerHTML = '<div class="w-14 h-14 rounded-full bg-white/90 flex items-center justify-center shadow-lg"><svg class="w-5 h-5 text-slate-900 ml-0.5" fill="currentColor" viewBox="0 0 20 20"><path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"/></svg></div>';
+      playBtn.innerHTML = '<div class="w-14 h-14 rounded-full bg-black/90 flex items-center justify-center shadow-lg"><svg class="w-5 h-5 text-white ml-0.5" fill="currentColor" viewBox="0 0 20 20"><path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"/></svg></div>';
     }
   });
 
   video.addEventListener('ended', function() {
     video.pause();
-    playBtn.innerHTML = '<div class="w-14 h-14 rounded-full bg-white/90 flex items-center justify-center shadow-lg"><svg class="w-5 h-5 text-slate-900 ml-0.5" fill="currentColor" viewBox="0 0 20 20"><path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"/></svg></div>';
+    playBtn.innerHTML = '<div class="w-14 h-14 rounded-full bg-black/90 flex items-center justify-center shadow-lg"><svg class="w-5 h-5 text-white ml-0.5" fill="currentColor" viewBox="0 0 20 20"><path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"/></svg></div>';
   });
 });
 

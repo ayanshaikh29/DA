@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <link rel="icon" type="image/png" href="assets/favicon.png">
@@ -54,8 +54,8 @@
   transform: none !important;
 }
 #desktop-nav a:hover {
-  color: #2563eb;
-  background: rgba(37,99,235,0.07);
+  color: #000000;
+  background: rgba(255,255,255,0.07);
   transform: none !important;
 }
 .nav-dropdown {
@@ -73,7 +73,7 @@
   transform: translateX(-50%) translateY(6px);
   width: 260px;
   background: rgba(255,255,255,0.98);
-  backdrop-filter: blur(20px);
+  
   border: 1px solid rgba(226,232,240,0.8);
   box-shadow: 0 10px 40px rgba(2,6,23,0.10);
   border-radius: 20px;
@@ -106,7 +106,7 @@
   transition: color 0.15s, background 0.15s;
 }
 .nav-dropdown-menu a:hover {
-  color: #2563eb;
+  color: #000000;
   background: #f1f5f9;
 }
 #navbar.nav-visible {
@@ -117,11 +117,11 @@
 }
 </style>
 </head>
-<body class="bg-white text-slate-900 overflow-x-hidden antialiased selection:bg-blue-100 selection:text-blue-800">
+<body class="bg-black text-white overflow-x-hidden antialiased selection:bg-[#111111] selection:text-white">
 
 <header id="navbar" style="position:fixed;top:0;left:0;width:100%;z-index:9999;padding:16px 0;transform:translateY(-120%);transition:transform 0.45s cubic-bezier(0.16,1,0.3,1);">
   <div style="max-width:1280px;margin:0 auto;padding:0 24px;">
-    <div id="nav-wrapper" style="display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,0.85);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,0.6);box-shadow:0 4px 32px rgba(2,6,23,0.08);border-radius:9999px;height:60px;padding:0 24px;">
+    <div id="nav-wrapper" style="display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,0.85);border:1px solid rgba(255,255,255,0.6);box-shadow:0 4px 32px rgba(2,6,23,0.08);border-radius:9999px;height:60px;padding:0 24px;">
       <a href="index.html" style="display:flex;align-items:center;">
         <img src="assets/logo.png" alt="Digital Advertise Logo" style="height:32px;width:auto;object-fit:contain;">
       </a>
@@ -130,9 +130,9 @@
         <div class="nav-dropdown">
           <a href="services.html">Services ▾</a>
           <div class="nav-dropdown-menu">
+            <a href="social-media.html">Social Media Marketing</a>
             <a href="performance-marketing.html">Performance Marketing</a>
             <a href="brand-identity.html">Brand Identity</a>
-            <a href="social-media.html">Social Media Marketing</a>
             <a href="web-development.html">Website Development</a>
             <a href="video-production.html">Video Production</a>
             <a href="ai-video.html">AI Video Generation</a>
@@ -147,7 +147,7 @@
         <a href="about.html">About Us</a>
       </nav>
       <div style="display:flex;align-items:center;gap:8px;">
-        <a href="audit.html" style="display:inline-flex;align-items:center;gap:6px;background:#0f172a;color:#fff;font-weight:600;font-size:14px;padding:10px 20px;border-radius:9999px;text-decoration:none;transition:background 0.2s;">
+        <a href="audit.html" style="display:inline-flex;align-items:center;gap:6px;background:#000000;color:#fff;font-weight:600;font-size:14px;padding:10px 20px;border-radius:9999px;text-decoration:none;transition:background 0.2s;">
           Get Started ↗
         </a>
         <button onclick="toggleMobileMenu()" id="hamburger-btn" style="display:none;padding:8px;border-radius:9999px;border:none;background:transparent;cursor:pointer;">
@@ -155,7 +155,7 @@
         </button>
       </div>
     </div>
-    <div id="mobile-menu" style="display:none;margin-top:12px;background:rgba(255,255,255,0.95);backdrop-filter:blur(20px);border-radius:20px;padding:20px;flex-direction:column;gap:8px;">
+    <div id="mobile-menu" style="display:none;margin-top:12px;background:rgba(255,255,255,0.95);border-radius:20px;padding:20px;flex-direction:column;gap:8px;">
       <a href="index.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Home</a>
       <a href="services.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Services</a>
       <a href="portfolio.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Portfolio</a>
@@ -163,21 +163,21 @@
       <a href="blog.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Blog</a>
       <a href="contact.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Contact</a>
       <a href="about.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">About Us</a>
-      <a href="audit.html" style="margin-top:8px;padding:12px;background:#0f172a;color:#fff;font-weight:600;border-radius:9999px;text-decoration:none;display:block;text-align:center;">Get Started</a>
+      <a href="audit.html" style="margin-top:8px;padding:12px;background:#000000;color:#fff;font-weight:600;border-radius:9999px;text-decoration:none;display:block;text-align:center;">Get Started</a>
     </div>
   </div>
 </header>
 
-    <main class="relative min-h-screen bg-white text-slate-900 font-sans overflow-hidden flex items-center justify-center p-6 mesh-bg">
+    <main class="relative min-h-screen bg-black text-white font-sans overflow-hidden flex items-center justify-center p-6 mesh-bg">
         <div class="absolute inset-0 grid-pattern opacity-60 pointer-events-none"></div>
         
-        <div class="glass-strong border border-slate-200 p-8 md:p-12 rounded-[2.5rem] shadow-2xl max-w-lg w-full text-center relative z-10 reveal">
-            <div class="w-16 h-16 rounded-full bg-emerald-100 flex items-center justify-center mx-auto mb-6 select-none animate-bounce">
-                <i data-lucide="check-circle-2" class="text-emerald-600 w-8 h-8"></i>
+        <div class="glass-strong border border-white/10 p-8 md:p-12 rounded-[2.5rem] shadow-2xl max-w-lg w-full text-center relative z-10 reveal">
+            <div class="w-16 h-16 rounded-full bg-[#111111] flex items-center justify-center mx-auto mb-6 select-none animate-bounce">
+                <i data-lucide="check-circle-2" class="text-white/70 w-8 h-8"></i>
             </div>
             
-            <h1 class="font-display text-3xl md:text-4xl font-extrabold tracking-tight text-slate-900">You're on the list.</h1>
-            <p class="mt-4 text-slate-500 text-[14px] leading-relaxed max-w-sm mx-auto">
+            <h1 class="font-display text-3xl md:text-4xl font-extrabold tracking-tight text-white">You're on the list.</h1>
+            <p class="mt-4 text-white/60 text-[14px] leading-relaxed max-w-sm mx-auto">
                 Thank you for contacting Digital Advertise. Our growth directors are reviewing your website metrics and channel bottlenecks. We will reach out within 12 hours.
             </p>
             
@@ -186,7 +186,7 @@
                 <a href="portfolio.html" class="btn-secondary py-3.5 px-8 text-[14px] justify-center">Explore Work</a>
             </div>
             
-            <div class="mt-8 pt-6 border-t border-slate-100 text-[11px] text-slate-400">
+            <div class="mt-8 pt-6 border-t border-white/5 text-[11px] text-slate-400">
                 A copy of the confirmation has been dispatched.
             </div>
         </div>

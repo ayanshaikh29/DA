@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <link rel="icon" type="image/png" href="assets/favicon.png">
@@ -32,13 +32,13 @@
         #desktop-nav { display: flex !important; align-items: center; gap: 4px; }
         @media (max-width: 1024px) { #desktop-nav { display: none !important; } #hamburger-btn { display: block !important; } }
         #desktop-nav a { padding: 8px 14px; font-size: 14px; font-weight: 500; color: #475569; border-radius: 9999px; text-decoration: none; transition: color 0.2s, background 0.2s; white-space: nowrap; transform: none !important; }
-        #desktop-nav a:hover { color: #2563eb; background: rgba(37,99,235,0.07); transform: none !important; }
+        #desktop-nav a:hover { color: #000000; background: rgba(255,255,255,0.07); transform: none !important; }
         .nav-dropdown { position: relative; padding-bottom: 8px; margin-bottom: -8px; }
-        .nav-dropdown-menu { opacity: 0; visibility: hidden; pointer-events: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(6px); width: 260px; background: rgba(255,255,255,0.98); backdrop-filter: blur(20px); border: 1px solid rgba(226,232,240,0.8); box-shadow: 0 10px 40px rgba(2,6,23,0.10); border-radius: 20px; padding: 10px; z-index: 99999; transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s; }
+        .nav-dropdown-menu { opacity: 0; visibility: hidden; pointer-events: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(6px); width: 260px; background: rgba(255,255,255,0.98);  border: 1px solid rgba(226,232,240,0.8); box-shadow: 0 10px 40px rgba(2,6,23,0.10); border-radius: 20px; padding: 10px; z-index: 99999; transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s; }
         .nav-dropdown-menu::before { content: ''; position: absolute; top: -12px; left: 0; width: 100%; height: 12px; background: transparent; }
         .nav-dropdown:hover .nav-dropdown-menu { opacity: 1; visibility: visible; pointer-events: auto; transform: translateX(-50%) translateY(0px); }
         .nav-dropdown-menu a { display: block; padding: 9px 14px; font-size: 13px; color: #475569; border-radius: 10px; text-decoration: none; transition: color 0.15s, background 0.15s; }
-        .nav-dropdown-menu a:hover { color: #2563eb; background: #f1f5f9; }
+        .nav-dropdown-menu a:hover { color: #000000; background: #f1f5f9; }
         #navbar.nav-visible { transform: translateY(0) !important; }
         #mobile-menu.open { display: flex !important; }
         @keyframes gradientShift {
@@ -53,11 +53,11 @@
         }
     </style>
 </head>
-<body class="bg-white text-slate-900 overflow-x-hidden antialiased selection:bg-blue-100 selection:text-blue-800">
+<body class="bg-black text-white overflow-x-hidden antialiased selection:bg-[#111111] selection:text-white">
 
 <header id="navbar" style="position:fixed;top:0;left:0;width:100%;z-index:9999;padding:16px 0;transform:translateY(-120%);transition:transform 0.45s cubic-bezier(0.16,1,0.3,1);">
   <div style="max-width:1280px;margin:0 auto;padding:0 24px;">
-    <div id="nav-wrapper" style="display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,0.85);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,0.6);box-shadow:0 4px 32px rgba(2,6,23,0.08);border-radius:9999px;height:60px;padding:0 24px;">
+    <div id="nav-wrapper" style="display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,0.85);border:1px solid rgba(255,255,255,0.6);box-shadow:0 4px 32px rgba(2,6,23,0.08);border-radius:9999px;height:60px;padding:0 24px;">
       <a href="index.html" style="display:flex;align-items:center;">
         <img src="assets/logo.png" alt="Digital Advertise Logo" style="height:32px;width:auto;object-fit:contain;">
       </a>
@@ -66,9 +66,9 @@
         <div class="nav-dropdown">
           <a href="services.html">Services ▾</a>
           <div class="nav-dropdown-menu">
+            <a href="social-media.html">Social Media Marketing</a>
             <a href="performance-marketing.html">Performance Marketing</a>
             <a href="brand-identity.html">Brand Identity</a>
-            <a href="social-media.html">Social Media Marketing</a>
             <a href="web-development.html">Website Development</a>
             <a href="video-production.html">Video Production</a>
             <a href="ai-video.html">AI Video Generation</a>
@@ -83,7 +83,7 @@
         <a href="about.html">About Us</a>
       </nav>
       <div style="display:flex;align-items:center;gap:8px;">
-        <a href="audit.html" style="display:inline-flex;align-items:center;gap:6px;background:#0f172a;color:#fff;font-weight:600;font-size:14px;padding:10px 20px;border-radius:9999px;text-decoration:none;transition:background 0.2s;">
+        <a href="audit.html" style="display:inline-flex;align-items:center;gap:6px;background:#000000;color:#fff;font-weight:600;font-size:14px;padding:10px 20px;border-radius:9999px;text-decoration:none;transition:background 0.2s;">
           Get Started ↗
         </a>
         <button onclick="toggleMobileMenu()" id="hamburger-btn" style="display:none;padding:8px;border-radius:9999px;border:none;background:transparent;cursor:pointer;">
@@ -91,7 +91,7 @@
         </button>
       </div>
     </div>
-    <div id="mobile-menu" style="display:none;margin-top:12px;background:rgba(255,255,255,0.95);backdrop-filter:blur(20px);border-radius:20px;padding:20px;flex-direction:column;gap:8px;">
+    <div id="mobile-menu" style="display:none;margin-top:12px;background:rgba(255,255,255,0.95);border-radius:20px;padding:20px;flex-direction:column;gap:8px;">
       <a href="index.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Home</a>
       <a href="services.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Services</a>
       <a href="portfolio.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Portfolio</a>
@@ -99,12 +99,12 @@
       <a href="blog.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Blog</a>
       <a href="contact.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Contact</a>
       <a href="about.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">About Us</a>
-      <a href="audit.html" style="margin-top:8px;padding:12px;background:#0f172a;color:#fff;font-weight:600;border-radius:9999px;text-decoration:none;display:block;text-align:center;">Get Started</a>
+      <a href="audit.html" style="margin-top:8px;padding:12px;background:#000000;color:#fff;font-weight:600;border-radius:9999px;text-decoration:none;display:block;text-align:center;">Get Started</a>
     </div>
   </div>
 </header>
 
-    <main class="relative bg-white text-slate-900 font-sans overflow-hidden">
+    <main class="relative bg-black text-white font-sans overflow-hidden">
 
         <!-- ===== HERO ===== -->
         <section class="relative pt-36 md:pt-44 pb-20 mesh-bg overflow-hidden">
@@ -112,16 +112,16 @@
             <div class="bubble bubble-2" aria-hidden="true"></div>
             <div class="bubble bubble-3" aria-hidden="true"></div>
             <div class="absolute inset-0 overflow-hidden pointer-events-none z-0">
-                <div class="absolute w-[800px] h-[800px] rounded-full bg-[radial-gradient(circle,_rgba(37,99,235,0.12)_0%,_transparent_70%)] -top-1/4 -right-1/4"></div>
+                <div class="absolute w-[800px] h-[800px] rounded-full bg-[radial-gradient(circle,_rgba(255,255,255,0.12)_0%,_transparent_70%)] -top-1/4 -right-1/4"></div>
             </div>
             <div class="absolute inset-0 grid-pattern opacity-60 pointer-events-none"></div>
             <div class="max-w-7xl mx-auto px-6 md:px-10 relative z-10 text-left">
                 <div class="overline-label reveal">Social Media Marketing</div>
-                <h1 class="mt-3 font-display text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tighter text-slate-900 text-reveal">
+                <h1 class="mt-3 font-display text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tighter text-white text-reveal">
                     Organic social that<br>
-                    <span class="italic font-light text-slate-700">builds empires</span>.
+                    <span class="italic font-light text-white/80">builds empires</span>.
                 </h1>
-                <p class="mt-7 text-lg md:text-xl text-slate-600 max-w-2xl leading-relaxed">We architect organic social ecosystems that convert passive scrollers into engaged brand advocates across Instagram, TikTok, LinkedIn, Twitter/X, and Facebook.</p>
+                <p class="mt-7 text-lg md:text-xl text-white/70 max-w-2xl leading-relaxed">We architect organic social ecosystems that convert passive scrollers into engaged brand advocates across Instagram, TikTok, LinkedIn, Twitter/X, and Facebook.</p>
                 <div class="mt-8 flex flex-wrap items-center gap-4">
                     <a href="audit.html" class="btn-primary btn-magnetic shine-sweep group">Get Free Audit <i data-lucide="arrow-up-right" class="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></i></a>
                     <a href="portfolio.html" class="btn-secondary btn-magnetic group">View Our Work <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i></a>
@@ -130,119 +130,119 @@
         </section>
 
         <!-- ===== WHAT WE DO ===== -->
-        <section class="relative overflow-hidden py-20 bg-white">
+        <section class="relative overflow-hidden py-20 bg-black">
             <div class="max-w-7xl mx-auto px-6 md:px-10">
                 <div class="text-center max-w-3xl mx-auto mb-14 reveal">
                     <div class="overline-label">What We Do</div>
-                    <h2 class="mt-3 font-display text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900">Organic Social That Actually Converts</h2>
+                    <h2 class="mt-3 font-display text-3xl md:text-5xl font-extrabold tracking-tight text-white">Organic Social That Actually Converts</h2>
                 </div>
                 <div class="grid md:grid-cols-3 gap-6 reveal-stagger">
-                    <div class="group bg-white border border-slate-200 rounded-3xl p-8 hover:border-slate-900 hover:shadow-xl transition-all duration-300">
-                        <div class="w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center mb-5 group-hover:bg-blue-600 transition-colors">
-                            <i data-lucide="layers" class="w-6 h-6 text-blue-600 group-hover:text-white transition-colors"></i>
+                    <div class="group bg-black border border-white/10 rounded-3xl p-8 hover:border-white hover:shadow-xl transition-all duration-300">
+                        <div class="w-12 h-12 rounded-2xl bg-[#111111] flex items-center justify-center mb-5 group-hover:bg-black transition-colors">
+                            <i data-lucide="layers" class="w-6 h-6 text-white group-hover:text-white transition-colors"></i>
                         </div>
-                        <h3 class="font-display text-xl font-bold text-slate-900">Content Strategy</h3>
-                        <p class="mt-2 text-slate-500 text-[14px] leading-relaxed">Tailored editorial calendars and content frameworks designed for each platform's unique algorithm, audience behavior, and engagement patterns.</p>
+                        <h3 class="font-display text-xl font-bold text-white">Content Strategy</h3>
+                        <p class="mt-2 text-white/60 text-[14px] leading-relaxed">Tailored editorial calendars and content frameworks designed for each platform's unique algorithm, audience behavior, and engagement patterns.</p>
                     </div>
-                    <div class="group bg-white border border-slate-200 rounded-3xl p-8 hover:border-slate-900 hover:shadow-xl transition-all duration-300">
-                        <div class="w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center mb-5 group-hover:bg-blue-600 transition-colors">
-                            <i data-lucide="users" class="w-6 h-6 text-blue-600 group-hover:text-white transition-colors"></i>
+                    <div class="group bg-black border border-white/10 rounded-3xl p-8 hover:border-white hover:shadow-xl transition-all duration-300">
+                        <div class="w-12 h-12 rounded-2xl bg-[#111111] flex items-center justify-center mb-5 group-hover:bg-black transition-colors">
+                            <i data-lucide="users" class="w-6 h-6 text-white group-hover:text-white transition-colors"></i>
                         </div>
-                        <h3 class="font-display text-xl font-bold text-slate-900">Community Management</h3>
-                        <p class="mt-2 text-slate-500 text-[14px] leading-relaxed">Real-time comment moderation, DM response workflows, and community engagement protocols that turn followers into brand advocates.</p>
+                        <h3 class="font-display text-xl font-bold text-white">Community Management</h3>
+                        <p class="mt-2 text-white/60 text-[14px] leading-relaxed">Real-time comment moderation, DM response workflows, and community engagement protocols that turn followers into brand advocates.</p>
                     </div>
-                    <div class="group bg-white border border-slate-200 rounded-3xl p-8 hover:border-slate-900 hover:shadow-xl transition-all duration-300">
-                        <div class="w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center mb-5 group-hover:bg-blue-600 transition-colors">
-                            <i data-lucide="sparkles" class="w-6 h-6 text-blue-600 group-hover:text-white transition-colors"></i>
+                    <div class="group bg-black border border-white/10 rounded-3xl p-8 hover:border-white hover:shadow-xl transition-all duration-300">
+                        <div class="w-12 h-12 rounded-2xl bg-[#111111] flex items-center justify-center mb-5 group-hover:bg-black transition-colors">
+                            <i data-lucide="sparkles" class="w-6 h-6 text-white group-hover:text-white transition-colors"></i>
                         </div>
-                        <h3 class="font-display text-xl font-bold text-slate-900">Creator Partnerships</h3>
-                        <p class="mt-2 text-slate-500 text-[14px] leading-relaxed">End-to-end creator sourcing, negotiation, briefing, and performance tracking for authentic influencer collaborations at every tier.</p>
+                        <h3 class="font-display text-xl font-bold text-white">Creator Partnerships</h3>
+                        <p class="mt-2 text-white/60 text-[14px] leading-relaxed">End-to-end creator sourcing, negotiation, briefing, and performance tracking for authentic influencer collaborations at every tier.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- ===== OUR PROCESS ===== -->
-        <section class="relative overflow-hidden py-20 bg-slate-50/55">
+        <section class="relative overflow-hidden py-20 bg-[#0A0A0A]/55">
             <div class="max-w-7xl mx-auto px-6 md:px-10">
                 <div class="text-center max-w-3xl mx-auto mb-14 reveal">
                     <div class="overline-label">Process</div>
-                    <h2 class="mt-3 font-display text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900">From Audit to Amplification</h2>
+                    <h2 class="mt-3 font-display text-3xl md:text-5xl font-extrabold tracking-tight text-white">From Audit to Amplification</h2>
                 </div>
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-6 reveal-stagger">
                     <div class="text-center">
                         <div class="w-14 h-14 rounded-full bg-slate-900 text-white font-display font-bold text-lg flex items-center justify-center mx-auto">01</div>
-                        <h4 class="mt-4 font-display font-bold text-slate-900">Audit & Discovery</h4>
-                        <p class="mt-1 text-slate-500 text-[13px]">Competitor benchmarking, audience persona mapping, and platform-fit analysis.</p>
+                        <h4 class="mt-4 font-display font-bold text-white">Audit & Discovery</h4>
+                        <p class="mt-1 text-white/60 text-[13px]">Competitor benchmarking, audience persona mapping, and platform-fit analysis.</p>
                     </div>
                     <div class="text-center">
                         <div class="w-14 h-14 rounded-full bg-slate-900 text-white font-display font-bold text-lg flex items-center justify-center mx-auto">02</div>
-                        <h4 class="mt-4 font-display font-bold text-slate-900">Strategy & Calendar</h4>
-                        <p class="mt-1 text-slate-500 text-[13px]">Monthly content pillars, posting cadence, and engagement playbooks.</p>
+                        <h4 class="mt-4 font-display font-bold text-white">Strategy & Calendar</h4>
+                        <p class="mt-1 text-white/60 text-[13px]">Monthly content pillars, posting cadence, and engagement playbooks.</p>
                     </div>
                     <div class="text-center">
                         <div class="w-14 h-14 rounded-full bg-slate-900 text-white font-display font-bold text-lg flex items-center justify-center mx-auto">03</div>
-                        <h4 class="mt-4 font-display font-bold text-slate-900">Content Production</h4>
-                        <p class="mt-1 text-slate-500 text-[13px]">In-house design, copywriting, video editing, and asset localization.</p>
+                        <h4 class="mt-4 font-display font-bold text-white">Content Production</h4>
+                        <p class="mt-1 text-white/60 text-[13px]">In-house design, copywriting, video editing, and asset localization.</p>
                     </div>
                     <div class="text-center">
                         <div class="w-14 h-14 rounded-full bg-slate-900 text-white font-display font-bold text-lg flex items-center justify-center mx-auto">04</div>
-                        <h4 class="mt-4 font-display font-bold text-slate-900">Launch & Optimize</h4>
-                        <p class="mt-1 text-slate-500 text-[13px]">Post scheduling, A/B caption testing, community management, and reporting.</p>
+                        <h4 class="mt-4 font-display font-bold text-white">Launch & Optimize</h4>
+                        <p class="mt-1 text-white/60 text-[13px]">Post scheduling, A/B caption testing, community management, and reporting.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- ===== WHY CHOOSE US ===== -->
-        <section class="relative overflow-hidden py-20 bg-white">
+        <section class="relative overflow-hidden py-20 bg-black">
             <div class="max-w-7xl mx-auto px-6 md:px-10">
                 <div class="grid lg:grid-cols-2 gap-16 items-center">
                     <div class="reveal-left">
                         <div class="overline-label">Why Choose Us</div>
-                        <h2 class="mt-3 font-display text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900">Built for compounding growth</h2>
+                        <h2 class="mt-3 font-display text-3xl md:text-5xl font-extrabold tracking-tight text-white">Built for compounding growth</h2>
                         <div class="mt-10 space-y-5">
                             <div class="flex gap-4 items-start">
-                                <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center shrink-0">
-                                    <i data-lucide="check" class="w-5 h-5 text-blue-600"></i>
+                                <div class="w-10 h-10 rounded-xl bg-[#111111] flex items-center justify-center shrink-0">
+                                    <i data-lucide="check" class="w-5 h-5 text-white"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-display font-bold text-slate-900">Consistent Brand Voice</h4>
-                                    <p class="text-slate-500 text-[13px] mt-1">Unified messaging and tone across every post — reinforcing your brand identity at scale.</p>
+                                    <h4 class="font-display font-bold text-white">Consistent Brand Voice</h4>
+                                    <p class="text-white/60 text-[13px] mt-1">Unified messaging and tone across every post — reinforcing your brand identity at scale.</p>
                                 </div>
                             </div>
                             <div class="flex gap-4 items-start">
-                                <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center shrink-0">
-                                    <i data-lucide="check" class="w-5 h-5 text-blue-600"></i>
+                                <div class="w-10 h-10 rounded-xl bg-[#111111] flex items-center justify-center shrink-0">
+                                    <i data-lucide="check" class="w-5 h-5 text-white"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-display font-bold text-slate-900">Compounding Follower Growth</h4>
-                                    <p class="text-slate-500 text-[13px] mt-1">Sustained organic growth that reduces paid acquisition dependency over time.</p>
+                                    <h4 class="font-display font-bold text-white">Compounding Follower Growth</h4>
+                                    <p class="text-white/60 text-[13px] mt-1">Sustained organic growth that reduces paid acquisition dependency over time.</p>
                                 </div>
                             </div>
                             <div class="flex gap-4 items-start">
-                                <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center shrink-0">
-                                    <i data-lucide="check" class="w-5 h-5 text-blue-600"></i>
+                                <div class="w-10 h-10 rounded-xl bg-[#111111] flex items-center justify-center shrink-0">
+                                    <i data-lucide="check" class="w-5 h-5 text-white"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-display font-bold text-slate-900">Creator-Sourced UGC</h4>
-                                    <p class="text-slate-500 text-[13px] mt-1">Authentic user-generated content that outperforms polished studio creative in CTR.</p>
+                                    <h4 class="font-display font-bold text-white">Creator-Sourced UGC</h4>
+                                    <p class="text-white/60 text-[13px] mt-1">Authentic user-generated content that outperforms polished studio creative in CTR.</p>
                                 </div>
                             </div>
                             <div class="flex gap-4 items-start">
-                                <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center shrink-0">
-                                    <i data-lucide="check" class="w-5 h-5 text-blue-600"></i>
+                                <div class="w-10 h-10 rounded-xl bg-[#111111] flex items-center justify-center shrink-0">
+                                    <i data-lucide="check" class="w-5 h-5 text-white"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-display font-bold text-slate-900">Real-Time Sentiment Monitoring</h4>
-                                    <p class="text-slate-500 text-[13px] mt-1">Proactive brand reputation protection through continuous social listening and analysis.</p>
+                                    <h4 class="font-display font-bold text-white">Real-Time Sentiment Monitoring</h4>
+                                    <p class="text-white/60 text-[13px] mt-1">Proactive brand reputation protection through continuous social listening and analysis.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="reveal-right">
-                        <div class="relative rounded-3xl overflow-hidden bg-slate-100 aspect-[4/3]">
-                            <img src="assets/service-social-media.png" alt="Social Media Marketing Strategy" class="w-full h-full object-cover">
+                        <div class="relative rounded-3xl overflow-hidden bg-[#111111] aspect-[4/3]">
+                            <img src="assets/Images web/social media 1.jpg" alt="Social media marketing campaign creative" class="w-full h-full object-cover">
                         </div>
                     </div>
                 </div>
@@ -250,48 +250,61 @@
         </section>
 
         <!-- ===== PORTFOLIO PREVIEW ===== -->
-        <section class="relative overflow-hidden py-20 bg-slate-50/55">
+        <section class="relative overflow-hidden py-20 bg-[#0A0A0A]/55">
             <div class="max-w-7xl mx-auto px-6 md:px-10">
                 <div class="text-center max-w-3xl mx-auto mb-14 reveal">
                     <div class="overline-label">Portfolio</div>
-                    <h2 class="mt-3 font-display text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900">Social Campaigns That Delivered</h2>
+                    <h2 class="mt-3 font-display text-3xl md:text-5xl font-extrabold tracking-tight text-white">Social Campaigns That Delivered</h2>
                 </div>
-                <div class="grid md:grid-cols-3 gap-6 reveal-stagger">
-                    <div class="portfolio-item group relative rounded-3xl overflow-hidden aspect-[4/3] bg-slate-900 border border-slate-100 hover:shadow-2xl transition-all duration-500">
-                        <img src="assets/portfolio-openai.png" alt="Instagram Growth Campaign" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700">
+                <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6 reveal-stagger">
+                    <div class="portfolio-item group relative rounded-3xl overflow-hidden aspect-[4/3] bg-slate-900 border border-white/5 hover:shadow-2xl transition-all duration-500">
+                        <img src="assets/Images web/social media 2.jpg" alt="Instagram growth campaign visual" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700">
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent p-6 flex flex-col justify-between text-left opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <span class="bg-blue-600 text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 rounded text-white self-start">Instagram</span>
+                            <span class="bg-black text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 rounded text-white self-start">Instagram</span>
                             <div>
                                 <h3 class="font-display font-bold text-white text-xl">D2C Skincare Launch</h3>
                                 <p class="text-white/60 text-[13px] mt-1">Organic social strategy driving 4x ROAS for a beauty brand launch.</p>
                                 <div class="mt-4 pt-4 border-t border-white/10 flex justify-between items-center text-white">
-                                    <div><div class="text-lg font-bold text-emerald-400">+340%</div><div class="text-[10px] uppercase tracking-wider text-white/50">Engagement</div></div>
+                                    <div><div class="text-lg font-bold text-white/60">+340%</div><div class="text-[10px] uppercase tracking-wider text-white/50">Engagement</div></div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="portfolio-item group relative rounded-3xl overflow-hidden aspect-[4/3] bg-slate-900 border border-slate-100 hover:shadow-2xl transition-all duration-500">
-                        <img src="assets/portfolio-netflix.png" alt="TikTok Viral Campaign" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700">
+                    <div class="portfolio-item group relative rounded-3xl overflow-hidden aspect-[4/3] bg-slate-900 border border-white/5 hover:shadow-2xl transition-all duration-500">
+                        <img src="assets/Images web/social media 3.jpg" alt="TikTok viral campaign creative" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700">
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent p-6 flex flex-col justify-between text-left opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <span class="bg-blue-600 text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 rounded text-white self-start">TikTok</span>
+                            <span class="bg-black text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 rounded text-white self-start">TikTok</span>
                             <div>
                                 <h3 class="font-display font-bold text-white text-xl">Fashion Brand Virality</h3>
                                 <p class="text-white/60 text-[13px] mt-1">Creator partnerships generating 12M+ organic views in 30 days.</p>
                                 <div class="mt-4 pt-4 border-t border-white/10 flex justify-between items-center text-white">
-                                    <div><div class="text-lg font-bold text-emerald-400">12M+</div><div class="text-[10px] uppercase tracking-wider text-white/50">Organic Views</div></div>
+                                    <div><div class="text-lg font-bold text-white/60">12M+</div><div class="text-[10px] uppercase tracking-wider text-white/50">Organic Views</div></div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="portfolio-item group relative rounded-3xl overflow-hidden aspect-[4/3] bg-slate-900 border border-slate-100 hover:shadow-2xl transition-all duration-500">
-                        <img src="assets/portfolio-notion.png" alt="LinkedIn B2B Campaign" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700">
+                    <div class="portfolio-item group relative rounded-3xl overflow-hidden aspect-[4/3] bg-slate-900 border border-white/5 hover:shadow-2xl transition-all duration-500">
+                        <img src="assets/Images web/social media 4.jpg" alt="LinkedIn B2B campaign visual" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700">
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent p-6 flex flex-col justify-between text-left opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <span class="bg-blue-600 text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 rounded text-white self-start">LinkedIn</span>
+                            <span class="bg-black text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 rounded text-white self-start">LinkedIn</span>
                             <div>
                                 <h3 class="font-display font-bold text-white text-xl">SaaS Thought Leadership</h3>
                                 <p class="text-white/60 text-[13px] mt-1">Executive personal branding driving 50K+ inbound leads annually.</p>
                                 <div class="mt-4 pt-4 border-t border-white/10 flex justify-between items-center text-white">
-                                    <div><div class="text-lg font-bold text-emerald-400">50K+</div><div class="text-[10px] uppercase tracking-wider text-white/50">Leads Generated</div></div>
+                                    <div><div class="text-lg font-bold text-white/60">50K+</div><div class="text-[10px] uppercase tracking-wider text-white/50">Leads Generated</div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-item group relative rounded-3xl overflow-hidden aspect-[4/3] bg-slate-900 border border-white/5 hover:shadow-2xl transition-all duration-500 sm:col-span-2 md:col-span-1">
+                        <img src="assets/Images web/social media 5.jpg" alt="Social media content strategy visual" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent p-6 flex flex-col justify-between text-left opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <span class="bg-black text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 rounded text-white self-start">Content</span>
+                            <div>
+                                <h3 class="font-display font-bold text-white text-xl">Multi-Platform Content Strategy</h3>
+                                <p class="text-white/60 text-[13px] mt-1">Cross-platform content ecosystem driving consistent brand engagement.</p>
+                                <div class="mt-4 pt-4 border-t border-white/10 flex justify-between items-center text-white">
+                                    <div><div class="text-lg font-bold text-white/60">+520%</div><div class="text-[10px] uppercase tracking-wider text-white/50">Reach</div></div>
                                 </div>
                             </div>
                         </div>
@@ -321,140 +334,95 @@
         </section>
 
         <!-- ===== TESTIMONIALS ===== -->
-        <section class="relative overflow-hidden py-20 bg-slate-50/55">
+        <section class="relative overflow-hidden py-20 bg-[#0A0A0A]/55">
             <div class="max-w-7xl mx-auto px-6 md:px-10">
                 <div class="text-center max-w-3xl mx-auto mb-14 reveal">
                     <div class="overline-label">Testimonials</div>
-                    <h2 class="mt-3 font-display text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900">What Clients Say</h2>
+                    <h2 class="mt-3 font-display text-3xl md:text-5xl font-extrabold tracking-tight text-white">What Clients Say</h2>
                 </div>
                 <div class="grid md:grid-cols-3 gap-6 reveal-stagger">
                     <div class="glass rounded-3xl p-8 flex flex-col justify-between">
                         <div>
                             <div class="flex gap-1 mb-4">
-                                <i data-lucide="star" class="w-4 h-4 text-amber-400 fill-amber-400"></i>
-                                <i data-lucide="star" class="w-4 h-4 text-amber-400 fill-amber-400"></i>
-                                <i data-lucide="star" class="w-4 h-4 text-amber-400 fill-amber-400"></i>
-                                <i data-lucide="star" class="w-4 h-4 text-amber-400 fill-amber-400"></i>
-                                <i data-lucide="star" class="w-4 h-4 text-amber-400 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-[#FFD700] text-[#FFD700]"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-[#FFD700] text-[#FFD700]"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-[#FFD700] text-[#FFD700]"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-[#FFD700] text-[#FFD700]"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-[#FFD700] text-[#FFD700]"></i>
                             </div>
-                            <p class="text-slate-600 text-[14px] leading-relaxed">"Our Instagram engagement went from 1.2% to 4.8% in just three months. The content strategy they built is genuinely world-class."</p>
+                            <p class="text-white/70 text-[14px] leading-relaxed">"Our Instagram engagement went from 1.2% to 4.8% in just three months. The content strategy they built is genuinely world-class."</p>
                         </div>
-                        <div class="mt-6 pt-6 border-t border-slate-100 flex items-center gap-3">
-                            <div class="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center font-bold text-[12px]">PM</div>
-                            <div><div class="font-display font-bold text-slate-900 text-[14px]">Priya Menon</div><div class="text-[12px] text-slate-500">CMO, Bloom Skincare</div></div>
+                        <div class="mt-6 pt-6 border-t border-white/5 flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-black/5 flex items-center justify-center font-bold text-[12px]">PM</div>
+                            <div><div class="font-display font-bold text-white text-[14px]">Priya Menon</div><div class="text-[12px] text-white/60">CMO, Bloom Skincare</div></div>
                         </div>
                     </div>
                     <div class="glass rounded-3xl p-8 flex flex-col justify-between">
                         <div>
                             <div class="flex gap-1 mb-4">
-                                <i data-lucide="star" class="w-4 h-4 text-amber-400 fill-amber-400"></i>
-                                <i data-lucide="star" class="w-4 h-4 text-amber-400 fill-amber-400"></i>
-                                <i data-lucide="star" class="w-4 h-4 text-amber-400 fill-amber-400"></i>
-                                <i data-lucide="star" class="w-4 h-4 text-amber-400 fill-amber-400"></i>
-                                <i data-lucide="star" class="w-4 h-4 text-amber-400 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-[#FFD700] text-[#FFD700]"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-[#FFD700] text-[#FFD700]"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-[#FFD700] text-[#FFD700]"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-[#FFD700] text-[#FFD700]"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-[#FFD700] text-[#FFD700]"></i>
                             </div>
-                            <p class="text-slate-600 text-[14px] leading-relaxed">"The TikTok creator partnerships they orchestrated drove 12M organic views and a measurable spike in direct site traffic. Exceptional execution."</p>
+                            <p class="text-white/70 text-[14px] leading-relaxed">"The TikTok creator partnerships they orchestrated drove 12M organic views and a measurable spike in direct site traffic. Exceptional execution."</p>
                         </div>
-                        <div class="mt-6 pt-6 border-t border-slate-100 flex items-center gap-3">
-                            <div class="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center font-bold text-[12px]">RK</div>
-                            <div><div class="font-display font-bold text-slate-900 text-[14px]">Rohan Kapoor</div><div class="text-[12px] text-slate-500">Head of Growth, StyleHaus</div></div>
+                        <div class="mt-6 pt-6 border-t border-white/5 flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-black/5 flex items-center justify-center font-bold text-[12px]">RK</div>
+                            <div><div class="font-display font-bold text-white text-[14px]">Rohan Kapoor</div><div class="text-[12px] text-white/60">Head of Growth, StyleHaus</div></div>
                         </div>
                     </div>
                     <div class="glass rounded-3xl p-8 flex flex-col justify-between">
                         <div>
                             <div class="flex gap-1 mb-4">
-                                <i data-lucide="star" class="w-4 h-4 text-amber-400 fill-amber-400"></i>
-                                <i data-lucide="star" class="w-4 h-4 text-amber-400 fill-amber-400"></i>
-                                <i data-lucide="star" class="w-4 h-4 text-amber-400 fill-amber-400"></i>
-                                <i data-lucide="star" class="w-4 h-4 text-amber-400 fill-amber-400"></i>
-                                <i data-lucide="star" class="w-4 h-4 text-amber-400 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-[#FFD700] text-[#FFD700]"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-[#FFD700] text-[#FFD700]"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-[#FFD700] text-[#FFD700]"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-[#FFD700] text-[#FFD700]"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-[#FFD700] text-[#FFD700]"></i>
                             </div>
-                            <p class="text-slate-600 text-[14px] leading-relaxed">"LinkedIn thought leadership program generated 50K+ inbound leads last year. They understand B2B social better than anyone we've worked with."</p>
+                            <p class="text-white/70 text-[14px] leading-relaxed">"LinkedIn thought leadership program generated 50K+ inbound leads last year. They understand B2B social better than anyone we've worked with."</p>
                         </div>
-                        <div class="mt-6 pt-6 border-t border-slate-100 flex items-center gap-3">
-                            <div class="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center font-bold text-[12px]">AS</div>
-                            <div><div class="font-display font-bold text-slate-900 text-[14px]">Ananya Sharma</div><div class="text-[12px] text-slate-500">VP Marketing, CloudScale</div></div>
+                        <div class="mt-6 pt-6 border-t border-white/5 flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-black/5 flex items-center justify-center font-bold text-[12px]">AS</div>
+                            <div><div class="font-display font-bold text-white text-[14px]">Ananya Sharma</div><div class="text-[12px] text-white/60">VP Marketing, CloudScale</div></div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ===== FAQ ===== -->
-        <section class="relative overflow-hidden py-20 bg-white">
-            <div class="max-w-3xl mx-auto px-6 md:px-10">
-                <div class="text-center mb-14 reveal">
-                    <div class="overline-label">FAQ</div>
-                    <h2 class="mt-3 font-display text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900">Common Questions</h2>
-                </div>
-                <div class="space-y-4 reveal-stagger">
-                    <details class="group bg-slate-50 rounded-2xl overflow-hidden">
-                        <summary class="flex items-center justify-between p-6 cursor-pointer font-display font-bold text-slate-900 text-[15px]">
-                            How long does it take to see results from organic social?
-                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform"></i>
-                        </summary>
-                        <div class="px-6 pb-6 text-slate-500 text-[14px] leading-relaxed">Most clients see measurable engagement improvements within 30–60 days. Compounding follower growth typically accelerates around the 90-day mark as algorithmic signals compound and content libraries expand.</div>
-                    </details>
-                    <details class="group bg-slate-50 rounded-2xl overflow-hidden">
-                        <summary class="flex items-center justify-between p-6 cursor-pointer font-display font-bold text-slate-900 text-[15px]">
-                            Which platforms do you specialize in?
-                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform"></i>
-                        </summary>
-                        <div class="px-6 pb-6 text-slate-500 text-[14px] leading-relaxed">We manage organic social across Instagram, TikTok, LinkedIn, Twitter/X, and Facebook. Platform selection is driven by your audience demographics and business objectives — we don't spread thin across platforms that don't move the needle.</div>
-                    </details>
-                    <details class="group bg-slate-50 rounded-2xl overflow-hidden">
-                        <summary class="flex items-center justify-between p-6 cursor-pointer font-display font-bold text-slate-900 text-[15px]">
-                            Do you handle creator and influencer partnerships?
-                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform"></i>
-                        </summary>
-                        <div class="px-6 pb-6 text-slate-500 text-[14px] leading-relaxed">Yes — end-to-end creator sourcing, negotiation, briefing, content review, and performance tracking. We work across nano, micro, and macro tiers depending on campaign goals and budget allocation.</div>
-                    </details>
-                    <details class="group bg-slate-50 rounded-2xl overflow-hidden">
-                        <summary class="flex items-center justify-between p-6 cursor-pointer font-display font-bold text-slate-900 text-[15px]">
-                            Can you work with our existing brand guidelines?
-                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform"></i>
-                        </summary>
-                        <div class="px-6 pb-6 text-slate-500 text-[14px] leading-relaxed">Absolutely. We build social content frameworks that extend your existing brand identity — not replace it. Every asset is aligned with your tone, visual system, and positioning before going live.</div>
-                    </details>
-                    <details class="group bg-slate-50 rounded-2xl overflow-hidden">
-                        <summary class="flex items-center justify-between p-6 cursor-pointer font-display font-bold text-slate-900 text-[15px]">
-                            What does your reporting look like?
-                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform"></i>
-                        </summary>
-                        <div class="px-6 pb-6 text-slate-500 text-[14px] leading-relaxed">Monthly performance dashboards covering engagement rate, follower growth, reach, impressions, sentiment analysis, and top-performing content. Includes strategic recommendations for the following month.</div>
-                    </details>
-                </div>
-            </div>
-        </section>
+        
 
         <!-- ===== CTA SECTION ===== -->
         <section id="contact" class="relative overflow-hidden py-16 md:py-24">
         <div class="max-w-7xl mx-auto px-6 md:px-10">
         <div class="relative rounded-[36px] bg-slate-950 overflow-hidden p-10 md:p-16 lg:p-24 reveal">
-        <div class="absolute -top-32 -left-20 w-[420px] h-[420px] rounded-full bg-blue-500/30 blur-[120px] pointer-events-none"></div>
-        <div class="absolute -bottom-32 -right-20 w-[420px] h-[420px] rounded-full bg-indigo-500/30 blur-[120px] pointer-events-none"></div>
+        <div class="absolute -top-32 -left-20 w-[420px] h-[420px] rounded-full bg-gray-1000/30 pointer-events-none"></div>
+        <div class="absolute -bottom-32 -right-20 w-[420px] h-[420px] rounded-full bg-gray-1000/30 pointer-events-none"></div>
         <div class="absolute inset-0 opacity-[0.06] pointer-events-none grid-pattern"></div>
-        <div class="absolute right-10 top-10 w-24 h-24 rounded-full bg-gradient-to-br from-blue-400 to-indigo-500 blur-2xl opacity-50 floaty"></div>
+        <div class="absolute right-10 top-10 w-24 h-24 rounded-full bg-gradient-to-br from-black400 to-gray-600500 opacity-50 floaty"></div>
         <div class="relative grid lg:grid-cols-12 gap-10 items-center">
         <div class="lg:col-span-8 text-left">
-        <div class="inline-flex items-center gap-2 glass rounded-full pl-2 pr-4 py-1.5 mb-7 bg-white/10 border-white/15">
-        <span class="bg-white text-slate-900 text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full">Free</span>
+        <div class="inline-flex items-center gap-2 glass rounded-full pl-2 pr-4 py-1.5 mb-7 bg-black/10 border-white/15">
+        <span class="bg-black text-white text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full">Free</span>
         <span class="text-[13px] font-medium text-white/85">No-cost performance audit</span>
         </div>
         <h2 class="font-display text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tighter text-white leading-none text-reveal">Ready to grow with Social Media Marketing?</h2>
         <p class="mt-5 text-white/70 text-base md:text-lg max-w-xl leading-relaxed">Get a free social media audit and a 90-day content roadmap — built by senior strategists who've grown brands to 500K+ followers.</p>
         <div class="mt-9 flex flex-col sm:flex-row gap-3">
-        <a href="audit.html" class="btn-magnetic shine-sweep inline-flex items-center justify-center gap-2 bg-white text-slate-900 hover:bg-blue-500 hover:text-white font-semibold rounded-full pl-6 pr-5 py-4 transition-all hover:-translate-y-0.5 group">Get Free Audit <i data-lucide="arrow-up-right" class="w-4.5 h-4.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></i></a>
-        <a href="contact.html" class="inline-flex items-center justify-center gap-2 bg-white/5 hover:bg-white/10 text-white font-semibold rounded-full pl-6 pr-5 py-4 border border-white/15 transition-all">Let's Talk <i data-lucide="sparkles" class="w-4 h-4"></i></a>
+        <a href="audit.html" class="btn-magnetic shine-sweep inline-flex items-center justify-center gap-2 bg-black text-white hover:bg-gray-1000 hover:text-white font-semibold rounded-full pl-6 pr-5 py-4 transition-all hover:-translate-y-0.5 group">Get Free Audit <i data-lucide="arrow-up-right" class="w-4.5 h-4.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></i></a>
+        <a href="contact.html" class="inline-flex items-center justify-center gap-2 bg-black/5 hover:bg-black/10 text-white font-semibold rounded-full pl-6 pr-5 py-4 border border-white/15 transition-all">Let's Talk <i data-lucide="sparkles" class="w-4 h-4"></i></a>
         </div>
         </div>
         <div class="lg:col-span-4 text-left">
-        <div class="rounded-3xl border border-white/15 bg-white/[0.04] p-6 backdrop-blur-md select-none">
+        <div class="rounded-3xl border border-white/15 bg-black/[0.04] p-6 select-none">
         <div class="text-[11px] uppercase tracking-wider font-semibold text-white/60">What you'll receive</div>
         <ul class="mt-4 space-y-3 text-white/85 text-[14px]">
-        <li class="flex items-start gap-3"><span class="mt-2 w-1.5 h-1.5 rounded-full bg-blue-400 shrink-0"></span><span>Content calendar & strategy</span></li>
-        <li class="flex items-start gap-3"><span class="mt-2 w-1.5 h-1.5 rounded-full bg-blue-400 shrink-0"></span><span>Engagement playbook</span></li>
-        <li class="flex items-start gap-3"><span class="mt-2 w-1.5 h-1.5 rounded-full bg-blue-400 shrink-0"></span><span>90-day growth roadmap</span></li>
+        <li class="flex items-start gap-3"><span class="mt-2 w-1.5 h-1.5 rounded-full bg-gray-700 shrink-0"></span><span>Content calendar & strategy</span></li>
+        <li class="flex items-start gap-3"><span class="mt-2 w-1.5 h-1.5 rounded-full bg-gray-700 shrink-0"></span><span>Engagement playbook</span></li>
+        <li class="flex items-start gap-3"><span class="mt-2 w-1.5 h-1.5 rounded-full bg-gray-700 shrink-0"></span><span>90-day growth roadmap</span></li>
         </ul>
         <div class="mt-5 pt-5 border-t border-white/10 text-[12px] text-white/50">Avg. response time · under 12 hours</div>
         </div>
@@ -467,8 +435,56 @@
     </main>
 
     <!-- Footer -->
-    <footer class="relative bg-slate-950 text-white pt-20 md:pt-28 pb-10 overflow-hidden">
-        <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] h-[400px] rounded-full bg-blue-500/10 blur-[120px] pointer-events-none"></div>
+    
+<!-- ===== FAQ ===== -->
+        <section class="relative overflow-hidden py-20 bg-black">
+            <div class="max-w-3xl mx-auto px-6 md:px-10">
+                <div class="text-center mb-14 reveal">
+                    <div class="overline-label">FAQ</div>
+                    <h2 class="mt-3 font-display text-3xl md:text-5xl font-extrabold tracking-tight text-white">Common Questions</h2>
+                </div>
+                <div class="space-y-4 reveal-stagger">
+                    <details class="group bg-[#0A0A0A] rounded-2xl overflow-hidden">
+                        <summary class="flex items-center justify-between p-6 cursor-pointer font-display font-bold text-white text-[15px]">
+                            How long does it take to see results from organic social?
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform"></i>
+                        </summary>
+                        <div class="px-6 pb-6 text-white/60 text-[14px] leading-relaxed">Most clients see measurable engagement improvements within 30–60 days. Compounding follower growth typically accelerates around the 90-day mark as algorithmic signals compound and content libraries expand.</div>
+                    </details>
+                    <details class="group bg-[#0A0A0A] rounded-2xl overflow-hidden">
+                        <summary class="flex items-center justify-between p-6 cursor-pointer font-display font-bold text-white text-[15px]">
+                            Which platforms do you specialize in?
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform"></i>
+                        </summary>
+                        <div class="px-6 pb-6 text-white/60 text-[14px] leading-relaxed">We manage organic social across Instagram, TikTok, LinkedIn, Twitter/X, and Facebook. Platform selection is driven by your audience demographics and business objectives — we don't spread thin across platforms that don't move the needle.</div>
+                    </details>
+                    <details class="group bg-[#0A0A0A] rounded-2xl overflow-hidden">
+                        <summary class="flex items-center justify-between p-6 cursor-pointer font-display font-bold text-white text-[15px]">
+                            Do you handle creator and influencer partnerships?
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform"></i>
+                        </summary>
+                        <div class="px-6 pb-6 text-white/60 text-[14px] leading-relaxed">Yes — end-to-end creator sourcing, negotiation, briefing, content review, and performance tracking. We work across nano, micro, and macro tiers depending on campaign goals and budget allocation.</div>
+                    </details>
+                    <details class="group bg-[#0A0A0A] rounded-2xl overflow-hidden">
+                        <summary class="flex items-center justify-between p-6 cursor-pointer font-display font-bold text-white text-[15px]">
+                            Can you work with our existing brand guidelines?
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform"></i>
+                        </summary>
+                        <div class="px-6 pb-6 text-white/60 text-[14px] leading-relaxed">Absolutely. We build social content frameworks that extend your existing brand identity — not replace it. Every asset is aligned with your tone, visual system, and positioning before going live.</div>
+                    </details>
+                    <details class="group bg-[#0A0A0A] rounded-2xl overflow-hidden">
+                        <summary class="flex items-center justify-between p-6 cursor-pointer font-display font-bold text-white text-[15px]">
+                            What does your reporting look like?
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform"></i>
+                        </summary>
+                        <div class="px-6 pb-6 text-white/60 text-[14px] leading-relaxed">Monthly performance dashboards covering engagement rate, follower growth, reach, impressions, sentiment analysis, and top-performing content. Includes strategic recommendations for the following month.</div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+<footer class="relative bg-slate-950 text-white pt-20 md:pt-28 pb-10 overflow-hidden">
+        <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] h-[400px] rounded-full bg-gray-1000/10 pointer-events-none"></div>
         <div class="relative max-w-7xl mx-auto px-6 md:px-10">
             <div class="grid lg:grid-cols-12 gap-12 mb-14 text-left">
                 <div class="lg:col-span-4">
@@ -479,8 +495,8 @@
                         A performance marketing partner for ambitious teams — engineered for measurable, durable growth across every channel and market.
                     </p>
                     <form class="mt-6 flex max-w-sm" onsubmit="handleNewsletterSubmit(event)">
-                        <input type="email" required placeholder="Subscribe to our newsletter" class="flex-1 bg-white/5 border border-white/10 rounded-l-xl px-4 py-2 text-[14px] text-white placeholder:text-white/40 focus:outline-none focus:border-blue-500">
-                        <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-5 rounded-r-xl text-[14px] font-semibold transition-colors">Join</button>
+                        <input type="email" required placeholder="Subscribe to our newsletter" class="flex-1 bg-black/5 border border-white/10 rounded-l-xl px-4 py-2 text-[14px] text-white placeholder:text-white/40 focus:outline-none focus:border-white">
+                        <button type="submit" class="bg-black hover:bg-black700 text-white px-5 rounded-r-xl text-[14px] font-semibold transition-colors">Join</button>
                     </form>
                 </div>
                 <div class="lg:col-span-8 grid grid-cols-2 sm:grid-cols-4 gap-8">

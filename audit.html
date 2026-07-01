@@ -54,8 +54,8 @@
   transform: none !important;
 }
 #desktop-nav a:hover {
-  color: #2563eb;
-  background: rgba(37,99,235,0.07);
+  color: #000000;
+  background: rgba(255,255,255,0.07);
   transform: none !important;
 }
 .nav-dropdown {
@@ -73,7 +73,7 @@
   transform: translateX(-50%) translateY(6px);
   width: 260px;
   background: rgba(255,255,255,0.98);
-  backdrop-filter: blur(20px);
+  
   border: 1px solid rgba(226,232,240,0.8);
   box-shadow: 0 10px 40px rgba(2,6,23,0.10);
   border-radius: 20px;
@@ -106,7 +106,7 @@
   transition: color 0.15s, background 0.15s;
 }
 .nav-dropdown-menu a:hover {
-  color: #2563eb;
+  color: #000000;
   background: #f1f5f9;
 }
 #navbar.nav-visible {
@@ -117,12 +117,12 @@
 }
 </style>
 </head>
-<body class="bg-white text-slate-900 overflow-x-hidden antialiased selection:bg-blue-100 selection:text-blue-800">
+<body class="bg-black text-white overflow-x-hidden antialiased selection:bg-[#111111] selection:text-white">
 
 <!-- Header -->
 <header id="navbar" style="position:fixed;top:0;left:0;width:100%;z-index:9999;padding:16px 0;transform:translateY(-120%);transition:transform 0.45s cubic-bezier(0.16,1,0.3,1);">
   <div style="max-width:1280px;margin:0 auto;padding:0 24px;">
-    <div id="nav-wrapper" style="display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,0.85);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,0.6);box-shadow:0 4px 32px rgba(2,6,23,0.08);border-radius:9999px;height:60px;padding:0 24px;">
+    <div id="nav-wrapper" style="display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,0.85);border:1px solid rgba(255,255,255,0.6);box-shadow:0 4px 32px rgba(2,6,23,0.08);border-radius:9999px;height:60px;padding:0 24px;">
       <a href="index.html" style="display:flex;align-items:center;">
         <img src="assets/logo.png" alt="Digital Advertise Logo" style="height:32px;width:auto;object-fit:contain;">
       </a>
@@ -131,9 +131,9 @@
         <div class="nav-dropdown">
           <a href="services.html">Services ▾</a>
           <div class="nav-dropdown-menu">
+            <a href="social-media.html">Social Media Marketing</a>
             <a href="performance-marketing.html">Performance Marketing</a>
             <a href="brand-identity.html">Brand Identity</a>
-            <a href="social-media.html">Social Media Marketing</a>
             <a href="web-development.html">Website Development</a>
             <a href="video-production.html">Video Production</a>
             <a href="ai-video.html">AI Video Generation</a>
@@ -148,7 +148,7 @@
         <a href="about.html">About Us</a>
       </nav>
       <div style="display:flex;align-items:center;gap:8px;">
-        <a href="audit.html" style="display:inline-flex;align-items:center;gap:6px;background:#0f172a;color:#fff;font-weight:600;font-size:14px;padding:10px 20px;border-radius:9999px;text-decoration:none;transition:background 0.2s;">
+        <a href="audit.html" style="display:inline-flex;align-items:center;gap:6px;background:#000000;color:#fff;font-weight:600;font-size:14px;padding:10px 20px;border-radius:9999px;text-decoration:none;transition:background 0.2s;">
           Get Started ↗
         </a>
         <button onclick="toggleMobileMenu()" id="hamburger-btn" style="display:none;padding:8px;border-radius:9999px;border:none;background:transparent;cursor:pointer;">
@@ -156,7 +156,7 @@
         </button>
       </div>
     </div>
-    <div id="mobile-menu" style="display:none;margin-top:12px;background:rgba(255,255,255,0.95);backdrop-filter:blur(20px);border-radius:20px;padding:20px;flex-direction:column;gap:8px;">
+    <div id="mobile-menu" style="display:none;margin-top:12px;background:rgba(255,255,255,0.95);border-radius:20px;padding:20px;flex-direction:column;gap:8px;">
       <a href="index.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Home</a>
       <a href="services.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Services</a>
       <a href="portfolio.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Portfolio</a>
@@ -164,13 +164,13 @@
       <a href="blog.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Blog</a>
       <a href="contact.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Contact</a>
       <a href="about.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">About Us</a>
-      <a href="audit.html" style="margin-top:8px;padding:12px;background:#0f172a;color:#fff;font-weight:600;border-radius:9999px;text-decoration:none;display:block;text-align:center;">Get Started</a>
+      <a href="audit.html" style="margin-top:8px;padding:12px;background:#000000;color:#fff;font-weight:600;border-radius:9999px;text-decoration:none;display:block;text-align:center;">Get Started</a>
     </div>
   </div>
 </header>
 
 
-    <main class="relative bg-white text-slate-900 font-sans overflow-hidden">
+    <main class="relative bg-black text-white font-sans overflow-hidden">
         
         <!-- ===== HERO ===== -->
         <section class="relative overflow-hidden pt-36 md:pt-44 pb-16 mesh-bg">
@@ -182,36 +182,36 @@
             <div class="max-w-4xl mx-auto px-6 relative text-center">
                 <div class="inline-flex items-center gap-2 glass-strong rounded-full pl-2 pr-4 py-1.5 mb-6">
                     <span class="bg-slate-900 text-white text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full">Free</span>
-                    <span class="text-[13px] font-medium text-slate-700">No-cost performance audit</span>
+                    <span class="text-[13px] font-medium text-white/80">No-cost performance audit</span>
                 </div>
-                <h1 class="font-display text-4xl sm:text-6xl font-extrabold tracking-tighter text-slate-900 text-reveal">
+                <h1 class="font-display text-4xl sm:text-6xl font-extrabold tracking-tighter text-white text-reveal">
                     Get your growth audit.
                 </h1>
-                <p class="mt-4 text-base md:text-lg text-slate-500 max-w-xl mx-auto">
+                <p class="mt-4 text-base md:text-lg text-white/60 max-w-xl mx-auto">
                     Evaluate your marketing channels, website speeds, and attribution layers. Receive a prioritized 90-day roadmap in 12 hours.
                 </p>
             </div>
         </section>
 
         <!-- ===== MULTI-STEP AUDIT FORM ===== -->
-        <section class="relative overflow-hidden pb-24 bg-white">
+        <section class="relative overflow-hidden pb-24 bg-black">
             <div class="max-w-xl mx-auto px-6 text-left">
-                <div class="glass-strong border border-slate-200 p-8 rounded-[2rem] shadow-xl">
+                <div class="glass-strong border border-white/10 p-8 rounded-[2rem] shadow-xl">
                     
                     <!-- Progress Bar -->
-                    <div class="w-full h-1.5 bg-slate-100 rounded-full overflow-hidden mb-8 select-none">
-                        <div class="h-full bg-blue-600 transition-all duration-300" style="width: 33.3%" id="form-progress"></div>
+                    <div class="w-full h-1.5 bg-[#111111] rounded-full overflow-hidden mb-8 select-none">
+                        <div class="h-full bg-black transition-all duration-300" style="width: 33.3%" id="form-progress"></div>
                     </div>
 
                     <form id="audit-form" onsubmit="handleAuditSubmit(event)">
                         
                         <!-- Step 1: Contact Details -->
                         <div class="space-y-4" id="step-1">
-                            <h3 class="font-display text-xl font-bold text-slate-900">Step 1: Contact Details</h3>
-                            <p class="text-[12px] text-slate-500">Provide basic coordination variables.</p>
+                            <h3 class="font-display text-xl font-bold text-white">Step 1: Contact Details</h3>
+                            <p class="text-[12px] text-white/60">Provide basic coordination variables.</p>
                             
-                            <input type="text" id="audit-name" required placeholder="Your name" class="w-full px-4 py-3 border border-slate-200 rounded-xl focus:border-blue-500 focus:outline-none text-[14px]">
-                            <input type="email" id="audit-email" required placeholder="Work email" class="w-full px-4 py-3 border border-slate-200 rounded-xl focus:border-blue-500 focus:outline-none text-[14px]">
+                            <input type="text" id="audit-name" required placeholder="Your name" class="w-full px-4 py-3 border border-white/10 rounded-xl focus:border-white focus:outline-none text-[14px]">
+                            <input type="email" id="audit-email" required placeholder="Work email" class="w-full px-4 py-3 border border-white/10 rounded-xl focus:border-white focus:outline-none text-[14px]">
                             
                             <button type="button" onclick="nextStep(2)" class="w-full inline-flex items-center justify-center gap-1.5 bg-slate-900 hover:bg-slate-850 text-white font-semibold rounded-full py-3.5 transition-colors mt-4">
                                 Next Step <i data-lucide="arrow-right" class="w-4 h-4"></i>
@@ -220,11 +220,11 @@
 
                         <!-- Step 2: Brand Specs -->
                         <div class="space-y-4 hidden" id="step-2">
-                            <h3 class="font-display text-xl font-bold text-slate-900">Step 2: Brand Specs</h3>
-                            <p class="text-[12px] text-slate-500">Tell us about your digital footprint.</p>
+                            <h3 class="font-display text-xl font-bold text-white">Step 2: Brand Specs</h3>
+                            <p class="text-[12px] text-white/60">Tell us about your digital footprint.</p>
                             
-                            <input type="text" id="audit-company" placeholder="Company Name" class="w-full px-4 py-3 border border-slate-200 rounded-xl focus:border-blue-500 focus:outline-none text-[14px]">
-                            <input type="url" id="audit-website" placeholder="Website URL (e.g. https://...)" class="w-full px-4 py-3 border border-slate-200 rounded-xl focus:border-blue-500 focus:outline-none text-[14px]">
+                            <input type="text" id="audit-company" placeholder="Company Name" class="w-full px-4 py-3 border border-white/10 rounded-xl focus:border-white focus:outline-none text-[14px]">
+                            <input type="url" id="audit-website" placeholder="Website URL (e.g. https://...)" class="w-full px-4 py-3 border border-white/10 rounded-xl focus:border-white focus:outline-none text-[14px]">
                             
                             <div class="grid grid-cols-2 gap-2 pt-2">
                                 <button type="button" onclick="nextStep(1)" class="btn-secondary py-3 text-[13px] justify-center">Back</button>
@@ -234,10 +234,10 @@
 
                         <!-- Step 3: Pain Points & Submit -->
                         <div class="space-y-4 hidden" id="step-3">
-                            <h3 class="font-display text-xl font-bold text-slate-900">Step 3: Campaign Bottlenecks</h3>
-                            <p class="text-[12px] text-slate-500">What is slowing your brand down?</p>
+                            <h3 class="font-display text-xl font-bold text-white">Step 3: Campaign Bottlenecks</h3>
+                            <p class="text-[12px] text-white/60">What is slowing your brand down?</p>
                             
-                            <textarea id="audit-message" placeholder="What are your primary growth bottlenecks? (e.g., CPA is too high, scaling issues, slow landing speeds...)" class="w-full px-4 py-3 border border-slate-200 rounded-xl focus:border-blue-500 focus:outline-none text-[14px] min-h-[100px]"></textarea>
+                            <textarea id="audit-message" placeholder="What are your primary growth bottlenecks? (e.g., CPA is too high, scaling issues, slow landing speeds...)" class="w-full px-4 py-3 border border-white/10 rounded-xl focus:border-white focus:outline-none text-[14px] min-h-[100px]"></textarea>
                             
                             <div class="grid grid-cols-3 gap-2 pt-2">
                                 <button type="button" onclick="nextStep(2)" class="btn-secondary py-3 text-[13px] justify-center col-span-1">Back</button>
@@ -257,7 +257,7 @@
 
     <!-- Footer -->
     <footer class="relative bg-slate-950 text-white pt-20 md:pt-28 pb-10 overflow-hidden">
-        <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] h-[400px] rounded-full bg-blue-500/10 blur-[120px] pointer-events-none"></div>
+        <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] h-[400px] rounded-full bg-gray-1000/10 pointer-events-none"></div>
         <div class="relative max-w-7xl mx-auto px-6 md:px-10">
             <div class="grid lg:grid-cols-12 gap-12 mb-14 text-left">
                 <div class="lg:col-span-4">
@@ -265,11 +265,11 @@
                         <img src="assets/logo-white.png" alt="Digital Advertise Logo" class="h-10 w-auto object-contain">
                     </div>
                     <p class="text-white/65 text-[15px] leading-relaxed max-w-md">
-                        A performance marketing partner for ambitious teams — engineered for measurable, durable growth across every channel and market.
+                        A performance marketing partner for ambitious teams � engineered for measurable, durable growth across every channel and market.
                     </p>
                     <form class="mt-6 flex max-w-sm" onsubmit="handleNewsletterSubmit(event)">
-                        <input type="email" required placeholder="Subscribe to our newsletter" class="flex-1 bg-white/5 border border-white/10 rounded-l-xl px-4 py-2 text-[14px] text-white placeholder:text-white/40 focus:outline-none focus:border-blue-500">
-                        <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-5 rounded-r-xl text-[14px] font-semibold transition-colors">Join</button>
+                        <input type="email" required placeholder="Subscribe to our newsletter" class="flex-1 bg-black/5 border border-white/10 rounded-l-xl px-4 py-2 text-[14px] text-white placeholder:text-white/40 focus:outline-none focus:border-white">
+                        <button type="submit" class="bg-black hover:bg-black700 text-white px-5 rounded-r-xl text-[14px] font-semibold transition-colors">Join</button>
                     </form>
                 </div>
 

@@ -54,8 +54,8 @@
   transform: none !important;
 }
 #desktop-nav a:hover {
-  color: #2563eb;
-  background: rgba(37,99,235,0.07);
+  color: #000000;
+  background: rgba(255,255,255,0.07);
   transform: none !important;
 }
 .nav-dropdown {
@@ -73,7 +73,7 @@
   transform: translateX(-50%) translateY(6px);
   width: 260px;
   background: rgba(255,255,255,0.98);
-  backdrop-filter: blur(20px);
+  
   border: 1px solid rgba(226,232,240,0.8);
   box-shadow: 0 10px 40px rgba(2,6,23,0.10);
   border-radius: 20px;
@@ -106,7 +106,7 @@
   transition: color 0.15s, background 0.15s;
 }
 .nav-dropdown-menu a:hover {
-  color: #2563eb;
+  color: #000000;
   background: #f1f5f9;
 }
 #navbar.nav-visible {
@@ -115,14 +115,245 @@
 #mobile-menu.open {
   display: flex !important;
 }
+
+/* ===== CASE STUDIES PAGE FIXES ===== */
+/* Force the case studies section to have proper layout */
+.cs-section {
+  background-color: #000000 !important;
+  padding: 6rem 0 !important;
+}
+
+/* Filter buttons - force horizontal row with proper styling */
+.cs-filter-wrap {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  gap: 12px !important;
+  margin-bottom: 3rem !important;
+}
+
+.cs-filter-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  padding: 10px 20px !important;
+  border-radius: 9999px !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  border: 1px solid rgba(255,255,255,0.1) !important;
+  cursor: pointer !important;
+  transition: all 0.2s !important;
+  white-space: nowrap !important;
+}
+
+.cs-filter-btn.active {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border-color: #ffffff !important;
+}
+
+.cs-filter-btn:not(.active) {
+  background-color: transparent !important;
+  color: rgba(255,255,255,0.7) !important;
+  border-color: rgba(255,255,255,0.1) !important;
+}
+
+.cs-filter-btn:not(.active):hover {
+  color: #ffffff !important;
+  border-color: rgba(255,255,255,0.2) !important;
+}
+
+/* Case study cards grid - force 4 columns */
+.cs-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 1.5rem !important;
+}
+
+@media (max-width: 1024px) {
+  .cs-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .cs-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Individual case study card */
+.cs-card {
+  background-color: #111111 !important;
+  border: 1px solid rgba(255,255,255,0.08) !important;
+  border-radius: 1.5rem !important;
+  overflow: hidden !important;
+  transition: all 0.5s !important;
+}
+
+.cs-card:hover {
+  border-color: rgba(255,255,255,0.15) !important;
+  box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5) !important;
+}
+
+/* Card image container */
+.cs-card .aspect-\[4\/3\] {
+  aspect-ratio: 4/3 !important;
+  overflow: hidden !important;
+  position: relative !important;
+}
+
+.cs-card img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  opacity: 0.8 !important;
+  transition: transform 0.7s !important;
+}
+
+.cs-card:hover img {
+  transform: scale(1.05) !important;
+}
+
+/* Card content */
+.cs-card .p-5 {
+  padding: 1.25rem !important;
+}
+
+.cs-card .text-\[10px\] {
+  font-size: 10px !important;
+  text-transform: uppercase !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.1em !important;
+  color: rgba(255,255,255,0.5) !important;
+}
+
+.cs-card h3 {
+  font-size: 17px !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  line-height: 1.4 !important;
+  margin-top: 0.5rem !important;
+}
+
+.cs-card p {
+  font-size: 13px !important;
+  color: rgba(255,255,255,0.5) !important;
+  line-height: 1.6 !important;
+  margin-top: 0.5rem !important;
+}
+
+/* Card stats */
+.cs-card .mt-4 {
+  margin-top: 1rem !important;
+  padding-top: 1rem !important;
+  border-top: 1px solid rgba(255,255,255,0.08) !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 1rem !important;
+}
+
+.cs-card .text-lg {
+  font-size: 1.125rem !important;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+}
+
+.cs-card .text-\[9px\] {
+  font-size: 9px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em !important;
+  color: rgba(255,255,255,0.4) !important;
+}
+
+/* Hero section fixes */
+.cs-hero h1 {
+  font-size: clamp(2.25rem, 6vw, 4.5rem) !important;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+  line-height: 1.1 !important;
+  letter-spacing: -0.02em !important;
+}
+
+.cs-hero h1 span.italic {
+  background: linear-gradient(135deg, #f472b6 0%, #c084fc 50%, #6366f1 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  font-style: italic !important;
+  font-weight: 300 !important;
+  opacity: 0.8 !important;
+}
+
+.cs-hero p {
+  font-size: 1.125rem !important;
+  color: rgba(255,255,255,0.7) !important;
+  max-width: 42rem !important;
+  line-height: 1.7 !important;
+  margin-top: 1.75rem !important;
+}
+
+/* Stats grid - force 4 columns horizontal row */
+.cs-stats-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 16px !important;
+  margin-top: 3rem !important;
+  padding-top: 2.5rem !important;
+  border-top: 1px solid rgba(255,255,255,0.1) !important;
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+.cs-stats-grid > .cs-stat-card {
+  width: auto !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  display: block !important;
+}
+
+@media (max-width: 992px) {
+  .cs-stats-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .cs-stats-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+.cs-stat-card {
+  background-color: rgba(255,255,255,0.05) !important;
+  border: 1px solid rgba(255,255,255,0.1) !important;
+  border-radius: 1rem !important;
+  padding: 1.25rem !important;
+  text-align: left !important;
+}
+
+.cs-stat-card .text-slate-400 {
+  font-size: 11px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em !important;
+  font-weight: 600 !important;
+  color: rgba(255,255,255,0.5) !important;
+}
+
+.cs-stat-card .font-display {
+  font-size: 2rem !important;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+  margin-top: 0.25rem !important;
+}
 </style>
 </head>
-<body class="bg-white text-slate-900 overflow-x-hidden antialiased selection:bg-blue-100 selection:text-blue-800">
+<body class="bg-black text-white overflow-x-hidden antialiased selection:bg-[#111111] selection:text-white">
 
 <!-- Header -->
 <header id="navbar" style="position:fixed;top:0;left:0;width:100%;z-index:9999;padding:16px 0;transform:translateY(-120%);transition:transform 0.45s cubic-bezier(0.16,1,0.3,1);">
   <div style="max-width:1280px;margin:0 auto;padding:0 24px;">
-    <div id="nav-wrapper" style="display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,0.85);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,0.6);box-shadow:0 4px 32px rgba(2,6,23,0.08);border-radius:9999px;height:60px;padding:0 24px;">
+    <div id="nav-wrapper" style="display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,0.85);border:1px solid rgba(255,255,255,0.6);box-shadow:0 4px 32px rgba(2,6,23,0.08);border-radius:9999px;height:60px;padding:0 24px;">
       <a href="index.html" style="display:flex;align-items:center;">
         <img src="assets/logo.png" alt="Digital Advertise Logo" style="height:32px;width:auto;object-fit:contain;">
       </a>
@@ -131,9 +362,9 @@
         <div class="nav-dropdown">
           <a href="services.html">Services ▾</a>
           <div class="nav-dropdown-menu">
+            <a href="social-media.html">Social Media Marketing</a>
             <a href="performance-marketing.html">Performance Marketing</a>
             <a href="brand-identity.html">Brand Identity</a>
-            <a href="social-media.html">Social Media Marketing</a>
             <a href="web-development.html">Website Development</a>
             <a href="video-production.html">Video Production</a>
             <a href="ai-video.html">AI Video Generation</a>
@@ -148,7 +379,7 @@
         <a href="about.html">About Us</a>
       </nav>
       <div style="display:flex;align-items:center;gap:8px;">
-        <a href="audit.html" style="display:inline-flex;align-items:center;gap:6px;background:#0f172a;color:#fff;font-weight:600;font-size:14px;padding:10px 20px;border-radius:9999px;text-decoration:none;transition:background 0.2s;">
+        <a href="audit.html" style="display:inline-flex;align-items:center;gap:6px;background:#000000;color:#fff;font-weight:600;font-size:14px;padding:10px 20px;border-radius:9999px;text-decoration:none;transition:background 0.2s;">
           Get Started ↗
         </a>
         <button onclick="toggleMobileMenu()" id="hamburger-btn" style="display:none;padding:8px;border-radius:9999px;border:none;background:transparent;cursor:pointer;">
@@ -156,7 +387,7 @@
         </button>
       </div>
     </div>
-    <div id="mobile-menu" style="display:none;margin-top:12px;background:rgba(255,255,255,0.95);backdrop-filter:blur(20px);border-radius:20px;padding:20px;flex-direction:column;gap:8px;">
+    <div id="mobile-menu" style="display:none;margin-top:12px;background:rgba(255,255,255,0.95);border-radius:20px;padding:20px;flex-direction:column;gap:8px;">
       <a href="index.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Home</a>
       <a href="services.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Services</a>
       <a href="portfolio.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Portfolio</a>
@@ -164,303 +395,186 @@
       <a href="blog.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Blog</a>
       <a href="contact.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Contact</a>
       <a href="about.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">About Us</a>
-      <a href="audit.html" style="margin-top:8px;padding:12px;background:#0f172a;color:#fff;font-weight:600;border-radius:9999px;text-decoration:none;display:block;text-align:center;">Get Started</a>
+      <a href="audit.html" style="margin-top:8px;padding:12px;background:#000000;color:#fff;font-weight:600;border-radius:9999px;text-decoration:none;display:block;text-align:center;">Get Started</a>
     </div>
   </div>
 </header>
 
 
-    <main class="relative bg-white text-slate-900 font-sans overflow-hidden">
+    <main class="relative bg-black text-white font-sans overflow-hidden">
         
         <!-- ===== HERO ===== -->
-        <section class="relative overflow-hidden pt-36 md:pt-44 pb-20 mesh-bg">
+        <section class="cs-hero relative overflow-hidden pt-36 md:pt-44 pb-20 mesh-bg" style="background-color:#000000;">
             <div class="bubble bubble-1" aria-hidden="true"></div>
             <div class="bubble bubble-2" aria-hidden="true"></div>
             <div class="bubble bubble-3" aria-hidden="true"></div>
             <canvas id="hero-canvas" class="absolute inset-0 w-full h-full pointer-events-none z-0"></canvas>
             <div class="absolute inset-0 grid-pattern opacity-60 pointer-events-none"></div>
             <div class="max-w-7xl mx-auto px-6 md:px-10 relative z-10 text-left">
-                <div class="overline-label reveal">Case Studies</div>
-                <h1 class="mt-3 font-display text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tighter text-slate-900 text-reveal">
+                <div class="overline-label reveal" style="color:#c084fc !important;">Case Studies</div>
+                <h1 class="mt-3 font-display text-reveal" style="font-size:clamp(2.25rem,6vw,4.5rem);font-weight:800;color:#ffffff;line-height:1.1;letter-spacing:-0.02em;">
                     Stories of verified <br>
-                    <span class="italic font-light text-slate-700">revenue growth</span>.
+                    <span class="italic font-light" style="background:linear-gradient(135deg,#f472b6 0%,#c084fc 50%,#6366f1 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-style:italic;font-weight:300;opacity:0.8;">revenue growth</span>.
                 </h1>
-                <p class="mt-7 text-lg md:text-xl text-slate-600 max-w-2xl leading-relaxed">
+                <p class="mt-7 text-lg md:text-xl leading-relaxed" style="color:rgba(255,255,255,0.7);max-width:42rem;line-height:1.7;">
                     We document our client engagements transparently. Dive into detailed reports showing CAC reductions, scaling paths, and creative executions.
                 </p>
                 
                 <!-- Metrics Counter Grid -->
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12 border-t border-slate-200/60 pt-10 reveal">
-                    <div class="glass-strong border border-slate-200/60 rounded-2xl p-5 select-none text-left">
+                <div class="cs-stats-grid reveal" style="display:grid !important;grid-template-columns:repeat(4,1fr) !important;gap:16px !important;width:100% !important;">
+                    <div class="cs-stat-card" style="width:auto !important;min-width:0 !important;">
                         <div class="text-slate-400 text-[11px] uppercase tracking-wider font-semibold">Revenue Generated</div>
-                        <div class="mt-1 font-display text-3xl sm:text-4xl font-extrabold text-slate-900">$<span class="counter" data-target="54">0</span>M+</div>
+                        <div class="mt-1 font-display text-3xl sm:text-4xl font-extrabold text-white">$<span class="counter" data-target="54">0</span>M+</div>
                     </div>
-                    <div class="glass-strong border border-slate-200/60 rounded-2xl p-5 select-none text-left">
+                    <div class="cs-stat-card" style="width:auto !important;min-width:0 !important;">
                         <div class="text-slate-400 text-[11px] uppercase tracking-wider font-semibold">Average ROAS</div>
-                        <div class="mt-1 font-display text-3xl sm:text-4xl font-extrabold text-slate-900"><span class="counter" data-target="6.7" data-decimals="1">0.0</span>x</div>
+                        <div class="mt-1 font-display text-3xl sm:text-4xl font-extrabold text-white"><span class="counter" data-target="6.7" data-decimals="1">0.0</span>x</div>
                     </div>
-                    <div class="glass-strong border border-slate-200/60 rounded-2xl p-5 select-none text-left">
+                    <div class="cs-stat-card" style="width:auto !important;min-width:0 !important;">
                         <div class="text-slate-400 text-[11px] uppercase tracking-wider font-semibold">Clients Served</div>
-                        <div class="mt-1 font-display text-3xl sm:text-4xl font-extrabold text-slate-900"><span class="counter" data-target="1000">0</span>+</div>
+                        <div class="mt-1 font-display text-3xl sm:text-4xl font-extrabold text-white"><span class="counter" data-target="1000">0</span>+</div>
                     </div>
-                    <div class="glass-strong border border-slate-200/60 rounded-2xl p-5 select-none text-left">
+                    <div class="cs-stat-card" style="width:auto !important;min-width:0 !important;">
                         <div class="text-slate-400 text-[11px] uppercase tracking-wider font-semibold">Campaign Success Rate</div>
-                        <div class="mt-1 font-display text-3xl sm:text-4xl font-extrabold text-slate-900"><span class="counter" data-target="98">0</span>%</div>
+                        <div class="mt-1 font-display text-3xl sm:text-4xl font-extrabold text-white"><span class="counter" data-target="98">0</span>%</div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- ===== CASE LOGS GRID ===== -->
-        <section class="relative overflow-hidden py-24 bg-white">
+        <section class="cs-section relative overflow-hidden" style="background-color:#000000;padding:6rem 0;">
             <div class="max-w-7xl mx-auto px-6 md:px-10">
-                <div class="space-y-16">
-                    
-                    <!-- Case Study 1: Apple -->
-                    <div class="glass-strong border border-slate-200 p-8 rounded-[2.5rem] grid lg:grid-cols-12 gap-8 items-center text-left reveal">
-                        <div class="lg:col-span-5 h-80 rounded-[2rem] overflow-hidden bg-slate-900 relative group">
-                            <img src="assets/portfolio-openai.png" alt="Apple" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700">
-                            <!-- Floating Data Vis Overlay -->
-                            <div class="absolute inset-x-4 bottom-4 p-4 rounded-2xl bg-slate-950/70 border border-white/10 backdrop-blur-md">
-                                <div class="text-[10px] text-white/50 uppercase tracking-widest font-semibold mb-1">ROAS Growth Curve</div>
-                                <!-- SVG Line Chart -->
-                                <svg class="w-full h-16" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
-                                    <defs>
-                                        <linearGradient id="apple-chart-grad" x1="0" y1="0" x2="0" y2="1">
-                                            <stop offset="0%" stop-color="#10B981" stop-opacity="0.3"/>
-                                            <stop offset="100%" stop-color="#10B981" stop-opacity="0"/>
-                                        </linearGradient>
-                                    </defs>
-                                    <path d="M10 50 Q 50 45, 90 28 T 190 10 L 190 50 Z" fill="url(#apple-chart-grad)"/>
-                                    <path d="M10 50 Q 50 45, 90 28 T 190 10" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round"/>
-                                    <circle cx="10" cy="50" r="3" fill="#10B981"/>
-                                    <circle cx="90" cy="28" r="3" fill="#10B981"/>
-                                    <circle cx="190" cy="10" r="4.5" fill="#FFF" stroke="#10B981" stroke-width="2"/>
-                                    <text x="10" y="58" fill="#FFF" opacity="0.5" font-family="sans-serif" font-size="6">Month 1 (1.4x)</text>
-                                    <text x="190" y="58" fill="#FFF" opacity="0.5" font-family="sans-serif" font-size="6" text-anchor="end">Month 6 (8.2x)</text>
-                                </svg>
-                            </div>
+                <!-- Filter Tabs -->
+                <div class="cs-filter-wrap reveal">
+                    <button onclick="filterCaseStudies('all')" class="cs-filter-btn active" data-filter="all">All Work</button>
+                    <button onclick="filterCaseStudies('ecommerce')" class="cs-filter-btn" data-filter="ecommerce">E-Commerce</button>
+                    <button onclick="filterCaseStudies('saas')" class="cs-filter-btn" data-filter="saas">SaaS</button>
+                    <button onclick="filterCaseStudies('ai')" class="cs-filter-btn" data-filter="ai">AI Video</button>
+                    <button onclick="filterCaseStudies('brand')" class="cs-filter-btn" data-filter="brand">Brand</button>
+                </div>
+
+                <!-- Case Study Cards Grid -->
+                <div class="cs-grid reveal" id="cs-grid">
+                    <!-- Card 1: Apple -->
+                    <div class="cs-card group" data-category="ecommerce">
+                        <div class="aspect-[4/3] overflow-hidden relative">
+                            <img src="assets/portfolio-openai.png" alt="Apple performance marketing case study" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#111] via-transparent to-transparent"></div>
                         </div>
-                        <div class="lg:col-span-7 flex flex-col justify-between h-full">
-                            <div>
-                                <span class="bg-blue-100 text-blue-800 text-[10px] uppercase font-bold tracking-wider px-3 py-1 rounded-full">E-Commerce Scaling</span>
-                                <h3 class="font-display text-3xl font-bold text-slate-900 mt-4">Apple: 8.2x ROAS Across Paid Media Channels</h3>
-                                <p class="mt-4 text-slate-600 text-[14px] leading-relaxed">
-                                    Apple approached us to restructure their performance media for product launch campaigns. We configured server-side conversions, integrated custom lookalike models, and executed structured creative testing using short-form video ads.
-                                </p>
-                                <ul class="mt-4 space-y-2 text-slate-500 text-[13px] list-disc list-inside">
-                                    <li>Implemented Meta Conversions API (CAPI) with 100% event matching.</li>
-                                    <li>Configured dynamic lookalikes from first-party purchase data.</li>
-                                    <li>Engineered 52 distinct ad variant iterations per week to optimize budget.</li>
-                                </ul>
-                            </div>
-                            <div class="grid grid-cols-3 gap-4 border-t border-slate-100 pt-6 mt-6">
+                        <div class="p-5">
+                            <span class="text-[10px] uppercase font-bold tracking-widest" style="color:rgba(255,255,255,0.5);">E-Commerce Scaling</span>
+                            <h3 class="mt-2 font-display text-[17px] font-bold leading-snug" style="color:#ffffff;">Apple: 8.2x ROAS Across Paid Media</h3>
+                            <p class="mt-2 text-[13px] leading-relaxed" style="color:rgba(255,255,255,0.5);">Server-side conversions, custom lookalikes, and structured creative testing.</p>
+                            <div class="mt-4 pt-4 border-t flex items-center gap-4" style="border-color:rgba(255,255,255,0.08);">
                                 <div>
-                                    <div class="text-3xl font-extrabold text-blue-600">8.2×</div>
-                                    <div class="text-[10px] text-slate-400 uppercase tracking-wider font-semibold">Average ROAS</div>
+                                    <div class="text-lg font-extrabold" style="color:#ffffff;">8.2x</div>
+                                    <div class="text-[9px] uppercase tracking-wider" style="color:rgba(255,255,255,0.4);">ROAS</div>
                                 </div>
                                 <div>
-                                    <div class="text-3xl font-extrabold text-slate-900">-38%</div>
-                                    <div class="text-[10px] text-slate-400 uppercase tracking-wider font-semibold">CAC Reduction</div>
+                                    <div class="text-lg font-extrabold" style="color:#ffffff;">-38%</div>
+                                    <div class="text-[9px] uppercase tracking-wider" style="color:rgba(255,255,255,0.4);">CAC</div>
                                 </div>
-                                <div>
-                                    <div class="text-3xl font-extrabold text-slate-900">+410%</div>
-                                    <div class="text-[10px] text-slate-400 uppercase tracking-wider font-semibold">New customers</div>
-                                </div>
-                            </div>
-                            <div class="mt-8 flex gap-3">
-                                <a href="contact.html" class="btn-primary py-3 px-6 text-[13px]">Read full log</a>
-                                <button type="button" onclick="showToast('Downloading Apple_Case_Study.pdf')" class="btn-secondary py-3 px-6 text-[13px] flex items-center gap-1.5">
-                                    Download PDF <i data-lucide="download" class="w-4 h-4"></i>
-                                </button>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Case Study 2: Stripe -->
-                    <div class="glass-strong border border-slate-200 p-8 rounded-[2.5rem] grid lg:grid-cols-12 gap-8 items-center text-left reveal">
-                        <div class="lg:col-span-5 h-80 rounded-[2rem] overflow-hidden bg-slate-900 relative group">
-                            <img src="assets/portfolio-stripe.png" alt="Stripe" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700">
-                            <!-- Floating Data Vis Overlay -->
-                            <div class="absolute inset-x-4 bottom-4 p-4 rounded-2xl bg-slate-950/70 border border-white/10 backdrop-blur-md">
-                                <div class="text-[10px] text-white/50 uppercase tracking-widest font-semibold mb-2">Page Load speed benchmark</div>
-                                <!-- Comparison Timelines -->
-                                <div class="space-y-1.5">
-                                    <div>
-                                        <div class="flex justify-between text-[8px] text-white/60 mb-0.5">
-                                            <span>Legacy Site (SaaS Template)</span>
-                                            <span>3.4s</span>
-                                        </div>
-                                        <div class="w-full bg-white/10 h-2 rounded-full overflow-hidden">
-                                            <div class="bg-rose-500 h-full rounded-full" style="width: 100%;"></div>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="flex justify-between text-[8px] text-white/60 mb-0.5">
-                                            <span>Digital Advertise Rebuild (Vanilla CSS/JS)</span>
-                                            <span class="text-emerald-400 font-bold">0.8s</span>
-                                        </div>
-                                        <div class="w-full bg-white/10 h-2 rounded-full overflow-hidden">
-                                            <div class="bg-emerald-500 h-full rounded-full" style="width: 23.5%;"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                    <!-- Card 2: Stripe -->
+                    <div class="cs-card group" data-category="saas">
+                        <div class="aspect-[4/3] overflow-hidden relative">
+                            <img src="assets/portfolio-stripe.png" alt="Stripe performance optimization case study" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#111] via-transparent to-transparent"></div>
                         </div>
-                        <div class="lg:col-span-7 flex flex-col justify-between h-full">
-                            <div>
-                                <span class="bg-indigo-100 text-indigo-800 text-[10px] uppercase font-bold tracking-wider px-3 py-1 rounded-full">SaaS Optimization</span>
-                                <h3 class="font-display text-3xl font-bold text-slate-900 mt-4">Stripe: Sub-1s Load Speed & +42% Conversions</h3>
-                                <p class="mt-4 text-slate-600 text-[14px] leading-relaxed">
-                                    Stripe needed a rapid site redesign. We rebuilt their acquisition pages on static, lightweight vanilla architectures, improving core web vitals and reducing cart abandonments.
-                                </p>
-                                <ul class="mt-4 space-y-2 text-slate-500 text-[13px] list-disc list-inside">
-                                    <li>Removed render-blocking external libraries, converting widgets to pure web components.</li>
-                                    <li>Implemented WebP/AVIF dynamic image pipelines for zero-quality loss compression.</li>
-                                    <li>Integrated server-side cache warming loops for instantaneous loading globally.</li>
-                                </ul>
-                            </div>
-                            <div class="grid grid-cols-3 gap-4 border-t border-slate-100 pt-6 mt-6">
+                        <div class="p-5">
+                            <span class="text-[10px] uppercase font-bold tracking-widest" style="color:rgba(255,255,255,0.5);">SaaS Optimization</span>
+                            <h3 class="mt-2 font-display text-[17px] font-bold leading-snug" style="color:#ffffff;">Stripe: Sub-1s Load & +42% Conversions</h3>
+                            <p class="mt-2 text-[13px] leading-relaxed" style="color:rgba(255,255,255,0.5);">Static rebuild reducing cart abandonments and improving core web vitals.</p>
+                            <div class="mt-4 pt-4 border-t flex items-center gap-4" style="border-color:rgba(255,255,255,0.08);">
                                 <div>
-                                    <div class="text-3xl font-extrabold text-blue-600">0.8s</div>
-                                    <div class="text-[10px] text-slate-400 uppercase tracking-wider font-semibold">Load Time</div>
+                                    <div class="text-lg font-extrabold" style="color:#ffffff;">0.8s</div>
+                                    <div class="text-[9px] uppercase tracking-wider" style="color:rgba(255,255,255,0.4);">Load Time</div>
                                 </div>
                                 <div>
-                                    <div class="text-3xl font-extrabold text-slate-900">+42%</div>
-                                    <div class="text-[10px] text-slate-400 uppercase tracking-wider font-semibold">Conversions Lift</div>
+                                    <div class="text-lg font-extrabold" style="color:#ffffff;">+42%</div>
+                                    <div class="text-[9px] uppercase tracking-wider" style="color:rgba(255,255,255,0.4);">CVR Lift</div>
                                 </div>
-                                <div>
-                                    <div class="text-3xl font-extrabold text-slate-900">99/100</div>
-                                    <div class="text-[10px] text-slate-400 uppercase tracking-wider font-semibold">Lighthouse</div>
-                                </div>
-                            </div>
-                            <div class="mt-8 flex gap-3">
-                                <a href="contact.html" class="btn-primary py-3 px-6 text-[13px]">Read full log</a>
-                                <button type="button" onclick="showToast('Downloading Stripe_Performance_Audit.pdf')" class="btn-secondary py-3 px-6 text-[13px] flex items-center gap-1.5">
-                                    Download PDF <i data-lucide="download" class="w-4 h-4"></i>
-                                </button>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Case Study 3: Zoom -->
-                    <div class="glass-strong border border-slate-200 p-8 rounded-[2.5rem] grid lg:grid-cols-12 gap-8 items-center text-left reveal">
-                        <div class="lg:col-span-5 h-80 rounded-[2rem] overflow-hidden bg-slate-900 relative group">
-                            <img src="assets/portfolio-zoom.png" alt="Zoom Video Creative" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700">
-                            <!-- Floating Data Vis Overlay -->
-                            <div class="absolute inset-x-4 bottom-4 p-4 rounded-2xl bg-slate-950/70 border border-white/10 backdrop-blur-md">
-                                <div class="text-[10px] text-white/50 uppercase tracking-widest font-semibold mb-2">AI Video Production Funnel</div>
-                                <!-- Process pipeline -->
-                                <div class="flex justify-between items-center text-[8px] text-white/70">
-                                    <div class="text-center p-1 bg-white/5 rounded border border-white/10">Script AI</div>
-                                    <i data-lucide="arrow-right" class="w-2.5 h-2.5 text-blue-400"></i>
-                                    <div class="text-center p-1 bg-white/5 rounded border border-white/10">Avatar Gen</div>
-                                    <i data-lucide="arrow-right" class="w-2.5 h-2.5 text-blue-400"></i>
-                                    <div class="text-center p-1 bg-white/5 rounded border border-white/10">Diffusion</div>
-                                    <i data-lucide="arrow-right" class="w-2.5 h-2.5 text-emerald-400"></i>
-                                    <div class="text-center p-1 bg-emerald-500/20 rounded border border-emerald-500/30 font-bold text-emerald-400">15x Output</div>
-                                </div>
-                            </div>
+                    <!-- Card 3: Zoom -->
+                    <div class="cs-card group" data-category="ai">
+                        <div class="aspect-[4/3] overflow-hidden relative">
+                            <img src="assets/portfolio-zoom.png" alt="Zoom AI video production case study" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#111] via-transparent to-transparent"></div>
                         </div>
-                        <div class="lg:col-span-7 flex flex-col justify-between h-full">
-                            <div>
-                                <span class="bg-amber-100 text-amber-800 text-[10px] uppercase font-bold tracking-wider px-3 py-1 rounded-full">AI Video Production</span>
-                                <h3 class="font-display text-3xl font-bold text-slate-900 mt-4">Zoom: 15x Ad Asset Yield & -80% Production Costs</h3>
-                                <p class="mt-4 text-slate-600 text-[14px] leading-relaxed">
-                                    Zoom required localized video assets across international regions. We designed a generative diffusion pipeline combined with custom synthetic language avatars, generating over 600 unique ad variants.
-                                </p>
-                                <ul class="mt-4 space-y-2 text-slate-500 text-[13px] list-disc list-inside">
-                                    <li>Developed custom multilingual avatar sync pipelines for 12 local dialects.</li>
-                                    <li>Decreased video creative production timelines from 3 weeks to 90 seconds.</li>
-                                    <li>Improved conversion yield rates through automated multi-variable screen hook testing.</li>
-                                </ul>
-                            </div>
-                            <div class="grid grid-cols-3 gap-4 border-t border-slate-100 pt-6 mt-6">
+                        <div class="p-5">
+                            <span class="text-[10px] uppercase font-bold tracking-widest" style="color:rgba(255,255,255,0.5);">AI Video Production</span>
+                            <h3 class="mt-2 font-display text-[17px] font-bold leading-snug" style="color:#ffffff;">Zoom: 15x Asset Yield & -80% Costs</h3>
+                            <p class="mt-2 text-[13px] leading-relaxed" style="color:rgba(255,255,255,0.5);">Generative diffusion pipeline with synthetic avatars for 600+ ad variants.</p>
+                            <div class="mt-4 pt-4 border-t flex items-center gap-4" style="border-color:rgba(255,255,255,0.08);">
                                 <div>
-                                    <div class="text-3xl font-extrabold text-blue-600">15×</div>
-                                    <div class="text-[10px] text-slate-400 uppercase tracking-wider font-semibold">Asset Yield</div>
+                                    <div class="text-lg font-extrabold" style="color:#ffffff;">15x</div>
+                                    <div class="text-[9px] uppercase tracking-wider" style="color:rgba(255,255,255,0.4);">Yield</div>
                                 </div>
                                 <div>
-                                    <div class="text-3xl font-extrabold text-slate-900">-80%</div>
-                                    <div class="text-[10px] text-slate-400 uppercase tracking-wider font-semibold">Asset Cost</div>
+                                    <div class="text-lg font-extrabold" style="color:#ffffff;">-80%</div>
+                                    <div class="text-[9px] uppercase tracking-wider" style="color:rgba(255,255,255,0.4);">Cost</div>
                                 </div>
-                                <div>
-                                    <div class="text-3xl font-extrabold text-slate-900">600+</div>
-                                    <div class="text-[10px] text-slate-400 uppercase tracking-wider font-semibold">Unique Ads</div>
-                                </div>
-                            </div>
-                            <div class="mt-8 flex gap-3">
-                                <a href="contact.html" class="btn-primary py-3 px-6 text-[13px]">Read full log</a>
-                                <button type="button" onclick="showToast('Downloading Zoom_Video_Case_Study.pdf')" class="btn-secondary py-3 px-6 text-[13px] flex items-center gap-1.5">
-                                    Download PDF <i data-lucide="download" class="w-4 h-4"></i>
-                                </button>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Case Study 4: Notion -->
-                    <div class="glass-strong border border-slate-200 p-8 rounded-[2.5rem] grid lg:grid-cols-12 gap-8 items-center text-left reveal">
-                        <div class="lg:col-span-5 h-80 rounded-[2rem] overflow-hidden bg-slate-900 relative group">
-                            <img src="assets/portfolio-notion.png" alt="Notion Identity Brand" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700">
-                            <!-- Floating Data Vis Overlay -->
-                            <div class="absolute inset-x-4 bottom-4 p-4 rounded-2xl bg-slate-950/70 border border-white/10 backdrop-blur-md">
-                                <div class="text-[10px] text-white/50 uppercase tracking-widest font-semibold mb-1">Conversion Funnel Improvement</div>
-                                <!-- Funnel Diagram -->
-                                <svg class="w-full h-16" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
-                                    <polygon points="10,5 190,5 150,20 50,20" fill="#2563EB" opacity="0.8"/>
-                                    <polygon points="50,20 150,20 120,40 80,40" fill="#3B82F6" opacity="0.8"/>
-                                    <polygon points="80,40 120,40 105,58 95,58" fill="#10B981" opacity="0.9"/>
-                                    <text x="100" y="14" fill="#FFF" font-family="sans-serif" font-weight="bold" font-size="6" text-anchor="middle">Click Rate (+52%)</text>
-                                    <text x="100" y="32" fill="#FFF" font-family="sans-serif" font-weight="bold" font-size="6" text-anchor="middle">Signup Rate (+48%)</text>
-                                    <text x="100" y="52" fill="#FFF" font-family="sans-serif" font-weight="bold" font-size="5" text-anchor="middle">Baseline: 12%</text>
-                                </svg>
-                            </div>
+                    <!-- Card 4: Notion -->
+                    <div class="cs-card group" data-category="brand">
+                        <div class="aspect-[4/3] overflow-hidden relative">
+                            <img src="assets/portfolio-notion.png" alt="Notion brand identity case study" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#111] via-transparent to-transparent"></div>
                         </div>
-                        <div class="lg:col-span-7 flex flex-col justify-between h-full">
-                            <div>
-                                <span class="bg-purple-100 text-purple-800 text-[10px] uppercase font-bold tracking-wider px-3 py-1 rounded-full">Brand Redesign</span>
-                                <h3 class="font-display text-3xl font-bold text-slate-900 mt-4">Notion: Unified Brand Identity Book & +52% Click-Throughs</h3>
-                                <p class="mt-4 text-slate-600 text-[14px] leading-relaxed">
-                                    Notion's visual assets needed clean standardization. We mapped 400+ dynamic style variables in a core design tokens system and created highly-engaging dark mode creative assets.
-                                </p>
-                                <ul class="mt-4 space-y-2 text-slate-500 text-[13px] list-disc list-inside">
-                                    <li>Established a unified Figma tokens component library with automatic GitHub JSON updates.</li>
-                                    <li>Created localized graphic packages for social media and search campaigns.</li>
-                                    <li>Standardized brand design parameters, yielding an average 52% click-through lift.</li>
-                                </ul>
-                            </div>
-                            <div class="grid grid-cols-3 gap-4 border-t border-slate-100 pt-6 mt-6">
+                        <div class="p-5">
+                            <span class="text-[10px] uppercase font-bold tracking-widest" style="color:rgba(255,255,255,0.5);">Brand Redesign</span>
+                            <h3 class="mt-2 font-display text-[17px] font-bold leading-snug" style="color:#ffffff;">Notion: Unified Identity & +52% CTR</h3>
+                            <p class="mt-2 text-[13px] leading-relaxed" style="color:rgba(255,255,255,0.5);">Design tokens system and dark mode creative assets across campaigns.</p>
+                            <div class="mt-4 pt-4 border-t flex items-center gap-4" style="border-color:rgba(255,255,255,0.08);">
                                 <div>
-                                    <div class="text-3xl font-extrabold text-blue-600">+52%</div>
-                                    <div class="text-[10px] text-slate-400 uppercase tracking-wider font-semibold">Click Lift</div>
+                                    <div class="text-lg font-extrabold" style="color:#ffffff;">+52%</div>
+                                    <div class="text-[9px] uppercase tracking-wider" style="color:rgba(255,255,255,0.4);">CTR Lift</div>
                                 </div>
                                 <div>
-                                    <div class="text-3xl font-extrabold text-slate-900">400+</div>
-                                    <div class="text-[10px] text-slate-400 uppercase tracking-wider font-semibold">Design Tokens</div>
+                                    <div class="text-lg font-extrabold" style="color:#ffffff;">400+</div>
+                                    <div class="text-[9px] uppercase tracking-wider" style="color:rgba(255,255,255,0.4);">Tokens</div>
                                 </div>
-                                <div>
-                                    <div class="text-3xl font-extrabold text-slate-900">100%</div>
-                                    <div class="text-[10px] text-slate-400 uppercase tracking-wider font-semibold">Coherence Score</div>
-                                </div>
-                            </div>
-                            <div class="mt-8 flex gap-3">
-                                <a href="contact.html" class="btn-primary py-3 px-6 text-[13px]">Read full log</a>
-                                <button type="button" onclick="showToast('Downloading Notion_Brand_Guidelines.pdf')" class="btn-secondary py-3 px-6 text-[13px] flex items-center gap-1.5">
-                                    Download PDF <i data-lucide="download" class="w-4 h-4"></i>
-                                </button>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
+
+        <script>
+        function filterCaseStudies(cat) {
+            document.querySelectorAll('.cs-filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            const activeBtn = document.querySelector('[data-filter="'+cat+'"]');
+            if (activeBtn) {
+                activeBtn.classList.add('active');
+            }
+            document.querySelectorAll('.cs-card').forEach(card => {
+                if (cat === 'all' || card.dataset.category === cat) {
+                    card.style.display = '';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+        </script>
 
     </main>
 
     <!-- Footer -->
     <footer class="relative bg-slate-950 text-white pt-20 md:pt-28 pb-10 overflow-hidden">
-        <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] h-[400px] rounded-full bg-blue-500/10 blur-[120px] pointer-events-none"></div>
+        <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] h-[400px] rounded-full bg-white/80/10 pointer-events-none"></div>
         <div class="relative max-w-7xl mx-auto px-6 md:px-10">
             <div class="grid lg:grid-cols-12 gap-12 mb-14 text-left">
                 <div class="lg:col-span-4">
@@ -468,11 +582,11 @@
                         <img src="assets/logo-white.png" alt="Digital Advertise Logo" class="h-10 w-auto object-contain">
                     </div>
                     <p class="text-white/65 text-[15px] leading-relaxed max-w-md">
-                        A performance marketing partner for ambitious teams — engineered for measurable, durable growth across every channel and market.
+                        A performance marketing partner for ambitious teams � engineered for measurable, durable growth across every channel and market.
                     </p>
                     <form class="mt-6 flex max-w-sm" onsubmit="handleNewsletterSubmit(event)">
-                        <input type="email" required placeholder="Subscribe to our newsletter" class="flex-1 bg-white/5 border border-white/10 rounded-l-xl px-4 py-2 text-[14px] text-white placeholder:text-white/40 focus:outline-none focus:border-blue-500">
-                        <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-5 rounded-r-xl text-[14px] font-semibold transition-colors">Join</button>
+                        <input type="email" required placeholder="Subscribe to our newsletter" class="flex-1 bg-black/5 border border-white/10 rounded-l-xl px-4 py-2 text-[14px] text-white placeholder:text-white/40 focus:outline-none focus:border-white">
+                        <button type="submit" class="bg-black hover:bg-black700 text-white px-5 rounded-r-xl text-[14px] font-semibold transition-colors">Join</button>
                     </form>
                 </div>
 

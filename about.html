@@ -33,12 +33,12 @@
     <link rel="stylesheet" href="css/style.css">
 
     <style>
-        /* ===== TREATMENT A: ATMOSPHERE MESH — About Page Variant ===== */
+        /* ===== TREATMENT A: ATMOSPHERE MESH � About Page Variant ===== */
         /* Multi-layer gradient light atmosphere with gentle drift */
         .about-hero-bg {
             position: relative;
             overflow: hidden;
-            background: #ffffff;
+            background: #000000;
         }
 
         /* Base atmospheric haze */
@@ -47,10 +47,10 @@
             position: absolute;
             inset: 0;
             background:
-                radial-gradient(ellipse 80% 60% at 15% 20%, rgba(37, 99, 235, 0.07) 0%, transparent 65%),
-                radial-gradient(ellipse 60% 50% at 85% 10%, rgba(99, 102, 241, 0.05) 0%, transparent 55%),
-                radial-gradient(ellipse 70% 55% at 50% 85%, rgba(14, 165, 233, 0.04) 0%, transparent 60%),
-                radial-gradient(ellipse 50% 40% at 90% 80%, rgba(168, 85, 247, 0.04) 0%, transparent 50%);
+                radial-gradient(ellipse 80% 60% at 15% 20%, rgba(255,255,255,0.07) 0%, transparent 65%),
+                radial-gradient(ellipse 60% 50% at 85% 10%, rgba(255,255,255,0.05) 0%, transparent 55%),
+                radial-gradient(ellipse 70% 55% at 50% 85%, rgba(255,255,255,0.04) 0%, transparent 60%),
+                radial-gradient(ellipse 50% 40% at 90% 80%, rgba(255,255,255,0.04) 0%, transparent 50%);
             z-index: 0;
             pointer-events: none;
             animation: atmosphere-breathe 18s ease-in-out infinite alternate;
@@ -62,14 +62,14 @@
             100% { opacity: 0.9; transform: scale(1.02) translateY(4px); }
         }
 
-        /* Foreground drifting light orb — largest, deepest back layer */
+        /* Foreground drifting light orb � largest, deepest back layer */
         .atm-orb-1 {
             position: absolute;
             width: 700px;
             height: 700px;
             border-radius: 50%;
-            background: radial-gradient(circle at 40% 40%, rgba(37, 99, 235, 0.08), transparent 68%);
-            filter: blur(90px);
+            background: radial-gradient(circle at 40% 40%, rgba(255,255,255,0.08), transparent 68%);
+            
             top: -18%;
             left: -12%;
             z-index: 0;
@@ -83,14 +83,14 @@
             100% { transform: translate(-35px, 90px) scale(0.92); opacity: 0.8; }
         }
 
-        /* Mid layer — warm indigo sweep */
+        /* Mid layer � warm indigo sweep */
         .atm-orb-2 {
             position: absolute;
             width: 550px;
             height: 550px;
             border-radius: 50%;
-            background: radial-gradient(circle at 60% 60%, rgba(99, 102, 241, 0.07), transparent 70%);
-            filter: blur(100px);
+            background: radial-gradient(circle at 60% 60%, rgba(255,255,255,0.07), transparent 70%);
+            
             top: 10%;
             right: -10%;
             z-index: 0;
@@ -104,14 +104,14 @@
             100% { transform: translate(50px, -75px) scale(1.1); opacity: 0.65; }
         }
 
-        /* Lower sky layer — cyan undertone */
+        /* Lower sky layer � cyan undertone */
         .atm-orb-3 {
             position: absolute;
             width: 480px;
             height: 480px;
             border-radius: 50%;
-            background: radial-gradient(circle at 50% 50%, rgba(14, 165, 233, 0.05), transparent 65%);
-            filter: blur(110px);
+            background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.05), transparent 65%);
+            
             bottom: -5%;
             left: 30%;
             z-index: 0;
@@ -142,7 +142,7 @@
             left: 0;
             right: 0;
             height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.08) 30%, rgba(99, 102, 241, 0.1) 50%, rgba(37, 99, 235, 0.08) 70%, transparent);
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08) 30%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.08) 70%, transparent);
             z-index: 1;
             pointer-events: none;
             bottom: 0;
@@ -180,7 +180,7 @@
             top: 0; left: -100%;
             width: 60%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(37,99,235,0.05), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05), transparent);
             animation: shimmer-pass 3.5s ease-in-out infinite;
         }
         @keyframes shimmer-pass {
@@ -194,8 +194,8 @@
         }
         .value-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 16px 48px rgba(37, 99, 235, 0.08);
-            border-color: rgba(37, 99, 235, 0.2);
+            box-shadow: 0 16px 48px rgba(255,255,255,0.08);
+            border-color: rgba(255,255,255,0.2);
         }
 
         /* Team member cards */
@@ -219,8 +219,8 @@
             width: 10px;
             height: 10px;
             border-radius: 50%;
-            background: #2563eb;
-            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+            background: #000000;
+            box-shadow: 0 0 0 3px rgba(255,255,255,0.15);
         }
 
         @media (prefers-reduced-motion: reduce) {
@@ -254,8 +254,8 @@
   transform: none !important;
 }
 #desktop-nav a:hover {
-  color: #2563eb;
-  background: rgba(37,99,235,0.07);
+  color: #000000;
+  background: rgba(255,255,255,0.07);
   transform: none !important;
 }
 .nav-dropdown {
@@ -273,7 +273,7 @@
   transform: translateX(-50%) translateY(6px);
   width: 260px;
   background: rgba(255,255,255,0.98);
-  backdrop-filter: blur(20px);
+  
   border: 1px solid rgba(226,232,240,0.8);
   box-shadow: 0 10px 40px rgba(2,6,23,0.10);
   border-radius: 20px;
@@ -306,7 +306,7 @@
   transition: color 0.15s, background 0.15s;
 }
 .nav-dropdown-menu a:hover {
-  color: #2563eb;
+  color: #000000;
   background: #f1f5f9;
 }
 #navbar.nav-visible {
@@ -317,12 +317,12 @@
 }
 </style>
 </head>
-<body class="bg-white text-slate-900 overflow-x-hidden antialiased selection:bg-blue-100 selection:text-blue-800">
+<body class="bg-black text-white overflow-x-hidden antialiased selection:bg-[#111111] selection:text-white">
 
 <!-- Header -->
 <header id="navbar" style="position:fixed;top:0;left:0;width:100%;z-index:9999;padding:16px 0;transform:translateY(-120%);transition:transform 0.45s cubic-bezier(0.16,1,0.3,1);">
   <div style="max-width:1280px;margin:0 auto;padding:0 24px;">
-    <div id="nav-wrapper" style="display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,0.85);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,0.6);box-shadow:0 4px 32px rgba(2,6,23,0.08);border-radius:9999px;height:60px;padding:0 24px;">
+    <div id="nav-wrapper" style="display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,0.85);border:1px solid rgba(255,255,255,0.6);box-shadow:0 4px 32px rgba(2,6,23,0.08);border-radius:9999px;height:60px;padding:0 24px;">
       <a href="index.html" style="display:flex;align-items:center;">
         <img src="assets/logo.png" alt="Digital Advertise Logo" style="height:32px;width:auto;object-fit:contain;">
       </a>
@@ -331,9 +331,9 @@
         <div class="nav-dropdown">
           <a href="services.html">Services ▾</a>
           <div class="nav-dropdown-menu">
+            <a href="social-media.html">Social Media Marketing</a>
             <a href="performance-marketing.html">Performance Marketing</a>
             <a href="brand-identity.html">Brand Identity</a>
-            <a href="social-media.html">Social Media Marketing</a>
             <a href="web-development.html">Website Development</a>
             <a href="video-production.html">Video Production</a>
             <a href="ai-video.html">AI Video Generation</a>
@@ -348,7 +348,7 @@
         <a href="about.html">About Us</a>
       </nav>
       <div style="display:flex;align-items:center;gap:8px;">
-        <a href="audit.html" style="display:inline-flex;align-items:center;gap:6px;background:#0f172a;color:#fff;font-weight:600;font-size:14px;padding:10px 20px;border-radius:9999px;text-decoration:none;transition:background 0.2s;">
+        <a href="audit.html" style="display:inline-flex;align-items:center;gap:6px;background:#000000;color:#fff;font-weight:600;font-size:14px;padding:10px 20px;border-radius:9999px;text-decoration:none;transition:background 0.2s;">
           Get Started ↗
         </a>
         <button onclick="toggleMobileMenu()" id="hamburger-btn" style="display:none;padding:8px;border-radius:9999px;border:none;background:transparent;cursor:pointer;">
@@ -356,7 +356,7 @@
         </button>
       </div>
     </div>
-    <div id="mobile-menu" style="display:none;margin-top:12px;background:rgba(255,255,255,0.95);backdrop-filter:blur(20px);border-radius:20px;padding:20px;flex-direction:column;gap:8px;">
+    <div id="mobile-menu" style="display:none;margin-top:12px;background:rgba(255,255,255,0.95);border-radius:20px;padding:20px;flex-direction:column;gap:8px;">
       <a href="index.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Home</a>
       <a href="services.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Services</a>
       <a href="portfolio.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Portfolio</a>
@@ -364,15 +364,15 @@
       <a href="blog.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Blog</a>
       <a href="contact.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Contact</a>
       <a href="about.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">About Us</a>
-      <a href="audit.html" style="margin-top:8px;padding:12px;background:#0f172a;color:#fff;font-weight:600;border-radius:9999px;text-decoration:none;display:block;text-align:center;">Get Started</a>
+      <a href="audit.html" style="margin-top:8px;padding:12px;background:#000000;color:#fff;font-weight:600;border-radius:9999px;text-decoration:none;display:block;text-align:center;">Get Started</a>
     </div>
   </div>
 </header>
 
 
-    <main class="relative bg-white text-slate-900 font-sans overflow-hidden">
+    <main class="relative bg-black text-white font-sans overflow-hidden">
         
-        <!-- ===== HERO — Treatment A: Atmosphere Mesh ===== -->
+        <!-- ===== HERO � Treatment A: Atmosphere Mesh ===== -->
         <section class="about-hero-bg mesh-bg relative overflow-hidden pt-36 md:pt-48 pb-24 md:pb-32">
             <!-- Floating bubbles -->
             <div class="bubble bubble-1" aria-hidden="true"></div>
@@ -393,19 +393,19 @@
                 <div class="max-w-4xl">
                     <!-- Overline -->
                     <div id="about-overline" class="overline-label hero-overline-anim inline-flex items-center gap-2 mb-5">
-                        <span class="w-5 h-px bg-blue-500 inline-block"></span>
+                        <span class="w-5 h-px bg-gray-1000 inline-block"></span>
                         Our Story &amp; Mission
                     </div>
 
                     <!-- Heading -->
-                    <h1 id="about-h1" class="hero-h1-anim font-display text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tighter text-slate-900 leading-[1.04]">
+                    <h1 id="about-h1" class="hero-h1-anim font-display text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tighter text-white leading-[1.04]">
                         Built to grow<br>
-                        <span class="italic font-light text-slate-500">ambitious brands</span><br>
-                        <span class="text-blue-600">measurably.</span>
+                        <span class="italic font-light text-white/60">ambitious brands</span><br>
+                        <span class="text-white">measurably.</span>
                     </h1>
 
                     <!-- Sub-paragraph -->
-                    <p id="about-p" class="hero-p-anim mt-7 text-lg md:text-xl text-slate-600 max-w-2xl leading-relaxed">
+                    <p id="about-p" class="hero-p-anim mt-7 text-lg md:text-xl text-white/70 max-w-2xl leading-relaxed">
                         Digital Advertise is a full-spectrum performance marketing partner. We combine data science, creative strategy, and execution craft to deliver compounding growth across every channel.
                     </p>
 
@@ -423,26 +423,26 @@
 
                 <!-- Floating stat pills -->
                 <div id="about-stats" class="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-4">
-                    <div class="hero-stat-anim stat-shimmer glass border border-slate-200/80 rounded-2xl p-5 text-left">
-                        <div class="text-2xl md:text-3xl font-display font-extrabold text-slate-900 tracking-tighter">
+                    <div class="hero-stat-anim stat-shimmer glass border border-white/10/80 rounded-2xl p-5 text-left">
+                        <div class="text-2xl md:text-3xl font-display font-extrabold text-white tracking-tighter">
                             <span class="counter" data-target="250">250</span>+
                         </div>
                         <div class="text-[11px] text-slate-400 font-semibold uppercase tracking-wider mt-1">Brands Scaled</div>
                     </div>
-                    <div class="hero-stat-anim stat-shimmer glass border border-slate-200/80 rounded-2xl p-5 text-left">
-                        <div class="text-2xl md:text-3xl font-display font-extrabold text-blue-600 tracking-tighter">
+                    <div class="hero-stat-anim stat-shimmer glass border border-white/10/80 rounded-2xl p-5 text-left">
+                        <div class="text-2xl md:text-3xl font-display font-extrabold text-white tracking-tighter">
                             $<span class="counter" data-target="48" data-decimals="0">48</span>M+
                         </div>
                         <div class="text-[11px] text-slate-400 font-semibold uppercase tracking-wider mt-1">Revenue Generated</div>
                     </div>
-                    <div class="hero-stat-anim stat-shimmer glass border border-slate-200/80 rounded-2xl p-5 text-left">
-                        <div class="text-2xl md:text-3xl font-display font-extrabold text-slate-900 tracking-tighter">
+                    <div class="hero-stat-anim stat-shimmer glass border border-white/10/80 rounded-2xl p-5 text-left">
+                        <div class="text-2xl md:text-3xl font-display font-extrabold text-white tracking-tighter">
                             <span class="counter" data-target="7">7</span>+
                         </div>
                         <div class="text-[11px] text-slate-400 font-semibold uppercase tracking-wider mt-1">Years Operating</div>
                     </div>
-                    <div class="hero-stat-anim stat-shimmer glass border border-slate-200/80 rounded-2xl p-5 text-left">
-                        <div class="text-2xl md:text-3xl font-display font-extrabold text-slate-900 tracking-tighter">
+                    <div class="hero-stat-anim stat-shimmer glass border border-white/10/80 rounded-2xl p-5 text-left">
+                        <div class="text-2xl md:text-3xl font-display font-extrabold text-white tracking-tighter">
                             <span class="counter" data-target="98" data-decimals="0">98</span>%
                         </div>
                         <div class="text-[11px] text-slate-400 font-semibold uppercase tracking-wider mt-1">Client Retention</div>
@@ -452,88 +452,88 @@
         </section>
 
         <!-- ===== MISSION & VALUES ===== -->
-        <section class="py-24 bg-white relative overflow-hidden">
+        <section class="py-24 bg-black relative overflow-hidden">
             <div class="max-w-7xl mx-auto px-6 md:px-10">
                 <div class="grid lg:grid-cols-2 gap-16 items-center">
                     <!-- Left: Mission statement -->
                     <div class="reveal-left">
                         <div class="overline-label mb-4">Why We Exist</div>
-                        <h2 class="font-display text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tighter leading-tight">
+                        <h2 class="font-display text-3xl md:text-4xl font-extrabold text-white tracking-tighter leading-tight">
                             We exist to make growth<br>
-                            <span class="text-blue-600 italic font-light">impossible to ignore.</span>
+                            <span class="text-white italic font-light">impossible to ignore.</span>
                         </h2>
-                        <p class="mt-6 text-slate-600 leading-relaxed text-[15px]">
-                            Most marketing agencies sell deliverables — posts, ads, reports. We build growth architectures. Every campaign we touch is backed by data strategy, creative precision, and a relentless obsession with measurable outcomes.
+                        <p class="mt-6 text-white/70 leading-relaxed text-[15px]">
+                            Most marketing agencies sell deliverables � posts, ads, reports. We build growth architectures. Every campaign we touch is backed by data strategy, creative precision, and a relentless obsession with measurable outcomes.
                         </p>
-                        <p class="mt-4 text-slate-600 leading-relaxed text-[15px]">
-                            Our model is engineered to compound. The brands we work with don't just see temporary spikes — they build equity, market share, and durable revenue systems that outperform year after year.
+                        <p class="mt-4 text-white/70 leading-relaxed text-[15px]">
+                            Our model is engineered to compound. The brands we work with don't just see temporary spikes � they build equity, market share, and durable revenue systems that outperform year after year.
                         </p>
 
                         <!-- Mission pillars list -->
                         <ul class="mt-8 space-y-4">
                             <li class="flex items-start gap-3">
-                                <div class="mt-0.5 w-5 h-5 rounded-full bg-blue-600/10 flex items-center justify-center shrink-0">
-                                    <i data-lucide="check" class="w-3 h-3 text-blue-600"></i>
+                                <div class="mt-0.5 w-5 h-5 rounded-full bg-black/10 flex items-center justify-center shrink-0">
+                                    <i data-lucide="check" class="w-3 h-3 text-white"></i>
                                 </div>
-                                <span class="text-slate-700 text-[15px]">Revenue-first thinking — every decision maps to your bottom line</span>
+                                <span class="text-white/80 text-[15px]">Revenue-first thinking � every decision maps to your bottom line</span>
                             </li>
                             <li class="flex items-start gap-3">
-                                <div class="mt-0.5 w-5 h-5 rounded-full bg-blue-600/10 flex items-center justify-center shrink-0">
-                                    <i data-lucide="check" class="w-3 h-3 text-blue-600"></i>
+                                <div class="mt-0.5 w-5 h-5 rounded-full bg-black/10 flex items-center justify-center shrink-0">
+                                    <i data-lucide="check" class="w-3 h-3 text-white"></i>
                                 </div>
-                                <span class="text-slate-700 text-[15px]">Full-funnel coverage — from awareness to retention and advocacy</span>
+                                <span class="text-white/80 text-[15px]">Full-funnel coverage � from awareness to retention and advocacy</span>
                             </li>
                             <li class="flex items-start gap-3">
-                                <div class="mt-0.5 w-5 h-5 rounded-full bg-blue-600/10 flex items-center justify-center shrink-0">
-                                    <i data-lucide="check" class="w-3 h-3 text-blue-600"></i>
+                                <div class="mt-0.5 w-5 h-5 rounded-full bg-black/10 flex items-center justify-center shrink-0">
+                                    <i data-lucide="check" class="w-3 h-3 text-white"></i>
                                 </div>
-                                <span class="text-slate-700 text-[15px]">Transparent reporting — real data, real attribution, no smoke</span>
+                                <span class="text-white/80 text-[15px]">Transparent reporting � real data, real attribution, no smoke</span>
                             </li>
                             <li class="flex items-start gap-3">
-                                <div class="mt-0.5 w-5 h-5 rounded-full bg-blue-600/10 flex items-center justify-center shrink-0">
-                                    <i data-lucide="check" class="w-3 h-3 text-blue-600"></i>
+                                <div class="mt-0.5 w-5 h-5 rounded-full bg-black/10 flex items-center justify-center shrink-0">
+                                    <i data-lucide="check" class="w-3 h-3 text-white"></i>
                                 </div>
-                                <span class="text-slate-700 text-[15px]">Adaptive strategy — campaigns that evolve with your market, not against it</span>
+                                <span class="text-white/80 text-[15px]">Adaptive strategy � campaigns that evolve with your market, not against it</span>
                             </li>
                         </ul>
                     </div>
 
                     <!-- Right: Values grid -->
                     <div class="grid grid-cols-2 gap-4 reveal-right">
-                        <div class="value-card col-span-2 glass border border-slate-200 rounded-2xl p-6 text-left">
-                            <div class="w-10 h-10 bg-blue-600/10 rounded-xl flex items-center justify-center mb-4">
-                                <i data-lucide="target" class="w-5 h-5 text-blue-600"></i>
+                        <div class="value-card col-span-2 glass border border-white/10 rounded-2xl p-6 text-left">
+                            <div class="w-10 h-10 bg-black/10 rounded-xl flex items-center justify-center mb-4">
+                                <i data-lucide="target" class="w-5 h-5 text-white"></i>
                             </div>
-                            <h3 class="font-display font-bold text-slate-900 text-[17px]">Precision Over Volume</h3>
-                            <p class="mt-2 text-slate-500 text-[13px] leading-relaxed">We'd rather run 3 campaigns that convert perfectly than 30 that generate noise. Quality of strategy always wins over quantity of output.</p>
+                            <h3 class="font-display font-bold text-white text-[17px]">Precision Over Volume</h3>
+                            <p class="mt-2 text-white/60 text-[13px] leading-relaxed">We'd rather run 3 campaigns that convert perfectly than 30 that generate noise. Quality of strategy always wins over quantity of output.</p>
                         </div>
-                        <div class="value-card glass border border-slate-200 rounded-2xl p-6 text-left">
-                            <div class="w-10 h-10 bg-indigo-600/10 rounded-xl flex items-center justify-center mb-4">
-                                <i data-lucide="bar-chart-2" class="w-5 h-5 text-indigo-600"></i>
+                        <div class="value-card glass border border-white/10 rounded-2xl p-6 text-left">
+                            <div class="w-10 h-10 bg-gray-800/10 rounded-xl flex items-center justify-center mb-4">
+                                <i data-lucide="bar-chart-2" class="w-5 h-5 text-white/70"></i>
                             </div>
-                            <h3 class="font-display font-bold text-slate-900 text-[15px]">Data Integrity</h3>
-                            <p class="mt-2 text-slate-500 text-[13px] leading-relaxed">Every decision is evidence-backed. No guesswork, no vanity metrics.</p>
+                            <h3 class="font-display font-bold text-white text-[15px]">Data Integrity</h3>
+                            <p class="mt-2 text-white/60 text-[13px] leading-relaxed">Every decision is evidence-backed. No guesswork, no vanity metrics.</p>
                         </div>
-                        <div class="value-card glass border border-slate-200 rounded-2xl p-6 text-left">
-                            <div class="w-10 h-10 bg-sky-600/10 rounded-xl flex items-center justify-center mb-4">
-                                <i data-lucide="layers" class="w-5 h-5 text-sky-600"></i>
+                        <div class="value-card glass border border-white/10 rounded-2xl p-6 text-left">
+                            <div class="w-10 h-10 bg-gray-700/10 rounded-xl flex items-center justify-center mb-4">
+                                <i data-lucide="layers" class="w-5 h-5 text-white/70"></i>
                             </div>
-                            <h3 class="font-display font-bold text-slate-900 text-[15px]">Craft at Scale</h3>
-                            <p class="mt-2 text-slate-500 text-[13px] leading-relaxed">Creative excellence meets performance rigor, at any budget size.</p>
+                            <h3 class="font-display font-bold text-white text-[15px]">Craft at Scale</h3>
+                            <p class="mt-2 text-white/60 text-[13px] leading-relaxed">Creative excellence meets performance rigor, at any budget size.</p>
                         </div>
-                        <div class="value-card glass border border-slate-200 rounded-2xl p-6 text-left">
-                            <div class="w-10 h-10 bg-emerald-600/10 rounded-xl flex items-center justify-center mb-4">
-                                <i data-lucide="shield-check" class="w-5 h-5 text-emerald-600"></i>
+                        <div class="value-card glass border border-white/10 rounded-2xl p-6 text-left">
+                            <div class="w-10 h-10 bg-gray-700/10 rounded-xl flex items-center justify-center mb-4">
+                                <i data-lucide="shield-check" class="w-5 h-5 text-white/70"></i>
                             </div>
-                            <h3 class="font-display font-bold text-slate-900 text-[15px]">Trust by Default</h3>
-                            <p class="mt-2 text-slate-500 text-[13px] leading-relaxed">Radical transparency in reporting, billing, and strategy.</p>
+                            <h3 class="font-display font-bold text-white text-[15px]">Trust by Default</h3>
+                            <p class="mt-2 text-white/60 text-[13px] leading-relaxed">Radical transparency in reporting, billing, and strategy.</p>
                         </div>
-                        <div class="value-card glass border border-slate-200 rounded-2xl p-6 text-left">
-                            <div class="w-10 h-10 bg-amber-600/10 rounded-xl flex items-center justify-center mb-4">
-                                <i data-lucide="zap" class="w-5 h-5 text-amber-600"></i>
+                        <div class="value-card glass border border-white/10 rounded-2xl p-6 text-left">
+                            <div class="w-10 h-10 bg-gray-700/10 rounded-xl flex items-center justify-center mb-4">
+                                <i data-lucide="zap" class="w-5 h-5 text-white/70"></i>
                             </div>
-                            <h3 class="font-display font-bold text-slate-900 text-[15px]">Speed of Execution</h3>
-                            <p class="mt-2 text-slate-500 text-[13px] leading-relaxed">Market opportunities don't wait. Neither do we.</p>
+                            <h3 class="font-display font-bold text-white text-[15px]">Speed of Execution</h3>
+                            <p class="mt-2 text-white/60 text-[13px] leading-relaxed">Market opportunities don't wait. Neither do we.</p>
                         </div>
                     </div>
                 </div>
@@ -541,45 +541,45 @@
         </section>
 
         <!-- ===== CREDENTIALS & CERTIFICATIONS ===== -->
-        <section class="py-24 bg-slate-50 relative overflow-hidden">
+        <section class="py-24 bg-[#0A0A0A] relative overflow-hidden">
             <div class="max-w-7xl mx-auto px-6 md:px-10">
                 <div class="text-center mb-14 reveal">
                     <div class="overline-label mb-3">Verified Expertise</div>
-                    <h2 class="font-display text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tighter">
+                    <h2 class="font-display text-3xl md:text-4xl font-extrabold text-white tracking-tighter">
                         Certified across every major platform
                     </h2>
-                    <p class="mt-4 text-slate-500 max-w-xl mx-auto text-[15px] leading-relaxed">
+                    <p class="mt-4 text-white/60 max-w-xl mx-auto text-[15px] leading-relaxed">
                         Our team holds active certifications from the world's most trusted digital advertising platforms, ensuring your budget is managed by verified experts.
                     </p>
                 </div>
 
                 <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 stagger-grid">
-                    <div class="glass border border-slate-200 rounded-2xl p-6 text-center hover-card">
-                        <div class="w-12 h-12 bg-yellow-50 border border-yellow-200/60 rounded-xl flex items-center justify-center mx-auto mb-4">
-                            <i data-lucide="badge-check" class="w-6 h-6 text-yellow-500"></i>
+                    <div class="glass border border-white/10 rounded-2xl p-6 text-center hover-card">
+                        <div class="w-12 h-12 bg-white/10 border border-yellow-200/60 rounded-xl flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="badge-check" class="w-6 h-6 text-white"></i>
                         </div>
-                        <div class="font-display font-bold text-slate-900 text-[15px]">Google Ads Certified</div>
+                        <div class="font-display font-bold text-white text-[15px]">Google Ads Certified</div>
                         <div class="text-[12px] text-slate-400 mt-1">Search, Display, Shopping &amp; YouTube</div>
                     </div>
-                    <div class="glass border border-slate-200 rounded-2xl p-6 text-center hover-card">
-                        <div class="w-12 h-12 bg-blue-50 border border-blue-200/60 rounded-xl flex items-center justify-center mx-auto mb-4">
-                            <i data-lucide="badge-check" class="w-6 h-6 text-blue-600"></i>
+                    <div class="glass border border-white/10 rounded-2xl p-6 text-center hover-card">
+                        <div class="w-12 h-12 bg-[#111111] border border-white/10/60 rounded-xl flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="badge-check" class="w-6 h-6 text-white"></i>
                         </div>
-                        <div class="font-display font-bold text-slate-900 text-[15px]">Meta Business Partner</div>
+                        <div class="font-display font-bold text-white text-[15px]">Meta Business Partner</div>
                         <div class="text-[12px] text-slate-400 mt-1">Facebook &amp; Instagram Ads</div>
                     </div>
-                    <div class="glass border border-slate-200 rounded-2xl p-6 text-center hover-card">
-                        <div class="w-12 h-12 bg-black/5 border border-slate-200/60 rounded-xl flex items-center justify-center mx-auto mb-4">
-                            <i data-lucide="badge-check" class="w-6 h-6 text-slate-700"></i>
+                    <div class="glass border border-white/10 rounded-2xl p-6 text-center hover-card">
+                        <div class="w-12 h-12 bg-black/5 border border-white/10/60 rounded-xl flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="badge-check" class="w-6 h-6 text-white/80"></i>
                         </div>
-                        <div class="font-display font-bold text-slate-900 text-[15px]">TikTok Ads Certified</div>
+                        <div class="font-display font-bold text-white text-[15px]">TikTok Ads Certified</div>
                         <div class="text-[12px] text-slate-400 mt-1">TikTok for Business Partner</div>
                     </div>
-                    <div class="glass border border-slate-200 rounded-2xl p-6 text-center hover-card">
-                        <div class="w-12 h-12 bg-sky-50 border border-sky-200/60 rounded-xl flex items-center justify-center mx-auto mb-4">
-                            <i data-lucide="badge-check" class="w-6 h-6 text-sky-500"></i>
+                    <div class="glass border border-white/10 rounded-2xl p-6 text-center hover-card">
+                        <div class="w-12 h-12 bg-[#111111] border border-gray-600/60 rounded-xl flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="badge-check" class="w-6 h-6 text-white/70"></i>
                         </div>
-                        <div class="font-display font-bold text-slate-900 text-[15px]">HubSpot Certified</div>
+                        <div class="font-display font-bold text-white text-[15px]">HubSpot Certified</div>
                         <div class="text-[12px] text-slate-400 mt-1">Inbound Marketing &amp; CRM</div>
                     </div>
                 </div>
@@ -587,41 +587,41 @@
         </section>
 
         <!-- ===== TIMELINE / ORIGIN STORY ===== -->
-        <section class="py-24 bg-white relative overflow-hidden">
+        <section class="py-24 bg-black relative overflow-hidden">
             <div class="max-w-5xl mx-auto px-6 md:px-10">
                 <div class="text-left mb-14 reveal">
                     <div class="overline-label mb-3">Our Journey</div>
-                    <h2 class="font-display text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tighter">
+                    <h2 class="font-display text-3xl md:text-4xl font-extrabold text-white tracking-tighter">
                         From a team of 3 to a global growth partner
                     </h2>
                 </div>
 
-                <div class="relative border-l-2 border-slate-100 ml-4 pl-8 space-y-12">
+                <div class="relative border-l-2 border-white/5 ml-4 pl-8 space-y-12">
                     <div class="timeline-dot reveal">
-                        <div class="text-[11px] font-bold uppercase tracking-wider text-blue-500 mb-1">2020</div>
-                        <h3 class="font-display font-bold text-slate-900 text-[17px]">The Founding</h3>
-                        <p class="mt-2 text-slate-500 text-[14px] leading-relaxed max-w-2xl">
-                            Started with a focused team of performance marketers who believed agencies were too slow, too opaque, and too disconnected from actual business results. We built a different model — revenue-first, data-led, and obsessively transparent.
+                        <div class="text-[11px] font-bold uppercase tracking-wider text-white mb-1">2020</div>
+                        <h3 class="font-display font-bold text-white text-[17px]">The Founding</h3>
+                        <p class="mt-2 text-white/60 text-[14px] leading-relaxed max-w-2xl">
+                            Started with a focused team of performance marketers who believed agencies were too slow, too opaque, and too disconnected from actual business results. We built a different model � revenue-first, data-led, and obsessively transparent.
                         </p>
                     </div>
                     <div class="timeline-dot reveal">
-                        <div class="text-[11px] font-bold uppercase tracking-wider text-blue-500 mb-1">2021</div>
-                        <h3 class="font-display font-bold text-slate-900 text-[17px]">Global Expansion</h3>
-                        <p class="mt-2 text-slate-500 text-[14px] leading-relaxed max-w-2xl">
+                        <div class="text-[11px] font-bold uppercase tracking-wider text-white mb-1">2021</div>
+                        <h3 class="font-display font-bold text-white text-[17px]">Global Expansion</h3>
+                        <p class="mt-2 text-white/60 text-[14px] leading-relaxed max-w-2xl">
                             Expanded operations to serve clients across North America, Southeast Asia, and the Middle East. Launched our proprietary AI Creative Intelligence pipeline for ad creative generation and testing.
                         </p>
                     </div>
                     <div class="timeline-dot reveal">
-                        <div class="text-[11px] font-bold uppercase tracking-wider text-blue-500 mb-1">2023</div>
-                        <h3 class="font-display font-bold text-slate-900 text-[17px]">Platform Partnerships</h3>
-                        <p class="mt-2 text-slate-500 text-[14px] leading-relaxed max-w-2xl">
-                            Became official Meta Business Partner, Google Premier Partner, and TikTok for Business Partner — granting clients priority support, beta access, and dedicated account management.
+                        <div class="text-[11px] font-bold uppercase tracking-wider text-white mb-1">2023</div>
+                        <h3 class="font-display font-bold text-white text-[17px]">Platform Partnerships</h3>
+                        <p class="mt-2 text-white/60 text-[14px] leading-relaxed max-w-2xl">
+                            Became official Meta Business Partner, Google Premier Partner, and TikTok for Business Partner � granting clients priority support, beta access, and dedicated account management.
                         </p>
                     </div>
                     <div class="timeline-dot reveal">
-                        <div class="text-[11px] font-bold uppercase tracking-wider text-blue-500 mb-1">Today</div>
-                        <h3 class="font-display font-bold text-slate-900 text-[17px]">250+ Brands, $48M+ in Revenue Generated</h3>
-                        <p class="mt-2 text-slate-500 text-[14px] leading-relaxed max-w-2xl">
+                        <div class="text-[11px] font-bold uppercase tracking-wider text-white mb-1">Today</div>
+                        <h3 class="font-display font-bold text-white text-[17px]">250+ Brands, $48M+ in Revenue Generated</h3>
+                        <p class="mt-2 text-white/60 text-[14px] leading-relaxed max-w-2xl">
                             A team of 40+ specialists operating across performance media, creative production, brand strategy, and data engineering. Your growth is our only metric.
                         </p>
                     </div>
@@ -630,49 +630,49 @@
         </section>
 
         <!-- ===== CLIENT TESTIMONIALS / SOCIAL PROOF ===== -->
-        <section class="py-24 bg-slate-50 relative overflow-hidden">
+        <section class="py-24 bg-[#0A0A0A] relative overflow-hidden">
             <div class="max-w-7xl mx-auto px-6 md:px-10">
                 <div class="text-center mb-14 reveal">
                     <div class="overline-label mb-3">What Our Clients Say</div>
-                    <h2 class="font-display text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tighter">
+                    <h2 class="font-display text-3xl md:text-4xl font-extrabold text-white tracking-tighter">
                         Trusted by ambitious brands
                     </h2>
-                    <p class="mt-4 text-slate-500 max-w-xl mx-auto text-[15px] leading-relaxed">
+                    <p class="mt-4 text-white/60 max-w-xl mx-auto text-[15px] leading-relaxed">
                         Don't take our word for it. Here's what the founders, CMOs, and growth leads we've partnered with have to say.
                     </p>
                 </div>
 
                 <!-- Large featured testimonial -->
                 <div class="reveal mb-8">
-                    <div class="relative bg-white border border-slate-200 rounded-3xl p-8 md:p-12 overflow-hidden">
+                    <div class="relative bg-black border border-white/10 rounded-3xl p-8 md:p-12 overflow-hidden">
                         <!-- Decorative quote mark -->
-                        <div class="absolute top-6 right-8 font-display text-[120px] leading-none text-blue-50 select-none pointer-events-none font-extrabold">&ldquo;</div>
+                        <div class="absolute top-6 right-8 font-display text-[120px] leading-none text-white select-none pointer-events-none font-extrabold">&ldquo;</div>
                         <div class="relative z-10 grid md:grid-cols-5 gap-8 items-center">
                             <div class="md:col-span-4">
                                 <!-- Stars -->
                                 <div class="flex gap-1 mb-5">
-                                    <i data-lucide="star" class="w-4 h-4 text-amber-400 fill-amber-400"></i>
-                                    <i data-lucide="star" class="w-4 h-4 text-amber-400 fill-amber-400"></i>
-                                    <i data-lucide="star" class="w-4 h-4 text-amber-400 fill-amber-400"></i>
-                                    <i data-lucide="star" class="w-4 h-4 text-amber-400 fill-amber-400"></i>
-                                    <i data-lucide="star" class="w-4 h-4 text-amber-400 fill-amber-400"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-[#FFD700] text-[#FFD700]"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-[#FFD700] text-[#FFD700]"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-[#FFD700] text-[#FFD700]"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-[#FFD700] text-[#FFD700]"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-[#FFD700] text-[#FFD700]"></i>
                                 </div>
-                                <p class="font-display text-xl md:text-2xl font-semibold text-slate-800 leading-relaxed tracking-tight">
-                                    &ldquo;Within 90 days of working with Digital Advertise, our Meta ROAS jumped from 1.8x to 4.6x. What sets them apart isn't just the numbers — it's the clarity of thinking behind every decision. They understand brand and performance equally well, which is rare."
+                                <p class="font-display text-xl md:text-2xl font-semibold text-white/90 leading-relaxed tracking-tight">
+                                    &ldquo;Within 90 days of working with Digital Advertise, our Meta ROAS jumped from 1.8x to 4.6x. What sets them apart isn't just the numbers � it's the clarity of thinking behind every decision. They understand brand and performance equally well, which is rare."
                                 </p>
                                 <div class="mt-6 flex items-center gap-4">
-                                    <div class="w-11 h-11 rounded-full bg-gradient-to-br from-blue-100 to-indigo-100 border border-blue-200 flex items-center justify-center font-bold text-blue-600 text-[15px]">SM</div>
+                                    <div class="w-11 h-11 rounded-full bg-gradient-to-br from-black100 to-gray-600100 border border-white/10 flex items-center justify-center font-bold text-white text-[15px]">SM</div>
                                     <div>
-                                        <div class="font-semibold text-slate-900 text-[15px]">Sofia Martinez</div>
-                                        <div class="text-[12px] text-slate-400">Founder &amp; CEO, Lumière Skincare</div>
+                                        <div class="font-semibold text-white text-[15px]">Sofia Martinez</div>
+                                        <div class="text-[12px] text-slate-400">Founder &amp; CEO, Lumi�re Skincare</div>
                                     </div>
                                 </div>
                             </div>
                             <div class="md:col-span-1 flex flex-col items-center gap-3 text-center">
-                                <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-100 flex items-center justify-center">
-                                    <i data-lucide="trending-up" class="w-7 h-7 text-blue-600"></i>
+                                <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-black50 to-gray-60050 border border-white/10 flex items-center justify-center">
+                                    <i data-lucide="trending-up" class="w-7 h-7 text-white"></i>
                                 </div>
-                                <div class="font-display font-extrabold text-3xl text-blue-600">4.6×</div>
+                                <div class="font-display font-extrabold text-3xl text-white">4.6�</div>
                                 <div class="text-[11px] text-slate-400 uppercase tracking-wider font-semibold">ROAS Achieved</div>
                             </div>
                         </div>
@@ -682,63 +682,63 @@
                 <!-- 3-column testimonial grid -->
                 <div class="grid md:grid-cols-3 gap-5 stagger-grid">
                     <!-- Testimonial 1 -->
-                    <div class="bg-white border border-slate-200 rounded-2xl p-6 text-left hover-card">
+                    <div class="bg-black border border-white/10 rounded-2xl p-6 text-left hover-card">
                         <div class="flex gap-1 mb-4">
-                            <i data-lucide="star" class="w-3.5 h-3.5 text-amber-400 fill-amber-400"></i>
-                            <i data-lucide="star" class="w-3.5 h-3.5 text-amber-400 fill-amber-400"></i>
-                            <i data-lucide="star" class="w-3.5 h-3.5 text-amber-400 fill-amber-400"></i>
-                            <i data-lucide="star" class="w-3.5 h-3.5 text-amber-400 fill-amber-400"></i>
-                            <i data-lucide="star" class="w-3.5 h-3.5 text-amber-400 fill-amber-400"></i>
+                            <i data-lucide="star" class="w-3.5 h-3.5 fill-[#FFD700] text-[#FFD700]"></i>
+                            <i data-lucide="star" class="w-3.5 h-3.5 fill-[#FFD700] text-[#FFD700]"></i>
+                            <i data-lucide="star" class="w-3.5 h-3.5 fill-[#FFD700] text-[#FFD700]"></i>
+                            <i data-lucide="star" class="w-3.5 h-3.5 fill-[#FFD700] text-[#FFD700]"></i>
+                            <i data-lucide="star" class="w-3.5 h-3.5 fill-[#FFD700] text-[#FFD700]"></i>
                         </div>
-                        <p class="text-slate-600 text-[14px] leading-relaxed">
+                        <p class="text-white/70 text-[14px] leading-relaxed">
                             &ldquo;Our cost-per-lead dropped 62% in the first quarter. The team's ability to iterate creative and targeting simultaneously is exceptional. Feels like having an in-house growth team without the overhead."
                         </p>
-                        <div class="mt-5 pt-5 border-t border-slate-100 flex items-center gap-3">
-                            <div class="w-9 h-9 rounded-full bg-gradient-to-br from-emerald-50 to-green-100 border border-emerald-200 flex items-center justify-center font-bold text-emerald-600 text-[13px]">AK</div>
+                        <div class="mt-5 pt-5 border-t border-white/5 flex items-center gap-3">
+                            <div class="w-9 h-9 rounded-full bg-gradient-to-br from-gray-60050 to-green-100 border border-gray-600 flex items-center justify-center font-bold text-white/70 text-[13px]">AK</div>
                             <div>
-                                <div class="font-semibold text-slate-900 text-[13px]">Aditya Kapoor</div>
+                                <div class="font-semibold text-white text-[13px]">Aditya Kapoor</div>
                                 <div class="text-[11px] text-slate-400">CMO, NovaTech Solutions</div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Testimonial 2 -->
-                    <div class="bg-white border border-slate-200 rounded-2xl p-6 text-left hover-card">
+                    <div class="bg-black border border-white/10 rounded-2xl p-6 text-left hover-card">
                         <div class="flex gap-1 mb-4">
-                            <i data-lucide="star" class="w-3.5 h-3.5 text-amber-400 fill-amber-400"></i>
-                            <i data-lucide="star" class="w-3.5 h-3.5 text-amber-400 fill-amber-400"></i>
-                            <i data-lucide="star" class="w-3.5 h-3.5 text-amber-400 fill-amber-400"></i>
-                            <i data-lucide="star" class="w-3.5 h-3.5 text-amber-400 fill-amber-400"></i>
-                            <i data-lucide="star" class="w-3.5 h-3.5 text-amber-400 fill-amber-400"></i>
+                            <i data-lucide="star" class="w-3.5 h-3.5 fill-[#FFD700] text-[#FFD700]"></i>
+                            <i data-lucide="star" class="w-3.5 h-3.5 fill-[#FFD700] text-[#FFD700]"></i>
+                            <i data-lucide="star" class="w-3.5 h-3.5 fill-[#FFD700] text-[#FFD700]"></i>
+                            <i data-lucide="star" class="w-3.5 h-3.5 fill-[#FFD700] text-[#FFD700]"></i>
+                            <i data-lucide="star" class="w-3.5 h-3.5 fill-[#FFD700] text-[#FFD700]"></i>
                         </div>
-                        <p class="text-slate-600 text-[14px] leading-relaxed">
-                            &ldquo;They rebuilt our entire brand identity and social presence in six weeks. The quality of work — from typography to ad creative to brand guidelines — was agency-level output at a fraction of the usual timeline."
+                        <p class="text-white/70 text-[14px] leading-relaxed">
+                            &ldquo;They rebuilt our entire brand identity and social presence in six weeks. The quality of work � from typography to ad creative to brand guidelines � was agency-level output at a fraction of the usual timeline."
                         </p>
-                        <div class="mt-5 pt-5 border-t border-slate-100 flex items-center gap-3">
-                            <div class="w-9 h-9 rounded-full bg-gradient-to-br from-purple-50 to-indigo-100 border border-purple-200 flex items-center justify-center font-bold text-indigo-600 text-[13px]">RJ</div>
+                        <div class="mt-5 pt-5 border-t border-white/5 flex items-center gap-3">
+                            <div class="w-9 h-9 rounded-full bg-gradient-to-br from-gray-60050 to-gray-600100 border border-white/10 flex items-center justify-center font-bold text-white/70 text-[13px]">RJ</div>
                             <div>
-                                <div class="font-semibold text-slate-900 text-[13px]">Rahul Joshi</div>
+                                <div class="font-semibold text-white text-[13px]">Rahul Joshi</div>
                                 <div class="text-[11px] text-slate-400">Founder, Verdant Apparel</div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Testimonial 3 -->
-                    <div class="bg-white border border-slate-200 rounded-2xl p-6 text-left hover-card">
+                    <div class="bg-black border border-white/10 rounded-2xl p-6 text-left hover-card">
                         <div class="flex gap-1 mb-4">
-                            <i data-lucide="star" class="w-3.5 h-3.5 text-amber-400 fill-amber-400"></i>
-                            <i data-lucide="star" class="w-3.5 h-3.5 text-amber-400 fill-amber-400"></i>
-                            <i data-lucide="star" class="w-3.5 h-3.5 text-amber-400 fill-amber-400"></i>
-                            <i data-lucide="star" class="w-3.5 h-3.5 text-amber-400 fill-amber-400"></i>
-                            <i data-lucide="star" class="w-3.5 h-3.5 text-amber-400 fill-amber-400"></i>
+                            <i data-lucide="star" class="w-3.5 h-3.5 fill-[#FFD700] text-[#FFD700]"></i>
+                            <i data-lucide="star" class="w-3.5 h-3.5 fill-[#FFD700] text-[#FFD700]"></i>
+                            <i data-lucide="star" class="w-3.5 h-3.5 fill-[#FFD700] text-[#FFD700]"></i>
+                            <i data-lucide="star" class="w-3.5 h-3.5 fill-[#FFD700] text-[#FFD700]"></i>
+                            <i data-lucide="star" class="w-3.5 h-3.5 fill-[#FFD700] text-[#FFD700]"></i>
                         </div>
-                        <p class="text-slate-600 text-[14px] leading-relaxed">
-                            &ldquo;Transparent reporting, fast execution, and measurable results — that's the trifecta most agencies claim and few deliver. Digital Advertise is one of the few that actually does. We've renewed our contract three times."
+                        <p class="text-white/70 text-[14px] leading-relaxed">
+                            &ldquo;Transparent reporting, fast execution, and measurable results � that's the trifecta most agencies claim and few deliver. Digital Advertise is one of the few that actually does. We've renewed our contract three times."
                         </p>
-                        <div class="mt-5 pt-5 border-t border-slate-100 flex items-center gap-3">
-                            <div class="w-9 h-9 rounded-full bg-gradient-to-br from-rose-50 to-pink-100 border border-rose-200 flex items-center justify-center font-bold text-rose-600 text-[13px]">LP</div>
+                        <div class="mt-5 pt-5 border-t border-white/5 flex items-center gap-3">
+                            <div class="w-9 h-9 rounded-full bg-gradient-to-br from-gray-60050 to-pink-100 border border-gray-600 flex items-center justify-center font-bold text-white/70 text-[13px]">LP</div>
                             <div>
-                                <div class="font-semibold text-slate-900 text-[13px]">Lisa Patel</div>
+                                <div class="font-semibold text-white text-[13px]">Lisa Patel</div>
                                 <div class="text-[11px] text-slate-400">Head of Growth, Helix Health</div>
                             </div>
                         </div>
@@ -748,22 +748,22 @@
                 <!-- Trust badge strip -->
                 <div class="mt-12 reveal flex flex-wrap items-center justify-center gap-6 md:gap-10">
                     <div class="flex items-center gap-2 text-slate-400 text-[13px] font-medium">
-                        <i data-lucide="shield-check" class="w-4 h-4 text-emerald-500"></i>
+                        <i data-lucide="shield-check" class="w-4 h-4 text-white/70"></i>
                         Verified Client Reviews
                     </div>
-                    <div class="w-px h-4 bg-slate-200 hidden md:block"></div>
+                    <div class="w-px h-4 bg-black/5 hidden md:block"></div>
                     <div class="flex items-center gap-2 text-slate-400 text-[13px] font-medium">
-                        <i data-lucide="star" class="w-4 h-4 text-amber-400 fill-amber-400"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-[#FFD700] text-[#FFD700]"></i>
                         4.9 / 5 Average Rating
                     </div>
-                    <div class="w-px h-4 bg-slate-200 hidden md:block"></div>
+                    <div class="w-px h-4 bg-black/5 hidden md:block"></div>
                     <div class="flex items-center gap-2 text-slate-400 text-[13px] font-medium">
-                        <i data-lucide="users" class="w-4 h-4 text-blue-500"></i>
+                        <i data-lucide="users" class="w-4 h-4 text-white"></i>
                         250+ Brands Served
                     </div>
-                    <div class="w-px h-4 bg-slate-200 hidden md:block"></div>
+                    <div class="w-px h-4 bg-black/5 hidden md:block"></div>
                     <div class="flex items-center gap-2 text-slate-400 text-[13px] font-medium">
-                        <i data-lucide="repeat" class="w-4 h-4 text-indigo-500"></i>
+                        <i data-lucide="repeat" class="w-4 h-4 text-white/70"></i>
                         98% Client Retention
                     </div>
                 </div>
@@ -772,24 +772,48 @@
 
         <!-- ===== CTA STRIP ===== -->
         <section class="py-24 bg-slate-900 relative overflow-hidden">
-            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full bg-blue-500/10 blur-[120px] pointer-events-none" aria-hidden="true"></div>
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full bg-gray-1000/10 pointer-events-none" aria-hidden="true"></div>
             <div class="relative max-w-4xl mx-auto px-6 md:px-10 text-center reveal">
                 <div class="overline-label text-white/40 mb-4">Ready to Grow?</div>
                 <h2 class="font-display text-3xl md:text-5xl font-extrabold text-white tracking-tighter">
                     Let's build something<br>
-                    <span class="text-blue-400">remarkable together.</span>
+                    <span class="text-white/70">remarkable together.</span>
                 </h2>
                 <p class="mt-6 text-white/60 text-[15px] max-w-xl mx-auto leading-relaxed">
-                    Schedule a free 30-minute strategy audit. We'll review your current marketing setup, identify gaps, and present a clear growth plan — with no obligation.
+                    Schedule a free 30-minute strategy audit. We'll review your current marketing setup, identify gaps, and present a clear growth plan � with no obligation.
                 </p>
                 <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="audit.html" class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-full px-8 py-4 transition-all text-[14px]">
+                    <a href="audit.html" class="inline-flex items-center gap-2 bg-black hover:bg-black700 text-white font-semibold rounded-full px-8 py-4 transition-all text-[14px]">
                         Get Your Free Audit
                         <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </a>
-                    <a href="contact.html" class="inline-flex items-center gap-2 bg-white/5 hover:bg-white/10 border border-white/15 text-white font-semibold rounded-full px-8 py-4 transition-all text-[14px]">
+                    <a href="contact.html" class="inline-flex items-center gap-2 bg-black/5 hover:bg-black/10 border border-white/15 text-white font-semibold rounded-full px-8 py-4 transition-all text-[14px]">
                         Contact Us
                     </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== LOCATION / GOOGLE MAP ===== -->
+        <section class="py-24 bg-black relative overflow-hidden" style="padding-bottom:100px;">
+            <div class="max-w-7xl mx-auto px-6 md:px-10">
+                <div class="text-center mb-14 reveal">
+                    <div class="overline-label mb-3">VISIT US</div>
+                    <h2 class="font-display text-3xl md:text-4xl font-extrabold text-white tracking-tighter">
+                        Find Us Here
+                    </h2>
+                    <p class="mt-4 text-white/60 max-w-xl mx-auto text-[15px] leading-relaxed">
+                        Office 71, 6th floor, Wing D, Paud Rd, near Anand Nagar, Pune
+                    </p>
+                    <a href="https://maps.app.goo.gl/k9JCsZzQ12ZTD2xA9" target="_blank" class="inline-flex items-center gap-2 mt-6 text-white font-semibold text-[14px] hover:underline">
+                        Get Directions
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                    </a>
+                </div>
+                <div class="reveal" style="background:#111111;border:1px solid rgba(255,255,255,0.08);border-radius:12px;overflow:hidden;padding:24px;">
+                    <div style="border-radius:12px;overflow:hidden;">
+                        <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=place_id:ChIJMZ0iqt6_wjsRhG1L8-TAqbQ&zoom=16" width="100%" height="450" style="border:0;display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
                 </div>
             </div>
         </section>
@@ -798,7 +822,7 @@
 
     <!-- Footer -->
     <footer class="relative bg-slate-950 text-white pt-20 md:pt-28 pb-10 overflow-hidden">
-        <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] h-[400px] rounded-full bg-blue-500/10 blur-[120px] pointer-events-none"></div>
+        <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] h-[400px] rounded-full bg-gray-1000/10 pointer-events-none"></div>
         <div class="relative max-w-7xl mx-auto px-6 md:px-10">
             <div class="grid lg:grid-cols-12 gap-12 mb-14 text-left">
                 <div class="lg:col-span-4">
@@ -806,11 +830,11 @@
                         <img src="assets/logo-white.png" alt="Digital Advertise Logo" class="h-10 w-auto object-contain">
                     </div>
                     <p class="text-white/65 text-[15px] leading-relaxed max-w-md">
-                        A performance marketing partner for ambitious teams — engineered for measurable, durable growth across every channel and market.
+                        A performance marketing partner for ambitious teams � engineered for measurable, durable growth across every channel and market.
                     </p>
                     <form class="mt-6 flex max-w-sm" onsubmit="handleNewsletterSubmit(event)">
-                        <input type="email" required placeholder="Subscribe to our newsletter" class="flex-1 bg-white/5 border border-white/10 rounded-l-xl px-4 py-2 text-[14px] text-white placeholder:text-white/40 focus:outline-none focus:border-blue-500">
-                        <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-5 rounded-r-xl text-[14px] font-semibold transition-colors">Join</button>
+                        <input type="email" required placeholder="Subscribe to our newsletter" class="flex-1 bg-black/5 border border-white/10 rounded-l-xl px-4 py-2 text-[14px] text-white placeholder:text-white/40 focus:outline-none focus:border-white">
+                        <button type="submit" class="bg-black hover:bg-black700 text-white px-5 rounded-r-xl text-[14px] font-semibold transition-colors">Join</button>
                     </form>
                 </div>
 
@@ -893,7 +917,7 @@
             const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
             if (reduceMotion) {
-                // Show everything immediately — no animation
+                // Show everything immediately � no animation
                 ['about-overline','about-h1','about-p','about-cta'].forEach(id => {
                     const el = document.getElementById(id);
                     if (el) { el.style.opacity = '1'; el.style.transform = 'none'; }
@@ -911,10 +935,10 @@
                 opacity: 1, y: 0, duration: 0.55, ease: 'power2.out'
             });
 
-            // H1: blur-to-sharp clip reveal
+            // H1: sharp reveal
             tl.fromTo('#about-h1',
-                { opacity: 0, filter: 'blur(8px)', y: 10 },
-                { opacity: 1, filter: 'blur(0px)', y: 0, duration: 0.8, ease: 'power3.out' },
+                { opacity: 0, y: 10 },
+                { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' },
                 '-=0.3'
             );
 

@@ -54,8 +54,8 @@
   transform: none !important;
 }
 #desktop-nav a:hover {
-  color: #2563eb;
-  background: rgba(37,99,235,0.07);
+  color: #000000;
+  background: rgba(255,255,255,0.07);
   transform: none !important;
 }
 .nav-dropdown {
@@ -73,7 +73,7 @@
   transform: translateX(-50%) translateY(6px);
   width: 260px;
   background: rgba(255,255,255,0.98);
-  backdrop-filter: blur(20px);
+  
   border: 1px solid rgba(226,232,240,0.8);
   box-shadow: 0 10px 40px rgba(2,6,23,0.10);
   border-radius: 20px;
@@ -106,7 +106,7 @@
   transition: color 0.15s, background 0.15s;
 }
 .nav-dropdown-menu a:hover {
-  color: #2563eb;
+  color: #000000;
   background: #f1f5f9;
 }
 #navbar.nav-visible {
@@ -117,13 +117,13 @@
 }
 </style>
 </head>
-<body class="bg-white text-slate-900 overflow-x-hidden antialiased selection:bg-blue-100 selection:text-blue-800">
+<body class="bg-black text-white overflow-x-hidden antialiased selection:bg-[#111111] selection:text-white">
 
     <!-- Header -->
     <!-- Header -->
 <header id="navbar" style="position:fixed;top:0;left:0;width:100%;z-index:9999;padding:16px 0;transform:translateY(-120%);transition:transform 0.45s cubic-bezier(0.16,1,0.3,1);">
   <div style="max-width:1280px;margin:0 auto;padding:0 24px;">
-    <div id="nav-wrapper" style="display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,0.85);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,0.6);box-shadow:0 4px 32px rgba(2,6,23,0.08);border-radius:9999px;height:60px;padding:0 24px;">
+    <div id="nav-wrapper" style="display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,0.85);border:1px solid rgba(255,255,255,0.6);box-shadow:0 4px 32px rgba(2,6,23,0.08);border-radius:9999px;height:60px;padding:0 24px;">
       <a href="index.html" style="display:flex;align-items:center;">
         <img src="assets/logo.png" alt="Digital Advertise Logo" style="height:32px;width:auto;object-fit:contain;">
       </a>
@@ -132,9 +132,9 @@
         <div class="nav-dropdown">
           <a href="services.html">Services ▾</a>
           <div class="nav-dropdown-menu">
+            <a href="social-media.html">Social Media Marketing</a>
             <a href="performance-marketing.html">Performance Marketing</a>
             <a href="brand-identity.html">Brand Identity</a>
-            <a href="social-media.html">Social Media Marketing</a>
             <a href="web-development.html">Website Development</a>
             <a href="video-production.html">Video Production</a>
             <a href="ai-video.html">AI Video Generation</a>
@@ -149,7 +149,7 @@
         <a href="about.html">About Us</a>
       </nav>
       <div style="display:flex;align-items:center;gap:8px;">
-        <a href="audit.html" style="display:inline-flex;align-items:center;gap:6px;background:#0f172a;color:#fff;font-weight:600;font-size:14px;padding:10px 20px;border-radius:9999px;text-decoration:none;transition:background 0.2s;">
+        <a href="audit.html" style="display:inline-flex;align-items:center;gap:6px;background:#000000;color:#fff;font-weight:600;font-size:14px;padding:10px 20px;border-radius:9999px;text-decoration:none;transition:background 0.2s;">
           Get Started ↗
         </a>
         <button onclick="toggleMobileMenu()" id="hamburger-btn" style="display:none;padding:8px;border-radius:9999px;border:none;background:transparent;cursor:pointer;">
@@ -157,7 +157,7 @@
         </button>
       </div>
     </div>
-    <div id="mobile-menu" style="display:none;margin-top:12px;background:rgba(255,255,255,0.95);backdrop-filter:blur(20px);border-radius:20px;padding:20px;flex-direction:column;gap:8px;">
+    <div id="mobile-menu" style="display:none;margin-top:12px;background:rgba(255,255,255,0.95);border-radius:20px;padding:20px;flex-direction:column;gap:8px;">
       <a href="index.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Home</a>
       <a href="services.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Services</a>
       <a href="portfolio.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Portfolio</a>
@@ -165,13 +165,13 @@
       <a href="blog.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Blog</a>
       <a href="contact.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Contact</a>
       <a href="about.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">About Us</a>
-      <a href="audit.html" style="margin-top:8px;padding:12px;background:#0f172a;color:#fff;font-weight:600;border-radius:9999px;text-decoration:none;display:block;text-align:center;">Get Started</a>
+      <a href="audit.html" style="margin-top:8px;padding:12px;background:#000000;color:#fff;font-weight:600;border-radius:9999px;text-decoration:none;display:block;text-align:center;">Get Started</a>
     </div>
   </div>
 </header>
 
 
-    <main class="relative bg-white text-slate-900 font-sans overflow-hidden">
+    <main class="relative bg-black text-white font-sans overflow-hidden">
         
         <!-- ===== HERO ===== -->
         <section class="relative overflow-hidden pt-36 md:pt-44 pb-20 mesh-bg">
@@ -182,306 +182,164 @@
             <div class="absolute inset-0 grid-pattern opacity-60 pointer-events-none"></div>
             <div class="max-w-7xl mx-auto px-6 md:px-10 relative z-10 text-left">
                 <div class="overline-label reveal">Our Work</div>
-                <h1 class="mt-3 font-display text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tighter text-slate-900 text-reveal">
+                <h1 class="mt-3 font-display text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tighter text-white text-reveal">
                     Campaigns that <br>
-                    <span class="italic font-light text-slate-700">move markets</span>.
+                    <span class="italic font-light text-white/80">move markets</span>.
                 </h1>
-                <p class="mt-7 text-lg md:text-xl text-slate-600 max-w-2xl leading-relaxed">
+                <p class="mt-7 text-lg md:text-xl text-white/70 max-w-2xl leading-relaxed">
                     Explore our gallery of client projects. Filters showcase our results across paid acquisition, responsive frontend builds, and synthesized marketing assets.
                 </p>
             </div>
         </section>
 
-        <!-- ===== PORTFOLIO FILTER GALLERY ===== -->
-        <section class="relative overflow-hidden py-20 bg-white">
+        
+        <!-- ===== NEW PORTFOLIO GALLERY ===== -->
+        <section class="relative overflow-hidden py-24 bg-black" id="portfolio-gallery">
+            <style>
+                .portfolio-card {
+                    overflow: hidden;
+                    border-radius: 24px;
+                    position: relative;
+                    cursor: pointer;
+                    box-shadow: 0 4px 30px rgba(0,0,0,0.5);
+                    transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+                }
+                .portfolio-card img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+                }
+                .portfolio-card .overlay {
+                    position: absolute;
+                    inset: 0;
+                    background: #000;
+                    opacity: 0;
+                    transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+                }
+                .portfolio-card:hover {
+                    transform: scale(1.03);
+                    z-index: 10;
+                }
+                .portfolio-card:hover img {
+                    transform: scale(1.08);
+                }
+                .portfolio-card:hover .overlay {
+                    opacity: 0.15;
+                }
+            </style>
+            
             <div class="max-w-7xl mx-auto px-6 md:px-10">
                 
-                <!-- Category Selectors -->
-                <div class="flex flex-wrap items-center justify-start gap-2 mb-12 select-none reveal">
-                    <button onclick="filterPortfolio('all')" id="filter-all" class="filter-btn px-5 py-2.5 rounded-full text-[13px] font-semibold border border-slate-200 bg-slate-900 text-white transition-all shadow-md">All Projects</button>
-                    <button onclick="filterPortfolio('marketing')" id="filter-marketing" class="filter-btn px-5 py-2.5 rounded-full text-[13px] font-semibold border border-slate-200 text-slate-600 hover:text-slate-900 hover:border-slate-400 transition-all">Marketing</button>
-                    <button onclick="filterPortfolio('dev')" id="filter-dev" class="filter-btn px-5 py-2.5 rounded-full text-[13px] font-semibold border border-slate-200 text-slate-600 hover:text-slate-900 hover:border-slate-400 transition-all">Web Development</button>
-                    <button onclick="filterPortfolio('video')" id="filter-video" class="filter-btn px-5 py-2.5 rounded-full text-[13px] font-semibold border border-slate-200 text-slate-600 hover:text-slate-900 hover:border-slate-400 transition-all">AI Videos</button>
-                    <button onclick="filterPortfolio('branding')" id="filter-branding" class="filter-btn px-5 py-2.5 rounded-full text-[13px] font-semibold border border-slate-200 text-slate-600 hover:text-slate-900 hover:border-slate-400 transition-all">Branding</button>
-                    <button onclick="filterPortfolio('packaging')" id="filter-packaging" class="filter-btn px-5 py-2.5 rounded-full text-[13px] font-semibold border border-slate-200 text-slate-600 hover:text-slate-900 hover:border-slate-400 transition-all">Packaging</button>
+                <!-- 1. WEB DEVELOPMENT -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-32 md:mb-48 reveal-portfolio">
+                    <div class="lg:col-span-4 portfolio-text-content order-1 lg:order-1">
+                        <div class="text-[11px] text-white/50 uppercase tracking-widest font-semibold mb-4 border-b border-white/10 pb-4">01 &mdash; Web Development</div>
+                        <h2 class="font-display text-4xl lg:text-5xl font-bold text-white leading-tight">Web Development</h2>
+                        <p class="mt-4 text-white/60 text-lg leading-relaxed max-w-sm">Modern responsive websites, SaaS platforms and premium UI/UX experiences.</p>
+                    </div>
+                    <div class="lg:col-span-8 order-2 lg:order-2">
+                        <div class="grid grid-cols-2 gap-4 md:gap-6 h-[60vh] md:h-[600px]">
+                            <div class="col-span-1 row-span-2 portfolio-card" onclick="openLightbox(0)">
+                                <img src="assets/portfolio images/1.jpg" alt="Web Development" loading="lazy">
+                                <div class="overlay"></div>
+                            </div>
+                            <div class="col-span-1 row-span-1 portfolio-card" onclick="openLightbox(1)">
+                                <img src="assets/portfolio images/2.jpg" alt="Web Development" loading="lazy">
+                                <div class="overlay"></div>
+                            </div>
+                            <div class="col-span-1 row-span-1 portfolio-card" onclick="openLightbox(2)">
+                                <img src="assets/portfolio images/3.jpg" alt="Web Development" loading="lazy">
+                                <div class="overlay"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Portfolio Grid -->
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="portfolio-grid">
-                    
-                    <!-- Item 1: Apple Marketing -->
-                    <div class="portfolio-item group relative rounded-3xl overflow-hidden aspect-[4/3] bg-slate-900 border border-slate-100 hover:shadow-2xl transition-all duration-500" data-cat="marketing">
-                        <img src="assets/portfolio-openai.png" alt="Apple paid media" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent p-6 flex flex-col justify-between text-left opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <span class="bg-blue-600 text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 rounded text-white self-start">Marketing</span>
-                            <div>
-                                <h3 class="font-display font-bold text-white text-xl">Apple Scaling</h3>
-                                <p class="text-white/60 text-[13px] mt-1">Managed Meta & TikTok campaign structure resulting in massive acquisition lifts.</p>
-                                <div class="mt-4 pt-4 border-t border-white/10 flex justify-between items-center text-white">
-                                    <div>
-                                        <div class="text-lg font-bold text-emerald-400">+310%</div>
-                                        <div class="text-[10px] uppercase tracking-wider text-white/50">Revenue lift</div>
-                                    </div>
-                                    <div>
-                                        <div class="text-lg font-bold">8.2×</div>
-                                        <div class="text-[10px] uppercase tracking-wider text-white/50">Campaign ROAS</div>
-                                    </div>
-                                </div>
+                <!-- 2. BRAND IDENTITY -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-32 md:mb-48 reveal-portfolio">
+                    <div class="lg:col-span-8 order-2 lg:order-1">
+                        <div class="grid grid-cols-2 gap-4 md:gap-6 h-[60vh] md:h-[600px]">
+                            <div class="col-span-1 row-span-1 portfolio-card" onclick="openLightbox(3)">
+                                <img src="assets/portfolio images/4.jpg" alt="Brand Identity" loading="lazy">
+                                <div class="overlay"></div>
+                            </div>
+                            <div class="col-span-1 row-span-2 portfolio-card" onclick="openLightbox(5)">
+                                <img src="assets/portfolio images/6 (2).jpg" alt="Brand Identity" loading="lazy">
+                                <div class="overlay"></div>
+                            </div>
+                            <div class="col-span-1 row-span-1 portfolio-card" onclick="openLightbox(4)">
+                                <img src="assets/portfolio images/6 (1).jpg" alt="Brand Identity" loading="lazy">
+                                <div class="overlay"></div>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Item 2: Stripe Webapp -->
-                    <div class="portfolio-item group relative rounded-3xl overflow-hidden aspect-[4/3] bg-slate-900 border border-slate-100 hover:shadow-2xl transition-all duration-500" data-cat="dev">
-                        <img src="assets/portfolio-stripe.png" alt="Stripe Webapp" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent p-6 flex flex-col justify-between text-left opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <span class="bg-blue-600 text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 rounded text-white self-start">Web Development</span>
-                            <div>
-                                <h3 class="font-display font-bold text-white text-xl">Stripe Terminal</h3>
-                                <p class="text-white/60 text-[13px] mt-1">Highly-performant landing application optimized with sub-1s load times.</p>
-                                <div class="mt-4 pt-4 border-t border-white/10 flex justify-between items-center text-white">
-                                    <div>
-                                        <div class="text-lg font-bold text-emerald-400">99/100</div>
-                                        <div class="text-[10px] uppercase tracking-wider text-white/50">Lighthouse Score</div>
-                                    </div>
-                                    <div>
-                                        <div class="text-lg font-bold">+42%</div>
-                                        <div class="text-[10px] uppercase tracking-wider text-white/50">Conversion Lift</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="lg:col-span-4 portfolio-text-content order-1 lg:order-2 lg:pl-10">
+                        <div class="text-[11px] text-white/50 uppercase tracking-widest font-semibold mb-4 border-b border-white/10 pb-4">02 &mdash; Brand Identity</div>
+                        <h2 class="font-display text-4xl lg:text-5xl font-bold text-white leading-tight">Brand Identity</h2>
+                        <p class="mt-4 text-white/60 text-lg leading-relaxed max-w-sm">Complete branding systems, packaging, merchandise and visual identity.</p>
                     </div>
-
-                    <!-- Item 3: Zoom Video synthesis -->
-                    <div class="portfolio-item group relative rounded-3xl overflow-hidden aspect-[4/3] bg-slate-900 border border-slate-100 hover:shadow-2xl transition-all duration-500" data-cat="video">
-                        <img src="assets/portfolio-zoom.png" alt="Zoom video synthesis" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent p-6 flex flex-col justify-between text-left opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <span class="bg-blue-600 text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 rounded text-white self-start">AI Videos</span>
-                            <div>
-                                <h3 class="font-display font-bold text-white text-xl">Zoom Launch</h3>
-                                <p class="text-white/60 text-[13px] mt-1">Cinematic product synthesis and custom language avatars konuşuyor.</p>
-                                <div class="mt-4 pt-4 border-t border-white/10 flex justify-between items-center text-white">
-                                    <div>
-                                        <div class="text-lg font-bold text-emerald-400">-80%</div>
-                                        <div class="text-[10px] uppercase tracking-wider text-white/50">Creative Cost</div>
-                                    </div>
-                                    <div>
-                                        <div class="text-lg font-bold">15x</div>
-                                        <div class="text-[10px] uppercase tracking-wider text-white/50">Asset Yield</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Item 4: Figma Identity System -->
-                    <div class="portfolio-item group relative rounded-3xl overflow-hidden aspect-[4/3] bg-slate-900 border border-slate-100 hover:shadow-2xl transition-all duration-500" data-cat="branding">
-                        <img src="assets/portfolio-figma.png" alt="Figma Identity System" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent p-6 flex flex-col justify-between text-left opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <span class="bg-blue-600 text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 rounded text-white self-start">Branding</span>
-                            <div>
-                                <h3 class="font-display font-bold text-white text-xl">Figma Systems</h3>
-                                <p class="text-white/60 text-[13px] mt-1">Clean brand identity book, color tokens, and asset matrices.</p>
-                                <div class="mt-4 pt-4 border-t border-white/10 flex justify-between items-center text-white">
-                                    <div>
-                                        <div class="text-lg font-bold text-emerald-400">400+</div>
-                                        <div class="text-[10px] uppercase tracking-wider text-white/50">Design Tokens</div>
-                                    </div>
-                                    <div>
-                                        <div class="text-lg font-bold">100%</div>
-                                        <div class="text-[10px] uppercase tracking-wider text-white/50">Consistency</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Item 5: Airbnb Lead ads -->
-                    <div class="portfolio-item group relative rounded-3xl overflow-hidden aspect-[4/3] bg-slate-900 border border-slate-100 hover:shadow-2xl transition-all duration-500" data-cat="marketing">
-                        <img src="assets/portfolio-airbnb.png" alt="Airbnb Lead ads" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent p-6 flex flex-col justify-between text-left opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <span class="bg-blue-600 text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 rounded text-white self-start">Marketing</span>
-                            <div>
-                                <h3 class="font-display font-bold text-white text-xl">Airbnb Campaigns</h3>
-                                <p class="text-white/60 text-[13px] mt-1">Engineered pixel targeting and search programmatic scaling loops.</p>
-                                <div class="mt-4 pt-4 border-t border-white/10 flex justify-between items-center text-white">
-                                    <div>
-                                        <div class="text-lg font-bold text-emerald-400">-38%</div>
-                                        <div class="text-[10px] uppercase tracking-wider text-white/50">CPA reduction</div>
-                                    </div>
-                                    <div>
-                                        <div class="text-lg font-bold">+160%</div>
-                                        <div class="text-[10px] uppercase tracking-wider text-white/50">Sales volume</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Item 6: Slack Website -->
-                    <div class="portfolio-item group relative rounded-3xl overflow-hidden aspect-[4/3] bg-slate-900 border border-slate-100 hover:shadow-2xl transition-all duration-500" data-cat="dev">
-                        <img src="assets/portfolio-slack.png" alt="Slack Website" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent p-6 flex flex-col justify-between text-left opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <span class="bg-blue-600 text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 rounded text-white self-start">Web Development</span>
-                            <div>
-                                <h3 class="font-display font-bold text-white text-xl">Slack Hub</h3>
-                                <p class="text-white/60 text-[13px] mt-1">Lightweight clean HTML architectures loading under 1.2s blended score.</p>
-                                <div class="mt-4 pt-4 border-t border-white/10 flex justify-between items-center text-white">
-                                    <div>
-                                        <div class="text-lg font-bold text-emerald-400">98+</div>
-                                        <div class="text-[10px] uppercase tracking-wider text-white/50">Mobile index</div>
-                                    </div>
-                                    <div>
-                                        <div class="text-lg font-bold">+18%</div>
-                                        <div class="text-[10px] uppercase tracking-wider text-white/50">Bounce Rate Drop</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Item 7: Apple Premium Packaging -->
-                    <div class="portfolio-item group relative rounded-3xl overflow-hidden aspect-[4/3] bg-slate-900 border border-slate-100 hover:shadow-2xl transition-all duration-500" data-cat="packaging">
-                        <img src="assets/portfolio-notion.png" alt="Apple Premium Packaging" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent p-6 flex flex-col justify-between text-left opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <span class="bg-blue-600 text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 rounded text-white self-start">Packaging</span>
-                            <div>
-                                <h3 class="font-display font-bold text-white text-xl">Apple Premium Box</h3>
-                                <p class="text-white/60 text-[13px] mt-1">Sleek minimalist packaging design with premium tactile finishes.</p>
-                                <div class="mt-4 pt-4 border-t border-white/10 flex justify-between items-center text-white">
-                                    <div>
-                                        <div class="text-lg font-bold text-emerald-400">Winner</div>
-                                        <div class="text-[10px] uppercase tracking-wider text-white/50">Red Dot Design</div>
-                                    </div>
-                                    <div>
-                                        <div class="text-lg font-bold">100%</div>
-                                        <div class="text-[10px] uppercase tracking-wider text-white/50">Recyclable</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Item 8: Figma Gift Packaging -->
-                    <div class="portfolio-item group relative rounded-3xl overflow-hidden aspect-[4/3] bg-slate-900 border border-slate-100 hover:shadow-2xl transition-all duration-500" data-cat="packaging">
-                        <img src="assets/portfolio-figma-box.png" alt="Figma Gift Packaging" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent p-6 flex flex-col justify-between text-left opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <span class="bg-blue-600 text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 rounded text-white self-start">Packaging</span>
-                            <div>
-                                <h3 class="font-display font-bold text-white text-xl">Figma Gift Set</h3>
-                                <p class="text-white/60 text-[13px] mt-1">Minimalist glass molding and premium tactile dark matte packaging boxes.</p>
-                                <div class="mt-4 pt-4 border-t border-white/10 flex justify-between items-center text-white">
-                                    <div>
-                                        <div class="text-lg font-bold text-emerald-400">+48%</div>
-                                        <div class="text-[10px] uppercase tracking-wider text-white/50">Shelf Lift</div>
-                                    </div>
-                                    <div>
-                                        <div class="text-lg font-bold">Hot Foil</div>
-                                        <div class="text-[10px] uppercase tracking-wider text-white/50">Stamp Finish</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Item 9: Netflix Global -->
-                    <div class="portfolio-item group relative rounded-3xl overflow-hidden aspect-[4/3] bg-slate-900 border border-slate-100 hover:shadow-2xl transition-all duration-500" data-cat="marketing">
-                        <img src="assets/portfolio-netflix.png" alt="Netflix Global" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent p-6 flex flex-col justify-between text-left opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <span class="bg-blue-600 text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 rounded text-white self-start">Marketing</span>
-                            <div>
-                                <h3 class="font-display font-bold text-white text-xl">Netflix Expansion</h3>
-                                <p class="text-white/60 text-[13px] mt-1">Programmatic paid media pipeline generating dynamic localized video ads for 18 countries.</p>
-                                <div class="mt-4 pt-4 border-t border-white/10 flex justify-between items-center text-white">
-                                    <div>
-                                        <div class="text-lg font-bold text-emerald-400">-45% CPA</div>
-                                        <div class="text-[10px] uppercase tracking-wider text-white/50">Target CPA Reduction</div>
-                                    </div>
-                                    <div>
-                                        <div class="text-lg font-bold">18</div>
-                                        <div class="text-[10px] uppercase tracking-wider text-white/50">Countries Scaled</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Item 10: OpenAI Integration -->
-                    <div class="portfolio-item group relative rounded-3xl overflow-hidden aspect-[4/3] bg-slate-900 border border-slate-100 hover:shadow-2xl transition-all duration-500" data-cat="dev">
-                        <img src="assets/portfolio-openai.png" alt="OpenAI API Integration" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent p-6 flex flex-col justify-between text-left opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <span class="bg-blue-600 text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 rounded text-white self-start">Web Development</span>
-                            <div>
-                                <h3 class="font-display font-bold text-white text-xl">OpenAI Diffusion</h3>
-                                <p class="text-white/60 text-[13px] mt-1">Real-time diffusion API pipeline for dynamic video rendering on web clients.</p>
-                                <div class="mt-4 pt-4 border-t border-white/10 flex justify-between items-center text-white">
-                                    <div>
-                                        <div class="text-lg font-bold text-emerald-400">&lt;3s</div>
-                                        <div class="text-[10px] uppercase tracking-wider text-white/50">Generation Time</div>
-                                    </div>
-                                    <div>
-                                        <div class="text-lg font-bold">99.9%</div>
-                                        <div class="text-[10px] uppercase tracking-wider text-white/50">API Uptime</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Item 11: Notion Rebrand -->
-                    <div class="portfolio-item group relative rounded-3xl overflow-hidden aspect-[4/3] bg-slate-900 border border-slate-100 hover:shadow-2xl transition-all duration-500" data-cat="branding">
-                        <img src="assets/portfolio-notion.png" alt="Notion Identity rebrand" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent p-6 flex flex-col justify-between text-left opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <span class="bg-blue-600 text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 rounded text-white self-start">Branding</span>
-                            <div>
-                                <h3 class="font-display font-bold text-white text-xl">Notion Workspace</h3>
-                                <p class="text-white/60 text-[13px] mt-1">Minimalist design systems, layout guidelines, and dark mode tokens for teams.</p>
-                                <div class="mt-4 pt-4 border-t border-white/10 flex justify-between items-center text-white">
-                                    <div>
-                                        <div class="text-lg font-bold text-emerald-400">50+</div>
-                                        <div class="text-[10px] uppercase tracking-wider text-white/50">Style Components</div>
-                                    </div>
-                                    <div>
-                                        <div class="text-lg font-bold">100%</div>
-                                        <div class="text-[10px] uppercase tracking-wider text-white/50">Coherence Score</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Item 12: Apple Vision Pro UI -->
-                    <div class="portfolio-item group relative rounded-3xl overflow-hidden aspect-[4/3] bg-slate-900 border border-slate-100 hover:shadow-2xl transition-all duration-500" data-cat="video">
-                        <img src="assets/portfolio-apple.png" alt="Apple Vision Pro UI layout" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent p-6 flex flex-col justify-between text-left opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <span class="bg-blue-600 text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 rounded text-white self-start">AI Videos</span>
-                            <div>
-                                <h3 class="font-display font-bold text-white text-xl">Apple Spatial UI</h3>
-                                <p class="text-white/60 text-[13px] mt-1">Interactive WebGL spatial avatar configuration and 3D workspace configurations.</p>
-                                <div class="mt-4 pt-4 border-t border-white/10 flex justify-between items-center text-white">
-                                    <div>
-                                        <div class="text-lg font-bold text-emerald-400">90 FPS</div>
-                                        <div class="text-[10px] uppercase tracking-wider text-white/50">Rendering Speed</div>
-                                    </div>
-                                    <div>
-                                        <div class="text-lg font-bold">3D</div>
-                                        <div class="text-[10px] uppercase tracking-wider text-white/50">Spatial Audio</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
+
+                <!-- 3. PACKAGING DESIGN -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-32 md:mb-48 reveal-portfolio">
+                    <div class="lg:col-span-4 portfolio-text-content order-1 lg:order-1">
+                        <div class="text-[11px] text-white/50 uppercase tracking-widest font-semibold mb-4 border-b border-white/10 pb-4">03 &mdash; Packaging Design</div>
+                        <h2 class="font-display text-4xl lg:text-5xl font-bold text-white leading-tight">Packaging Design</h2>
+                        <p class="mt-4 text-white/60 text-lg leading-relaxed max-w-sm">Premium packaging concepts crafted for modern consumer brands.</p>
+                    </div>
+                    <div class="lg:col-span-8 order-2 lg:order-2">
+                        <div class="grid grid-cols-2 gap-4 md:gap-6 h-[60vh] md:h-[600px]">
+                            <div class="col-span-1 row-span-2 portfolio-card" onclick="openLightbox(6)">
+                                <img src="assets/portfolio images/7.jpg" alt="Packaging Design" loading="lazy">
+                                <div class="overlay"></div>
+                            </div>
+                            <div class="col-span-1 row-span-1 portfolio-card" onclick="openLightbox(7)">
+                                <img src="assets/portfolio images/8.jpg" alt="Packaging Design" loading="lazy">
+                                <div class="overlay"></div>
+                            </div>
+                            <div class="col-span-1 row-span-1 portfolio-card" onclick="openLightbox(8)">
+                                <img src="assets/portfolio images/9.jpg" alt="Packaging Design" loading="lazy">
+                                <div class="overlay"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. DIGITAL MARKETING -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center reveal-portfolio">
+                    <div class="lg:col-span-8 order-2 lg:order-1">
+                        <div class="grid grid-cols-2 gap-4 md:gap-6 h-[60vh] md:h-[600px]">
+                            <div class="col-span-1 row-span-1 portfolio-card" onclick="openLightbox(9)">
+                                <img src="assets/portfolio images/10.jpg" alt="Digital Marketing" loading="lazy">
+                                <div class="overlay"></div>
+                            </div>
+                            <div class="col-span-1 row-span-2 portfolio-card" onclick="openLightbox(11)">
+                                <img src="assets/portfolio images/12.jpg" alt="Digital Marketing" loading="lazy">
+                                <div class="overlay"></div>
+                            </div>
+                            <div class="col-span-1 row-span-1 portfolio-card" onclick="openLightbox(10)">
+                                <img src="assets/portfolio images/11.jpg" alt="Digital Marketing" loading="lazy">
+                                <div class="overlay"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-4 portfolio-text-content order-1 lg:order-2 lg:pl-10">
+                        <div class="text-[11px] text-white/50 uppercase tracking-widest font-semibold mb-4 border-b border-white/10 pb-4">04 &mdash; Digital Marketing</div>
+                        <h2 class="font-display text-4xl lg:text-5xl font-bold text-white leading-tight">Digital Marketing</h2>
+                        <p class="mt-4 text-white/60 text-lg leading-relaxed max-w-sm">Creative social media campaigns, performance marketing and content creation.</p>
+                    </div>
+                </div>
+
             </div>
         </section>
+
 
     </main>
 
     <!-- Footer -->
     <footer class="relative bg-slate-950 text-white pt-20 md:pt-28 pb-10 overflow-hidden">
-        <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] h-[400px] rounded-full bg-blue-500/10 blur-[120px] pointer-events-none"></div>
+        <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] h-[400px] rounded-full bg-gray-1000/10 pointer-events-none"></div>
         <div class="relative max-w-7xl mx-auto px-6 md:px-10">
             <div class="grid lg:grid-cols-12 gap-12 mb-14 text-left">
                 <div class="lg:col-span-4">
@@ -489,11 +347,11 @@
                         <img src="assets/logo-white.png" alt="Digital Advertise Logo" class="h-10 w-auto object-contain">
                     </div>
                     <p class="text-white/65 text-[15px] leading-relaxed max-w-md">
-                        A performance marketing partner for ambitious teams — engineered for measurable, durable growth across every channel and market.
+                        A performance marketing partner for ambitious teams � engineered for measurable, durable growth across every channel and market.
                     </p>
                     <form class="mt-6 flex max-w-sm" onsubmit="handleNewsletterSubmit(event)">
-                        <input type="email" required placeholder="Subscribe to our newsletter" class="flex-1 bg-white/5 border border-white/10 rounded-l-xl px-4 py-2 text-[14px] text-white placeholder:text-white/40 focus:outline-none focus:border-blue-500">
-                        <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-5 rounded-r-xl text-[14px] font-semibold transition-colors">Join</button>
+                        <input type="email" required placeholder="Subscribe to our newsletter" class="flex-1 bg-black/5 border border-white/10 rounded-l-xl px-4 py-2 text-[14px] text-white placeholder:text-white/40 focus:outline-none focus:border-white">
+                        <button type="submit" class="bg-black hover:bg-black700 text-white px-5 rounded-r-xl text-[14px] font-semibold transition-colors">Join</button>
                     </form>
                 </div>
 
@@ -602,36 +460,133 @@ function toggleMobileMenu() {
 }
 </script>
     
-    <!-- Local Portfolio filtering script -->
+    
+    <!-- Portfolio Lightbox -->
+    <div id="portfolio-lightbox" class="fixed inset-0 z-[99999] bg-black/95 opacity-0 pointer-events-none transition-opacity duration-300 flex items-center justify-center" onclick="closeLightbox()">
+        <button onclick="closeLightbox()" class="absolute top-6 right-6 text-white/50 hover:text-white transition-colors z-50 p-2">
+            <i data-lucide="x" class="w-8 h-8"></i>
+        </button>
+        <button onclick="prevLightbox(event)" class="absolute left-4 top-1/2 -translate-y-1/2 text-white/50 hover:text-white transition-colors z-50 p-4 hidden md:block">
+            <i data-lucide="chevron-left" class="w-12 h-12"></i>
+        </button>
+        <button onclick="nextLightbox(event)" class="absolute right-4 top-1/2 -translate-y-1/2 text-white/50 hover:text-white transition-colors z-50 p-4 hidden md:block">
+            <i data-lucide="chevron-right" class="w-12 h-12"></i>
+        </button>
+        <div class="relative w-full h-full max-w-7xl mx-auto p-4 md:p-12 flex items-center justify-center" onclick="event.stopPropagation()">
+            <img id="lightbox-img" src="" alt="Portfolio Image Fullscreen" class="max-w-full max-h-full object-contain shadow-2xl transition-transform duration-300">
+        </div>
+    </div>
+    
     <script>
-        function filterPortfolio(cat) {
-            // Update active state on buttons
-            document.querySelectorAll('.filter-btn').forEach(btn => {
-                btn.classList.remove('bg-slate-900', 'text-white', 'shadow-md');
-                btn.classList.add('text-slate-600', 'hover:text-slate-900', 'hover:border-slate-400');
-            });
-            
-            const activeBtn = document.getElementById('filter-' + cat);
-            if (activeBtn) {
-                activeBtn.classList.add('bg-slate-900', 'text-white', 'shadow-md');
-                activeBtn.classList.remove('text-slate-600', 'hover:text-slate-900', 'hover:border-slate-400');
-            }
-            
-            // Show/hide gallery items
-            const items = document.querySelectorAll('.portfolio-item');
-            items.forEach(item => {
-                if (cat === 'all' || item.dataset.cat === cat) {
-                    item.classList.remove('hidden');
-                    // Add micro reveal anim if GSAP is available
-                    if (typeof gsap !== 'undefined') {
-                        gsap.fromTo(item, { opacity: 0, scale: 0.96 }, { opacity: 1, scale: 1, duration: 0.4, ease: 'power2.out' });
-                    }
-                } else {
-                    item.classList.add('hidden');
-                }
-            });
+        const portfolioImages = [
+            'assets/portfolio images/1.jpg',
+            'assets/portfolio images/2.jpg',
+            'assets/portfolio images/3.jpg',
+            'assets/portfolio images/4.jpg',
+            'assets/portfolio images/6 (1).jpg',
+            'assets/portfolio images/6 (2).jpg',
+            'assets/portfolio images/7.jpg',
+            'assets/portfolio images/8.jpg',
+            'assets/portfolio images/9.jpg',
+            'assets/portfolio images/10.jpg',
+            'assets/portfolio images/11.jpg',
+            'assets/portfolio images/12.jpg'
+        ];
+        
+        let currentImageIndex = 0;
+        const lightbox = document.getElementById('portfolio-lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        
+        function openLightbox(index) {
+            currentImageIndex = index;
+            lightboxImg.src = portfolioImages[currentImageIndex];
+            lightbox.classList.remove('opacity-0', 'pointer-events-none');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+            if(window.lucide) { lucide.createIcons(); }
         }
+        
+        function closeLightbox() {
+            lightbox.classList.add('opacity-0', 'pointer-events-none');
+            document.body.style.overflow = '';
+        }
+        
+        function prevLightbox(e) {
+            if(e) e.stopPropagation();
+            currentImageIndex = (currentImageIndex - 1 + portfolioImages.length) % portfolioImages.length;
+            lightboxImg.src = portfolioImages[currentImageIndex];
+        }
+        
+        function nextLightbox(e) {
+            if(e) e.stopPropagation();
+            currentImageIndex = (currentImageIndex + 1) % portfolioImages.length;
+            lightboxImg.src = portfolioImages[currentImageIndex];
+        }
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (lightbox.classList.contains('opacity-0')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') prevLightbox();
+            if (e.key === 'ArrowRight') nextLightbox();
+        });
+        
+        // Mobile swipe support
+        let touchstartX = 0;
+        let touchendX = 0;
+        
+        lightbox.addEventListener('touchstart', e => {
+            touchstartX = e.changedTouches[0].screenX;
+        }, {passive: true});
+        
+        lightbox.addEventListener('touchend', e => {
+            touchendX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, {passive: true});
+        
+        function handleSwipe() {
+            if (touchendX < touchstartX - 50) nextLightbox();
+            if (touchendX > touchstartX + 50) prevLightbox();
+        }
+
+        // GSAP Scroll Animations
+        document.addEventListener("DOMContentLoaded", () => {
+            if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+                gsap.registerPlugin(ScrollTrigger);
+                
+                gsap.utils.toArray('.reveal-portfolio').forEach(section => {
+                    gsap.fromTo(section.querySelectorAll('.portfolio-card'), {
+                        y: 40,
+                        opacity: 0
+                    }, {
+                        scrollTrigger: {
+                            trigger: section,
+                            start: 'top 85%'
+                        },
+                        y: 0,
+                        opacity: 1,
+                        duration: 0.8,
+                        stagger: 0.120,
+                        ease: 'power3.out'
+                    });
+                    
+                    gsap.fromTo(section.querySelector('.portfolio-text-content'), {
+                        y: 40,
+                        opacity: 0
+                    }, {
+                        scrollTrigger: {
+                            trigger: section,
+                            start: 'top 85%'
+                        },
+                        y: 0,
+                        opacity: 1,
+                        duration: 0.8,
+                        ease: 'power3.out'
+                    });
+                });
+            }
+        });
     </script>
+
 </body>
 </html>
 

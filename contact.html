@@ -54,8 +54,8 @@
   transform: none !important;
 }
 #desktop-nav a:hover {
-  color: #2563eb;
-  background: rgba(37,99,235,0.07);
+  color: #000000;
+  background: rgba(255,255,255,0.07);
   transform: none !important;
 }
 .nav-dropdown {
@@ -73,7 +73,7 @@
   transform: translateX(-50%) translateY(6px);
   width: 260px;
   background: rgba(255,255,255,0.98);
-  backdrop-filter: blur(20px);
+  
   border: 1px solid rgba(226,232,240,0.8);
   box-shadow: 0 10px 40px rgba(2,6,23,0.10);
   border-radius: 20px;
@@ -106,7 +106,7 @@
   transition: color 0.15s, background 0.15s;
 }
 .nav-dropdown-menu a:hover {
-  color: #2563eb;
+  color: #000000;
   background: #f1f5f9;
 }
 #navbar.nav-visible {
@@ -117,13 +117,13 @@
 }
 </style>
 </head>
-<body class="bg-white text-slate-900 overflow-x-hidden antialiased selection:bg-blue-100 selection:text-blue-800">
+<body class="bg-black text-white overflow-x-hidden antialiased selection:bg-[#111111] selection:text-white">
 
     <!-- Header -->
     <!-- Header -->
 <header id="navbar" style="position:fixed;top:0;left:0;width:100%;z-index:9999;padding:16px 0;transform:translateY(-120%);transition:transform 0.45s cubic-bezier(0.16,1,0.3,1);">
   <div style="max-width:1280px;margin:0 auto;padding:0 24px;">
-    <div id="nav-wrapper" style="display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,0.85);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,0.6);box-shadow:0 4px 32px rgba(2,6,23,0.08);border-radius:9999px;height:60px;padding:0 24px;">
+    <div id="nav-wrapper" style="display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,0.85);border:1px solid rgba(255,255,255,0.6);box-shadow:0 4px 32px rgba(2,6,23,0.08);border-radius:9999px;height:60px;padding:0 24px;">
       <a href="index.html" style="display:flex;align-items:center;">
         <img src="assets/logo.png" alt="Digital Advertise Logo" style="height:32px;width:auto;object-fit:contain;">
       </a>
@@ -132,9 +132,9 @@
         <div class="nav-dropdown">
           <a href="services.html">Services ▾</a>
           <div class="nav-dropdown-menu">
+            <a href="social-media.html">Social Media Marketing</a>
             <a href="performance-marketing.html">Performance Marketing</a>
             <a href="brand-identity.html">Brand Identity</a>
-            <a href="social-media.html">Social Media Marketing</a>
             <a href="web-development.html">Website Development</a>
             <a href="video-production.html">Video Production</a>
             <a href="ai-video.html">AI Video Generation</a>
@@ -149,7 +149,7 @@
         <a href="about.html">About Us</a>
       </nav>
       <div style="display:flex;align-items:center;gap:8px;">
-        <a href="audit.html" style="display:inline-flex;align-items:center;gap:6px;background:#0f172a;color:#fff;font-weight:600;font-size:14px;padding:10px 20px;border-radius:9999px;text-decoration:none;transition:background 0.2s;">
+        <a href="audit.html" style="display:inline-flex;align-items:center;gap:6px;background:#000000;color:#fff;font-weight:600;font-size:14px;padding:10px 20px;border-radius:9999px;text-decoration:none;transition:background 0.2s;">
           Get Started ↗
         </a>
         <button onclick="toggleMobileMenu()" id="hamburger-btn" style="display:none;padding:8px;border-radius:9999px;border:none;background:transparent;cursor:pointer;">
@@ -157,7 +157,7 @@
         </button>
       </div>
     </div>
-    <div id="mobile-menu" style="display:none;margin-top:12px;background:rgba(255,255,255,0.95);backdrop-filter:blur(20px);border-radius:20px;padding:20px;flex-direction:column;gap:8px;">
+    <div id="mobile-menu" style="display:none;margin-top:12px;background:rgba(255,255,255,0.95);border-radius:20px;padding:20px;flex-direction:column;gap:8px;">
       <a href="index.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Home</a>
       <a href="services.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Services</a>
       <a href="portfolio.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Portfolio</a>
@@ -165,13 +165,13 @@
       <a href="blog.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Blog</a>
       <a href="contact.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Contact</a>
       <a href="about.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">About Us</a>
-      <a href="audit.html" style="margin-top:8px;padding:12px;background:#0f172a;color:#fff;font-weight:600;border-radius:9999px;text-decoration:none;display:block;text-align:center;">Get Started</a>
+      <a href="audit.html" style="margin-top:8px;padding:12px;background:#000000;color:#fff;font-weight:600;border-radius:9999px;text-decoration:none;display:block;text-align:center;">Get Started</a>
     </div>
   </div>
 </header>
 
 
-    <main class="relative bg-white text-slate-900 font-sans overflow-hidden">
+    <main class="relative bg-black text-white font-sans overflow-hidden">
         
         <!-- ===== HERO ===== -->
         <section class="relative overflow-hidden pt-36 md:pt-44 pb-20 mesh-bg animated-mesh-bg">
@@ -181,42 +181,42 @@
             <div class="absolute inset-0 grid-pattern opacity-60 pointer-events-none"></div>
             <div class="max-w-7xl mx-auto px-6 md:px-10 relative z-10 text-left">
                 <div class="overline-label reveal">Get in Touch</div>
-                <h1 class="mt-3 font-display text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tighter text-slate-900 text-reveal">
+                <h1 class="mt-3 font-display text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tighter text-white text-reveal">
                     Let's scale your <br>
-                    <span class="italic font-light text-slate-700">brand revenue</span>.
+                    <span class="italic font-light text-white/80">brand revenue</span>.
                 </h1>
-                <p class="mt-7 text-lg md:text-xl text-slate-600 max-w-2xl leading-relaxed">
+                <p class="mt-7 text-lg md:text-xl text-white/70 max-w-2xl leading-relaxed">
                     Message us via form, start a chat on WhatsApp directly, or book a live strategy consultation in the Calendar below.
                 </p>
             </div>
         </section>
 
         <!-- ===== CONTACT SECTION WITH FORM & CALENDLY ===== -->
-        <section class="relative overflow-hidden py-20 bg-white">
+        <section class="relative overflow-hidden py-20 bg-black">
             <div class="max-w-7xl mx-auto px-6 md:px-10">
                 <div class="grid lg:grid-cols-12 gap-10">
                     
                     <!-- Left: Form -->
                     <div class="lg:col-span-6 text-left reveal-left">
-                        <div class="glass-strong border border-slate-200 p-8 rounded-[2rem]">
-                            <h3 class="font-display text-2xl font-bold text-slate-900">Send a Message</h3>
-                            <p class="text-[13px] text-slate-500 mt-1">Fill out the form below. We respond within 12 hours.</p>
+                        <div class="glass-strong border border-white/10 p-8 rounded-[2rem]">
+                            <h3 class="font-display text-2xl font-bold text-white">Send a Message</h3>
+                            <p class="text-[13px] text-white/60 mt-1">Fill out the form below. We respond within 12 hours.</p>
                             
                             <form id="contact-form" class="mt-6 space-y-4" onsubmit="handleContactSubmit(event)">
-                                <input type="text" id="contact-name" required placeholder="Your Name" class="w-full px-4 py-3 border border-slate-200 rounded-xl focus:border-blue-500 focus:outline-none text-[14px]">
-                                <input type="email" id="contact-email" required placeholder="Work Email" class="w-full px-4 py-3 border border-slate-200 rounded-xl focus:border-blue-500 focus:outline-none text-[14px]">
-                                <input type="tel" id="contact-phone" required placeholder="Phone Number" class="w-full px-4 py-3 border border-slate-200 rounded-xl focus:border-blue-500 focus:outline-none text-[14px]">
-                                <input type="text" id="contact-company" required placeholder="Company Name" class="w-full px-4 py-3 border border-slate-200 rounded-xl focus:border-blue-500 focus:outline-none text-[14px]">
-                                <textarea id="contact-message" required placeholder="Tell us about your project or performance objectives..." class="w-full px-4 py-3 border border-slate-200 rounded-xl focus:border-blue-500 focus:outline-none text-[14px] min-h-[120px]"></textarea>
+                                <input type="text" id="contact-name" required placeholder="Your Name" class="w-full px-4 py-3 border border-white/10 rounded-xl focus:border-white focus:outline-none text-[14px]">
+                                <input type="email" id="contact-email" required placeholder="Work Email" class="w-full px-4 py-3 border border-white/10 rounded-xl focus:border-white focus:outline-none text-[14px]">
+                                <input type="tel" id="contact-phone" required placeholder="Phone Number" class="w-full px-4 py-3 border border-white/10 rounded-xl focus:border-white focus:outline-none text-[14px]">
+                                <input type="text" id="contact-company" required placeholder="Company Name" class="w-full px-4 py-3 border border-white/10 rounded-xl focus:border-white focus:outline-none text-[14px]">
+                                <textarea id="contact-message" required placeholder="Tell us about your project or performance objectives..." class="w-full px-4 py-3 border border-white/10 rounded-xl focus:border-white focus:outline-none text-[14px] min-h-[120px]"></textarea>
                                 
-                                <button type="submit" id="contact-submit-btn" class="w-full inline-flex items-center justify-center gap-2 bg-slate-900 hover:bg-blue-600 text-white font-semibold rounded-full py-3.5 transition-colors">
+                                <button type="submit" id="contact-submit-btn" class="w-full inline-flex items-center justify-center gap-2 bg-slate-900 hover:bg-black text-white font-semibold rounded-full py-3.5 transition-colors">
                                     <i data-lucide="send" class="w-4 h-4"></i>
                                     <span id="contact-submit-text">Send Message</span>
                                 </button>
                             </form>
                             
-                            <div class="mt-8 pt-8 border-t border-slate-100 flex flex-col sm:flex-row gap-4 justify-between text-[13px] text-slate-500">
-                                <a href="https://wa.me/917276751167" target="_blank" class="flex items-center gap-2 text-emerald-600 hover:text-emerald-700 font-semibold">
+                            <div class="mt-8 pt-8 border-t border-white/5 flex flex-col sm:flex-row gap-4 justify-between text-[13px] text-white/60">
+                                <a href="https://wa.me/917276751167" target="_blank" class="flex items-center gap-2 text-white/70 hover:text-gray-600700 font-semibold">
                                     <i data-lucide="phone-call" class="w-4 h-4"></i> WhatsApp Live Chat
                                 </a>
                                 <span>Email: partners@digitaladvertise.com</span>
@@ -224,30 +224,39 @@
                         </div>
                     </div>
 
-                    <!-- Right: Calendly Frame -->
+                    <!-- Right: Book a Consultation Card -->
                     <div class="lg:col-span-6 reveal-right">
-                        <div class="glass-strong border border-slate-200 p-8 rounded-[2rem] h-full flex flex-col">
-                            <h3 class="font-display text-2xl font-bold text-slate-900 text-left">Book a Consultation</h3>
-                            <p class="text-[13px] text-slate-500 text-left mt-1">Select a time for a 1:1 strategy session with our director.</p>
+                        <div style="background:rgba(10,10,10,0.95);border:1px solid rgba(255,255,255,0.1);padding:32px;border-radius:2rem;height:100%;display:flex;flex-direction:column;">
                             
-                            <!-- Calendly Simulated Widget Iframe -->
-                            <div class="flex-1 mt-6 border border-slate-200 rounded-2xl overflow-hidden min-h-[350px] bg-slate-50 flex flex-col justify-between p-6">
-                                <div class="text-left">
-                                    <span class="bg-blue-100 text-blue-800 text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded">Calendly Integration</span>
-                                    <h4 class="font-display font-semibold text-lg text-slate-800 mt-3">30-Minute Growth Audit Session</h4>
-                                    <p class="text-[13px] text-slate-500 mt-1">A screen-share reviewing your ad accounts, pixel attribution setup, and site conversion speeds.</p>
+                            <!-- Card Title -->
+                            <h3 style="font-family:'Outfit',sans-serif;font-size:24px;font-weight:700;color:#ffffff;text-align:left;margin:0;">Book a Consultation</h3>
+                            <p style="font-size:13px;color:rgba(255,255,255,0.6);text-align:left;margin-top:4px;">Select a time for a 1:1 strategy session with our director.</p>
+                            
+                            <!-- Inner Booking Widget -->
+                            <div style="margin-top:24px;border:1px solid rgba(255,255,255,0.1);border-radius:16px;overflow:hidden;padding:24px;background:#0A0A0A;display:flex;flex-direction:column;gap:20px;">
+                                
+                                <!-- Badge + Title + Description -->
+                                <div style="text-align:left;">
+                                    <span style="display:inline-block;background:#111111;color:#ffffff;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;padding:4px 12px;border-radius:4px;">Free Consultation</span>
+                                    <h4 style="font-family:'Outfit',sans-serif;font-size:18px;font-weight:600;color:#ffffff;margin-top:12px;margin-bottom:0;">30-Minute Growth Audit Session</h4>
+                                    <p style="font-size:13px;color:rgba(255,255,255,0.6);margin-top:8px;margin-bottom:0;">A screen-share reviewing your ad accounts, pixel attribution setup, and site conversion speeds.</p>
                                 </div>
                                 
-                                <div class="bg-white border border-slate-200 rounded-xl p-4 text-left">
-                                    <div class="font-semibold text-slate-800 text-[14px]">Select Date & Time</div>
-                                    <div class="grid grid-cols-3 gap-2 mt-3 text-[12px] text-slate-600 text-center font-medium">
-                                        <button type="button" onclick="showToast('Selected: Tomorrow at 10:00 AM')" class="py-2 border border-slate-200 rounded-lg hover:border-slate-900 hover:bg-slate-50">Tomorrow 10 AM</button>
-                                        <button type="button" onclick="showToast('Selected: Tomorrow at 2:00 PM')" class="py-2 border border-slate-200 rounded-lg hover:border-slate-900 hover:bg-slate-50">Tomorrow 2 PM</button>
-                                        <button type="button" onclick="showToast('Selected: Friday at 11:30 AM')" class="py-2 border border-slate-200 rounded-lg hover:border-slate-900 hover:bg-slate-50">Friday 11:30 AM</button>
+                                <!-- Date/Time/Timezone Selectors -->
+                                <div style="background:#000000;border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:16px;text-align:left;">
+                                    <div style="font-weight:600;font-size:14px;color:rgba(255,255,255,0.9);">Select Date & Time</div>
+                                    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px;">
+                                        <button type="button" onclick="showToast('Selected: Mon, Jul 6 at 10:00 AM')" style="padding:10px;border:1px solid rgba(255,255,255,0.1);border-radius:8px;background:transparent;color:rgba(255,255,255,0.7);font-size:12px;font-weight:500;cursor:pointer;transition:all 0.2s;" onmouseover="this.style.borderColor='rgba(255,255,255,0.4)';this.style.background='rgba(255,255,255,0.05)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.1)';this.style.background='transparent'">Mon, Jul 6</button>
+                                        <button type="button" onclick="showToast('Selected: 10:00 AM')" style="padding:10px;border:1px solid rgba(255,255,255,0.1);border-radius:8px;background:transparent;color:rgba(255,255,255,0.7);font-size:12px;font-weight:500;cursor:pointer;transition:all 0.2s;" onmouseover="this.style.borderColor='rgba(255,255,255,0.4)';this.style.background='rgba(255,255,255,0.05)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.1)';this.style.background='transparent'">10:00 AM</button>
+                                        <button type="button" onclick="showToast('Selected: IST (GMT+5:30)')" style="padding:10px;border:1px solid rgba(255,255,255,0.1);border-radius:8px;background:transparent;color:rgba(255,255,255,0.7);font-size:12px;font-weight:500;cursor:pointer;transition:all 0.2s;" onmouseover="this.style.borderColor='rgba(255,255,255,0.4)';this.style.background='rgba(255,255,255,0.05)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.1)';this.style.background='transparent'">IST (GMT+5:30)</button>
                                     </div>
                                 </div>
                                 
-                                <button type="button" onclick="showToast('Booking submitted!')" class="btn-primary w-full text-center justify-center py-3">Confirm Appointment</button>
+                                <!-- CTA Button -->
+                                <button type="button" onclick="showToast('Booking confirmed! Check your email.')" style="width:100%;padding:14px;background:#ffffff;color:#000000;border:none;border-radius:999px;font-size:14px;font-weight:600;cursor:pointer;transition:all 0.2s;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 10px 25px rgba(255,255,255,0.15)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none'">Confirm Booking</button>
+                                
+                                <!-- Trust Cue -->
+                                <p style="text-align:center;font-size:11px;color:rgba(255,255,255,0.4);margin:0;">No pressure. Just actionable growth advice.</p>
                             </div>
                         </div>
                     </div>
@@ -260,7 +269,7 @@
 
     <!-- Footer -->
     <footer class="relative bg-slate-950 text-white pt-20 md:pt-28 pb-10 overflow-hidden">
-        <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] h-[400px] rounded-full bg-blue-500/10 blur-[120px] pointer-events-none"></div>
+        <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] h-[400px] rounded-full bg-gray-1000/10 pointer-events-none"></div>
         <div class="relative max-w-7xl mx-auto px-6 md:px-10">
             <div class="grid lg:grid-cols-12 gap-12 mb-14 text-left">
                 <div class="lg:col-span-4">
@@ -268,11 +277,11 @@
                         <img src="assets/logo-white.png" alt="Digital Advertise Logo" class="h-10 w-auto object-contain">
                     </div>
                     <p class="text-white/65 text-[15px] leading-relaxed max-w-md">
-                        A performance marketing partner for ambitious teams — engineered for measurable, durable growth across every channel and market.
+                        A performance marketing partner for ambitious teams � engineered for measurable, durable growth across every channel and market.
                     </p>
                     <form class="mt-6 flex max-w-sm" onsubmit="handleNewsletterSubmit(event)">
-                        <input type="email" required placeholder="Subscribe to our newsletter" class="flex-1 bg-white/5 border border-white/10 rounded-l-xl px-4 py-2 text-[14px] text-white placeholder:text-white/40 focus:outline-none focus:border-blue-500">
-                        <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-5 rounded-r-xl text-[14px] font-semibold transition-colors">Join</button>
+                        <input type="email" required placeholder="Subscribe to our newsletter" class="flex-1 bg-black/5 border border-white/10 rounded-l-xl px-4 py-2 text-[14px] text-white placeholder:text-white/40 focus:outline-none focus:border-white">
+                        <button type="submit" class="bg-black hover:bg-black700 text-white px-5 rounded-r-xl text-[14px] font-semibold transition-colors">Join</button>
                     </form>
                 </div>
 

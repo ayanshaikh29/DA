@@ -852,6 +852,89 @@
     const atmosphereParticles = new THREE.Points(atmosphereGeometry, atmosphereMaterial);
     scene.add(atmosphereParticles);
 
+    // ============================================================
+    //  BACKGROUND STAR FIELD — bright small twinkling stars
+    // ============================================================
+    const starGeometry = new THREE.BufferGeometry();
+    const starCount = IS_MOBILE ? 1500 : 4000;
+
+    const starPositions = new Float32Array(starCount * 3);
+    const starSizes = new Float32Array(starCount);
+    const starColors = new Float32Array(starCount * 3);
+    const starTwinkleOffsets = new Float32Array(starCount);
+
+    const starPalette = [
+        new THREE.Color(0xffffff), // bright white
+        new THREE.Color(0xe0e7ff), // ice blue-white
+        new THREE.Color(0xc7d2fe), // soft lavender
+        new THREE.Color(0xbfdbfe), // light blue
+        new THREE.Color(0xfde68a), // warm yellow
+    ];
+
+    for (let i = 0; i < starCount; i++) {
+        starPositions[i * 3]     = (Math.random() - 0.5) * 80;
+        starPositions[i * 3 + 1] = (Math.random() - 0.5) * 60;
+        starPositions[i * 3 + 2] = (Math.random() - 0.5) * 80 - 10;
+
+        const depth = (starPositions[i * 3 + 2] + 50) / 80;
+        starSizes[i] = (Math.random() < 0.85)
+            ? 1.0 + Math.random() * 2.0   // 85% tiny pinpoints
+            : 2.5 + Math.random() * 3.5;  // 15% slightly larger bright stars
+
+        const c = starPalette[Math.floor(Math.random() * starPalette.length)];
+        starColors[i * 3]     = c.r;
+        starColors[i * 3 + 1] = c.g;
+        starColors[i * 3 + 2] = c.b;
+
+        starTwinkleOffsets[i] = Math.random() * 6.28;
+    }
+
+    starGeometry.setAttribute('position', new THREE.BufferAttribute(starPositions, 3));
+    starGeometry.setAttribute('aSize', new THREE.BufferAttribute(starSizes, 1));
+    starGeometry.setAttribute('aColor', new THREE.BufferAttribute(starColors, 3));
+    starGeometry.setAttribute('aTwinkle', new THREE.BufferAttribute(starTwinkleOffsets, 1));
+
+    const starMaterial = new THREE.ShaderMaterial({
+        uniforms: {
+            uTime: { value: 0.0 }
+        },
+        vertexShader: `
+            uniform float uTime;
+            attribute float aSize;
+            attribute vec3 aColor;
+            attribute float aTwinkle;
+            varying vec3 vColor;
+            varying float vAlpha;
+            void main() {
+                vColor = aColor;
+                float twinkle = 0.55 + 0.45 * sin(uTime * 1.8 + aTwinkle * 6.28);
+                vAlpha = twinkle;
+                vec4 mv = modelViewMatrix * vec4(position, 1.0);
+                gl_PointSize = (aSize * 28.0) / -mv.z;
+                gl_Position = projectionMatrix * mv;
+            }
+        `,
+        fragmentShader: `
+            varying vec3 vColor;
+            varying float vAlpha;
+            void main() {
+                vec2 uv = gl_PointCoord - vec2(0.5);
+                float d = length(uv);
+                if (d > 0.5) discard;
+                float glow = smoothstep(0.5, 0.0, d);
+                float core  = smoothstep(0.15, 0.0, d) * 0.6;
+                vec3 col = vColor + vec3(core);
+                gl_FragColor = vec4(col, (glow + core) * vAlpha);
+            }
+        `,
+        transparent: true,
+        depthWrite: false,
+        blending: THREE.AdditiveBlending
+    });
+
+    const starField = new THREE.Points(starGeometry, starMaterial);
+    scene.add(starField);
+
     // Dynamic layout offset positioning
     const adjustLayout = () => {
         const isDesktop = window.innerWidth >= 768;
@@ -1158,6 +1241,9 @@
         atmosphereMaterial.uniforms.uTime.value = elapsed;
         atmosphereMaterial.uniforms.uMouse.value.set(mouseX, mouseY);
         
+        // Update star field
+        starMaterial.uniforms.uTime.value = elapsed;
+        
         // Decay target scroll velocity over time for inertia
         targetScrollVelocity *= 0.94;
         currentScrollVelocity += (targetScrollVelocity - currentScrollVelocity) * 0.08;
@@ -1204,8 +1290,8 @@
         const overlay1 = document.getElementById('hero-overlay-s1');
         if (overlay1) {
             gsap.fromTo(overlay1.querySelectorAll('.outline-title, .fill-title, p, a'),
-                { opacity: 0, y: 35, filter: 'blur(8px)' },
-                { opacity: 1, y: 0, filter: 'blur(0px)', duration: 1.2, stagger: 0.12, ease: 'power3.out' }
+                { opacity: 0, y: 35 },
+                { opacity: 1, y: 0, duration: 1.2, stagger: 0.12, ease: 'power3.out' }
             );
         }
     }, 450);

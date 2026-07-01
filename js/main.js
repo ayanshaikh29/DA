@@ -206,7 +206,7 @@ function openDemoModal(title) {
                             <video class="w-full h-full object-cover" autoplay loop muted playsinline poster="https://images.unsplash.com/photo-1536240478700-b869070f9279?crop=entropy&cs=srgb&fit=max&fm=jpg&q=80&w=1000">
                                 <source src="https://assets.mixkit.co/videos/preview/mixkit-abstract-laser-lights-background-32112-large.mp4" type="video/mp4">
                             </video>
-                            <div class="absolute bottom-6 left-6 right-6 bg-black/60 backdrop-blur-md border border-white/10 p-4 rounded-2xl flex items-center justify-between">
+                            <div class="absolute bottom-6 left-6 right-6 bg-black/60 border border-white/10 p-4 rounded-2xl flex items-center justify-between">
                                 <div class="text-left">
                                     <span class="text-[10px] text-blue-400 font-bold uppercase tracking-wider">AI Generated Output</span>
                                     <h5 class="font-display font-semibold text-[15px] mt-0.5 text-white">${title} (Demo Loop)</h5>
@@ -735,13 +735,13 @@ function injectDriftingBlobs() {
     if (container.querySelector('.animate-blob-1')) return;
 
     const blob1 = document.createElement('div');
-    blob1.className = 'absolute top-[20%] left-[-10%] w-[500px] h-[500px] rounded-full bg-blue-400/5 blur-[120px] pointer-events-none animate-blob-1 z-0';
+    blob1.className = 'absolute top-[20%] left-[-10%] w-[500px] h-[500px] rounded-full bg-white/5 pointer-events-none animate-blob-1 z-0';
     
     const blob2 = document.createElement('div');
-    blob2.className = 'absolute top-[50%] right-[-10%] w-[600px] h-[600px] rounded-full bg-indigo-400/5 blur-[150px] pointer-events-none animate-blob-2 z-0';
+    blob2.className = 'absolute top-[50%] right-[-10%] w-[600px] h-[600px] rounded-full bg-white/5 pointer-events-none animate-blob-2 z-0';
     
     const blob3 = document.createElement('div');
-    blob3.className = 'absolute bottom-[15%] left-[5%] w-[450px] h-[450px] rounded-full bg-pink-400/5 blur-[120px] pointer-events-none animate-blob-3 z-0';
+    blob3.className = 'absolute bottom-[15%] left-[5%] w-[450px] h-[450px] rounded-full bg-white/5 pointer-events-none animate-blob-3 z-0';
 
     container.appendChild(blob1);
     container.appendChild(blob2);
@@ -754,7 +754,7 @@ function initWhatsAppFloat() {
 
     const waBtn = document.createElement('a');
     waBtn.className = 'whatsapp-float';
-    waBtn.href = 'https://wa.me/91727651167?text=Hello%20Digital%20Advertise%20Team,%20I%20am%20interested%20in%20your%20AI%20Marketing%20services.';
+    waBtn.href = 'https://wa.me/917276751167?text=Hello%20Digital%20Advertise%20Team,%20I%20am%20interested%20in%20your%20AI%20Marketing%20services.';
     waBtn.target = '_blank';
     waBtn.setAttribute('aria-label', 'Chat on WhatsApp');
     waBtn.innerHTML = `<svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M12.031 2c-5.514 0-9.989 4.475-9.989 9.99 0 1.763.459 3.483 1.332 5.011L2 22l5.161-1.355a9.927 9.927 0 004.87 1.28c5.514 0 9.99-4.476 9.99-9.99S17.545 2 12.031 2zm0 18.286c-1.636 0-3.238-.436-4.64-1.265l-.332-.196-3.447.905.92-3.361-.215-.343a8.236 8.236 0 01-1.26-4.498c0-4.568 3.717-8.286 8.285-8.286s8.286 3.718 8.286 8.286-3.718 8.286-8.285 8.286zm4.551-6.195c-.249-.125-1.472-.727-1.7-.81-.228-.083-.393-.125-.558.125-.166.249-.641.81-.787.975-.145.166-.29.187-.539.062a6.792 6.792 0 01-2.003-1.234 7.482 7.482 0 01-1.386-1.728c-.145-.25-.016-.384.109-.509.112-.112.249-.291.373-.436.124-.145.166-.25.249-.415.083-.166.042-.312-.021-.437-.062-.125-.558-1.349-.764-1.847-.2-.484-.403-.418-.558-.426-.145-.007-.31-.009-.476-.009a.916.916 0 00-.662.311c-.228.249-.871.851-.871 2.075 0 1.224.891 2.407.99 2.54.099.135 1.753 2.677 4.248 3.753.593.256 1.057.409 1.417.524.596.19 1.139.163 1.567.099.478-.073 1.472-.601 1.679-1.183.208-.58.208-1.079.145-1.183-.063-.104-.228-.166-.477-.291z"/></svg>`;
@@ -864,7 +864,6 @@ function initAnimations() {
                                 span.style.display = 'inline-block';
                                 span.style.opacity = '0';
                                 span.style.transform = 'translateY(15px)';
-                                span.style.filter = 'blur(8px)';
                                 span.innerText = word;
                                 fragment.appendChild(span);
                             }
@@ -886,7 +885,6 @@ function initAnimations() {
             gsap.to(node.querySelectorAll('.reveal-word'), {
                 opacity: 1,
                 y: 0,
-                filter: 'blur(0px)',
                 stagger: 0.05,
                 duration: 0.8,
                 ease: 'power3.out',
@@ -956,7 +954,6 @@ function initAnimations() {
                 gsap.to(sec, {
                     scale: 0.95,
                     opacity: 0.8,
-                    filter: 'blur(4px)',
                     ease: "none",
                     scrollTrigger: {
                         trigger: sec,
@@ -1650,7 +1647,6 @@ function playInnerHeroEntranceAnimation() {
             tl.to(words, {
                 opacity: 1,
                 y: 0,
-                filter: 'blur(0px)',
                 stagger: 0.035,
                 duration: 0.7,
                 ease: 'power3.out'

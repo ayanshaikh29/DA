@@ -125,6 +125,8 @@
 .btn-magnetic {
     transition: transform 0.25s cubic-bezier(0.25, 1, 0.5, 1);
     display: inline-flex;
+    align-items: center;
+    gap: 8px;
     position: relative;
 }
 
@@ -150,7 +152,7 @@
 
 .btn-secondary {
     background: var(--bw-bg);
-    color: #020617;
+    color: var(--bw-text);
     padding: 16px 28px;
     border-radius: 999px;
     font-weight: 600;
@@ -165,6 +167,37 @@
     border-color: var(--bw-text);
     background: rgba(255,255,255,0.05);
     transform: translateY(-2px);
+}
+
+/* ── CTA Button alignment fixes ──────────────────────── */
+.btn-primary,
+.btn-secondary,
+.btn-magnetic,
+.spatial-glow-btn,
+.btn-get-started {
+    white-space: nowrap;
+    line-height: 1;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    box-sizing: border-box;
+    justify-content: center;
+    text-align: center;
+}
+.btn-primary svg, .btn-secondary svg, .btn-magnetic svg, .spatial-glow-btn svg, .btn-get-started svg,
+.btn-primary img, .btn-secondary img, .btn-magnetic img, .spatial-glow-btn img, .btn-get-started img {
+    flex-shrink: 0;
+}
+.btn-primary span, .btn-secondary span, .btn-magnetic span, .spatial-glow-btn span, .btn-get-started span {
+    display: inline-block;
+    line-height: 1;
+}
+
+/* ── Force flex centering on spatial-glow-btn ─────────── */
+.spatial-glow-btn {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 8px;
 }
 
 .overline-label {
@@ -270,6 +303,45 @@
 .stat-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 12px 40px rgba(2, 6, 23, 0.08);
+}
+
+/* Force stat counter numbers pure white in Why Brands Choose Us and Trust sections */
+#why-choose-us .stat-card .font-display .counter,
+#why-choose-us .stat-card .font-display .text-white,
+#trust .glass-strong .font-display .counter {
+    color: #FFFFFF;
+    -webkit-text-fill-color: #FFFFFF;
+    filter: none;
+    opacity: 1;
+}
+
+/* Force stat values pure white in Why Choose Us section */
+.section-why-choose .stat-card .font-display,
+.section-why-choose .glass-strong .font-display {
+    color: #FFFFFF;
+    -webkit-text-fill-color: #FFFFFF;
+}
+.section-why-choose .stat-card .font-display .counter {
+    color: #FFFFFF !important;
+    -webkit-text-fill-color: #FFFFFF !important;
+    filter: none;
+    opacity: 1;
+    background: none;
+    background-image: none;
+    text-shadow: none;
+}
+
+/* ── Global stat-value force white ────────────────────── */
+.stat-value {
+    color: #FFFFFF !important;
+    opacity: 1 !important;
+    filter: none !important;
+    background: none !important;
+    background-image: none !important;
+    -webkit-background-clip: unset !important;
+    background-clip: unset !important;
+    -webkit-text-fill-color: #FFFFFF !important;
+    text-shadow: none !important;
 }
 
 /* Capability feature grid items */
@@ -579,6 +651,37 @@
     color: #1e293b !important;
 }
 
+/* ── FORCE HERO CTA BUTTON TEXT & ELEMENTS VISIBLE ── */
+.btn-primary,
+.btn-primary:hover,
+.btn-secondary,
+.btn-secondary:hover {
+    color: #FFFFFF !important;
+    -webkit-text-fill-color: #FFFFFF !important;
+}
+/* Override about.html animation classes that set opacity:0 with no JS to animate them */
+.hero-h1-anim,
+.hero-p-anim,
+.hero-cta-anim,
+.hero-stat-anim {
+    opacity: 1 !important;
+    transform: none !important;
+}
+
+/* ── FORCE ALL NAV LINKS TO PURE BLACK ── */
+/* Overrides per-page #desktop-nav a { color: #475569 } and mobile inline color:#1e293b */
+#desktop-nav a,
+#desktop-nav a:hover,
+.nav-dropdown-menu a,
+.nav-dropdown-menu a:hover {
+    color: #000000 !important;
+}
+/* Mobile menu nav links (excludes the "Get Started" button) */
+#mobile-menu a:not([href*="audit"]),
+#mobile-menu a:not([href*="audit"]):hover {
+    color: #000000 !important;
+}
+
 /* ===== PREMIUM BACKGROUND INTEGRATION ===== */
 /* Make existing solid backgrounds slightly translucent to reveal the animated Three.js canvas */
 body.bg-white, main.bg-white, section.bg-white {
@@ -782,84 +885,98 @@ footer.bg-slate-950, .bg-slate-950 {
 }
 
 /* Client logo marquee cards */
-.client-logo-marquee {
-    display: flex;
-    overflow: hidden;
-    -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
-            mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
-    user-select: none;
+#client-logo-marquee-wrap {
+    width: 100%;
+    box-sizing: border-box;
+    /* Prevent horizontal scroll — section already has overflow:hidden */
 }
-.client-logo-marquee__track {
+.client-logo-marquee {
+    overflow: hidden;
+    user-select: none;
+    width: 100%;
+}
+/* Track holds both duplicated sets — width:max-content ensures -50% = one set exactly */
+.client-logo-marquee .cl-marquee-track {
     display: flex;
     align-items: center;
     gap: 1.25rem;
+    width: max-content;
     flex-shrink: 0;
-    padding-right: 1.25rem;
+    will-change: transform;
 }
 .client-logo-card {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 180px;
-    height: 110px;
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 16px;
-    padding: 16px;
+    width: 200px;
+    height: 130px;
+    background: #ffffff;
+    border: 1px solid rgba(0,0,0,0.06);
+    border-radius: 12px;
+    padding: 28px;
     flex-shrink: 0;
-    transition: background 0.3s ease, border-color 0.3s ease;
+    box-sizing: border-box;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .client-logo-card:hover {
-    background: rgba(255,255,255,0.1);
-    border-color: rgba(255,255,255,0.15);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.25);
 }
 .client-logo-card img {
-    max-width: 140px;
-    max-height: 70px;
+    max-width: 100%;
+    max-height: 100%;
     width: auto;
     height: auto;
     object-fit: contain;
-    opacity: 0.7;
-    filter: grayscale(30%) brightness(0.9);
-    transition: opacity 0.3s ease, filter 0.3s ease;
+    object-position: center;
+    opacity: 1;
+    filter: none;
+    transition: opacity 0.3s ease;
 }
 .client-logo-card:hover img {
     opacity: 1;
-    filter: grayscale(0%) brightness(1);
+    filter: none;
 }
 .client-logo-card .client-name-fallback {
-    color: rgba(255,255,255,0.6);
+    color: #333333;
     font-family: 'Outfit', sans-serif;
     font-size: 11px;
     font-weight: 600;
     text-align: center;
     letter-spacing: 0.02em;
     line-height: 1.3;
-}
-.client-logo-card img[data-failed="true"] {
     display: none;
 }
-.client-logo-card .client-name-fallback {
+.client-logo-card img[data-failed="true"] {
     display: none;
 }
 .client-logo-card img[data-failed="true"] + .client-name-fallback {
     display: block;
 }
 
-/* Client logo marquee scroll animations */
+/* ── Seamless marquee animation ────────────────────────── */
+/* .cl-marquee-track contains two identical sets of logos.
+   width:max-content makes translate3d(-50%,0,0) = exactly one set,
+   producing an infinite seamless loop with zero empty space.
+   translate3d forces GPU compositing at 60fps. */
 @keyframes clientScrollLeft {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+    0%   { transform: translate3d(0, 0, 0); }
+    100% { transform: translate3d(-50%, 0, 0); }
 }
 @keyframes clientScrollRight {
-    0% { transform: translateX(-50%); }
-    100% { transform: translateX(0); }
+    0%   { transform: translate3d(-50%, 0, 0); }
+    100% { transform: translate3d(0, 0, 0); }
 }
-.animate-clientScrollLeft {
+.client-logo-marquee .cl-marquee-track.animate-clientScrollLeft {
     animation: clientScrollLeft 40s linear infinite;
 }
-.animate-clientScrollRight {
+.client-logo-marquee .cl-marquee-track.animate-clientScrollRight {
     animation: clientScrollRight 40s linear infinite;
+}
+/* Pause on hover */
+.client-logo-marquee:hover .cl-marquee-track {
+    animation-play-state: paused;
 }
 
 
@@ -1341,14 +1458,17 @@ footer {
 
 /* ===== STYLISH MULTICOLOR GRADIENTS FOR KEY TEXTS ===== */
 
-/* Make section subtitles overline-labels use a premium pink-purple-blue gradient */
+/* Make section subtitles overline-labels pure white (no gradient) */
 .overline-label {
-    background: linear-gradient(135deg, #f472b6 0%, #c084fc 50%, #6366f1 100%) !important;
-    -webkit-background-clip: text !important;
-    -webkit-text-fill-color: transparent !important;
-    background-clip: text !important;
+    color: #FFFFFF !important;
+    background: none !important;
+    background-image: none !important;
+    -webkit-background-clip: border-box !important;
+    background-clip: border-box !important;
+    -webkit-text-fill-color: #FFFFFF !important;
     display: inline-block;
     font-weight: 700 !important;
+    mix-blend-mode: normal !important;
 }
 
 /* Premium multicolor text gradient utility */
@@ -1360,16 +1480,27 @@ footer {
     display: inline-block;
 }
 
-/* Make italic spans inside all headings use a premium gradient */
+/* Make italic spans inside all headings pure white */
 h1 span.italic,
 h2 span.italic,
 h3 span.italic,
 .text-reveal span.italic {
-    background: linear-gradient(135deg, #f472b6 0%, #c084fc 50%, #6366f1 100%) !important;
-    -webkit-background-clip: text !important;
-    -webkit-text-fill-color: transparent !important;
-    background-clip: text !important;
+    color: #FFFFFF !important;
     display: inline !important;
+}
+
+/* Force pure white on ALL text-reveal word-split spans — overrides dark theme grey span rule */
+/* NOTE: opacity is intentionally excluded — GSAP controls it for the reveal animation */
+.text-reveal .reveal-word {
+    color: #FFFFFF !important;
+    background: none !important;
+    background-image: none !important;
+    -webkit-background-clip: border-box !important;
+    background-clip: border-box !important;
+    -webkit-text-fill-color: #FFFFFF !important;
+    text-shadow: none !important;
+    filter: none !important;
+    mix-blend-mode: normal !important;
 }
 
 /* Alternate premium gradients for stats card labels across all pages */
@@ -1433,6 +1564,11 @@ section,
     background-image: none !important;
 }
 
+/* Restore gradient for channel performance bars */
+.channel-bar {
+    background-image: linear-gradient(to top, #2563eb, #818cf8) !important;
+}
+
 /* 2. Cards & Containers: Force to dark surface color */
 .card,
 .stat-card,
@@ -1483,7 +1619,7 @@ p.text-slate-900 {
 }
 
 p:not(.overline-label):not(.text-gradient-premium):not(.italic),
-span:not(.overline-label):not(.text-gradient-premium):not(.italic),
+span:not(.overline-label):not(.text-gradient-premium):not(.italic):not(.reveal-word),
 li:not(.overline-label):not(.text-gradient-premium):not(.italic),
 .text-slate-600:not(.overline-label):not(.text-gradient-premium):not(.italic),
 .text-slate-500:not(.overline-label):not(.text-gradient-premium):not(.italic),
@@ -1510,4 +1646,310 @@ select {
 .border-gray-200,
 .border-slate-200\/80 {
     border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* ==========================================================================
+   GLOBAL MOBILE RESPONSIVE — 375px+ Polish Pass
+   ========================================================================== */
+
+/* ── Prevent horizontal overflow globally ── */
+html, body {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+}
+
+/* ── Base mobile spacing token ── */
+:root {
+    --mobile-px: 16px;
+    --section-gap-mobile: 48px;
+}
+
+/* ── Global section rhythm on mobile ── */
+@media (max-width: 768px) {
+    section:not(#hero-section) {
+        padding-top: 40px !important;
+        padding-bottom: 40px !important;
+    }
+    main > section:first-of-type:not(#hero-section) {
+        padding-top: 100px !important;
+    }
+}
+
+/* ── 768px breakpoint — tablet & small desktop ── */
+@media (max-width: 768px) {
+
+    /* Typography scaling — override Tailwind classes */
+    .text-4xl, .text-5xl, .text-6xl, .text-7xl,
+    h1.text-4xl, h1.text-5xl, h1.text-6xl, h1.text-7xl,
+    h2.text-4xl, h2.text-5xl, h2.text-6xl, h2.text-7xl {
+        font-size: clamp(1.75rem, 7vw, 2.5rem) !important;
+        line-height: 1.15 !important;
+    }
+    .text-3xl, h2.text-3xl, h3.text-3xl {
+        font-size: clamp(1.5rem, 5.5vw, 2rem) !important;
+        line-height: 1.2 !important;
+    }
+    .text-2xl, h3.text-2xl, h4.text-2xl {
+        font-size: clamp(1.15rem, 4.5vw, 1.5rem) !important;
+        line-height: 1.25 !important;
+    }
+    .text-xl, .text-lg {
+        font-size: clamp(1rem, 4vw, 1.15rem) !important;
+    }
+    h1 { font-size: clamp(1.75rem, 7vw, 2.5rem) !important; line-height: 1.15 !important; }
+    h2 { font-size: clamp(1.5rem, 5.5vw, 2rem) !important; line-height: 1.2 !important; }
+    h3 { font-size: clamp(1.15rem, 4vw, 1.5rem) !important; line-height: 1.25 !important; }
+    h4 { font-size: clamp(1rem, 3.5vw, 1.25rem) !important; }
+
+    /* Paragraph text */
+    p { font-size: 15px !important; line-height: 1.65 !important; }
+
+    /* Grid layouts → stack to 1 column */
+    .grid-cols-2,
+    .grid-cols-3,
+    .grid-cols-4,
+    .md\:grid-cols-2,
+    .md\:grid-cols-3,
+    .md\:grid-cols-4,
+    .lg\:grid-cols-2,
+    .lg\:grid-cols-3,
+    .lg\:grid-cols-4 {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Flex rows that should stack */
+    .md\:flex-row,
+    .lg\:flex-row {
+        flex-direction: column !important;
+    }
+
+    /* Ensure consistent horizontal padding on all containers */
+    .max-w-7xl,
+    .max-w-6xl,
+    .max-w-5xl,
+    .max-w-4xl,
+    .max-w-3xl,
+    .max-w-2xl {
+        padding-left: var(--mobile-px) !important;
+        padding-right: var(--mobile-px) !important;
+    }
+
+    /* Stat cards — ensure readable */
+    .stat-card {
+        padding: 16px !important;
+    }
+
+    /* Buttons — thumb-friendly */
+    .btn-primary,
+    .btn-secondary,
+    .spatial-glow-btn,
+    a[class*="btn"],
+    button[class*="btn"] {
+        min-height: 44px !important;
+        padding: 12px 24px !important;
+        font-size: 14px !important;
+        width: 100% !important;
+        justify-content: center !important;
+        text-align: center !important;
+    }
+
+    /* Badge / overline text */
+    .overline-label,
+    [class*="uppercase"][class*="tracking"] {
+        font-size: 10px !important;
+        letter-spacing: 0.15em !important;
+    }
+
+    /* Reduce marquee animation complexity */
+    .client-logo-marquee {
+        mask-image: none !important;
+        -webkit-mask-image: none !important;
+    }
+    .client-logo-card {
+        width: 160px !important;
+        height: 110px !important;
+        padding: 18px !important;
+    }
+
+    /* Case study cards */
+    .cs-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.25rem !important;
+    }
+    .cs-card .cs-body {
+        padding: 1.25rem !important;
+    }
+    .cs-card .cs-title {
+        font-size: 16px !important;
+    }
+    .cs-card .cs-results {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 6px !important;
+    }
+    .cs-card .cs-result-val {
+        font-size: 15px !important;
+    }
+
+    /* Filter buttons — horizontal scroll */
+    .cs-filter-wrap {
+        overflow-x: auto !important;
+        flex-wrap: nowrap !important;
+        -webkit-overflow-scrolling: touch !important;
+        padding-bottom: 8px !important;
+        gap: 8px !important;
+    }
+    .cs-filter-btn {
+        flex-shrink: 0 !important;
+        padding: 8px 16px !important;
+        font-size: 12px !important;
+    }
+
+    /* WhatsApp float */
+    .whatsapp-float {
+        bottom: 16px !important;
+        right: 16px !important;
+        width: 52px !important;
+        height: 52px !important;
+    }
+
+    /* Footer grid */
+    .lg\:grid-cols-12 {
+        grid-template-columns: 1fr !important;
+    }
+    .lg\:col-span-4,
+    .lg\:col-span-8 {
+        grid-column: span 1 !important;
+    }
+
+    /* Large display text in hero */
+    .font-display.text-3xl,
+    .font-display.text-4xl,
+    .font-display.text-5xl,
+    .font-display.text-6xl {
+        font-size: clamp(1.5rem, 6vw, 2.25rem) !important;
+    }
+
+    /* Hero section text */
+    .cs-hero h1 {
+        font-size: clamp(1.75rem, 7vw, 3rem) !important;
+    }
+
+    /* Stat counter grid */
+    .cs-stats-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+    }
+
+    /* Hero stat cards */
+    .hero-stat-anim,
+    .stat-shimmer {
+        padding: 12px !important;
+    }
+
+    /* Overflow prevention on all images */
+    img {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+
+    /* Ensure containers don't overflow */
+    .overflow-hidden,
+    .overflow-x-hidden {
+        overflow-x: hidden !important;
+    }
+
+    /* Contact form */
+    form {
+        width: 100% !important;
+    }
+    input, textarea, select {
+        font-size: 16px !important; /* Prevent iOS zoom */
+        padding: 12px !important;
+    }
+
+    /* Testimonial / quote cards */
+    .testimonial-card,
+    .quote-card {
+        padding: 16px !important;
+    }
+
+    /* Blog cards */
+    .blog-card {
+        padding: 16px !important;
+    }
+
+    /* Accordion / FAQ */
+    details summary {
+        padding: 14px 0 !important;
+        font-size: 14px !important;
+    }
+}
+
+/* ── 480px breakpoint — small phones ── */
+@media (max-width: 480px) {
+    .text-4xl, .text-5xl, .text-6xl, .text-7xl,
+    h1.text-4xl, h1.text-5xl, h1.text-6xl, h1.text-7xl,
+    h2.text-4xl, h2.text-5xl, h2.text-6xl, h2.text-7xl {
+        font-size: clamp(1.5rem, 8vw, 2rem) !important;
+    }
+    .text-3xl, h2.text-3xl, h3.text-3xl {
+        font-size: clamp(1.25rem, 6vw, 1.75rem) !important;
+    }
+    .text-2xl, h3.text-2xl, h4.text-2xl {
+        font-size: clamp(1rem, 5vw, 1.25rem) !important;
+    }
+
+    h1 { font-size: clamp(1.5rem, 8vw, 2rem) !important; }
+    h2 { font-size: clamp(1.25rem, 6vw, 1.75rem) !important; }
+    h3 { font-size: clamp(1rem, 5vw, 1.25rem) !important; }
+
+    p { font-size: 14px !important; }
+
+    .max-w-7xl,
+    .max-w-6xl,
+    .max-w-5xl,
+    .max-w-4xl {
+        padding-left: 12px !important;
+        padding-right: 12px !important;
+    }
+
+    .client-logo-card {
+        width: 130px !important;
+        height: 90px !important;
+        padding: 14px !important;
+    }
+
+    /* Hero heading on smallest screens */
+    .outline-title {
+        font-size: clamp(2rem, 12vw, 3.5rem) !important;
+    }
+    .fill-title {
+        font-size: clamp(1rem, 5vw, 1.5rem) !important;
+    }
+
+    /* Portfolio gallery image heights */
+    .h-\[60vh\] { height: 40vh !important; }
+    
+    /* Reduce gap on small screens */
+    .gap-8 { gap: 16px !important; }
+    .gap-6 { gap: 14px !important; }
+    .gap-5 { gap: 12px !important; }
+    .gap-4 { gap: 10px !important; }
+    
+    /* Stat cards compact */
+    .stat-card { padding: 12px !important; }
+    .stat-card .font-display { font-size: 1.25rem !important; }
+    
+    /* Service cards */
+    .h-80 { height: auto !important; min-height: 260px !important; }
+    .group.rounded-\[2rem\] { border-radius: 1.25rem !important; padding: 1.25rem !important; }
+    
+    /* Portfolio item grid 2-col images on mobile */
+    .grid-cols-2.gap-4.h-\[60vh\] {
+        height: auto !important;
+        grid-template-columns: 1fr !important;
+    }
+    .grid-cols-2.gap-4.h-\[60vh\] > * {
+        height: 200px !important;
+    }
 }

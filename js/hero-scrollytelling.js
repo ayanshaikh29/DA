@@ -53,10 +53,10 @@
     });
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     renderer.setSize(W(), H());
-    renderer.setClearColor(0x050816, 1);
+    renderer.setClearColor(0x000000, 1);
 
     const scene = new THREE.Scene();
-    scene.background = new THREE.Color(0x050816);
+    scene.background = new THREE.Color(0x000000);
 
     const camera = new THREE.PerspectiveCamera(40, W() / H(), 0.1, 100);
     

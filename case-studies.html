@@ -116,14 +116,12 @@
   display: flex !important;
 }
 
-/* ===== CASE STUDIES PAGE FIXES ===== */
-/* Force the case studies section to have proper layout */
+/* ===== CASE STUDIES PAGE ===== */
 .cs-section {
   background-color: #000000 !important;
   padding: 6rem 0 !important;
 }
 
-/* Filter buttons - force horizontal row with proper styling */
 .cs-filter-wrap {
   display: flex !important;
   flex-direction: row !important;
@@ -144,6 +142,8 @@
   cursor: pointer !important;
   transition: all 0.2s !important;
   white-space: nowrap !important;
+  background: transparent !important;
+  color: rgba(255,255,255,0.7) !important;
 }
 
 .cs-filter-btn.active {
@@ -152,118 +152,214 @@
   border-color: #ffffff !important;
 }
 
-.cs-filter-btn:not(.active) {
-  background-color: transparent !important;
-  color: rgba(255,255,255,0.7) !important;
-  border-color: rgba(255,255,255,0.1) !important;
-}
-
 .cs-filter-btn:not(.active):hover {
   color: #ffffff !important;
-  border-color: rgba(255,255,255,0.2) !important;
+  border-color: rgba(255,255,255,0.25) !important;
 }
 
-/* Case study cards grid - force 4 columns */
 .cs-grid {
   display: grid !important;
-  grid-template-columns: repeat(4, 1fr) !important;
-  gap: 1.5rem !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 2rem !important;
 }
 
 @media (max-width: 1024px) {
-  .cs-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-  }
+  .cs-grid { grid-template-columns: repeat(2, 1fr) !important; }
 }
 
 @media (max-width: 640px) {
-  .cs-grid {
-    grid-template-columns: 1fr !important;
-  }
+  .cs-grid { grid-template-columns: 1fr !important; }
 }
 
-/* Individual case study card */
+/* Case Study Card — Premium Glassmorphism */
 .cs-card {
-  background-color: #111111 !important;
-  border: 1px solid rgba(255,255,255,0.08) !important;
+  background: rgba(17,17,17,0.8) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(255,255,255,0.06) !important;
   border-radius: 1.5rem !important;
   overflow: hidden !important;
-  transition: all 0.5s !important;
+  transition: all 0.5s cubic-bezier(0.16,1,0.3,1) !important;
+  position: relative !important;
+}
+
+.cs-card::before {
+  content: '' !important;
+  position: absolute !important;
+  inset: 0 !important;
+  border-radius: inherit !important;
+  padding: 1px !important;
+  background: linear-gradient(135deg, rgba(59,130,246,0.15), transparent 50%) !important;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0) !important;
+  -webkit-mask-composite: xor !important;
+  mask-composite: exclude !important;
+  pointer-events: none !important;
+  opacity: 0 !important;
+  transition: opacity 0.4s !important;
+  z-index: 1 !important;
+}
+
+.cs-card:hover::before {
+  opacity: 1 !important;
 }
 
 .cs-card:hover {
-  border-color: rgba(255,255,255,0.15) !important;
-  box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5) !important;
+  transform: translateY(-6px) !important;
+  border-color: rgba(59,130,246,0.2) !important;
+  box-shadow: 0 25px 60px -12px rgba(59,130,246,0.15), 0 0 40px rgba(59,130,246,0.05) !important;
 }
 
-/* Card image container */
-.cs-card .aspect-\[4\/3\] {
-  aspect-ratio: 4/3 !important;
+/* Image */
+.cs-card .cs-img-wrap {
+  aspect-ratio: 16/10 !important;
   overflow: hidden !important;
   position: relative !important;
 }
 
-.cs-card img {
+.cs-card .cs-img-wrap img {
   width: 100% !important;
   height: 100% !important;
   object-fit: cover !important;
-  opacity: 0.8 !important;
-  transition: transform 0.7s !important;
+  transition: transform 0.7s cubic-bezier(0.16,1,0.3,1) !important;
 }
 
-.cs-card:hover img {
-  transform: scale(1.05) !important;
+.cs-card:hover .cs-img-wrap img {
+  transform: scale(1.06) !important;
 }
 
-/* Card content */
-.cs-card .p-5 {
-  padding: 1.25rem !important;
+.cs-card .cs-img-wrap .cs-overlay {
+  position: absolute !important;
+  inset: 0 !important;
+  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%) !important;
+  pointer-events: none !important;
 }
 
-.cs-card .text-\[10px\] {
-  font-size: 10px !important;
-  text-transform: uppercase !important;
+/* Badge */
+.cs-badge {
+  position: absolute !important;
+  top: 14px !important;
+  left: 14px !important;
+  z-index: 2 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+  padding: 5px 12px !important;
+  border-radius: 9999px !important;
+  font-size: 11px !important;
   font-weight: 700 !important;
-  letter-spacing: 0.1em !important;
-  color: rgba(255,255,255,0.5) !important;
+  letter-spacing: 0.04em !important;
+  text-transform: uppercase !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(255,255,255,0.12) !important;
 }
 
-.cs-card h3 {
-  font-size: 17px !important;
+.cs-badge-blue { background: rgba(59,130,246,0.25) !important; color: #93c5fd !important; }
+.cs-badge-purple { background: rgba(168,85,247,0.25) !important; color: #d8b4fe !important; }
+.cs-badge-emerald { background: rgba(16,185,129,0.25) !important; color: #6ee7b7 !important; }
+.cs-badge-rose { background: rgba(244,63,94,0.25) !important; color: #fda4af !important; }
+.cs-badge-amber { background: rgba(245,158,11,0.25) !important; color: #fcd34d !important; }
+.cs-badge-cyan { background: rgba(6,182,212,0.25) !important; color: #67e8f9 !important; }
+
+/* Content */
+.cs-card .cs-body {
+  padding: 1.5rem !important;
+}
+
+.cs-card .cs-title {
+  font-family: 'Outfit', sans-serif !important;
+  font-size: 18px !important;
   font-weight: 700 !important;
   color: #ffffff !important;
-  line-height: 1.4 !important;
+  line-height: 1.3 !important;
   margin-top: 0.5rem !important;
 }
 
-.cs-card p {
+.cs-card .cs-client {
+  font-size: 12px !important;
+  color: rgba(255,255,255,0.45) !important;
+  margin-top: 0.25rem !important;
+}
+
+.cs-card .cs-desc {
   font-size: 13px !important;
-  color: rgba(255,255,255,0.5) !important;
+  color: rgba(255,255,255,0.55) !important;
   line-height: 1.6 !important;
-  margin-top: 0.5rem !important;
+  margin-top: 0.75rem !important;
 }
 
-/* Card stats */
-.cs-card .mt-4 {
-  margin-top: 1rem !important;
-  padding-top: 1rem !important;
-  border-top: 1px solid rgba(255,255,255,0.08) !important;
+/* Services tags */
+.cs-services {
   display: flex !important;
-  align-items: center !important;
-  gap: 1rem !important;
+  flex-wrap: wrap !important;
+  gap: 6px !important;
+  margin-top: 1rem !important;
 }
 
-.cs-card .text-lg {
-  font-size: 1.125rem !important;
+.cs-services span {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+  padding: 4px 10px !important;
+  border-radius: 9999px !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  background: rgba(255,255,255,0.06) !important;
+  color: rgba(255,255,255,0.6) !important;
+  border: 1px solid rgba(255,255,255,0.06) !important;
+}
+
+/* Results row */
+.cs-results {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 8px !important;
+  margin-top: 1.25rem !important;
+  padding-top: 1.25rem !important;
+  border-top: 1px solid rgba(255,255,255,0.06) !important;
+}
+
+.cs-result-item {
+  text-align: center !important;
+}
+
+.cs-result-item .cs-result-val {
+  font-family: 'Outfit', sans-serif !important;
+  font-size: 18px !important;
   font-weight: 800 !important;
   color: #ffffff !important;
+  line-height: 1.2 !important;
 }
 
-.cs-card .text-\[9px\] {
-  font-size: 9px !important;
+.cs-result-item .cs-result-label {
+  font-size: 10px !important;
   text-transform: uppercase !important;
-  letter-spacing: 0.1em !important;
+  letter-spacing: 0.06em !important;
   color: rgba(255,255,255,0.4) !important;
+  margin-top: 2px !important;
+}
+
+/* CTA Button */
+.cs-cta {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  margin-top: 1.25rem !important;
+  padding: 10px 20px !important;
+  border-radius: 9999px !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  background: linear-gradient(135deg, #3b82f6, #6366f1) !important;
+  color: #ffffff !important;
+  text-decoration: none !important;
+  transition: all 0.3s !important;
+  border: none !important;
+  cursor: pointer !important;
+}
+
+.cs-cta:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 24px rgba(59,130,246,0.3) !important;
 }
 
 /* Hero section fixes */
@@ -414,7 +510,7 @@
                 <div class="overline-label reveal" style="color:#c084fc !important;">Case Studies</div>
                 <h1 class="mt-3 font-display text-reveal" style="font-size:clamp(2.25rem,6vw,4.5rem);font-weight:800;color:#ffffff;line-height:1.1;letter-spacing:-0.02em;">
                     Stories of verified <br>
-                    <span class="italic font-light" style="background:linear-gradient(135deg,#f472b6 0%,#c084fc 50%,#6366f1 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-style:italic;font-weight:300;opacity:0.8;">revenue growth</span>.
+                    <span class="italic font-light" style="color:#ffffff;">revenue growth</span>.
                 </h1>
                 <p class="mt-7 text-lg md:text-xl leading-relaxed" style="color:rgba(255,255,255,0.7);max-width:42rem;line-height:1.7;">
                     We document our client engagements transparently. Dive into detailed reports showing CAC reductions, scaling paths, and creative executions.
@@ -424,19 +520,19 @@
                 <div class="cs-stats-grid reveal" style="display:grid !important;grid-template-columns:repeat(4,1fr) !important;gap:16px !important;width:100% !important;">
                     <div class="cs-stat-card" style="width:auto !important;min-width:0 !important;">
                         <div class="text-slate-400 text-[11px] uppercase tracking-wider font-semibold">Revenue Generated</div>
-                        <div class="mt-1 font-display text-3xl sm:text-4xl font-extrabold text-white">$<span class="counter" data-target="54">0</span>M+</div>
+                        <div class="mt-1 font-display text-3xl sm:text-4xl font-extrabold text-white stat-value">$<span class="counter stat-value" data-target="54">0</span><span class="stat-value">M+</span></div>
                     </div>
                     <div class="cs-stat-card" style="width:auto !important;min-width:0 !important;">
                         <div class="text-slate-400 text-[11px] uppercase tracking-wider font-semibold">Average ROAS</div>
-                        <div class="mt-1 font-display text-3xl sm:text-4xl font-extrabold text-white"><span class="counter" data-target="6.7" data-decimals="1">0.0</span>x</div>
+                        <div class="mt-1 font-display text-3xl sm:text-4xl font-extrabold text-white stat-value"><span class="counter stat-value" data-target="6.7" data-decimals="1">0.0</span>x</div>
                     </div>
                     <div class="cs-stat-card" style="width:auto !important;min-width:0 !important;">
                         <div class="text-slate-400 text-[11px] uppercase tracking-wider font-semibold">Clients Served</div>
-                        <div class="mt-1 font-display text-3xl sm:text-4xl font-extrabold text-white"><span class="counter" data-target="1000">0</span>+</div>
+                        <div class="mt-1 font-display text-3xl sm:text-4xl font-extrabold text-white stat-value"><span class="counter stat-value" data-target="1000">0</span>+</div>
                     </div>
                     <div class="cs-stat-card" style="width:auto !important;min-width:0 !important;">
                         <div class="text-slate-400 text-[11px] uppercase tracking-wider font-semibold">Campaign Success Rate</div>
-                        <div class="mt-1 font-display text-3xl sm:text-4xl font-extrabold text-white"><span class="counter" data-target="98">0</span>%</div>
+                        <div class="mt-1 font-display text-3xl sm:text-4xl font-extrabold text-white stat-value"><span class="counter stat-value" data-target="98">0</span>%</div>
                     </div>
                 </div>
             </div>
@@ -448,105 +544,227 @@
                 <!-- Filter Tabs -->
                 <div class="cs-filter-wrap reveal">
                     <button onclick="filterCaseStudies('all')" class="cs-filter-btn active" data-filter="all">All Work</button>
+                    <button onclick="filterCaseStudies('restaurant')" class="cs-filter-btn" data-filter="restaurant">Restaurant</button>
+                    <button onclick="filterCaseStudies('realestate')" class="cs-filter-btn" data-filter="realestate">Real Estate</button>
                     <button onclick="filterCaseStudies('ecommerce')" class="cs-filter-btn" data-filter="ecommerce">E-Commerce</button>
-                    <button onclick="filterCaseStudies('saas')" class="cs-filter-btn" data-filter="saas">SaaS</button>
-                    <button onclick="filterCaseStudies('ai')" class="cs-filter-btn" data-filter="ai">AI Video</button>
-                    <button onclick="filterCaseStudies('brand')" class="cs-filter-btn" data-filter="brand">Brand</button>
+                    <button onclick="filterCaseStudies('healthcare')" class="cs-filter-btn" data-filter="healthcare">Healthcare</button>
+                    <button onclick="filterCaseStudies('education')" class="cs-filter-btn" data-filter="education">Education</button>
+                    <button onclick="filterCaseStudies('branding')" class="cs-filter-btn" data-filter="branding">Branding</button>
                 </div>
 
                 <!-- Case Study Cards Grid -->
                 <div class="cs-grid reveal" id="cs-grid">
-                    <!-- Card 1: Apple -->
-                    <div class="cs-card group" data-category="ecommerce">
-                        <div class="aspect-[4/3] overflow-hidden relative">
-                            <img src="assets/portfolio-openai.png" alt="Apple performance marketing case study" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700">
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#111] via-transparent to-transparent"></div>
+
+                    <!-- Card 1: Spice Route — Restaurant Marketing -->
+                    <div class="cs-card" data-category="restaurant">
+                        <div class="cs-img-wrap">
+                            <img src="assets/Images web/Casestudy 1.jpeg" alt="Spice Route restaurant marketing case study">
+                            <div class="cs-overlay"></div>
+                            <span class="cs-badge cs-badge-emerald">Restaurant</span>
                         </div>
-                        <div class="p-5">
-                            <span class="text-[10px] uppercase font-bold tracking-widest" style="color:rgba(255,255,255,0.5);">E-Commerce Scaling</span>
-                            <h3 class="mt-2 font-display text-[17px] font-bold leading-snug" style="color:#ffffff;">Apple: 8.2x ROAS Across Paid Media</h3>
-                            <p class="mt-2 text-[13px] leading-relaxed" style="color:rgba(255,255,255,0.5);">Server-side conversions, custom lookalikes, and structured creative testing.</p>
-                            <div class="mt-4 pt-4 border-t flex items-center gap-4" style="border-color:rgba(255,255,255,0.08);">
-                                <div>
-                                    <div class="text-lg font-extrabold" style="color:#ffffff;">8.2x</div>
-                                    <div class="text-[9px] uppercase tracking-wider" style="color:rgba(255,255,255,0.4);">ROAS</div>
+                        <div class="cs-body">
+                            <div class="cs-client">Spice Route — Multi-Location Restaurant Chain</div>
+                            <h3 class="cs-title">From Empty Tables to 94% Weekend Occupancy</h3>
+                            <p class="cs-desc">A heritage Indian cuisine chain struggling with foot traffic and online visibility. We built a hyper-local social presence, launched geo-targeted promotions, and implemented a review generation engine that transformed their digital footprint.</p>
+                            <div class="cs-services">
+                                <span>Social Media</span>
+                                <span>Local SEO</span>
+                                <span>Google Ads</span>
+                                <span>Review Management</span>
+                            </div>
+                            <div class="cs-results">
+                                <div class="cs-result-item">
+                                    <div class="cs-result-val stat-value">+247%</div>
+                                    <div class="cs-result-label">Foot Traffic</div>
                                 </div>
-                                <div>
-                                    <div class="text-lg font-extrabold" style="color:#ffffff;">-38%</div>
-                                    <div class="text-[9px] uppercase tracking-wider" style="color:rgba(255,255,255,0.4);">CAC</div>
+                                <div class="cs-result-item">
+                                    <div class="cs-result-val stat-value">94%</div>
+                                    <div class="cs-result-label">Weekend Bookings</div>
+                                </div>
+                                <div class="cs-result-item">
+                                    <div class="cs-result-val stat-value">4.8★</div>
+                                    <div class="cs-result-label">Google Rating</div>
                                 </div>
                             </div>
+                            <a href="#" class="cs-cta">View Full Case Study <i data-lucide="arrow-right" style="width:14px;height:14px;"></i></a>
                         </div>
                     </div>
 
-                    <!-- Card 2: Stripe -->
-                    <div class="cs-card group" data-category="saas">
-                        <div class="aspect-[4/3] overflow-hidden relative">
-                            <img src="assets/portfolio-stripe.png" alt="Stripe performance optimization case study" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700">
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#111] via-transparent to-transparent"></div>
+                    <!-- Card 2: UrbanRealty Group — Real Estate -->
+                    <div class="cs-card" data-category="realestate">
+                        <div class="cs-img-wrap">
+                            <img src="assets/Images web/Casestudy 2.jpeg" alt="UrbanRealty Group real estate marketing case study">
+                            <div class="cs-overlay"></div>
+                            <span class="cs-badge cs-badge-purple">Real Estate</span>
                         </div>
-                        <div class="p-5">
-                            <span class="text-[10px] uppercase font-bold tracking-widest" style="color:rgba(255,255,255,0.5);">SaaS Optimization</span>
-                            <h3 class="mt-2 font-display text-[17px] font-bold leading-snug" style="color:#ffffff;">Stripe: Sub-1s Load & +42% Conversions</h3>
-                            <p class="mt-2 text-[13px] leading-relaxed" style="color:rgba(255,255,255,0.5);">Static rebuild reducing cart abandonments and improving core web vitals.</p>
-                            <div class="mt-4 pt-4 border-t flex items-center gap-4" style="border-color:rgba(255,255,255,0.08);">
-                                <div>
-                                    <div class="text-lg font-extrabold" style="color:#ffffff;">0.8s</div>
-                                    <div class="text-[9px] uppercase tracking-wider" style="color:rgba(255,255,255,0.4);">Load Time</div>
+                        <div class="cs-body">
+                            <div class="cs-client">UrbanRealty Group — Premium Real Estate Developer</div>
+                            <h3 class="cs-title">320+ Qualified Leads in 60 Days for a Luxury Project</h3>
+                            <p class="cs-desc">A luxury residential project launching in a competitive metro market. We deployed a full-funnel performance campaign with 3D virtual tours, retargeting sequences, and WhatsApp automation for instant agent connection.</p>
+                            <div class="cs-services">
+                                <span>Meta Ads</span>
+                                <span>Google Ads</span>
+                                <span>3D Virtual Tours</span>
+                                <span>WhatsApp Automation</span>
+                            </div>
+                            <div class="cs-results">
+                                <div class="cs-result-item">
+                                    <div class="cs-result-val stat-value">320+</div>
+                                    <div class="cs-result-label">Qualified Leads</div>
                                 </div>
-                                <div>
-                                    <div class="text-lg font-extrabold" style="color:#ffffff;">+42%</div>
-                                    <div class="text-[9px] uppercase tracking-wider" style="color:rgba(255,255,255,0.4);">CVR Lift</div>
+                                <div class="cs-result-item">
+                                    <div class="cs-result-val stat-value">₹4.2Cr</div>
+                                    <div class="cs-result-label">Pipeline Value</div>
+                                </div>
+                                <div class="cs-result-item">
+                                    <div class="cs-result-val stat-value">₹186</div>
+                                    <div class="cs-result-label">Cost Per Lead</div>
                                 </div>
                             </div>
+                            <a href="#" class="cs-cta">View Full Case Study <i data-lucide="arrow-right" style="width:14px;height:14px;"></i></a>
                         </div>
                     </div>
 
-                    <!-- Card 3: Zoom -->
-                    <div class="cs-card group" data-category="ai">
-                        <div class="aspect-[4/3] overflow-hidden relative">
-                            <img src="assets/portfolio-zoom.png" alt="Zoom AI video production case study" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700">
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#111] via-transparent to-transparent"></div>
+                    <!-- Card 3: LuxeCart — E-Commerce -->
+                    <div class="cs-card" data-category="ecommerce">
+                        <div class="cs-img-wrap">
+                            <img src="assets/Images web/Casestudy 3.jpeg" alt="LuxeCart e-commerce case study">
+                            <div class="cs-overlay"></div>
+                            <span class="cs-badge cs-badge-blue">E-Commerce</span>
                         </div>
-                        <div class="p-5">
-                            <span class="text-[10px] uppercase font-bold tracking-widest" style="color:rgba(255,255,255,0.5);">AI Video Production</span>
-                            <h3 class="mt-2 font-display text-[17px] font-bold leading-snug" style="color:#ffffff;">Zoom: 15x Asset Yield & -80% Costs</h3>
-                            <p class="mt-2 text-[13px] leading-relaxed" style="color:rgba(255,255,255,0.5);">Generative diffusion pipeline with synthetic avatars for 600+ ad variants.</p>
-                            <div class="mt-4 pt-4 border-t flex items-center gap-4" style="border-color:rgba(255,255,255,0.08);">
-                                <div>
-                                    <div class="text-lg font-extrabold" style="color:#ffffff;">15x</div>
-                                    <div class="text-[9px] uppercase tracking-wider" style="color:rgba(255,255,255,0.4);">Yield</div>
+                        <div class="cs-body">
+                            <div class="cs-client">LuxeCart — D2C Premium Home Decor Brand</div>
+                            <h3 class="cs-title">5.8x ROAS Scaling from ₹8L to ₹1.2Cr Monthly Revenue</h3>
+                            <p class="cs-desc">A D2C brand stuck at ₹8L/month with high customer acquisition costs. We rebuilt the entire funnel — from creative strategy to checkout optimization — implementing server-side tracking and dynamic product ads.</p>
+                            <div class="cs-services">
+                                <span>Performance Marketing</span>
+                                <span>CRO</span>
+                                <span>Meta Ads</span>
+                                <span>Google Shopping</span>
+                            </div>
+                            <div class="cs-results">
+                                <div class="cs-result-item">
+                                    <div class="cs-result-val stat-value">5.8x</div>
+                                    <div class="cs-result-label">ROAS</div>
                                 </div>
-                                <div>
-                                    <div class="text-lg font-extrabold" style="color:#ffffff;">-80%</div>
-                                    <div class="text-[9px] uppercase tracking-wider" style="color:rgba(255,255,255,0.4);">Cost</div>
+                                <div class="cs-result-item">
+                                    <div class="cs-result-val stat-value">₹1.2Cr</div>
+                                    <div class="cs-result-label">Monthly Revenue</div>
+                                </div>
+                                <div class="cs-result-item">
+                                    <div class="cs-result-val stat-value">-42%</div>
+                                    <div class="cs-result-label">CAC Reduction</div>
                                 </div>
                             </div>
+                            <a href="#" class="cs-cta">View Full Case Study <i data-lucide="arrow-right" style="width:14px;height:14px;"></i></a>
                         </div>
                     </div>
 
-                    <!-- Card 4: Notion -->
-                    <div class="cs-card group" data-category="brand">
-                        <div class="aspect-[4/3] overflow-hidden relative">
-                            <img src="assets/portfolio-notion.png" alt="Notion brand identity case study" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700">
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#111] via-transparent to-transparent"></div>
+                    <!-- Card 4: CareFirst Clinic — Healthcare -->
+                    <div class="cs-card" data-category="healthcare">
+                        <div class="cs-img-wrap">
+                            <img src="assets/Images web/Casestudy 4.jpeg" alt="CareFirst Clinic healthcare marketing case study">
+                            <div class="cs-overlay"></div>
+                            <span class="cs-badge cs-badge-rose">Healthcare</span>
                         </div>
-                        <div class="p-5">
-                            <span class="text-[10px] uppercase font-bold tracking-widest" style="color:rgba(255,255,255,0.5);">Brand Redesign</span>
-                            <h3 class="mt-2 font-display text-[17px] font-bold leading-snug" style="color:#ffffff;">Notion: Unified Identity & +52% CTR</h3>
-                            <p class="mt-2 text-[13px] leading-relaxed" style="color:rgba(255,255,255,0.5);">Design tokens system and dark mode creative assets across campaigns.</p>
-                            <div class="mt-4 pt-4 border-t flex items-center gap-4" style="border-color:rgba(255,255,255,0.08);">
-                                <div>
-                                    <div class="text-lg font-extrabold" style="color:#ffffff;">+52%</div>
-                                    <div class="text-[9px] uppercase tracking-wider" style="color:rgba(255,255,255,0.4);">CTR Lift</div>
+                        <div class="cs-body">
+                            <div class="cs-client">CareFirst Clinic — Multi-Specialty Healthcare Provider</div>
+                            <h3 class="cs-title">680+ Patient Appointments Monthly via Compliance-Safe Ads</h3>
+                            <p class="cs-desc">A healthcare provider needing patient acquisition while navigating strict advertising regulations. We built trust-first content funnels, compliant ad creatives, and an appointment booking automation system.</p>
+                            <div class="cs-services">
+                                <span>Lead Generation</span>
+                                <span>Compliance Ads</span>
+                                <span>SEO</span>
+                                <span>Booking Automation</span>
+                            </div>
+                            <div class="cs-results">
+                                <div class="cs-result-item">
+                                    <div class="cs-result-val stat-value">680+</div>
+                                    <div class="cs-result-label">Monthly Patients</div>
                                 </div>
-                                <div>
-                                    <div class="text-lg font-extrabold" style="color:#ffffff;">400+</div>
-                                    <div class="text-[9px] uppercase tracking-wider" style="color:rgba(255,255,255,0.4);">Tokens</div>
+                                <div class="cs-result-item">
+                                    <div class="cs-result-val stat-value">+312%</div>
+                                    <div class="cs-result-label">Organic Traffic</div>
+                                </div>
+                                <div class="cs-result-item">
+                                    <div class="cs-result-val stat-value">₹224</div>
+                                    <div class="cs-result-label">Cost Per Lead</div>
                                 </div>
                             </div>
+                            <a href="#" class="cs-cta">View Full Case Study <i data-lucide="arrow-right" style="width:14px;height:14px;"></i></a>
                         </div>
                     </div>
+
+                    <!-- Card 5: Code Academy — Education -->
+                    <div class="cs-card" data-category="education">
+                        <div class="cs-img-wrap">
+                            <img src="assets/Images web/Casestudy 5.jpeg" alt="Code Academy education marketing case study">
+                            <div class="cs-overlay"></div>
+                            <span class="cs-badge cs-badge-amber">Education</span>
+                        </div>
+                        <div class="cs-body">
+                            <div class="cs-client">Code Academy — Online Tech Education Platform</div>
+                            <h3 class="cs-title">12,400+ Course Enrollments in One Quarter</h3>
+                            <p class="cs-desc">An EdTech platform with high-quality courses but poor conversion rates. We redesigned the student journey from awareness to enrollment, leveraging organic social authority, YouTube tutorials, and high-converting landing pages.</p>
+                            <div class="cs-services">
+                                <span>Organic Social</span>
+                                <span>YouTube Ads</span>
+                                <span>Landing Pages</span>
+                                <span>Email Funnels</span>
+                            </div>
+                            <div class="cs-results">
+                                <div class="cs-result-item">
+                                    <div class="cs-result-val stat-value">12.4K</div>
+                                    <div class="cs-result-label">Enrollments</div>
+                                </div>
+                                <div class="cs-result-item">
+                                    <div class="cs-result-val stat-value">+186%</div>
+                                    <div class="cs-result-label">Conversion Rate</div>
+                                </div>
+                                <div class="cs-result-item">
+                                    <div class="cs-result-val stat-value">₹89</div>
+                                    <div class="cs-result-label">Cost Per Lead</div>
+                                </div>
+                            </div>
+                            <a href="#" class="cs-cta">View Full Case Study <i data-lucide="arrow-right" style="width:14px;height:14px;"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Card 6: ZenithWear — Startup Branding -->
+                    <div class="cs-card" data-category="branding">
+                        <div class="cs-img-wrap">
+                            <img src="assets/Images web/Casestudy 6.jpeg" alt="ZenithWear branding case study">
+                            <div class="cs-overlay"></div>
+                            <span class="cs-badge cs-badge-cyan">Branding</span>
+                        </div>
+                        <div class="cs-body">
+                            <div class="cs-client">ZenithWear — Sustainable Fashion Startup</div>
+                            <h3 class="cs-title">Complete Brand Launch: 45K Followers in 90 Days</h3>
+                            <p class="cs-desc">A sustainable fashion startup entering a crowded market with zero brand recognition. We delivered end-to-end brand identity, social launch strategy, influencer seeding, and a pre-order campaign that sold out the first collection.</p>
+                            <div class="cs-services">
+                                <span>Brand Identity</span>
+                                <span>Social Launch</span>
+                                <span>Influencer Marketing</span>
+                                <span>Pre-Order Campaign</span>
+                            </div>
+                            <div class="cs-results">
+                                <div class="cs-result-item">
+                                    <div class="cs-result-val stat-value">45K</div>
+                                    <div class="cs-result-label">Followers (90 Days)</div>
+                                </div>
+                                <div class="cs-result-item">
+                                    <div class="cs-result-val stat-value">100%</div>
+                                    <div class="cs-result-label">Collection Sold Out</div>
+                                </div>
+                                <div class="cs-result-item">
+                                    <div class="cs-result-val stat-value">₹18L</div>
+                                    <div class="cs-result-label">Launch Revenue</div>
+                                </div>
+                            </div>
+                            <a href="#" class="cs-cta">View Full Case Study <i data-lucide="arrow-right" style="width:14px;height:14px;"></i></a>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
@@ -582,7 +800,7 @@
                         <img src="assets/logo-white.png" alt="Digital Advertise Logo" class="h-10 w-auto object-contain">
                     </div>
                     <p class="text-white/65 text-[15px] leading-relaxed max-w-md">
-                        A performance marketing partner for ambitious teams � engineered for measurable, durable growth across every channel and market.
+                        A performance marketing partner for ambitious teams — engineered for measurable, durable growth across every channel and market.
                     </p>
                     <form class="mt-6 flex max-w-sm" onsubmit="handleNewsletterSubmit(event)">
                         <input type="email" required placeholder="Subscribe to our newsletter" class="flex-1 bg-black/5 border border-white/10 rounded-l-xl px-4 py-2 text-[14px] text-white placeholder:text-white/40 focus:outline-none focus:border-white">
@@ -632,12 +850,6 @@
                             <li><a href="#" class="text-[14px] text-white/80 hover:text-white transition-colors flex items-center gap-2"><i data-lucide="map-pin" class="w-4 h-4 shrink-0"></i>Pune, India</a></li>
                         </ul>
                     </div>
-                </div>
-            </div>
-
-            <div class="border-t border-white/10 pt-12 text-center select-none">
-                <div class="font-display font-bold tracking-tighter leading-none text-[clamp(44px,14vw,220px)] bg-gradient-to-b from-white to-white/10 bg-clip-text text-transparent opacity-80">
-                    DIGITAL ADVERTISE
                 </div>
             </div>
 

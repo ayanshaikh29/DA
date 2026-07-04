@@ -76,7 +76,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initialize interactive frameworks
     autoDecorateElements();
-    injectDriftingBlobs();
     
     initKeyboardEsc();
     initTiltCards();
@@ -724,28 +723,6 @@ function autoDecorateElements() {
             card.classList.add('hover-card');
         }
     });
-}
-
-// ===== FLOATING BACKGROUND BLOBS INJECTION =====
-function injectDriftingBlobs() {
-    const container = document.querySelector('main');
-    if (!container) return;
-    
-    // Inject if not already present
-    if (container.querySelector('.animate-blob-1')) return;
-
-    const blob1 = document.createElement('div');
-    blob1.className = 'absolute top-[20%] left-[-10%] w-[500px] h-[500px] rounded-full bg-white/5 pointer-events-none animate-blob-1 z-0';
-    
-    const blob2 = document.createElement('div');
-    blob2.className = 'absolute top-[50%] right-[-10%] w-[600px] h-[600px] rounded-full bg-white/5 pointer-events-none animate-blob-2 z-0';
-    
-    const blob3 = document.createElement('div');
-    blob3.className = 'absolute bottom-[15%] left-[5%] w-[450px] h-[450px] rounded-full bg-white/5 pointer-events-none animate-blob-3 z-0';
-
-    container.appendChild(blob1);
-    container.appendChild(blob2);
-    container.appendChild(blob3);
 }
 
 // ===== WHATSAPP FLOATING INTEGRATION =====

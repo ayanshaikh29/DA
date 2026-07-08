@@ -132,7 +132,7 @@
 
     <!-- Header -->
 <header id="navbar" style="position:fixed;top:0;left:0;width:100%;z-index:9999;padding:16px 0;transform:translateY(-120%);transition:transform 0.45s cubic-bezier(0.16,1,0.3,1);">
-  <div style="max-width:1280px;margin:0 auto;padding:0 24px;">
+  <div style="max-width:1280px;margin:0 auto;padding:0 24px;"><div id="mobile-menu-backdrop" onclick="toggleMobileMenu()"></div>
     <div id="nav-wrapper" style="display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,0.85);border:1px solid rgba(255,255,255,0.6);box-shadow:0 4px 32px rgba(2,6,23,0.08);border-radius:9999px;height:60px;padding:0 24px;">
       <a href="index.html" style="display:flex;align-items:center;">
         <img src="assets/logo.png" alt="Digital Advertise Logo" style="height:32px;width:auto;object-fit:contain;">
@@ -140,7 +140,7 @@
       <nav style="display:none;" id="desktop-nav">
         <a href="index.html">Home</a>
         <div class="nav-dropdown">
-          <a href="services.html">Services ▾</a>
+          <a href="services.html" style="display:inline-flex;align-items:center;gap:4px;">Services <i data-lucide="chevron-down" class="w-3 h-3"></i></a>
           <div class="nav-dropdown-menu">
             <a href="social-media.html">Social Media Marketing</a>
             <a href="performance-marketing.html">Performance Marketing</a>
@@ -160,22 +160,31 @@
       </nav>
       <div style="display:flex;align-items:center;gap:8px;">
         <a href="audit.html" style="display:inline-flex;align-items:center;gap:6px;background:#000000;color:#fff;font-weight:600;font-size:14px;padding:10px 20px;border-radius:9999px;text-decoration:none;transition:background 0.2s;">
-          Get Started ↗
-        </a>
-        <button onclick="toggleMobileMenu()" id="hamburger-btn" style="display:none;padding:8px;border-radius:9999px;border:none;background:transparent;cursor:pointer;">
-          ☰
-        </button>
+          Get Started <i data-lucide="arrow-up-right" class="w-4 h-4"></i></a>
+        <button onclick="toggleMobileMenu()" id="hamburger-btn" style="display:none;padding:6px;border-radius:9999px;border:none;background:transparent;cursor:pointer;"><i data-lucide="menu" id="menu-icon" class="w-6 h-6" style="color:#000;display:block;"></i></button>
       </div>
     </div>
-    <div id="mobile-menu" style="display:none;margin-top:12px;background:rgba(255,255,255,0.95);border-radius:20px;padding:20px;flex-direction:column;gap:8px;">
-      <a href="index.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Home</a>
-      <a href="services.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Services</a>
-      <a href="portfolio.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Portfolio</a>
-      <a href="case-studies.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Case Studies</a>
-      <a href="blog.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Blog</a>
-      <a href="contact.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Contact</a>
-      <a href="about.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">About Us</a>
-      <a href="audit.html" style="margin-top:8px;padding:12px;background:#000000;color:#fff;font-weight:600;border-radius:9999px;text-decoration:none;display:block;text-align:center;">Get Started</a>
+    <div id="mobile-menu" style="display:none;margin-top:12px;background:#ffffff;border-radius:20px;padding:20px;flex-direction:column;gap:8px;">
+      <a href="index.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:flex;align-items:center;">Home</a>
+      <div style="display:flex;flex-direction:column;">
+        <div class="mobile-services-row" style="display:flex;align-items:center;justify-content:flex-start;gap:0;"><a href="services.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;flex:0 0 auto;width:auto;">Services</a><button type="button" onclick="event.stopPropagation();event.preventDefault();toggleMobileServices()" aria-label="Toggle Services submenu"><i data-lucide="chevron-down" class="w-3 h-3" id="mobile-services-chevron"></i></button></div>
+        <div id="mobile-services-submenu">
+          <a href="social-media.html">Social Media Marketing</a>
+          <a href="performance-marketing.html">Performance Marketing</a>
+          <a href="brand-identity.html">Brand Identity</a>
+          <a href="web-development.html">Website Development</a>
+          <a href="video-production.html">Video Production</a>
+          <a href="ai-video.html">AI Video Generation</a>
+          <a href="packaging.html">Product Packaging Design</a>
+          <a href="photography.html">Product Shoot</a>
+        </div>
+      </div>
+      <a href="portfolio.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:flex;align-items:center;">Portfolio</a>
+      <a href="case-studies.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:flex;align-items:center;">Case Studies</a>
+      <a href="blog.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:flex;align-items:center;">Blog</a>
+      <a href="contact.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:flex;align-items:center;">Contact</a>
+      <a href="about.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:flex;align-items:center;">About Us</a>
+      <a href="audit.html" style="margin-top:8px;padding:12px;background:#0f172a;color:#fff;font-weight:600;border-radius:9999px;text-decoration:none;display:block;text-align:center;">Get Started <i data-lucide="arrow-up-right" class="w-4 h-4"></i></a>
     </div>
   </div>
 </header>
@@ -216,17 +225,17 @@
                 <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 reveal">
                     <div class="glass-strong border border-white/10/80 rounded-3xl p-7 hover:shadow-lg transition-shadow spotlight-card">
                         <div class="w-10 h-10 rounded-xl bg-[#111111] flex items-center justify-center mb-4"><i data-lucide="film" class="w-5 h-5 text-white"></i></div>
-                        <h3 class="font-display font-bold text-white">Commercial & Brand Film</h3>
+                        <h3 class="font-display font-bold text-gradient-premium">Commercial & Brand Film</h3>
                         <p class="mt-2 text-[14px] text-white/60 leading-relaxed">Full-scale commercial shoots and brand storytelling films produced with cinematic equipment and professional direction.</p>
                     </div>
                     <div class="glass-strong border border-white/10/80 rounded-3xl p-7 hover:shadow-lg transition-shadow spotlight-card">
                         <div class="w-10 h-10 rounded-xl bg-[#111111] flex items-center justify-center mb-4"><i data-lucide="scissors" class="w-5 h-5 text-white"></i></div>
-                        <h3 class="font-display font-bold text-white">Social Media Video Editing</h3>
+                        <h3 class="font-display font-bold text-gradient-premium">Social Media Video Editing</h3>
                         <p class="mt-2 text-[14px] text-white/60 leading-relaxed">Platform-specific cuts, reformatting, and optimization for Instagram Reels, TikTok, YouTube Shorts, and LinkedIn.</p>
                     </div>
                     <div class="glass-strong border border-white/10/80 rounded-3xl p-7 hover:shadow-lg transition-shadow spotlight-card">
                         <div class="w-10 h-10 rounded-xl bg-[#111111] flex items-center justify-center mb-4"><i data-lucide="sparkles" class="w-5 h-5 text-white"></i></div>
-                        <h3 class="font-display font-bold text-white">Motion Graphics & Explainers</h3>
+                        <h3 class="font-display font-bold text-gradient-premium">Motion Graphics & Explainers</h3>
                         <p class="mt-2 text-[14px] text-white/60 leading-relaxed">Custom motion graphics, 2D/3D animations, explainer videos, and professional title sequences for brand content.</p>
                     </div>
                 </div>
@@ -243,22 +252,22 @@
                 <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 reveal">
                     <div class="text-left group">
                         <div class="w-12 h-12 rounded-full bg-slate-900 text-white flex items-center justify-center font-display font-bold text-lg mb-5 group-hover:bg-black transition-colors">1</div>
-                        <h3 class="font-display font-bold text-white text-lg">Creative Development</h3>
+                        <h3 class="font-display font-bold text-white text-gradient-premium text-lg">Creative Development</h3>
                         <p class="mt-2 text-[14px] text-white/60 leading-relaxed">Concept ideation, scripting, storyboarding, and creative direction aligned with your brand goals.</p>
                     </div>
                     <div class="text-left group">
                         <div class="w-12 h-12 rounded-full bg-slate-900 text-white flex items-center justify-center font-display font-bold text-lg mb-5 group-hover:bg-black transition-colors">2</div>
-                        <h3 class="font-display font-bold text-white text-lg">Pre-Production</h3>
+                        <h3 class="font-display font-bold text-white text-gradient-premium text-lg">Pre-Production</h3>
                         <p class="mt-2 text-[14px] text-white/60 leading-relaxed">Location scouting, talent casting, shot lists, scheduling, and technical preparation for shoot day.</p>
                     </div>
                     <div class="text-left group">
                         <div class="w-12 h-12 rounded-full bg-slate-900 text-white flex items-center justify-center font-display font-bold text-lg mb-5 group-hover:bg-black transition-colors">3</div>
-                        <h3 class="font-display font-bold text-white text-lg">Production & Filming</h3>
+                        <h3 class="font-display font-bold text-white text-gradient-premium text-lg">Production & Filming</h3>
                         <p class="mt-2 text-[14px] text-white/60 leading-relaxed">Professional on-location or studio filming with cinema-grade cameras, lighting, and audio capture.</p>
                     </div>
                     <div class="text-left group">
                         <div class="w-12 h-12 rounded-full bg-slate-900 text-white flex items-center justify-center font-display font-bold text-lg mb-5 group-hover:bg-black transition-colors">4</div>
-                        <h3 class="font-display font-bold text-white text-lg">Post-Production & Delivery</h3>
+                        <h3 class="font-display font-bold text-white text-gradient-premium text-lg">Post-Production & Delivery</h3>
                         <p class="mt-2 text-[14px] text-white/60 leading-relaxed">Editing, color grading, sound design, motion graphics, and multi-format export for all platforms.</p>
                     </div>
                 </div>
@@ -276,28 +285,28 @@
                     <div class="glass-strong border border-white/10/80 rounded-3xl p-7 flex items-start gap-4 premium-card-glow">
                         <div class="w-10 h-10 rounded-xl bg-[#111111] flex items-center justify-center shrink-0 mt-0.5"><i data-lucide="video-off" class="w-5 h-5 text-white"></i></div>
                         <div>
-                            <h3 class="font-display font-bold text-white">No In-House Team Needed</h3>
+                            <h3 class="font-display font-bold text-gradient-premium">No In-House Team Needed</h3>
                             <p class="mt-1 text-[14px] text-white/60 leading-relaxed">Professional-grade video content without the overhead of hiring an in-house production team.</p>
                         </div>
                     </div>
                     <div class="glass-strong border border-white/10/80 rounded-3xl p-7 flex items-start gap-4 premium-card-glow">
                         <div class="w-10 h-10 rounded-xl bg-[#111111] flex items-center justify-center shrink-0 mt-0.5"><i data-lucide="layers" class="w-5 h-5 text-white"></i></div>
                         <div>
-                            <h3 class="font-display font-bold text-white">Multi-Format Delivery</h3>
+                            <h3 class="font-display font-bold text-gradient-premium">Multi-Format Delivery</h3>
                             <p class="mt-1 text-[14px] text-white/60 leading-relaxed">Broadcast, social, and web formats ready from a single production shoot — no re-shoots required.</p>
                         </div>
                     </div>
                     <div class="glass-strong border border-white/10/80 rounded-3xl p-7 flex items-start gap-4 premium-card-glow">
                         <div class="w-10 h-10 rounded-xl bg-[#111111] flex items-center justify-center shrink-0 mt-0.5"><i data-lucide="heart" class="w-5 h-5 text-white"></i></div>
                         <div>
-                            <h3 class="font-display font-bold text-white">Higher Retention Through Storytelling</h3>
+                            <h3 class="font-display font-bold text-gradient-premium">Higher Retention Through Storytelling</h3>
                             <p class="mt-1 text-[14px] text-white/60 leading-relaxed">Cinematic storytelling that drives higher audience retention and completion rates across platforms.</p>
                         </div>
                     </div>
                     <div class="glass-strong border border-white/10/80 rounded-3xl p-7 flex items-start gap-4 premium-card-glow">
                         <div class="w-10 h-10 rounded-xl bg-[#111111] flex items-center justify-center shrink-0 mt-0.5"><i data-lucide="wand-2" class="w-5 h-5 text-white"></i></div>
                         <div>
-                            <h3 class="font-display font-bold text-white">Motion Graphics That Clarify</h3>
+                            <h3 class="font-display font-bold text-gradient-premium">Motion Graphics That Clarify</h3>
                             <p class="mt-1 text-[14px] text-white/60 leading-relaxed">Animated explainers and motion graphics that simplify complex products and drive understanding instantly.</p>
                         </div>
                     </div>
@@ -312,13 +321,15 @@
                     <div class="overline-label">Our Work</div>
                     <h2 class="mt-3 font-display text-3xl md:text-4xl font-bold text-white">Video Production Results</h2>
                 </div>
-                <div class="grid md:grid-cols-3 gap-6 reveal">
-                    <div class="group relative rounded-3xl overflow-hidden aspect-[4/3] bg-slate-900 border border-white/5 hover:shadow-2xl transition-all duration-500">
-                        <img src="assets/portfolio-netflix.png" alt="Brand Film Production" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700">
+                <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6 reveal">
+                    <div class="group relative rounded-3xl overflow-hidden aspect-[4/3] bg-slate-900 border border-white/5 hover:shadow-2xl transition-all duration-350">
+                        <div class="w-full h-full flex items-center justify-center p-4">
+                            <img src="assets/images web/video prod img (1).jpeg" alt="Brand Film Production" width="600" height="450" loading="lazy" class="w-full h-full object-contain opacity-80 group-hover:scale-[1.03] transition-transform duration-350">
+                        </div>
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent p-6 flex flex-col justify-between text-left opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                             <span class="bg-black text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 rounded text-white self-start">Brand Film</span>
                             <div>
-                                <h3 class="font-display font-bold text-white text-xl">Lifestyle Brand Campaign</h3>
+                                <h3 class="font-display font-bold text-white text-gradient-premium text-xl">Lifestyle Brand Campaign</h3>
                                 <p class="text-white/60 text-[13px] mt-1">60-second brand film shot on location across 3 cities with cinematic color grading.</p>
                                 <div class="mt-4 pt-4 border-t border-white/10 flex justify-between items-center text-white">
                                     <div>
@@ -333,12 +344,14 @@
                             </div>
                         </div>
                     </div>
-                    <div class="group relative rounded-3xl overflow-hidden aspect-[4/3] bg-slate-900 border border-white/5 hover:shadow-2xl transition-all duration-500">
-                        <img src="assets/portfolio-openai.png" alt="Social Media Video" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700">
+                    <div class="group relative rounded-3xl overflow-hidden aspect-[4/3] bg-slate-900 border border-white/5 hover:shadow-2xl transition-all duration-350">
+                        <div class="w-full h-full flex items-center justify-center p-4">
+                            <img src="assets/images web/video prod img (2).jpeg" alt="Social Media Video" width="600" height="450" loading="lazy" class="w-full h-full object-contain opacity-80 group-hover:scale-[1.03] transition-transform duration-350">
+                        </div>
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent p-6 flex flex-col justify-between text-left opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                             <span class="bg-black text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 rounded text-white self-start">Social Reels</span>
                             <div>
-                                <h3 class="font-display font-bold text-white text-xl">Product Launch Series</h3>
+                                <h3 class="font-display font-bold text-white text-gradient-premium text-xl">Product Launch Series</h3>
                                 <p class="text-white/60 text-[13px] mt-1">15-second vertical video series for Instagram Reels and TikTok driving product awareness.</p>
                                 <div class="mt-4 pt-4 border-t border-white/10 flex justify-between items-center text-white">
                                     <div>
@@ -353,12 +366,14 @@
                             </div>
                         </div>
                     </div>
-                    <div class="group relative rounded-3xl overflow-hidden aspect-[4/3] bg-slate-900 border border-white/5 hover:shadow-2xl transition-all duration-500">
-                        <img src="assets/portfolio-apple.png" alt="Motion Graphics Explainer" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700">
+                    <div class="group relative rounded-3xl overflow-hidden aspect-[4/3] bg-slate-900 border border-white/5 hover:shadow-2xl transition-all duration-350">
+                        <div class="w-full h-full flex items-center justify-center p-4">
+                            <img src="assets/images web/video prod img (3).jpeg" alt="Motion Graphics Explainer" width="600" height="450" loading="lazy" class="w-full h-full object-contain opacity-80 group-hover:scale-[1.03] transition-transform duration-350">
+                        </div>
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent p-6 flex flex-col justify-between text-left opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                             <span class="bg-black text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 rounded text-white self-start">Explainer</span>
                             <div>
-                                <h3 class="font-display font-bold text-white text-xl">SaaS Product Explainer</h3>
+                                <h3 class="font-display font-bold text-white text-gradient-premium text-xl">SaaS Product Explainer</h3>
                                 <p class="text-white/60 text-[13px] mt-1">90-second animated explainer video breaking down complex platform features.</p>
                                 <div class="mt-4 pt-4 border-t border-white/10 flex justify-between items-center text-white">
                                     <div>
@@ -448,7 +463,16 @@
         <!-- ===== CTA SECTION ===== -->
         <section id="contact" class="relative overflow-hidden py-16 md:py-24">
 <div class="max-w-7xl mx-auto px-6 md:px-10">
-<div class="relative rounded-[36px] bg-slate-950 overflow-hidden p-10 md:p-16 lg:p-24 reveal">
+<div class="relative rounded-[36px] bg-slate-950 overflow-hidden p-10 md:p-16 lg:p-24 reveal-scale">
+<!-- CTA Animated Background -->
+<div class="cta-animated-bg-wrapper">
+    <div class="cta-animated-bg-glow"></div>
+<div class="cta-bubbles"></div>
+    <div class="cta-animated-bg-grid"></div>
+    <div class="cta-blob cta-blob-1"></div>
+    <div class="cta-blob cta-blob-2"></div>
+</div>
+
 <div class="absolute -top-32 -left-20 w-[420px] h-[420px] rounded-full bg-gray-1000/30 pointer-events-none"></div>
 <div class="absolute -bottom-32 -right-20 w-[420px] h-[420px] rounded-full bg-gray-1000/30 pointer-events-none"></div>
 <div class="absolute inset-0 opacity-[0.06] pointer-events-none grid-pattern"></div>
@@ -510,61 +534,63 @@
     <!-- Footer -->
     
 <!-- ===== FAQ ===== -->
-        <section class="relative overflow-hidden py-20 bg-[#0A0A0A]">
-            <div class="max-w-3xl mx-auto px-6 md:px-10">
-                <div class="text-center mb-14 reveal">
-                    <div class="overline-label">FAQ</div>
-                    <h2 class="mt-3 font-display text-3xl md:text-4xl font-bold text-white">Frequently asked questions</h2>
-                </div>
-                <div class="space-y-4 reveal">
-                    <details class="group glass-strong border border-white/10/80 rounded-2xl overflow-hidden">
-                        <summary class="px-6 py-5 cursor-pointer font-display font-semibold text-white text-[15px] flex items-center justify-between select-none hover:text-white transition-colors">
-                            What types of video content do you produce?
-                            <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 transition-transform group-open:rotate-180"></i>
-                        </summary>
-                        <div class="px-6 pb-5 text-[14px] text-white/60 leading-relaxed">
-                            We produce commercial brand films, social media video content (Reels, TikToks, Shorts), animated explainer videos, product demo videos, corporate films, testimonial videos, and motion graphics — all optimized for their target platform and audience.
-                        </div>
-                    </details>
-                    <details class="group glass-strong border border-white/10/80 rounded-2xl overflow-hidden">
-                        <summary class="px-6 py-5 cursor-pointer font-display font-semibold text-white text-[15px] flex items-center justify-between select-none hover:text-white transition-colors">
-                            How long does a typical video production take?
-                            <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 transition-transform group-open:rotate-180"></i>
-                        </summary>
-                        <div class="px-6 pb-5 text-[14px] text-white/60 leading-relaxed">
-                            A standard social media video package (5-10 Reels) takes 7-10 business days from scripting to delivery. Full brand films and commercials typically require 3-4 weeks, including pre-production, filming, post-production, and revision rounds.
-                        </div>
-                    </details>
-                    <details class="group glass-strong border border-white/10/80 rounded-2xl overflow-hidden">
-                        <summary class="px-6 py-5 cursor-pointer font-display font-semibold text-white text-[15px] flex items-center justify-between select-none hover:text-white transition-colors">
-                            Do you handle everything from scripting to final delivery?
-                            <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 transition-transform group-open:rotate-180"></i>
-                        </summary>
-                        <div class="px-6 pb-5 text-[14px] text-white/60 leading-relaxed">
-                            Yes. Our end-to-end pipeline covers concept development, scripting, storyboarding, location scouting, filming, audio capture, editing, color grading, sound design, motion graphics, and multi-format export. You receive finished, platform-ready files with no extra steps.
-                        </div>
-                    </details>
-                    <details class="group glass-strong border border-white/10/80 rounded-2xl overflow-hidden">
-                        <summary class="px-6 py-5 cursor-pointer font-display font-semibold text-white text-[15px] flex items-center justify-between select-none hover:text-white transition-colors">
-                            What formats will my videos be delivered in?
-                            <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 transition-transform group-open:rotate-180"></i>
-                        </summary>
-                        <div class="px-6 pb-5 text-[14px] text-white/60 leading-relaxed">
-                            All videos are delivered in 4K and HD resolutions with platform-specific aspect ratios — 16:9 for YouTube and websites, 9:16 for TikTok, Reels and Shorts, and 1:1 for feed posts. You also receive raw footage archives and project files on request.
-                        </div>
-                    </details>
-                    <details class="group glass-strong border border-white/10/80 rounded-2xl overflow-hidden">
-                        <summary class="px-6 py-5 cursor-pointer font-display font-semibold text-white text-[15px] flex items-center justify-between select-none hover:text-white transition-colors">
-                            How does video content improve marketing performance?
-                            <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 transition-transform group-open:rotate-180"></i>
-                        </summary>
-                        <div class="px-6 pb-5 text-[14px] text-white/60 leading-relaxed">
-                            Video content drives 5x higher engagement than static posts, lowers CPM by 25-40% due to higher platform relevance scores, and generates 60%+ more traffic in the first 30 days. Professional video builds trust faster and increases conversion rates across every channel.
-                        </div>
-                    </details>
+<section class="relative section-spacing bg-[#0A0A0A]">
+    <div class="max-w-3xl mx-auto px-6 md:px-10">
+        <div class="text-center mb-16">
+            <div class="overline-label reveal">FAQ</div>
+            <h2 class="mt-3 font-display text-3xl sm:text-5xl font-extrabold tracking-tighter text-white text-reveal">
+                Frequently asked questions
+            </h2>
+        </div>
+        <div class="space-y-4">
+            <div class="bg-black rounded-2xl border border-white/5 overflow-hidden reveal">
+                <button class="faq-btn w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-display font-bold text-white text-[15px]">
+                    Do you handle scriptwriting and storyboarding?
+                    <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 shrink-0 transition-transform duration-300"></i>
+                </button>
+                <div class="faq-answer px-6 pb-5 text-white/70 text-[15px] leading-relaxed">
+                    Yes, our creative directors handle the entire pre-production process, developing scripts, shot lists, and detailed storyboards before the cameras ever roll.
                 </div>
             </div>
-        </section>
+            <div class="bg-black rounded-2xl border border-white/5 overflow-hidden reveal">
+                <button class="faq-btn w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-display font-bold text-white text-[15px]">
+                    Where do you shoot the videos?
+                    <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 shrink-0 transition-transform duration-300"></i>
+                </button>
+                <div class="faq-answer px-6 pb-5 text-white/70 text-[15px] leading-relaxed">
+                    We operate out of our own fully-equipped studios for product and talking-head shoots. For lifestyle or narrative projects, we handle all location scouting and permitting.
+                </div>
+            </div>
+            <div class="bg-black rounded-2xl border border-white/5 overflow-hidden reveal">
+                <button class="faq-btn w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-display font-bold text-white text-[15px]">
+                    Do you provide actors and voiceover talent?
+                    <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 shrink-0 transition-transform duration-300"></i>
+                </button>
+                <div class="faq-answer px-6 pb-5 text-white/70 text-[15px] leading-relaxed">
+                    We manage all casting. We have a diverse roster of on-screen talent, UGC creators, and professional voiceover artists to perfectly represent your brand.
+                </div>
+            </div>
+            <div class="bg-black rounded-2xl border border-white/5 overflow-hidden reveal">
+                <button class="faq-btn w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-display font-bold text-white text-[15px]">
+                    How many revisions are included for video edits?
+                    <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 shrink-0 transition-transform duration-300"></i>
+                </button>
+                <div class="faq-answer px-6 pb-5 text-white/70 text-[15px] leading-relaxed">
+                    Every video project includes two comprehensive rounds of revisions to ensure the final cut, color grading, and sound design meet your exact specifications.
+                </div>
+            </div>
+            <div class="bg-black rounded-2xl border border-white/5 overflow-hidden reveal">
+                <button class="faq-btn w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-display font-bold text-white text-[15px]">
+                    Do you provide raw footage?
+                    <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 shrink-0 transition-transform duration-300"></i>
+                </button>
+                <div class="faq-answer px-6 pb-5 text-white/70 text-[15px] leading-relaxed">
+                    Raw footage delivery can be negotiated as part of your contract. Typically, we deliver final rendered files optimized for web, social, and broadcast.
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 <footer class="relative bg-slate-950 text-white pt-20 md:pt-28 pb-10 overflow-hidden">
         <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] h-[400px] rounded-full bg-gray-1000/10 pointer-events-none"></div>
@@ -586,7 +612,7 @@
                         <ul class="space-y-2.5">
                             <li><a href="index.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Home</a></li>
                             <li><a href="about.html" class="text-[14px] text-white/80 hover:text-white transition-colors">About Us</a></li>
-                            <li><a href="services.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Services</a></li>
+                            <li><a href="services.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Services <i data-lucide="chevron-down" class="w-3 h-3"></i></a></li>
                             <li><a href="portfolio.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Portfolio</a></li>
                             <li><a href="case-studies.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Case Studies</a></li>
                             <li><a href="blog.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Blog</a></li>

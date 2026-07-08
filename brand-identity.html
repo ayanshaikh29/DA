@@ -127,7 +127,7 @@ tailwind.config = {
 
 <!-- Header -->
 <header id="navbar" style="position:fixed;top:0;left:0;width:100%;z-index:9999;padding:16px 0;transform:translateY(-120%);transition:transform 0.45s cubic-bezier(0.16,1,0.3,1);">
-  <div style="max-width:1280px;margin:0 auto;padding:0 24px;">
+  <div style="max-width:1280px;margin:0 auto;padding:0 24px;"><div id="mobile-menu-backdrop" onclick="toggleMobileMenu()"></div>
     <div id="nav-wrapper" style="display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,0.85);border:1px solid rgba(255,255,255,0.6);box-shadow:0 4px 32px rgba(2,6,23,0.08);border-radius:9999px;height:60px;padding:0 24px;">
       <a href="index.html" style="display:flex;align-items:center;">
         <img src="assets/logo.png" alt="Digital Advertise Logo" style="height:32px;width:auto;object-fit:contain;">
@@ -135,7 +135,7 @@ tailwind.config = {
       <nav style="display:none;" id="desktop-nav">
         <a href="index.html">Home</a>
         <div class="nav-dropdown">
-          <a href="services.html">Services ▾</a>
+          <a href="services.html" style="display:inline-flex;align-items:center;gap:4px;">Services <i data-lucide="chevron-down" class="w-3 h-3"></i></a>
           <div class="nav-dropdown-menu">
             <a href="social-media.html">Social Media Marketing</a>
             <a href="performance-marketing.html">Performance Marketing</a>
@@ -155,22 +155,31 @@ tailwind.config = {
       </nav>
       <div style="display:flex;align-items:center;gap:8px;">
         <a href="audit.html" style="display:inline-flex;align-items:center;gap:6px;background:#000000;color:#fff;font-weight:600;font-size:14px;padding:10px 20px;border-radius:9999px;text-decoration:none;transition:background 0.2s;">
-          Get Started ↗
-        </a>
-        <button onclick="toggleMobileMenu()" id="hamburger-btn" style="display:none;padding:8px;border-radius:9999px;border:none;background:transparent;cursor:pointer;">
-          ☰
-        </button>
+          Get Started <i data-lucide="arrow-up-right" class="w-4 h-4"></i></a>
+        <button onclick="toggleMobileMenu()" id="hamburger-btn" style="display:none;padding:6px;border-radius:9999px;border:none;background:transparent;cursor:pointer;"><i data-lucide="menu" id="menu-icon" class="w-6 h-6" style="color:#000;display:block;"></i></button>
       </div>
     </div>
-    <div id="mobile-menu" style="display:none;margin-top:12px;background:rgba(255,255,255,0.95);border-radius:20px;padding:20px;flex-direction:column;gap:8px;">
-      <a href="index.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Home</a>
-      <a href="services.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Services</a>
-      <a href="portfolio.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Portfolio</a>
-      <a href="case-studies.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Case Studies</a>
-      <a href="blog.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Blog</a>
-      <a href="contact.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Contact</a>
-      <a href="about.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">About Us</a>
-      <a href="audit.html" style="margin-top:8px;padding:12px;background:#000000;color:#fff;font-weight:600;border-radius:9999px;text-decoration:none;display:block;text-align:center;">Get Started</a>
+    <div id="mobile-menu" style="display:none;margin-top:12px;background:#ffffff;border-radius:20px;padding:20px;flex-direction:column;gap:8px;">
+      <a href="index.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:flex;align-items:center;">Home</a>
+      <div style="display:flex;flex-direction:column;">
+        <div class="mobile-services-row" style="display:flex;align-items:center;justify-content:flex-start;gap:0;"><a href="services.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;flex:0 0 auto;width:auto;">Services</a><button type="button" onclick="event.stopPropagation();event.preventDefault();toggleMobileServices()" aria-label="Toggle Services submenu"><i data-lucide="chevron-down" class="w-3 h-3" id="mobile-services-chevron"></i></button></div>
+        <div id="mobile-services-submenu">
+          <a href="social-media.html">Social Media Marketing</a>
+          <a href="performance-marketing.html">Performance Marketing</a>
+          <a href="brand-identity.html">Brand Identity</a>
+          <a href="web-development.html">Website Development</a>
+          <a href="video-production.html">Video Production</a>
+          <a href="ai-video.html">AI Video Generation</a>
+          <a href="packaging.html">Product Packaging Design</a>
+          <a href="photography.html">Product Shoot</a>
+        </div>
+      </div>
+      <a href="portfolio.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:flex;align-items:center;">Portfolio</a>
+      <a href="case-studies.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:flex;align-items:center;">Case Studies</a>
+      <a href="blog.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:flex;align-items:center;">Blog</a>
+      <a href="contact.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:flex;align-items:center;">Contact</a>
+      <a href="about.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:flex;align-items:center;">About Us</a>
+      <a href="audit.html" style="margin-top:8px;padding:12px;background:#0f172a;color:#fff;font-weight:600;border-radius:9999px;text-decoration:none;display:block;text-align:center;">Get Started <i data-lucide="arrow-up-right" class="w-4 h-4"></i></a>
     </div>
   </div>
 </header>
@@ -211,17 +220,17 @@ tailwind.config = {
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 reveal">
             <div class="glass-strong border border-white/10/80 rounded-3xl p-7 hover:shadow-lg transition-shadow">
                 <div class="w-10 h-10 rounded-xl bg-[#111111] flex items-center justify-center mb-4"><i data-lucide="check-circle" class="w-5 h-5 text-white"></i></div>
-                <h3 class="font-display font-bold text-white">Logo Design & Visual Identity</h3>
+                <h3 class="font-display font-bold text-gradient-premium">Logo Design & Visual Identity</h3>
                 <p class="mt-2 text-[14px] text-white/60 leading-relaxed">Complete visual identity system creation including logo marks, wordmarks, and symbol systems that scale from favicon to billboard.</p>
             </div>
             <div class="glass-strong border border-white/10/80 rounded-3xl p-7 hover:shadow-lg transition-shadow">
                 <div class="w-10 h-10 rounded-xl bg-[#111111] flex items-center justify-center mb-4"><i data-lucide="check-circle" class="w-5 h-5 text-white"></i></div>
-                <h3 class="font-display font-bold text-white">Typography & Color Systems</h3>
+                <h3 class="font-display font-bold text-gradient-premium">Typography & Color Systems</h3>
                 <p class="mt-2 text-[14px] text-white/60 leading-relaxed">Typography scale, color palette, and design token libraries for consistent brand application across all digital and print channels.</p>
             </div>
             <div class="glass-strong border border-white/10/80 rounded-3xl p-7 hover:shadow-lg transition-shadow">
                 <div class="w-10 h-10 rounded-xl bg-[#111111] flex items-center justify-center mb-4"><i data-lucide="check-circle" class="w-5 h-5 text-white"></i></div>
-                <h3 class="font-display font-bold text-white">Brand Strategy & Positioning</h3>
+                <h3 class="font-display font-bold text-gradient-premium">Brand Strategy & Positioning</h3>
                 <p class="mt-2 text-[14px] text-white/60 leading-relaxed">Brand strategy, positioning frameworks, and messaging guidelines that define your market presence and competitive advantage.</p>
             </div>
         </div>
@@ -422,7 +431,7 @@ tailwind.config = {
                 <div class="mt-2 text-[12px] text-slate-300 font-semibold uppercase tracking-wider">Design Cost Reduction</div>
             </div>
             <div class="border border-white/10 rounded-2xl p-8 text-center bg-black/5">
-                <div class="text-4xl md:text-5xl font-display font-extrabold text-white stat-value">100+</div>
+                <div class="text-4xl md:text-5xl font-display font-extrabold text-white stat-value">5000+</div>
                 <div class="mt-2 text-[12px] text-slate-300 font-semibold uppercase tracking-wider">Brands Built</div>
             </div>
             <div class="border border-white/10 rounded-2xl p-8 text-center bg-black/5">
@@ -439,7 +448,16 @@ tailwind.config = {
 <!-- ===== CTA SECTION ===== -->
 <section id="contact" class="relative overflow-hidden py-16 md:py-24">
 <div class="max-w-7xl mx-auto px-6 md:px-10">
-<div class="relative rounded-[36px] bg-slate-950 overflow-hidden p-10 md:p-16 lg:p-24 reveal">
+<div class="relative rounded-[36px] bg-slate-950 overflow-hidden p-10 md:p-16 lg:p-24 reveal-scale">
+<!-- CTA Animated Background -->
+<div class="cta-animated-bg-wrapper">
+    <div class="cta-animated-bg-glow"></div>
+<div class="cta-bubbles"></div>
+    <div class="cta-animated-bg-grid"></div>
+    <div class="cta-blob cta-blob-1"></div>
+    <div class="cta-blob cta-blob-2"></div>
+</div>
+
 <div class="absolute -top-32 -left-20 w-[420px] h-[420px] rounded-full bg-gray-1000/30 pointer-events-none"></div>
 <div class="absolute -bottom-32 -right-20 w-[420px] h-[420px] rounded-full bg-gray-1000/30 pointer-events-none"></div>
 <div class="absolute inset-0 opacity-[0.06] pointer-events-none grid-pattern"></div>
@@ -478,48 +496,60 @@ tailwind.config = {
 
 
 <!-- ===== FAQ ===== -->
-<section class="relative overflow-hidden py-20 bg-[#0A0A0A]">
+<section class="relative section-spacing bg-[#0A0A0A]">
     <div class="max-w-3xl mx-auto px-6 md:px-10">
-        <div class="text-center mb-14 reveal">
-            <div class="overline-label">FAQ</div>
-            <h2 class="mt-3 font-display text-3xl md:text-4xl font-bold text-white">Frequently Asked Questions</h2>
+        <div class="text-center mb-16">
+            <div class="overline-label reveal">FAQ</div>
+            <h2 class="mt-3 font-display text-3xl sm:text-5xl font-extrabold tracking-tighter text-white text-reveal">
+                Frequently asked questions
+            </h2>
         </div>
-        <div class="space-y-4 reveal">
-            <details class="group bg-black border border-white/10/80 rounded-2xl overflow-hidden">
-                <summary class="flex items-center justify-between gap-4 p-5 cursor-pointer font-display font-bold text-white hover:text-white transition-colors">
-                    What does a brand identity project include?
-                    <i data-lucide="chevron-down" class="w-5 h-5 shrink-0 text-slate-400 group-open:rotate-180 transition-transform"></i>
-                </summary>
-                <div class="px-5 pb-5 text-[14px] text-white/70 leading-relaxed">A complete brand identity project includes logo design (primary, secondary, and submark variations), color palette with design tokens, typography scale and hierarchy, brand guidelines documentation, social media templates, stationery design, and a comprehensive asset library organized for easy access and application.</div>
-            </details>
-            <details class="group bg-black border border-white/10/80 rounded-2xl overflow-hidden">
-                <summary class="flex items-center justify-between gap-4 p-5 cursor-pointer font-display font-bold text-white hover:text-white transition-colors">
-                    How long does a brand identity project take?
-                    <i data-lucide="chevron-down" class="w-5 h-5 shrink-0 text-slate-400 group-open:rotate-180 transition-transform"></i>
-                </summary>
-                <div class="px-5 pb-5 text-[14px] text-white/70 leading-relaxed">Typical brand identity projects take 4-6 weeks from discovery to final delivery. This includes research and strategy (1-2 weeks), design exploration and refinement (2-3 weeks), and final guidelines documentation and asset delivery (1 week). Rush timelines are available for an additional fee.</div>
-            </details>
-            <details class="group bg-black border border-white/10/80 rounded-2xl overflow-hidden">
-                <summary class="flex items-center justify-between gap-4 p-5 cursor-pointer font-display font-bold text-white hover:text-white transition-colors">
-                    Can you redesign our existing brand?
-                    <i data-lucide="chevron-down" class="w-5 h-5 shrink-0 text-slate-400 group-open:rotate-180 transition-transform"></i>
-                </summary>
-                <div class="px-5 pb-5 text-[14px] text-white/70 leading-relaxed">Absolutely. We handle both new brand creation and rebrand projects. For rebrands, we conduct a brand audit to identify what's working and what needs evolution, then develop a strategic approach that honors your existing equity while modernizing for your target market.</div>
-            </details>
-            <details class="group bg-black border border-white/10/80 rounded-2xl overflow-hidden">
-                <summary class="flex items-center justify-between gap-4 p-5 cursor-pointer font-display font-bold text-white hover:text-white transition-colors">
-                    What file formats do you deliver?
-                    <i data-lucide="chevron-down" class="w-5 h-5 shrink-0 text-slate-400 group-open:rotate-180 transition-transform"></i>
-                </summary>
-                <div class="px-5 pb-5 text-[14px] text-white/70 leading-relaxed">We deliver logos in SVG, PNG, and PDF formats at multiple sizes. Brand guidelines are provided as interactive PDF and Figma files. All design tokens are delivered in CSS, JSON, and Figma variable formats for seamless integration with your development workflow.</div>
-            </details>
-            <details class="group bg-black border border-white/10/80 rounded-2xl overflow-hidden">
-                <summary class="flex items-center justify-between gap-4 p-5 cursor-pointer font-display font-bold text-white hover:text-white transition-colors">
-                    Do you offer ongoing brand support?
-                    <i data-lucide="chevron-down" class="w-5 h-5 shrink-0 text-slate-400 group-open:rotate-180 transition-transform"></i>
-                </summary>
-                <div class="px-5 pb-5 text-[14px] text-white/70 leading-relaxed">Yes, we offer retainer packages for ongoing brand management, including new asset creation, brand guideline updates, seasonal campaign design, and brand consultation. This ensures your brand stays consistent and evolves strategically as your business grows.</div>
-            </details>
+        <div class="space-y-4">
+            <div class="bg-black rounded-2xl border border-white/5 overflow-hidden reveal">
+                <button class="faq-btn w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-display font-bold text-white text-[15px]">
+                    How long does the brand identity process take?
+                    <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 shrink-0 transition-transform duration-300"></i>
+                </button>
+                <div class="faq-answer px-6 pb-5 text-white/70 text-[15px] leading-relaxed">
+                    A comprehensive brand identity project typically takes 4-6 weeks from initial discovery to final brand guideline delivery, depending on the number of deliverables.
+                </div>
+            </div>
+            <div class="bg-black rounded-2xl border border-white/5 overflow-hidden reveal">
+                <button class="faq-btn w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-display font-bold text-white text-[15px]">
+                    What deliverables are included in a branding package?
+                    <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 shrink-0 transition-transform duration-300"></i>
+                </button>
+                <div class="faq-answer px-6 pb-5 text-white/70 text-[15px] leading-relaxed">
+                    Deliverables usually include primary and secondary logos, color palettes, typography, brand guidelines, social media templates, and basic stationery design.
+                </div>
+            </div>
+            <div class="bg-black rounded-2xl border border-white/5 overflow-hidden reveal">
+                <button class="faq-btn w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-display font-bold text-white text-[15px]">
+                    How many revision rounds are included?
+                    <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 shrink-0 transition-transform duration-300"></i>
+                </button>
+                <div class="faq-answer px-6 pb-5 text-white/70 text-[15px] leading-relaxed">
+                    We include up to three rounds of revisions during the visual exploration phase. This ensures we zero in on a direction that perfectly matches your strategic goals.
+                </div>
+            </div>
+            <div class="bg-black rounded-2xl border border-white/5 overflow-hidden reveal">
+                <button class="faq-btn w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-display font-bold text-white text-[15px]">
+                    Do you help with brand naming?
+                    <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 shrink-0 transition-transform duration-300"></i>
+                </button>
+                <div class="faq-answer px-6 pb-5 text-white/70 text-[15px] leading-relaxed">
+                    Yes, we offer brand naming and positioning workshops as an add-on service. We help you find a distinctive name that resonates with your target audience and is legally clearable.
+                </div>
+            </div>
+            <div class="bg-black rounded-2xl border border-white/5 overflow-hidden reveal">
+                <button class="faq-btn w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-display font-bold text-white text-[15px]">
+                    Will we get the source files?
+                    <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 shrink-0 transition-transform duration-300"></i>
+                </button>
+                <div class="faq-answer px-6 pb-5 text-white/70 text-[15px] leading-relaxed">
+                    Yes. Upon final approval and payment, you receive all vector source files (AI, EPS, SVG) and a complete set of exported assets for web and print.
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -545,7 +575,7 @@ tailwind.config = {
 <ul class="space-y-2.5">
 <li><a href="index.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Home</a></li>
 <li><a href="about.html" class="text-[14px] text-white/80 hover:text-white transition-colors">About Us</a></li>
-<li><a href="services.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Services</a></li>
+<li><a href="services.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Services <i data-lucide="chevron-down" class="w-3 h-3"></i></a></li>
 <li><a href="portfolio.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Portfolio</a></li>
 <li><a href="case-studies.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Case Studies</a></li>
 <li><a href="blog.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Blog</a></li>

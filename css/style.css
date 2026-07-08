@@ -616,11 +616,28 @@
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     cursor: pointer;
     transition: all 0.3s ease;
+    text-decoration: none !important;
 }
 .whatsapp-float:hover {
     transform: scale(1.1) translateY(-3px);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
     background-color: #20ba5a !important;
+}
+@media (max-width: 768px) {
+    .whatsapp-float {
+        bottom: 16px !important;
+        right: 16px !important;
+        width: 52px !important;
+        height: 52px !important;
+    }
+    .whatsapp-float svg {
+        width: 22px !important;
+        height: 22px !important;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    .whatsapp-float { transition: none !important; }
+    .whatsapp-float:hover { transform: none !important; }
 }
 
 /* Navbar Scroll State */
@@ -674,7 +691,40 @@
 #desktop-nav a:hover,
 .nav-dropdown-menu a,
 .nav-dropdown-menu a:hover {
-    color: #000000 !important;
+    color: #111111 !important;
+    -webkit-text-fill-color: #111111 !important;
+}
+
+/* ── DROPDOWN MENU ITEMS ── */
+.nav-dropdown-menu a {
+    display: block !important;
+    padding: 9px 14px !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    letter-spacing: -0.005em !important;
+    border-radius: 12px !important;
+    text-decoration: none !important;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+}
+.nav-dropdown-menu a:hover {
+    transform: translateX(2px) !important;
+    background-color: #F5F5F5 !important;
+}
+.nav-dropdown-menu a.active-service {
+    font-weight: 700 !important;
+    background-color: #F8F8F8 !important;
+}
+
+/* ── MOBILE SUBMENU ITEMS ── */
+#mobile-services-submenu a {
+    font-weight: 500 !important;
+    letter-spacing: -0.005em !important;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+    -webkit-text-fill-color: #111111 !important;
+    color: #111111 !important;
 }
 /* Mobile menu nav links (excludes the "Get Started" button) */
 #mobile-menu a:not([href*="audit"]),
@@ -702,6 +752,59 @@ footer.bg-slate-950, .bg-slate-950 {
 ::selection {
     background-color: var(--bw-text);
     color: var(--bw-text);
+}
+
+/* ── Hero section responsive fixes ── */
+@media (max-width: 768px) {
+    section.pt-36.md\:pt-44 {
+        padding-top: 100px !important;
+    }
+    .hero-gradient-bg section:first-of-type,
+    section.hero-gradient-bg {
+        padding-top: 100px !important;
+        padding-bottom: 48px !important;
+    }
+    .mesh-bg section:first-of-type,
+    section.mesh-bg {
+        padding-top: 100px !important;
+    }
+    /* Hero heading text wrapping fix */
+    .text-reveal,
+    h1.font-display {
+        word-break: break-word !important;
+        overflow-wrap: break-word !important;
+    }
+    /* Fix hero CTA buttons on mobile - don't force full width */
+    .mesh-bg .btn-primary,
+    .mesh-bg .btn-secondary,
+    .hero-gradient-bg .btn-primary,
+    .hero-gradient-bg .btn-secondary {
+        width: auto !important;
+        padding: 12px 20px !important;
+        font-size: 13px !important;
+    }
+    /* Hero description text */
+    .max-w-2xl.text-lg.md\:text-xl {
+        font-size: 15px !important;
+    }
+    /* Hero stat cards row */
+    .hero-stat-anim {
+        padding: 12px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    section.pt-36.md\:pt-44,
+    section.mesh-bg,
+    section.hero-gradient-bg {
+        padding-top: 80px !important;
+    }
+}
+
+/* ── Custom Section Spacing ── */
+.section-spacing {
+    padding-top: 1cm !important;
+    padding-bottom: 1cm !important;
 }
 
 /* ===== PREMIUM HERO SECTION ENHANCEMENTS ===== */
@@ -774,6 +877,23 @@ footer.bg-slate-950, .bg-slate-950 {
 }
 @media (prefers-reduced-motion: reduce) {
     #scroll-progress { display: none; }
+    .reveal, .reveal-left, .reveal-right, .reveal-scale, .reveal-rotate, .reveal-blur {
+        opacity: 1 !important;
+        transform: none !important;
+        filter: none !important;
+        transition: none !important;
+    }
+    .reveal-stagger > * { transition-delay: 0ms !important; }
+    .shine-sweep::before { animation: none !important; display: none !important; }
+    .conic-border-card::before { animation: none !important; }
+    [class*="hover:scale-"]:hover { transform: none !important; }
+    /* Disable marquee animations */
+    .animate-marquee,
+    .client-logo-marquee .cl-marquee-track,
+    .cl-marquee-track,
+    .trust-marquee__track {
+        animation: none !important;
+    }
 }
 
 
@@ -903,6 +1023,8 @@ footer.bg-slate-950, .bg-slate-950 {
     width: max-content;
     flex-shrink: 0;
     will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
 }
 .client-logo-card {
     display: flex;
@@ -910,18 +1032,18 @@ footer.bg-slate-950, .bg-slate-950 {
     justify-content: center;
     width: 200px;
     height: 130px;
-    background: #ffffff;
-    border: 1px solid rgba(0,0,0,0.06);
+    background: transparent !important;
+    border: none !important;
     border-radius: 12px;
     padding: 28px;
     flex-shrink: 0;
     box-sizing: border-box;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: none !important;
+    transition: transform 0.3s ease;
 }
 .client-logo-card:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+    box-shadow: none !important;
 }
 .client-logo-card img {
     max-width: 100%;
@@ -933,6 +1055,7 @@ footer.bg-slate-950, .bg-slate-950 {
     opacity: 1;
     filter: none;
     transition: opacity 0.3s ease;
+    will-change: filter, transform;
 }
 .client-logo-card:hover img {
     opacity: 1;
@@ -1091,6 +1214,95 @@ footer.bg-slate-950, .bg-slate-950 {
   background: rgba(255,255,255,0.1);
 }
 
+/* ── Navbar responsive fixes ─────────────────────────── */
+@media (max-width: 1024px) {
+    /* The per-page inline <style> already handles this, but ensure consistency */
+    #desktop-nav { display: none !important; }
+    #hamburger-btn { display: block !important; }
+}
+@media (max-width: 768px) {
+    #navbar {
+        padding: 8px 0 !important;
+    }
+    #navbar > div {
+        padding: 0 12px !important;
+    }
+    #nav-wrapper {
+        height: 48px !important;
+        padding: 0 12px !important;
+        border-radius: 50px !important;
+        gap: 6px !important;
+    }
+    #navbar img[alt*="Logo"] {
+        height: 22px !important;
+        max-width: 120px !important;
+    }
+    #navbar a[href*="audit"] {
+        padding: 6px 10px !important;
+        font-size: 11px !important;
+        gap: 4px !important;
+        white-space: nowrap !important;
+        flex-shrink: 0 !important;
+    }
+    #navbar a[href*="audit"] svg {
+        width: 12px !important;
+        height: 12px !important;
+    }
+    #hamburger-btn {
+        padding: 4px !important;
+        flex-shrink: 0 !important;
+    }
+    #hamburger-btn svg {
+        width: 20px !important;
+        height: 20px !important;
+    }
+    #mobile-menu {
+        max-height: 80vh !important;
+        overflow-y: auto !important;
+        border-radius: 16px !important;
+    }
+    #mobile-menu a {
+        padding: 12px 14px !important;
+        font-size: 14px !important;
+    }
+}
+
+/* ── Extra small screens (360-414px) ── */
+@media (max-width: 480px) {
+    #nav-wrapper {
+        height: 44px !important;
+        padding: 0 10px !important;
+    }
+    #navbar img[alt*="Logo"] {
+        height: 18px !important;
+        max-width: 100px !important;
+    }
+    #navbar a[href*="audit"] {
+        padding: 5px 8px !important;
+        font-size: 10px !important;
+    }
+    #hamburger-btn {
+        padding: 2px !important;
+    }
+    #hamburger-btn svg {
+        width: 18px !important;
+        height: 18px !important;
+    }
+}
+
+/* ── Mobile menu polish ── */
+#mobile-menu.open {
+    display: flex !important;
+    animation: mobileMenuIn 0.3s ease forwards;
+}
+@keyframes mobileMenuIn {
+    from { opacity: 0; transform: translateY(-8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+    #mobile-menu.open { animation: none !important; }
+}
+
 /* ── Floating Bubbles — More Visible ─────── */
 .bubble {
   position: absolute;
@@ -1166,6 +1378,14 @@ footer.bg-slate-950, .bg-slate-950 {
   0%, 100% { transform: translateY(0px) scale(1); }
   33%       { transform: translateY(-18px) scale(1.03); }
   66%       { transform: translateY(-8px) scale(0.98); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .bubble { animation: none !important; }
+  .floaty, .floaty-slow { animation: none !important; }
+  .animate-blob-1, .animate-blob-2, .animate-blob-3 { animation: none !important; }
+  .floating-blob-1, .floating-blob-2, .floating-blob-3 { animation: none !important; }
+  .cl-particle { animation: none !important; display: none !important; }
+  [class*="animate-"] { animation-duration: 0s !important; animation: none !important; }
 }
 
 /* Partners grid robust layout class */
@@ -1440,20 +1660,20 @@ footer.bg-slate-950, .bg-slate-950 {
   }
 }
 
-/* Custom Global Section Gaps (1cm to 2cm total gap) */
+/* Custom Global Section Gaps */
 section:not(#hero-section) {
-    padding-top: 0.75cm !important;
-    padding-bottom: 0.75cm !important;
+    padding-top: clamp(32px, 5vw, 64px) !important;
+    padding-bottom: clamp(32px, 5vw, 64px) !important;
 }
 
 /* First section on subpages needs extra top padding to clear the fixed navbar */
 main > section:first-of-type:not(#hero-section) {
-    padding-top: clamp(120px, 15vh, 180px) !important;
+    padding-top: clamp(100px, 15vh, 180px) !important;
 }
 
 footer {
-    padding-top: 0.75cm !important;
-    padding-bottom: 0.75cm !important;
+    padding-top: clamp(32px, 5vw, 64px) !important;
+    padding-bottom: clamp(32px, 5vw, 64px) !important;
 }
 
 /* ===== STYLISH MULTICOLOR GRADIENTS FOR KEY TEXTS ===== */
@@ -1705,17 +1925,21 @@ html, body {
     /* Paragraph text */
     p { font-size: 15px !important; line-height: 1.65 !important; }
 
-    /* Grid layouts → stack to 1 column */
-    .grid-cols-2,
-    .grid-cols-3,
+    /* Grid layouts → responsive columns */
     .grid-cols-4,
-    .md\:grid-cols-2,
-    .md\:grid-cols-3,
     .md\:grid-cols-4,
-    .lg\:grid-cols-2,
-    .lg\:grid-cols-3,
     .lg\:grid-cols-4 {
-        grid-template-columns: 1fr !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+    .grid-cols-3,
+    .md\:grid-cols-3,
+    .lg\:grid-cols-3 {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+    .grid-cols-2,
+    .md\:grid-cols-2,
+    .lg\:grid-cols-2 {
+        grid-template-columns: repeat(2, 1fr) !important;
     }
 
     /* Flex rows that should stack */
@@ -1813,21 +2037,33 @@ html, body {
         height: 52px !important;
     }
 
-    /* Footer grid */
-    .lg\:grid-cols-12 {
+    /* Footer grid - col-span overrides for md:col-span-2 items (e.g. gallery) */
+    .lg\:grid-cols-12:not(.gallery-grid) {
         grid-template-columns: 1fr !important;
     }
     .lg\:col-span-4,
     .lg\:col-span-8 {
         grid-column: span 1 !important;
     }
+    /* Preserve md:col-span-2 in gallery/masonry grids */
+    .md\:col-span-2 {
+        grid-column: span 2 !important;
+    }
 
     /* Large display text in hero */
     .font-display.text-3xl,
     .font-display.text-4xl,
     .font-display.text-5xl,
-    .font-display.text-6xl {
+    .font-display.text-6xl,
+    .font-display.text-7xl {
         font-size: clamp(1.5rem, 6vw, 2.25rem) !important;
+        letter-spacing: -0.02em !important;
+    }
+
+    /* Hero section bottom padding fix for scroll indicator overlap */
+    .mesh-bg,
+    .hero-gradient-bg {
+        padding-bottom: 40px !important;
     }
 
     /* Hero section text */
@@ -1851,6 +2087,14 @@ html, body {
     img {
         max-width: 100% !important;
         height: auto !important;
+    }
+
+    /* Fix scroll indicator overlap on mobile hero */
+    [class*="scroll-indicator"],
+    [class*="scroll-down"],
+    [class*="scroll-cta"] {
+        position: relative !important;
+        margin-top: 16px !important;
     }
 
     /* Ensure containers don't overflow */
@@ -1928,6 +2172,19 @@ html, body {
         font-size: clamp(1rem, 5vw, 1.5rem) !important;
     }
 
+    /* Grid layouts → single column on small phones */
+    .grid-cols-2,
+    .grid-cols-3,
+    .grid-cols-4,
+    .md\:grid-cols-2,
+    .md\:grid-cols-3,
+    .md\:grid-cols-4,
+    .lg\:grid-cols-2,
+    .lg\:grid-cols-3,
+    .lg\:grid-cols-4 {
+        grid-template-columns: 1fr !important;
+    }
+
     /* Portfolio gallery image heights */
     .h-\[60vh\] { height: 40vh !important; }
     
@@ -1953,4 +2210,804 @@ html, body {
     .grid-cols-2.gap-4.h-\[60vh\] > * {
         height: 200px !important;
     }
+}
+
+/* ── Hero: Fix CTA text overlapping & scale animation on mobile ── */
+@media (max-width: 767px) {
+    #scroll-cue {
+        bottom: 56px !important;
+    }
+    #scroll-cue span {
+        font-size: 7px !important;
+    }
+    .hero-scene-overlay.active-scene {
+        bottom: 14vh !important;
+    }
+    .hero-scene-overlay.active-scene .spatial-glow-btn {
+        font-size: 10px !important;
+        padding: 10px 20px !important;
+    }
+    #hero-threejs-canvas {
+        transform: none;
+    }
+    #hero-section {
+        isolation: isolate;
+    }
+}
+
+/* ── Mobile menu backdrop & submenu ── */
+@media (max-width: 1024px) {
+    #mobile-menu-backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.5);
+        z-index: 9998;
+        display: none;
+    }
+    #mobile-menu-backdrop.active {
+        display: block;
+    }
+    #mobile-menu {
+        position: relative !important;
+        z-index: 9999 !important;
+        border-radius: 20px !important;
+        box-shadow: 0 20px 60px rgba(2,6,23,0.15) !important;
+        max-height: 70vh !important;
+        overflow-y: auto !important;
+    }
+    #mobile-menu a {
+        padding: 12px 14px !important;
+        min-height: 44px !important;
+        display: flex !important;
+        align-items: center !important;
+        font-size: 15px !important;
+        border-radius: 10px !important;
+        text-decoration: none !important;
+    }
+    #mobile-menu a:hover {
+        background: #f1f5f9 !important;
+    }
+    #mobile-services-submenu {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        padding: 0;
+        margin-left: 0;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: max-height 0.3s ease, opacity 0.25s ease, padding 0.3s ease;
+    }
+    #mobile-services-submenu.open {
+        max-height: 500px;
+        opacity: 1;
+        padding: 4px 0 4px 16px;
+    }
+    #mobile-services-submenu a {
+        font-size: 13px !important;
+        min-height: 40px !important;
+        padding: 8px 12px !important;
+    }
+    @media (prefers-reduced-motion: reduce) {
+        #mobile-services-submenu {
+            transition: none !important;
+        }
+    }
+}
+
+/* ── WhatsApp float button ── */
+.whatsapp-float {
+    position: fixed !important;
+    bottom: 24px !important;
+    right: 24px !important;
+    z-index: 90 !important;
+}
+
+/* Prevent stats/counter sections from being hidden behind WhatsApp */
+@media (max-width: 768px) {
+    section:has(.stat-value) {
+        padding-bottom: 80px !important;
+    }
+    footer:has(+ *) { margin-bottom: 70px; }
+}
+
+/* ── Client logos responsive: shrink cards so none get clipped ── */
+@media (max-width: 900px) {
+    .client-logo-card {
+        width: 150px !important;
+        height: 100px !important;
+        padding: 18px !important;
+    }
+    .client-logo-card img {
+        max-height: 54px !important;
+    }
+}
+@media (max-width: 600px) {
+    .client-logo-card {
+        width: 120px !important;
+        height: 82px !important;
+        padding: 14px !important;
+    }
+    .client-logo-card img {
+        max-height: 42px !important;
+    }
+}
+@media (max-width: 400px) {
+    .client-logo-card {
+        width: 96px !important;
+        height: 68px !important;
+        padding: 10px !important;
+    }
+    .client-logo-card img {
+        max-height: 34px !important;
+    }
+}
+
+/* ==========================================================================
+   MOBILE PROCESS SECTION FIXES — below 992px
+   Force all reveal animations visible, stack timelines vertically,
+   ensure no content is hidden or clipped.
+   ========================================================================== */
+@media (max-width: 991px) {
+    /* ── Force ALL reveal elements visible — no hidden content on mobile ── */
+    .reveal,
+    .reveal.animate-in,
+    .reveal.animate-in.visible,
+    .reveal-left,
+    .reveal-left.animate-in,
+    .reveal-left.animate-in.visible,
+    .reveal-right,
+    .reveal-right.animate-in,
+    .reveal-right.animate-in.visible,
+    .reveal-scale,
+    .reveal-scale.animate-in,
+    .reveal-scale.animate-in.visible,
+    .reveal-rotate,
+    .reveal-rotate.animate-in,
+    .reveal-rotate.animate-in.visible,
+    .reveal-blur,
+    .reveal-blur.animate-in,
+    .reveal-blur.animate-in.visible {
+        opacity: 1 !important;
+        transform: none !important;
+        filter: none !important;
+        transition: none !important;
+    }
+
+    /* ── Force all text-reveal word spans visible ── */
+    .reveal-word {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+
+    /* ── Process timeline (web-development.html flex variant): stack vertically ── */
+    .relative.flex.gap-6,
+    .relative.flex.gap-10 {
+        flex-direction: column !important;
+        gap: 16px !important;
+    }
+
+    /* ── Process timeline: ensure all child divs are visible ── */
+    .relative.flex.gap-6 > div,
+    .relative.flex.gap-10 > div {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
+    /* ── Process section: remove overflow-hidden that clips content ── */
+    section.overflow-hidden {
+        overflow-x: hidden !important;
+        overflow-y: visible !important;
+    }
+
+    /* ── Process timeline (services.html border-l variant): tighten spacing ── */
+    .border-l-2.ml-4.pl-8 {
+        margin-left: 16px !important;
+        padding-left: 24px !important;
+    }
+
+    /* ── Process timeline: adjust circle position for tighter padding ── */
+    .-left-\[41px\] {
+        left: -25px !important;
+    }
+
+    /* ── Process timeline (web-development.html): ensure connecting lines render ── */
+    .w-px.bg-\[\#111111\] {
+        background-color: #111111 !important;
+        min-height: 20px !important;
+    }
+
+    /* ── Prevent any horizontal overflow from process sections ── */
+    .max-w-3xl.mx-auto.space-y-0 {
+        overflow: visible !important;
+    }
+}
+
+/* ==========================================================================
+   MOBILE NAVBAR — Services split link + chevron button
+   ========================================================================== */
+@media (max-width: 1023px) {
+    /* Container wrapping Services link + chevron button */
+    .mobile-services-row {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    /* The text link hugs its content width */
+    .mobile-services-row > a {
+        flex: 0 0 auto;
+    }
+    /* The chevron button is a fixed-size touch target */
+    .mobile-services-row > button {
+        background: none;
+        border: none;
+        padding: 8px;
+        margin-left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        color: #1e293b;
+        flex-shrink: 0;
+        -webkit-tap-highlight-color: transparent;
+        border-radius: 10px;
+    }
+    .mobile-services-row > button:active {
+        background: #f1f5f9;
+    }
+    /* Hide the old single-anchor Services trigger */
+    .mobile-services-row-hide {
+        display: none !important;
+    }
+}
+
+/* Remove unwanted white lines/dividers from marquee sections */
+.client-logos-enterprise::before,
+.client-logos-enterprise::after {
+    display: none !important;
+}
+
+/* Fix for Blinking White Line During Marquee Animation — Hardware Acceleration */
+.client-logos-enterprise, 
+.trust-marquee, 
+.client-logo-marquee,
+#client-logo-marquee-wrap,
+.marquee-container,
+.marquee-content,
+.client-logos-enterprise * {
+    -webkit-transform: translateZ(0) !important;
+    transform: translate3d(0, 0, 0) !important;
+    -webkit-backface-visibility: hidden !important;
+    backface-visibility: hidden !important;
+    will-change: transform !important;
+    outline: 1px solid transparent !important;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+}
+
+.client-logos-enterprise, 
+.trust-marquee, 
+.client-logo-marquee,
+#client-logo-marquee-wrap {
+    border-bottom: none !important;
+    box-shadow: none !important;
+}
+
+/* Fix flickering on the images/logos themselves */
+.client-logo-marquee img,
+.client-logos-enterprise img,
+.trust-marquee__item img {
+    -webkit-transform: translateZ(0) !important;
+    transform: translate3d(0, 0, 0) !important;
+    -webkit-backface-visibility: hidden !important;
+    backface-visibility: hidden !important;
+    display: block !important;
+}
+
+/* Ensure no hidden fractional margins are creating a gap */
+.client-logo-marquee {
+    margin-top: -1px !important;
+    margin-bottom: -1px !important;
+}
+
+/* ============================== */
+/* CTA ANIMATED BACKGROUND        */
+/* ============================== */
+.cta-animated-bg-wrapper {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+/* Base breathing radial gradient */
+.cta-animated-bg-glow {
+    position: absolute;
+    inset: -50%;
+    background: radial-gradient(circle at center, rgba(255,255,255,0.06) 0%, transparent 60%);
+    animation: cta-breathe 10s ease-in-out infinite alternate;
+}
+
+/* Panning Grid/Dot pattern */
+.cta-animated-bg-grid {
+    position: absolute;
+    inset: -100%;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 32px 32px;
+    opacity: 0.04;
+    animation: cta-pan 30s linear infinite;
+}
+
+/* Floating blurred blobs */
+.cta-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.08;
+}
+.cta-blob-1 {
+    width: 400px;
+    height: 400px;
+    background: #ffffff;
+    top: -10%;
+    left: -10%;
+    animation: cta-float-1 12s ease-in-out infinite alternate;
+}
+.cta-blob-2 {
+    width: 500px;
+    height: 500px;
+    background: #e2e8f0;
+    bottom: -10%;
+    right: -10%;
+    animation: cta-float-2 14s ease-in-out infinite alternate-reverse;
+}
+
+/* Keyframes */
+@keyframes cta-breathe {
+    0% { transform: scale(1); opacity: 0.8; }
+    100% { transform: scale(1.1); opacity: 1; }
+}
+@keyframes cta-pan {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(32px, 32px); }
+}
+@keyframes cta-float-1 {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(50px, 40px); }
+}
+@keyframes cta-float-2 {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(-40px, -60px); }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .cta-animated-bg-glow, .cta-animated-bg-grid, .cta-blob-1, .cta-blob-2 {
+        animation: none !important;
+    }
+}
+
+/* ============================== */
+/* FAQ SMOOTH ACCORDION           */
+/* ============================== */
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding-bottom 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+    padding-bottom: 0 !important;
+}
+.faq-answer.expanded {
+    max-height: 500px;
+    opacity: 1;
+    padding-bottom: 1.25rem !important; /* matches pb-5 */
+}
+
+/* ============================== */
+/* CTA FLOATING BUBBLES           */
+/* ============================== */
+.cta-bubbles {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.cta-bubble-wrapper {
+    position: absolute;
+    bottom: -100px;
+    animation: bubble-rise linear infinite;
+    /* Will-change hints the browser to offload to GPU */
+    will-change: transform, opacity;
+}
+
+.cta-bubble {
+    border-radius: 50%;
+    animation: bubble-sway ease-in-out infinite alternate;
+    will-change: transform;
+}
+
+.cta-bubble.filled {
+    background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.15), rgba(255,255,255,0.02));
+}
+
+.cta-bubble.outline {
+    border: 1px solid rgba(255,255,255,0.15);
+    background: rgba(255,255,255,0.03);
+}
+
+@keyframes bubble-rise {
+    0% { transform: translateY(0); opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { transform: translateY(-800px); opacity: 0; }
+}
+
+@keyframes bubble-sway {
+    0% { transform: translateX(-30px); }
+    100% { transform: translateX(30px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .cta-bubble-wrapper, .cta-bubble {
+        animation: none !important;
+        display: none !important;
+    }
+}
+
+/* ============================== */
+/* NAVBAR STYLES (EXTRACTED)      */
+/* ============================== */
+#desktop-nav {
+    display: flex !important;
+    align-items: center;
+    gap: 4px;
+}
+@media (max-width: 1024px) {
+    #desktop-nav { display: none !important; }
+    #hamburger-btn { display: block !important; }
+}
+#desktop-nav a {
+    padding: 8px 14px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #475569;
+    border-radius: 9999px;
+    text-decoration: none;
+    transition: color 0.2s, background 0.2s;
+    white-space: nowrap;
+    transform: none !important;
+}
+#desktop-nav a:hover {
+    color: #000000;
+    background: rgba(255,255,255,0.07);
+    transform: none !important;
+}
+.nav-dropdown {
+    position: relative;
+    padding-bottom: 8px;
+    margin-bottom: -8px;
+}
+.nav-dropdown-menu {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(6px);
+    width: 260px;
+    background: rgba(255,255,255,0.98);
+    border: 1px solid rgba(226,232,240,0.8);
+    box-shadow: 0 10px 40px rgba(2,6,23,0.10);
+    border-radius: 20px;
+    padding: 10px;
+    z-index: 99999;
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+}
+.nav-dropdown-menu::before {
+    content: '';
+    position: absolute;
+    top: -12px;
+    left: 0;
+    width: 100%;
+    height: 12px;
+    background: transparent;
+}
+.nav-dropdown:hover .nav-dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0px);
+}
+.nav-dropdown-menu a {
+    display: block;
+    padding: 9px 14px;
+    font-size: 13px;
+    color: #475569;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: color 0.15s, background 0.15s;
+}
+.nav-dropdown-menu a:hover {
+    color: #000000;
+    background: #f1f5f9;
+}
+#navbar.nav-visible {
+    transform: translateY(0) !important;
+}
+#mobile-menu.open {
+    display: flex !important;
+}
+/* Hero gradient animation */
+.hero-gradient {
+    background: linear-gradient(-45deg, #0f172a, #1e293b, #0f172a, #1e3a5f);
+    background-size: 400% 400%;
+    animation: gradientShift 8s ease infinite;
+}
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ============================== */
+/* MOBILE RESPONSIVENESS & TOUCH  */
+/* ============================== */
+body, html {
+    overflow-x: hidden !important;
+    width: 100%;
+}
+
+@media (max-width: 1024px) {
+    /* Touch Target Enforcement */
+    button, 
+    a, 
+    .faq-btn, 
+    .nav-dropdown-menu a {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    /* Mobile Menu Full Width */
+    #mobile-menu {
+        width: 100%;
+        max-width: calc(100vw - 32px);
+        margin-inline: auto;
+    }
+}
+
+/* ============================== */
+/* MOBILE FIXES (VIDEO REVIEW)    */
+/* ============================== */
+
+/* --- Fix 1: Client Logos Grid (vertical marquee) --- */
+@media (max-width: 768px) {
+    .vertical-logo-grid {
+        height: 350px !important;
+        gap: 0.5rem !important;
+        justify-content: center !important;
+    }
+    .v-marquee-col {
+        width: 110px !important;
+        gap: 0.5rem !important;
+    }
+    .v-client-card {
+        height: 90px !important;
+        padding: 0.6rem !important;
+        border-radius: 10px !important;
+    }
+    .v-client-card img {
+        max-width: 75% !important;
+        max-height: 75% !important;
+    }
+    .vertical-marquee-section {
+        padding: 3rem 0 !important;
+    }
+    .vertical-marquee-inner {
+        gap: 2rem !important;
+        padding: 0 1rem !important;
+    }
+    /* Partner Marquee */
+    .partner-marquee-item {
+        width: 110px !important;
+        height: 55px !important;
+        padding: 10px 12px !important;
+    }
+    .partner-marquee-item svg {
+        width: 22px !important;
+        height: 22px !important;
+    }
+    .partner-marquee-item span {
+        font-size: 10px !important;
+    }
+}
+
+/* --- Fix 2: Decorative CTA/Footer Background Overflow --- */
+@media (max-width: 768px) {
+    footer,
+    section[id="contact"],
+    .cta-section-wrapper {
+        overflow: hidden !important;
+    }
+    /* Shrink giant decorative blobs that cause horizontal scroll */
+    footer .absolute,
+    section[id="contact"] .absolute {
+        max-width: 100vw !important;
+    }
+    /* Specific oversized circles */
+    footer > div[class*="w-[700px]"],
+    footer > .absolute[class*="w-[700"],
+    section > div[class*="w-[420px]"],
+    section > div[class*="w-[700px]"] {
+        width: 300px !important;
+        height: 200px !important;
+    }
+    /* CTA card inner decorative circles */
+    section[id="contact"] div[class*="rounded-full"][class*="pointer-events-none"] {
+        width: 200px !important;
+        height: 200px !important;
+        opacity: 0.15 !important;
+    }
+    /* Floaty circle in CTA */
+    .floaty {
+        width: 40px !important;
+        height: 40px !important;
+        right: 5px !important;
+        top: 5px !important;
+    }
+}
+
+/* --- Fix 3: Footer Logo Size --- */
+@media (max-width: 768px) {
+    footer img[alt*="Logo"] {
+        height: 28px !important;
+        max-width: 160px !important;
+        width: auto !important;
+    }
+    footer .grid {
+        gap: 2rem !important;
+    }
+    /* Footer bottom bar */
+    footer .border-t {
+        flex-direction: column !important;
+        text-align: center;
+        gap: 1rem !important;
+    }
+    /* Footer padding */
+    footer {
+        padding-top: 2.5rem !important;
+        padding-bottom: 2rem !important;
+    }
+}
+
+/* --- Fix 4: Header Alignment & Spacing --- */
+@media (max-width: 768px) {
+    #nav-wrapper {
+        padding-left: 12px !important;
+        padding-right: 12px !important;
+        height: 52px !important;
+    }
+    /* Logo smaller on mobile */
+    #nav-wrapper img[alt*="Logo"] {
+        height: 24px !important;
+    }
+    /* More gap between Get Started and Hamburger */
+    #nav-wrapper > div:last-child {
+        gap: 8px !important;
+    }
+    /* Get Started button smaller on mobile */
+    #nav-wrapper a[href="audit.html"] {
+        font-size: 12px !important;
+        padding: 6px 12px !important;
+    }
+    /* Hamburger button proper sizing */
+    #hamburger-btn {
+        padding: 8px !important;
+    }
+    /* Navbar top padding */
+    header#navbar {
+        padding-top: 8px !important;
+        padding-bottom: 8px !important;
+    }
+}
+
+/* --- General Mobile Card/Section Polish --- */
+@media (max-width: 768px) {
+    /* CTA section responsive stacking */
+    section[id="contact"] .grid {
+        gap: 1.5rem !important;
+    }
+    /* CTA card padding */
+    section[id="contact"] .rounded-\\[36px\\] {
+        padding: 1.5rem !important;
+        border-radius: 24px !important;
+    }
+    /* Stats cards */
+    .stat-value, .stat-metric-accent {
+        font-size: 2.5rem !important;
+    }
+    /* FAQ section */
+    .faq-btn {
+        padding: 14px 16px !important;
+        font-size: 14px !important;
+    }
+    .faq-answer {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+        font-size: 13px !important;
+    }
+}
+
+/* ==========================================================================
+   MOBILE MARQUEE VIEWPORT MASK FIX (For screens below 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+
+    /* 1. Main Parent Container: Phone ki screen size me lock karo aur baaki logos chhupao */
+    #logo-view-marquee,
+    .marquee-container,
+    .client-logos-enterprise,
+    [id*="marquee"],
+    [class*="marquee"] {
+        width: 100% !important;
+        max-width: 100vw !important;
+        overflow: hidden !important;
+        position: relative !important;
+        display: block !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    /* 2. Inner Moving Track: Logos ko sirf EK SINGLE horizontal line me rakho, niche wrap mat hone do */
+    #logo-view-marquee > div,
+    .marquee-content,
+    .marquee-track,
+    .animate-marquee,
+    [class*="marquee"] > div {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        width: max-content !important;
+        gap: 1.5rem !important;
+    }
+
+    /* 3. Individual Logo Items: Har logo ka size fixed karo taaki wo kheechein ya pichkein nahi */
+    #logo-view-marquee img,
+    .marquee-content img,
+    .animate-marquee img,
+    [class*="marquee"] img,
+    [class*="marquee"] .flex-shrink-0 {
+        flex-shrink: 0 !important;
+        width: auto !important;
+        height: 28px !important;
+        max-width: none !important;
+    }
+}
+
+/* ==========================================================================
+   NO SCROLLBAR + MASK EDGES (For horizontal logo scroll on mobile)
+   ========================================================================== */
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Smooth fade effect on edges for the marquee */
+.mask-edges {
+    mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
 }

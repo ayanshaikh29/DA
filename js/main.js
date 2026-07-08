@@ -746,6 +746,8 @@ async function initPremiumBackground() {
 
 // ===== GSAP, LENIS AND SCROLLTRIGGER ANIMATIONS =====
 function initAnimations() {
+    var isMobile = window.innerWidth < 992;
+
     // Handle Lenis smooth scrolling if loaded
     if (typeof Lenis !== 'undefined') {
         const lenis = new Lenis({
@@ -819,79 +821,82 @@ function initAnimations() {
             }
         }
 
-        // Split text reveals
-        const revealTextNodes = document.querySelectorAll('.text-reveal');
-        revealTextNodes.forEach(node => {
-            // Recursive function to split text nodes
-            function splitText(el) {
-                const childNodes = Array.from(el.childNodes);
-                childNodes.forEach(child => {
-                    if (child.nodeType === Node.TEXT_NODE) {
-                        const text = child.textContent;
-                        // Split by spaces, preserving the space characters
-                        const words = text.split(/(\s+)/);
-                        const fragment = document.createDocumentFragment();
-                        
-                        words.forEach(word => {
-                            if (word.trim() === '') {
-                                fragment.appendChild(document.createTextNode(word));
-                            } else {
-                                const span = document.createElement('span');
-                                span.classList.add('reveal-word');
-                                span.style.display = 'inline-block';
-                                span.style.opacity = '0';
-                                span.style.transform = 'translateY(15px)';
-                                span.innerText = word;
-                                fragment.appendChild(span);
-                            }
-                        });
-                        child.replaceWith(fragment);
-                    } else if (child.nodeType === Node.ELEMENT_NODE) {
-                        splitText(child);
+        // Split text reveals — skip on mobile to prevent hidden text
+        if (!isMobile) {
+            const revealTextNodes = document.querySelectorAll('.text-reveal');
+            revealTextNodes.forEach(node => {
+                // Recursive function to split text nodes
+                function splitText(el) {
+                    const childNodes = Array.from(el.childNodes);
+                    childNodes.forEach(child => {
+                        if (child.nodeType === Node.TEXT_NODE) {
+                            const text = child.textContent;
+                            // Split by spaces, preserving the space characters
+                            const words = text.split(/(\s+)/);
+                            const fragment = document.createDocumentFragment();
+                            
+                            words.forEach(word => {
+                                if (word.trim() === '') {
+                                    fragment.appendChild(document.createTextNode(word));
+                                } else {
+                                    const span = document.createElement('span');
+                                    span.classList.add('reveal-word');
+                                    span.style.display = 'inline-block';
+                                    span.style.opacity = '0';
+                                    span.style.transform = 'translateY(15px)';
+                                    span.innerText = word;
+                                    fragment.appendChild(span);
+                                }
+                            });
+                            child.replaceWith(fragment);
+                        } else if (child.nodeType === Node.ELEMENT_NODE) {
+                            splitText(child);
+                        }
+                    });
+                }
+                
+                splitText(node);
+
+                // Skip ScrollTrigger for hero elements (they animate immediately on load)
+                if (node.closest('.mesh-bg') || node.closest('.awwwards-hero-container') || node.closest('#hero-section')) {
+                    return;
+                }
+
+                gsap.to(node.querySelectorAll('.reveal-word'), {
+                    opacity: 1,
+                    y: 0,
+                    stagger: 0.05,
+                    duration: 0.8,
+                    ease: 'power3.out',
+                    scrollTrigger: {
+                        trigger: node,
+                        start: 'top 85%',
+                        toggleActions: 'play none none none'
                     }
                 });
-            }
-            
-            splitText(node);
+            });
+        }
 
-            // Skip ScrollTrigger for hero elements (they animate immediately on load)
-            if (node.closest('.mesh-bg') || node.closest('.awwwards-hero-container') || node.closest('#hero-section')) {
-                return;
-            }
-
-            gsap.to(node.querySelectorAll('.reveal-word'), {
-                opacity: 1,
-                y: 0,
-                stagger: 0.05,
-                duration: 0.8,
-                ease: 'power3.out',
-                scrollTrigger: {
-                    trigger: node,
-                    start: 'top 85%',
-                    toggleActions: 'play none none none'
+        // Stagger entrance reveals for general grids — skip on mobile
+        if (!isMobile) {
+            const staggerGrids = document.querySelectorAll('.stagger-grid');
+            staggerGrids.forEach(grid => {
+                if (grid.children && grid.children.length > 0) {
+                    gsap.fromTo(grid.children, 
+                        { opacity: 0, y: 35 },
+                        { 
+                            opacity: 1, y: 0, stagger: 0.1, duration: 0.8, ease: 'power3.out',
+                            immediateRender: false,
+                            scrollTrigger: {
+                                trigger: grid,
+                                start: 'top 85%',
+                                toggleActions: 'play none none none'
+                            }
+                        }
+                    );
                 }
             });
-        });
-
-        // Stagger entrance reveals for general grids — no flash, animates only on scroll
-        const staggerGrids = document.querySelectorAll('.stagger-grid');
-        staggerGrids.forEach(grid => {
-            if (grid.children && grid.children.length > 0) {
-                // Use fromTo with immediateRender: false to prevent opacity: 0 flash
-                gsap.fromTo(grid.children, 
-                    { opacity: 0, y: 35 },
-                    { 
-                        opacity: 1, y: 0, stagger: 0.1, duration: 0.8, ease: 'power3.out',
-                        immediateRender: false,
-                        scrollTrigger: {
-                            trigger: grid,
-                            start: 'top 85%',
-                            toggleActions: 'play none none none'
-                        }
-                    }
-                );
-            }
-        });
+        }
 
         // Parallax effects on background mesh shapes
         if (document.querySelector('.mesh-bg')) {
@@ -924,22 +929,41 @@ function initAnimations() {
         });
 
         // Add depth scroll effects to sections for a cinematic feel
-        const sections = document.querySelectorAll('section:not(.rge-section)');
-        sections.forEach((sec, i) => {
-            if (i > 0) {
-                // Blur and scale sections as they leave the viewport
-                gsap.to(sec, {
-                    scale: 0.95,
-                    opacity: 0.8,
-                    ease: "none",
-                    scrollTrigger: {
-                        trigger: sec,
-                        start: "bottom 90%",
-                        end: "bottom top",
-                        scrub: true
-                    }
-                });
-            }
+        // Skip on mobile to prevent content from being hidden
+        if (!isMobile) {
+            const sections = document.querySelectorAll('section:not(.rge-section)');
+            sections.forEach((sec, i) => {
+                if (i > 0) {
+                    gsap.to(sec, {
+                        scale: 0.95,
+                        opacity: 0.8,
+                        ease: "none",
+                        scrollTrigger: {
+                            trigger: sec,
+                            start: "bottom 90%",
+                            end: "bottom top",
+                            scrub: true
+                        }
+                    });
+                }
+            });
+        }
+    }
+
+    // Mobile: force all reveal elements visible immediately (no scroll animation)
+    if (isMobile) {
+        document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .reveal-rotate, .reveal-blur').forEach(function(el) {
+            el.classList.add('visible');
+            el.classList.remove('animate-in');
+            el.style.opacity = '1';
+            el.style.transform = 'none';
+            el.style.filter = 'none';
+            el.style.transition = 'none';
+        });
+        document.querySelectorAll('.reveal-word').forEach(function(el) {
+            el.style.opacity = '1';
+            el.style.transform = 'none';
+            el.style.transition = 'none';
         });
     }
 }
@@ -1677,3 +1701,74 @@ document.addEventListener('DOMContentLoaded', () => {
   handleScroll();
   window.addEventListener('scroll', handleScroll, { passive: true });
 });
+
+// ==============================
+// 4. FAQ ACCORDION JS
+// ==============================
+document.addEventListener('DOMContentLoaded', () => {
+  const faqButtons = document.querySelectorAll('.faq-btn');
+  faqButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const answer = btn.nextElementSibling;
+      const icon = btn.querySelector('i');
+      
+      // Close all other FAQs
+      faqButtons.forEach(otherBtn => {
+        if (otherBtn !== btn) {
+          const otherAnswer = otherBtn.nextElementSibling;
+          const otherIcon = otherBtn.querySelector('i');
+          if (otherAnswer && otherAnswer.classList.contains('expanded')) {
+            otherAnswer.classList.remove('expanded');
+            if (otherIcon) otherIcon.style.transform = 'rotate(0deg)';
+          }
+        }
+      });
+      
+      // Toggle current FAQ
+      if (answer) {
+        if (answer.classList.contains('expanded')) {
+          answer.classList.remove('expanded');
+          if (icon) icon.style.transform = 'rotate(0deg)';
+        } else {
+          answer.classList.add('expanded');
+          if (icon) icon.style.transform = 'rotate(180deg)';
+        }
+      }
+    });
+  });
+});
+
+// ==============================
+// 5. CTA FLOATING BUBBLES JS
+// ==============================
+document.addEventListener('DOMContentLoaded', () => {
+  const bubblesContainers = document.querySelectorAll('.cta-bubbles');
+  bubblesContainers.forEach(container => {
+    // Generate 12 to 18 bubbles
+    const count = Math.floor(Math.random() * 7) + 12;
+    
+    for (let i = 0; i < count; i++) {
+      const wrapper = document.createElement('div');
+      wrapper.className = 'cta-bubble-wrapper';
+      
+      const size = Math.random() * 54 + 6; // 6px to 60px
+      const left = Math.random() * 100; // 0% to 100%
+      const riseDuration = Math.random() * 12 + 8; // 8s to 20s
+      const riseDelay = Math.random() * 15; // 0s to 15s
+      const swayDuration = Math.random() * 3 + 2; // 2s to 5s
+      
+      wrapper.style.left = `${left}%`;
+      wrapper.style.animationDuration = `${riseDuration}s`;
+      wrapper.style.animationDelay = `-${riseDelay}s`;
+      
+      const bubble = document.createElement('div');
+      bubble.className = `cta-bubble ${Math.random() > 0.5 ? 'filled' : 'outline'}`;
+      bubble.style.width = `${size}px`;
+      bubble.style.height = `${size}px`;
+      bubble.style.animationDuration = `${swayDuration}s`;
+      
+      wrapper.appendChild(bubble);
+      container.appendChild(wrapper);
+    }
+  });
+});

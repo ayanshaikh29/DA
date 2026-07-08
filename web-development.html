@@ -121,13 +121,87 @@ tailwind.config = {
     0%, 100% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
 }
+
+/* ── Premium Chromatic Hierarchy ── */
+.text-gradient-luxury {
+    background: linear-gradient(135deg, #f472b6 0%, #c084fc 50%, #6366f1 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+.text-gradient-luxury-soft {
+    background: linear-gradient(135deg, #f472b6 0%, #a78bfa 60%, #818cf8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+.accent-glow-dot {
+    position: relative;
+    display: inline-block;
+}
+.accent-glow-dot::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -8px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #f472b6, #6366f1);
+    transform: translateY(-50%);
+    opacity: 0.7;
+}
+.cta-gradient-accent {
+    background: linear-gradient(135deg, #f472b6 0%, #c084fc 50%, #6366f1 100%);
+    color: #fff;
+    font-weight: 600;
+    border-radius: 9999px;
+    padding: 14px 28px;
+    font-size: 14px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: opacity 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.15);
+}
+.cta-gradient-accent:hover {
+    opacity: 0.92;
+    transform: translateY(-2px);
+    box-shadow: 0 0 32px rgba(99, 102, 241, 0.25);
+}
+.pill-gradient {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(99, 102, 241, 0.08);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    border-radius: 9999px;
+    padding: 5px 14px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #a78bfa;
+}
+.pill-gradient-pink {
+    background: rgba(244, 114, 182, 0.08);
+    border-color: rgba(244, 114, 182, 0.2);
+    color: #f472b6;
+}
+.stat-metric-accent {
+    background: linear-gradient(135deg, #f472b6 0%, #c084fc 45%, #6366f1 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
 </style>
 </head>
 <body class="bg-black text-white overflow-x-hidden antialiased selection:bg-[#111111] selection:text-white">
 
 <!-- Header -->
 <header id="navbar" style="position:fixed;top:0;left:0;width:100%;z-index:9999;padding:16px 0;transform:translateY(-120%);transition:transform 0.45s cubic-bezier(0.16,1,0.3,1);">
-  <div style="max-width:1280px;margin:0 auto;padding:0 24px;">
+  <div style="max-width:1280px;margin:0 auto;padding:0 24px;"><div id="mobile-menu-backdrop" onclick="toggleMobileMenu()"></div>
     <div id="nav-wrapper" style="display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,0.85);border:1px solid rgba(255,255,255,0.6);box-shadow:0 4px 32px rgba(2,6,23,0.08);border-radius:9999px;height:60px;padding:0 24px;">
       <a href="index.html" style="display:flex;align-items:center;">
         <img src="assets/logo.png" alt="Digital Advertise Logo" style="height:32px;width:auto;object-fit:contain;">
@@ -135,7 +209,7 @@ tailwind.config = {
       <nav style="display:none;" id="desktop-nav">
         <a href="index.html">Home</a>
         <div class="nav-dropdown">
-          <a href="services.html">Services ▾</a>
+          <a href="services.html" style="display:inline-flex;align-items:center;gap:4px;">Services <i data-lucide="chevron-down" class="w-3 h-3"></i></a>
           <div class="nav-dropdown-menu">
             <a href="social-media.html">Social Media Marketing</a>
             <a href="performance-marketing.html">Performance Marketing</a>
@@ -155,22 +229,31 @@ tailwind.config = {
       </nav>
       <div style="display:flex;align-items:center;gap:8px;">
         <a href="audit.html" style="display:inline-flex;align-items:center;gap:6px;background:#000000;color:#fff;font-weight:600;font-size:14px;padding:10px 20px;border-radius:9999px;text-decoration:none;transition:background 0.2s;">
-          Get Started ↗
-        </a>
-        <button onclick="toggleMobileMenu()" id="hamburger-btn" style="display:none;padding:8px;border-radius:9999px;border:none;background:transparent;cursor:pointer;">
-          ☰
-        </button>
+          Get Started <i data-lucide="arrow-up-right" class="w-4 h-4"></i></a>
+        <button onclick="toggleMobileMenu()" id="hamburger-btn" style="display:none;padding:6px;border-radius:9999px;border:none;background:transparent;cursor:pointer;"><i data-lucide="menu" id="menu-icon" class="w-6 h-6" style="color:#000;display:block;"></i></button>
       </div>
     </div>
-    <div id="mobile-menu" style="display:none;margin-top:12px;background:rgba(255,255,255,0.95);border-radius:20px;padding:20px;flex-direction:column;gap:8px;">
-      <a href="index.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Home</a>
-      <a href="services.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Services</a>
-      <a href="portfolio.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Portfolio</a>
-      <a href="case-studies.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Case Studies</a>
-      <a href="blog.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Blog</a>
-      <a href="contact.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Contact</a>
-      <a href="about.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">About Us</a>
-      <a href="audit.html" style="margin-top:8px;padding:12px;background:#000000;color:#fff;font-weight:600;border-radius:9999px;text-decoration:none;display:block;text-align:center;">Get Started</a>
+    <div id="mobile-menu" style="display:none;margin-top:12px;background:#ffffff;border-radius:20px;padding:20px;flex-direction:column;gap:8px;">
+      <a href="index.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:flex;align-items:center;">Home</a>
+      <div style="display:flex;flex-direction:column;">
+        <div class="mobile-services-row" style="display:flex;align-items:center;justify-content:flex-start;gap:0;"><a href="services.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;flex:0 0 auto;width:auto;">Services</a><button type="button" onclick="event.stopPropagation();event.preventDefault();toggleMobileServices()" aria-label="Toggle Services submenu"><i data-lucide="chevron-down" class="w-3 h-3" id="mobile-services-chevron"></i></button></div>
+        <div id="mobile-services-submenu">
+          <a href="social-media.html">Social Media Marketing</a>
+          <a href="performance-marketing.html">Performance Marketing</a>
+          <a href="brand-identity.html">Brand Identity</a>
+          <a href="web-development.html">Website Development</a>
+          <a href="video-production.html">Video Production</a>
+          <a href="ai-video.html">AI Video Generation</a>
+          <a href="packaging.html">Product Packaging Design</a>
+          <a href="photography.html">Product Shoot</a>
+        </div>
+      </div>
+      <a href="portfolio.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:flex;align-items:center;">Portfolio</a>
+      <a href="case-studies.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:flex;align-items:center;">Case Studies</a>
+      <a href="blog.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:flex;align-items:center;">Blog</a>
+      <a href="contact.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:flex;align-items:center;">Contact</a>
+      <a href="about.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:flex;align-items:center;">About Us</a>
+      <a href="audit.html" style="margin-top:8px;padding:12px;background:#000000;color:#fff;font-weight:600;border-radius:9999px;text-decoration:none;display:block;text-align:center;">Get Started <i data-lucide="arrow-up-right" class="w-4 h-4"></i></a>
     </div>
   </div>
 </header>
@@ -189,7 +272,7 @@ tailwind.config = {
     <div class="max-w-7xl mx-auto px-6 md:px-10 relative z-10 text-left">
         <div class="overline-label reveal">Website Development</div>
         <h1 class="mt-3 font-display text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tighter text-white text-reveal">
-            Websites that<br><span class="italic font-light text-white/80">convert at scale</span>.
+            Websites that<br><span class="italic font-light text-gradient-luxury" style="display:inline !important;">convert at scale</span>.
         </h1>
         <p class="mt-7 text-lg md:text-xl text-white/70 max-w-2xl leading-relaxed">We build high-performance web applications engineered for conversion, speed, and search visibility. From headless e-commerce storefronts to immersive WebGL brand experiences.</p>
         <div class="mt-8 flex flex-wrap items-center gap-4">
@@ -202,7 +285,7 @@ tailwind.config = {
 
 
 <!-- ===== WHAT WE DO ===== -->
-<section class="relative py-20 md:py-28 bg-black overflow-hidden">
+<section class="relative py-8 md:py-12 bg-black overflow-hidden">
     <div class="max-w-7xl mx-auto px-6 md:px-10">
         <div class="text-center max-w-3xl mx-auto mb-16">
             <div class="overline-label reveal">What We Do</div>
@@ -213,21 +296,21 @@ tailwind.config = {
                 <div class="w-12 h-12 rounded-2xl bg-[#111111] flex items-center justify-center mb-5">
                     <i data-lucide="layout" class="w-6 h-6 text-white"></i>
                 </div>
-                <h3 class="font-display text-xl font-bold text-white">Custom Website Design</h3>
+                <h3 class="font-display text-xl font-bold text-gradient-luxury-soft" style="display: block !important;">Custom Website Design</h3>
                 <p class="mt-3 text-white/70 text-sm leading-relaxed">Responsive front-end development with pixel-perfect design implementation. Every component built from scratch with modern frameworks, animated micro-interactions, and mobile-first architecture.</p>
             </div>
             <div class="reveal p-8 rounded-3xl bg-black border border-white/10 hover:border-gray-400 hover:shadow-xl transition-all duration-300 spotlight-card">
                 <div class="w-12 h-12 rounded-2xl bg-[#111111] flex items-center justify-center mb-5">
                     <i data-lucide="shopping-cart" class="w-6 h-6 text-white"></i>
                 </div>
-                <h3 class="font-display text-xl font-bold text-white">E-Commerce Builds</h3>
+                <h3 class="font-display text-xl font-bold text-gradient-luxury-soft" style="display: block !important;">E-Commerce Builds</h3>
                 <p class="mt-3 text-white/70 text-sm leading-relaxed">Shopify Plus, WooCommerce, and headless CMS solutions built for scale. Custom checkout flows, inventory sync, and conversion-optimized product pages designed to maximize average order value.</p>
             </div>
             <div class="reveal p-8 rounded-3xl bg-black border border-white/10 hover:border-gray-400 hover:shadow-xl transition-all duration-300 spotlight-card">
                 <div class="w-12 h-12 rounded-2xl bg-[#111111] flex items-center justify-center mb-5">
                     <i data-lucide="search" class="w-6 h-6 text-white"></i>
                 </div>
-                <h3 class="font-display text-xl font-bold text-white">Technical SEO</h3>
+                <h3 class="font-display text-xl font-bold text-gradient-luxury-soft" style="display: block !important;">Technical SEO</h3>
                 <p class="mt-3 text-white/70 text-sm leading-relaxed">Schema markup, Core Web Vitals optimization, and search visibility engineering from day one. Every page is server-side rendered with structured data and performance-first rendering pipelines.</p>
             </div>
         </div>
@@ -235,7 +318,7 @@ tailwind.config = {
 </section>
 
 <!-- ===== OUR PROCESS ===== -->
-<section class="relative py-20 md:py-28 bg-[#0A0A0A]/40 overflow-hidden">
+<section class="relative py-8 md:py-12 bg-[#0A0A0A]/40 overflow-hidden">
     <div class="max-w-7xl mx-auto px-6 md:px-10">
         <div class="text-center max-w-3xl mx-auto mb-16">
             <div class="overline-label reveal">Our Process</div>
@@ -286,12 +369,12 @@ tailwind.config = {
 </section>
 
 <!-- ===== WHY CHOOSE US ===== -->
-<section class="relative py-20 md:py-28 bg-black overflow-hidden">
+<section class="relative py-8 md:py-12 bg-black overflow-hidden">
     <div class="max-w-7xl mx-auto px-6 md:px-10">
         <div class="grid lg:grid-cols-2 gap-16 items-center">
             <div>
                 <div class="overline-label reveal">Why Choose Us</div>
-                <h2 class="mt-3 font-display text-4xl md:text-5xl font-extrabold tracking-tight text-white reveal">Built for performance</h2>
+                <h2 class="mt-3 font-display text-4xl md:text-5xl font-extrabold tracking-tight text-white reveal">Built for <span class="text-gradient-luxury" style="display:inline !important;">performance</span></h2>
                 <p class="mt-6 text-white/70 text-lg leading-relaxed reveal">Every site we ship is engineered to load in under a second, pass accessibility audits, and convert visitors into customers. We don't just build pages — we build revenue machines.</p>
                 <a href="audit.html" class="btn-primary btn-magnetic shine-sweep group mt-8 reveal" style="color:#FFFFFF !important;-webkit-text-fill-color:#FFFFFF !important;display:inline-flex !important;align-items:center !important;gap:10px !important;font-size:14px !important;visibility:visible !important;opacity:1 !important;"><span style="color:#FFFFFF !important;-webkit-text-fill-color:#FFFFFF !important;font-size:14px !important;opacity:1 !important;visibility:visible !important;display:inline !important;position:relative !important;z-index:3 !important;">Get Free Audit</span> <i data-lucide="arrow-up-right" class="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></i></a>
             </div>
@@ -329,53 +412,395 @@ tailwind.config = {
     </div>
 </section>
 
-<!-- ===== PORTFOLIO PREVIEW ===== -->
-<section class="relative py-20 md:py-28 bg-[#0A0A0A]/40 overflow-hidden">
-    <div class="max-w-7xl mx-auto px-6 md:px-10">
-        <div class="text-center max-w-3xl mx-auto mb-16">
-            <div class="overline-label reveal">Our Work</div>
-            <h2 class="mt-3 font-display text-4xl md:text-5xl font-extrabold tracking-tight text-white reveal">Recent Projects</h2>
-        </div>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 reveal-stagger">
-            <a href="portfolio.html" class="reveal group rounded-3xl overflow-hidden bg-black border border-white/10 hover:border-gray-400 hover:shadow-xl transition-all duration-300">
-                <div class="aspect-[4/3] bg-gradient-to-br from-black50 to-gray-60050 overflow-hidden">
-                    <img src="assets/portfolio-stripe.png" alt="E-Commerce Platform Redesign" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+<!-- ===== PORTFOLIO SHOWCASE ===== -->
+<section id="portfolio-showcase" class="relative py-8 md:py-12 bg-[#0A0A0A] overflow-hidden">
+    <!-- Ambient glow -->
+    <div class="absolute top-0 left-1/4 w-[600px] h-[600px] bg-white/[0.02] rounded-full blur-[120px] pointer-events-none"></div>
+    <div class="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-white/[0.015] rounded-full blur-[100px] pointer-events-none"></div>
+
+    <div class="max-w-[1400px] mx-auto px-6 md:px-10">
+        <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+
+            <!-- ── Left: Heading ── -->
+            <div class="lg:col-span-4 lg:sticky lg:top-32 portfolio-heading">
+                <div class="portfolio-overline text-[11px] font-bold uppercase tracking-[0.25em] text-white/40 mb-6">01 — Web Development</div>
+                <h2 class="font-display text-4xl md:text-5xl lg:text-[3.5rem] font-extrabold tracking-tight text-white leading-[1.05]">Web<br>Development</h2>
+                <p class="mt-6 text-white/50 text-[15px] leading-relaxed max-w-sm">Modern responsive websites, SaaS platforms, dashboards and premium UI/UX experiences.</p>
+                <a href="portfolio.html" class="inline-flex items-center gap-2.5 mt-8 text-white/60 text-sm font-semibold tracking-wide hover:text-white transition-colors duration-300 group">
+                    <span class="border-b border-white/20 pb-0.5 group-hover:border-white/60 transition-colors duration-300">View All Projects</span>
+                    <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+
+            <!-- ── Right: Masonry Grid ── -->
+            <div class="lg:col-span-8">
+                <div class="portfolio-masonry">
+
+                    <!-- Card 1 -->
+                    <div class="portfolio-card portfolio-card--featured group relative rounded-[24px] overflow-hidden bg-[#111] border border-white/[0.06] cursor-pointer">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
+                        <div class="absolute inset-0 z-20 flex flex-col justify-end p-6 md:p-7 opacity-0 group-hover:opacity-100 translate-y-3 group-hover:translate-y-0 transition-all duration-400">
+                            <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-white/50 mb-2">E-Commerce</span>
+                            <h3 class="font-display text-lg md:text-xl font-bold text-white">Shopify Plus Storefront</h3>
+                            <p class="text-white/50 text-[13px] mt-1.5">Headless commerce build with 0.8s load time and 42% conversion lift.</p>
+                        </div>
+                        <img src="assets/images web/web dev img (1).jpeg" alt="E-Commerce Platform Redesign" width="800" height="1000" loading="lazy" class="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-[0.4s] ease-out">
+                        <div class="absolute inset-0 rounded-[24px] border border-white/0 group-hover:border-white/10 transition-colors duration-400 pointer-events-none z-30"></div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="portfolio-card portfolio-card--featured group relative rounded-[24px] overflow-hidden bg-[#111] border border-white/[0.06] cursor-pointer">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
+                        <div class="absolute inset-0 z-20 flex flex-col justify-end p-6 md:p-7 opacity-0 group-hover:opacity-100 translate-y-3 group-hover:translate-y-0 transition-all duration-400">
+                            <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-white/50 mb-2">SaaS</span>
+                            <h3 class="font-display text-lg md:text-xl font-bold text-white">SaaS Landing Page Suite</h3>
+                            <p class="text-white/50 text-[13px] mt-1.5">12-page conversion funnel with A/B-tested CTAs.</p>
+                        </div>
+                        <img src="assets/images web/web dev img (2).jpeg" alt="SaaS Platform" width="800" height="500" loading="lazy" class="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-[0.4s] ease-out">
+                        <div class="absolute inset-0 rounded-[24px] border border-white/0 group-hover:border-white/10 transition-colors duration-400 pointer-events-none z-30"></div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="portfolio-card portfolio-card--featured group relative rounded-[24px] overflow-hidden bg-[#111] border border-white/[0.06] cursor-pointer">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
+                        <div class="absolute inset-0 z-20 flex flex-col justify-end p-6 md:p-7 opacity-0 group-hover:opacity-100 translate-y-3 group-hover:translate-y-0 transition-all duration-400">
+                            <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-white/50 mb-2">Corporate</span>
+                            <h3 class="font-display text-lg md:text-xl font-bold text-white">Enterprise Rebrand & Rebuild</h3>
+                            <p class="text-white/50 text-[13px] mt-1.5">Full redesign with WCAG 2.1 AA compliance.</p>
+                        </div>
+                        <img src="assets/images web/web dev img (3).jpeg" alt="Corporate Website" width="800" height="500" loading="lazy" class="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-[0.4s] ease-out">
+                        <div class="absolute inset-0 rounded-[24px] border border-white/0 group-hover:border-white/10 transition-colors duration-400 pointer-events-none z-30"></div>
+                    </div>
+
                 </div>
-                <div class="p-6">
-                    <span class="text-xs font-semibold text-white uppercase tracking-wider">E-Commerce</span>
-                    <h3 class="mt-2 font-display text-lg font-bold text-white group-hover:text-white transition-colors">Shopify Plus Storefront</h3>
-                    <p class="mt-1 text-white/60 text-sm">Headless commerce build with 0.8s load time and 42% conversion lift.</p>
-                </div>
-            </a>
-            <a href="portfolio.html" class="reveal group rounded-3xl overflow-hidden bg-black border border-white/10 hover:border-gray-400 hover:shadow-xl transition-all duration-300">
-                <div class="aspect-[4/3] bg-gradient-to-br from-slate-50 to-gray-70050 overflow-hidden">
-                    <img src="assets/portfolio-notion.png" alt="SaaS Platform" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                </div>
-                <div class="p-6">
-                    <span class="text-xs font-semibold text-white uppercase tracking-wider">SaaS</span>
-                    <h3 class="mt-2 font-display text-lg font-bold text-white group-hover:text-white transition-colors">SaaS Landing Page Suite</h3>
-                    <p class="mt-1 text-white/60 text-sm">12-page conversion funnel with A/B-tested CTAs and sub-1s TTFB.</p>
-                </div>
-            </a>
-            <a href="portfolio.html" class="reveal group rounded-3xl overflow-hidden bg-black border border-white/10 hover:border-gray-400 hover:shadow-xl transition-all duration-300">
-                <div class="aspect-[4/3] bg-gradient-to-br from-gray-70050 to-gray-70050 overflow-hidden">
-                    <img src="assets/portfolio-zoom.png" alt="Corporate Website" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                </div>
-                <div class="p-6">
-                    <span class="text-xs font-semibold text-white uppercase tracking-wider">Corporate</span>
-                    <h3 class="mt-2 font-display text-lg font-bold text-white group-hover:text-white transition-colors">Enterprise Rebrand & Rebuild</h3>
-                    <p class="mt-1 text-white/60 text-sm">Full redesign with WCAG 2.1 AA compliance and 95+ Lighthouse score.</p>
-                </div>
-            </a>
-        </div>
-        <div class="mt-12 text-center reveal">
-            <a href="portfolio.html" class="btn-secondary btn-magnetic group" style="color:#FFFFFF !important;-webkit-text-fill-color:#FFFFFF !important;display:inline-flex !important;align-items:center !important;gap:10px !important;font-size:14px !important;visibility:visible !important;opacity:1 !important;"><span style="color:#FFFFFF !important;-webkit-text-fill-color:#FFFFFF !important;font-size:14px !important;opacity:1 !important;visibility:visible !important;display:inline !important;position:relative !important;z-index:3 !important;">View All Work</span> <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i></a>
+            </div>
+
         </div>
     </div>
 </section>
 
+<style>
+/* ── Portfolio Showcase Premium Styles ── */
+#portfolio-showcase .portfolio-masonry {
+    position: relative;
+    width: 100%;
+    height: 380px;
+}
+@media (min-width: 640px) {
+    #portfolio-showcase .portfolio-masonry {
+        height: 420px;
+    }
+}
+@media (min-width: 1024px) {
+    #portfolio-showcase .portfolio-masonry {
+        height: 460px;
+        margin-left: 48px;
+    }
+}
+
+/* Card base styles */
+#portfolio-showcase .portfolio-card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.4s ease;
+    will-change: transform;
+}
+#portfolio-showcase .portfolio-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 60px -15px rgba(255,255,255,0.06),
+                0 0 40px -10px rgba(255,255,255,0.03);
+}
+
+/* Featured cards — equal sizing */
+#portfolio-showcase .portfolio-card--featured {
+    aspect-ratio: 4 / 5;
+    width: 240px;
+    min-height: 280px;
+}
+@media (min-width: 640px) {
+    #portfolio-showcase .portfolio-card--featured {
+        aspect-ratio: 3 / 4;
+        width: 260px;
+        min-height: 320px;
+    }
+}
+@media (min-width: 1024px) {
+    #portfolio-showcase .portfolio-card--featured {
+        aspect-ratio: 3 / 4;
+        width: 280px;
+        min-height: 360px;
+    }
+}
+
+/* Card 1 — left position, top layer */
+#portfolio-showcase .portfolio-card--featured:nth-child(1) {
+    z-index: 3;
+}
+
+/* Card 2 — center position */
+#portfolio-showcase .portfolio-card--featured:nth-child(2) {
+    z-index: 2;
+}
+@media (min-width: 640px) {
+    #portfolio-showcase .portfolio-card--featured:nth-child(2) {
+        left: 280px;
+    }
+}
+@media (min-width: 1024px) {
+    #portfolio-showcase .portfolio-card--featured:nth-child(2) {
+        left: 300px;
+    }
+}
+
+/* Card 3 — right position, back layer */
+#portfolio-showcase .portfolio-card--featured:nth-child(3) {
+    z-index: 1;
+}
+@media (min-width: 640px) {
+    #portfolio-showcase .portfolio-card--featured:nth-child(3) {
+        left: 560px;
+    }
+}
+@media (min-width: 1024px) {
+    #portfolio-showcase .portfolio-card--featured:nth-child(3) {
+        left: 600px;
+    }
+}
+
+/* Smooth image zoom */
+#portfolio-showcase .portfolio-card img {
+    will-change: transform;
+}
+
+/* Heading entrance */
+#portfolio-showcase .portfolio-heading {
+    opacity: 0;
+    transform: translateY(30px);
+}
+#portfolio-showcase .portfolio-heading.revealed {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Card entrance stagger */
+#portfolio-showcase .portfolio-card {
+    opacity: 0;
+    transform: translateY(40px) scale(0.97);
+}
+#portfolio-showcase .portfolio-card.revealed {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Responsive: single column on mobile */
+@media (max-width: 639px) {
+    #portfolio-showcase .portfolio-card.sm\:row-span-2 {
+        grid-row: span 1;
+    }
+}
+</style>
+
+<!-- ===== WEBSITES WE'VE DELIVERED ===== -->
+<section id="client-websites" class="relative py-8 md:py-12 bg-[#0A0A0A] overflow-hidden">
+    <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-white/[0.015] rounded-full blur-[100px] pointer-events-none"></div>
+    <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-white/[0.01] rounded-full blur-[80px] pointer-events-none"></div>
+    <div class="max-w-[1400px] mx-auto px-6 md:px-10">
+        <div class="text-center max-w-3xl mx-auto mb-14 reveal">
+            <div class="overline-label">Client Work</div>
+            <h2 class="mt-3 font-display text-3xl md:text-5xl font-extrabold tracking-tight text-white">Websites We've <span class="text-gradient-luxury" style="display:inline !important;">Delivered</span></h2>
+            <p class="mt-4 text-white/50 text-[15px] leading-relaxed max-w-xl mx-auto">Live platforms built for performance, conversion, and brand impact across every industry.</p>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 reveal-stagger" id="client-websites-grid"></div>
+    </div>
+</section>
+
+<style>
+/* Client Websites Showcase */
+#client-websites .client-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px 14px;
+    background: rgba(10, 10, 10, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.35s ease,
+                box-shadow 0.35s ease,
+                background 0.35s ease;
+    text-decoration: none;
+    overflow: hidden;
+}
+#client-websites .client-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(99, 102, 241, 0.25);
+    box-shadow: 0 16px 48px -12px rgba(99, 102, 241, 0.12),
+                0 0 0 1px rgba(99, 102, 241, 0.08);
+    background: rgba(10, 10, 10, 0.8);
+}
+#client-websites .client-logo-wrap {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    flex-shrink: 0;
+    transition: border-color 0.3s ease;
+}
+#client-websites .client-card:hover .client-logo-wrap {
+    border-color: rgba(255, 255, 255, 0.12);
+}
+#client-websites .client-logo-wrap img {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+    border-radius: 4px;
+}
+#client-websites .client-logo-fallback {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: #a78bfa;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(168, 139, 250, 0.05));
+}
+#client-websites .client-name {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.85);
+    text-align: center;
+    line-height: 1.3;
+    max-height: 32px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+#client-websites .client-category {
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: rgba(167, 139, 250, 0.7);
+    text-align: center;
+    line-height: 1.2;
+}
+#client-websites .client-launch-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: rgba(99, 102, 241, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(4px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    flex-shrink: 0;
+}
+#client-websites .client-card:hover .client-launch-icon {
+    opacity: 1;
+    transform: translateY(0);
+}
+#client-websites .client-launch-icon svg {
+    width: 12px;
+    height: 12px;
+    stroke: #a78bfa;
+    stroke-width: 2;
+    fill: none;
+}
+</style>
+
+<script>
+(function() {
+    var clients = [
+        { url: "https://hexagonionizers.com/", name: "Hexagonionizers", category: "Industrial" },
+        { url: "https://www.zippyfeed.com/", name: "Zippy Feed", category: "Food & Beverage" },
+        { url: "https://tycoonconstructions.in/", name: "Tycoon Constructions", category: "Construction" },
+        { url: "https://bhumeedubai.com/", name: "Bhumeedu Dubai", category: "Agriculture" },
+        { url: "https://kkmodularkitchen.com/", name: "KK Modular Kitchen", category: "Interior Design" },
+        { url: "https://iamdrinkbot.com/", name: "DrinkBot", category: "Beverage Tech" },
+        { url: "https://deejakifreshindia.com/", name: "Deejaki Fresh India", category: "Fresh Produce" },
+        { url: "https://stayfitindia.com/", name: "Stay Fit India", category: "Health & Fitness" },
+        { url: "https://dharmasdental.com/", name: "Dharmas Dental", category: "Healthcare" },
+        { url: "https://eternaldevalaya.com/", name: "Eternal Devalaya", category: "Spiritual" },
+        { url: "https://drmahajanspilesclinic.com/", name: "Dr. Mahajan's Piles Clinic", category: "Healthcare" },
+        { url: "https://horizonpestcontrol.in/", name: "Horizon Pest Control", category: "Pest Control" },
+        { url: "https://jyotiambekar.in/", name: "Jyoti Ambekar", category: "Professional" },
+        { url: "https://westyardagro.com/", name: "Westyard Agro", category: "Agriculture" },
+        { url: "https://influencio.in/", name: "Influencio", category: "Marketing" },
+        { url: "https://greenyardshipping.com/", name: "Greenyard Shipping", category: "Logistics" },
+        { url: "https://preethiskinhairlaserclinic.com/", name: "Preethi Skin Hair Laser Clinic", category: "Healthcare" },
+        { url: "https://drreddisdental.com/", name: "Dr. Reddi's Dental", category: "Healthcare" },
+        { url: "https://woodpeckerinterior.com/", name: "Woodpecker Interior", category: "Interior Design" },
+        { url: "https://interiorcentre.in/", name: "Interior Centre", category: "Interior Design" },
+        { url: "https://budgetinteriorsbay.com/", name: "Budget Interiors Bay", category: "Interior Design" },
+        { url: "https://lakesidecamp.in/", name: "Lakeside Camp", category: "Hospitality" },
+        { url: "https://allindubai.me/", name: "All In Dubai", category: "Lifestyle" },
+        { url: "https://photofactorybypallavi.com/", name: "Photo Factory by Pallavi", category: "Photography" },
+        { url: "https://prathameshresorts.com/", name: "Prathamesh Resorts", category: "Hospitality" },
+        { url: "https://www.rupsnajakat.com/", name: "Rups Na Jakat", category: "Finance" },
+        { url: "https://vnbindustries.com/", name: "VNB Industries", category: "Manufacturing" },
+        { url: "https://www.thechillhousedesigners.com/", name: "The Chillhouse Designers", category: "Interior Design" },
+        { url: "https://www.shitolerealty.com/", name: "Shitole Realty", category: "Real Estate" },
+        { url: "https://www.winone.in/", name: "Win One", category: "Sports" },
+        { url: "https://sunbrightschools.com/", name: "Sunbright Schools", category: "Education" },
+        { url: "https://www.prabhavee.com/", name: "Prabhavee", category: "Professional" }
+    ];
+
+    var grid = document.getElementById("client-websites-grid");
+    if (!grid) return;
+
+    clients.forEach(function(c) {
+        var hostname = "";
+        try { hostname = new URL(c.url).hostname.replace("www.", ""); } catch(e) { hostname = c.url; }
+        var initials = c.name.split(" ").map(function(w){ return w.charAt(0); }).join("").substring(0,2).toUpperCase();
+        var faviconUrl = "https://www.google.com/s2/favicons?sz=64&domain=" + hostname;
+
+        var card = document.createElement("a");
+        card.href = c.url;
+        card.target = "_blank";
+        card.rel = "noopener noreferrer";
+        card.className = "client-card reveal";
+        card.title = c.name;
+
+        card.innerHTML =
+            '<div class="client-logo-wrap">' +
+                '<img src="' + faviconUrl + '" alt="' + c.name + ' logo" loading="lazy" onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'flex\'">' +
+                '<div class="client-logo-fallback" style="display:none">' + initials + '</div>' +
+            '</div>' +
+            '<div class="client-name">' + c.name + '</div>' +
+            '<div class="client-category">' + c.category + '</div>' +
+            '<div class="client-launch-icon"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>';
+
+        grid.appendChild(card);
+    });
+})();
+</script>
+
 <!-- ===== TESTIMONIALS ===== -->
-<section class="relative py-20 md:py-28 bg-black overflow-hidden">
+<section class="relative py-8 md:py-12 bg-black overflow-hidden">
     <div class="max-w-7xl mx-auto px-6 md:px-10">
         <div class="text-center max-w-3xl mx-auto mb-16">
             <div class="overline-label reveal">Testimonials</div>
@@ -439,21 +864,21 @@ tailwind.config = {
 
 
 <!-- ===== STATS (DARK BG) ===== -->
-<section class="relative py-20 md:py-28 bg-[#0f172a] overflow-hidden">
+<section class="relative py-8 md:py-12 bg-[#0f172a] overflow-hidden">
     <div class="absolute inset-0 grid-pattern opacity-[0.04] pointer-events-none"></div>
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-gray-1000/10 pointer-events-none"></div>
     <div class="relative max-w-7xl mx-auto px-6 md:px-10">
         <div class="grid sm:grid-cols-3 gap-8 text-center">
             <div class="reveal p-10 rounded-3xl border border-white/10 bg-black/[0.03] hover:border-white/30 transition-all duration-300">
-                <div class="font-display text-5xl md:text-6xl font-extrabold text-white">&lt;1s</div>
+                <div class="font-display text-5xl md:text-6xl font-extrabold stat-metric-accent">&lt;1s</div>
                 <div class="text-white/70 font-semibold text-sm mt-3 uppercase tracking-wider">Load Time</div>
             </div>
             <div class="reveal p-10 rounded-3xl border border-white/10 bg-black/[0.03] hover:border-white/30 transition-all duration-300">
-                <div class="font-display text-5xl md:text-6xl font-extrabold text-white">200+</div>
+                <div class="font-display text-5xl md:text-6xl font-extrabold stat-metric-accent">200+</div>
                 <div class="text-white/70 font-semibold text-sm mt-3 uppercase tracking-wider">Sites Launched</div>
             </div>
             <div class="reveal p-10 rounded-3xl border border-white/10 bg-black/[0.03] hover:border-white/30 transition-all duration-300">
-                <div class="font-display text-5xl md:text-6xl font-extrabold text-white/70">67%</div>
+                <div class="font-display text-5xl md:text-6xl font-extrabold stat-metric-accent">67%</div>
                 <div class="text-white/70 font-semibold text-sm mt-3 uppercase tracking-wider">Conversion Lift</div>
             </div>
         </div>
@@ -461,9 +886,18 @@ tailwind.config = {
 </section>
 
 <!-- ===== CTA SECTION ===== -->
-<section id="contact" class="relative py-16 md:py-24 overflow-hidden">
+<section id="contact" class="relative py-8 md:py-12 overflow-hidden">
 <div class="max-w-7xl mx-auto px-6 md:px-10">
-<div class="relative rounded-[36px] bg-slate-950 overflow-hidden p-10 md:p-16 lg:p-24 reveal">
+<div class="relative rounded-[36px] bg-slate-950 overflow-hidden p-6 md:p-10 lg:p-14 reveal-scale">
+<!-- CTA Animated Background -->
+<div class="cta-animated-bg-wrapper">
+    <div class="cta-animated-bg-glow"></div>
+    <div class="cta-animated-bg-grid"></div>
+    <div class="cta-blob cta-blob-1"></div>
+    <div class="cta-blob cta-blob-2"></div>
+</div>
+<div class="cta-bubbles"></div>
+
 <div class="absolute -top-32 -left-20 w-[420px] h-[420px] rounded-full bg-gray-1000/30 pointer-events-none"></div>
 <div class="absolute -bottom-32 -right-20 w-[420px] h-[420px] rounded-full bg-gray-1000/30 pointer-events-none"></div>
 <div class="absolute inset-0 opacity-[0.06] pointer-events-none grid-pattern"></div>
@@ -497,59 +931,67 @@ tailwind.config = {
 </div>
 </section>
 
-</main>
-
-
-
 <!-- ===== FAQ ===== -->
-<section class="relative py-20 md:py-28 bg-[#0A0A0A]/40 overflow-hidden">
+<section class="relative py-8 md:py-12 bg-[#0A0A0A]/40 overflow-hidden">
     <div class="max-w-3xl mx-auto px-6 md:px-10">
         <div class="text-center mb-16">
             <div class="overline-label reveal">FAQ</div>
-            <h2 class="mt-3 font-display text-4xl md:text-5xl font-extrabold tracking-tight text-white reveal">Common Questions</h2>
+            <h2 class="mt-3 font-display text-4xl md:text-5xl font-extrabold tracking-tight text-white reveal">Common <span class="text-gradient-luxury" style="display:inline !important;">Questions</span></h2>
         </div>
         <div class="space-y-4 reveal-stagger">
-            <details class="reveal group rounded-2xl bg-black border border-white/10 overflow-hidden transition-all duration-300 hover:border-black200">
-                <summary class="flex items-center justify-between p-6 cursor-pointer font-display font-bold text-white select-none">
+            <div class="bg-black rounded-2xl border border-white/5 overflow-hidden reveal">
+                <button type="button" class="faq-btn w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-display font-bold text-white text-[15px]">
                     How fast will my new website load?
-                    <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transition-transform group-open:rotate-180"></i>
-                </summary>
-                <div class="px-6 pb-6 text-white/70 text-sm leading-relaxed">Every site we build targets sub-1-second load times on mobile. We achieve this through server-side rendering, optimized asset delivery, image compression, and lean code architecture. Your Lighthouse performance score will consistently hit 90+.</div>
-            </details>
-            <details class="reveal group rounded-2xl bg-black border border-white/10 overflow-hidden transition-all duration-300 hover:border-black200">
-                <summary class="flex items-center justify-between p-6 cursor-pointer font-display font-bold text-white select-none">
+                    <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 shrink-0 transition-transform duration-300"></i>
+                </button>
+                <div class="faq-answer px-6 pb-5 text-white/70 text-[15px] leading-relaxed">
+                    Every site we build targets sub-1-second load times on mobile. We achieve this through server-side rendering, optimized asset delivery, image compression, and lean code architecture. Your Lighthouse performance score will consistently hit 90+.
+                </div>
+            </div>
+            <div class="bg-black rounded-2xl border border-white/5 overflow-hidden reveal">
+                <button type="button" class="faq-btn w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-display font-bold text-white text-[15px]">
                     Do you work with Shopify and other e-commerce platforms?
-                    <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transition-transform group-open:rotate-180"></i>
-                </summary>
-                <div class="px-6 pb-6 text-white/70 text-sm leading-relaxed">Yes. We build on Shopify Plus, WooCommerce, and headless commerce architectures. Whether you need a custom Shopify theme, a headless storefront with Next.js, or a fully bespoke platform, we adapt our stack to your business needs.</div>
-            </details>
-            <details class="reveal group rounded-2xl bg-black border border-white/10 overflow-hidden transition-all duration-300 hover:border-black200">
-                <summary class="flex items-center justify-between p-6 cursor-pointer font-display font-bold text-white select-none">
+                    <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 shrink-0 transition-transform duration-300"></i>
+                </button>
+                <div class="faq-answer px-6 pb-5 text-white/70 text-[15px] leading-relaxed">
+                    Yes. We build on Shopify Plus, WooCommerce, and headless commerce architectures. Whether you need a custom Shopify theme, a headless storefront with Next.js, or a fully bespoke platform, we adapt our stack to your business needs.
+                </div>
+            </div>
+            <div class="bg-black rounded-2xl border border-white/5 overflow-hidden reveal">
+                <button type="button" class="faq-btn w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-display font-bold text-white text-[15px]">
                     What does "technical SEO" include?
-                    <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transition-transform group-open:rotate-180"></i>
-                </summary>
-                <div class="px-6 pb-6 text-white/70 text-sm leading-relaxed">We implement structured data (Schema.org), optimize Core Web Vitals (LCP, FID, CLS), build server-side rendered pages for crawlability, create XML sitemaps, and configure canonical tags. SEO is baked into the architecture, not bolted on after.</div>
-            </details>
-            <details class="reveal group rounded-2xl bg-black border border-white/10 overflow-hidden transition-all duration-300 hover:border-black200">
-                <summary class="flex items-center justify-between p-6 cursor-pointer font-display font-bold text-white select-none">
+                    <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 shrink-0 transition-transform duration-300"></i>
+                </button>
+                <div class="faq-answer px-6 pb-5 text-white/70 text-[15px] leading-relaxed">
+                    We implement structured data (Schema.org), optimize Core Web Vitals (LCP, FID, CLS), build server-side rendered pages for crawlability, create XML sitemaps, and configure canonical tags. SEO is baked into the architecture, not bolted on after.
+                </div>
+            </div>
+            <div class="bg-black rounded-2xl border border-white/5 overflow-hidden reveal">
+                <button type="button" class="faq-btn w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-display font-bold text-white text-[15px]">
                     How long does a typical project take?
-                    <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transition-transform group-open:rotate-180"></i>
-                </summary>
-                <div class="px-6 pb-6 text-white/70 text-sm leading-relaxed">A standard website takes 6–10 weeks from kickoff to launch. E-commerce builds or complex web applications may take 10–16 weeks. We provide a detailed timeline during the discovery phase so you always know what to expect.</div>
-            </details>
-            <details class="reveal group rounded-2xl bg-black border border-white/10 overflow-hidden transition-all duration-300 hover:border-black200">
-                <summary class="flex items-center justify-between p-6 cursor-pointer font-display font-bold text-white select-none">
+                    <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 shrink-0 transition-transform duration-300"></i>
+                </button>
+                <div class="faq-answer px-6 pb-5 text-white/70 text-[15px] leading-relaxed">
+                    A standard website takes 6–10 weeks from kickoff to launch. E-commerce builds or complex web applications may take 10–16 weeks. We provide a detailed timeline during the discovery phase so you always know what to expect.
+                </div>
+            </div>
+            <div class="bg-black rounded-2xl border border-white/5 overflow-hidden reveal">
+                <button type="button" class="faq-btn w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-display font-bold text-white text-[15px]">
                     Do you provide ongoing maintenance and support?
-                    <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transition-transform group-open:rotate-180"></i>
-                </summary>
-                <div class="px-6 pb-6 text-white/70 text-sm leading-relaxed">Absolutely. We offer post-launch support packages that include performance monitoring, security updates, A/B testing, and continuous CRO. Most clients see the biggest gains in the first 90 days after launch with our iterative optimization approach.</div>
-            </details>
+                    <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 shrink-0 transition-transform duration-300"></i>
+                </button>
+                <div class="faq-answer px-6 pb-5 text-white/70 text-[15px] leading-relaxed">
+                    Absolutely. We offer post-launch support packages that include performance monitoring, security updates, A/B testing, and continuous CRO. Most clients see the biggest gains in the first 90 days after launch with our iterative optimization approach.
+                </div>
+            </div>
         </div>
     </div>
 </section>
 
+</main>
+
 <!-- Footer -->
-<footer class="relative bg-slate-950 text-white pt-20 md:pt-28 pb-10 overflow-hidden">
+<footer class="relative bg-slate-950 text-white pt-10 md:pt-14 pb-10 overflow-hidden">
 <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] h-[400px] rounded-full bg-gray-1000/10 pointer-events-none">
 </div>
 <div class="relative max-w-7xl mx-auto px-6 md:px-10">
@@ -634,6 +1076,104 @@ function toggleMobileMenu() {
   if (!menu) return;
   menu.classList.toggle('open');
 }
+</script>
+
+<!-- Portfolio Showcase GSAP Animations -->
+<script>
+(function() {
+    'use strict';
+
+    var isMobile = window.innerWidth < 992;
+    if (isMobile) {
+        // On mobile, just reveal everything immediately
+        document.querySelectorAll('#portfolio-showcase .portfolio-heading, #portfolio-showcase .portfolio-card').forEach(function(el) {
+            el.classList.add('revealed');
+        });
+        return;
+    }
+
+    function initPortfolioAnimations() {
+        if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+        gsap.registerPlugin(ScrollTrigger);
+
+        var section = document.getElementById('portfolio-showcase');
+        if (!section) return;
+
+        var heading = section.querySelector('.portfolio-heading');
+        var cards = section.querySelectorAll('.portfolio-card');
+
+        // Heading entrance
+        if (heading) {
+            gsap.to(heading, {
+                opacity: 1,
+                y: 0,
+                duration: 0.9,
+                ease: 'power3.out',
+                scrollTrigger: {
+                    trigger: section,
+                    start: 'top 80%',
+                    toggleActions: 'play none none none'
+                },
+                onComplete: function() { heading.classList.add('revealed'); }
+            });
+        }
+
+        // Cards stagger entrance
+        if (cards.length > 0) {
+            gsap.to(cards, {
+                opacity: 1,
+                y: 0,
+                scale: 1,
+                stagger: 0.15,
+                duration: 0.8,
+                ease: 'power3.out',
+                scrollTrigger: {
+                    trigger: section,
+                    start: 'top 70%',
+                    toggleActions: 'play none none none'
+                },
+                onComplete: function() {
+                    cards.forEach(function(c) { c.classList.add('revealed'); });
+                }
+            });
+        }
+
+        // Mouse parallax on cards
+        cards.forEach(function(card) {
+            var img = card.querySelector('img');
+            if (!img) return;
+
+            card.addEventListener('mousemove', function(e) {
+                var rect = card.getBoundingClientRect();
+                var x = (e.clientX - rect.left) / rect.width - 0.5;
+                var y = (e.clientY - rect.top) / rect.height - 0.5;
+
+                gsap.to(img, {
+                    x: x * 12,
+                    y: y * 12,
+                    duration: 0.4,
+                    ease: 'power2.out'
+                });
+            });
+
+            card.addEventListener('mouseleave', function() {
+                gsap.to(img, {
+                    x: 0,
+                    y: 0,
+                    duration: 0.6,
+                    ease: 'power3.out'
+                });
+            });
+        });
+    }
+
+    // Init on DOM ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initPortfolioAnimations);
+    } else {
+        initPortfolioAnimations();
+    }
+})();
 </script>
 </body>
 </html>

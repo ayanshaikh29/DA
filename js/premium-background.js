@@ -7,6 +7,9 @@
         return;
     }
 
+    // Mobile detection
+    const IS_MOBILE = window.innerWidth < 768;
+
     // 1. Setup Canvas and Container
     const canvas = document.createElement('canvas');
     canvas.id = 'premium-bg-canvas';
@@ -32,8 +35,8 @@
     scene.fog = new THREE.FogExp2(0xffffff, 0.04);
 
     const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 100);
-    camera.position.z = 10;
-    camera.position.y = 2;
+    camera.position.z = IS_MOBILE ? 14 : 10;
+    camera.position.y = IS_MOBILE ? 1.5 : 2;
 
     const renderer = new THREE.WebGLRenderer({ 
         canvas: canvas, 
@@ -49,14 +52,15 @@
 
     // --- Layer 1: Distant Glowing Dust ---
     const dustGeometry = new THREE.BufferGeometry();
-    const dustCount = 800;
+    const dustCount = IS_MOBILE ? 350 : 800;
     const dustPositions = new Float32Array(dustCount * 3);
     const dustSizes = new Float32Array(dustCount);
+    const dustSpread = IS_MOBILE ? 20 : 40;
 
     for(let i = 0; i < dustCount * 3; i+=3) {
-        dustPositions[i] = (Math.random() - 0.5) * 40;
-        dustPositions[i+1] = (Math.random() - 0.5) * 40;
-        dustPositions[i+2] = (Math.random() - 0.5) * 20 - 5;
+        dustPositions[i] = (Math.random() - 0.5) * dustSpread;
+        dustPositions[i+1] = (Math.random() - 0.5) * dustSpread;
+        dustPositions[i+2] = (Math.random() - 0.5) * (IS_MOBILE ? 10 : 20) - 5;
         dustSizes[i/3] = Math.random() * 1.5 + 0.5;
     }
 
@@ -115,15 +119,16 @@
     const networkGroup = new THREE.Group();
     bgGroup.add(networkGroup);
     
-    const nodeCount = 80;
+    const nodeCount = IS_MOBILE ? 35 : 80;
     const nodeGeometry = new THREE.BufferGeometry();
     const nodePositions = new Float32Array(nodeCount * 3);
     const nodeData = [];
+    const nodeSpread = IS_MOBILE ? 15 : 30;
 
     for(let i = 0; i < nodeCount; i++) {
-        const x = (Math.random() - 0.5) * 30;
-        const y = (Math.random() - 0.5) * 30;
-        const z = (Math.random() - 0.5) * 15;
+        const x = (Math.random() - 0.5) * nodeSpread;
+        const y = (Math.random() - 0.5) * nodeSpread;
+        const z = (Math.random() - 0.5) * (IS_MOBILE ? 8 : 15);
         nodePositions[i*3] = x;
         nodePositions[i*3+1] = y;
         nodePositions[i*3+2] = z;
@@ -164,8 +169,8 @@
     networkGroup.add(lines);
 
     // --- Layer 3: Subtle Grid Base ---
-    const gridHelper = new THREE.GridHelper(60, 40, 0xe2e8f0, 0xf1f5f9);
-    gridHelper.position.y = -8;
+    const gridHelper = new THREE.GridHelper(IS_MOBILE ? 30 : 60, IS_MOBILE ? 20 : 40, 0xe2e8f0, 0xf1f5f9);
+    gridHelper.position.y = IS_MOBILE ? -4 : -8;
     // Add a slight rotation for dynamic feel
     gridHelper.rotation.x = Math.PI / 2 * 0.1; 
     bgGroup.add(gridHelper);
@@ -176,8 +181,8 @@
     let targetX = 0;
     let targetY = 0;
 
-    const windowHalfX = window.innerWidth / 2;
-    const windowHalfY = window.innerHeight / 2;
+    let windowHalfX = window.innerWidth / 2;
+    let windowHalfY = window.innerHeight / 2;
 
     document.addEventListener('mousemove', (event) => {
         mouseX = (event.clientX - windowHalfX);
@@ -188,7 +193,7 @@
     if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
         // Fly camera through the scene
         gsap.to(camera.position, {
-            z: 2, // Move camera deeper into the particles
+            z: IS_MOBILE ? 4 : 2, // Move camera deeper into the particles
             ease: "none",
             scrollTrigger: {
                 trigger: document.documentElement,
@@ -200,7 +205,7 @@
 
         // Create a timeline that scrubs with scroll
         gsap.to(bgGroup.position, {
-            y: 15, // Large parallax movement
+            y: IS_MOBILE ? 8 : 15, // Parallax movement (smaller on mobile)
             ease: "none",
             scrollTrigger: {
                 trigger: document.documentElement,
@@ -295,8 +300,8 @@
             z += nodeData[i].velocity.z;
             
             // Bounds check
-            if(x < -15 || x > 15) nodeData[i].velocity.x *= -1;
-            if(y < -15 || y > 15) nodeData[i].velocity.y *= -1;
+            if(x < -nodeSpread/2 || x > nodeSpread/2) nodeData[i].velocity.x *= -1;
+            if(y < -nodeSpread/2 || y > nodeSpread/2) nodeData[i].velocity.y *= -1;
             if(z < -10 || z > 10) nodeData[i].velocity.z *= -1;
 
             positions[ i * 3 ] = x;
@@ -350,6 +355,8 @@
         camera.aspect = window.innerWidth / window.innerHeight;
         camera.updateProjectionMatrix();
         renderer.setSize(window.innerWidth, window.innerHeight);
+        windowHalfX = window.innerWidth / 2;
+        windowHalfY = window.innerHeight / 2;
     });
 
 })();

@@ -121,7 +121,7 @@
 
 <!-- Header -->
 <header id="navbar" style="position:fixed;top:0;left:0;width:100%;z-index:9999;padding:16px 0;transform:translateY(-120%);transition:transform 0.45s cubic-bezier(0.16,1,0.3,1);">
-  <div style="max-width:1280px;margin:0 auto;padding:0 24px;">
+  <div style="max-width:1280px;margin:0 auto;padding:0 24px;"><div id="mobile-menu-backdrop" onclick="toggleMobileMenu()"></div>
     <div id="nav-wrapper" style="display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,0.85);border:1px solid rgba(255,255,255,0.6);box-shadow:0 4px 32px rgba(2,6,23,0.08);border-radius:9999px;height:60px;padding:0 24px;">
       <a href="index.html" style="display:flex;align-items:center;">
         <img src="assets/logo.png" alt="Digital Advertise Logo" style="height:32px;width:auto;object-fit:contain;">
@@ -129,7 +129,7 @@
       <nav style="display:none;" id="desktop-nav">
         <a href="index.html">Home</a>
         <div class="nav-dropdown">
-          <a href="services.html">Services ▾</a>
+          <a href="services.html" style="display:inline-flex;align-items:center;gap:4px;">Services <i data-lucide="chevron-down" class="w-3 h-3"></i></a>
           <div class="nav-dropdown-menu">
             <a href="social-media.html">Social Media Marketing</a>
             <a href="performance-marketing.html">Performance Marketing</a>
@@ -149,22 +149,31 @@
       </nav>
       <div style="display:flex;align-items:center;gap:8px;">
         <a href="audit.html" style="display:inline-flex;align-items:center;gap:6px;background:#000000;color:#fff;font-weight:600;font-size:14px;padding:10px 20px;border-radius:9999px;text-decoration:none;transition:background 0.2s;">
-          Get Started ↗
-        </a>
-        <button onclick="toggleMobileMenu()" id="hamburger-btn" style="display:none;padding:8px;border-radius:9999px;border:none;background:transparent;cursor:pointer;">
-          ☰
-        </button>
+          Get Started <i data-lucide="arrow-up-right" class="w-4 h-4"></i></a>
+        <button onclick="toggleMobileMenu()" id="hamburger-btn" style="display:none;padding:6px;border-radius:9999px;border:none;background:transparent;cursor:pointer;"><i data-lucide="menu" id="menu-icon" class="w-6 h-6" style="color:#000;display:block;"></i></button>
       </div>
     </div>
-    <div id="mobile-menu" style="display:none;margin-top:12px;background:rgba(255,255,255,0.95);border-radius:20px;padding:20px;flex-direction:column;gap:8px;">
-      <a href="index.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Home</a>
-      <a href="services.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Services</a>
-      <a href="portfolio.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Portfolio</a>
-      <a href="case-studies.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Case Studies</a>
-      <a href="blog.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Blog</a>
-      <a href="contact.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Contact</a>
-      <a href="about.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">About Us</a>
-      <a href="audit.html" style="margin-top:8px;padding:12px;background:#000000;color:#fff;font-weight:600;border-radius:9999px;text-decoration:none;display:block;text-align:center;">Get Started</a>
+    <div id="mobile-menu" style="display:none;margin-top:12px;background:#ffffff;border-radius:20px;padding:20px;flex-direction:column;gap:8px;">
+      <a href="index.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:flex;align-items:center;">Home</a>
+      <div style="display:flex;flex-direction:column;">
+        <div class="mobile-services-row" style="display:flex;align-items:center;justify-content:flex-start;gap:0;"><a href="services.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;flex:0 0 auto;width:auto;">Services</a><button type="button" onclick="event.stopPropagation();event.preventDefault();toggleMobileServices()" aria-label="Toggle Services submenu"><i data-lucide="chevron-down" class="w-3 h-3" id="mobile-services-chevron"></i></button></div>
+        <div id="mobile-services-submenu">
+          <a href="social-media.html">Social Media Marketing</a>
+          <a href="performance-marketing.html">Performance Marketing</a>
+          <a href="brand-identity.html">Brand Identity</a>
+          <a href="web-development.html">Website Development</a>
+          <a href="video-production.html">Video Production</a>
+          <a href="ai-video.html">AI Video Generation</a>
+          <a href="packaging.html">Product Packaging Design</a>
+          <a href="photography.html">Product Shoot</a>
+        </div>
+      </div>
+      <a href="portfolio.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:flex;align-items:center;">Portfolio</a>
+      <a href="case-studies.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:flex;align-items:center;">Case Studies</a>
+      <a href="blog.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:flex;align-items:center;">Blog</a>
+      <a href="contact.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:flex;align-items:center;">Contact</a>
+      <a href="about.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:flex;align-items:center;">About Us</a>
+      <a href="audit.html" style="margin-top:8px;padding:12px;background:#0f172a;color:#fff;font-weight:600;border-radius:9999px;text-decoration:none;display:block;text-align:center;">Get Started <i data-lucide="arrow-up-right" class="w-4 h-4"></i></a>
     </div>
   </div>
 </header>
@@ -231,7 +240,6 @@
                         <div class="p-6 flex-1 flex flex-col justify-between text-left">
                             <div>
                                 <div class="flex items-center gap-3 text-[11px] text-slate-400 font-semibold uppercase">
-                                    <span>Marketing</span>
                                     <span>·</span>
                                     <span>5 min read</span>
                                 </div>
@@ -380,14 +388,104 @@
                         </div>
                     </article>
 
+                    <!-- Post 6: Digital Marketing Trends -->
+                    <article class="blog-card group bg-black border border-white/10 rounded-3xl overflow-hidden hover:border-white hover:shadow-xl transition-all duration-300 flex flex-col justify-between" data-cat="marketing">
+                        <div class="h-48 overflow-hidden bg-slate-900 relative">
+                            <img src="assets/Images web/blog (6).jpeg" alt="Top 10 Digital Marketing Trends 2026 blog cover" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute top-4 right-4 bg-slate-950/80 rounded-xl p-2 border border-white/10 flex items-center gap-2">
+                                <span class="text-[9px] font-bold text-white/60 font-mono">2026 Trends</span>
+                                <i data-lucide="trending-up" class="w-2.5 h-2.5 text-white/60"></i>
+                            </div>
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col justify-between text-left">
+                            <div>
+                                <div class="flex items-center gap-3 text-[11px] text-slate-400 font-semibold uppercase">
+                                    <span>Digital Marketing</span>
+                                    <span>·</span>
+                                    <span>6 min read</span>
+                                </div>
+                                <h3 class="font-display text-xl font-bold text-white mt-3 group-hover:text-white transition-colors">Top 10 Digital Marketing Trends Every Business Must Follow in 2026</h3>
+                                <p class="mt-2 text-white/60 text-[13px] leading-relaxed">Stay ahead of the competition by exploring the latest digital marketing trends, including AI automation, short-form video content, voice search optimization, and AI-powered advertising.</p>
+                            </div>
+                            <div class="mt-6 pt-5 border-t border-white/5 flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-6 h-6 rounded-full bg-black/5 font-bold text-[10px] flex items-center justify-center">SS</span>
+                                    <span class="text-[12px] text-white/70 font-medium">Sunil Sharma</span>
+                                </div>
+                                <a href="digital-marketing-trends-2026.html" class="inline-flex items-center gap-1.5 text-[12px] font-semibold text-white group-hover:text-white">
+                                    Read Post <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
                 </div>
             </div>
         </section>
 
     </main>
+    
 
-    <!-- Footer -->
-    <footer class="relative bg-slate-950 text-white pt-20 md:pt-28 pb-10 overflow-hidden">
+<!-- ===== FAQ ===== -->
+<section class="relative section-spacing bg-[#0A0A0A]">
+    <div class="max-w-3xl mx-auto px-6 md:px-10">
+        <div class="text-center mb-16">
+            <div class="overline-label reveal">FAQ</div>
+            <h2 class="mt-3 font-display text-3xl sm:text-5xl font-extrabold tracking-tighter text-white text-reveal">
+                Frequently asked questions
+            </h2>
+        </div>
+        <div class="space-y-4">
+            <div class="bg-black rounded-2xl border border-white/5 overflow-hidden reveal">
+                <button class="faq-btn w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-display font-bold text-white text-[15px]">
+                    How often do you publish new marketing insights?
+                    <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 shrink-0 transition-transform duration-300"></i>
+                </button>
+                <div class="faq-answer px-6 pb-5 text-white/70 text-[15px] leading-relaxed">
+                    We publish in-depth case studies, marketing trends, and technical SEO guides on a weekly basis. Subscribe to our newsletter to never miss an update.
+                </div>
+            </div>
+            <div class="bg-black rounded-2xl border border-white/5 overflow-hidden reveal">
+                <button class="faq-btn w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-display font-bold text-white text-[15px]">
+                    Can we guest post on your blog?
+                    <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 shrink-0 transition-transform duration-300"></i>
+                </button>
+                <div class="faq-answer px-6 pb-5 text-white/70 text-[15px] leading-relaxed">
+                    We occasionally accept high-quality guest contributions from industry experts. Your content must be data-driven and strictly relevant to digital advertising or design.
+                </div>
+            </div>
+            <div class="bg-black rounded-2xl border border-white/5 overflow-hidden reveal">
+                <button class="faq-btn w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-display font-bold text-white text-[15px]">
+                    How do you stay updated with algorithm changes?
+                    <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 shrink-0 transition-transform duration-300"></i>
+                </button>
+                <div class="faq-answer px-6 pb-5 text-white/70 text-[15px] leading-relaxed">
+                    Our dedicated research team monitors daily updates from Google, Meta, and TikTok. We test algorithm hypotheses in real-time across our client portfolios.
+                </div>
+            </div>
+            <div class="bg-black rounded-2xl border border-white/5 overflow-hidden reveal">
+                <button class="faq-btn w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-display font-bold text-white text-[15px]">
+                    Do you offer content marketing services?
+                    <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 shrink-0 transition-transform duration-300"></i>
+                </button>
+                <div class="faq-answer px-6 pb-5 text-white/70 text-[15px] leading-relaxed">
+                    Yes, we provide end-to-end content marketing services, including SEO strategy, copywriting, and distribution. We handle everything from editorial calendars to publishing.
+                </div>
+            </div>
+            <div class="bg-black rounded-2xl border border-white/5 overflow-hidden reveal">
+                <button class="faq-btn w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-display font-bold text-white text-[15px]">
+                    Can I request a specific topic for your next article?
+                    <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 shrink-0 transition-transform duration-300"></i>
+                </button>
+                <div class="faq-answer px-6 pb-5 text-white/70 text-[15px] leading-relaxed">
+                    Absolutely. We love hearing from our readers. Use the contact form to suggest topics around performance marketing, branding, or AI video generation.
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="relative bg-slate-950 text-white pt-20 md:pt-28 pb-10 overflow-hidden">
         <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] h-[400px] rounded-full bg-gray-1000/10 pointer-events-none"></div>
         <div class="relative max-w-7xl mx-auto px-6 md:px-10">
             <div class="grid lg:grid-cols-12 gap-12 mb-14 text-left">
@@ -407,7 +505,7 @@
                         <ul class="space-y-2.5">
                             <li><a href="index.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Home</a> </li>
                             <li><a href="about.html" class="text-[14px] text-white/80 hover:text-white transition-colors">About Us</a></li>
-                            <li><a href="services.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Services</a></li>
+                            <li><a href="services.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Services <i data-lucide="chevron-down" class="w-3 h-3"></i></a></li>
                             <li><a href="portfolio.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Portfolio</a></li>
                             <li><a href="case-studies.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Case Studies</a></li>
                             <li><a href="blog.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Blog</a></li>

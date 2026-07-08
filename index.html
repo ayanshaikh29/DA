@@ -51,12 +51,12 @@
 <!-- ===================================================
       HERO SCROLLYTELLING STYLES
       ===================================================
-      The outer #hero-scroll-wrapper is 600vh tall â€” this
+      The outer #hero-scroll-wrapper is 600vh tall — this
       drives 5 scenes worth of scroll progress while
       #hero-section stays visually pinned at 100vh.
       =================================================== -->
 <style>
-/* â”€â”€ Reset / Base â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Reset / Base ─────────────────────────────────────── */
 
 /* -- Scroll wrapper (600vh tall driving scrollytelling) -- */
 #hero-scroll-wrapper {
@@ -80,7 +80,7 @@
     isolation: isolate;
 }
 
-/* â”€â”€ Three.js canvas fills the hero â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Three.js canvas fills the hero ──────────────────── */
 #hero-threejs-canvas {
     position: absolute;
     inset: 0;
@@ -90,7 +90,7 @@
     display: block;
 }
 
-/* â”€â”€ Scene overlays â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Scene overlays ───────────────────────────────────── */
 .hero-scene-overlay {
     position: absolute;
     left: 9vw;
@@ -164,13 +164,13 @@
     }
 }
 
-/* â”€â”€ Neon glow text â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Neon glow text ───────────────────────────────────── */
 .text-neon-glow {
     text-shadow: 0 0 35px rgba(56,189,248,0.45),
                  0 0 70px rgba(56,189,248,0.2);
 }
 
-/* â”€â”€ Glass CTA buttons â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Glass CTA buttons ────────────────────────────────── */
 .spatial-glow-btn {
     pointer-events: auto;
     background: rgba(37,99,235,0.15);
@@ -192,7 +192,7 @@
     transform: translateY(-3px);
 }
 
-/* â”€â”€ Metric panels (S4) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Metric panels (S4) ───────────────────────────────── */
 .metrics-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -219,7 +219,7 @@
     transform: translateY(-4px);
 }
 
-/* â”€â”€ Scroll indicator â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Scroll indicator ─────────────────────────────────── */
 #scroll-cue {
     position: absolute;
     bottom: 36px;
@@ -251,7 +251,7 @@
     100% { transform: scaleY(0); transform-origin: bottom; }
 }
 
-/* â”€â”€ Scene progress dots â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Scene progress dots ──────────────────────────────── */
 #hero-scene-dots {
     position: absolute;
     right: 28px;
@@ -277,7 +277,7 @@
     transform: scale(1.4);
 }
 
-/* â”€â”€ Reduced-motion: show S1 statically, hide scroll magic â”€â”€ */
+/* ── Reduced-motion: show S1 statically, hide scroll magic ── */
 @media (prefers-reduced-motion: reduce) {
     #hero-scroll-wrapper { height: 100vh; }
     #hero-section { position: relative; }
@@ -286,7 +286,7 @@
     #hero-scene-dots { display: none; }
 }
 
-/* â”€â”€ Mobile layout tweaks â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Mobile layout tweaks ─────────────────────────────── */
 @media (max-width: 768px) {
     .hero-scene-overlay h1 { font-size: clamp(1.8rem, 8vw, 3rem); }
     .hero-scene-overlay h2 { font-size: clamp(1.5rem, 6vw, 2.5rem); }
@@ -395,12 +395,8 @@
 <div id="hero-scroll-wrapper">
 
 <!-- ===== HERO (Sticky 100vh) ===== -->
-<section id="hero-section" class="relative overflow-hidden" aria-label="Digital Advertise â€” Hero">
-<div class="bubble bubble-1" aria-hidden="true"></div>
-<div class="bubble bubble-2" aria-hidden="true"></div>
-<div class="bubble bubble-3" aria-hidden="true"></div>
-
-    <!-- Three.js Canvas -->
+<section id="hero-section" class="relative overflow-hidden" aria-label="Digital Advertise — Hero">
+<!-- Three.js Canvas -->
     <canvas id="hero-threejs-canvas" aria-hidden="true"></canvas>
 
     <!-- Scene Progress Dots -->
@@ -410,7 +406,7 @@
         <div class="scene-dot" id="dot-2"></div>
     </nav>
 
-    <!-- SCENE 1 OVERLAY â€” Boost Your Brand -->
+    <!-- SCENE 1 OVERLAY — Boost Your Brand -->
     <div id="hero-overlay-s1" class="hero-scene-overlay active-scene">
         <h1 class="outline-title">TURNING</h1>
         <h1 class="fill-title">TRAFFIC</h1>
@@ -426,7 +422,7 @@
         </a>
     </div>
 
-    <!-- SCENE 2 OVERLAY â€” Precision Targeting -->
+    <!-- SCENE 2 OVERLAY — Precision Targeting -->
     <div id="hero-overlay-s2" class="hero-scene-overlay">
         <p class="text-[#38BDF8] font-display font-light text-xs sm:text-sm uppercase tracking-[0.45em] mb-4">
             PRECISION TARGETING
@@ -434,11 +430,11 @@
         <h2 class="outline-title leading-none text-[clamp(38px,6.4vw,96px)]">MARKETING</h2>
         <h3 class="fill-title leading-none text-[clamp(18px,2.5vw,32px)]">IS AN ECOSYSTEM</h3>
         <p class="text-white/60 font-body text-sm sm:text-base max-w-md mt-4 leading-relaxed">
-            Zero waste reach â€” every rupee targets the right person, at the right moment, on the right platform.
+            Zero waste reach — every rupee targets the right person, at the right moment, on the right platform.
         </p>
     </div>
 
-    <!-- SCENE 3 OVERLAY â€” Solutions -->
+    <!-- SCENE 3 OVERLAY — Solutions -->
     <div id="hero-overlay-s3" class="hero-scene-overlay">
         <p class="text-[#38BDF8] font-display font-light text-xs sm:text-sm uppercase tracking-[0.45em] mb-4">
             GLOBAL REACH
@@ -472,7 +468,7 @@
 
 <!-- Header -->
 <header id="navbar" style="position:fixed;top:0;left:0;width:100%;z-index:9999;padding:16px 0;transform:translateY(-120%);transition:transform 0.45s cubic-bezier(0.16,1,0.3,1);">
-  <div style="max-width:1280px;margin:0 auto;padding:0 24px;">
+  <div style="max-width:1280px;margin:0 auto;padding:0 24px;"><div id="mobile-menu-backdrop" onclick="toggleMobileMenu()"></div>
     <div id="nav-wrapper" style="display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,0.85);border:1px solid rgba(255,255,255,0.6);box-shadow:0 4px 32px rgba(2,6,23,0.08);border-radius:9999px;height:60px;padding:0 24px;">
       <a href="index.html" style="display:flex;align-items:center;">
         <img src="assets/logo.png" alt="Digital Advertise Logo" style="height:32px;width:auto;object-fit:contain;">
@@ -480,7 +476,7 @@
       <nav style="display:none;" id="desktop-nav">
         <a href="index.html">Home</a>
         <div class="nav-dropdown">
-          <a href="services.html">Services â–¾</a>
+          <a href="services.html" style="display:inline-flex;align-items:center;gap:4px;">Services <i data-lucide="chevron-down" class="w-3 h-3"></i></a>
           <div class="nav-dropdown-menu">
             <a href="social-media.html">Social Media Marketing</a>
             <a href="performance-marketing.html">Performance Marketing</a>
@@ -499,23 +495,32 @@
         <a href="about.html">About Us</a>
       </nav>
       <div style="display:flex;align-items:center;gap:8px;">
-        <a href="audit.html" style="display:inline-flex;align-items:center;gap:6px;background:#0f172a;color:#fff;font-weight:600;font-size:14px;padding:10px 20px;border-radius:9999px;text-decoration:none;transition:background 0.2s;">
-          Get Started â†—
-        </a>
-        <button onclick="toggleMobileMenu()" id="hamburger-btn" style="display:none;padding:8px;border-radius:9999px;border:none;background:transparent;cursor:pointer;">
-          â˜°
-        </button>
+        <a href="audit.html" style="display:inline-flex;align-items:center;gap:6px;background:#000000;color:#fff;font-weight:600;font-size:14px;padding:10px 20px;border-radius:9999px;text-decoration:none;transition:background 0.2s;">
+          Get Started <i data-lucide="arrow-up-right" class="w-4 h-4"></i></a>
+        <button onclick="toggleMobileMenu()" id="hamburger-btn" style="display:none;padding:6px;border-radius:9999px;border:none;background:transparent;cursor:pointer;"><i data-lucide="menu" id="menu-icon" class="w-6 h-6" style="color:#000;display:block;"></i></button>
       </div>
     </div>
-    <div id="mobile-menu" style="display:none;margin-top:12px;background:rgba(255,255,255,0.95);border-radius:20px;padding:20px;flex-direction:column;gap:8px;">
-      <a href="index.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Home</a>
-      <a href="services.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Services</a>
-      <a href="portfolio.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Portfolio</a>
-      <a href="case-studies.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Case Studies</a>
-      <a href="blog.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Blog</a>
-      <a href="contact.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Contact</a>
-      <a href="about.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">About Us</a>
-      <a href="audit.html" style="margin-top:8px;padding:12px;background:#0f172a;color:#fff;font-weight:600;border-radius:9999px;text-decoration:none;display:block;text-align:center;">Get Started</a>
+    <div id="mobile-menu" style="display:none;margin-top:12px;background:#ffffff;border-radius:20px;padding:20px;flex-direction:column;gap:8px;">
+      <a href="index.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:flex;align-items:center;">Home</a>
+      <div style="display:flex;flex-direction:column;">
+        <div class="mobile-services-row" style="display:flex;align-items:center;justify-content:flex-start;gap:0;"><a href="services.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;flex:0 0 auto;width:auto;">Services</a><button type="button" onclick="event.stopPropagation();event.preventDefault();toggleMobileServices()" aria-label="Toggle Services submenu"><i data-lucide="chevron-down" class="w-3 h-3" id="mobile-services-chevron"></i></button></div>
+        <div id="mobile-services-submenu">
+          <a href="social-media.html">Social Media Marketing</a>
+          <a href="performance-marketing.html">Performance Marketing</a>
+          <a href="brand-identity.html">Brand Identity</a>
+          <a href="web-development.html">Website Development</a>
+          <a href="video-production.html">Video Production</a>
+          <a href="ai-video.html">AI Video Generation</a>
+          <a href="packaging.html">Product Packaging Design</a>
+          <a href="photography.html">Product Shoot</a>
+        </div>
+      </div>
+      <a href="portfolio.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:flex;align-items:center;">Portfolio</a>
+      <a href="case-studies.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:flex;align-items:center;">Case Studies</a>
+      <a href="blog.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:flex;align-items:center;">Blog</a>
+      <a href="contact.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:flex;align-items:center;">Contact</a>
+      <a href="about.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:flex;align-items:center;">About Us</a>
+      <a href="audit.html" style="margin-top:8px;padding:12px;background:#0f172a;color:#fff;font-weight:600;border-radius:9999px;text-decoration:none;display:block;text-align:center;">Get Started <i data-lucide="arrow-up-right" class="w-4 h-4"></i></a>
     </div>
   </div>
 </header>
@@ -528,26 +533,57 @@
   overflow: hidden;
   padding: 24px 0;
   background: #000000;
+  border: none !important;
+  box-shadow: none !important;
+  outline: 1px solid transparent !important;
+  margin: 0;
+  line-height: 0;
+  font-size: 0;
+  -webkit-transform: translateZ(0) !important;
+  transform: translate3d(0, 0, 0) !important;
+  -webkit-backface-visibility: hidden !important;
+  backface-visibility: hidden !important;
+  will-change: transform !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+}
+.partner-marquee-wrap::before,
+.partner-marquee-wrap::after {
+  display: none !important;
+  content: none !important;
 }
 .partner-marquee-track {
   display: flex;
+  flex-wrap: nowrap;
   gap: 16px;
   flex-shrink: 0;
   width: max-content;
+  white-space: nowrap;
+  -webkit-transform: translateZ(0) !important;
+  transform: translate3d(0, 0, 0) !important;
+  -webkit-backface-visibility: hidden !important;
+  backface-visibility: hidden !important;
 }
 .partner-marquee-item {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  width: 140px;
-  height: 70px;
+  width: 112px;
+  height: 48px;
   background: #111111;
   border: 1px solid rgba(255,255,255,0.08);
   border-radius: 10px;
-  padding: 16px 20px;
+  padding: 12px 14px;
   flex-shrink: 0;
   transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+@media (min-width: 768px) {
+  .partner-marquee-item {
+    width: 160px;
+    height: 70px;
+    padding: 16px 20px;
+  }
 }
 .partner-marquee-item:hover {
   border-color: rgba(255,255,255,0.15);
@@ -557,6 +593,11 @@
   width: 28px;
   height: 28px;
   flex-shrink: 0;
+  display: block !important;
+  -webkit-transform: translateZ(0) !important;
+  transform: translate3d(0, 0, 0) !important;
+  -webkit-backface-visibility: hidden !important;
+  backface-visibility: hidden !important;
 }
 .partner-marquee-item span {
   font-family: 'Outfit', sans-serif;
@@ -571,76 +612,93 @@
 }
 .partner-marquee-anim {
   animation: partnerScroll 25s linear infinite;
+  -webkit-transform: translateZ(0) !important;
+  transform: translate3d(0, 0, 0) !important;
+  -webkit-backface-visibility: hidden !important;
+  backface-visibility: hidden !important;
+  will-change: transform !important;
 }
 .partner-marquee-anim:hover {
   animation-play-state: paused;
 }
 </style>
-<div class="partner-marquee-wrap">
-  <div class="partner-marquee-anim" style="display:flex;gap:16px;width:max-content;">
-    <!-- Track 1 -->
-    <div class="partner-marquee-item">
+<div id="logo-view-marquee" class="partner-marquee-wrap w-full overflow-hidden relative select-none">
+  <!-- Gradient Overlays for smooth fade edges -->
+  <div class="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-black to-transparent z-10"></div>
+  <div class="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-black to-transparent z-10"></div>
+
+  <!-- Moving Track (Enforces single row, no wrapping) -->
+  <div class="partner-marquee-anim flex flex-row flex-nowrap gap-4 md:gap-8 whitespace-nowrap" style="width:max-content;">
+    <!-- Logo Item 1 -->
+    <div class="partner-marquee-item flex-shrink-0 w-28 md:w-40 h-12 flex items-center justify-center">
       <svg viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
       <span>Google</span>
     </div>
-    <div class="partner-marquee-item">
+    <!-- Logo Item 2 -->
+    <div class="partner-marquee-item flex-shrink-0 w-28 md:w-40 h-12 flex items-center justify-center">
       <svg viewBox="0 0 24 24" fill="none"><path d="M24 12c0-6.627-5.373-12-12-12S0 5.373 0 12c0 5.99 4.388 10.954 10.125 11.854V15.47H7.078V12h3.047V9.356c0-3.007 1.792-4.668 4.533-4.668 1.312 0 2.686.234 2.686.234v2.953H15.83c-1.491 0-1.956.925-1.956 1.875V12h3.328l-.532 3.469h-2.796v8.385C19.612 22.954 24 17.99 24 12z" fill="#1877F2"/></svg>
       <span>Meta</span>
     </div>
-    <div class="partner-marquee-item">
+    <!-- Logo Item 3 -->
+    <div class="partner-marquee-item flex-shrink-0 w-28 md:w-40 h-12 flex items-center justify-center">
       <svg viewBox="0 0 24 24" fill="none"><path d="M15.337 23.979l7.216-7.216v-3.664l-7.216 7.216v3.664zM14.337 22.979l5.216-5.216v-1.664l-5.216 5.216v1.664zM6.5 23.5l8-8V3l-8 8v12.5z" fill="#95BF47"/><path d="M20.5 0H3.5C1.567 0 0 1.567 0 3.5v17c0 1.933 1.567 3.5 3.5 3.5h17c1.933 0 3.5-1.567 3.5-3.5v-17C24 1.567 22.433 0 20.5 0z" fill="#5E8E3E" opacity="0.2"/></svg>
       <span>Shopify</span>
     </div>
-    <div class="partner-marquee-item">
+    <!-- Logo Item 4 -->
+    <div class="partner-marquee-item flex-shrink-0 w-28 md:w-40 h-12 flex items-center justify-center">
       <svg viewBox="0 0 24 24" fill="none"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .55.04.81.11v-3.5a6.37 6.37 0 00-.81-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 0010.86 4.48V13.2a8.16 8.16 0 004.77 1.52v-3.44a4.85 4.85 0 01-.81-.07 4.8 4.8 0 01-.81-.52z" fill="#000000"/></svg>
       <span>TikTok</span>
     </div>
-    <div class="partner-marquee-item">
+    <!-- Logo Item 5 -->
+    <div class="partner-marquee-item flex-shrink-0 w-28 md:w-40 h-12 flex items-center justify-center">
       <svg viewBox="0 0 24 24" fill="none"><path d="M24 12c0-6.627-5.373-12-12-12S0 5.373 0 12c0 5.99 4.388 10.954 10.125 11.854V15.47H7.078V12h3.047V9.356c0-3.007 1.792-4.668 4.533-4.668 1.312 0 2.686.234 2.686.234v2.953H15.83c-1.491 0-1.956.925-1.956 1.875V12h3.328l-.532 3.469h-2.796v8.385C19.612 22.954 24 17.99 24 12z" fill="#FF7A59"/></svg>
       <span>HubSpot</span>
     </div>
-    <div class="partner-marquee-item">
+    <!-- Logo Item 6 -->
+    <div class="partner-marquee-item flex-shrink-0 w-28 md:w-40 h-12 flex items-center justify-center">
       <svg viewBox="0 0 24 24" fill="none"><path d="M11.4 24H0V12.6L11.4 24ZM24 24H12.6V12.6L24 24ZM11.4 11.4H0V0L11.4 11.4ZM24 11.4H12.6V0L24 11.4Z" fill="#F25022"/></svg>
       <span>Microsoft</span>
     </div>
-    <div class="partner-marquee-item">
+    <!-- Logo Item 7 -->
+    <div class="partner-marquee-item flex-shrink-0 w-28 md:w-40 h-12 flex items-center justify-center">
       <svg viewBox="0 0 24 24" fill="none"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.546 12 3.546 12 3.546s-7.505 0-9.377.504A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.504 9.376.504 9.376.504s7.505 0 9.377-.504a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814z" fill="#FF0000"/><path d="M9.545 15.568V8.432L15.818 12l-6.273 3.568z" fill="#FFFFFF"/></svg>
       <span>YouTube</span>
     </div>
-    <div class="partner-marquee-item">
+    <!-- Logo Item 8 -->
+    <div class="partner-marquee-item flex-shrink-0 w-28 md:w-40 h-12 flex items-center justify-center">
       <svg viewBox="0 0 24 24" fill="none"><path d="M21.5 12c0-5.243-4.257-9.5-9.5-9.5S2.5 6.757 2.5 12s4.257 9.5 9.5 9.5 9.5-4.257 9.5-9.5zm-9.5-7.5c4.142 0 7.5 3.358 7.5 7.5s-3.358 7.5-7.5 7.5S4.5 16.142 4.5 12 7.858 4.5 12 4.5z" fill="#21759B"/><circle cx="12" cy="12" r="3" fill="#21759B"/></svg>
       <span>WordPress</span>
     </div>
-    <!-- Duplicate Track for seamless loop -->
-    <div class="partner-marquee-item">
+    <!-- Duplicate Set for Seamless Loop -->
+    <div class="partner-marquee-item flex-shrink-0 w-28 md:w-40 h-12 flex items-center justify-center">
       <svg viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
       <span>Google</span>
     </div>
-    <div class="partner-marquee-item">
+    <div class="partner-marquee-item flex-shrink-0 w-28 md:w-40 h-12 flex items-center justify-center">
       <svg viewBox="0 0 24 24" fill="none"><path d="M24 12c0-6.627-5.373-12-12-12S0 5.373 0 12c0 5.99 4.388 10.954 10.125 11.854V15.47H7.078V12h3.047V9.356c0-3.007 1.792-4.668 4.533-4.668 1.312 0 2.686.234 2.686.234v2.953H15.83c-1.491 0-1.956.925-1.956 1.875V12h3.328l-.532 3.469h-2.796v8.385C19.612 22.954 24 17.99 24 12z" fill="#1877F2"/></svg>
       <span>Meta</span>
     </div>
-    <div class="partner-marquee-item">
+    <div class="partner-marquee-item flex-shrink-0 w-28 md:w-40 h-12 flex items-center justify-center">
       <svg viewBox="0 0 24 24" fill="none"><path d="M15.337 23.979l7.216-7.216v-3.664l-7.216 7.216v3.664zM14.337 22.979l5.216-5.216v-1.664l-5.216 5.216v1.664zM6.5 23.5l8-8V3l-8 8v12.5z" fill="#95BF47"/></svg>
       <span>Shopify</span>
     </div>
-    <div class="partner-marquee-item">
+    <div class="partner-marquee-item flex-shrink-0 w-28 md:w-40 h-12 flex items-center justify-center">
       <svg viewBox="0 0 24 24" fill="none"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .55.04.81.11v-3.5a6.37 6.37 0 00-.81-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 0010.86 4.48V13.2a8.16 8.16 0 004.77 1.52v-3.44a4.85 4.85 0 01-.81-.07 4.8 4.8 0 01-.81-.52z" fill="#000000"/></svg>
       <span>TikTok</span>
     </div>
-    <div class="partner-marquee-item">
+    <div class="partner-marquee-item flex-shrink-0 w-28 md:w-40 h-12 flex items-center justify-center">
       <svg viewBox="0 0 24 24" fill="none"><path d="M24 12c0-6.627-5.373-12-12-12S0 5.373 0 12c0 5.99 4.388 10.954 10.125 11.854V15.47H7.078V12h3.047V9.356c0-3.007 1.792-4.668 4.533-4.668 1.312 0 2.686.234 2.686.234v2.953H15.83c-1.491 0-1.956.925-1.956 1.875V12h3.328l-.532 3.469h-2.796v8.385C19.612 22.954 24 17.99 24 12z" fill="#FF7A59"/></svg>
       <span>HubSpot</span>
     </div>
-    <div class="partner-marquee-item">
+    <div class="partner-marquee-item flex-shrink-0 w-28 md:w-40 h-12 flex items-center justify-center">
       <svg viewBox="0 0 24 24" fill="none"><path d="M11.4 24H0V12.6L11.4 24ZM24 24H12.6V12.6L24 24ZM11.4 11.4H0V0L11.4 11.4ZM24 11.4H12.6V0L24 11.4Z" fill="#F25022"/></svg>
       <span>Microsoft</span>
     </div>
-    <div class="partner-marquee-item">
+    <div class="partner-marquee-item flex-shrink-0 w-28 md:w-40 h-12 flex items-center justify-center">
       <svg viewBox="0 0 24 24" fill="none"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.546 12 3.546 12 3.546s-7.505 0-9.377.504A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.504 9.376.504 9.376.504s7.505 0 9.377-.504a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814z" fill="#FF0000"/><path d="M9.545 15.568V8.432L15.818 12l-6.273 3.568z" fill="#FFFFFF"/></svg>
       <span>YouTube</span>
     </div>
-    <div class="partner-marquee-item">
+    <div class="partner-marquee-item flex-shrink-0 w-28 md:w-40 h-12 flex items-center justify-center">
       <svg viewBox="0 0 24 24" fill="none"><path d="M21.5 12c0-5.243-4.257-9.5-9.5-9.5S2.5 6.757 2.5 12s4.257 9.5 9.5 9.5 9.5-4.257 9.5-9.5zm-9.5-7.5c4.142 0 7.5 3.358 7.5 7.5s-3.358 7.5-7.5 7.5S4.5 16.142 4.5 12 7.858 4.5 12 4.5z" fill="#21759B"/><circle cx="12" cy="12" r="3" fill="#21759B"/></svg>
       <span>WordPress</span>
     </div>
@@ -651,9 +709,6 @@
      
 <!-- ===== SECTION 2: PARTNER & CERTIFICATION SECTION ===== -->
 <section class="relative py-16 md:py-24 bg-black overflow-hidden">
-<div class="bubble bubble-4" aria-hidden="true"></div>
-<div class="bubble bubble-5" aria-hidden="true"></div>
-<div class="bubble bubble-6" aria-hidden="true"></div>
 <div class="absolute -top-20 -right-20 w-[420px] h-[420px] rounded-full bg-indigo-900/10 pointer-events-none"></div>
 <div class="max-w-7xl mx-auto px-6 md:px-10">
 <div class="grid lg:grid-cols-12 gap-12 items-center">
@@ -792,7 +847,7 @@
 </div>
 <p class="mt-4 text-slate-600 text-[14px] sm:text-base font-medium">                                Delivered across 1000+ Global Clients.                            </p>
 <div                                class="mt-8 pt-6 border-t border-slate-100 flex items-center justify-between text-[12px] text-slate-400 font-semibold uppercase tracking-wider">
-<span>Platform data Â· 2026</span>
+<span>Platform data · 2026</span>
 <i data-lucide="shield-check" class="w-4.5 h-4.5 text-emerald-500">
 </i>
 </div>
@@ -801,99 +856,401 @@
 </div>
 </div>
 </section>
-<!-- ===== TRUSTED BY INDUSTRY LEADERS ===== -->
-<section class="relative py-16 md:py-24 bg-[#0A0A0A] overflow-hidden">
-  <div class="max-w-7xl mx-auto px-6 md:px-10 text-center mb-12 reveal">
-    <span class="text-[11px] uppercase tracking-[0.2em] font-semibold text-slate-500">Trusted by Industry Leaders</span>
-    <h2 class="mt-3 font-display text-3xl md:text-5xl font-bold tracking-tight text-white">Brands That Trust Digital Advertise</h2>
-    <p class="mt-4 text-white/50 text-base md:text-lg max-w-2xl mx-auto">We are proud to work with startups, growing businesses and established companies across multiple industries.</p>
-  </div>
-  <div id="client-logo-marquee-wrap" class="relative">
-    <!-- Row 1: scrolls left -->
-    <div class="client-logo-marquee py-3">
-      <div class="cl-marquee-track animate-clientScrollLeft">
-        <!-- Set 1 -->
-        <div class="client-logo-card"><img src="assets/client logos/1.jpeg" alt="Championsleo" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Championsleo</span></div>
-        <div class="client-logo-card"><img src="assets/client logos/2.jpg" alt="Parallel Matrix" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Parallel Matrix</span></div>
-        <div class="client-logo-card"><img src="assets/client logos/3.jpeg" alt="Glassa" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Glassa</span></div>
-        <div class="client-logo-card"><img src="assets/client logos/4.jpeg" alt="Colombia Infotech" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Colombia Infotech</span></div>
-        <div class="client-logo-card"><img src="assets/client logos/5.png" alt="Sequity" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Sequity</span></div>
-        <div class="client-logo-card"><img src="assets/client logos/6.jpeg" alt="SPI Infrastructure" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">SPI Infrastructure</span></div>
-        <div class="client-logo-card"><img src="assets/client logos/7.jpeg" alt="The Brick House" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">The Brick House</span></div>
-        <div class="client-logo-card"><img src="assets/client logos/8.jpeg" alt="Truffle Melon" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Truffle Melon</span></div>
-        <div class="client-logo-card"><img src="assets/client logos/9.png" alt="PPC" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">PPC</span></div>
-        <div class="client-logo-card"><img src="assets/client logos/10.png" alt="Shree Park" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Shree Park</span></div>
-        <div class="client-logo-card"><img src="assets/client logos/11.png" alt="Vandan Paints" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Vandan Paints</span></div>
-        <div class="client-logo-card"><img src="assets/client logos/12.png" alt="Tara Angan" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Tara Angan</span></div>
-        <div class="client-logo-card"><img src="assets/client logos/13.png" alt="Aaranya" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Aaranya</span></div>
-        <div class="client-logo-card"><img src="assets/client logos/14.png" alt="Aamrutam Dairy" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Aamrutam Dairy</span></div>
-        <div class="client-logo-card"><img src="assets/client logos/15.png" alt="GeoMatrix" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">GeoMatrix</span></div>
-        <div class="client-logo-card"><img src="assets/client logos/16.png" alt="ForPark" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">ForPark</span></div>
-        <!-- Set 2 (exact duplicate) -->
-        <div class="client-logo-card"><img src="assets/client logos/1.jpeg" alt="Championsleo" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Championsleo</span></div>
-        <div class="client-logo-card"><img src="assets/client logos/2.jpg" alt="Parallel Matrix" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Parallel Matrix</span></div>
-        <div class="client-logo-card"><img src="assets/client logos/3.jpeg" alt="Glassa" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Glassa</span></div>
-        <div class="client-logo-card"><img src="assets/client logos/4.jpeg" alt="Colombia Infotech" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Colombia Infotech</span></div>
-        <div class="client-logo-card"><img src="assets/client logos/5.png" alt="Sequity" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Sequity</span></div>
-        <div class="client-logo-card"><img src="assets/client logos/6.jpeg" alt="SPI Infrastructure" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">SPI Infrastructure</span></div>
-        <div class="client-logo-card"><img src="assets/client logos/7.jpeg" alt="The Brick House" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">The Brick House</span></div>
-        <div class="client-logo-card"><img src="assets/client logos/8.jpeg" alt="Truffle Melon" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Truffle Melon</span></div>
-        <div class="client-logo-card"><img src="assets/client logos/9.png" alt="PPC" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">PPC</span></div>
-        <div class="client-logo-card"><img src="assets/client logos/10.png" alt="Shree Park" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Shree Park</span></div>
-        <div class="client-logo-card"><img src="assets/client logos/11.png" alt="Vandan Paints" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Vandan Paints</span></div>
-        <div class="client-logo-card"><img src="assets/client logos/12.png" alt="Tara Angan" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Tara Angan</span></div>
-        <div class="client-logo-card"><img src="assets/client logos/13.png" alt="Aaranya" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Aaranya</span></div>
-        <div class="client-logo-card"><img src="assets/client logos/14.png" alt="Aamrutam Dairy" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Aamrutam Dairy</span></div>
-        <div class="client-logo-card"><img src="assets/client logos/15.png" alt="GeoMatrix" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">GeoMatrix</span></div>
-        <div class="client-logo-card"><img src="assets/client logos/16.png" alt="ForPark" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">ForPark</span></div>
-      </div>
+<!-- ===== VERTICAL SCROLLING LOGO SECTION (REFINED) ===== -->
+<style>
+  .vertical-marquee-section {
+    position: relative;
+    background-color: #000000;
+    padding: 5rem 0;
+    overflow: hidden;
+    border: none !important;
+    -webkit-transform: translateZ(0) !important;
+    transform: translate3d(0, 0, 0) !important;
+    -webkit-backface-visibility: hidden !important;
+    backface-visibility: hidden !important;
+    will-change: transform !important;
+    outline: 1px solid transparent !important;
+  }
+
+  .vertical-marquee-section::before,
+  .vertical-marquee-section::after {
+    display: none !important;
+    content: none !important;
+  }
+
+  .vertical-marquee-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+    padding: 0 2rem;
+  }
+
+  @media (min-width: 992px) {
+    .vertical-marquee-inner {
+      flex-direction: row;
+      align-items: stretch;
+      gap: 3rem;
+      padding: 0 3rem;
+    }
+  }
+
+  .vertical-text-content {
+    flex: 0 0 auto;
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem 0;
+  }
+
+  .vertical-text-content::before {
+    display: none !important;
+    content: none !important;
+  }
+
+  @media (max-width: 991px) {
+    .vertical-text-content {
+      text-align: center;
+      max-width: 100%;
+    }
+  }
+
+  .vertical-text-content .overline {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: rgba(255, 255, 255, 0.4);
+    margin-bottom: 1rem;
+    display: block;
+    border: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+    text-decoration: none !important;
+  }
+
+  .vertical-text-content .overline::before,
+  .vertical-text-content .overline::after,
+  .vertical-marquee-section .overline::before,
+  .vertical-marquee-section .overline::after {
+    display: none !important;
+    content: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    border: none !important;
+  }
+
+  .vertical-text-content h2 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.1;
+    margin-bottom: 1.25rem;
+    letter-spacing: -0.02em;
+  }
+
+  @media (min-width: 768px) and (max-width: 991px) {
+    .vertical-text-content h2 {
+      font-size: 2.5rem;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .vertical-text-content h2 {
+      font-size: 2rem;
+    }
+  }
+
+  .vertical-text-content p {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.55);
+    line-height: 1.7;
+    max-width: 380px;
+  }
+
+  @media (max-width: 991px) {
+    .vertical-text-content p {
+      margin: 0 auto;
+    }
+  }
+
+  .vertical-logo-grid {
+    flex: 1;
+    display: flex;
+    gap: 1.25rem;
+    position: relative;
+    height: 580px;
+    overflow: hidden;
+    justify-content: center;
+    align-items: flex-start;
+    -webkit-transform: translateZ(0) !important;
+    transform: translate3d(0, 0, 0) !important;
+    -webkit-backface-visibility: hidden !important;
+    backface-visibility: hidden !important;
+    outline: 1px solid transparent !important;
+  }
+
+  @media (max-width: 768px) {
+    .vertical-logo-grid {
+      height: 420px;
+      gap: 0.75rem;
+    }
+  }
+
+  .vertical-logo-grid::before,
+  .vertical-logo-grid::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  @media (min-width: 769px) {
+    .vertical-logo-grid::before,
+    .vertical-logo-grid::after {
+      height: 160px;
+    }
+  }
+
+  .vertical-logo-grid::before {
+    top: 0;
+    background: linear-gradient(to bottom, #000000 0%, rgba(0,0,0,0) 100%);
+  }
+
+  .vertical-logo-grid::after {
+    bottom: 0;
+    background: linear-gradient(to top, #000000 0%, rgba(0,0,0,0) 100%);
+  }
+
+  .v-marquee-col {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    width: 200px;
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+
+  @media (max-width: 768px) {
+    .v-marquee-col {
+      width: 150px;
+      gap: 0.75rem;
+    }
+  }
+
+  .v-marquee-col.scroll-up {
+    animation: marqueeScrollUp 30s linear infinite;
+  }
+
+  .v-marquee-col.scroll-down {
+    animation: marqueeScrollDown 30s linear infinite;
+    transform: translateY(-50%);
+  }
+
+  .vertical-logo-grid:hover .v-marquee-col {
+    animation-play-state: paused;
+  }
+
+  .v-client-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 150px;
+    background: transparent !important;
+    border-radius: 14px;
+    padding: 1.25rem;
+    box-shadow: none !important;
+    border: none !important;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  @media (max-width: 768px) {
+    .v-client-card {
+      height: 120px;
+      padding: 1rem;
+      border-radius: 12px;
+    }
+  }
+
+  .v-client-card:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: none !important;
+  }
+
+  .v-client-card img {
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: contain;
+    display: block !important;
+    -webkit-transform: translateZ(0) !important;
+    transform: translate3d(0, 0, 0) !important;
+    -webkit-backface-visibility: hidden !important;
+    backface-visibility: hidden !important;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    filter: none;
+    will-change: filter, transform;
+  }
+
+  .v-client-card:hover img {
+    transform: scale(1.08);
+  }
+
+  @keyframes marqueeScrollUp {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-50%); }
+  }
+
+  @keyframes marqueeScrollDown {
+    0% { transform: translateY(-50%); }
+    100% { transform: translateY(0); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .v-marquee-col.scroll-up,
+    .v-marquee-col.scroll-down {
+      animation: none !important;
+    }
+  }
+</style>
+
+<section class="vertical-marquee-section">
+  <div class="vertical-marquee-inner">
+    
+    <div class="vertical-text-content reveal">
+      <span class="overline">Trusted by Industry Leaders</span>
+      <h2>Not Just Clients.<br>People We Work With.</h2>
+      <p>Behind every brand is a story, a risk, a decision to grow. We don't take that lightly. That's why we stay involved thinking, refining, and improving until it feels right. Because good work happens when there's trust on both sides.</p>
     </div>
-    <!-- Row 2: scrolls right -->
-    <div class="client-logo-marquee py-3">
-      <div class="cl-marquee-track animate-clientScrollRight">
-        <!-- Set 1 -->
-        <div class="client-logo-card"><img src="assets/client logos/9.png" alt="PPC" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">PPC</span></div>
-        <div class="client-logo-card"><img src="assets/client logos/10.png" alt="Shree Park" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Shree Park</span></div>
-        <div class="client-logo-card"><img src="assets/client logos/11.png" alt="Vandan Paints" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Vandan Paints</span></div>
-        <div class="client-logo-card"><img src="assets/client logos/12.png" alt="Tara Angan" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Tara Angan</span></div>
-        <div class="client-logo-card"><img src="assets/client logos/13.png" alt="Aaranya" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Aaranya</span></div>
-        <div class="client-logo-card"><img src="assets/client logos/14.png" alt="Aamrutam Dairy" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Aamrutam Dairy</span></div>
-        <div class="client-logo-card"><img src="assets/client logos/15.png" alt="GeoMatrix" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">GeoMatrix</span></div>
-        <div class="client-logo-card"><img src="assets/client logos/16.png" alt="ForPark" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">ForPark</span></div>
-        <div class="client-logo-card"><img src="assets/client logos/1.jpeg" alt="Championsleo" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Championsleo</span></div>
-        <div class="client-logo-card"><img src="assets/client logos/2.jpg" alt="Parallel Matrix" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Parallel Matrix</span></div>
-        <div class="client-logo-card"><img src="assets/client logos/3.jpeg" alt="Glassa" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Glassa</span></div>
-        <div class="client-logo-card"><img src="assets/client logos/4.jpeg" alt="Colombia Infotech" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Colombia Infotech</span></div>
-        <div class="client-logo-card"><img src="assets/client logos/5.png" alt="Sequity" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Sequity</span></div>
-        <div class="client-logo-card"><img src="assets/client logos/6.jpeg" alt="SPI Infrastructure" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">SPI Infrastructure</span></div>
-        <div class="client-logo-card"><img src="assets/client logos/7.jpeg" alt="The Brick House" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">The Brick House</span></div>
-        <div class="client-logo-card"><img src="assets/client logos/8.jpeg" alt="Truffle Melon" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Truffle Melon</span></div>
-        <!-- Set 2 (exact duplicate) -->
-        <div class="client-logo-card"><img src="assets/client logos/9.png" alt="PPC" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">PPC</span></div>
-        <div class="client-logo-card"><img src="assets/client logos/10.png" alt="Shree Park" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Shree Park</span></div>
-        <div class="client-logo-card"><img src="assets/client logos/11.png" alt="Vandan Paints" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Vandan Paints</span></div>
-        <div class="client-logo-card"><img src="assets/client logos/12.png" alt="Tara Angan" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Tara Angan</span></div>
-        <div class="client-logo-card"><img src="assets/client logos/13.png" alt="Aaranya" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Aaranya</span></div>
-        <div class="client-logo-card"><img src="assets/client logos/14.png" alt="Aamrutam Dairy" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Aamrutam Dairy</span></div>
-        <div class="client-logo-card"><img src="assets/client logos/15.png" alt="GeoMatrix" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">GeoMatrix</span></div>
-        <div class="client-logo-card"><img src="assets/client logos/16.png" alt="ForPark" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">ForPark</span></div>
-        <div class="client-logo-card"><img src="assets/client logos/1.jpeg" alt="Championsleo" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Championsleo</span></div>
-        <div class="client-logo-card"><img src="assets/client logos/2.jpg" alt="Parallel Matrix" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Parallel Matrix</span></div>
-        <div class="client-logo-card"><img src="assets/client logos/3.jpeg" alt="Glassa" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Glassa</span></div>
-        <div class="client-logo-card"><img src="assets/client logos/4.jpeg" alt="Colombia Infotech" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Colombia Infotech</span></div>
-        <div class="client-logo-card"><img src="assets/client logos/5.png" alt="Sequity" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Sequity</span></div>
-        <div class="client-logo-card"><img src="assets/client logos/6.jpeg" alt="SPI Infrastructure" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">SPI Infrastructure</span></div>
-        <div class="client-logo-card"><img src="assets/client logos/7.jpeg" alt="The Brick House" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">The Brick House</span></div>
-        <div class="client-logo-card"><img src="assets/client logos/8.jpeg" alt="Truffle Melon" onerror="this.setAttribute('data-failed','true')"><span class="client-name-fallback">Truffle Melon</span></div>
+
+    <div class="vertical-logo-grid">
+      
+      <!-- Column 1: Scrolls UP (Logos 1-16) -->
+      <div class="v-marquee-col scroll-up">
+        <div class="v-client-card"><img src="assets/client logos/1.jpeg" alt="Championsleo" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/2.jpg" alt="Parallel Matrix" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/3.jpeg" alt="Glassa" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/4.jpeg" alt="Colombia Infotech" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/5.png" alt="Sequity" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/6.jpeg" alt="SPI Infrastructure" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/7.jpeg" alt="The Brick House" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/8.jpeg" alt="Truffle Melon" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/9.png" alt="PPC" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/10.png" alt="Shree Park" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/11.png" alt="Vandan Paints" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/12.png" alt="Tara Angan" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/13.png" alt="Aaranya" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/14.png" alt="Aamrutam Dairy" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/15.png" alt="GeoMatrix" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/16.png" alt="ForPark" loading="lazy"></div>
+        <!-- Duplicate Set for Seamless Looping -->
+        <div class="v-client-card"><img src="assets/client logos/1.jpeg" alt="Championsleo" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/2.jpg" alt="Parallel Matrix" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/3.jpeg" alt="Glassa" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/4.jpeg" alt="Colombia Infotech" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/5.png" alt="Sequity" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/6.jpeg" alt="SPI Infrastructure" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/7.jpeg" alt="The Brick House" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/8.jpeg" alt="Truffle Melon" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/9.png" alt="PPC" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/10.png" alt="Shree Park" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/11.png" alt="Vandan Paints" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/12.png" alt="Tara Angan" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/13.png" alt="Aaranya" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/14.png" alt="Aamrutam Dairy" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/15.png" alt="GeoMatrix" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/16.png" alt="ForPark" loading="lazy"></div>
       </div>
+
+      <!-- Column 2: Scrolls DOWN (Logos 17-32) -->
+      <div class="v-marquee-col scroll-down">
+        <div class="v-client-card"><img src="assets/client logos/17.png" alt="Client 17" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/18.png" alt="Client 18" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/19.png" alt="Client 19" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/20.png" alt="Client 20" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/21.png" alt="Client 21" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/22.png" alt="Client 22" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/23.png" alt="Client 23" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/24.png" alt="Client 24" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/25.png" alt="Client 25" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/26.png" alt="Client 26" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/27.png" alt="Client 27" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/28.png" alt="Client 28" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/29.png" alt="Client 29" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/30.png" alt="Client 30" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/31.png" alt="Client 31" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/32.png" alt="Client 32" loading="lazy"></div>
+        <!-- Duplicate Set for Seamless Looping -->
+        <div class="v-client-card"><img src="assets/client logos/17.png" alt="Client 17" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/18.png" alt="Client 18" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/19.png" alt="Client 19" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/20.png" alt="Client 20" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/21.png" alt="Client 21" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/22.png" alt="Client 22" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/23.png" alt="Client 23" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/24.png" alt="Client 24" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/25.png" alt="Client 25" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/26.png" alt="Client 26" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/27.png" alt="Client 27" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/28.png" alt="Client 28" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/29.png" alt="Client 29" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/30.png" alt="Client 30" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/31.png" alt="Client 31" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/32.png" alt="Client 32" loading="lazy"></div>
+      </div>
+
+      <!-- Column 3: Scrolls UP (Logos 33-47) -->
+      <div class="v-marquee-col scroll-up">
+        <div class="v-client-card"><img src="assets/client logos/33.png" alt="Client 33" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/34.png" alt="Client 34" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/35.png" alt="Client 35" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/36.png" alt="Client 36" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/37.png" alt="Client 37" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/38.png" alt="Client 38" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/39.png" alt="Client 39" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/40.png" alt="Client 40" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/41.png" alt="Client 41" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/42.png" alt="Client 42" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/43.png" alt="Client 43" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/44.png" alt="Client 44" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/45.png" alt="Client 45" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/46.png" alt="Client 46" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/47.png" alt="Client 47" loading="lazy"></div>
+        <!-- Duplicate Set for Seamless Looping -->
+        <div class="v-client-card"><img src="assets/client logos/33.png" alt="Client 33" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/34.png" alt="Client 34" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/35.png" alt="Client 35" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/36.png" alt="Client 36" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/37.png" alt="Client 37" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/38.png" alt="Client 38" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/39.png" alt="Client 39" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/40.png" alt="Client 40" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/41.png" alt="Client 41" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/42.png" alt="Client 42" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/43.png" alt="Client 43" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/44.png" alt="Client 44" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/45.png" alt="Client 45" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/46.png" alt="Client 46" loading="lazy"></div>
+        <div class="v-client-card"><img src="assets/client logos/47.png" alt="Client 47" loading="lazy"></div>
+      </div>
+
     </div>
+
   </div>
 </section>
+<!-- ===== END VERTICAL SCROLLING LOGO SECTION ===== -->
 <!-- ===== WHY BRANDS CHOOSE US (DARK SECTION) ===== -->
 <section class="relative py-16 md:py-24 bg-slate-950 text-white overflow-hidden" id="why-choose-us">
-<div class="bubble bubble-1" aria-hidden="true"></div>
-<div class="bubble bubble-3" aria-hidden="true"></div>
-<div class="bubble bubble-7" aria-hidden="true"></div>
 <div class="absolute inset-0 grid-pattern opacity-[0.03] pointer-events-none"></div>
 <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-blue-500/10 pointer-events-none floating-blob-1"></div>
 <div class="absolute bottom-10 right-10 w-[300px] h-[300px] rounded-full bg-purple-500/10 pointer-events-none floating-blob-2"></div>
@@ -902,7 +1259,7 @@
 <div class="text-center max-w-3xl mx-auto mb-12 reveal">
 <span class="text-[11px] uppercase tracking-[0.2em] font-semibold text-blue-400">Why Brands Choose Us</span>
 <h2 class="mt-3 font-display text-4xl md:text-6xl font-bold tracking-tight text-white leading-tight text-reveal">Built for results,<br>not just deliverables.</h2>
-<p class="mt-4 text-white/60 text-base md:text-lg">Every engagement is engineered around measurable outcomes â€” from first click to final conversion.</p>
+<p class="mt-4 text-white/60 text-base md:text-lg">Every engagement is engineered around measurable outcomes — from first click to final conversion.</p>
 </div>
 <!-- Stat counters row -->
 <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12 reveal-scale">
@@ -930,7 +1287,7 @@
         <i data-lucide="bar-chart-3" class="w-6 h-6 text-blue-400"></i>
     </div>
     <h3 class="font-display text-xl font-bold text-white tracking-tight">Data Driven</h3>
-    <p class="mt-3 text-white/60 text-[14px] leading-relaxed">Every decision is backed by real-time analytics, attribution modeling, and predictive insights â€” never guesswork.</p>
+    <p class="mt-3 text-white/60 text-[14px] leading-relaxed">Every decision is backed by real-time analytics, attribution modeling, and predictive insights — never guesswork.</p>
 </div>
 <!-- Card 2: Creative Excellence -->
 <div class="group relative rounded-3xl overflow-hidden bg-white/5 border border-white/10 hover:border-purple-500/30 transition-all duration-300 p-8 hover:-translate-y-1 spotlight-card">
@@ -962,7 +1319,7 @@
         <i data-lucide="zap" class="w-6 h-6 text-amber-400"></i>
     </div>
     <h3 class="font-display text-xl font-bold text-white tracking-tight">Fast Execution</h3>
-    <p class="mt-3 text-white/60 text-[14px] leading-relaxed">Sprint-based workflows with 48-hour turnaround on creatives and weekly performance reports â€” no agency lag.</p>
+    <p class="mt-3 text-white/60 text-[14px] leading-relaxed">Sprint-based workflows with 48-hour turnaround on creatives and weekly performance reports — no agency lag.</p>
 </div>
 <!-- Card 6: Dedicated Team -->
 <div class="group relative rounded-3xl overflow-hidden bg-white/5 border border-white/10 hover:border-rose-500/30 transition-all duration-300 p-8 hover:-translate-y-1 spotlight-card">
@@ -970,16 +1327,13 @@
         <i data-lucide="users" class="w-6 h-6 text-rose-400"></i>
     </div>
     <h3 class="font-display text-xl font-bold text-white tracking-tight">Dedicated Team</h3>
-    <p class="mt-3 text-white/60 text-[14px] leading-relaxed">A named strategist, designer, and performance lead assigned to your account â€” not a rotating pool of freelancers.</p>
+    <p class="mt-3 text-white/60 text-[14px] leading-relaxed">A named strategist, designer, and performance lead assigned to your account — not a rotating pool of freelancers.</p>
 </div>
 </div>
 </div>
 </section>
 <!-- ===== SERVICES SECTION ===== -->
 <section id="services" class="relative py-16 md:py-24 bg-white overflow-hidden">
-<div class="bubble bubble-1" aria-hidden="true"></div>
-<div class="bubble bubble-2" aria-hidden="true"></div>
-<div class="bubble bubble-3" aria-hidden="true"></div>
 <div class="max-w-7xl mx-auto px-6 md:px-10">
 <div class="grid lg:grid-cols-12 gap-10 items-end mb-14 reveal">
 <div class="lg:col-span-8 text-left">
@@ -987,7 +1341,7 @@
 <h2                            class="mt-3 font-display text-4xl md:text-6xl font-bold tracking-tighter text-slate-900 leading-none text-reveal">                            A full-stack growth team <span class="italic font-light text-slate-700">under one                                roof.</span>
 </h2>
 </div>
-<p class="lg:col-span-4 text-slate-600 text-left text-base md:text-lg">                        From strategy to execution, every discipline you need to grow â€” orchestrated as one.                    </p>
+<p class="lg:col-span-4 text-slate-600 text-left text-base md:text-lg">                        From strategy to execution, every discipline you need to grow — orchestrated as one.                    </p>
 </div>
 <!-- Stat counters row -->
 <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12 reveal-scale" style="animation-delay: 0.1s;">
@@ -1089,9 +1443,6 @@
 </section>
 <!-- ===== WHY CHOOSE US ===== -->
 <section class="relative py-16 md:py-24 bg-white overflow-hidden section-why-choose">
-<div class="bubble bubble-4" aria-hidden="true"></div>
-<div class="bubble bubble-5" aria-hidden="true"></div>
-<div class="bubble bubble-6" aria-hidden="true"></div>
 <div class="absolute top-20 right-0 w-[400px] h-[400px] rounded-full bg-blue-100/50 pointer-events-none floating-blob-1">
 </div>
 <div class="absolute bottom-40 left-0 w-[300px] h-[300px] rounded-full bg-purple-100/40 pointer-events-none floating-blob-2">
@@ -1106,17 +1457,20 @@
 </div>
 <div                            class="absolute -bottom-6 -right-4 md:-right-10 glass-strong rounded-2xl p-5 w-[230px] floaty select-none">
 <div class="text-[11px] uppercase tracking-wider font-semibold text-slate-500">Avg. ROAS                                lift</div>
-<div class="mt-1 font-display text-3xl font-bold text-slate-900">+6.2Ã—</div>
+<div class="mt-1 font-display text-3xl font-bold text-slate-900">6.7x</div>
 <div class="mt-3 flex items-center gap-2 text-[12px] text-slate-600">
 <div class="flex -space-x-1.5">
-<div class="w-6 h-6 rounded-full bg-gray-300 border-2 border-white">
+<div class="w-6 h-6 rounded-full bg-white border-2 border-white flex items-center justify-center overflow-hidden">
+<svg viewBox="0 0 24 24" width="16" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z" fill="#4285F4"/></svg>
 </div>
-<div class="w-6 h-6 rounded-full bg-gray-400 border-2 border-white">
+<div class="w-6 h-6 rounded-full bg-white border-2 border-white flex items-center justify-center overflow-hidden">
+<svg viewBox="0 0 24 24" width="14" height="14" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.04c-5.5 0-10 4.49-10 10.02 0 5 3.66 9.15 8.44 9.9v-7H7.9v-2.9h2.54V9.85c0-2.52 1.49-3.93 3.78-3.93 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.78-1.63 1.57v1.88h2.78l-.45 2.9h-2.33v7a10 10 0 008.44-9.9c0-5.53-4.5-10.02-10-10.02z" fill="#1877F2"/></svg>
 </div>
-<div class="w-6 h-6 rounded-full bg-gray-200 border-2 border-white">
+<div class="w-6 h-6 rounded-full bg-white border-2 border-white flex items-center justify-center overflow-hidden">
+<svg viewBox="0 0 24 24" width="14" height="14" xmlns="http://www.w3.org/2000/svg"><path d="M15.34 2.78c-.5-.5-1.2-.78-1.92-.78H10.58c-.72 0-1.42.28-1.92.78L3.2 7.42c-1 1-1 2.6 0 3.6l3.82 3.82v4.76c0 .84.68 1.52 1.52 1.52h2.48c.84 0 1.52-.68 1.52-1.52v-3.5h.92v3.5c0 .84.68 1.52 1.52 1.52h2.48c.84 0 1.52-.68 1.52-1.52v-4.76l3.82-3.82c1-1 1-2.6 0-3.6l-3.64-4.64z" fill="#96BF48"/><path d="M15.34 2.78L12 6.12l-3.34-3.34c-.5-.5-1.2-.78-1.92-.78H10.58" fill="#5E8E3E" opacity=".2"/></svg>
 </div>
 </div>
-<span>across 280+ accounts</span>
+<span>1000+ Accounts</span>
 </div>
 </div>
 </div>
@@ -1138,7 +1492,7 @@
 <div class="text-[10px] text-slate-500 font-semibold uppercase tracking-wider mt-0.5">Satisfaction</div>
 </div>
 </div>
-<p class="mt-5 text-slate-600 text-base md:text-lg max-w-2xl">                            We aren't here for impressions. We're here for impact â€” and we engineer every engagement to                            prove it.                        </p>
+<p class="mt-5 text-slate-600 text-base md:text-lg max-w-2xl">                            We aren't here for impressions. We're here for impact — and we engineer every engagement to                            prove it.                        </p>
 <style>
 .section-why-choose .mt-10.space-y-3 h3,
 .section-why-choose .mt-10.space-y-3 p {
@@ -1188,7 +1542,7 @@
 <i data-lucide="check-circle" class="text-emerald-500 w-3.5 h-3.5">
 </i>
 </div>
-<p class="mt-1 text-[14px] text-slate-600" style="color:#94a3b8 !important;-webkit-text-fill-color:#94a3b8 !important;">Senior strategists, engineers, and                                        creatives â€” 100% certified across leading platforms.</p>
+<p class="mt-1 text-[14px] text-slate-600" style="color:#94a3b8 !important;-webkit-text-fill-color:#94a3b8 !important;">Senior strategists, engineers, and                                        creatives — 100% certified across leading platforms.</p>
 </div>
 </div>
 <div                                class="group flex items-start gap-4 p-5 rounded-2xl hover:bg-white border border-transparent hover:border-slate-200 hover:shadow-md transition-all">
@@ -1202,7 +1556,7 @@
 <i data-lucide="check-circle" class="text-emerald-500 w-3.5 h-3.5">
 </i>
 </div>
-<p class="mt-1 text-[14px] text-slate-600" style="color:#94a3b8 !important;-webkit-text-fill-color:#94a3b8 !important;">Every initiative is tied to a measurable                                        business outcome â€” not vanity metrics.</p>
+<p class="mt-1 text-[14px] text-slate-600" style="color:#94a3b8 !important;-webkit-text-fill-color:#94a3b8 !important;">Every initiative is tied to a measurable                                        business outcome — not vanity metrics.</p>
 </div>
 </div>
 </div>
@@ -1217,9 +1571,6 @@ See our results in action <i data-lucide="arrow-right" class="w-4 h-4"></i>
 </section>
 <!-- ===== PROOF (LIVE DASHBOARD) ===== -->
 <section id="proof" class="relative py-16 md:py-24 overflow-hidden">
-<div class="bubble bubble-1" aria-hidden="true"></div>
-<div class="bubble bubble-3" aria-hidden="true"></div>
-<div class="bubble bubble-7" aria-hidden="true"></div>
 <div class="max-w-7xl mx-auto px-6 md:px-10">
 <div class="grid lg:grid-cols-12 gap-10 items-end mb-14 reveal">
 <div class="lg:col-span-8">
@@ -1227,7 +1578,7 @@ See our results in action <i data-lucide="arrow-right" class="w-4 h-4"></i>
 <h2                            class="mt-3 font-display text-4xl md:text-6xl font-bold tracking-tighter text-slate-900 leading-none text-reveal">                            Growth, visualized in <span class="italic font-light text-slate-700">real time.</span>
 </h2>
 </div>
-<p class="lg:col-span-4 text-slate-600 text-base md:text-lg">                        A live look at the dashboards we build for clients â€” leads, revenue, and ROI, transparently                        tracked.                    </p>
+<p class="lg:col-span-4 text-slate-600 text-base md:text-lg">                        A live look at the dashboards we build for clients — leads, revenue, and ROI, transparently                        tracked.                    </p>
 </div>
 <!-- Live Dashboard Container -->
 <div id="proof-dashboard"                    class="relative rounded-[28px] border border-slate-200 bg-white shadow-2xl shadow-slate-900/[0.07] overflow-hidden reveal">
@@ -1264,10 +1615,10 @@ See our results in action <i data-lucide="arrow-right" class="w-4 h-4"></i>
 </div>
 <div class="rounded-2xl border border-slate-200 p-4">
 <div class="text-[11px] font-semibold uppercase tracking-wider text-slate-500">ROAS                                    </div>
-<div class="mt-1 font-display text-2xl md:text-3xl font-bold text-slate-900">8.2Ã—                                    </div>
+<div class="mt-1 font-display text-2xl md:text-3xl font-bold text-slate-900">8.2×                                    </div>
 <div                                        class="mt-1 flex items-center gap-1 text-[12px] text-emerald-600 font-semibold">
 <i data-lucide="trending-up" class="w-3.5 h-3.5">
-</i>                                        +2.1Ã—                                    </div>
+</i>                                        +2.1×                                    </div>
 </div>
 </div>
 <div class="rounded-2xl border border-slate-200 p-5 text-left">
@@ -1381,9 +1732,6 @@ See our results in action <i data-lucide="arrow-right" class="w-4 h-4"></i>
 </section>
 <!-- Feature capabilities grid -->
 <section class="relative py-16 md:py-24 bg-gradient-to-b from-slate-50/30 to-white overflow-hidden">
-<div class="bubble bubble-1" aria-hidden="true"></div>
-<div class="bubble bubble-2" aria-hidden="true"></div>
-<div class="bubble bubble-3" aria-hidden="true"></div>
 <div class="max-w-7xl mx-auto px-6 md:px-10">
 <div class="grid lg:grid-cols-12 gap-10 items-end mb-14 reveal-right">
 <div class="lg:col-span-8 text-left">
@@ -1444,9 +1792,6 @@ From ad platforms to creative engines one integrated team, one unified strategy.
 </section>
 <!-- ===== SECTION 8: TRUST SECTION ===== -->
 <section id="trust" class="relative py-16 md:py-24 bg-slate-50/20 overflow-hidden">
-<div class="bubble bubble-4" aria-hidden="true"></div>
-<div class="bubble bubble-5" aria-hidden="true"></div>
-<div class="bubble bubble-6" aria-hidden="true"></div>
 <div class="max-w-7xl mx-auto px-6 md:px-10">
 <div class="grid lg:grid-cols-12 gap-10 items-end mb-14 reveal">
 <div class="lg:col-span-8 text-left">
@@ -1454,7 +1799,7 @@ From ad platforms to creative engines one integrated team, one unified strategy.
 <h2                            class="mt-3 font-display text-4xl md:text-6xl font-bold tracking-tighter text-slate-900 leading-none text-reveal">                            Engineered for growth. <span class="italic font-light text-slate-700">Backed by                                trust.</span>
 </h2>
 </div>
-<p class="lg:col-span-4 text-slate-600 text-left text-base md:text-lg">                        Outcomes we've delivered for global growth teams â€” documented by clean data pipelines and                        verified performance.                    </p>
+<p class="lg:col-span-4 text-slate-600 text-left text-base md:text-lg">                        Outcomes we've delivered for global growth teams — documented by clean data pipelines and                        verified performance.                    </p>
 </div>
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 select-none">
 <div                        class="glass-strong border border-slate-200/80 rounded-[32px] p-8 hover:shadow-2xl hover:border-blue-300 hover:scale-105 transition-all duration-300 flex flex-col justify-between h-56 text-left reveal">
@@ -1506,9 +1851,6 @@ From ad platforms to creative engines one integrated team, one unified strategy.
 </section>
 <!-- ===== TESTIMONIALS ===== -->
 <section id="reviews" class="relative py-16 md:py-24 bg-slate-50/60 overflow-hidden">
-<div class="bubble bubble-1" aria-hidden="true"></div>
-<div class="bubble bubble-3" aria-hidden="true"></div>
-<div class="bubble bubble-7" aria-hidden="true"></div>
 <div class="max-w-7xl mx-auto px-6 md:px-10">
 <div class="grid lg:grid-cols-12 gap-10 items-end mb-14 reveal">
 <div class="lg:col-span-7">
@@ -1539,7 +1881,7 @@ From ad platforms to creative engines one integrated team, one unified strategy.
 <article                        class="relative bg-white rounded-3xl border border-slate-200 p-7 hover:shadow-xl transition-shadow reveal">
 <i data-lucide="quote" class="text-blue-600/20 w-7 h-7">
 </i>
-<p class="mt-4 text-slate-800 text-[15px] leading-relaxed">                            "Digital Advertise rebuilt our entire acquisition engine. Within two quarters, blended CAC                            dropped 41% and revenue grew 3.2Ã—. The clarity in their reporting is unmatched."                        </p>
+<p class="mt-4 text-slate-800 text-[15px] leading-relaxed">                            "Digital Advertise rebuilt our entire acquisition engine. Within two quarters, blended CAC                            dropped 41% and revenue grew 3.2×. The clarity in their reporting is unmatched."                        </p>
 <div class="mt-6 flex items-center gap-3 pt-5 border-t border-slate-100">
 <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNTl8MHwxfHNlYXJjaHwzfHxwcm9mZXNzaW9uYWwlMjBwb3J0cmFpdCUyMGhlYWRzaG90fGVufDB8fHx8MTc8MDkzOTI2NXww&ixlib=rb-4.1.0&q=85"                                alt="Aarav Mehta" loading="lazy" class="w-11 h-11 rounded-full object-cover">
 <div>
@@ -1613,11 +1955,17 @@ From ad platforms to creative engines one integrated team, one unified strategy.
 </section>
 <!-- ===== CTA SECTION ===== -->
 <section id="contact" class="relative py-16 md:py-24 overflow-hidden">
-<div class="bubble bubble-1" aria-hidden="true"></div>
-<div class="bubble bubble-2" aria-hidden="true"></div>
-<div class="bubble bubble-3" aria-hidden="true"></div>
 <div class="max-w-7xl mx-auto px-6 md:px-10">
-<div class="relative rounded-[36px] bg-slate-950 overflow-hidden p-10 md:p-16 lg:p-24 reveal">
+<div class="relative rounded-[36px] bg-slate-950 overflow-hidden p-10 md:p-16 lg:p-24 reveal-scale">
+<!-- CTA Animated Background -->
+<div class="cta-animated-bg-wrapper">
+    <div class="cta-animated-bg-glow"></div>
+    <div class="cta-animated-bg-grid"></div>
+    <div class="cta-blob cta-blob-1"></div>
+    <div class="cta-blob cta-blob-2"></div>
+</div>
+<div class="cta-bubbles"></div>
+
 <div                        class="absolute -top-32 -left-20 w-[420px] h-[420px] rounded-full bg-blue-500/30 pointer-events-none">
 </div>
 <div                        class="absolute -bottom-32 -right-20 w-[420px] h-[420px] rounded-full bg-indigo-500/30 pointer-events-none">
@@ -1634,7 +1982,7 @@ From ad platforms to creative engines one integrated team, one unified strategy.
 </div>
 <h2                                class="font-display text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tighter text-white leading-none text-reveal">                                Ready to grow without <span class="italic font-light text-blue-300">borders?</span>
 </h2>
-<p class="mt-5 text-white/70 text-base md:text-lg max-w-xl leading-relaxed">                                Get a free performance audit and a 90-day growth roadmap â€” built by senior strategists                                who've scaled brands across 42 markets.                            </p>
+<p class="mt-5 text-white/70 text-base md:text-lg max-w-xl leading-relaxed">                                Get a free performance audit and a 90-day growth roadmap — built by senior strategists                                who've scaled brands across 42 markets.                            </p>
 <div class="mt-9 flex flex-col sm:flex-row gap-3">
 <a href="audit.html"                                    class="btn-magnetic shine-sweep inline-flex items-center justify-center gap-2 bg-white text-slate-900 hover:bg-blue-500 hover:text-white font-semibold rounded-full pl-6 pr-5 py-4 transition-all hover:-translate-y-0.5 group"                                    style="color:#FFFFFF !important;-webkit-text-fill-color:#FFFFFF !important;opacity:1 !important;visibility:visible !important;font-size:14px !important;">                                    Get Free Audit                                    <i data-lucide="arrow-up-right"                                        class="w-4.5 h-4.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
 </i>
@@ -1664,7 +2012,7 @@ From ad platforms to creative engines one integrated team, one unified strategy.
 <span>90-day prioritized growth plan</span>
 </li>
 </ul>
-<div class="mt-5 pt-5 border-t border-white/10 text-[12px] text-white/50">                                    Avg. response time Â· under 12 hours                                </div>
+<div class="mt-5 pt-5 border-t border-white/10 text-[12px] text-white/50">                                    Avg. response time · under 12 hours                                </div>
 </div>
 </div>
 </div>
@@ -1683,7 +2031,7 @@ From ad platforms to creative engines one integrated team, one unified strategy.
 <img src="assets/logo-white.png" alt="Digital Advertise Logo" class="h-10 w-auto object-contain">
 </div>
 <p class="text-white/65 text-[15px] leading-relaxed max-w-md">
-                        A performance marketing partner for ambitious teams â€” engineered for measurable, durable growth across every channel and market.
+                        A performance marketing partner for ambitious teams — engineered for measurable, durable growth across every channel and market.
                     </p>
 
 </div>
@@ -1816,7 +2164,7 @@ From ad platforms to creative engines one integrated team, one unified strategy.
 </script>
 <!-- ===== HERO SCROLLYTELLING ENGINE ===== -->
 <script>
-    // Scene dot updater â€” wired into the GSAP ScrollTrigger progress
+    // Scene dot updater — wired into the GSAP ScrollTrigger progress
     function updateSceneDots(sceneIdx) {
         for (var i = 0; i < 3; i++) {
             var dot = document.getElementById('dot-' + i);

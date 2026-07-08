@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 10 Digital Marketing Trends Every Business Must Follow in 2026 | Digital Advertise</title>
+    <meta name="description" content="Stay ahead of the competition by exploring the latest digital marketing trends for 2026, including AI automation, short-form video content, voice search optimization, and AI-powered advertising.">
+    <meta name="keywords" content="digital marketing trends 2026, AI marketing, short-form video, voice search, first-party data, marketing automation">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Top 10 Digital Marketing Trends Every Business Must Follow in 2026">
+    <meta property="og:description" content="Stay ahead of the competition by exploring the latest digital marketing trends for 2026.">
+    <meta property="og:image" content="assets/Images web/blog (6).jpeg">
+    <meta property="og:type" content="article">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@0.395.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="css/style.css">
+<style>
+#desktop-nav {
+  display: flex !important;
+  align-items: center;
+  gap: 4px;
+}
+@media (max-width: 1024px) {
+  #desktop-nav { display: none !important; }
+  #hamburger-btn { display: block !important; }
+}
+#desktop-nav a {
+  padding: 10px 14px;
+  color: #1e293b;
+  font-weight: 500;
+  font-size: 14px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+#desktop-nav a:hover {
+  background: #f1f5f9;
+}
+.nav-dropdown {
+  position: relative;
+  padding-bottom: 8px;
+  margin-bottom: -8px;
+}
+.nav-dropdown-menu {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(6px);
+  width: 260px;
+  background: rgba(255,255,255,0.98);
+  border: 1px solid rgba(226,232,240,0.8);
+  box-shadow: 0 10px 40px rgba(2,6,23,0.10);
+  border-radius: 20px;
+  padding: 10px;
+  z-index: 99999;
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+}
+.nav-dropdown-menu::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: 0;
+  width: 100%;
+  height: 12px;
+  background: transparent;
+}
+.nav-dropdown:hover .nav-dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0px);
+}
+.nav-dropdown-menu a {
+  display: block;
+  padding: 9px 14px;
+  font-size: 13px;
+  color: #475569;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: color 0.15s, background 0.15s;
+}
+.nav-dropdown-menu a:hover {
+  color: #2563eb;
+  background: #f1f5f9;
+}
+#navbar.nav-visible {
+  transform: translateY(0) !important;
+}
+#mobile-menu.open {
+  display: flex !important;
+}
+.mobile-services-row {
+  display: flex;
+  align-items: center;
+}
+#mobile-services-submenu {
+  display: flex;
+  flex-direction: column;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.3s ease, opacity 0.25s ease;
+}
+#mobile-services-submenu.open {
+  max-height: 500px;
+  opacity: 1;
+  padding: 4px 0 4px 16px;
+}
+</style>
+</head>
+<body class="bg-black text-white font-sans antialiased">
+
+    <!-- ===== NAVBAR ===== -->
+    <header id="navbar" style="position:fixed;top:0;left:0;width:100%;z-index:9999;padding:16px 0;transform:translateY(-120%);transition:transform 0.45s cubic-bezier(0.16,1,0.3,1);">
+        <div id="nav-wrapper" style="max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,0.85);border:1px solid rgba(255,255,255,0.6);box-shadow:0 8px 32px rgba(2,6,23,0.08);border-radius:9999px;padding:0 28px;height:60px;">
+            <a href="index.html" style="display:flex;align-items:center;flex-shrink:0;">
+                <img src="assets/logo-white.png" alt="Digital Advertise Logo" style="height:40px;width:auto;object-fit:contain;">
+            </a>
+            <nav id="desktop-nav" style="display:none;align-items:center;gap:4px;">
+                <a href="index.html">Home</a>
+                <div class="nav-dropdown">
+                    <a href="services.html" style="display:inline-flex;align-items:center;gap:4px;">Services <i data-lucide="chevron-down" class="w-3 h-3"></i></a>
+                    <div class="nav-dropdown-menu">
+                        <a href="social-media.html">Social Media Marketing</a>
+                        <a href="performance-marketing.html">Performance Marketing</a>
+                        <a href="brand-identity.html">Brand Identity</a>
+                        <a href="web-development.html">Website Development</a>
+                        <a href="video-production.html">Video Production</a>
+                        <a href="ai-video.html">AI Video Generation</a>
+                        <a href="packaging.html">Product Packaging Design</a>
+                        <a href="photography.html">Product Shoot</a>
+                    </div>
+                </div>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="case-studies.html">Case Studies</a>
+                <a href="blog.html">Blog</a>
+                <a href="contact.html">Contact</a>
+                <a href="about.html">About Us</a>
+            </nav>
+            <div style="display:flex;align-items:center;gap:12px;">
+                <a href="audit.html" style="padding:10px 20px;background:#0f172a;color:#fff;font-weight:600;font-size:13px;border-radius:9999px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;transition:all 0.3s;">Get Started <i data-lucide="arrow-up-right" class="w-4 h-4"></i></a>
+                <button onclick="toggleMobileMenu()" id="hamburger-btn" class="hidden p-2 rounded-full border-none bg-transparent cursor-pointer"><i data-lucide="menu" id="menu-icon" class="w-6 h-6" style="color:#000;display:block;"></i></button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden mt-3 bg-white rounded-[20px] p-5 flex-col gap-2" style="z-index:9999;max-width:1200px;margin-left:auto;margin-right:auto;border:1px solid rgba(226,232,240,0.8);box-shadow:0 20px 60px rgba(2,6,23,0.10);">
+      <a href="index.html" style="padding:12px 14px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:flex;align-items:center;">Home</a>
+      <div style="display:flex;flex-direction:column;">
+        <div class="mobile-services-row"><a href="services.html" style="padding:12px 14px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;">Services</a><button type="button" onclick="event.stopPropagation();event.preventDefault();toggleMobileServices()" aria-label="Toggle Services submenu"><i data-lucide="chevron-down" class="w-3 h-3" id="mobile-services-chevron"></i></button></div>
+        <div id="mobile-services-submenu">
+          <a href="social-media.html">Social Media Marketing</a>
+          <a href="performance-marketing.html">Performance Marketing</a>
+          <a href="brand-identity.html">Brand Identity</a>
+          <a href="web-development.html">Website Development</a>
+          <a href="video-production.html">Video Production</a>
+          <a href="ai-video.html">AI Video Generation</a>
+          <a href="packaging.html">Product Packaging Design</a>
+          <a href="photography.html">Product Shoot</a>
+        </div>
+      </div>
+      <a href="portfolio.html" style="padding:12px 14px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:flex;align-items:center;">Portfolio</a>
+      <a href="case-studies.html" style="padding:12px 14px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:flex;align-items:center;">Case Studies</a>
+      <a href="blog.html" style="padding:12px 14px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:flex;align-items:center;">Blog</a>
+      <a href="contact.html" style="padding:12px 14px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:flex;align-items:center;">Contact</a>
+      <a href="about.html" style="padding:12px 14px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:flex;align-items:center;">About Us</a>
+      <a href="audit.html" style="margin-top:8px;padding:12px;background:#0f172a;color:#fff;font-weight:600;border-radius:9999px;text-decoration:none;display:block;text-align:center;">Get Started <i data-lucide="arrow-up-right" class="w-4 h-4"></i></a>
+    </div>
+    </header>
+
+    <main>
+
+    <!-- ===== HERO ===== -->
+    <section class="relative pt-32 pb-12 md:pt-40 md:pb-16 bg-black overflow-hidden">
+        <div class="max-w-4xl mx-auto px-6 md:px-10">
+            <div class="mb-6 reveal">
+                <a href="blog.html" class="inline-flex items-center gap-2 text-[13px] text-white/50 hover:text-white transition-colors">
+                    <i data-lucide="arrow-left" class="w-4 h-4"></i> Back to Blog
+                </a>
+            </div>
+            <div class="flex items-center gap-3 text-[11px] text-slate-400 font-semibold uppercase mb-4 reveal">
+                <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10">Digital Marketing</span>
+                <span>·</span>
+                <span>6 min read</span>
+            </div>
+            <h1 class="font-display text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-extrabold tracking-tight text-white leading-[1.1] reveal">
+                Top 10 Digital Marketing Trends Every Business Must Follow in 2026
+            </h1>
+            <div class="mt-6 flex items-center gap-4 reveal">
+                <div class="flex items-center gap-3">
+                    <span class="w-10 h-10 rounded-full bg-white/10 font-bold text-sm flex items-center justify-center">SS</span>
+                    <div>
+                        <div class="text-[14px] text-white font-medium">Sunil Sharma</div>
+                        <div class="text-[12px] text-white/50">Published Jan 15, 2026</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== HERO IMAGE ===== -->
+    <section class="bg-black">
+        <div class="max-w-5xl mx-auto px-6 md:px-10">
+            <div class="rounded-3xl overflow-hidden reveal">
+                <img src="assets/Images web/blog (6).jpeg" alt="Top 10 Digital Marketing Trends 2026" class="w-full h-auto object-cover" style="max-height:500px;">
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ARTICLE CONTENT ===== -->
+    <section class="py-12 md:py-16 bg-black">
+        <div class="max-w-4xl mx-auto px-6 md:px-10">
+            <div class="grid lg:grid-cols-[1fr_260px] gap-12">
+
+                <!-- Main Article -->
+                <article class="blog-content">
+
+                    <!-- Table of Contents -->
+                    <div class="mb-10 p-6 rounded-2xl bg-white/[0.03] border border-white/10 reveal">
+                        <h4 class="font-display text-sm font-bold text-white uppercase tracking-wider mb-4">Table of Contents</h4>
+                        <ol class="space-y-2 text-[14px] text-white/60 list-decimal list-inside">
+                            <li><a href="#trend-1" class="hover:text-white transition-colors">AI-Powered Marketing Automation</a></li>
+                            <li><a href="#trend-2" class="hover:text-white transition-colors">Short-Form Video Dominance</a></li>
+                            <li><a href="#trend-3" class="hover:text-white transition-colors">Voice Search Optimization</a></li>
+                            <li><a href="#trend-4" class="hover:text-white transition-colors">First-Party Data Strategies</a></li>
+                            <li><a href="#trend-5" class="hover:text-white transition-colors">Hyper-Personalization at Scale</a></li>
+                            <li><a href="#trend-6" class="hover:text-white transition-colors">AI-Generated Ad Creative</a></li>
+                            <li><a href="#trend-7" class="hover:text-white transition-colors">Conversational Marketing</a></li>
+                            <li><a href="#trend-8" class="hover:text-white transition-colors">Zero-Click Content</a></li>
+                            <li><a href="#trend-9" class="hover:text-white transition-colors">Sustainability Storytelling</a></li>
+                            <li><a href="#trend-10" class="hover:text-white transition-colors">Omnichannel Attribution</a></li>
+                        </ol>
+                    </div>
+
+                    <p class="text-white/75 text-[16px] leading-[1.85] mb-8 reveal">
+                        The digital marketing landscape is evolving faster than ever. As we move deeper into 2026, businesses that fail to adapt to emerging trends risk falling behind competitors who embrace innovation. From AI-driven automation to the rise of zero-click content, the rules of digital engagement are being rewritten.
+                    </p>
+                    <p class="text-white/75 text-[16px] leading-[1.85] mb-8 reveal">
+                        In this comprehensive guide, we break down the <strong class="text-white font-semibold">10 most impactful digital marketing trends</strong> that every business — whether a startup or an enterprise — must implement to stay relevant, competitive, and profitable in 2026.
+                    </p>
+
+                    <!-- Trend 1 -->
+                    <h2 id="trend-1" class="font-display text-2xl font-bold text-white mt-12 mb-4 reveal">1. AI-Powered Marketing Automation</h2>
+                    <p class="text-white/75 text-[16px] leading-[1.85] mb-6 reveal">
+                        Artificial intelligence has moved beyond novelty to become the backbone of modern marketing operations. In 2026, AI-powered tools are automating everything from email segmentation and ad bidding to content creation and customer journey mapping. Businesses using AI automation report up to <strong class="text-white font-semibold">40% reduction in customer acquisition costs</strong> and a 30% increase in conversion rates.
+                    </p>
+                    <p class="text-white/75 text-[16px] leading-[1.85] mb-8 reveal">
+                        The key is not replacing human creativity but amplifying it. AI handles repetitive tasks — A/B testing, audience segmentation, bid optimization — while your team focuses on strategy, storytelling, and brand building. Tools like predictive analytics platforms now forecast customer behavior with remarkable accuracy, enabling proactive rather than reactive marketing.
+                    </p>
+
+                    <!-- Pull Quote -->
+                    <blockquote class="my-10 py-6 px-8 border-l-4 border-white/20 bg-white/[0.02] rounded-r-2xl reveal">
+                        <p class="font-display text-xl md:text-2xl font-light text-white/90 italic leading-relaxed">
+                            "AI doesn't replace marketers. It amplifies the ones who know how to use it."
+                        </p>
+                    </blockquote>
+
+                    <!-- Trend 2 -->
+                    <h2 id="trend-2" class="font-display text-2xl font-bold text-white mt-12 mb-4 reveal">2. Short-Form Video Dominance</h2>
+                    <p class="text-white/75 text-[16px] leading-[1.85] mb-6 reveal">
+                        Short-form video content on platforms like Instagram Reels, TikTok, and YouTube Shorts continues to dominate engagement metrics. In 2026, brands that invest in authentic, raw, and entertaining short-form videos are seeing <strong class="text-white font-semibold">3-5x higher engagement</strong> compared to static posts or long-form content.
+                    </p>
+                    <p class="text-white/75 text-[16px] leading-[1.85] mb-8 reveal">
+                        The formula is simple: hook viewers in the first 1.5 seconds, deliver value in under 30 seconds, and include a clear call-to-action. User-generated content (UGC) style videos are outperforming polished studio productions, as audiences crave authenticity over perfection.
+                    </p>
+
+                    <!-- Trend 3 -->
+                    <h2 id="trend-3" class="font-display text-2xl font-bold text-white mt-12 mb-4 reveal">3. Voice Search Optimization</h2>
+                    <p class="text-white/75 text-[16px] leading-[1.85] mb-6 reveal">
+                        With smart speakers and voice assistants now in over 50% of households, voice search is fundamentally changing how people find information online. By 2026, an estimated <strong class="text-white font-semibold">55% of all searches</strong> will be voice-based. This means optimizing for conversational long-tail keywords, featured snippets, and local SEO has never been more critical.
+                    </p>
+                    <p class="text-white/75 text-[16px] leading-[1.85] mb-8 reveal">
+                        Voice queries are typically longer and more conversational than typed queries. Instead of optimizing for "best marketing agency," focus on phrases like "what's the best digital marketing agency near me for small businesses." Structured data markup and FAQ pages become essential tools for capturing voice search traffic.
+                    </p>
+
+                    <!-- Trend 4 -->
+                    <h2 id="trend-4" class="font-display text-2xl font-bold text-white mt-12 mb-4 reveal">4. First-Party Data Strategies</h2>
+                    <p class="text-white/75 text-[16px] leading-[1.85] mb-6 reveal">
+                        As third-party cookies phase out and privacy regulations tighten globally, first-party data has become the most valuable asset in a marketer's toolkit. Brands that build robust <strong class="text-white font-semibold">zero-party and first-party data collection systems</strong> — through quizzes, surveys, loyalty programs, and interactive content — will have a decisive competitive advantage.
+                    </p>
+                    <p class="text-white/75 text-[16px] leading-[1.85] mb-8 reveal">
+                        Invest in Customer Data Platforms (CDPs) that unify data across touchpoints. The brands winning in 2026 are those that can create a single customer view without relying on invasive tracking methods. Transparency and value exchange are the new currency of data collection.
+                    </p>
+
+                    <!-- Trend 5 -->
+                    <h2 id="trend-5" class="font-display text-2xl font-bold text-white mt-12 mb-4 reveal">5. Hyper-Personalization at Scale</h2>
+                    <p class="text-white/75 text-[16px] leading-[1.85] mb-6 reveal">
+                        Generic marketing messages are dead. In 2026, consumers expect <strong class="text-white font-semibold">personalized experiences</strong> at every touchpoint — from tailored email subject lines to dynamic website content that adapts in real-time based on user behavior. AI makes this possible at scale.
+                    </p>
+                    <p class="text-white/75 text-[16px] leading-[1.85] mb-8 reveal">
+                        Dynamic creative optimization (DCO) automatically generates thousands of ad variations tailored to different audience segments. Personalized landing pages adjust content based on the visitor's industry, company size, and past interactions. The result: higher engagement, lower bounce rates, and significantly better conversion rates.
+                    </p>
+
+                    <!-- Trend 6 -->
+                    <h2 id="trend-6" class="font-display text-2xl font-bold text-white mt-12 mb-4 reveal">6. AI-Generated Ad Creative</h2>
+                    <p class="text-white/75 text-[16px] leading-[1.85] mb-6 reveal">
+                        AI video and image generation tools have matured to the point where brands can produce <strong class="text-white font-semibold">hundreds of ad creative variants</strong> in hours rather than weeks. From AI-generated product videos to synthetic brand ambassadors, the creative production pipeline has been completely transformed.
+                    </p>
+                    <p class="text-white/75 text-[16px] leading-[1.85] mb-8 reveal">
+                        The most effective approach combines AI generation with human curation. Use AI to produce initial drafts and variations, then have your creative team refine and approve the final output. This hybrid model delivers both speed and quality — producing 10x more creative at 85% lower cost.
+                    </p>
+
+                    <!-- Pull Quote -->
+                    <blockquote class="my-10 py-6 px-8 border-l-4 border-white/20 bg-white/[0.02] rounded-r-2xl reveal">
+                        <p class="font-display text-xl md:text-2xl font-light text-white/90 italic leading-relaxed">
+                            "The brands that win in 2026 are the ones that produce 1,000 variations instead of 10."
+                        </p>
+                    </blockquote>
+
+                    <!-- Trend 7 -->
+                    <h2 id="trend-7" class="font-display text-2xl font-bold text-white mt-12 mb-4 reveal">7. Conversational Marketing</h2>
+                    <p class="text-white/75 text-[16px] leading-[1.85] mb-6 reveal">
+                        AI chatbots and conversational AI have evolved from basic FAQ responders to sophisticated sales and support agents. In 2026, <strong class="text-white font-semibold">conversational marketing</strong> — using real-time, one-to-one conversations across chat, voice, and messaging platforms — is driving 3-5x higher lead qualification rates.
+                    </p>
+                    <p class="text-white/75 text-[16px] leading-[1.85] mb-8 reveal">
+                        Implement AI-powered chatbots on your website that can qualify leads, book meetings, and provide instant support. Integrate WhatsApp Business API for direct customer communication. The brands that make it easiest to start a conversation are the ones that convert the most customers.
+                    </p>
+
+                    <!-- Trend 8 -->
+                    <h2 id="trend-8" class="font-display text-2xl font-bold text-white mt-12 mb-4 reveal">8. Zero-Click Content</h2>
+                    <p class="text-white/75 text-[16px] leading-[1.85] mb-6 reveal">
+                        Social media algorithms increasingly reward content that keeps users on-platform. Zero-click content — posts that deliver complete value without requiring a click-through — is now the <strong class="text-white font-semibold">highest-performing content format</strong> across LinkedIn, Instagram, and TikTok.
+                    </p>
+                    <p class="text-white/75 text-[16px] leading-[1.85] mb-8 reveal">
+                        This means sharing full insights, complete tips, and actionable advice directly in your posts rather than teasing content with a "link in bio." Build brand authority and trust through generosity. The clicks will follow when audiences are ready to engage further.
+                    </p>
+
+                    <!-- Trend 9 -->
+                    <h2 id="trend-9" class="font-display text-2xl font-bold text-white mt-12 mb-4 reveal">9. Sustainability Storytelling</h2>
+                    <p class="text-white/75 text-[16px] leading-[1.85] mb-6 reveal">
+                        Modern consumers — especially Gen Z and Millennials — increasingly choose brands based on environmental and social values. In 2026, <strong class="text-white font-semibold">authentic sustainability storytelling</strong> is not just good ethics; it's good business. Brands with genuine purpose-driven narratives see 2x higher customer loyalty.
+                    </p>
+                    <p class="text-white/75 text-[16px] leading-[1.85] mb-8 reveal">
+                        Avoid greenwashing. Instead, document your actual sustainability journey — the progress, the challenges, and the commitments. Use video content to showcase behind-the-scenes efforts. Transparency builds trust, and trust drives long-term brand equity.
+                    </p>
+
+                    <!-- Trend 10 -->
+                    <h2 id="trend-10" class="font-display text-2xl font-bold text-white mt-12 mb-4 reveal">10. Omnichannel Attribution</h2>
+                    <p class="text-white/75 text-[16px] leading-[1.85] mb-6 reveal">
+                        As customer journeys become increasingly complex — spanning social media, search, email, offline interactions, and multiple devices — <strong class="text-white font-semibold">accurate omnichannel attribution</strong> has become essential for optimizing marketing spend. Businesses that can accurately attribute conversions across channels are allocating budgets 30% more efficiently.
+                    </p>
+                    <p class="text-white/75 text-[16px] leading-[1.85] mb-8 reveal">
+                        Invest in multi-touch attribution models and marketing mix modeling. Unified analytics platforms that track the entire customer journey — from first impression to final conversion — provide the insights needed to maximize ROI. The era of single-channel attribution is over.
+                    </p>
+
+                    <!-- Conclusion -->
+                    <div class="mt-12 pt-8 border-t border-white/10 reveal">
+                        <h2 class="font-display text-2xl font-bold text-white mb-4">Conclusion</h2>
+                        <p class="text-white/75 text-[16px] leading-[1.85] mb-6">
+                            The digital marketing trends of 2026 share a common thread: <strong class="text-white font-semibold">the intersection of AI technology and human authenticity</strong>. Businesses that leverage AI for efficiency while maintaining genuine, value-driven content will dominate their markets.
+                        </p>
+                        <p class="text-white/75 text-[16px] leading-[1.85] mb-8">
+                            Start implementing these trends today. You don't need to tackle all ten at once — pick the three that align most closely with your business goals and build from there. The future belongs to marketers who are both data-driven and human-centered.
+                        </p>
+                    </div>
+
+                    <!-- Author Box -->
+                    <div class="mt-10 p-6 rounded-2xl bg-white/[0.03] border border-white/10 flex items-start gap-4 reveal">
+                        <span class="w-12 h-12 rounded-full bg-white/10 font-bold text-sm flex items-center justify-center shrink-0">SS</span>
+                        <div>
+                            <div class="text-[14px] text-white font-semibold">Sunil Sharma</div>
+                            <div class="text-[12px] text-white/50 mb-2">Senior Digital Marketing Strategist</div>
+                            <p class="text-[13px] text-white/60 leading-relaxed">With over 8 years of experience in performance marketing and brand strategy, Sunil helps businesses scale through data-driven digital campaigns across Google, Meta, and emerging platforms.</p>
+                        </div>
+                    </div>
+
+                    <!-- Prev / Next -->
+                    <div class="mt-12 grid sm:grid-cols-2 gap-4 reveal">
+                        <a href="blog.html" class="p-5 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-white/20 transition-all group">
+                            <div class="text-[11px] text-white/40 uppercase tracking-wider mb-2">Previous</div>
+                            <div class="text-[14px] text-white font-medium group-hover:text-white/90 transition-colors">Back to Blog</div>
+                        </a>
+                        <a href="blog.html" class="p-5 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-white/20 transition-all group text-right">
+                            <div class="text-[11px] text-white/40 uppercase tracking-wider mb-2">Next Article</div>
+                            <div class="text-[14px] text-white font-medium group-hover:text-white/90 transition-colors">View All Posts</div>
+                        </a>
+                    </div>
+
+                </article>
+
+                <!-- Sidebar -->
+                <aside class="hidden lg:block">
+                    <div class="sticky top-28 space-y-8">
+                        <!-- Newsletter -->
+                        <div class="p-6 rounded-2xl bg-white/[0.03] border border-white/10">
+                            <h4 class="font-display text-sm font-bold text-white mb-2">Stay Updated</h4>
+                            <p class="text-[12px] text-white/50 mb-4 leading-relaxed">Get the latest digital marketing insights delivered to your inbox weekly.</p>
+                            <input type="email" placeholder="your@email.com" class="w-full px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 text-[13px] text-white placeholder:text-white/30 focus:outline-none focus:border-white/20 mb-3">
+                            <button class="w-full py-2.5 rounded-xl bg-white text-black text-[13px] font-semibold hover:bg-white/90 transition-colors">Subscribe</button>
+                        </div>
+
+                        <!-- Share -->
+                        <div class="p-6 rounded-2xl bg-white/[0.03] border border-white/10">
+                            <h4 class="font-display text-sm font-bold text-white mb-3">Share Article</h4>
+                            <div class="flex items-center gap-3">
+                                <a href="#" class="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition-colors"><i data-lucide="twitter" class="w-4 h-4 text-white/60"></i></a>
+                                <a href="#" class="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition-colors"><i data-lucide="linkedin" class="w-4 h-4 text-white/60"></i></a>
+                                <a href="#" class="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition-colors"><i data-lucide="facebook" class="w-4 h-4 text-white/60"></i></a>
+                                <a href="#" class="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition-colors"><i data-lucide="link" class="w-4 h-4 text-white/60"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== RELATED POSTS ===== -->
+    <section class="py-16 bg-[#0A0A0A]">
+        <div class="max-w-7xl mx-auto px-6 md:px-10">
+            <h2 class="font-display text-2xl font-bold text-white mb-8 reveal">Related Articles</h2>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <a href="blog.html" class="blog-card group bg-black border border-white/10 rounded-3xl overflow-hidden hover:border-white hover:shadow-xl transition-all duration-300">
+                    <div class="h-44 overflow-hidden bg-slate-900">
+                        <img src="assets/Images web/Blog (1).jpeg" alt="Social Media Marketing" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-5">
+                        <div class="text-[11px] text-slate-400 font-semibold uppercase">5 min read</div>
+                        <h3 class="font-display text-lg font-bold text-white mt-2 group-hover:text-white transition-colors">Mastering Social Media Growth in 2026</h3>
+                    </div>
+                </a>
+                <a href="blog.html" class="blog-card group bg-black border border-white/10 rounded-3xl overflow-hidden hover:border-white hover:shadow-xl transition-all duration-300">
+                    <div class="h-44 overflow-hidden bg-slate-900">
+                        <img src="assets/Images web/Blog (2).jpeg" alt="Google Ads vs Facebook Ads" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-5">
+                        <div class="text-[11px] text-slate-400 font-semibold uppercase">PPC / Advertising</div>
+                        <h3 class="font-display text-lg font-bold text-white mt-2 group-hover:text-white transition-colors">Google Ads vs Facebook Ads: Which Wins in 2026?</h3>
+                    </div>
+                </a>
+                <a href="blog.html" class="blog-card group bg-black border border-white/10 rounded-3xl overflow-hidden hover:border-white hover:shadow-xl transition-all duration-300">
+                    <div class="h-44 overflow-hidden bg-slate-900">
+                        <img src="assets/Images web/Blog (5).jpeg" alt="AI in Digital Marketing" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-5">
+                        <div class="text-[11px] text-slate-400 font-semibold uppercase">AI Tech</div>
+                        <h3 class="font-display text-lg font-bold text-white mt-2 group-hover:text-white transition-colors">How AI is Changing Digital Marketing</h3>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section class="py-20 bg-black">
+        <div class="max-w-4xl mx-auto px-6 md:px-10 text-center reveal">
+            <div class="overline-label">Ready to Grow?</div>
+            <h2 class="mt-3 font-display text-3xl md:text-5xl font-extrabold tracking-tight text-white">
+                Let's build your <span class="italic font-light text-white/80">2026 strategy</span>.
+            </h2>
+            <p class="mt-5 text-white/60 text-[16px] max-w-xl mx-auto leading-relaxed">
+                Our team helps businesses implement the latest digital marketing trends for measurable, scalable growth.
+            </p>
+            <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
+                <a href="contact.html" class="px-8 py-3.5 bg-white text-black font-semibold rounded-full text-[14px] hover:bg-white/90 transition-colors inline-flex items-center gap-2">
+                    Get Free Consultation <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+                <a href="audit.html" class="px-8 py-3.5 border border-white/20 text-white font-semibold rounded-full text-[14px] hover:bg-white/5 transition-colors">
+                    Free Marketing Audit
+                </a>
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="relative bg-slate-950 text-white pt-20 md:pt-28 pb-10 overflow-hidden">
+        <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] h-[400px] rounded-full bg-gray-1000/10 pointer-events-none"></div>
+        <div class="relative max-w-7xl mx-auto px-6 md:px-10">
+            <div class="grid lg:grid-cols-12 gap-12 mb-14 text-left">
+                <div class="lg:col-span-4">
+                    <div class="flex items-center mb-6">
+                        <img src="assets/logo-white.png" alt="Digital Advertise Logo" class="h-10 w-auto object-contain">
+                    </div>
+                    <p class="text-white/65 text-[15px] leading-relaxed max-w-md">
+                        A performance marketing partner for ambitious teams — engineered for measurable, durable growth across every channel and market.
+                    </p>
+                </div>
+                <div class="lg:col-span-8 grid grid-cols-2 sm:grid-cols-4 gap-8">
+                    <div>
+                        <div class="text-[11px] uppercase tracking-[0.2em] font-semibold text-white/40 mb-4">Navigation</div>
+                        <ul class="space-y-2.5">
+                            <li><a href="index.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Home</a></li>
+                            <li><a href="about.html" class="text-[14px] text-white/80 hover:text-white transition-colors">About Us</a></li>
+                            <li><a href="services.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Services</a></li>
+                            <li><a href="portfolio.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Portfolio</a></li>
+                            <li><a href="case-studies.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Case Studies</a></li>
+                            <li><a href="blog.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Blog</a></li>
+                            <li><a href="contact.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="text-[11px] uppercase tracking-[0.2em] font-semibold text-white/40 mb-4">Services</div>
+                        <ul class="space-y-2.5">
+                            <li><a href="social-media.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Social Media</a></li>
+                            <li><a href="performance-marketing.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Performance Marketing</a></li>
+                            <li><a href="web-development.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Web Development</a></li>
+                            <li><a href="brand-identity.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Brand Identity</a></li>
+                            <li><a href="ai-video.html" class="text-[14px] text-white/80 hover:text-white transition-colors">AI Creative</a></li>
+                            <li><a href="photography.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Product Photography</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="text-[11px] uppercase tracking-[0.2em] font-semibold text-white/40 mb-4">Resources</div>
+                        <ul class="space-y-2.5">
+                            <li><a href="audit.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Free Audit</a></li>
+                            <li><a href="blog.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Blog</a></li>
+                            <li><a href="case-studies.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Case Studies</a></li>
+                            <li><a href="privacy.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="text-[11px] uppercase tracking-[0.2em] font-semibold text-white/40 mb-4">Contact</div>
+                        <ul class="space-y-2.5">
+                            <li><a href="mailto:info@digitaladvertise.com" class="text-[14px] text-white/80 hover:text-white transition-colors flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4 shrink-0"></i>info@digitaladvertise.com</a></li>
+                            <li><a href="tel:+917276751167" class="text-[14px] text-white/80 hover:text-white transition-colors flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4 shrink-0"></i>+91 72767 51167</a></li>
+                            <li><a href="https://wa.me/917276751167" target="_blank" class="text-[14px] text-white/80 hover:text-white transition-colors flex items-center gap-2"><i data-lucide="message-circle" class="w-4 h-4 shrink-0"></i>WhatsApp</a></li>
+                            <li><a href="#" class="text-[14px] text-white/80 hover:text-white transition-colors flex items-center gap-2"><i data-lucide="map-pin" class="w-4 h-4 shrink-0"></i>Pune, India</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-10 pt-6 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-[13px] text-white/55">
+                <div>&copy; <span id="current-year">2026</span> Digital Advertise. All rights reserved.</div>
+                <div class="flex items-center gap-4">
+                    <a href="https://www.instagram.com/digital_advertise_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="text-white/55 hover:text-white transition-colors" aria-label="Instagram"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+                    <a href="https://twitter.com/digitaladvertise" target="_blank" class="text-white/55 hover:text-white transition-colors" aria-label="X / Twitter"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+                    <a href="https://www.facebook.com/digitaladvertise" target="_blank" class="text-white/55 hover:text-white transition-colors" aria-label="Facebook"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+                    <a href="https://www.youtube.com/@digitaladvertise" target="_blank" class="text-white/55 hover:text-white transition-colors" aria-label="YouTube"><i data-lucide="youtube" class="w-5 h-5"></i></a>
+                    <a href="https://www.linkedin.com/company/digitaladvertise" target="_blank" class="text-white/55 hover:text-white transition-colors" aria-label="LinkedIn"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/navbar.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+    (function() {
+      var navbar = document.getElementById('navbar');
+      var heroWrapper = document.getElementById('hero-scroll-wrapper');
+      if (!heroWrapper) {
+        navbar.classList.add('nav-visible');
+      } else {
+        function checkScroll() {
+          var heroBottom = heroWrapper.offsetTop + heroWrapper.offsetHeight;
+          if (window.scrollY >= heroBottom - 100) {
+            navbar.classList.add('nav-visible');
+          } else {
+            navbar.classList.remove('nav-visible');
+          }
+        }
+        window.addEventListener('scroll', checkScroll, { passive: true });
+        checkScroll();
+      }
+    })();
+    </script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

@@ -207,22 +207,6 @@
         </div>
     </div>
 </section>
-
-<!-- ===== TRUSTED BY ===== -->
-<section class="py-12 border-b border-slate-100">
-    <div class="max-w-7xl mx-auto px-6 md:px-10">
-        <p class="text-center text-sm font-semibold text-slate-400 uppercase tracking-wider mb-8">Trusted by forward-thinking brands</p>
-        <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-60">
-            <img src="assets/logos/google.svg" alt="Google" class="h-6 md:h-7 w-auto grayscale">
-            <img src="assets/logos/meta.svg" alt="Meta" class="h-6 md:h-7 w-auto grayscale">
-            <img src="assets/logos/microsoft.svg" alt="Microsoft" class="h-6 md:h-7 w-auto grayscale">
-            <img src="assets/logos/shopify.svg" alt="Shopify" class="h-6 md:h-7 w-auto grayscale">
-            <img src="assets/logos/tiktok.svg" alt="TikTok" class="h-6 md:h-7 w-auto grayscale">
-            <img src="assets/logos/hubspot.svg" alt="HubSpot" class="h-6 md:h-7 w-auto grayscale">
-        </div>
-    </div>
-</section>
-
 <!-- ===== WHAT WE DO ===== -->
 <section class="relative py-20 md:py-28 bg-white">
     <div class="max-w-7xl mx-auto px-6 md:px-10">
@@ -447,9 +431,18 @@
 
 
 <!-- ===== CTA SECTION ===== -->
-<section id="contact" class="relative py-20 md:py-28">
+<section id="contact" class="relative py-20 md:py-28 overflow-hidden">
     <div class="max-w-7xl mx-auto px-6 md:px-10">
-        <div class="relative rounded-[36px] bg-gradient-to-br from-blue-600 to-indigo-700 overflow-hidden p-10 md:p-16 lg:p-24">
+        <div class="relative rounded-[36px] bg-gradient-to-br from-blue-600 to-indigo-700 overflow-hidden p-10 md:p-16 lg:p-24 reveal-scale">
+<!-- CTA Animated Background -->
+<div class="cta-animated-bg-wrapper">
+    <div class="cta-animated-bg-glow"></div>
+<div class="cta-bubbles"></div>
+    <div class="cta-animated-bg-grid"></div>
+    <div class="cta-blob cta-blob-1"></div>
+    <div class="cta-blob cta-blob-2"></div>
+</div>
+
             <div class="absolute -top-32 -left-20 w-[420px] h-[420px] rounded-full bg-white/10 pointer-events-none"></div>
             <div class="absolute -bottom-32 -right-20 w-[420px] h-[420px] rounded-full bg-indigo-400/20 pointer-events-none"></div>
             <div class="relative grid lg:grid-cols-12 gap-10 items-center">
@@ -506,58 +499,58 @@
 
 
 <!-- ===== FAQ ===== -->
-<section class="relative py-20 md:py-28 bg-slate-50">
+<section class="relative section-spacing bg-[#0A0A0A]">
     <div class="max-w-3xl mx-auto px-6 md:px-10">
         <div class="text-center mb-16">
             <div class="overline-label reveal">FAQ</div>
-            <h2 class="mt-3 font-display text-3xl sm:text-5xl font-extrabold tracking-tighter text-slate-900 text-reveal">
+            <h2 class="mt-3 font-display text-3xl sm:text-5xl font-extrabold tracking-tighter text-white text-reveal">
                 Frequently asked questions
             </h2>
         </div>
         <div class="space-y-4">
-            <div class="bg-white rounded-2xl border border-slate-100 overflow-hidden reveal">
-                <button class="w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-display font-bold text-slate-900 text-[15px]">
-                    How many products can you shoot in a single session?
-                    <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 shrink-0 transition-transform"></i>
+            <div class="bg-black rounded-2xl border border-white/5 overflow-hidden reveal">
+                <button class="faq-btn w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-display font-bold text-white text-[15px]">
+                    What is the typical turnaround time for a product shoot?
+                    <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 shrink-0 transition-transform duration-300"></i>
                 </button>
-                <div class="px-6 pb-5 text-slate-600 text-[15px] leading-relaxed">
-                    We typically photograph 15-25 products per full-day session, depending on complexity. Each product receives multiple angles, lighting setups, and compositions. We also offer batch pricing for larger catalogs.
+                <div class="faq-answer px-6 pb-5 text-white/70 text-[15px] leading-relaxed">
+                    Standard turnaround is 5-7 business days from the date of the shoot. Rush delivery (48 hours) is available for an additional fee. Large catalog projects may require 2-3 weeks depending on volume.
                 </div>
             </div>
-            <div class="bg-white rounded-2xl border border-slate-100 overflow-hidden reveal">
-                <button class="w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-display font-bold text-slate-900 text-[15px]">
-                    What file formats and sizes do you deliver?
-                    <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 shrink-0 transition-transform"></i>
-                </button>
-                <div class="px-6 pb-5 text-slate-600 text-[15px] leading-relaxed">
-                    All shoots deliver high-resolution JPEGs (300 DPI) for print, web-optimized JPEGs for e-commerce, and PNG files with transparent backgrounds. We also provide platform-specific crops for Amazon, Shopify, Meta, and TikTok.
-                </div>
-            </div>
-            <div class="bg-white rounded-2xl border border-slate-100 overflow-hidden reveal">
-                <button class="w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-display font-bold text-slate-900 text-[15px]">
+            <div class="bg-black rounded-2xl border border-white/5 overflow-hidden reveal">
+                <button class="faq-btn w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-display font-bold text-white text-[15px]">
                     Do you provide lifestyle and context photography?
-                    <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 shrink-0 transition-transform"></i>
+                    <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 shrink-0 transition-transform duration-300"></i>
                 </button>
-                <div class="px-6 pb-5 text-slate-600 text-[15px] leading-relaxed">
+                <div class="faq-answer px-6 pb-5 text-white/70 text-[15px] leading-relaxed">
                     Yes. Every shoot includes both clean white-background catalog shots and lifestyle compositions. Lifestyle shots use curated props, settings, and models to showcase products in real-world contexts.
                 </div>
             </div>
-            <div class="bg-white rounded-2xl border border-slate-100 overflow-hidden reveal">
-                <button class="w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-display font-bold text-slate-900 text-[15px]">
-                    What's the typical turnaround time?
-                    <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 shrink-0 transition-transform"></i>
+            <div class="bg-black rounded-2xl border border-white/5 overflow-hidden reveal">
+                <button class="faq-btn w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-display font-bold text-white text-[15px]">
+                    What file formats and sizes do you deliver?
+                    <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 shrink-0 transition-transform duration-300"></i>
                 </button>
-                <div class="px-6 pb-5 text-slate-600 text-[15px] leading-relaxed">
-                    Standard turnaround is 5-7 business days. Rush delivery (48 hours) is available for an additional fee. Large catalog projects may require 2-3 weeks depending on volume.
+                <div class="faq-answer px-6 pb-5 text-white/70 text-[15px] leading-relaxed">
+                    All shoots deliver high-resolution JPEGs (300 DPI) for print, web-optimized JPEGs for e-commerce, and PNG files with transparent backgrounds. We also provide platform-specific crops for Amazon, Shopify, Meta, and TikTok.
                 </div>
             </div>
-            <div class="bg-white rounded-2xl border border-slate-100 overflow-hidden reveal">
-                <button class="w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-display font-bold text-slate-900 text-[15px]">
+            <div class="bg-black rounded-2xl border border-white/5 overflow-hidden reveal">
+                <button class="faq-btn w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-display font-bold text-white text-[15px]">
                     Can you match our existing brand imagery style?
-                    <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 shrink-0 transition-transform"></i>
+                    <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 shrink-0 transition-transform duration-300"></i>
                 </button>
-                <div class="px-6 pb-5 text-slate-600 text-[15px] leading-relaxed">
+                <div class="faq-answer px-6 pb-5 text-white/70 text-[15px] leading-relaxed">
                     Absolutely. We create detailed mood boards and color profiles during the creative brief phase. Our post-production workflow ensures brand-consistent color accuracy across your entire catalog.
+                </div>
+            </div>
+            <div class="bg-black rounded-2xl border border-white/5 overflow-hidden reveal">
+                <button class="faq-btn w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-display font-bold text-white text-[15px]">
+                    How many products can you shoot in a single session?
+                    <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 shrink-0 transition-transform duration-300"></i>
+                </button>
+                <div class="faq-answer px-6 pb-5 text-white/70 text-[15px] leading-relaxed">
+                    We typically photograph 15-25 products per full-day session, depending on complexity. Each product receives multiple angles, lighting setups, and compositions. We also offer batch pricing for larger catalogs.
                 </div>
             </div>
         </div>

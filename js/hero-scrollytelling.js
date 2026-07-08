@@ -63,9 +63,10 @@
     // Zoomed out Z positions to push the object further back and prevent overflow
     const getCamZ = () => {
         const aspect = W() / H();
-        if (aspect < 0.8) return 30.0; // Mobile / vertical aspect ratio
-        if (aspect < 1.2) return 25.0; // Tablet
-        return 22.0; // Desktop
+        if (aspect < 0.6) return 35.0;  // Very narrow mobile (e.g. 360px wide)
+        if (aspect < 0.8) return 32.0;  // Mobile / vertical aspect ratio
+        if (aspect < 1.2) return 25.0;  // Tablet
+        return 22.0;                     // Desktop
     };
     camera.position.set(0, 0, getCamZ());
 
@@ -572,7 +573,7 @@
             uNoiseScale: { value: 2.0 }, // Tight noise scale
             uDispersionScale: { value: 4.5 }, // Tight dispersion scale
             uOpacity: { value: 0.95 },
-            uSizeScale: { value: 1.0 }
+            uSizeScale: { value: IS_MOBILE ? 0.7 : 1.0 }
         },
         vertexShader: `
             uniform float uTime;
@@ -714,11 +715,17 @@
         new THREE.Color(0xffffff)  // white highlight
     ];
     
+    // Mobile-scaled spread values
+    const atmosSpreadX = IS_MOBILE ? 30 : 60;
+    const atmosSpreadY = IS_MOBILE ? 22 : 44;
+    const atmosSpreadZ = IS_MOBILE ? 38 : 75;
+    const atmosDepthOffset = IS_MOBILE ? -6 : -12.5;
+
     for (let i = 0; i < atmosphereCount; i++) {
-        // Distribute across the entire viewport (depth from -50 to 25, camera is at 22-30)
-        const x = (Math.random() - 0.5) * 60;
-        const y = (Math.random() - 0.5) * 44;
-        const z = (Math.random() - 0.5) * 75 - 12.5; // range: [-50, 25]
+        // Distribute across the entire viewport (depth scaled for mobile)
+        const x = (Math.random() - 0.5) * atmosSpreadX;
+        const y = (Math.random() - 0.5) * atmosSpreadY;
+        const z = (Math.random() - 0.5) * atmosSpreadZ + atmosDepthOffset;
         
         atmospherePositions[i * 3] = x;
         atmospherePositions[i * 3 + 1] = y;
@@ -820,8 +827,8 @@
                 if (distToCam < 2.0) {
                     vOpacity *= smoothstep(0.2, 2.0, distToCam); // Fade near lens
                 }
-                if (distToCam > 45.0) {
-                    vOpacity *= smoothstep(55.0, 45.0, distToCam); // Fade far background
+                if (distToCam > 35.0) {
+                    vOpacity *= smoothstep(45.0, 35.0, distToCam); // Fade far background
                 }
             }
         `,
@@ -871,10 +878,14 @@
         new THREE.Color(0xfde68a), // warm yellow
     ];
 
+    const starSpreadX = IS_MOBILE ? 40 : 80;
+    const starSpreadY = IS_MOBILE ? 30 : 60;
+    const starSpreadZ = IS_MOBILE ? 40 : 80;
+
     for (let i = 0; i < starCount; i++) {
-        starPositions[i * 3]     = (Math.random() - 0.5) * 80;
-        starPositions[i * 3 + 1] = (Math.random() - 0.5) * 60;
-        starPositions[i * 3 + 2] = (Math.random() - 0.5) * 80 - 10;
+        starPositions[i * 3]     = (Math.random() - 0.5) * starSpreadX;
+        starPositions[i * 3 + 1] = (Math.random() - 0.5) * starSpreadY;
+        starPositions[i * 3 + 2] = (Math.random() - 0.5) * starSpreadZ - 10;
 
         const depth = (starPositions[i * 3 + 2] + 50) / 80;
         starSizes[i] = (Math.random() < 0.85)
@@ -937,19 +948,20 @@
 
     // Dynamic layout offset positioning
     const adjustLayout = () => {
-        const isDesktop = window.innerWidth >= 768;
+        const currentWidth = window.innerWidth;
+        const isMobileNow = currentWidth < 768;
         const progressVal = material.uniforms.uProgress.value;
 
-        if (isDesktop) {
+        if (isMobileNow) {
+            particles.position.x = 0;
+        } else {
             if (progressVal < 0.5) {
                 particles.position.x = 5.5;
             } else {
                 particles.position.x = 0;
             }
-        } else {
-            particles.position.x = 0;
         }
-        particles.position.y = isDesktop ? -1.0 : -0.5;
+        particles.position.y = isMobileNow ? -0.5 : -1.0;
     };
     adjustLayout();
 
@@ -1282,6 +1294,10 @@
         adjustLayout();
     };
     window.addEventListener('resize', onResize);
+    // Also handle orientation change on mobile
+    window.addEventListener('orientationchange', () => {
+        setTimeout(onResize, 100);
+    });
 
     // ============================================================
     //  INITIAL ENTRANCE ANIMATION (SCENE 1 TEXT)

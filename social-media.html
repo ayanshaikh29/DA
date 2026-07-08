@@ -56,7 +56,7 @@
 <body class="bg-black text-white overflow-x-hidden antialiased selection:bg-[#111111] selection:text-white">
 
 <header id="navbar" style="position:fixed;top:0;left:0;width:100%;z-index:9999;padding:16px 0;transform:translateY(-120%);transition:transform 0.45s cubic-bezier(0.16,1,0.3,1);">
-  <div style="max-width:1280px;margin:0 auto;padding:0 24px;">
+  <div style="max-width:1280px;margin:0 auto;padding:0 24px;"><div id="mobile-menu-backdrop" onclick="toggleMobileMenu()"></div>
     <div id="nav-wrapper" style="display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,0.85);border:1px solid rgba(255,255,255,0.6);box-shadow:0 4px 32px rgba(2,6,23,0.08);border-radius:9999px;height:60px;padding:0 24px;">
       <a href="index.html" style="display:flex;align-items:center;">
         <img src="assets/logo.png" alt="Digital Advertise Logo" style="height:32px;width:auto;object-fit:contain;">
@@ -64,7 +64,7 @@
       <nav style="display:none;" id="desktop-nav">
         <a href="index.html">Home</a>
         <div class="nav-dropdown">
-          <a href="services.html">Services ▾</a>
+          <a href="services.html" style="display:inline-flex;align-items:center;gap:4px;">Services <i data-lucide="chevron-down" class="w-3 h-3"></i></a>
           <div class="nav-dropdown-menu">
             <a href="social-media.html">Social Media Marketing</a>
             <a href="performance-marketing.html">Performance Marketing</a>
@@ -84,22 +84,31 @@
       </nav>
       <div style="display:flex;align-items:center;gap:8px;">
         <a href="audit.html" style="display:inline-flex;align-items:center;gap:6px;background:#000000;color:#fff;font-weight:600;font-size:14px;padding:10px 20px;border-radius:9999px;text-decoration:none;transition:background 0.2s;">
-          Get Started ↗
-        </a>
-        <button onclick="toggleMobileMenu()" id="hamburger-btn" style="display:none;padding:8px;border-radius:9999px;border:none;background:transparent;cursor:pointer;">
-          ☰
-        </button>
+          Get Started <i data-lucide="arrow-up-right" class="w-4 h-4"></i></a>
+        <button onclick="toggleMobileMenu()" id="hamburger-btn" style="display:none;padding:6px;border-radius:9999px;border:none;background:transparent;cursor:pointer;"><i data-lucide="menu" id="menu-icon" class="w-6 h-6" style="color:#000;display:block;"></i></button>
       </div>
     </div>
-    <div id="mobile-menu" style="display:none;margin-top:12px;background:rgba(255,255,255,0.95);border-radius:20px;padding:20px;flex-direction:column;gap:8px;">
-      <a href="index.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Home</a>
-      <a href="services.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Services</a>
-      <a href="portfolio.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Portfolio</a>
-      <a href="case-studies.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Case Studies</a>
-      <a href="blog.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Blog</a>
-      <a href="contact.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">Contact</a>
-      <a href="about.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:block;">About Us</a>
-      <a href="audit.html" style="margin-top:8px;padding:12px;background:#000000;color:#fff;font-weight:600;border-radius:9999px;text-decoration:none;display:block;text-align:center;">Get Started</a>
+    <div id="mobile-menu" style="display:none;margin-top:12px;background:#ffffff;border-radius:20px;padding:20px;flex-direction:column;gap:8px;">
+      <a href="index.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:flex;align-items:center;">Home</a>
+      <div style="display:flex;flex-direction:column;">
+        <div class="mobile-services-row" style="display:flex;align-items:center;justify-content:flex-start;gap:0;"><a href="services.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;flex:0 0 auto;width:auto;">Services</a><button type="button" onclick="event.stopPropagation();event.preventDefault();toggleMobileServices()" aria-label="Toggle Services submenu"><i data-lucide="chevron-down" class="w-3 h-3" id="mobile-services-chevron"></i></button></div>
+        <div id="mobile-services-submenu">
+          <a href="social-media.html">Social Media Marketing</a>
+          <a href="performance-marketing.html">Performance Marketing</a>
+          <a href="brand-identity.html">Brand Identity</a>
+          <a href="web-development.html">Website Development</a>
+          <a href="video-production.html">Video Production</a>
+          <a href="ai-video.html">AI Video Generation</a>
+          <a href="packaging.html">Product Packaging Design</a>
+          <a href="photography.html">Product Shoot</a>
+        </div>
+      </div>
+      <a href="portfolio.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:flex;align-items:center;">Portfolio</a>
+      <a href="case-studies.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:flex;align-items:center;">Case Studies</a>
+      <a href="blog.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:flex;align-items:center;">Blog</a>
+      <a href="contact.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:flex;align-items:center;">Contact</a>
+      <a href="about.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:flex;align-items:center;">About Us</a>
+      <a href="audit.html" style="margin-top:8px;padding:12px;background:#0f172a;color:#fff;font-weight:600;border-radius:9999px;text-decoration:none;display:block;text-align:center;">Get Started <i data-lucide="arrow-up-right" class="w-4 h-4"></i></a>
     </div>
   </div>
 </header>
@@ -130,7 +139,7 @@
         </section>
 
         <!-- ===== WHAT WE DO ===== -->
-        <section class="relative overflow-hidden py-20 bg-black">
+        <section class="relative overflow-hidden py-8 md:py-12 bg-black">
             <div class="max-w-7xl mx-auto px-6 md:px-10">
                 <div class="text-center max-w-3xl mx-auto mb-14 reveal">
                     <div class="overline-label">What We Do</div>
@@ -163,7 +172,7 @@
         </section>
 
         <!-- ===== OUR PROCESS ===== -->
-        <section class="relative overflow-hidden py-20 bg-[#0A0A0A]/55">
+        <section class="relative overflow-hidden py-8 md:py-12 bg-[#0A0A0A]/55">
             <div class="max-w-7xl mx-auto px-6 md:px-10">
                 <div class="text-center max-w-3xl mx-auto mb-14 reveal">
                     <div class="overline-label">Process</div>
@@ -195,7 +204,7 @@
         </section>
 
         <!-- ===== WHY CHOOSE US ===== -->
-        <section class="relative overflow-hidden py-20 bg-black">
+        <section class="relative overflow-hidden py-8 md:py-12 bg-black">
             <div class="max-w-7xl mx-auto px-6 md:px-10">
                 <div class="grid lg:grid-cols-2 gap-16 items-center">
                     <div class="reveal-left">
@@ -250,7 +259,7 @@
         </section>
 
         <!-- ===== PORTFOLIO PREVIEW ===== -->
-        <section class="relative overflow-hidden py-20 bg-[#0A0A0A]/55">
+        <section class="relative overflow-hidden py-8 md:py-12 bg-[#0A0A0A]/55">
             <div class="max-w-7xl mx-auto px-6 md:px-10">
                 <div class="text-center max-w-3xl mx-auto mb-14 reveal">
                     <div class="overline-label">Portfolio</div>
@@ -258,12 +267,12 @@
                 </div>
                 <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6 reveal-stagger">
                     <div class="portfolio-item group relative rounded-3xl overflow-hidden aspect-[4/3] bg-slate-900 border border-white/5 hover:shadow-2xl transition-all duration-500">
-                        <img src="assets/Images web/social media 2.jpg" alt="Instagram growth campaign visual" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700">
+                        <img src="assets/social media gallery/social-gallery-28.jpeg" alt="Rabokki Korean Rice Cakes Campaign" loading="lazy" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700">
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent p-6 flex flex-col justify-between text-left opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                             <span class="bg-black text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 rounded text-white self-start">Instagram</span>
                             <div>
-                                <h3 class="font-display font-bold text-white text-xl">D2C Skincare Launch</h3>
-                                <p class="text-white/60 text-[13px] mt-1">Organic social strategy driving 4x ROAS for a beauty brand launch.</p>
+                                <h3 class="font-display font-bold text-white text-xl">Rabokki Instagram Campaign</h3>
+                                <p class="text-white/60 text-[13px] mt-1">Classic Korean rice cakes paired with udon noodles, simmered in a perfectly balanced sweet and spicy sauce.</p>
                                 <div class="mt-4 pt-4 border-t border-white/10 flex justify-between items-center text-white">
                                     <div><div class="text-lg font-bold text-white/60">+340%</div><div class="text-[10px] uppercase tracking-wider text-white/50">Engagement</div></div>
                                 </div>
@@ -271,40 +280,66 @@
                         </div>
                     </div>
                     <div class="portfolio-item group relative rounded-3xl overflow-hidden aspect-[4/3] bg-slate-900 border border-white/5 hover:shadow-2xl transition-all duration-500">
-                        <img src="assets/Images web/social media 3.jpg" alt="TikTok viral campaign creative" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700">
+                        <img src="assets/social media gallery/social-gallery-29.jpeg" alt="Korean Roll Kimbap Sushi Campaign" loading="lazy" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700">
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent p-6 flex flex-col justify-between text-left opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <span class="bg-black text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 rounded text-white self-start">TikTok</span>
+                            <span class="bg-black text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 rounded text-white self-start">Content</span>
                             <div>
-                                <h3 class="font-display font-bold text-white text-xl">Fashion Brand Virality</h3>
-                                <p class="text-white/60 text-[13px] mt-1">Creator partnerships generating 12M+ organic views in 30 days.</p>
+                                <h3 class="font-display font-bold text-white text-xl">Korean Culinary Showcase</h3>
+                                <p class="text-white/60 text-[13px] mt-1">A crispy Korean seaweed rice roll filled with golden shrimp or vegetable tempura, fresh veggies, and perilla leaves.</p>
                                 <div class="mt-4 pt-4 border-t border-white/10 flex justify-between items-center text-white">
-                                    <div><div class="text-lg font-bold text-white/60">12M+</div><div class="text-[10px] uppercase tracking-wider text-white/50">Organic Views</div></div>
+                                    <div><div class="text-lg font-bold text-white/60">12M+</div><div class="text-[10px] uppercase tracking-wider text-white/50">Views</div></div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="portfolio-item group relative rounded-3xl overflow-hidden aspect-[4/3] bg-slate-900 border border-white/5 hover:shadow-2xl transition-all duration-500">
-                        <img src="assets/Images web/social media 4.jpg" alt="LinkedIn B2B campaign visual" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700">
+                        <img src="assets/social media gallery/social-gallery-15.jpeg" alt="Waterfall through Door Scenic Campaign" loading="lazy" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700">
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent p-6 flex flex-col justify-between text-left opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <span class="bg-black text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 rounded text-white self-start">LinkedIn</span>
+                            <span class="bg-black text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 rounded text-white self-start">Visual Art</span>
                             <div>
-                                <h3 class="font-display font-bold text-white text-xl">SaaS Thought Leadership</h3>
-                                <p class="text-white/60 text-[13px] mt-1">Executive personal branding driving 50K+ inbound leads annually.</p>
+                                <h3 class="font-display font-bold text-white text-xl">Nature & Scenic Campaign</h3>
+                                <p class="text-white/60 text-[13px] mt-1">Cinematic surrealism featuring a majestic hidden waterfall framed perfectly through an open doorway.</p>
                                 <div class="mt-4 pt-4 border-t border-white/10 flex justify-between items-center text-white">
-                                    <div><div class="text-lg font-bold text-white/60">50K+</div><div class="text-[10px] uppercase tracking-wider text-white/50">Leads Generated</div></div>
+                                    <div><div class="text-lg font-bold text-white/60">+520%</div><div class="text-[10px] uppercase tracking-wider text-white/50">Reach</div></div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="portfolio-item group relative rounded-3xl overflow-hidden aspect-[4/3] bg-slate-900 border border-white/5 hover:shadow-2xl transition-all duration-500 sm:col-span-2 md:col-span-1">
-                        <img src="assets/Images web/social media 5.jpg" alt="Social media content strategy visual" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700">
+                    <div class="portfolio-item group relative rounded-3xl overflow-hidden aspect-[4/3] bg-slate-900 border border-white/5 hover:shadow-2xl transition-all duration-500">
+                        <img src="assets/social media gallery/social-gallery-14.jpeg" alt="Real Estate Layout Branding Campaign" loading="lazy" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700">
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent p-6 flex flex-col justify-between text-left opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <span class="bg-black text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 rounded text-white self-start">Content</span>
+                            <span class="bg-black text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 rounded text-white self-start">Branding</span>
                             <div>
-                                <h3 class="font-display font-bold text-white text-xl">Multi-Platform Content Strategy</h3>
-                                <p class="text-white/60 text-[13px] mt-1">Cross-platform content ecosystem driving consistent brand engagement.</p>
+                                <h3 class="font-display font-bold text-white text-xl">Real Estate Launch Strategy</h3>
+                                <p class="text-white/60 text-[13px] mt-1">High-impact visualization for premium housing layouts and modern infrastructure placement.</p>
                                 <div class="mt-4 pt-4 border-t border-white/10 flex justify-between items-center text-white">
-                                    <div><div class="text-lg font-bold text-white/60">+520%</div><div class="text-[10px] uppercase tracking-wider text-white/50">Reach</div></div>
+                                    <div><div class="text-lg font-bold text-white/60">4.2x</div><div class="text-[10px] uppercase tracking-wider text-white/50">CTR Lift</div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-item group relative rounded-3xl overflow-hidden aspect-[4/3] bg-slate-900 border border-white/5 hover:shadow-2xl transition-all duration-500">
+                        <img src="assets/social media gallery/social-gallery-30.jpeg" alt="Braised Fish Bowl Gourmet Campaign" loading="lazy" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent p-6 flex flex-col justify-between text-left opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <span class="bg-black text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 rounded text-white self-start">Social</span>
+                            <div>
+                                <h3 class="font-display font-bold text-white text-xl">Gourmet Food Marketing</h3>
+                                <p class="text-white/60 text-[13px] mt-1">Exquisite presentation of Braised Fish over premium Jasmine rice, layered with fresh greens and caramelized elements.</p>
+                                <div class="mt-4 pt-4 border-t border-white/10 flex justify-between items-center text-white">
+                                    <div><div class="text-lg font-bold text-white/60">+280%</div><div class="text-[10px] uppercase tracking-wider text-white/50">Growth</div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-item group relative rounded-3xl overflow-hidden aspect-[4/3] bg-slate-900 border border-white/5 hover:shadow-2xl transition-all duration-500">
+                        <img src="assets/social media gallery/social-gallery-09.jpeg" alt="Glysora Skincare Products Campaign" loading="lazy" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent p-6 flex flex-col justify-between text-left opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <span class="bg-black text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 rounded text-white self-start">Campaign</span>
+                            <div>
+                                <h3 class="font-display font-bold text-white text-xl">Glysora Skincare Launch</h3>
+                                <p class="text-white/60 text-[13px] mt-1">Premium elegance showcase highlighting the face wash and advanced skincare serum lineup with interactive offer details.</p>
+                                <div class="mt-4 pt-4 border-t border-white/10 flex justify-between items-center text-white">
+                                    <div><div class="text-lg font-bold text-white/60">4.5x</div><div class="text-[10px] uppercase tracking-wider text-white/50">ROAS</div></div>
                                 </div>
                             </div>
                         </div>
@@ -314,7 +349,7 @@
         </section>
 
         <!-- ===== STATS ===== -->
-        <section class="relative overflow-hidden py-20 bg-slate-950">
+        <section class="relative overflow-hidden py-8 md:py-12 bg-slate-950">
             <div class="max-w-7xl mx-auto px-6 md:px-10">
                 <div class="grid sm:grid-cols-3 gap-8 reveal-stagger">
                     <div class="text-center">
@@ -334,7 +369,7 @@
         </section>
 
         <!-- ===== TESTIMONIALS ===== -->
-        <section class="relative overflow-hidden py-20 bg-[#0A0A0A]/55">
+        <section class="relative overflow-hidden py-8 md:py-12 bg-[#0A0A0A]/55">
             <div class="max-w-7xl mx-auto px-6 md:px-10">
                 <div class="text-center max-w-3xl mx-auto mb-14 reveal">
                     <div class="overline-label">Testimonials</div>
@@ -393,152 +428,19 @@
             </div>
         </section>
 
-        
-
-        <!-- ===== GALLERY ===== -->
-        <section class="relative overflow-hidden py-20 bg-black">
-            <div class="max-w-7xl mx-auto px-6 md:px-10">
-                <div class="text-center max-w-3xl mx-auto mb-14 reveal">
-                    <div class="overline-label">Gallery</div>
-                    <h2 class="mt-3 font-display text-3xl md:text-5xl font-extrabold tracking-tight text-white">Social Media Work</h2>
-                </div>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 reveal-stagger">
-                    <div class="group relative rounded-2xl overflow-hidden aspect-[4/5] bg-slate-900">
-                        <img src="assets/social media gallery/social-gallery-01.jpeg" alt="Social media creative" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    </div>
-                    <div class="group relative rounded-2xl overflow-hidden aspect-[4/5] bg-slate-900">
-                        <img src="assets/social media gallery/social-gallery-02.jpeg" alt="Social media creative" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    </div>
-                    <div class="group relative rounded-2xl overflow-hidden aspect-[4/5] bg-slate-900">
-                        <img src="assets/social media gallery/social-gallery-03.jpeg" alt="Social media creative" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    </div>
-                    <div class="group relative rounded-2xl overflow-hidden aspect-[4/5] bg-slate-900">
-                        <img src="assets/social media gallery/social-gallery-04.jpeg" alt="Social media creative" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    </div>
-                    <div class="md:col-span-2 group relative rounded-2xl overflow-hidden aspect-[4/5] md:aspect-[2/1] bg-slate-900">
-                        <img src="assets/social media gallery/social-gallery-05.jpeg" alt="Social media creative" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    </div>
-                    <div class="group relative rounded-2xl overflow-hidden aspect-[4/5] bg-slate-900">
-                        <img src="assets/social media gallery/social-gallery-06.jpeg" alt="Social media creative" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    </div>
-                    <div class="group relative rounded-2xl overflow-hidden aspect-[4/5] bg-slate-900">
-                        <img src="assets/social media gallery/social-gallery-07.jpeg" alt="Social media creative" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    </div>
-                    <div class="group relative rounded-2xl overflow-hidden aspect-[4/5] bg-slate-900">
-                        <img src="assets/social media gallery/social-gallery-08.jpeg" alt="Social media creative" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    </div>
-                    <div class="group relative rounded-2xl overflow-hidden aspect-[4/5] bg-slate-900">
-                        <img src="assets/social media gallery/social-gallery-09.jpeg" alt="Social media creative" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    </div>
-                    <div class="group relative rounded-2xl overflow-hidden aspect-[4/5] bg-slate-900">
-                        <img src="assets/social media gallery/social-gallery-10.jpeg" alt="Social media creative" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    </div>
-                    <div class="group relative rounded-2xl overflow-hidden aspect-[4/5] bg-slate-900">
-                        <img src="assets/social media gallery/social-gallery-11.jpeg" alt="Social media creative" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    </div>
-                    <div class="group relative rounded-2xl overflow-hidden aspect-[4/5] bg-slate-900">
-                        <img src="assets/social media gallery/social-gallery-12.jpeg" alt="Social media creative" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    </div>
-                    <div class="md:col-span-2 group relative rounded-2xl overflow-hidden aspect-[4/5] md:aspect-[2/1] bg-slate-900">
-                        <img src="assets/social media gallery/social-gallery-13.jpeg" alt="Social media creative" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    </div>
-                    <div class="group relative rounded-2xl overflow-hidden aspect-[4/5] bg-slate-900">
-                        <img src="assets/social media gallery/social-gallery-14.jpeg" alt="Social media creative" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    </div>
-                    <div class="group relative rounded-2xl overflow-hidden aspect-[4/5] bg-slate-900">
-                        <img src="assets/social media gallery/social-gallery-15.jpeg" alt="Social media creative" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    </div>
-                    <div class="group relative rounded-2xl overflow-hidden aspect-[4/5] bg-slate-900">
-                        <img src="assets/social media gallery/social-gallery-16.jpeg" alt="Social media creative" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    </div>
-                    <div class="group relative rounded-2xl overflow-hidden aspect-[4/5] bg-slate-900">
-                        <img src="assets/social media gallery/social-gallery-17.jpeg" alt="Social media creative" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    </div>
-                    <div class="group relative rounded-2xl overflow-hidden aspect-[4/5] bg-slate-900">
-                        <img src="assets/social media gallery/social-gallery-18.jpeg" alt="Social media creative" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    </div>
-                    <div class="md:col-span-2 group relative rounded-2xl overflow-hidden aspect-[4/5] md:aspect-[2/1] bg-slate-900">
-                        <img src="assets/social media gallery/social-gallery-19.jpeg" alt="Social media creative" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    </div>
-                    <div class="group relative rounded-2xl overflow-hidden aspect-[4/5] bg-slate-900">
-                        <img src="assets/social media gallery/social-gallery-20.jpeg" alt="Social media creative" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    </div>
-                    <div class="group relative rounded-2xl overflow-hidden aspect-[4/5] bg-slate-900">
-                        <img src="assets/social media gallery/social-gallery-21.jpeg" alt="Social media creative" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    </div>
-                    <div class="group relative rounded-2xl overflow-hidden aspect-[4/5] bg-slate-900">
-                        <img src="assets/social media gallery/social-gallery-22.jpeg" alt="Social media creative" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    </div>
-                    <div class="group relative rounded-2xl overflow-hidden aspect-[4/5] bg-slate-900">
-                        <img src="assets/social media gallery/social-gallery-23.jpeg" alt="Social media creative" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    </div>
-                    <div class="group relative rounded-2xl overflow-hidden aspect-[4/5] bg-slate-900">
-                        <img src="assets/social media gallery/social-gallery-24.jpeg" alt="Social media creative" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    </div>
-                    <div class="md:col-span-2 group relative rounded-2xl overflow-hidden aspect-[4/5] md:aspect-[2/1] bg-slate-900">
-                        <img src="assets/social media gallery/social-gallery-25.jpeg" alt="Social media creative" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    </div>
-                    <div class="md:col-span-2 group relative rounded-2xl overflow-hidden aspect-[4/5] md:aspect-[2/1] bg-slate-900">
-                        <img src="assets/social media gallery/social-gallery-26.jpeg" alt="Social media creative" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    </div>
-                    <div class="group relative rounded-2xl overflow-hidden aspect-[4/5] bg-slate-900">
-                        <img src="assets/social media gallery/social-gallery-27.jpeg" alt="Social media creative" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    </div>
-                    <div class="group relative rounded-2xl overflow-hidden aspect-[4/5] bg-slate-900">
-                        <img src="assets/social media gallery/social-gallery-28.jpeg" alt="Social media creative" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    </div>
-                    <div class="group relative rounded-2xl overflow-hidden aspect-[4/5] bg-slate-900">
-                        <img src="assets/social media gallery/social-gallery-29.jpeg" alt="Social media creative" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    </div>
-                    <div class="group relative rounded-2xl overflow-hidden aspect-[4/5] bg-slate-900">
-                        <img src="assets/social media gallery/social-gallery-30.jpeg" alt="Social media creative" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    </div>
-                    <div class="group relative rounded-2xl overflow-hidden aspect-[4/5] bg-slate-900">
-                        <img src="assets/social media gallery/social-gallery-31.jpeg" alt="Social media creative" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    </div>
-                    <div class="group relative rounded-2xl overflow-hidden aspect-[4/5] bg-slate-900">
-                        <img src="assets/social media gallery/social-gallery-32.jpeg" alt="Social media creative" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- ===== CTA SECTION ===== -->
-        <section id="contact" class="relative overflow-hidden py-16 md:py-24">
+        <section id="contact" class="relative overflow-hidden py-8 md:py-12">
         <div class="max-w-7xl mx-auto px-6 md:px-10">
-        <div class="relative rounded-[36px] bg-slate-950 overflow-hidden p-10 md:p-16 lg:p-24 reveal">
+        <div class="relative rounded-[36px] bg-slate-950 overflow-hidden p-6 md:p-10 lg:p-14 reveal-scale">
+<!-- CTA Animated Background -->
+<div class="cta-animated-bg-wrapper">
+    <div class="cta-animated-bg-glow"></div>
+<div class="cta-bubbles"></div>
+    <div class="cta-animated-bg-grid"></div>
+    <div class="cta-blob cta-blob-1"></div>
+    <div class="cta-blob cta-blob-2"></div>
+</div>
+
         <div class="absolute -top-32 -left-20 w-[420px] h-[420px] rounded-full bg-gray-1000/30 pointer-events-none"></div>
         <div class="absolute -bottom-32 -right-20 w-[420px] h-[420px] rounded-full bg-gray-1000/30 pointer-events-none"></div>
         <div class="absolute inset-0 opacity-[0.06] pointer-events-none grid-pattern"></div>
@@ -572,58 +474,68 @@
         </div>
         </section>
 
-    </main>
-
-    <!-- Footer -->
-    
 <!-- ===== FAQ ===== -->
-        <section class="relative overflow-hidden py-20 bg-black">
-            <div class="max-w-3xl mx-auto px-6 md:px-10">
-                <div class="text-center mb-14 reveal">
-                    <div class="overline-label">FAQ</div>
-                    <h2 class="mt-3 font-display text-3xl md:text-5xl font-extrabold tracking-tight text-white">Common Questions</h2>
-                </div>
-                <div class="space-y-4 reveal-stagger">
-                    <details class="group bg-[#0A0A0A] rounded-2xl overflow-hidden">
-                        <summary class="flex items-center justify-between p-6 cursor-pointer font-display font-bold text-white text-[15px]">
-                            How long does it take to see results from organic social?
-                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform"></i>
-                        </summary>
-                        <div class="px-6 pb-6 text-white/60 text-[14px] leading-relaxed">Most clients see measurable engagement improvements within 30–60 days. Compounding follower growth typically accelerates around the 90-day mark as algorithmic signals compound and content libraries expand.</div>
-                    </details>
-                    <details class="group bg-[#0A0A0A] rounded-2xl overflow-hidden">
-                        <summary class="flex items-center justify-between p-6 cursor-pointer font-display font-bold text-white text-[15px]">
-                            Which platforms do you specialize in?
-                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform"></i>
-                        </summary>
-                        <div class="px-6 pb-6 text-white/60 text-[14px] leading-relaxed">We manage organic social across Instagram, TikTok, LinkedIn, Twitter/X, and Facebook. Platform selection is driven by your audience demographics and business objectives — we don't spread thin across platforms that don't move the needle.</div>
-                    </details>
-                    <details class="group bg-[#0A0A0A] rounded-2xl overflow-hidden">
-                        <summary class="flex items-center justify-between p-6 cursor-pointer font-display font-bold text-white text-[15px]">
-                            Do you handle creator and influencer partnerships?
-                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform"></i>
-                        </summary>
-                        <div class="px-6 pb-6 text-white/60 text-[14px] leading-relaxed">Yes — end-to-end creator sourcing, negotiation, briefing, content review, and performance tracking. We work across nano, micro, and macro tiers depending on campaign goals and budget allocation.</div>
-                    </details>
-                    <details class="group bg-[#0A0A0A] rounded-2xl overflow-hidden">
-                        <summary class="flex items-center justify-between p-6 cursor-pointer font-display font-bold text-white text-[15px]">
-                            Can you work with our existing brand guidelines?
-                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform"></i>
-                        </summary>
-                        <div class="px-6 pb-6 text-white/60 text-[14px] leading-relaxed">Absolutely. We build social content frameworks that extend your existing brand identity — not replace it. Every asset is aligned with your tone, visual system, and positioning before going live.</div>
-                    </details>
-                    <details class="group bg-[#0A0A0A] rounded-2xl overflow-hidden">
-                        <summary class="flex items-center justify-between p-6 cursor-pointer font-display font-bold text-white text-[15px]">
-                            What does your reporting look like?
-                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform"></i>
-                        </summary>
-                        <div class="px-6 pb-6 text-white/60 text-[14px] leading-relaxed">Monthly performance dashboards covering engagement rate, follower growth, reach, impressions, sentiment analysis, and top-performing content. Includes strategic recommendations for the following month.</div>
-                    </details>
+<section class="relative section-spacing bg-[#0A0A0A]">
+    <div class="max-w-3xl mx-auto px-6 md:px-10">
+        <div class="text-center mb-16">
+            <div class="overline-label reveal">FAQ</div>
+            <h2 class="mt-3 font-display text-3xl sm:text-5xl font-extrabold tracking-tighter text-white text-reveal">
+                Frequently asked questions
+            </h2>
+        </div>
+        <div class="space-y-4">
+            <div class="bg-black rounded-2xl border border-white/5 overflow-hidden reveal">
+                <button class="faq-btn w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-display font-bold text-white text-[15px]">
+                    How often will you post on our social channels?
+                    <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 shrink-0 transition-transform duration-300"></i>
+                </button>
+                <div class="faq-answer px-6 pb-5 text-white/70 text-[15px] leading-relaxed">
+                    Posting frequency varies by platform and strategy, but a standard engagement includes 3-5 high-quality posts per week per platform, plus daily story updates.
                 </div>
             </div>
-        </section>
+            <div class="bg-black rounded-2xl border border-white/5 overflow-hidden reveal">
+                <button class="faq-btn w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-display font-bold text-white text-[15px]">
+                    Do you handle community management and replies?
+                    <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 shrink-0 transition-transform duration-300"></i>
+                </button>
+                <div class="faq-answer px-6 pb-5 text-white/70 text-[15px] leading-relaxed">
+                    Yes, our team actively monitors your channels, replying to comments, engaging with followers, and managing customer service inquiries according to your brand guidelines.
+                </div>
+            </div>
+            <div class="bg-black rounded-2xl border border-white/5 overflow-hidden reveal">
+                <button class="faq-btn w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-display font-bold text-white text-[15px]">
+                    Do you work with influencers and UGC creators?
+                    <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 shrink-0 transition-transform duration-300"></i>
+                </button>
+                <div class="faq-answer px-6 pb-5 text-white/70 text-[15px] leading-relaxed">
+                    Absolutely. We manage end-to-end influencer campaigns, from outreach and negotiation to content approval and performance tracking.
+                </div>
+            </div>
+            <div class="bg-black rounded-2xl border border-white/5 overflow-hidden reveal">
+                <button class="faq-btn w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-display font-bold text-white text-[15px]">
+                    Will you need us to provide all the photos and videos?
+                    <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 shrink-0 transition-transform duration-300"></i>
+                </button>
+                <div class="faq-answer px-6 pb-5 text-white/70 text-[15px] leading-relaxed">
+                    Not at all. We have an in-house studio for product photography and video production. We can handle 100% of the content creation if required.
+                </div>
+            </div>
+            <div class="bg-black rounded-2xl border border-white/5 overflow-hidden reveal">
+                <button class="faq-btn w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-display font-bold text-white text-[15px]">
+                    How do you grow followers organically?
+                    <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 shrink-0 transition-transform duration-300"></i>
+                </button>
+                <div class="faq-answer px-6 pb-5 text-white/70 text-[15px] leading-relaxed">
+                    We focus on algorithmic alignment, creating highly shareable short-form video content, engaging proactively with niche communities, and optimizing profile SEO.
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-<footer class="relative bg-slate-950 text-white pt-20 md:pt-28 pb-10 overflow-hidden">
+    </main>
+
+<footer class="relative bg-slate-950 text-white pt-10 md:pt-14 pb-10 overflow-hidden">
         <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] h-[400px] rounded-full bg-gray-1000/10 pointer-events-none"></div>
         <div class="relative max-w-7xl mx-auto px-6 md:px-10">
             <div class="grid lg:grid-cols-12 gap-12 mb-14 text-left">
@@ -642,7 +554,7 @@
                         <ul class="space-y-2.5">
                             <li><a href="index.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Home</a></li>
                             <li><a href="about.html" class="text-[14px] text-white/80 hover:text-white transition-colors">About Us</a></li>
-                            <li><a href="services.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Services</a></li>
+                            <li><a href="services.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Services <i data-lucide="chevron-down" class="w-3 h-3"></i></a></li>
                             <li><a href="portfolio.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Portfolio</a></li>
                             <li><a href="case-studies.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Case Studies</a></li>
                             <li><a href="blog.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Blog</a></li>

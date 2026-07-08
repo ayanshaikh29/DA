@@ -38,108 +38,12 @@
     </script>
     <!-- Shared Custom Stylesheet -->
     <link rel="stylesheet" href="css/style.css">
-    <style>
-        /* Nav links desktop */
-        #desktop-nav {
-            display: flex !important;
-            align-items: center;
-            gap: 4px;
-        }
-        @media (max-width: 1024px) {
-            #desktop-nav { display: none !important; }
-            #hamburger-btn { display: block !important; }
-        }
-        #desktop-nav a {
-            padding: 8px 14px;
-            font-size: 14px;
-            font-weight: 500;
-            color: #475569;
-            border-radius: 9999px;
-            text-decoration: none;
-            transition: color 0.2s, background 0.2s;
-            white-space: nowrap;
-            transform: none !important;
-        }
-        #desktop-nav a:hover {
-            color: #000000;
-            background: rgba(255,255,255,0.07);
-            transform: none !important;
-        }
-        .nav-dropdown {
-            position: relative;
-            padding-bottom: 8px;
-            margin-bottom: -8px;
-        }
-        .nav-dropdown-menu {
-            opacity: 0;
-            visibility: hidden;
-            pointer-events: none;
-            position: absolute;
-            top: 100%;
-            left: 50%;
-            transform: translateX(-50%) translateY(6px);
-            width: 260px;
-            background: rgba(255,255,255,0.98);
-            
-            border: 1px solid rgba(226,232,240,0.8);
-            box-shadow: 0 10px 40px rgba(2,6,23,0.10);
-            border-radius: 20px;
-            padding: 10px;
-            z-index: 99999;
-            transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
-        }
-        .nav-dropdown-menu::before {
-            content: '';
-            position: absolute;
-            top: -12px;
-            left: 0;
-            width: 100%;
-            height: 12px;
-            background: transparent;
-        }
-        .nav-dropdown:hover .nav-dropdown-menu {
-            opacity: 1;
-            visibility: visible;
-            pointer-events: auto;
-            transform: translateX(-50%) translateY(0px);
-        }
-        .nav-dropdown-menu a {
-            display: block;
-            padding: 9px 14px;
-            font-size: 13px;
-            color: #475569;
-            border-radius: 10px;
-            text-decoration: none;
-            transition: color 0.15s, background 0.15s;
-        }
-        .nav-dropdown-menu a:hover {
-            color: #000000;
-            background: #f1f5f9;
-        }
-        #navbar.nav-visible {
-            transform: translateY(0) !important;
-        }
-        #mobile-menu.open {
-            display: flex !important;
-        }
-        /* Hero gradient animation */
-        .hero-gradient {
-            background: linear-gradient(-45deg, #0f172a, #1e293b, #0f172a, #1e3a5f);
-            background-size: 400% 400%;
-            animation: gradientShift 8s ease infinite;
-        }
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-    </style>
 </head>
 <body class="bg-black text-white overflow-x-hidden antialiased selection:bg-[#111111] selection:text-white">
 
 <!-- Header -->
 <header id="navbar" class="fixed top-0 left-0 w-full z-[9999] py-4 transform -translate-y-full transition-transform duration-[450ms] ease-[cubic-bezier(0.16,1,0.3,1)] nav-visible">
-    <div class="max-w-[1280px] mx-auto px-6">
+    <div class="max-w-[1280px] mx-auto px-6"><div id="mobile-menu-backdrop" onclick="toggleMobileMenu()"></div>
         <div id="nav-wrapper" class="flex items-center justify-between bg-white/85 border border-black/10 shadow-[0_4px_32px_rgba(2,6,23,0.08)] rounded-full h-[60px] px-6">
             <a href="index.html" class="flex items-center">
                 <img src="assets/logo.png" alt="Digital Advertise Logo" class="h-8 w-auto object-contain">
@@ -147,7 +51,7 @@
             <nav style="display:none;" id="desktop-nav">
                 <a href="index.html">Home</a>
                 <div class="nav-dropdown">
-                    <a href="services.html">Services ▾</a>
+                    <a href="services.html" style="display:inline-flex;align-items:center;gap:4px;">Services <i data-lucide="chevron-down" class="w-3 h-3"></i></a>
                     <div class="nav-dropdown-menu">
                         <a href="social-media.html">Social Media Marketing</a>
             <a href="performance-marketing.html">Performance Marketing</a>
@@ -167,30 +71,39 @@
             </nav>
             <div class="flex items-center gap-2">
                 <a href="audit.html" class="inline-flex items-center gap-1.5 bg-slate-900 text-white font-semibold text-sm py-2.5 px-5 rounded-full transition-colors hover:bg-slate-800">
-                    Get Started ↗
-                </a>
-                <button onclick="toggleMobileMenu()" id="hamburger-btn" class="hidden p-2 rounded-full border-none bg-transparent cursor-pointer">
-                    ☰
-                </button>
+                    Get Started <i data-lucide="arrow-up-right" class="w-4 h-4"></i></a>
+                <button onclick="toggleMobileMenu()" id="hamburger-btn" class="hidden p-2 rounded-full border-none bg-transparent cursor-pointer"><i data-lucide="menu" id="menu-icon" class="w-6 h-6" style="color:#000;display:block;"></i></button>
             </div>
         </div>
-        <div id="mobile-menu" class="hidden mt-3 bg-black/95 rounded-[20px] p-5 flex-col gap-2">
-            <a href="index.html" class="py-2.5 px-3 text-white font-medium rounded-[10px] no-underline block">Home</a>
-            <a href="services.html" class="py-2.5 px-3 text-white font-medium rounded-[10px] no-underline block">Services</a>
-            <a href="portfolio.html" class="py-2.5 px-3 text-white font-medium rounded-[10px] no-underline block">Portfolio</a>
-            <a href="case-studies.html" class="py-2.5 px-3 text-white font-medium rounded-[10px] no-underline block">Case Studies</a>
-            <a href="blog.html" class="py-2.5 px-3 text-white font-medium rounded-[10px] no-underline block">Blog</a>
-            <a href="contact.html" class="py-2.5 px-3 text-white font-medium rounded-[10px] no-underline block">Contact</a>
-            <a href="about.html" class="py-2.5 px-3 text-white font-medium rounded-[10px] no-underline block">About Us</a>
-            <a href="audit.html" class="mt-2 py-3 bg-slate-900 text-white font-semibold rounded-full no-underline block text-center">Get Started</a>
+        <div id="mobile-menu" class="hidden mt-3 bg-black rounded-[20px] p-5 flex-col gap-2" style="z-index:9999;max-height:70vh;overflow-y:auto;border:1px solid rgba(255,255,255,0.1);box-shadow:0 20px 60px rgba(0,0,0,0.5);">
+      <a href="index.html" style="padding:12px 14px;color:#fff;font-weight:500;border-radius:10px;text-decoration:none;display:flex;align-items:center;min-height:44px;font-size:15px;">Home</a>
+      <div style="display:flex;flex-direction:column;">
+        <div class="mobile-services-row" style="display:flex;align-items:center;justify-content:flex-start;gap:0;"><a href="services.html" style="padding:12px 14px;color:#fff;font-weight:500;border-radius:10px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;min-height:44px;font-size:15px;flex:0 0 auto;width:auto;">Services</a><button type="button" onclick="event.stopPropagation();event.preventDefault();toggleMobileServices()" aria-label="Toggle Services submenu"><i data-lucide="chevron-down" class="w-3 h-3" id="mobile-services-chevron"></i></button></div>
+        <div id="mobile-services-submenu" style="padding:4px 0 4px 16px;">
+          <a href="social-media.html" style="padding:10px 14px;color:rgba(255,255,255,0.8);font-size:13px;border-radius:8px;text-decoration:none;display:flex;align-items:center;min-height:40px;font-weight:500;">Social Media Marketing</a>
+          <a href="performance-marketing.html" style="padding:10px 14px;color:rgba(255,255,255,0.8);font-size:13px;border-radius:8px;text-decoration:none;display:flex;align-items:center;min-height:40px;font-weight:500;">Performance Marketing</a>
+          <a href="brand-identity.html" style="padding:10px 14px;color:rgba(255,255,255,0.8);font-size:13px;border-radius:8px;text-decoration:none;display:flex;align-items:center;min-height:40px;font-weight:500;">Brand Identity</a>
+          <a href="web-development.html" style="padding:10px 14px;color:rgba(255,255,255,0.8);font-size:13px;border-radius:8px;text-decoration:none;display:flex;align-items:center;min-height:40px;font-weight:500;">Website Development</a>
+          <a href="video-production.html" style="padding:10px 14px;color:rgba(255,255,255,0.8);font-size:13px;border-radius:8px;text-decoration:none;display:flex;align-items:center;min-height:40px;font-weight:500;">Video Production</a>
+          <a href="ai-video.html" style="padding:10px 14px;color:rgba(255,255,255,0.8);font-size:13px;border-radius:8px;text-decoration:none;display:flex;align-items:center;min-height:40px;font-weight:500;">AI Video Generation</a>
+          <a href="packaging.html" style="padding:10px 14px;color:rgba(255,255,255,0.8);font-size:13px;border-radius:8px;text-decoration:none;display:flex;align-items:center;min-height:40px;font-weight:500;">Product Packaging Design</a>
+          <a href="photography.html" style="padding:10px 14px;color:rgba(255,255,255,0.8);font-size:13px;border-radius:8px;text-decoration:none;display:flex;align-items:center;min-height:40px;font-weight:500;">Product Shoot</a>
         </div>
+      </div>
+      <a href="portfolio.html" style="padding:12px 14px;color:#fff;font-weight:500;border-radius:10px;text-decoration:none;display:flex;align-items:center;min-height:44px;font-size:15px;">Portfolio</a>
+      <a href="case-studies.html" style="padding:12px 14px;color:#fff;font-weight:500;border-radius:10px;text-decoration:none;display:flex;align-items:center;min-height:44px;font-size:15px;">Case Studies</a>
+      <a href="blog.html" style="padding:12px 14px;color:#fff;font-weight:500;border-radius:10px;text-decoration:none;display:flex;align-items:center;min-height:44px;font-size:15px;">Blog</a>
+      <a href="contact.html" style="padding:12px 14px;color:#fff;font-weight:500;border-radius:10px;text-decoration:none;display:flex;align-items:center;min-height:44px;font-size:15px;">Contact</a>
+      <a href="about.html" style="padding:12px 14px;color:#fff;font-weight:500;border-radius:10px;text-decoration:none;display:flex;align-items:center;min-height:44px;font-size:15px;">About Us</a>
+      <a href="audit.html" style="margin-top:8px;padding:12px;background:#0f172a;color:#fff;font-weight:600;border-radius:9999px;text-decoration:none;display:block;text-align:center;min-height:44px;">Get Started <i data-lucide="arrow-up-right" class="w-4 h-4"></i></a>
     </div>
+  </div>
 </header>
 
 <main class="relative bg-black text-white font-sans overflow-x-hidden">
 
 <!-- ===== HERO SECTION ===== -->
-<section class="relative overflow-hidden pt-36 md:pt-44 pb-20 mesh-bg">
+<section class="relative overflow-hidden pt-36 md:pt-44 pb-[1cm] mesh-bg">
     <div class="absolute inset-0 overflow-hidden pointer-events-none z-0">
         <div class="absolute w-[800px] h-[800px] rounded-full bg-[radial-gradient(circle,_rgba(255,255,255,0.12)_0%,_transparent_70%)] -top-1/4 -right-1/4"></div>
     </div>
@@ -208,23 +121,9 @@
     </div>
 </section>
 
-<!-- ===== TRUSTED BY ===== -->
-<section class="py-12 border-b border-white/5">
-    <div class="max-w-7xl mx-auto px-6 md:px-10">
-        <p class="text-center text-sm font-semibold text-slate-400 uppercase tracking-wider mb-8">Trusted by forward-thinking brands</p>
-        <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-60">
-            <img src="assets/logos/google.svg" alt="Google" class="h-6 md:h-7 w-auto ">
-            <img src="assets/logos/meta.svg" alt="Meta" class="h-6 md:h-7 w-auto ">
-            <img src="assets/logos/microsoft.svg" alt="Microsoft" class="h-6 md:h-7 w-auto ">
-            <img src="assets/logos/shopify.svg" alt="Shopify" class="h-6 md:h-7 w-auto ">
-            <img src="assets/logos/tiktok.svg" alt="TikTok" class="h-6 md:h-7 w-auto ">
-            <img src="assets/logos/hubspot.svg" alt="HubSpot" class="h-6 md:h-7 w-auto ">
-        </div>
-    </div>
-</section>
 
 <!-- ===== WHAT WE DO ===== -->
-<section class="relative py-20 md:py-28 bg-black">
+<section class="relative section-spacing bg-black">
     <div class="max-w-7xl mx-auto px-6 md:px-10">
         <div class="text-center max-w-3xl mx-auto mb-16">
             <div class="overline-label reveal">What We Do</div>
@@ -259,7 +158,7 @@
 </section>
 
 <!-- ===== PROCESS ===== -->
-<section class="relative py-20 md:py-28 bg-[#0A0A0A]">
+<section class="relative section-spacing bg-[#0A0A0A]">
     <div class="max-w-7xl mx-auto px-6 md:px-10">
         <div class="text-center max-w-3xl mx-auto mb-16">
             <div class="overline-label reveal">Our Process</div>
@@ -293,7 +192,7 @@
 </section>
 
 <!-- ===== WHY CHOOSE US ===== -->
-<section class="relative py-20 md:py-28 bg-black">
+<section class="relative section-spacing bg-black">
     <div class="max-w-7xl mx-auto px-6 md:px-10">
         <div class="text-center max-w-3xl mx-auto mb-16">
             <div class="overline-label reveal">Why Choose Us</div>
@@ -343,7 +242,7 @@
 </section>
 
 <!-- ===== PORTFOLIO ===== -->
-<section class="relative py-20 md:py-28 bg-[#0A0A0A]">
+<section class="relative section-spacing bg-[#0A0A0A]">
     <div class="max-w-7xl mx-auto px-6 md:px-10">
         <div class="text-center max-w-3xl mx-auto mb-16">
             <div class="overline-label reveal">Our Work</div>
@@ -378,8 +277,8 @@
             </div>
         </div>
         <!-- Asymmetric feature gallery with remaining images -->
-        <div class="grid md:grid-cols-5 gap-6 mt-10 reveal">
-            <div class="md:col-span-3 group relative rounded-3xl overflow-hidden aspect-[16/9] reveal">
+        <div class="grid md:grid-cols-2 gap-6 mt-10 reveal">
+            <div class="group relative rounded-3xl overflow-hidden aspect-[16/9] reveal">
                 <img src="assets/Images web/product shoot 4.jpg" alt="Product shoot showcase for branded packaging" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                 <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
@@ -387,12 +286,28 @@
                     <h3 class="font-display text-lg font-bold text-white mt-1">Premium Product Showcase</h3>
                 </div>
             </div>
-            <div class="md:col-span-2 group relative rounded-3xl overflow-hidden aspect-[4/5] reveal">
-                <img src="assets/Images web/Product shoot 5.jpg" alt="Lifestyle product photography for social media" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="group relative rounded-3xl overflow-hidden aspect-[16/9] reveal">
+                <img src="assets/Images web/product shoot 5.jpg" alt="Lifestyle product photography for social media" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                 <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
                     <span class="text-white/70 text-xs font-semibold uppercase tracking-wider">Lifestyle</span>
                     <h3 class="font-display text-lg font-bold text-white mt-1">Brand Storytelling</h3>
+                </div>
+            </div>
+            <div class="group relative rounded-3xl overflow-hidden aspect-[16/9] reveal">
+                <img src="assets/Images web/Product shoot 6.jpeg" alt="Professional flat lay product photography" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                    <span class="text-white/70 text-xs font-semibold uppercase tracking-wider">Flat Lay</span>
+                    <h3 class="font-display text-lg font-bold text-white mt-1">Styled Product Arrangement</h3>
+                </div>
+            </div>
+            <div class="group relative rounded-3xl overflow-hidden aspect-[16/9] reveal">
+                <img src="assets/Images web/Product shoot 7.jpeg" alt="Commercial product photography with props" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                    <span class="text-white/70 text-xs font-semibold uppercase tracking-wider">Commercial</span>
+                    <h3 class="font-display text-lg font-bold text-white mt-1">Brand Campaign Shoot</h3>
                 </div>
             </div>
         </div>
@@ -400,7 +315,7 @@
 </section>
 
 <!-- ===== TESTIMONIALS ===== -->
-<section class="relative py-20 md:py-28 bg-black">
+<section class="relative section-spacing bg-black">
     <div class="max-w-7xl mx-auto px-6 md:px-10">
         <div class="text-center max-w-3xl mx-auto mb-16">
             <div class="overline-label reveal">Testimonials</div>
@@ -466,9 +381,18 @@
 
 
 <!-- ===== CTA SECTION ===== -->
-<section id="contact" class="relative py-20 md:py-28">
+<section id="contact" class="relative section-spacing overflow-hidden">
     <div class="max-w-7xl mx-auto px-6 md:px-10">
-        <div class="relative rounded-[36px] bg-gradient-to-br from-black600 to-gray-600700 overflow-hidden p-10 md:p-16 lg:p-24">
+        <div class="relative rounded-[36px] bg-gradient-to-br from-black600 to-gray-600700 overflow-hidden p-10 md:p-16 lg:p-24 reveal-scale">
+<!-- CTA Animated Background -->
+<div class="cta-animated-bg-wrapper">
+    <div class="cta-animated-bg-glow"></div>
+<div class="cta-bubbles"></div>
+    <div class="cta-animated-bg-grid"></div>
+    <div class="cta-blob cta-blob-1"></div>
+    <div class="cta-blob cta-blob-2"></div>
+</div>
+
             <div class="absolute -top-32 -left-20 w-[420px] h-[420px] rounded-full bg-black/10 pointer-events-none"></div>
             <div class="absolute -bottom-32 -right-20 w-[420px] h-[420px] rounded-full bg-[#111111]/20 pointer-events-none"></div>
             <div class="relative grid lg:grid-cols-12 gap-10 items-center">
@@ -492,7 +416,7 @@
 </section>
 
 <!-- ===== STATS (DARK BG) ===== -->
-<section class="relative py-20 md:py-28 bg-[#0f172a] overflow-hidden">
+<section class="relative section-spacing bg-[#0f172a] overflow-hidden">
     <div class="absolute inset-0 grid-pattern opacity-[0.03] pointer-events-none"></div>
     <div class="max-w-7xl mx-auto px-6 md:px-10 relative z-10">
         <div class="text-center max-w-3xl mx-auto mb-16">
@@ -525,7 +449,7 @@
 
 
 <!-- ===== FAQ ===== -->
-<section class="relative py-20 md:py-28 bg-[#0A0A0A]">
+<section class="relative section-spacing bg-[#0A0A0A]">
     <div class="max-w-3xl mx-auto px-6 md:px-10">
         <div class="text-center mb-16">
             <div class="overline-label reveal">FAQ</div>
@@ -535,47 +459,47 @@
         </div>
         <div class="space-y-4">
             <div class="bg-black rounded-2xl border border-white/5 overflow-hidden reveal">
-                <button class="w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-display font-bold text-white text-[15px]">
+                <button class="faq-btn w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-display font-bold text-white text-[15px]">
                     How many products can you shoot in a single session?
-                    <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 shrink-0 transition-transform"></i>
+                    <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 shrink-0 transition-transform duration-300"></i>
                 </button>
-                <div class="px-6 pb-5 text-white/70 text-[15px] leading-relaxed">
+                <div class="faq-answer px-6 pb-5 text-white/70 text-[15px] leading-relaxed">
                     We typically photograph 15-25 products per full-day session, depending on complexity. Each product receives multiple angles, lighting setups, and compositions. We also offer batch pricing for larger catalogs.
                 </div>
             </div>
             <div class="bg-black rounded-2xl border border-white/5 overflow-hidden reveal">
-                <button class="w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-display font-bold text-white text-[15px]">
+                <button class="faq-btn w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-display font-bold text-white text-[15px]">
                     What file formats and sizes do you deliver?
-                    <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 shrink-0 transition-transform"></i>
+                    <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 shrink-0 transition-transform duration-300"></i>
                 </button>
-                <div class="px-6 pb-5 text-white/70 text-[15px] leading-relaxed">
+                <div class="faq-answer px-6 pb-5 text-white/70 text-[15px] leading-relaxed">
                     All shoots deliver high-resolution JPEGs (300 DPI) for print, web-optimized JPEGs for e-commerce, and PNG files with transparent backgrounds. We also provide platform-specific crops for Amazon, Shopify, Meta, and TikTok.
                 </div>
             </div>
             <div class="bg-black rounded-2xl border border-white/5 overflow-hidden reveal">
-                <button class="w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-display font-bold text-white text-[15px]">
+                <button class="faq-btn w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-display font-bold text-white text-[15px]">
                     Do you provide lifestyle and context photography?
-                    <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 shrink-0 transition-transform"></i>
+                    <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 shrink-0 transition-transform duration-300"></i>
                 </button>
-                <div class="px-6 pb-5 text-white/70 text-[15px] leading-relaxed">
+                <div class="faq-answer px-6 pb-5 text-white/70 text-[15px] leading-relaxed">
                     Yes. Every shoot includes both clean white-background catalog shots and lifestyle compositions. Lifestyle shots use curated props, settings, and models to showcase products in real-world contexts.
                 </div>
             </div>
             <div class="bg-black rounded-2xl border border-white/5 overflow-hidden reveal">
-                <button class="w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-display font-bold text-white text-[15px]">
+                <button class="faq-btn w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-display font-bold text-white text-[15px]">
                     What's the typical turnaround time?
-                    <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 shrink-0 transition-transform"></i>
+                    <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 shrink-0 transition-transform duration-300"></i>
                 </button>
-                <div class="px-6 pb-5 text-white/70 text-[15px] leading-relaxed">
+                <div class="faq-answer px-6 pb-5 text-white/70 text-[15px] leading-relaxed">
                     Standard turnaround is 5-7 business days. Rush delivery (48 hours) is available for an additional fee. Large catalog projects may require 2-3 weeks depending on volume.
                 </div>
             </div>
             <div class="bg-black rounded-2xl border border-white/5 overflow-hidden reveal">
-                <button class="w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-display font-bold text-white text-[15px]">
+                <button class="faq-btn w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-display font-bold text-white text-[15px]">
                     Can you match our existing brand imagery style?
-                    <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 shrink-0 transition-transform"></i>
+                    <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 shrink-0 transition-transform duration-300"></i>
                 </button>
-                <div class="px-6 pb-5 text-white/70 text-[15px] leading-relaxed">
+                <div class="faq-answer px-6 pb-5 text-white/70 text-[15px] leading-relaxed">
                     Absolutely. We create detailed mood boards and color profiles during the creative brief phase. Our post-production workflow ensures brand-consistent color accuracy across your entire catalog.
                 </div>
             </div>
@@ -584,7 +508,7 @@
 </section>
 
 <!-- Footer -->
-<footer class="relative bg-slate-950 text-white pt-20 md:pt-28 pb-10 overflow-hidden">
+<footer class="relative bg-slate-950 text-white section-spacing overflow-hidden">
     <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] h-[400px] rounded-full bg-gray-1000/10 pointer-events-none"></div>
     <div class="relative max-w-7xl mx-auto px-6 md:px-10">
         <div class="grid lg:grid-cols-12 gap-12 mb-14 text-left">
@@ -603,7 +527,7 @@
                     <ul class="space-y-2.5">
                         <li><a href="index.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Home</a></li>
                         <li><a href="about.html" class="text-[14px] text-white/80 hover:text-white transition-colors">About Us</a></li>
-                        <li><a href="services.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Services</a></li>
+                        <li><a href="services.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Services <i data-lucide="chevron-down" class="w-3 h-3"></i></a></li>
                         <li><a href="portfolio.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Portfolio</a></li>
                         <li><a href="case-studies.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Case Studies</a></li>
                         <li><a href="blog.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Blog</a></li>

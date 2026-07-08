@@ -74,6 +74,7 @@
     window.toggleMobileMenu = function () {
         const menu     = document.getElementById('mobile-menu');
         const menuIcon = document.getElementById('menu-icon');
+        const backdrop = document.getElementById('mobile-menu-backdrop');
         if (!menu) return;
 
         const isHidden = menu.classList.contains('hidden');
@@ -84,6 +85,7 @@
                 menuIcon.setAttribute('data-lucide', 'x');
                 if (window.lucide) lucide.createIcons();
             }
+            if (backdrop) backdrop.classList.add('active');
         } else {
             menu.classList.add('hidden');
             menu.classList.remove('flex');
@@ -91,6 +93,10 @@
                 menuIcon.setAttribute('data-lucide', 'menu');
                 if (window.lucide) lucide.createIcons();
             }
+            if (backdrop) backdrop.classList.remove('active');
+            // Close services submenu when closing main menu
+            const sub = document.getElementById('mobile-services-submenu');
+            if (sub) sub.classList.remove('open');
         }
     };
 
@@ -106,8 +112,23 @@
                 menuIcon.setAttribute('data-lucide', 'menu');
                 if (window.lucide) lucide.createIcons();
             }
+            const backdrop = document.getElementById('mobile-menu-backdrop');
+            if (backdrop) backdrop.classList.remove('active');
         }
     });
+
+    /* ─── 6. Mobile Services submenu toggle ───────────────── */
+    window.toggleMobileServices = function () {
+        var sub = document.getElementById('mobile-services-submenu');
+        var chevron = document.getElementById('mobile-services-chevron');
+        if (!sub) return;
+        sub.classList.toggle('open');
+        if (chevron) {
+            var isOpen = sub.classList.contains('open');
+            chevron.style.transform = isOpen ? 'rotate(180deg)' : 'rotate(0deg)';
+            chevron.style.transition = 'transform 0.2s ease';
+        }
+    };
 
     /* ─── 6. WhatsApp float button — force green background ─────── */
     setTimeout(function () {

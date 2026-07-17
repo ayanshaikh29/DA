@@ -377,72 +377,6 @@
 #mobile-menu.open {
   display: flex !important;
 }
-
-/* ── Proof Dashboard Responsive Polish ── */
-@media (max-width: 768px) {
-  /* Prevent `.stat-value` global font size of 2.5rem from overriding the dashboard circular stats percentage values on mobile */
-  #proof-dashboard .circle-pct-value {
-    font-size: 13px !important;
-  }
-  
-  /* Maintain the original desktop font scale / bold stat-value size on mobile, but improve line-height and letter-spacing to look premium */
-  #proof-dashboard .leads-heading {
-    font-size: clamp(2rem, 8.5vw, 2.5rem) !important;
-    line-height: 1.15 !important;
-    letter-spacing: -0.03em !important;
-  }
-}
-
-/* ── Floating Hero Stats Overlay Mobile Fix ── */
-@media (max-width: 768px) {
-  /* Scope to the floaty stat panel inside the Why Choose Us section */
-  .section-why-choose .lg\:col-span-5 .floaty {
-    position: absolute !important;
-    bottom: 16px !important;
-    right: 16px !important;
-    left: auto !important;
-    top: auto !important;
-    transform: none !important;
-    animation: none !important; /* Prevent floating animation from offsetting out of bounds on mobile */
-    margin: 0 !important;
-    width: 175px !important;
-    padding: 10px 12px !important;
-    border-radius: 12px !important;
-    box-shadow: 0 8px 32px rgba(2, 6, 23, 0.3) !important;
-    background: rgba(10, 10, 10, 0.8) !important;
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
-  }
-
-  .section-why-choose .lg\:col-span-5 .floaty .text-\[11px\] {
-    font-size: 9px !important;
-    letter-spacing: 0.05em !important;
-  }
-
-  .section-why-choose .lg\:col-span-5 .floaty .text-3xl {
-    font-size: 1.5rem !important;
-    line-height: 1.1 !important;
-    margin-top: 2px !important;
-  }
-
-  .section-why-choose .lg\:col-span-5 .floaty .mt-3 {
-    margin-top: 6px !important;
-    gap: 6px !important;
-  }
-
-  .section-why-choose .lg\:col-span-5 .floaty .w-6 {
-    width: 18px !important;
-    height: 18px !important;
-  }
-
-  .section-why-choose .lg\:col-span-5 .floaty .w-6 svg {
-    width: 12px !important;
-    height: 12px !important;
-  }
-
-  .section-why-choose .lg\:col-span-5 .floaty span {
-    font-size: 10px !important;
-  }
-}
 </style>
 </head>
 <body class="bg-white text-slate-900 overflow-x-hidden antialiased selection:bg-blue-100 selection:text-blue-800">
@@ -1529,13 +1463,13 @@ See our results in action <i data-lucide="arrow-right" class="w-4 h-4"></i>
 <!-- ===== PROOF (LIVE DASHBOARD) ===== -->
 <section id="proof" class="relative py-16 md:py-24 overflow-hidden">
 <div class="max-w-7xl mx-auto px-6 md:px-10">
-<div class="flex flex-col items-center text-center lg:grid lg:grid-cols-12 gap-10 lg:items-end mb-8 lg:mb-14 reveal">
-<div class="w-full lg:col-span-8">
+<div class="grid lg:grid-cols-12 gap-10 items-end mb-14 reveal">
+<div class="lg:col-span-8">
 <div class="overline-label">Our work drives businesses forward</div>
-<h2                            class="mt-4 lg:mt-3 font-display text-4xl md:text-6xl font-bold tracking-tighter text-slate-900 leading-none text-reveal">                            Growth, visualized in <span class="italic font-light text-slate-700">real time.</span>
+<h2                            class="mt-3 font-display text-4xl md:text-6xl font-bold tracking-tighter text-slate-900 leading-none text-reveal">                            Growth, visualized in <span class="italic font-light text-slate-700">real time.</span>
 </h2>
 </div>
-<p class="w-full max-w-[340px] lg:max-w-none lg:col-span-4 text-slate-600 text-base md:text-lg mt-5 lg:mt-0 leading-[1.75] lg:leading-normal mx-auto lg:mx-0">                        A live look at the dashboards we build for clients — leads, revenue, and ROI, transparently                        tracked.                    </p>
+<p class="lg:col-span-4 text-slate-600 text-base md:text-lg">                        A live look at the dashboards we build for clients — leads, revenue, and ROI, transparently                        tracked.                    </p>
 </div>
 <!-- Live Dashboard Container -->
 <div id="proof-dashboard"                    class="relative rounded-[28px] border border-slate-200 bg-white shadow-2xl shadow-slate-900/[0.07] overflow-hidden reveal">
@@ -1553,7 +1487,7 @@ See our results in action <i data-lucide="arrow-right" class="w-4 h-4"></i>
 <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse">
 </span>                            Live                        </div>
 </div>
-<div class="grid lg:grid-cols-12 gap-5 p-4 sm:p-5 md:p-7">
+<div class="grid lg:grid-cols-12 gap-5 p-5 md:p-7">
 <div class="lg:col-span-8 space-y-5">
 <div class="grid grid-cols-3 gap-4 text-left">
 <div class="rounded-2xl border border-slate-200 p-4">
@@ -1607,7 +1541,7 @@ See our results in action <i data-lucide="arrow-right" class="w-4 h-4"></i>
 </div>
 </div>
 <div class="lg:col-span-4 space-y-5 text-left">
-<div class="rounded-2xl border border-slate-200 p-3 sm:p-4 md:p-5">
+<div class="rounded-2xl border border-slate-200 p-4 md:p-5">
 <div class="text-[11px] font-semibold uppercase tracking-wider text-slate-500">Channel                                    performance</div>
 <div class="mt-3 h-32 flex items-end gap-2 md:gap-3 select-none">
 <div class="flex-1 flex flex-col items-center gap-1 h-full justify-end">
@@ -1632,7 +1566,7 @@ See our results in action <i data-lucide="arrow-right" class="w-4 h-4"></i>
 </div>
 </div>
 </div>
-<div class="rounded-2xl border border-slate-200 p-3 sm:p-4 md:p-5">
+<div class="rounded-2xl border border-slate-200 p-4 md:p-5">
 <div class="text-[11px] font-semibold uppercase tracking-wider text-slate-500 mb-4">Goal                                    completion</div>
 <div class="grid grid-cols-3 gap-2 select-none">
 <div class="flex flex-col items-center">
@@ -1643,7 +1577,7 @@ See our results in action <i data-lucide="arrow-right" class="w-4 h-4"></i>
 <circle cx="50" cy="50" r="38" stroke="#2563eb" stroke-width="8"                                                    fill="none" stroke-linecap="round" stroke-dasharray="238.76"                                                    stroke-dashoffset="238.76"                                                    class="metric-ring transition-all duration-1000 ease-out"                                                    data-target="81">
 </circle>
 </svg>
-<div                                                class="circle-pct-value absolute inset-0 flex items-center justify-center font-display text-sm md:text-base font-bold text-slate-900 stat-value">                                                92%</div>
+<div                                                class="absolute inset-0 flex items-center justify-center font-display text-sm md:text-base font-bold text-slate-900 stat-value">                                                92%</div>
 </div>
 <div class="mt-2 text-[11px] text-slate-600 font-medium text-center">Results                                        </div>
 </div>
@@ -1655,7 +1589,7 @@ See our results in action <i data-lucide="arrow-right" class="w-4 h-4"></i>
 <circle cx="50" cy="50" r="38" stroke="#6366f1" stroke-width="8"                                                    fill="none" stroke-linecap="round" stroke-dasharray="238.76"                                                    stroke-dashoffset="238.76"                                                    class="metric-ring transition-all duration-1000 ease-out"                                                    data-target="94">
 </circle>
 </svg>
-<div                                                class="circle-pct-value absolute inset-0 flex items-center justify-center font-display text-sm md:text-base font-bold text-slate-900 stat-value">                                                94%</div>
+<div                                                class="absolute inset-0 flex items-center justify-center font-display text-sm md:text-base font-bold text-slate-900 stat-value">                                                94%</div>
 </div>
 <div class="mt-2 text-[11px] text-slate-600 font-medium text-center">Quality                                        </div>
 </div>
@@ -1667,7 +1601,7 @@ See our results in action <i data-lucide="arrow-right" class="w-4 h-4"></i>
 <circle cx="50" cy="50" r="38" stroke="#f59e0b" stroke-width="8"                                                    fill="none" stroke-linecap="round" stroke-dasharray="238.76"                                                    stroke-dashoffset="238.76"                                                    class="metric-ring transition-all duration-1000 ease-out"                                                    data-target="68">
 </circle>
 </svg>
-<div                                                class="circle-pct-value absolute inset-0 flex items-center justify-center font-display text-sm md:text-base font-bold text-slate-900 stat-value">                                                68%</div>
+<div                                                class="absolute inset-0 flex items-center justify-center font-display text-sm md:text-base font-bold text-slate-900 stat-value">                                                68%</div>
 </div>
 <div class="mt-2 text-[11px] text-slate-600 font-medium text-center">Retention                                        </div>
 </div>
@@ -1675,12 +1609,12 @@ See our results in action <i data-lucide="arrow-right" class="w-4 h-4"></i>
 </div>
 </div>
 </div>
-<div                        class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 p-6 sm:p-8 md:px-8 md:py-6 border-t border-slate-200 bg-slate-50/60 text-left select-none">
+<div                        class="flex flex-col md:flex-row items-start md:items-center justify-between gap-5 p-6 md:px-8 md:py-6 border-t border-slate-200 bg-slate-50/60 text-left select-none">
 <div>
-<div class="font-display text-[15px] sm:text-base md:text-lg font-bold text-slate-900 stat-value leading-snug leads-heading">282K+ leads<br class="md:hidden"> generated. $2.1B+<br class="md:hidden"> revenue driven.</div>
-<div class="text-[13px] text-slate-600 mt-4 md:mt-1.5">Numbers updated quarterly across our active                                accounts.</div>
+<div class="font-display text-[15px] sm:text-base md:text-lg font-bold text-slate-900 stat-value leading-snug">282K+ leads generated. $2.1B+                                revenue driven.</div>
+<div class="text-[13px] text-slate-600 mt-1.5">Numbers updated quarterly across our active                                accounts.</div>
 </div>
-<a href="case-studies.html"                            class="inline-flex items-center gap-2 font-semibold text-slate-900 hover:text-blue-600 transition text-[14px] md:text-base shrink-0">                            See Case Studies                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right w-4 h-4"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+<a href="case-studies.html"                            class="inline-flex items-center gap-2 font-semibold text-slate-900 hover:text-blue-600 transition mt-2 md:mt-0 text-[14px] md:text-base shrink-0">                            See Case Studies                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right w-4 h-4"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
 </a>
 </div>
 </div>
@@ -1689,14 +1623,14 @@ See our results in action <i data-lucide="arrow-right" class="w-4 h-4"></i>
 <!-- Feature capabilities grid -->
 <section class="relative py-16 md:py-24 bg-gradient-to-b from-slate-50/30 to-white overflow-hidden">
 <div class="max-w-7xl mx-auto px-6 md:px-10">
-<div class="flex flex-col items-center text-center lg:grid lg:grid-cols-12 gap-10 lg:items-end mb-8 lg:mb-14 reveal-right">
-<div class="w-full lg:col-span-8 text-center lg:text-left">
+<div class="grid lg:grid-cols-12 gap-10 items-end mb-14 reveal-right">
+<div class="lg:col-span-8 text-left">
 <div class="overline-label">Full-Stack Capabilities</div>
-<h2 class="mt-4 lg:mt-3 font-display text-4xl md:text-6xl font-bold tracking-tighter text-slate-900 leading-none">
+<h2 class="mt-3 font-display text-4xl md:text-6xl font-bold tracking-tighter text-slate-900 leading-none">
 Everything you need to <span class="italic font-light text-slate-700">scale smarter.</span>
 </h2>
 </div>
-<p class="w-full max-w-[340px] lg:max-w-none lg:col-span-4 text-slate-600 text-center lg:text-left text-base md:text-lg mt-5 lg:mt-0 leading-[1.75] lg:leading-normal mx-auto lg:mx-0">
+<p class="lg:col-span-4 text-slate-600 text-left text-base md:text-lg">
 From ad platforms to creative engines one integrated team, one unified strategy.
 </p>
 </div>
@@ -1749,13 +1683,13 @@ From ad platforms to creative engines one integrated team, one unified strategy.
 <!-- ===== SECTION 8: TRUST SECTION ===== -->
 <section id="trust" class="relative py-16 md:py-24 bg-slate-50/20 overflow-hidden">
 <div class="max-w-7xl mx-auto px-6 md:px-10">
-<div class="flex flex-col items-center text-center lg:grid lg:grid-cols-12 gap-10 lg:items-end mb-8 lg:mb-14 reveal">
-<div class="w-full lg:col-span-8 text-center lg:text-left">
+<div class="grid lg:grid-cols-12 gap-10 items-end mb-14 reveal">
+<div class="lg:col-span-8 text-left">
 <div class="overline-label">Trust & Excellence</div>
-<h2                            class="mt-4 lg:mt-3 font-display text-4xl md:text-6xl font-bold tracking-tighter text-slate-900 leading-none text-reveal">                            Engineered for growth. <span class="italic font-light text-slate-700">Backed by                                trust.</span>
+<h2                            class="mt-3 font-display text-4xl md:text-6xl font-bold tracking-tighter text-slate-900 leading-none text-reveal">                            Engineered for growth. <span class="italic font-light text-slate-700">Backed by                                trust.</span>
 </h2>
 </div>
-<p class="w-full max-w-[340px] lg:max-w-none lg:col-span-4 text-slate-600 text-center lg:text-left text-base md:text-lg mt-5 lg:mt-0 leading-[1.75] lg:leading-normal mx-auto lg:mx-0">                        Outcomes we've delivered for global growth teams — documented by clean data pipelines and                        verified performance.                    </p>
+<p class="lg:col-span-4 text-slate-600 text-left text-base md:text-lg">                        Outcomes we've delivered for global growth teams — documented by clean data pipelines and                        verified performance.                    </p>
 </div>
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 select-none">
 <div                        class="glass-strong border border-slate-200/80 rounded-[32px] p-8 hover:shadow-2xl hover:border-blue-300 hover:scale-105 transition-all duration-300 flex flex-col justify-between h-56 text-left reveal">
@@ -1808,13 +1742,13 @@ From ad platforms to creative engines one integrated team, one unified strategy.
 <!-- ===== TESTIMONIALS ===== -->
 <section id="reviews" class="relative py-16 md:py-24 bg-slate-50/60 overflow-hidden">
 <div class="max-w-7xl mx-auto px-6 md:px-10">
-<div class="flex flex-col items-center text-center lg:grid lg:grid-cols-12 gap-10 lg:items-end mb-8 lg:mb-14 reveal">
-<div class="w-full lg:col-span-7">
+<div class="grid lg:grid-cols-12 gap-10 items-end mb-14 reveal">
+<div class="lg:col-span-7">
 <div class="overline-label">5,000+ client reviews</div>
-<h2                            class="mt-4 lg:mt-3 font-display text-4xl md:text-6xl font-bold tracking-tighter text-slate-900 leading-none text-reveal">                            Trusted by the teams behind <span class="italic font-light text-slate-700">global                                brands.</span>
+<h2                            class="mt-3 font-display text-4xl md:text-6xl font-bold tracking-tighter text-slate-900 leading-none text-reveal">                            Trusted by the teams behind <span class="italic font-light text-slate-700">global                                brands.</span>
 </h2>
 </div>
-<div class="lg:col-span-5 flex items-center gap-4 mt-5 lg:mt-0 justify-center lg:justify-start select-none">
+<div class="lg:col-span-5 flex items-center gap-4">
 <div class="flex items-center gap-1">
 <i data-lucide="star" class="w-5 h-5 fill-amber-400 text-amber-400">
 </i>
@@ -1827,7 +1761,7 @@ From ad platforms to creative engines one integrated team, one unified strategy.
 <i data-lucide="star" class="w-5 h-5 fill-amber-400 text-amber-400">
 </i>
 </div>
-<div class="text-center lg:text-left select-none">
+<div class="text-left select-none">
 <div class="font-display text-xl font-bold text-slate-900">4.9 / 5.0</div>
 <div class="text-[13px] text-slate-600">Across 5,000+ verified reviews</div>
 </div>

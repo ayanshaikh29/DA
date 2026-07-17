@@ -1,0 +1,260 @@
+/* Revenue Growth Engine — Scroll Storytelling Section */
+
+.rge-section {
+    position: relative;
+    height: 500vh;
+    background: #000000;
+    overflow: visible;
+}
+
+.rge-sticky {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.rge-canvas-wrap {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+#rge-canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.rge-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rge-content {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 0 24px;
+    text-align: center;
+}
+
+/* Scene text blocks */
+.rge-scene {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 4;
+    padding: 0 24px;
+}
+
+.rge-scene.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.rge-overline {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-weight: 600;
+    color: #FFFFFF;
+    margin-bottom: 16px;
+}
+
+.rge-headline {
+    font-family: 'Outfit', 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: clamp(28px, 5vw, 56px);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    color: #FFFFFF;
+    margin: 0 0 16px;
+    max-width: 720px;
+    will-change: transform, opacity;
+}
+
+.rge-subheadline {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(15px, 1.8vw, 19px);
+    line-height: 1.6;
+    color: rgba(255,255,255,0.7);
+    font-weight: 400;
+    max-width: 560px;
+    margin: 0;
+    will-change: transform, opacity;
+}
+
+/* Floating metrics */
+.rge-floating-metric {
+    position: absolute;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 800;
+    font-size: clamp(24px, 3vw, 42px);
+    background: linear-gradient(135deg, #FFFFFF, #DDDDDD);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    opacity: 0;
+    will-change: transform, opacity;
+    pointer-events: none;
+    z-index: 5;
+    filter: drop-shadow(0 4px 20px rgba(255, 255, 255, 0.15));
+}
+
+/* Scene 5 CTA */
+.rge-cta-wrap {
+    margin-top: 32px;
+    opacity: 0;
+    will-change: transform, opacity;
+}
+
+.rge-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #000000;
+    color: #000000;
+    padding: 16px 32px;
+    border-radius: 999px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: -0.01em;
+    border: none;
+    cursor: pointer;
+    pointer-events: auto;
+    text-decoration: none;
+    transition: background 200ms cubic-bezier(.2,.8,.2,1), transform 200ms, box-shadow 200ms;
+}
+
+.rge-cta:hover {
+    background: #000000;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.25);
+}
+
+.rge-cta svg {
+    width: 18px;
+    height: 18px;
+    transition: transform 200ms;
+}
+
+.rge-cta:hover svg {
+    transform: translate(2px, -2px);
+}
+
+/* Scene 5 logo reveal */
+.rge-logo-reveal {
+    opacity: 0;
+    will-change: transform, opacity;
+    margin-bottom: 20px;
+}
+
+.rge-logo-text {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 900;
+    font-size: clamp(20px, 3vw, 32px);
+    letter-spacing: -0.02em;
+    color: #FFFFFF;
+}
+
+/* Background glow for scene 5 */
+.rge-bg-glow {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0;
+    will-change: transform, opacity;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.5);
+}
+
+/* Scroll progress indicator for the section */
+.rge-progress {
+    position: absolute;
+    right: 32px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+}
+
+.rge-progress-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #cbd5e1;
+    transition: background 300ms, transform 300ms, box-shadow 300ms;
+}
+
+.rge-progress-dot.active {
+    background: #000000;
+    transform: scale(1.5);
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .rge-section {
+        height: 400vh;
+    }
+
+    .rge-progress {
+        right: 16px;
+    }
+
+    .rge-floating-metric {
+        font-size: clamp(18px, 4vw, 28px);
+    }
+}
+
+@media (max-width: 480px) {
+    .rge-progress {
+        right: 10px;
+        gap: 8px;
+    }
+
+    .rge-progress-dot {
+        width: 6px;
+        height: 6px;
+    }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .rge-scene,
+    .rge-headline,
+    .rge-subheadline,
+    .rge-floating-metric,
+    .rge-cta-wrap,
+    .rge-logo-reveal,
+    .rge-bg-glow {
+        transition: none !important;
+    }
+}
+
+

@@ -4,16 +4,70 @@
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog | Digital Advertise</title>
-    <meta name="description" content="Read our latest growth playbooks, performance tutorials, and digital marketing insights written by senior industry strategists.">
+    <title>Digital Marketing Blog | Digital Advertise - Insights & Guides</title>
+    <meta name="description" content="Read our latest growth playbooks, performance tutorials, and digital marketing insights written by senior industry strategists and AI marketing experts.">
     <meta name="robots" content="index, follow">
+    <meta name="keywords" content="digital marketing blog, marketing insights, AI marketing tips, growth marketing guides">
     
+    <link rel="canonical" href="https://digitaladvertise.com/blog.html">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://digitaladvertise.com/blog.html">
+    <meta property="og:title" content="Digital Marketing Blog | Digital Advertise - Insights & Guides">
+    <meta property="og:description" content="Read our latest growth playbooks, performance tutorials, and digital marketing insights written by senior industry strategists and AI marketing experts.">
+    <meta property="og:image" content="https://digitaladvertise.com/assets/images web/blog (1).jpeg">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://digitaladvertise.com/blog.html">
+    <meta name="twitter:title" content="Digital Marketing Blog | Digital Advertise - Insights & Guides">
+    <meta name="twitter:description" content="Read our latest growth playbooks, performance tutorials, and digital marketing insights written by senior industry strategists and AI marketing experts.">
+    <meta name="twitter:image" content="https://digitaladvertise.com/assets/images web/blog (1).jpeg">
+    
+        <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Digital Advertise",
+      "image": "https://digitaladvertise.com/assets/logo.png",
+      "@id": "https://digitaladvertise.com/#organization",
+      "url": "https://digitaladvertise.com/",
+      "telephone": "+91-7276751167",
+      "priceRange": "₹₹₹₹",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Nashik",
+        "addressRegion": "Maharashtra",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 19.9975,
+        "longitude": 73.7898
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "18:00"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/digitaladvertise",
+        "https://twitter.com/digitaladvertise",
+        "https://www.instagram.com/digital_advertise_"
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "5000"
+      }
+    }
+    </script>
     <!-- Fonts & CDNs -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@0.395.0"></script>
+    <script src="js/lucide.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
@@ -122,14 +176,14 @@
 <!-- Header -->
 <header id="navbar" style="position:fixed;top:0;left:0;width:100%;z-index:9999;padding:16px 0;transform:translateY(-120%);transition:transform 0.45s cubic-bezier(0.16,1,0.3,1);">
   <div style="max-width:1280px;margin:0 auto;padding:0 24px;"><div id="mobile-menu-backdrop" onclick="toggleMobileMenu()"></div>
-    <div id="nav-wrapper" style="display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,0.85);border:1px solid rgba(255,255,255,0.6);box-shadow:0 4px 32px rgba(2,6,23,0.08);border-radius:9999px;height:60px;padding:0 24px;">
+    <div id="nav-wrapper" style="display:flex;align-items:center;justify-content:space-between;background:#ffffff;border:1px solid rgba(255,255,255,0.8);box-shadow:0 4px 32px rgba(2,6,23,0.12);border-radius:9999px;height:60px;padding:0 24px;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);">
       <a href="index.html" style="display:flex;align-items:center;">
         <img src="assets/logo.png" alt="Digital Advertise Logo" style="height:32px;width:auto;object-fit:contain;">
       </a>
       <nav style="display:none;" id="desktop-nav">
         <a href="index.html">Home</a>
         <div class="nav-dropdown">
-          <a href="services.html" style="display:inline-flex;align-items:center;gap:4px;">Services <i data-lucide="chevron-down" class="w-3 h-3"></i></a>
+          <a href="services.html" style="display:inline-flex;align-items:center;gap:4px;">Services <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down w-3 h-3" style="display:inline-block;vertical-align:middle;margin-left:2px;"><path d="m6 9 6 6 6-6"/></svg></a>
           <div class="nav-dropdown-menu">
             <a href="social-media.html">Social Media Marketing</a>
             <a href="performance-marketing.html">Performance Marketing</a>
@@ -149,14 +203,18 @@
       </nav>
       <div style="display:flex;align-items:center;gap:8px;">
         <a href="audit.html" style="display:inline-flex;align-items:center;gap:6px;background:#000000;color:#fff;font-weight:600;font-size:14px;padding:10px 20px;border-radius:9999px;text-decoration:none;transition:background 0.2s;">
-          Get Started <i data-lucide="arrow-up-right" class="w-4 h-4"></i></a>
-        <button onclick="toggleMobileMenu()" id="hamburger-btn" style="display:none;padding:6px;border-radius:9999px;border:none;background:transparent;cursor:pointer;"><i data-lucide="menu" id="menu-icon" class="w-6 h-6" style="color:#000;display:block;"></i></button>
+          Get Started <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right w-4 h-4" style="display:inline-block;vertical-align:middle;margin-left:4px;"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></a>
+        <button onclick="toggleMobileMenu()" id="hamburger-btn" style="display:none;padding:6px;border-radius:9999px;border:none;background:transparent;cursor:pointer;"><svg id="menu-icon" class="w-6 h-6" style="color:#000;display:block;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"></line><line x1="4" y1="12" x2="20" y2="12"></line><line x1="4" y1="18" x2="20" y2="18"></line></svg></button>
       </div>
     </div>
     <div id="mobile-menu" style="display:none;margin-top:12px;background:#ffffff;border-radius:20px;padding:20px;flex-direction:column;gap:8px;">
       <a href="index.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:flex;align-items:center;">Home</a>
       <div style="display:flex;flex-direction:column;">
-        <div class="mobile-services-row" style="display:flex;align-items:center;justify-content:flex-start;gap:0;"><a href="services.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;flex:0 0 auto;width:auto;">Services</a><button type="button" onclick="event.stopPropagation();event.preventDefault();toggleMobileServices()" aria-label="Toggle Services submenu"><i data-lucide="chevron-down" class="w-3 h-3" id="mobile-services-chevron"></i></button></div>
+        <div class="mobile-services-row" style="display:flex;align-items:center;justify-content:flex-start;gap:0;"><a href="services.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;flex:0 0 auto;width:auto;">Services</a><button type="button" onclick="event.stopPropagation();event.preventDefault();toggleMobileServices()" aria-label="Toggle Services submenu" style="background:transparent; border:none; padding:8px; cursor:pointer; display:inline-flex; align-items:center; justify-content:center;">
+    <svg id="mobile-services-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1e293b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transition: transform 0.2s ease;">
+        <polyline points="6 9 12 15 18 9"></polyline>
+    </svg>
+</button></div>
         <div id="mobile-services-submenu">
           <a href="social-media.html">Social Media Marketing</a>
           <a href="performance-marketing.html">Performance Marketing</a>
@@ -173,7 +231,7 @@
       <a href="blog.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:flex;align-items:center;">Blog</a>
       <a href="contact.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:flex;align-items:center;">Contact</a>
       <a href="about.html" style="padding:10px 12px;color:#1e293b;font-weight:500;border-radius:10px;text-decoration:none;display:flex;align-items:center;">About Us</a>
-      <a href="audit.html" style="margin-top:8px;padding:12px;background:#0f172a;color:#fff;font-weight:600;border-radius:9999px;text-decoration:none;display:block;text-align:center;">Get Started <i data-lucide="arrow-up-right" class="w-4 h-4"></i></a>
+      <a href="audit.html" style="margin-top:8px;padding:12px;background:#0f172a;color:#fff;font-weight:600;border-radius:9999px;text-decoration:none;display:block;text-align:center;">Get Started <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right w-4 h-4" style="display:inline-block;vertical-align:middle;margin-left:4px;"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></a>
     </div>
   </div>
 </header>
@@ -206,9 +264,9 @@
         <section class="relative overflow-hidden py-12 bg-[#0A0A0A]/55 border-b border-white/5">
             <div class="max-w-7xl mx-auto px-6 md:px-10 flex flex-col md:flex-row gap-4 justify-between items-center select-none">
                 <!-- Search bar -->
-                <div class="relative w-full md:w-96">
-                    <i data-lucide="search" class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 w-4 h-4"></i>
-                    <input type="text" id="blog-search" onkeyup="searchBlog()" placeholder="Search articles..." class="w-full pl-11 pr-4 py-3 border border-white/10 rounded-xl focus:border-white focus:outline-none text-[14px] bg-black">
+                <div class="relative w-full md:w-96 flex items-center">
+                    <i data-lucide="search" class="absolute left-[18px] top-1/2 -translate-y-1/2 text-slate-400 w-4 h-4 pointer-events-none"></i>
+                    <input type="text" id="blog-search" onkeyup="searchBlog()" placeholder="Search articles..." class="w-full pl-[52px] pr-4 py-3 border border-white/10 rounded-xl focus:border-white focus:outline-none text-[14px] bg-black">
                 </div>
                 
                 <!-- Category Selectors -->
@@ -229,7 +287,7 @@
                     <!-- Post 1: Social Media Marketing -->
                     <article class="blog-card group bg-black border border-white/10 rounded-3xl overflow-hidden hover:border-white hover:shadow-xl transition-all duration-300 flex flex-col justify-between" data-cat="marketing">
                         <div class="h-48 overflow-hidden bg-slate-900 relative">
-                            <img src="assets/Images web/Blog (1).jpeg" alt="Social Media Marketing Guide blog cover" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <img src="assets/images%20web/blog%20(1).jpeg" alt="Social Media Marketing Guide blog cover" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                             <div class="absolute top-4 right-4 bg-slate-950/80 rounded-xl p-2 border border-white/10 flex items-center gap-2">
                                 <span class="text-[9px] font-bold text-white/60 font-mono">+310%</span>
                                 <svg class="w-10 h-4" viewBox="0 0 50 20" xmlns="http://www.w3.org/2000/svg">
@@ -261,7 +319,7 @@
                     <!-- Post 2: Google Ads vs Facebook Ads -->
                     <article class="blog-card group bg-black border border-white/10 rounded-3xl overflow-hidden hover:border-white hover:shadow-xl transition-all duration-300 flex flex-col justify-between" data-cat="marketing">
                         <div class="h-48 overflow-hidden bg-slate-900 relative">
-                            <img src="assets/Images web/Blog (2).jpeg" alt="Google Ads vs Facebook Ads blog cover" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <img src="assets/images%20web/blog%20(2).jpeg" alt="Google Ads vs Facebook Ads blog cover" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                             <div class="absolute top-4 right-4 bg-slate-950/80 rounded-xl p-2 border border-white/10 flex items-center gap-2">
                                 <span class="text-[9px] font-bold text-white/60 font-mono">CPC Analysis</span>
                                 <svg class="w-8 h-4" viewBox="0 0 50 20" xmlns="http://www.w3.org/2000/svg">
@@ -294,7 +352,7 @@
                     <!-- Post 3: SEO Tips for 2026 -->
                     <article class="blog-card group bg-black border border-white/10 rounded-3xl overflow-hidden hover:border-white hover:shadow-xl transition-all duration-300 flex flex-col justify-between" data-cat="marketing">
                         <div class="h-48 overflow-hidden bg-slate-900 relative">
-                            <img src="assets/Images web/Blog (3).jpeg" alt="SEO Tips for 2026 blog cover" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <img src="assets/images%20web/blog%20(3).jpeg" alt="SEO Tips for 2026 blog cover" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                             <div class="absolute top-4 right-4 bg-slate-950/80 rounded-xl p-2 border border-white/10 flex items-center gap-2">
                                 <span class="text-[9px] font-bold text-green-500 font-mono">+180% Organic</span>
                                 <svg class="w-10 h-4" viewBox="0 0 50 20" xmlns="http://www.w3.org/2000/svg">
@@ -327,7 +385,7 @@
                     <!-- Post 4: Email Marketing That Converts -->
                     <article class="blog-card group bg-black border border-white/10 rounded-3xl overflow-hidden hover:border-white hover:shadow-xl transition-all duration-300 flex flex-col justify-between" data-cat="marketing">
                         <div class="h-48 overflow-hidden bg-slate-900 relative">
-                            <img src="assets/Images web/Blog (4).jpeg" alt="Email Marketing That Converts blog cover" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <img src="assets/images%20web/blog%20(4).jpeg" alt="Email Marketing That Converts blog cover" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                             <div class="absolute top-4 right-4 bg-slate-950/80 rounded-xl p-2 border border-white/10 flex items-center gap-2">
                                 <span class="text-[9px] font-bold text-blue-400 font-mono">42% Open Rate</span>
                                 <svg class="w-8 h-4" viewBox="0 0 50 20" xmlns="http://www.w3.org/2000/svg">
@@ -360,7 +418,7 @@
                     <!-- Post 5: How AI is Changing Digital Marketing -->
                     <article class="blog-card group bg-black border border-white/10 rounded-3xl overflow-hidden hover:border-white hover:shadow-xl transition-all duration-300 flex flex-col justify-between" data-cat="ai">
                         <div class="h-48 overflow-hidden bg-slate-900 relative">
-                            <img src="assets/Images web/Blog (5).jpeg" alt="How AI is Changing Digital Marketing blog cover" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <img src="assets/images%20web/blog%20(5).jpeg" alt="How AI is Changing Digital Marketing blog cover" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                             <div class="absolute top-4 right-4 bg-slate-950/80 rounded-xl p-2 border border-white/10 flex items-center gap-1">
                                 <span class="text-[9px] font-bold text-purple-400 font-mono">AI-Powered</span>
                                 <i data-lucide="sparkles" class="w-2.5 h-2.5 text-purple-400"></i>
@@ -391,7 +449,7 @@
                     <!-- Post 6: Digital Marketing Trends -->
                     <article class="blog-card group bg-black border border-white/10 rounded-3xl overflow-hidden hover:border-white hover:shadow-xl transition-all duration-300 flex flex-col justify-between" data-cat="marketing">
                         <div class="h-48 overflow-hidden bg-slate-900 relative">
-                            <img src="assets/Images web/blog (6).jpeg" alt="Top 10 Digital Marketing Trends 2026 blog cover" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <img src="assets/images%20web/blog%20(6).jpeg" alt="Top 10 Digital Marketing Trends 2026 blog cover" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                             <div class="absolute top-4 right-4 bg-slate-950/80 rounded-xl p-2 border border-white/10 flex items-center gap-2">
                                 <span class="text-[9px] font-bold text-white/60 font-mono">2026 Trends</span>
                                 <i data-lucide="trending-up" class="w-2.5 h-2.5 text-white/60"></i>
@@ -486,78 +544,131 @@
 </section>
 
 <footer class="relative bg-slate-950 text-white pt-20 md:pt-28 pb-10 overflow-hidden">
-        <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] h-[400px] rounded-full bg-gray-1000/10 pointer-events-none"></div>
-        <div class="relative max-w-7xl mx-auto px-6 md:px-10">
-            <div class="grid lg:grid-cols-12 gap-12 mb-14 text-left">
-                <div class="lg:col-span-4">
-                    <div class="flex items-center mb-6">
-                        <img src="assets/logo-white.png" alt="Digital Advertise Logo" class="h-10 w-auto object-contain">
-                    </div>
-                    <p class="text-white/65 text-[15px] leading-relaxed max-w-md">
-                        A performance marketing partner for ambitious teams — engineered for measurable, durable growth across every channel and market.
-                    </p>
-                    
-                </div>
+  <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] h-[400px] rounded-full bg-blue-500/10 pointer-events-none"></div>
+  <div class="relative max-w-7xl mx-auto px-6 md:px-10">
 
-                <div class="lg:col-span-8 grid grid-cols-2 sm:grid-cols-4 gap-8">
-                    <div>
-                        <div class="text-[11px] uppercase tracking-[0.2em] font-semibold text-white/40 mb-4">Navigation</div>
-                        <ul class="space-y-2.5">
-                            <li><a href="index.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Home</a> </li>
-                            <li><a href="about.html" class="text-[14px] text-white/80 hover:text-white transition-colors">About Us</a></li>
-                            <li><a href="services.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Services <i data-lucide="chevron-down" class="w-3 h-3"></i></a></li>
-                            <li><a href="portfolio.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Portfolio</a></li>
-                            <li><a href="case-studies.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Case Studies</a></li>
-                            <li><a href="blog.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Blog</a></li>
-                            <li><a href="contact.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Contact</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <div class="text-[11px] uppercase tracking-[0.2em] font-semibold text-white/40 mb-4">Services</div>
-                        <ul class="space-y-2.5">
-                            <li><a href="social-media.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Social Media</a></li>
-                            <li><a href="performance-marketing.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Performance Marketing</a></li>
-                            <li><a href="web-development.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Web Development</a></li>
-                            <li><a href="brand-identity.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Brand Identity</a></li>
-                            <li><a href="ai-video.html" class="text-[14px] text-white/80 hover:text-white transition-colors">AI Creative</a></li>
-                            <li><a href="photography.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Product Photography</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <div class="text-[11px] uppercase tracking-[0.2em] font-semibold text-white/40 mb-4">Resources</div>
-                        <ul class="space-y-2.5">
-                            <li><a href="audit.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Free Audit</a></li>
-                            <li><a href="blog.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Blog</a></li>
-                            <li><a href="case-studies.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Case Studies</a></li>
-                            <li><a href="privacy.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Privacy Policy</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <div class="text-[11px] uppercase tracking-[0.2em] font-semibold text-white/40 mb-4">Contact</div>
-                        <ul class="space-y-2.5">
-                            <li><a href="mailto:info@digitaladvertise.com" class="text-[14px] text-white/80 hover:text-white transition-colors flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4 shrink-0"></i>info@digitaladvertise.com</a></li>
-                            <li><a href="tel:+917276751167" class="text-[14px] text-white/80 hover:text-white transition-colors flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4 shrink-0"></i>+91 72767 51167</a></li>
-                            <li><a href="https://wa.me/917276751167" target="_blank" class="text-[14px] text-white/80 hover:text-white transition-colors flex items-center gap-2"><i data-lucide="message-circle" class="w-4 h-4 shrink-0"></i>WhatsApp</a></li>
-                            <li><a href="#" class="text-[14px] text-white/80 hover:text-white transition-colors flex items-center gap-2"><i data-lucide="map-pin" class="w-4 h-4 shrink-0"></i>Pune, India</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="mt-10 pt-6 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-[13px] text-white/55">
-                <div>
-                    &copy; <span id="current-year">2026</span> Digital Advertise. All rights reserved.
-                </div>
-                <div class="flex items-center gap-4">
-                    <a href="https://www.instagram.com/digital_advertise_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="text-white/55 hover:text-white transition-colors" aria-label="Instagram"><i data-lucide="instagram" class="w-5 h-5"></i></a>
-                    <a href="https://twitter.com/digitaladvertise" target="_blank" class="text-white/55 hover:text-white transition-colors" aria-label="X / Twitter"><i data-lucide="twitter" class="w-5 h-5"></i></a>
-                    <a href="https://www.facebook.com/digitaladvertise" target="_blank" class="text-white/55 hover:text-white transition-colors" aria-label="Facebook"><i data-lucide="facebook" class="w-5 h-5"></i></a>
-                    <a href="https://www.youtube.com/@digitaladvertise" target="_blank" class="text-white/55 hover:text-white transition-colors" aria-label="YouTube"><i data-lucide="youtube" class="w-5 h-5"></i></a>
-                    <a href="https://www.linkedin.com/company/digitaladvertise" target="_blank" class="text-white/55 hover:text-white transition-colors" aria-label="LinkedIn"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
-                </div>
-            </div>
+    <!-- Desktop footer (unchanged) -->
+    <div class="hidden md:block">
+      <div class="grid lg:grid-cols-12 gap-12 mb-14 text-left">
+        <div class="lg:col-span-4">
+          <div class="flex items-center mb-6">
+            <img src="assets/logo-white.png" alt="Digital Advertise Logo" class="h-10 w-auto object-contain">
+          </div>
+          <p class="text-white/65 text-[15px] leading-relaxed max-w-md">
+            A performance marketing partner for ambitious teams — engineered for measurable, durable growth across every channel and market.
+          </p>
         </div>
-    </footer>
+        <div class="lg:col-span-8 grid grid-cols-2 sm:grid-cols-4 gap-8">
+          <div>
+            <div class="text-[11px] uppercase tracking-[0.2em] font-semibold text-white/40 mb-4">Navigation</div>
+            <ul class="space-y-2.5">
+              <li><a href="index.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Home</a></li>
+              <li><a href="about.html" class="text-[14px] text-white/80 hover:text-white transition-colors">About Us</a></li>
+              <li><a href="services.html" class="text-[14px] text-white/80 hover:text-white transition-colors" style="display:inline-flex;align-items:center;gap:4px;">Services <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down"><path d="m6 9 6 6 6-6"/></svg></a></li>
+              <li><a href="portfolio.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Portfolio</a></li>
+              <li><a href="case-studies.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Case Studies</a></li>
+              <li><a href="blog.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Blog</a></li>
+              <li><a href="contact.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <div class="text-[11px] uppercase tracking-[0.2em] font-semibold text-white/40 mb-4">Services</div>
+            <ul class="space-y-2.5">
+              <li><a href="social-media.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Social Media</a></li>
+              <li><a href="performance-marketing.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Performance Marketing</a></li>
+              <li><a href="web-development.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Web Development</a></li>
+              <li><a href="brand-identity.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Brand Identity</a></li>
+              <li><a href="ai-video.html" class="text-[14px] text-white/80 hover:text-white transition-colors">AI Creative</a></li>
+              <li><a href="photography.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Product Photography</a></li>
+            </ul>
+          </div>
+          <div>
+            <div class="text-[11px] uppercase tracking-[0.2em] font-semibold text-white/40 mb-4">Resources</div>
+            <ul class="space-y-2.5">
+              <li><a href="audit.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Free Audit</a></li>
+              <li><a href="blog.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Blog</a></li>
+              <li><a href="case-studies.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Case Studies</a></li>
+              <li><a href="privacy.html" class="text-[14px] text-white/80 hover:text-white transition-colors">Privacy Policy</a></li>
+            </ul>
+          </div>
+          <div>
+            <div class="text-[11px] uppercase tracking-[0.2em] font-semibold text-white/40 mb-4">Contact</div>
+            <ul class="space-y-2.5">
+              <li><a href="mailto:info@digitaladvertise.com" class="text-[14px] text-white/80 hover:text-white transition-colors flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4 shrink-0"></i>info@digitaladvertise.com</a></li>
+              <li><a href="tel:+917276751167" class="text-[14px] text-white/80 hover:text-white transition-colors flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4 shrink-0"></i>+91 72767 51167</a></li>
+              <li><a href="https://wa.me/917276751167" target="_blank" rel="noopener noreferrer" class="text-[14px] text-white/80 hover:text-white transition-colors flex items-center gap-2"><i data-lucide="message-circle" class="w-4 h-4 shrink-0"></i>WhatsApp</a></li>
+              <li><a href="#" class="text-[14px] text-white/80 hover:text-white transition-colors flex items-center gap-2"><i data-lucide="map-pin" class="w-4 h-4 shrink-0"></i>Pune, India</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="mt-10 pt-6 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-[13px] text-white/55">
+        <div>&copy; <span id="current-year">2026</span> Digital Advertise. All rights reserved.</div>
+        <div class="flex items-center gap-4">
+          <a href="https://www.instagram.com/digital_advertise_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" class="text-white/55 hover:text-white transition-colors" aria-label="Instagram"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+          <a href="https://twitter.com/digitaladvertise" target="_blank" rel="noopener noreferrer" class="text-white/55 hover:text-white transition-colors" aria-label="X / Twitter"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+          <a href="https://www.facebook.com/digitaladvertise" target="_blank" rel="noopener noreferrer" class="text-white/55 hover:text-white transition-colors" aria-label="Facebook"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+          <a href="https://www.youtube.com/@digitaladvertise" target="_blank" rel="noopener noreferrer" class="text-white/55 hover:text-white transition-colors" aria-label="YouTube"><i data-lucide="youtube" class="w-5 h-5"></i></a>
+          <a href="https://www.linkedin.com/company/digitaladvertise" target="_blank" rel="noopener noreferrer" class="text-white/55 hover:text-white transition-colors" aria-label="LinkedIn"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile footer (compact 2-column layout, shown below 768px) -->
+    <div class="md:hidden">
+      <div class="text-center mb-8">
+        <img src="assets/logo-white.png" alt="Digital Advertise Logo" class="h-7 w-auto object-contain mx-auto mb-3">
+        <p class="text-white/65 text-[13px] leading-relaxed max-w-xs mx-auto">
+          A performance marketing partner for ambitious teams — engineered for measurable, durable growth across every channel and market.
+        </p>
+      </div>
+      <div class="footer-links-grid">
+        <div class="footer-nav">
+          <div class="text-[12px] uppercase tracking-[0.15em] font-semibold text-white/40 mb-3">Navigation</div>
+          <ul class="space-y-1.5">
+            <li><a href="index.html" class="text-[15px] text-white/80 hover:text-white transition-colors">Home</a></li>
+            <li><a href="about.html" class="text-[15px] text-white/80 hover:text-white transition-colors">About Us</a></li>
+            <li><a href="services.html" class="text-[15px] text-white/80 hover:text-white transition-colors">Services</a></li>
+            <li><a href="portfolio.html" class="text-[15px] text-white/80 hover:text-white transition-colors">Portfolio</a></li>
+            <li><a href="case-studies.html" class="text-[15px] text-white/80 hover:text-white transition-colors">Case Studies</a></li>
+            <li><a href="blog.html" class="text-[15px] text-white/80 hover:text-white transition-colors">Blog</a></li>
+            <li><a href="contact.html" class="text-[15px] text-white/80 hover:text-white transition-colors">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-services">
+          <div class="text-[12px] uppercase tracking-[0.15em] font-semibold text-white/40 mb-3">Services</div>
+          <ul class="space-y-1.5">
+            <li><a href="social-media.html" class="text-[15px] text-white/80 hover:text-white transition-colors">Social Media</a></li>
+            <li><a href="performance-marketing.html" class="text-[15px] text-white/80 hover:text-white transition-colors">Performance Marketing</a></li>
+            <li><a href="web-development.html" class="text-[15px] text-white/80 hover:text-white transition-colors">Web Development</a></li>
+            <li><a href="brand-identity.html" class="text-[15px] text-white/80 hover:text-white transition-colors">Brand Identity</a></li>
+            <li><a href="ai-video.html" class="text-[15px] text-white/80 hover:text-white transition-colors">AI Creative</a></li>
+            <li><a href="photography.html" class="text-[15px] text-white/80 hover:text-white transition-colors">Product Photography</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="text-center mb-8">
+        <div class="text-[12px] uppercase tracking-[0.15em] font-semibold text-white/40 mb-3">Resources</div>
+        <ul class="space-y-1.5">
+          <li><a href="audit.html" class="text-[15px] text-white/80 hover:text-white transition-colors">Free Audit</a></li>
+          <li><a href="privacy.html" class="text-[15px] text-white/80 hover:text-white transition-colors">Privacy Policy</a></li>
+          <li><a href="terms.html" class="text-[15px] text-white/80 hover:text-white transition-colors">Terms &amp; Conditions</a></li>
+        </ul>
+      </div>
+      <div class="flex items-center justify-center gap-4 mb-6">
+        <a href="https://www.instagram.com/digital_advertise_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" class="text-white/55 hover:text-white transition-colors" aria-label="Instagram"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+        <a href="https://twitter.com/digitaladvertise" target="_blank" rel="noopener noreferrer" class="text-white/55 hover:text-white transition-colors" aria-label="X / Twitter"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+        <a href="https://www.facebook.com/digitaladvertise" target="_blank" rel="noopener noreferrer" class="text-white/55 hover:text-white transition-colors" aria-label="Facebook"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+        <a href="https://www.youtube.com/@digitaladvertise" target="_blank" rel="noopener noreferrer" class="text-white/55 hover:text-white transition-colors" aria-label="YouTube"><i data-lucide="youtube" class="w-5 h-5"></i></a>
+        <a href="https://www.linkedin.com/company/digitaladvertise" target="_blank" rel="noopener noreferrer" class="text-white/55 hover:text-white transition-colors" aria-label="LinkedIn"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+      </div>
+      <div class="text-center text-[13px] text-white/55 pt-6 border-t border-white/10">
+        &copy; <span class="mobile-year">2026</span> Digital Advertise. All rights reserved.
+      </div>
+    </div>
+
+  </div>
+</footer>
 
     <!-- Global main controller -->
     <script src="js/navbar.js"></script>
@@ -632,8 +743,12 @@
 
 function toggleMobileMenu() {
   var menu = document.getElementById('mobile-menu');
+  var icon = document.getElementById('menu-icon');
   if (!menu) return;
-  menu.classList.toggle('open');
+  var isOpen = menu.classList.toggle('open');
+  if (icon && icon.tagName.toLowerCase() === 'svg') {
+    icon.innerHTML = isOpen ? '<line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line>' : '<line x1="4" y1="6" x2="20" y2="6"></line><line x1="4" y1="12" x2="20" y2="12"></line><line x1="4" y1="18" x2="20" y2="18"></line>';
+  }
 }
 </script>
 </body>

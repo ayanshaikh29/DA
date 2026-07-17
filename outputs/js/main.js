@@ -436,7 +436,18 @@ function initScrollObserver() {
     const revealSelector = '.reveal, .reveal-left, .reveal-right, .reveal-scale, .reveal-rotate, .reveal-blur';
     const revealElements = document.querySelectorAll(revealSelector);
 
-
+    // On mobile, skip animations entirely — just make everything visible immediately
+    if (window.innerWidth < 768) {
+        revealElements.forEach(el => {
+            el.style.opacity = '1';
+            el.style.transform = 'none';
+            el.style.filter = 'none';
+            el.style.transition = 'none';
+            el.classList.add('visible');
+            el.classList.remove('animate-in');
+        });
+        return;
+    }
 
     // Phase 1: Immediately make all reveal elements visible (no invisible content)
     revealElements.forEach(el => {
@@ -446,68 +457,61 @@ function initScrollObserver() {
     // Phase 2: After a short delay (to let fonts/scripts settle), set up the observer
     // which will animate elements as they scroll into view
     requestAnimationFrame(() => {
-        // ── On mobile (<992px), skip reveal animations entirely ──
-        // Mobile has its own force-visible fix in initAnimations(). The rAF callback
-        // runs AFTER initAnimations(), so without this guard it would re-apply the
-        // animate-in (hidden) class to below-fold elements, undoing the mobile fix.
-        var isMobile = window.innerWidth < 992;
-        if (!isMobile) {
-            // For each reveal element, if it's not in view, reset to animate-in state
-            // Elements already in view stay visible — no gap!
-            revealElements.forEach(el => {
-                const rect = el.getBoundingClientRect();
-                const windowHeight = window.innerHeight;
-                // If element is below viewport, set it up for scroll-triggered animation
-                if (rect.top > windowHeight * 0.7) {
-                    // Disable transitions to prevent visible fade-out flash
-                    el.style.transition = 'none';
-                    el.classList.remove('visible');
-                    el.classList.add('animate-in');
-                    // Force style recalculation then re-enable transitions
-                    void el.offsetHeight;
-                    el.style.transition = '';
-                }
+        // For each reveal element, if it's not in view, reset to animate-in state
+        // Elements already in view stay visible — no gap!
+        revealElements.forEach(el => {
+            const rect = el.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+            // If element is below viewport, set it up for scroll-triggered animation
+            if (rect.top > windowHeight * 0.7) {
+                // Disable transitions to prevent visible fade-out flash
+                el.style.transition = 'none';
+                el.classList.remove('visible');
+                el.classList.add('animate-in');
+                // Force style recalculation then re-enable transitions
+                void el.offsetHeight;
+                el.style.transition = '';
+            }
+        });
+
+        // Set up IntersectionObserver for scroll-triggered reveals
+        if (typeof IntersectionObserver === 'undefined') {
+            document.querySelectorAll('.animate-in').forEach(el => {
+                el.classList.remove('animate-in');
+                el.classList.add('visible');
             });
+        } else {
+            revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    // Trigger if intersecting or if it jumped past the viewport (top < 0)
+                    if (entry.isIntersecting || entry.boundingClientRect.top < 0) {
+                        entry.target.classList.add('visible');
+                        entry.target.classList.remove('animate-in');
 
-            // Set up IntersectionObserver for scroll-triggered reveals
-            if (typeof IntersectionObserver === 'undefined') {
-                document.querySelectorAll('.animate-in').forEach(el => {
-                    el.classList.remove('animate-in');
-                    el.classList.add('visible');
-                });
-            } else {
-                revealObserver = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        // Trigger if intersecting or if it jumped past the viewport (top < 0)
-                        if (entry.isIntersecting || entry.boundingClientRect.top < 0) {
-                            entry.target.classList.add('visible');
-                            entry.target.classList.remove('animate-in');
-
-                            // Scan and animate all counters inside the revealed section/card
-                            const counters = entry.target.querySelectorAll('.counter');
-                            counters.forEach(counter => {
-                                if (!counter.classList.contains('counted')) {
-                                    animateCounter(counter);
-                                }
-                            });
-
-                            // If dashboard comes into view, trigger charts animations
-                            if (entry.target.id === 'proof-dashboard') {
-                                triggerDashboardAnimations();
+                        // Scan and animate all counters inside the revealed section/card
+                        const counters = entry.target.querySelectorAll('.counter');
+                        counters.forEach(counter => {
+                            if (!counter.classList.contains('counted')) {
+                                animateCounter(counter);
                             }
+                        });
 
-                            revealObserver.unobserve(entry.target);
+                        // If dashboard comes into view, trigger charts animations
+                        if (entry.target.id === 'proof-dashboard') {
+                            triggerDashboardAnimations();
                         }
-                    });
-                }, { rootMargin: "0px 0px -5% 0px", threshold: 0 });
-            }
 
-            // Observe elements that are set up for animation
-            if (revealObserver) {
-                document.querySelectorAll('.reveal.animate-in, .reveal-left.animate-in, .reveal-right.animate-in, .reveal-scale.animate-in, .reveal-rotate.animate-in, .reveal-blur.animate-in').forEach(el => {
-                    revealObserver.observe(el);
+                        revealObserver.unobserve(entry.target);
+                    }
                 });
-            }
+            }, { rootMargin: "0px 0px -5% 0px", threshold: 0 });
+        }
+
+        // Observe elements that are set up for animation
+        if (revealObserver) {
+            document.querySelectorAll('.reveal.animate-in, .reveal-left.animate-in, .reveal-right.animate-in, .reveal-scale.animate-in, .reveal-rotate.animate-in, .reveal-blur.animate-in').forEach(el => {
+                revealObserver.observe(el);
+            });
         }
 
         // Dedicated counter observer: watches each .counter element directly
@@ -550,7 +554,8 @@ function initScrollObserver() {
 
         const dashboard = document.getElementById('proof-dashboard');
         if (dashboard) {
-            var dbRect = dashboard.getBoundingClientRect();
+            // Check if dashboard already in view
+            const dbRect = dashboard.getBoundingClientRect();
             if (dbRect.top < window.innerHeight) {
                 triggerDashboardAnimations();
             } else if (revealObserver) {
@@ -569,16 +574,16 @@ function initScrollObserver() {
                 }, { rootMargin: "0px 0px -5% 0px", threshold: 0 });
                 dashboardObserver.observe(dashboard);
             }
-        }
 
-        // Fallback: if channel bars are still at height 0% after 2s, force-trigger
-        // This handles devices where IntersectionObserver may not fire reliably
-        setTimeout(function() {
-            var bars = document.querySelectorAll('.channel-bar');
-            if (bars.length > 0 && (bars[0].style.height === '0%' || bars[0].style.height === '')) {
-                triggerDashboardAnimations();
-            }
-        }, 2000);
+            // Fallback: if channel bars are still at height 0% after 2s, force-trigger
+            // This handles devices where IntersectionObserver may not fire reliably
+            setTimeout(function() {
+                var bars = document.querySelectorAll('.channel-bar');
+                if (bars.length > 0 && (bars[0].style.height === '0%' || bars[0].style.height === '')) {
+                    triggerDashboardAnimations();
+                }
+            }, 2000);
+        }
     });
 }
 

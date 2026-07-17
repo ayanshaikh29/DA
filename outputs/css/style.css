@@ -899,7 +899,27 @@ footer.bg-slate-950, .bg-slate-950 {
     }
 }
 
-
+/* Mobile: force all reveal elements visible regardless of animation state */
+@media (max-width: 767px) {
+    .reveal,
+    .reveal.animate-in,
+    .reveal-left,
+    .reveal-left.animate-in,
+    .reveal-right,
+    .reveal-right.animate-in,
+    .reveal-scale,
+    .reveal-scale.animate-in,
+    .reveal-rotate,
+    .reveal-rotate.animate-in,
+    .reveal-blur,
+    .reveal-blur.animate-in {
+        opacity: 1 !important;
+        transform: none !important;
+        filter: none !important;
+        visibility: visible !important;
+    }
+    .reveal-stagger > * { transition-delay: 0ms !important; }
+}
 
 /* ============================================================
    GLOBAL MOBILE LAYOUT — CENTER ALL PROCESS / STEP SECTIONS
@@ -2411,7 +2431,6 @@ html, body {
         transform: none !important;
         filter: none !important;
         transition: none !important;
-        visibility: visible !important;
     }
 
     /* ── Force all text-reveal word spans visible ── */
